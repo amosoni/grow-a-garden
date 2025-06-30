@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grow a Garden - Roblox实时玩家统计与全球热力图</title>
+    <meta name="description" content="Grow a Garden 实时玩家统计、全球热力图、玩家趋势分析，最权威的 Roblox Grow a Garden 数据追踪与社区互动。">
+    <meta name="keywords" content="Grow a Garden, Roblox, 玩家统计, 实时在线, 热力图, 玩家趋势, Roblox数据, Grow a Garden Tracker, Grow a Garden Stats, Grow a Garden 实时">
+    <link rel="canonical" href="https://your-domain.com/">
+    <!-- Open Graph for social sharing -->
+    <meta property="og:title" content="Grow a Garden - Roblox实时玩家统计与全球热力图">
+    <meta property="og:description" content="Grow a Garden 实时玩家统计、全球热力图、玩家趋势分析，最权威的 Roblox Grow a Garden 数据追踪与社区互动。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-domain.com/">
+    <meta property="og:image" content="https://your-domain.com/og-image.jpg">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Grow a Garden - Roblox实时玩家统计与全球热力图">
+    <meta name="twitter:description" content="Grow a Garden 实时玩家统计、全球热力图、玩家趋势分析，最权威的 Roblox Grow a Garden 数据追踪与社区互动。">
+    <meta name="twitter:image" content="https://your-domain.com/og-image.jpg">
+    <!-- 结构化数据 JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Grow a Garden 实时玩家统计",
+      "url": "https://your-domain.com/",
+      "description": "Grow a Garden 实时玩家统计、全球热力图、玩家趋势分析，最权威的 Roblox Grow a Garden 数据追踪与社区互动。",
+      "inLanguage": "zh-CN",
+      "keywords": "Grow a Garden, Roblox, 玩家统计, 实时在线, 热力图, 玩家趋势, Roblox数据, Grow a Garden Tracker, Grow a Garden Stats, Grow a Garden 实时"
+    }
+    </script>
+    <!-- Roblox-like color scheme -->
+    <link rel="stylesheet" href="https://unpkg.com/simple.css@2.1.0/simple.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
+    <style>
+        body {
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .bg-blur {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: 0;
+            background: url('grow-bg.jpg') center center/cover no-repeat;
+            opacity: 0.5;
+        }
+        .hero {
+            position: relative;
+            z-index: 1;
+            background: transparent !important;
+            box-shadow: none;
+            border-radius: 0;
+            margin-top: 60px;
+            text-align: center;
+        }
+        .hero-content {
+            padding: 3rem 2rem 2.5rem 2rem;
+            background: transparent !important;
+        }
+        .counter-container {
+            /* background: #fff; */
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(88,101,242,0.10);
+            margin: 2rem auto 0 auto;
+            max-width: 480px;
+            padding: 2rem 1.5rem 1.5rem 1.5rem;
+        }
+        .counter h2, .player-count {
+            color: #3b4cca;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .player-count {
+            font-size: 3.5rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+        .timeline-container, .map-container, .tips-section, .community-section {
+            border-radius: 18px;
+            margin-top: 2rem;
+        }
+        .milestone-card, .tip-card, .community-content {
+            border-radius: 14px;
+        }
+        @media (max-width: 600px) {
+            .hero-content { padding: 1.5rem 0.5rem; }
+            .counter-container { padding: 1.2rem 0.5rem; }
+            .player-count { font-size: 2.2rem; }
+        }
+    </style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HG12TJB5LZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HG12TJB5LZ');
+    </script>
+</head>
+<body>
+    <div class="bg-blur"></div>
+    <header>
+        <nav>
+            <a href="#" class="logo">🌱 Grow a Garden</a>
+            <a href="#stats">Live Stats</a>
+            <a href="#map">Global Heatmap</a>
+            <a href="#tips">Tips</a>
+            <a href="#community" class="discord-btn">💬 Discord</a>
+        </nav>
+    </header>
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-glass">
+                <h1 style="font-size:2.8rem;font-weight:800;letter-spacing:1px;margin-bottom:0.5rem;">🌱 Grow a Garden Real-Time Tracker</h1>
+                <p class="hero-subtitle" style="font-size:1.25rem;color:#23272a;opacity:0.92;margin-bottom:2.2rem;">See the live player count and global activity for Grow a Garden on Roblox!</p>
+                <div class="counter-container">
+                    <div class="counter">
+                        <h2 style="font-size:1.3rem;font-weight:700;">Players Online Now</h2>
+                        <div id="player-count" class="player-count">21,347,891</div>
+                        <p class="update-time">Last updated: <span id="update-time">--:--:--</span></p>
+                        <div class="trend-indicator">
+                            <span id="trend-arrow">↗</span>
+                            <span id="trend-text">+1,234</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="stats" class="stats-section">
+        <h2><span class="title-glass">📈 Player Count Milestones</span></h2>
+        <div class="timeline-container glass">
+            <div id="timeline-loading" style="display:none;text-align:center;">加载中...</div>
+            <canvas id="timeline-chart"></canvas>
+        </div>
+        <div class="milestone-cards">
+            <div class="milestone-card glass">
+                <div class="milestone-date">2024-01-15</div>
+                <div class="milestone-count">21,347,891</div>
+                <div class="milestone-desc">All-time Peak</div>
+            </div>
+            <div class="milestone-card glass">
+                <div class="milestone-date">2024-01-14</div>
+                <div class="milestone-count">19,876,543</div>
+                <div class="milestone-desc">19 Million Milestone</div>
+            </div>
+            <div class="milestone-card glass">
+                <div class="milestone-date">2024-01-13</div>
+                <div class="milestone-count">18,234,567</div>
+                <div class="milestone-desc">18 Million Milestone</div>
+            </div>
+        </div>
+    </section>
+    <section id="map" class="map-section">
+        <h2><span class="title-glass">🌍 Global Player Heatmap</span></h2>
+        <div class="map-container glass">
+            <div id="heatmap">
+                <div id="heatmap-loading" style="display:none;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:rgba(255,255,255,0.8);padding:1rem 2rem;border-radius:1rem;z-index:10;">加载中...</div>
+            </div>
+            <div class="map-stats">
+                <div class="stat-item glass">
+                    <span class="stat-label">Active Countries</span>
+                    <span class="stat-value" id="active-countries">127</span>
+                </div>
+                <div class="stat-item glass">
+                    <span class="stat-label">Top Region</span>
+                    <span class="stat-value" id="top-region">North America</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="tips" class="tips-section">
+        <h2><span class="title-glass">💡 Quick Tips</span></h2>
+        <div class="tips-grid">
+            <div class="tip-card glass">
+                <div class="tip-icon">💧</div>
+                <h3>Watering Efficiency</h3>
+                <ul>
+                    <li><strong>Golden Hours</strong>: 7:00-9:00 in-game (2x effect in real time)</li>
+                    <li><strong>Combo Trick</strong>: Click the watering can 5 times for a hidden effect</li>
+                    <li><strong>Best Frequency</strong>: Water every 30 minutes</li>
+                </ul>
+                <a href="#" class="tip-link">Watch Video →</a>
+            </div>
+            <div class="tip-card glass">
+                <div class="tip-icon">🌱</div>
+                <h3>Seed Selection</h3>
+                <ul>
+                    <li><strong>Beginner</strong>: Sunflower (fast growth, stable rewards)</li>
+                    <li><strong>Advanced</strong>: Rose (high value, needs skill)</li>
+                    <li><strong>Rare Seeds</strong>: Limited on weekends</li>
+                </ul>
+                <a href="#" class="tip-link">See Seed Guide →</a>
+            </div>
+            <div class="tip-card glass">
+                <div class="tip-icon">🏆</div>
+                <h3>Achievement Guide</h3>
+                <ul>
+                    <li><strong>Beginner</strong>: Plant 100 flowers</li>
+                    <li><strong>Advanced</strong>: 7-day login streak</li>
+                    <li><strong>Hidden</strong>: Plant at special times</li>
+                </ul>
+                <a href="#" class="tip-link">See All Achievements →</a>
+            </div>
+        </div>
+    </section>
+    <section id="community" class="community-section">
+        <h2><span class="title-glass">💬 Join Our Community</span></h2>
+        <div class="community-card">
+            <div class="community-content">
+                <p>Chat with Grow a Garden players worldwide on Discord!</p>
+                <div class="community-stats">
+                    <div class="community-stat">
+                        <span class="stat-number">50,000+</span>
+                        <span class="stat-label">Discord Members</span>
+                    </div>
+                    <div class="community-stat">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Online Support</span>
+                    </div>
+                    <div class="community-stat">
+                        <span class="stat-number">1000+</span>
+                        <span class="stat-label">Daily Messages</span>
+                    </div>
+                </div>
+                <a href="https://discord.gg/growagarden" class="discord-join-btn" target="_blank">
+                    🚀 Join Discord
+                </a>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Grow a Garden - Real-Time Player Tracker</p>
+            <p>Not official. Data for reference only.</p>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 

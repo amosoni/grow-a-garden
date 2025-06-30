@@ -1,0 +1,44 @@
+{
+  "name": "grow-a-garden-tracker",
+  "version": "1.0.0",
+  "description": "实时追踪Grow a Garden玩家数据的MVP网站",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve . -p 8000",
+    "dev": "npx live-server --port=8000 --open=/",
+    "build": "echo '静态网站，无需构建'",
+    "deploy": "echo '请使用Netlify Drop部署'",
+    "test": "echo '暂无测试'"
+  },
+  "keywords": [
+    "grow-a-garden",
+    "roblox",
+    "real-time",
+    "tracker",
+    "dashboard",
+    "gaming",
+    "statistics"
+  ],
+  "author": "GrowTracker Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/grow-a-garden-tracker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/grow-a-garden-tracker/issues"
+  },
+  "homepage": "https://your-site.netlify.app",
+  "devDependencies": {
+    "serve": "^14.2.1",
+    "live-server": "^1.2.2"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+} 
