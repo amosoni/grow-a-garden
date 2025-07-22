@@ -27,17 +27,51 @@ body {
     padding: 0;
     background: var(--bg-dark);
     min-height: 100vh;
+    overflow-x: hidden;
+    width: 100%;
 }
 
-/* 导航栏 */
+/* 移动端视口适配 */
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+/* 确保移动端滚动流畅 */
+html, body {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+/* 移动端触摸优化 */
+button, input, select, textarea {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+/* 防止移动端缩放 */
+input[type="number"] {
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+}
+
+/* 移动端按钮优化 */
+.action-btn, .tab, .mutation-chip {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  user-select: none;
+}
+
+/* 层级管理 */
 header {
-    background: rgba(35, 39, 42, 0.98);
-    backdrop-filter: blur(10px);
     position: fixed;
     top: 0;
-    width: 100%;
-    z-index: 1000;
-    box-shadow: var(--shadow);
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: rgba(35, 39, 42, 0.95);
+  backdrop-filter: blur(10px);
 }
 
 nav {
@@ -87,32 +121,59 @@ nav a:hover {
 
 /* 英雄区域 */
 .hero {
-    height: 100vh;
-    min-height: unset;
-    padding: 0;
-    margin: 0;
+  position: relative;
+  z-index: 1; /* 降低z-index，避免覆盖其他区块 */
+  margin-top: 60px; /* 为固定导航栏留出空间 */
     display: flex;
-    align-items: center;
+  align-items: flex-start;
     justify-content: center;
-    position: relative;
-    z-index: 2;
-    overflow: hidden;
+  padding: 2rem 2rem 6rem 2rem; /* 增加底部padding，为下一个区块留出空间 */
+  min-height: auto; /* 使用自动高度 */
+  margin-bottom: 800px; /* 添加大量底部间距，确保与下一个区块分离 */
+  overflow: visible; /* 确保内容可见 */
+  border-bottom: none; /* 移除底部边框 */
+  isolation: isolate; /* 创建新的层叠上下文 */
+}
+
+.hero-blur-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  z-index: 0;
+  background: none; /* 去掉毛玻璃背景 */
+  backdrop-filter: none; /* 去掉模糊效果 */
+  border-radius: 20px;
 }
 
 .hero-content {
+  position: relative;
+  z-index: 100;
     width: 100%;
-    max-width: 700px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: auto;
+  max-width: 1200px;
+}
+
+.hero-glass, .calculator-card {
     position: relative;
+    z-index: 2; /* 降低z-index，但保持在背景之上 */
+    width: 100%;
+    min-height: auto; /* 使用自动高度，让内容决定高度 */
+    background: rgba(255, 255, 255, 0.95); /* 增加不透明度，减少背景干扰 */
+    backdrop-filter: blur(20px); /* 添加毛玻璃效果 */
+    -webkit-backdrop-filter: blur(20px); /* Safari支持 */
+    border-radius: 20px;
+    padding: 2rem 1.5rem 5rem 1.5rem; /* 大幅增加底部padding */
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15); /* 增强阴影效果 */
+    border: 1px solid rgba(255, 255, 255, 0.4); /* 更明显的边框 */
+    max-width: 1600px; /* 增加最大宽度 */
+    margin: 0 auto 4rem auto; /* 增加底部margin */
+    overflow: visible; /* 允许内容自然流动 */
 }
 
 .hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
+    font-size: 2rem; /* 进一步减小字体 */
+    margin-bottom: 0.8rem; /* 进一步减少底部间距 */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
     animation: fadeInUp 1s ease;
     color: #23272a !important;
@@ -122,11 +183,16 @@ nav a:hover {
         0 0 2px #fff;
     font-weight: 800;
     letter-spacing: 0.5px;
+    text-align: center; /* 居中对齐 */
+}
+
+.hero h2 {
+    text-align: center; /* H2位置居中 */
 }
 
 .hero-subtitle {
-    font-size: 1.3rem;
-    margin-bottom: 3rem;
+    font-size: 1rem; /* 进一步减小字体 */
+    margin-bottom: 1rem; /* 进一步减少底部间距 */
     opacity: 0.9;
     animation: fadeInUp 1s ease 0.2s both;
     color: #23272a !important;
@@ -134,8 +200,9 @@ nav a:hover {
         0 2px 8px #fff,
         0 1px 2px rgba(0,0,0,0.28),
         0 0 2px #fff;
-    font-weight: 800;
+    font-weight: 600; /* 稍微减轻字重 */
     letter-spacing: 0.5px;
+    text-align: center; /* 居中对齐 */
 }
 
 /* 计数器样式 */
@@ -199,38 +266,22 @@ nav a:hover {
     font-weight: bold;
 }
 
-/* 统计区域 */
-.stats-section {
-    padding: 4rem 2rem;
-    background: none !important;
-    box-shadow: none !important;
-    border-radius: 0 !important;
-}
 
-.stats-section h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-    color: #23272a !important;
-    font-weight: 900 !important;
-    letter-spacing: 0.5px;
-    text-shadow: none !important;
-    background: none !important;
-    opacity: 1 !important;
-}
 
 .timeline-container {
     max-width: 800px;
-    margin: 0 auto 3rem;
+    margin: 4rem auto 6rem;
     background: none !important;
 }
 
 .milestone-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    max-width: 1000px;
-    margin: 0 auto;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 6rem;
+    max-width: 1200px;
+    margin: 8rem auto 6rem auto;
+    position: relative;
+    z-index: 1;
 }
 
 .milestone-card {
@@ -267,7 +318,7 @@ nav a:hover {
 
 /* 地图区域 */
 .map-section {
-    padding: 4rem 2rem;
+    padding: 6rem 2rem 4rem 2rem; /* 减少顶部padding */
     background: none !important;
     box-shadow: none !important;
     border-radius: 0 !important;
@@ -340,12 +391,10 @@ nav a:hover {
 
 /* 攻略区域 */
 .tips-section {
-    padding: 4rem 2rem;
+    padding: 6rem 2rem 4rem 2rem; /* 减少顶部padding */
     background: none !important;
     box-shadow: none !important;
     border-radius: 0 !important;
-    padding-top: 4rem;
-    padding-bottom: 4rem;
 }
 
 .tips-section h2 {
@@ -423,12 +472,10 @@ nav a:hover {
 
 /* 社区区域 */
 .community-section {
-    padding: 4rem 2rem;
+    padding: 6rem 2rem 4rem 2rem; /* 减少顶部padding */
     background: none !important;
     box-shadow: none !important;
     border-radius: 0 !important;
-    padding-top: 4rem;
-    padding-bottom: 4rem;
 }
 
 .community-section h2 {
@@ -510,6 +557,55 @@ nav a:hover {
     background: #404eed;
     transform: translateY(-2px);
     box-shadow: var(--shadow-hover);
+}
+
+/* 计算器内容容器 */
+.calculator-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+/* 统一区块间距管理 */
+#stats-hero {
+  margin-top: 1500px; /* 进一步增加顶部间距 */
+  position: relative; /* 添加相对定位 */
+  z-index: 10; /* 提高z-index */
+  padding-top: 2rem; /* 添加顶部内边距 */
+  border-top: 3px solid rgba(255,255,255,0.2); /* 添加顶部边框 */
+  clear: both; /* 清除浮动 */
+}
+
+.live-stats-section,
+.stats-section,
+.map-section,
+.tips-section,
+.community-section {
+  position: relative;
+  z-index: 5; /* 提高下面区块的z-index */
+  margin-top: 0; /* 移除顶部间距，由第一个区块控制 */
+  margin-bottom: 6rem; /* 保持底部间距 */
+  background: var(--bg-dark); /* 添加背景色，防止透明效果导致的重叠 */
+  padding-top: 6rem; /* 增加顶部内边距 */
+  border-top: 2px solid rgba(255,255,255,0.15); /* 添加更明显的顶部边框 */
+  box-shadow: 0 -15px 40px rgba(0,0,0,0.25); /* 增强顶部阴影效果 */
+  position: relative; /* 确保相对定位 */
+}
+
+/* 移动端统一区块间距管理 */
+@media (max-width: 768px) {
+  .live-stats-section,
+  .stats-section,
+  .map-section,
+  .tips-section,
+  .community-section {
+    margin-top: 8rem; /* 移动端也保持足够的顶部间距 */
+    margin-bottom: 4rem; /* 移动端保持底部间距 */
+    padding-top: 3rem; /* 增加顶部内边距 */
+  }
 }
 
 /* 页脚 */
@@ -614,7 +710,7 @@ footer, .footer-content, .footer-content p {
     .map-section,
     .tips-section,
     .community-section {
-        padding: 2rem 1rem;
+        padding: 4rem 1rem 2rem 1rem; /* 增加上下padding */
     }
 }
 
@@ -634,6 +730,29 @@ footer, .footer-content, .footer-content p {
 
 ::-webkit-scrollbar-thumb:hover {
     background: #404eed;
+}
+
+/* 植物列表和变异列表的滚动条样式 */
+.plant-list::-webkit-scrollbar,
+.mutation-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.plant-list::-webkit-scrollbar-track,
+.mutation-list::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 3px;
+}
+
+.plant-list::-webkit-scrollbar-thumb,
+.mutation-list::-webkit-scrollbar-thumb {
+  background: rgba(88, 101, 242, 0.4);
+  border-radius: 3px;
+}
+
+.plant-list::-webkit-scrollbar-thumb:hover,
+.mutation-list::-webkit-scrollbar-thumb:hover {
+  background: rgba(88, 101, 242, 0.6);
 }
 
 .milestone-card,
@@ -663,207 +782,1097 @@ footer, .footer-content, .footer-content p {
 .bg-blur {
     position: fixed;
     top: 0; left: 0; width: 100vw; height: 100vh;
-    z-index: 0;
+    z-index: -1; /* 降低背景模糊层的z-index，确保它不会覆盖内容 */
     background: url('grow-bg.jpg') center center/cover no-repeat;
     opacity: 0.25;
     filter: blur(8px);
     -webkit-filter: blur(8px);
 }
 
-.hero, .hero-content, .hero-glass {
-    position: static !important;
-    transform: none !important;
+/* 植物标签页 */
+.plant-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0.3rem; /* 进一步减少间距 */
+  margin: 0 0 0.6rem 0; /* 进一步减少底部间距 */
+  padding: 0;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1200px; /* 增加最大宽度 */
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Section titles and important headings: strong white shadow for clarity */
-.stats-section h2,
-.map-section h2,
-.tips-section h2,
-.community-section h2,
-.section-title,
-h2,
-footer, .footer-content {
-    text-shadow: none !important;
+.tab {
+  padding: 0.4em 1.2em; /* 大幅减少padding */
+  border-radius: 1.2em; /* 减小圆角 */
+  background: #23272a;
+  color: #fff;
+  border: none;
+  font-size: 0.9em; /* 减少字体大小 */
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0.1em; /* 减少margin */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-/* For .community-section h2 and .footer-content, ensure text color is dark for contrast */
-.community-section h2, .footer-content {
-    color: #23272a !important;
+.tab.active, .tab:focus {
+  background: #5865f2;
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(88,101,242,0.3);
+  transform: translateY(-2px);
 }
 
-/* 毛玻璃 glassmorphism 通用样式 */
-.glass {
-  background: #fff !important;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+.tab:hover {
+  background: #404eed;
+  transform: translateY(-1px);
+}
+
+/* 植物搜索 */
+.plant-search {
+  width: 100%;
+  max-width: 600px; /* 增加最大宽度 */
+  padding: 0.5em 0.8em; /* 进一步减少padding */
+  border-radius: 8px; /* 进一步减小圆角 */
+  border: 2px solid #d1d5db;
+  font-size: 0.9em; /* 进一步减小字体 */
+  background: rgba(255, 255, 255, 0.8); /* 稍微减少透明度 */
+  backdrop-filter: blur(10px); /* 添加毛玻璃效果 */
+  -webkit-backdrop-filter: blur(10px); /* Safari支持 */
+  margin: 0.4rem auto; /* 进一步减少上下间距 */
+  box-sizing: border-box;
+  display: block;
+  transition: border-color 0.3s ease;
+}
+
+.plant-search:focus {
+  outline: none;
+  border-color: #5865f2;
+  box-shadow: 0 0 0 3px rgba(88,101,242,0.1);
+}
+
+/* 植物列表 */
+.plant-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); /* 稍微增加最小宽度以改善显示 */
+  gap: 0.6rem; /* 增加间距以改善视觉效果 */
+  margin: 1rem 0; /* 增加上下间距 */
+  width: 100%;
+  padding: 0;
+  max-width: 1400px; /* 增加最大宽度 */
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 280px; /* 增加最大高度以显示更多内容 */
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.plant-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+    width: 100%;
+  height: 70px; /* 进一步减少高度 */
+  background: #23272a;
+  color: #fff;
+  border-radius: 6px; /* 进一步减小圆角 */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  padding: 0.4em 0.2em 0.2em 0.2em; /* 进一步减少padding */
+  position: relative;
+}
+
+.plant-item.selected, .plant-item:focus {
+  background: #5865f2;
+  color: #fff;
+  border: 2px solid #f1c40f;
+  transform: scale(1.05);
+  box-shadow: 0 8px 24px rgba(88,101,242,0.3);
+}
+
+.plant-item:hover {
+  background: #404eed;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+.plant-icon {
+  font-size: 1.3em; /* 进一步减少图标大小 */
+  margin-bottom: 0.05em; /* 进一步减少底部间距 */
+  line-height: 1;
+}
+
+.plant-item span {
+  font-size: 0.8em; /* 减少字体大小 */
+  font-weight: 600;
+  margin-top: 0.1em; /* 减少顶部间距 */
+  text-align: center;
+  line-height: 1.1; /* 减少行高 */
+}
+
+.plant-value {
+  font-size: 0.7em; /* 减少字体大小 */
+  font-weight: 500;
+  color: #43b581;
+  margin-top: 0.1em; /* 大幅减少顶部间距 */
+  opacity: 0.9;
+}
+
+/* 变异工具栏 */
+.mutation-toolbar {
+    display: flex;
+    flex-direction: column;
+  gap: 0.4rem; /* 进一步减少间距 */
+  margin: 0.8rem 0; /* 进一步减少上下间距 */
+  width: 100%;
+  max-width: 1200px; /* 增加最大宽度 */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+}
+
+.mutation-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+    align-items: center;
+    justify-content: center;
+  padding: 1rem;
+  background: rgba(255,255,255,0.6); /* 稍微增加透明度 */
+  backdrop-filter: blur(10px); /* 添加毛玻璃效果 */
+  -webkit-backdrop-filter: blur(10px); /* Safari支持 */
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.mutation-title {
+  font-weight: bold;
+  color: #23272a;
+  margin-right: 1.5rem;
+  font-size: 1.1em;
+}
+
+.mutation-help-btn,
+.mutation-sort-btn,
+.mutation-hide-btn {
+  padding: 0.5em 1em;
+  border-radius: 0.8em;
+  background: #f1f3fa;
+  color: #23272a;
+  border: none;
+  font-size: 0.9em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.mutation-help-btn:hover,
+.mutation-sort-btn:hover,
+.mutation-hide-btn:hover {
+  background: #e0e7ff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.mutation-sort-btn.active {
+  background: #5865f2;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(88,101,242,0.3);
+}
+
+.mutation-search {
+  width: 100%;
+  max-width: 500px;
+  padding: 0.8em 1.2em;
+  border-radius: 12px;
+  border: 2px solid #d1d5db;
+  font-size: 1em;
+  background: rgba(255,255,255,0.8); /* 稍微减少透明度 */
+  backdrop-filter: blur(10px); /* 添加毛玻璃效果 */
+  -webkit-backdrop-filter: blur(10px); /* Safari支持 */
+  margin: 0 auto;
+  display: block;
+  transition: border-color 0.3s ease;
+}
+
+.mutation-search:focus {
+  outline: none;
+  border-color: #5865f2;
+  box-shadow: 0 0 0 3px rgba(88,101,242,0.1);
+}
+
+/* 变异列表 */
+.mutation-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem; /* 增加间距以改善视觉效果 */
+  justify-content: center;
+  margin: 1rem 0; /* 增加上下间距 */
+  width: 100%;
+  padding: 0;
+  max-width: 1400px; /* 增加最大宽度 */
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 200px; /* 增加最大高度以显示更多内容 */
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.mutation-chip {
+  padding: 0.4em 1em; /* 大幅减少padding */
+  border-radius: 1.2em; /* 减小圆角 */
+  background: #f1f3fa;
+  color: #23272a;
+  border: none;
+  font-size: 0.85em; /* 减少字体大小 */
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0.2em; /* 减少margin */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.mutation-chip:hover {
+  background: #e0e7ff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+.mutation-chip.selected {
+  background: #5865f2;
+  color: #fff;
+  transform: scale(1.05);
+  font-weight: bold;
+  box-shadow: 0 6px 20px rgba(88,101,242,0.3);
+}
+
+/* 公式显示区 */
+.formula-display {
+  margin: 2rem auto; /* 进一步增加上下间距 */
+  padding: 1.5rem; /* 增加padding */
+  background: rgba(88,101,242,0.25); /* 增加不透明度 */
+  backdrop-filter: blur(10px); /* 添加毛玻璃效果 */
+  -webkit-backdrop-filter: blur(10px); /* Safari支持 */
+  border-radius: 12px; /* 增加圆角 */
+  border: 2px solid rgba(88,101,242,0.5); /* 更明显的边框 */
+  width: 100%;
+  max-width: 700px; /* 调整最大宽度 */
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(88,101,242,0.2); /* 增强阴影 */
+  position: relative; /* 添加相对定位 */
+  z-index: 3; /* 提高层级 */
+}
+
+.formula-text {
+  font-family: 'Courier New', monospace;
+  font-size: 0.9em; /* 进一步减少字体大小 */
+  color: #23272a;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* 输入区 */
+.input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem; /* 增加间距 */
+  margin: 2rem auto; /* 增加上下间距 */
+  width: 100%;
+  max-width: 600px; /* 增加最大宽度 */
+  padding: 2rem; /* 增加padding */
+  background: rgba(255,255,255,0.85); /* 增加不透明度 */
+  border-radius: 12px; /* 适当增加圆角 */
+  border: 1px solid rgba(255,255,255,0.5); /* 更明显的边框 */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* 增强阴影效果 */
+  backdrop-filter: blur(15px); /* 增强毛玻璃效果 */
+  -webkit-backdrop-filter: blur(15px); /* Safari支持 */
+  position: relative; /* 添加相对定位 */
+  z-index: 3; /* 提高层级 */
+}
+
+.input-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.input-row label {
+  font-weight: 600;
+  color: #23272a;
+  font-size: 1.1em;
+  margin-bottom: 0.3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input-row input[type="number"] {
+  padding: 0.8em 1em;
+  border-radius: 8px;
+  border: 1px solid rgba(209,213,219,0.8);
+  font-size: 1.1em;
+  background: rgba(255,255,255,0.95); /* 增加不透明度，提高可读性 */
+  backdrop-filter: blur(10px); /* 添加毛玻璃效果 */
+  -webkit-backdrop-filter: blur(10px); /* Safari支持 */
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  width: 100%; /* 确保宽度填满容器 */
+}
+
+.input-row input[type="number"]:focus {
+  outline: none;
+  border-color: #5865f2;
+  box-shadow: 0 0 0 3px rgba(88,101,242,0.1), 0 4px 16px rgba(88,101,242,0.1);
+  background: rgba(255,255,255,0.9); /* 保持毛玻璃效果 */
+  backdrop-filter: blur(15px); /* 增强毛玻璃效果 */
+  -webkit-backdrop-filter: blur(15px); /* Safari支持 */
+}
+
+.input-row input[type="range"] {
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background: linear-gradient(to right, #d1d5db 0%, #d1d5db 50%, #5865f2 50%, #5865f2 100%);
+  outline: none;
+  -webkit-appearance: none;
+  margin-top: 0.5rem;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.input-row input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #5865f2;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(88,101,242,0.4);
+  border: 2px solid #fff;
+  transition: all 0.3s ease;
+}
+
+.input-row input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(88,101,242,0.5);
+}
+
+/* 结果区 */
+.result-section {
+  margin: 2rem auto; /* 增加上下间距 */
+  text-align: center;
+  width: 100%;
+  max-width: 700px; /* 增加最大宽度 */
+  padding: 2rem; /* 增加padding */
+  background: rgba(67,181,129,0.25); /* 增加不透明度 */
+  backdrop-filter: blur(10px); /* 添加毛玻璃效果 */
+  -webkit-backdrop-filter: blur(10px); /* Safari支持 */
+  border-radius: 12px; /* 增加圆角 */
+  border: 2px solid rgba(67,181,129,0.3); /* 更明显的边框 */
+  box-shadow: 0 8px 20px rgba(67,181,129,0.15); /* 添加阴影 */
+  position: relative; /* 添加相对定位 */
+  z-index: 3; /* 提高层级 */
+}
+
+.result-main {
+  font-size: 2.5em; /* 增加字体大小，使结果更突出 */
+  color: #43b581;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem; /* 增加底部间距 */
+  text-shadow: 0 2px 4px rgba(67,181,129,0.2);
+  padding: 0.5rem 0; /* 增加上下内边距 */
+}
+
+.result-unit {
+  font-size: 1.3em;
+  color: #666;
+  font-weight: 500;
+}
+
+/* 操作按钮区 */
+.action-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem; /* 进一步减少间距 */
+  margin: 0.6rem auto; /* 进一步减少上下间距 */
+  justify-content: center;
+  width: 100%;
+  max-width: 900px; /* 增加最大宽度 */
+}
+
+.action-btn {
+  padding: 0.6em 1.2em; /* 进一步减少padding */
+  border-radius: 8px; /* 进一步减小圆角 */
+  border: none;
+  background: linear-gradient(135deg, #5865f2 0%, #404eed 100%);
+  color: #fff;
+  font-size: 0.85em; /* 进一步减小字体 */
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 12px rgba(88,101,242,0.3);
+  min-width: 120px; /* 进一步减少最小宽度 */
+  position: relative;
+  overflow: hidden;
+}
+
+.action-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.action-btn:hover::before {
+  left: 100%;
+}
+
+.action-btn:hover {
+  background: linear-gradient(135deg, #404eed 0%, #5865f2 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(88,101,242,0.4);
+}
+
+.action-btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(88,101,242,0.3);
+}
+
+/* 反向计算区 */
+.reverse-calc-section {
+  margin: 1.5rem auto; /* 增加上下间距 */
+  padding: 1.5rem; /* 增加padding */
+  background: rgba(255,255,255,0.7); /* 更透明的背景 */
+  backdrop-filter: blur(15px); /* 添加毛玻璃效果 */
+  -webkit-backdrop-filter: blur(15px); /* Safari支持 */
+  border-radius: 10px; /* 进一步减小圆角 */
+  border: 2px solid #e0e7ff;
+  width: 100%;
+  max-width: 700px; /* 增加最大宽度 */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* 历史记录区 */
+.history-section {
+  margin: 2rem auto; /* 增加上下间距 */
+  width: 100%;
+  max-width: 900px;
+  padding: 1rem; /* 增加padding */
+}
+
+.history-section h3 {
+  text-align: center;
+  color: #23272a;
+  margin-bottom: 1.5rem;
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-height: 300px; /* 减少最大高度 */
+  overflow-y: auto;
+  padding: 1rem;
+  background: rgba(255,255,255,0.7);
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.05);
+  min-height: 80px; /* 设置最小高度 */
+}
+
+/* 空历史记录时的样式 */
+.history-list:empty::after {
+  content: "No history yet";
+  text-align: center;
+  color: #666;
+  font-style: italic;
+  padding: 2rem;
+  display: block;
+}
+
+.history-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem;
+  background: rgba(255,255,255,0.9);
+  border-radius: 12px;
+  border-left: 4px solid #43b581;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+}
+
+.history-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.history-item .history-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.history-item .history-plant {
+  font-weight: bold;
+  color: #23272a;
+  font-size: 1.1em;
+}
+
+.history-item .history-mutations {
+  font-size: 0.9em;
+  color: #666;
+}
+
+.history-item .history-value {
+  font-weight: bold;
+  color: #43b581;
+  font-size: 1.2em;
+}
+
+.history-item .history-delete {
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  font-size: 1.3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(231,76,60,0.3);
+}
+
+.history-item .history-delete:hover {
+  background: #c0392b;
+  transform: scale(1.1);
+  box-shadow: 0 4px 16px rgba(231,76,60,0.4);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  /* 英雄区域移动端调整 */
+  .hero {
+    padding: 1rem 1rem 2rem 1rem;
+    margin-top: 50px;
+    min-height: 100vh; /* 使用最小高度 */
+    margin-bottom: 2rem;
+  }
+  
+  .hero-glass {
+    z-index: 3;
+    padding: 1.5rem 1rem;
+  margin: 0;
+    width: 100%;
+    min-height: 80vh; /* 使用最小高度而不是固定高度 */
+    border-radius: 15px;
+    overflow: visible; /* 允许内容自然流动 */
+  }
+  
+  /* 标题移动端调整 */
+  .hero-glass h1 {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .hero-glass h2 {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* 植物标签页移动端 */
+  .plant-tabs {
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .tab {
+    padding: 0.5em 1.2em;
+    font-size: 0.9em;
+  }
+  
+  /* 植物搜索移动端 */
+  .plant-search {
+    max-width: 100%;
+    padding: 0.8em 1em;
+    margin: 1rem 0;
+  }
+  
+  /* 植物列表移动端 */
+  .plant-list {
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr)); /* 适中的最小宽度 */
+    gap: 0.4rem; /* 适中的间距 */
+    margin: 1rem 0; /* 保持合理的上下间距 */
+    max-width: 100%;
+    max-height: 240px; /* 增加高度以显示更多内容 */
+    overflow-y: auto;
+    padding-right: 0.3rem;
+  }
+  
+  .plant-item {
+    height: 55px; /* 进一步减少高度 */
+    padding: 0.3em 0.1em 0.1em 0.1em; /* 进一步减少padding */
+  }
+  
+  .plant-icon {
+    font-size: 2em;
+    margin-bottom: 0.2em;
+  }
+  
+  .plant-item span {
+    font-size: 0.8em;
+  }
+  
+  .plant-value {
+    font-size: 0.7em;
+  }
+  
+  /* 变异工具栏移动端 */
+  .mutation-toolbar {
+    margin: 1.5rem 0; /* 减少上下间距 */
+    max-width: 100%;
+  }
+  
+  .mutation-controls {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.6rem;
+    padding: 0.8rem;
+  }
+  
+  .mutation-title {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+  
+  .mutation-help-btn,
+  .mutation-sort-btn,
+  .mutation-hide-btn {
+    padding: 0.6em 1em;
+    font-size: 0.85em;
+    width: 100%;
+  }
+  
+  .mutation-search {
+    max-width: 100%;
+    padding: 0.7em 1em;
+  }
+  
+  /* 变异列表移动端 */
+  .mutation-list {
+    gap: 0.4rem; /* 适中的间距 */
+    margin: 1rem 0; /* 保持合理的上下间距 */
+    max-width: 100%;
+    max-height: 180px; /* 增加高度以显示更多内容 */
+    overflow-y: auto;
+    padding-right: 0.3rem;
+  }
+  
+  .mutation-chip {
+    padding: 0.5em 1em;
+    font-size: 0.85em;
+    margin: 0.2em;
+  }
+  
+  /* 公式显示移动端 */
+  .formula-display {
+    margin: 1.5rem 0;
+    padding: 1rem 1.2rem;
+    max-width: 100%;
+  }
+  
+  .formula-text {
+    font-size: 1em;
+  }
+  
+  /* 输入区移动端 */
+  .input-section {
+    margin: 2rem 0;
+    max-width: 100%;
+    padding: 1.5rem;
+  }
+  
+  .input-row input[type="number"] {
+    padding: 0.8em 1em;
+    font-size: 1em;
+  }
+  
+  /* 结果区移动端 */
+  .result-section {
+    margin: 2rem 0;
+    max-width: 100%;
+    padding: 1.5rem;
+  }
+  
+  .result-main {
+    font-size: 2.2em;
+  }
+  
+  .result-unit {
+    font-size: 1.1em;
+  }
+  
+  /* 操作按钮移动端 */
+  .action-buttons {
+    flex-direction: column;
+    gap: 0.8rem;
+    margin: 2rem 0;
+    max-width: 100%;
+  }
+  
+  .action-btn {
+    width: 100%;
+    padding: 1em 1.5em;
+    min-width: auto;
+    font-size: 0.95em;
+  }
+  
+  /* 反向计算区移动端 */
+  .reverse-calc-section {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    max-width: 100%;
+  }
+  
+  /* 历史记录移动端 */
+  .history-section {
+    margin: 2rem 0;
+    max-width: 100%;
+  }
+  
+  .history-section h3 {
+    font-size: 1.5em;
+    margin-bottom: 1rem;
+  }
+  
+  .history-list {
+    max-height: 250px;
+    padding: 0.8rem;
+  }
+  
+  .history-item {
+    padding: 1rem;
+  }
+  
+  .history-item .history-plant {
+    font-size: 1em;
+  }
+  
+  .history-item .history-value {
+    font-size: 1.1em;
+  }
+  
+  .history-item .history-delete {
+    width: 32px;
+    height: 32px;
+    font-size: 1.2em;
+  }
+}
+
+/* 超小屏幕适配 */
+@media (max-width: 480px) {
+  .hero {
+    padding: 80px 0.5rem 2rem 0.5rem;
+  }
+  
+  .hero-glass {
+    padding: 1.5rem 0.8rem 2.5rem 0.8rem;
+  }
+  
+  .hero-glass h1 {
+    font-size: 1.8rem;
+  }
+  
+  .hero-glass h2 {
+    font-size: 1.2rem;
+  }
+  
+  .plant-list {
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 0.6rem;
+  }
+  
+  .plant-item {
+    height: 90px;
+  }
+  
+  .plant-icon {
+    font-size: 1.8em;
+  }
+  
+  .plant-item span {
+    font-size: 0.75em;
+  }
+  
+  .mutation-chip {
+    padding: 0.4em 0.8em;
+    font-size: 0.8em;
+  }
+  
+  .input-section {
+    padding: 1.2rem;
+  }
+  
+  .result-main {
+    font-size: 1.8em;
+  }
+}
+
+/* 隐藏管理员变异 */
+.mutation-chip.admin-hidden {
+  display: none;
+}
+
+/* 选中状态 */
+.mutation-chip.selected {
+  background: #5865f2;
+  color: #fff;
+  transform: scale(1.08);
+  font-weight: bold;
+}
+
+.plant-item.selected {
+  background: #5865f2;
+  color: #fff;
+  border: 2px solid #f1c40f;
+  transform: scale(1.08);
+  box-shadow: 0 4px 16px rgba(88,101,242,0.10);
+} 
+
+/* 滚动行为控制 */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* 为固定导航栏留出空间 */
+}
+
+body {
+  overflow-x: hidden;
+  width: 100%;
+  scroll-behavior: smooth;
+}
+
+/* 防止页面自动滚动到锚点 */
+html:not([data-scroll-behavior="smooth"]) {
+  scroll-behavior: auto;
+}
+
+/* 确保英雄区域不会被自动滚动到 */
+.hero {
+  scroll-margin-top: 0;
+  scroll-padding-top: 0;
+}
+
+/* 其他section的滚动边距 */
+#stats, #map, #tips, #community {
+  scroll-margin-top: 80px;
+  scroll-padding-top: 80px;
+}
+
+/* 移动端滚动边距调整 */
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 60px;
+  }
+  
+  #stats, #map, #tips, #community {
+    scroll-margin-top: 60px;
+    scroll-padding-top: 60px;
+  }
+} 
+
+/* Live Stats区域样式 */
+.live-stats-section {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+  padding: 6rem 2rem 4rem 2rem; /* 增加上下padding */
+  position: relative;
+  z-index: 1;
+  display: block !important; /* 确保显示 */
+  visibility: visible !important; /* 确保可见 */
+  min-height: 200px; /* 确保有最小高度 */
+  background: rgba(255, 0, 0, 0.1); /* 临时红色背景用于调试 */
+}
+
+/* 统计区域样式 */
+.stats-section {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+  padding: 6rem 2rem 4rem 2rem; /* 增加上下padding */
+  position: relative;
+  z-index: 1;
+  display: block !important; /* 确保显示 */
+  visibility: visible !important; /* 确保可见 */
+  min-height: 200px; /* 确保有最小高度 */
+  background: rgba(0, 255, 0, 0.1); /* 临时绿色背景用于调试 */
+}
+
+.stats-container {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 2rem;
+  margin: 0 auto;
+  max-width: 700px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  display: block !important; /* 确保显示 */
+  visibility: visible !important; /* 确保可见 */
+}
+
+.stats-container h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  color: #23272a;
+}
+
+.stats-subtitle {
+  font-size: 1.1rem;
+  color: #23272a;
+  opacity: 0.92;
+  margin-bottom: 2.2rem;
+}
+
+/* 确保统计区域的计数器容器不会与计算器重叠 */
+.stats-section .counter-container {
+  background: rgba(255, 255, 255, 0.7);
   border-radius: 18px;
-  border: 1.5px solid rgba(255,255,255,0.25);
+  box-shadow: 0 4px 24px rgba(88,101,242,0.10);
+  margin: 2rem auto 0 auto;
+  max-width: 480px;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
 }
 
-.counter-container,
-.timeline-container,
-.milestone-card,
-.map-container,
+.stats-section .counter h2 {
+  color: #3b4cca;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.stats-section .player-count {
+  color: #3b4cca;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  font-size: 3.5rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.stats-section .update-time {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.stats-section .trend-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.stats-section .trend-indicator span:first-child {
+  color: #43b581;
+}
+
+.stats-section .trend-indicator span:last-child {
+  color: #43b581;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+  .live-stats-section {
+    padding: 4rem 1rem 2rem 1rem; /* 移动端增加上下padding */
+    margin: 0 auto;
+  }
+  
+  .stats-section {
+    padding: 4rem 1rem 2rem 1rem; /* 移动端增加上下padding */
+    margin: 0 auto;
+  }
+  
+  .stats-container {
+    padding: 1.5rem;
+  }
+  
+  .stats-container h1 {
+    font-size: 1.8rem;
+  }
+  
+  .stats-subtitle {
+    font-size: 1rem;
+  }
+  
+  .stats-section .counter-container {
+    padding: 1.2rem 0.5rem;
+  }
+  
+  .stats-section .player-count {
+    font-size: 2.2rem;
+  }
+  
+  .milestone-cards {
+    gap: 3rem;
+    margin: 4rem auto 3rem auto;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  
+  .timeline-container {
+    margin: 3rem auto 4rem;
+  }
+} 
+
+.hero.hide-after-scroll {
+  height: 0 !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  transition: height 0.5s, padding 0.5s;
+} 
+
+/* 统一所有主要section区块的毛玻璃背景 */
+.live-stats-section,
+.stats-section,
+.map-section,
 .tips-section,
-.tip-card,
-.community-content,
-.footer-content,
 .community-section {
-  background: none !important;
-  box-shadow: none;
-}
-
-.counter-container.glass,
-.timeline-container.glass,
-.milestone-card.glass,
-.map-container.glass,
-.tips-section.glass,
-.tip-card.glass,
-.community-content.glass,
-.footer-content.glass,
-.community-section.glass {
-  background: rgba(255,255,255,0.35) !important;
+  background: rgba(255,255,255,0.65) !important;
   box-shadow: 0 8px 32px rgba(0,0,0,0.15);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-radius: 18px;
   border: 1.5px solid rgba(255,255,255,0.25);
-}
-
-/* 保证标题和主要内容颜色不变 */
-.counter-container *,
-.timeline-container *,
-.milestone-card *,
-.map-container *,
-.tips-section *,
-.tip-card *,
-.community-content *,
-.footer-content *,
-.community-section * {
-  color: #23272a !important;
-}
-
-/* Hero glassmorphism block for hero section */
-.hero-glass {
-    background: rgba(255,255,255,0.65) !important;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-radius: 18px;
-    border: 1.5px solid rgba(255,255,255,0.25);
-    max-width: 540px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 2.5rem 2.5rem 2.2rem 2.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.hero-glass h1,
-.hero-glass h2,
-.hero-glass p,
-.hero-glass span,
-.hero-glass div,
-.hero-glass strong {
-  color: #23272a !important;
-  text-shadow: none !important;
-  font-weight: 800;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.hero h1, .hero-subtitle {
-    color: #23272a !important;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.18);
-}
-
-@media (max-width: 700px) {
-  .hero-glass {
-    max-width: 98vw;
-    padding: 1.2rem 0.7rem 1.2rem 0.7rem;
-    border-radius: 1.2rem;
-  }
-}
-
-.title-glass {
-    display: inline-block;
-    padding: 0.3em 1.2em;
-    border-radius: 1.2em;
-    background: rgba(255,255,255,0.45);
-    backdrop-filter: blur(8px) saturate(1.1);
-    -webkit-backdrop-filter: blur(8px) saturate(1.1);
-    box-shadow: 0 2px 12px 0 rgba(31,38,135,0.08);
-    color: #23272a !important;
-    text-shadow: none !important;
-    font-weight: 800;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.community-card {
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
-  padding: 2.5rem 2rem 2rem 2rem;
-  max-width: 700px;
-  margin: 0 auto 2.5rem auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-@media (max-width: 800px) {
-  .community-card {
-    max-width: 98vw;
-    padding: 1.2rem 0.7rem 1.2rem 0.7rem;
-    border-radius: 1.2rem;
-  }
-}
-
-#timeline-chart {
-  background: transparent !important;
-}
-
-.timeline-container *,
-.milestone-card * {
-  color: #23272a !important;
-  text-shadow: none !important;
-  font-weight: 800;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.tip-card *,
-.community-card * {
-  color: #23272a !important;
-  text-shadow: none !important;
-  font-weight: 800;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.footer-content {
-  background: rgba(35, 39, 42, 0.98) !important;
-  color: #fff !important;
-  text-shadow: none !important;
-  box-shadow: 0 -4px 24px rgba(0,0,0,0.18);
-  border-radius: 18px 18px 0 0;
-  padding: 2.2rem 1rem 2.2rem 1rem;
-  letter-spacing: 0.01em;
-  line-height: 1.7;
-  width: 100%;
-  max-width: none;
-  margin: 0;
-}
-.footer-content p {
-  margin: 0.5rem 0;
-  opacity: 0.92;
-  font-size: 1.08rem;
-}
-.footer-content p:first-child {
-  border-bottom: 1px solid rgba(255,255,255,0.10);
-  padding-bottom: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-footer {
-  background: transparent !important;
-  box-shadow: none !important;
-  border: none !important;
 } 
+
+ 

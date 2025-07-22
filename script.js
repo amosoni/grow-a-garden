@@ -1,8 +1,74 @@
+// 立即防止自动滚动
+preventAutoScroll();
+
+// 完整的变异数据
+const mutations = [
+  // 普通变异
+  { key: "rainbow", name: "Rainbow", multiplier: 50, admin: false, desc: "Obtained from fruit growth or butterfly event" },
+  { key: "gold", name: "Gold", multiplier: 20, admin: false, desc: "Obtained from fruit growth or dragonfly event" },
+  { key: "wet", name: "Wet", multiplier: 2, admin: false, desc: "Rainy weather or pet" },
+  { key: "chilled", name: "Chilled", multiplier: 2, admin: false, desc: "Snowy weather or spray" },
+  { key: "frozen", name: "Frozen", multiplier: 10, admin: false, desc: "Wet + Frozen" },
+  { key: "choc", name: "Choc", multiplier: 2, admin: false, desc: "Spray/Sprinkler" },
+  { key: "moonlit", name: "Moonlit", multiplier: 2, admin: false, desc: "Night event" },
+  { key: "bloodlit", name: "Bloodlit", multiplier: 4, admin: false, desc: "Blood moon event" },
+  { key: "windstruck", name: "Windstruck", multiplier: 2, admin: false, desc: "Wind event or pterosaur" },
+  { key: "twisted", name: "Twisted", multiplier: 5, admin: false, desc: "Tornado event or pterosaur" },
+  { key: "sandy", name: "Sandy", multiplier: 3, admin: false, desc: "Sandstorm weather" },
+  { key: "clay", name: "Clay", multiplier: 5, admin: false, desc: "Wet + Sandy" },
+  { key: "pollinated", name: "Pollinated", multiplier: 3, admin: false, desc: "Bee swarm/bee" },
+  { key: "honeyglazed", name: "Honeyglazed", multiplier: 5, admin: false, desc: "Honey sprinkler/bumblebee" },
+  { key: "drenched", name: "Drenched", multiplier: 5, admin: false, desc: "Tropical rain weather" },
+  { key: "cloudtouched", name: "Cloudtouched", multiplier: 5, admin: false, desc: "Hyacinth parrot or spray" },
+  { key: "amber", name: "Amber", multiplier: 10, admin: false, desc: "Raptor or amber spray" },
+  { key: "oldamber", name: "OldAmber", multiplier: 20, admin: false, desc: "Let amber age" },
+  { key: "ancientamber", name: "AncientAmber", multiplier: 50, admin: false, desc: "Let old amber continue to age" },
+  { key: "friendbound", name: "Friendbound", multiplier: 70, admin: false, desc: "W.I.P" },
+  { key: "tempestous", name: "Tempestous", multiplier: 12, admin: false, desc: "Wind + Twisted" },
+  
+  // 管理员变异
+  { key: "shocked", name: "Shocked", multiplier: 100, admin: true, desc: "Thunderstorm/special event" },
+  { key: "disco", name: "Disco", multiplier: 125, admin: true, desc: "Disco admin event" },
+  { key: "celestial", name: "Celestial", multiplier: 120, admin: true, desc: "Meteor shower event" },
+  { key: "zombified", name: "Zombified", multiplier: 25, admin: true, desc: "Zombie chicken passive" },
+  { key: "plasma", name: "Plasma", multiplier: 5, admin: true, desc: "Admin laser event" },
+  { key: "voidtouched", name: "Void Touched", multiplier: 135, admin: true, desc: "Admin black hole event" },
+  { key: "burnt", name: "Burnt", multiplier: 4, admin: true, desc: "Roasted owl pet or spray" },
+  { key: "molten", name: "Molten", multiplier: 25, admin: true, desc: "Admin volcano event" },
+  { key: "meteoric", name: "Meteoric", multiplier: 125, admin: true, desc: "Meteor impact event" },
+  { key: "heavenly", name: "Heavenly", multiplier: 5, admin: true, desc: "Jandel admin event" },
+  { key: "sundried", name: "Sundried", multiplier: 85, admin: true, desc: "Heatwave weather" },
+  { key: "verdant", name: "Verdant", multiplier: 4, admin: true, desc: "Scarlet macaw" },
+  { key: "paradisal", name: "Paradisal", multiplier: 100, admin: true, desc: "Sundried + Verdant" },
+  { key: "galactic", name: "Galactic", multiplier: 120, admin: true, desc: "Admin event" },
+  { key: "aurora", name: "Aurora", multiplier: 90, admin: true, desc: "Aurora weather" },
+  { key: "alienlike", name: "Alienlike", multiplier: 100, admin: true, desc: "Alien admin event" },
+  { key: "fried", name: "Fried", multiplier: 8, admin: true, desc: "Fried rain admin event" },
+  { key: "cooked", name: "Cooked", multiplier: 10, admin: true, desc: "Roasted owl" },
+  { key: "ceramic", name: "Ceramic", multiplier: 30, admin: true, desc: "Clay + Roasted/Sundried" },
+  { key: "dawnbound", name: "Dawnbound", multiplier: 150, admin: true, desc: "Sun god event, hold 4 sunflowers" },
+  { key: "infected", name: "Infected", multiplier: 75, admin: true, desc: "Zombie admin mutation" }
+];
+
+// 分类数据
+const categories = [
+  { key: "all", name: "All" },
+  { key: "BaseValue", name: "BaseValue" },
+  { key: "Exotic Seed Pack", name: "Exotic Seed Pack" },
+  { key: "Prehistoric Event", name: "Prehistoric Event" },
+  { key: "Event Seed Pack", name: "Event Seed Pack" }
+];
+
 // 全局变量
 let map;
 let heatmapLayer;
 let playerCountHistory = [];
 let currentPlayerCount = 21347891;
+let selectedPlant = plants[0];
+let selectedMutations = [];
+let plantHistory = [];
+let hideAdminMutations = false;
+let mutationSortBy = 'value'; // 'value' or 'alphabetical'
 
 // Roblox 游戏配置 - 已根据实际信息修正
 const ROBLOX_CONFIG = {
@@ -49,16 +115,417 @@ const globalPlayerData = [
     { lat: 60.1699, lng: 24.9384, intensity: 0.3, country: 'FI' } // 赫尔辛基
 ];
 
-// 初始化页面
+// 加载植物图片映射
+let plantImgMap = {};
+fetch('plant_img_map_final.json')
+  .then(res => res.json())
+  .then(data => {
+    plantImgMap = data;
+    renderPlants(); // 图片映射加载后渲染
+  });
+
+// 渲染作物列表
+function renderPlants(category = 'all', searchTerm = '') {
+  const plantList = document.getElementById('plant-list');
+  let filteredPlants = plants;
+  
+  // 按分类筛选
+  if (category !== 'all') {
+    filteredPlants = plants.filter(plant => plant.category === category);
+  }
+  
+  // 按搜索词筛选
+  if (searchTerm) {
+    filteredPlants = filteredPlants.filter(plant => 
+      plant.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+  }
+  
+  plantList.innerHTML = filteredPlants.map(plant => `
+    <div class="plant-item ${selectedPlant.key === plant.key ? 'selected' : ''}" data-plant="${plant.key}">
+      <div class="plant-icon">
+        <img src="${plantImgMap[plant.key] || 'https://your-cdn.com/default-plant.png'}" alt="${plant.name}" style="width:32px;height:32px;object-fit:contain;">
+      </div>
+      <span>${plant.name}</span>
+      <div class="plant-value">$${plant.value}</div>
+    </div>
+  `).join('');
+  
+  // 添加点击事件
+  document.querySelectorAll('.plant-item').forEach(item => {
+    item.addEventListener('click', function() {
+      const plantKey = this.dataset.plant;
+      selectedPlant = plants.find(p => p.key === plantKey);
+      
+      // 更新选中状态
+      document.querySelectorAll('.plant-item').forEach(i => i.classList.remove('selected'));
+      this.classList.add('selected');
+      
+      // 重新计算
+      calculateValue();
+    });
+  });
+}
+
+// 渲染变异列表
+function renderMutations(searchTerm = '') {
+  const mutationList = document.getElementById('mutation-list');
+  let filteredMutations = mutations;
+  
+  // 隐藏管理员变异
+  if (hideAdminMutations) {
+    filteredMutations = mutations.filter(m => !m.admin);
+  }
+  
+  // 按搜索词筛选
+  if (searchTerm) {
+    filteredMutations = filteredMutations.filter(m => 
+      m.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+  }
+  
+  // 排序
+  if (mutationSortBy === 'value') {
+    filteredMutations.sort((a, b) => b.multiplier - a.multiplier);
+  } else {
+    filteredMutations.sort((a, b) => a.name.localeCompare(b.name));
+  }
+  
+  mutationList.innerHTML = filteredMutations.map(mutation => `
+    <button class="mutation-chip ${selectedMutations.includes(mutation.key) ? 'selected' : ''} ${mutation.admin ? 'admin' : ''}" 
+            data-key="${mutation.key}" 
+            title="${mutation.desc}">
+      ${mutation.name} (${mutation.multiplier}x)
+    </button>
+  `).join('');
+  
+  // 添加点击事件
+  document.querySelectorAll('.mutation-chip').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const key = this.dataset.key;
+      const index = selectedMutations.indexOf(key);
+      
+      if (index > -1) {
+        selectedMutations.splice(index, 1);
+        this.classList.remove('selected');
+      } else {
+        selectedMutations.push(key);
+        this.classList.add('selected');
+      }
+      
+      // 重新计算
+      calculateValue();
+    });
+  });
+}
+
+// 计算价值
+function calculateValue() {
+  const weight = parseFloat(document.getElementById('crop-weight').value) || 0;
+  const amount = parseInt(document.getElementById('crop-amount').value) || 1;
+  const friendBoost = parseInt(document.getElementById('friend-boost').value) || 0;
+  
+  // 基础价值
+  let baseValue = selectedPlant.value * weight * amount;
+  
+  // 变异倍率
+  let multiplier = 1;
+  selectedMutations.forEach(key => {
+    const mutation = mutations.find(m => m.key === key);
+    if (mutation) {
+      multiplier *= mutation.multiplier;
+    }
+  });
+  
+  // 好友加成
+  const friendMultiplier = 1 + (friendBoost / 100);
+  
+  // 总价值
+  const totalValue = baseValue * multiplier * friendMultiplier;
+  
+  // 显示结果
+  const resultElement = document.getElementById('calc-result');
+  const unitElement = document.getElementById('calc-result-unit');
+  
+  if (totalValue >= 1000000) {
+    resultElement.textContent = `$${(totalValue / 1000000).toFixed(3)} Million`;
+    unitElement.textContent = `(${(totalValue / 1000000).toFixed(3)} Million)`;
+  } else if (totalValue >= 1000) {
+    resultElement.textContent = `$${(totalValue / 1000).toFixed(3)} Thousand`;
+    unitElement.textContent = `(${(totalValue / 1000).toFixed(3)} Thousand)`;
+  } else {
+    resultElement.textContent = `$${totalValue.toFixed(2)}`;
+    unitElement.textContent = '';
+  }
+}
+
+// 反向计算重量
+function calculateWeight() {
+  const targetValue = parseFloat(document.getElementById('target-value').value) || 0;
+  const amount = parseInt(document.getElementById('crop-amount').value) || 1;
+  const friendBoost = parseInt(document.getElementById('friend-boost').value) || 0;
+  
+  // 变异倍率
+  let multiplier = 1;
+  selectedMutations.forEach(key => {
+    const mutation = mutations.find(m => m.key === key);
+    if (mutation) {
+      multiplier *= mutation.multiplier;
+    }
+  });
+  
+  // 好友加成
+  const friendMultiplier = 1 + (friendBoost / 100);
+  
+  // 计算所需重量
+  const requiredWeight = targetValue / (selectedPlant.value * amount * multiplier * friendMultiplier);
+  
+  // 显示结果
+  const weightResult = document.getElementById('weight-result');
+  if (requiredWeight > 0) {
+    weightResult.textContent = `≈${requiredWeight.toFixed(3)} kg`;
+  } else {
+    weightResult.textContent = `≈0 kg`;
+  }
+}
+
+// 添加到历史记录
+function addToHistory() {
+  const weight = parseFloat(document.getElementById('crop-weight').value) || 0;
+  const amount = parseInt(document.getElementById('crop-amount').value) || 1;
+  const friendBoost = parseInt(document.getElementById('friend-boost').value) || 0;
+  
+  // 计算价值
+  let baseValue = selectedPlant.value * weight * amount;
+  let multiplier = 1;
+  selectedMutations.forEach(key => {
+    const mutation = mutations.find(m => m.key === key);
+    if (mutation) {
+      multiplier *= mutation.multiplier;
+    }
+  });
+  const friendMultiplier = 1 + (friendBoost / 100);
+  const totalValue = baseValue * multiplier * friendMultiplier;
+  
+  // 创建历史记录
+  const historyItem = {
+    id: Date.now(),
+    plant: selectedPlant.name,
+    mutations: selectedMutations.map(key => mutations.find(m => m.key === key).name).join(', '),
+    weight: weight,
+    amount: amount,
+    friendBoost: friendBoost,
+    value: totalValue
+  };
+  
+  plantHistory.unshift(historyItem);
+  renderHistory();
+}
+
+// 渲染历史记录
+function renderHistory() {
+  const historyList = document.getElementById('history-list');
+  
+  if (plantHistory.length === 0) {
+    historyList.innerHTML = '<p style="text-align: center; color: #666;">No history yet</p>';
+    return;
+  }
+  
+  historyList.innerHTML = plantHistory.map(item => `
+    <div class="history-item">
+      <div class="history-info">
+        <div class="history-plant">${item.plant}</div>
+        <div class="history-mutations">${item.mutations || 'No mutations'}</div>
+      </div>
+      <div class="history-value">$${item.value.toFixed(2)}</div>
+      <button class="history-delete" onclick="deleteHistory(${item.id})">×</button>
+    </div>
+  `).join('');
+}
+
+// 删除历史记录
+function deleteHistory(id) {
+  plantHistory = plantHistory.filter(item => item.id !== id);
+  renderHistory();
+}
+
+// 清空变异
+function clearMutations() {
+  selectedMutations = [];
+  renderMutations();
+  calculateValue();
+}
+
+// 最大化变异
+function maxMutations() {
+  selectedMutations = mutations.filter(m => !m.admin || !hideAdminMutations).map(m => m.key);
+  renderMutations();
+  calculateValue();
+}
+
+// 切换模式
+function toggleMode() {
+  const reverseCalc = document.getElementById('reverse-calc');
+  const isHidden = reverseCalc.style.display === 'none';
+  reverseCalc.style.display = isHidden ? 'block' : 'none';
+}
+
+// 初始化计算器
+function initializeCalculator() {
+  // 渲染初始数据
+  renderPlants();
+  renderMutations();
+  
+  // 分类Tab事件
+  document.querySelectorAll('.plant-tabs .tab').forEach(tab => {
+    tab.addEventListener('click', function() {
+      document.querySelectorAll('.plant-tabs .tab').forEach(t => t.classList.remove('active'));
+      this.classList.add('active');
+      renderPlants(this.dataset.category);
+    });
+  });
+  
+  // 作物搜索
+  document.querySelector('.plant-search').addEventListener('input', function() {
+    const activeTab = document.querySelector('.plant-tabs .tab.active');
+    renderPlants(activeTab.dataset.category, this.value);
+  });
+  
+  // 变异搜索
+  document.querySelector('.mutation-search').addEventListener('input', function() {
+    renderMutations(this.value);
+  });
+  
+  // 变异排序
+  document.querySelectorAll('.mutation-sort-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.mutation-sort-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      mutationSortBy = this.dataset.sort;
+      renderMutations();
+    });
+  });
+  
+  // 隐藏管理员变异
+  document.getElementById('hide-admin-btn').addEventListener('click', function() {
+    hideAdminMutations = !hideAdminMutations;
+    this.textContent = hideAdminMutations ? 'Show Admin Mutations' : 'Hide Admin Mutations';
+    renderMutations();
+  });
+  
+  // 输入变化事件
+  document.getElementById('crop-weight').addEventListener('input', calculateValue);
+  document.getElementById('crop-amount').addEventListener('input', calculateValue);
+  document.getElementById('friend-boost').addEventListener('input', function() {
+    document.getElementById('friend-boost-value').textContent = this.value + '%';
+    calculateValue();
+  });
+  
+  // 操作按钮事件
+  document.getElementById('add-to-list').addEventListener('click', addToHistory);
+  document.getElementById('clear-mutations').addEventListener('click', clearMutations);
+  document.getElementById('max-mutations').addEventListener('click', maxMutations);
+  document.getElementById('toggle-mode').addEventListener('click', toggleMode);
+  
+  // 反向计算
+  document.getElementById('update-weight').addEventListener('click', calculateWeight);
+  document.getElementById('target-value').addEventListener('input', calculateWeight);
+  
+  // 初始计算
+  calculateValue();
+  renderHistory();
+
+  // 变异帮助按钮事件
+  document.querySelector('.mutation-help-btn').addEventListener('click', function() {
+    let html = '<h3>How to get each mutation?</h3><ul style="text-align:left;">';
+    mutations.forEach(m => {
+      html += `<li><b>${m.name}</b>: ${m.desc}</li>`;
+    });
+    html += '</ul>';
+    const modal = document.createElement('div');
+    modal.style.position = 'fixed';
+    modal.style.left = '0'; modal.style.top = '0'; modal.style.width = '100vw'; modal.style.height = '100vh';
+    modal.style.background = 'rgba(0,0,0,0.4)';
+    modal.style.zIndex = 99999;
+    modal.innerHTML = `<div style=\"background:#fff;padding:2em 2em 1em 2em;max-width:500px;margin:5vh auto;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.2);\">${html}<div style=\"text-align:right;\"><button id=\"close-mutation-help\" style=\"margin-top:1em;\">Close</button></div></div>`;
+    modal.addEventListener('click', e => { if (e.target.id === 'close-mutation-help' || e.target === modal) modal.remove(); });
+    document.body.appendChild(modal);
+  });
+}
+
+// 滚动控制函数
+function scrollToSection(sectionId) {
+  const section = document.getElementById(sectionId);
+  if (section) {
+    const headerHeight = 60; // 导航栏高度
+    const sectionTop = section.offsetTop - headerHeight - 20; // 减去导航栏高度和额外间距
+    
+    window.scrollTo({
+      top: sectionTop,
+      behavior: 'smooth'
+    });
+  }
+}
+
+// 防止页面加载时自动滚动到锚点
+function preventAutoScroll() {
+  // 立即移除URL中的锚点
+  if (window.location.hash) {
+    const hash = window.location.hash;
+    window.history.replaceState(null, null, window.location.pathname);
+    
+    // 如果需要滚动到特定section，使用我们的函数
+    const sectionId = hash.substring(1);
+    if (sectionId && sectionId !== '') {
+      setTimeout(() => {
+        scrollToSection(sectionId);
+      }, 100);
+    }
+  }
+  
+  // 确保页面滚动到顶部
+  window.scrollTo(0, 0);
+  
+  // 禁用所有可能导致自动滚动的行为
+  document.addEventListener('DOMContentLoaded', function() {
+    // 移除所有锚点链接的默认行为
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const href = this.getAttribute('href');
+        if (href && href !== '#') {
+          const sectionId = href.substring(1);
+          scrollToSection(sectionId);
+        }
+      });
+    });
+  });
+  
+  // 防止浏览器自动滚动到锚点
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+}
+
+// 页面加载时初始化
 document.addEventListener('DOMContentLoaded', function() {
+  // 防止自动滚动
+  preventAutoScroll();
+  
+  // 初始化地图和统计功能
     initializePlayerCounter();
     initializeTimelineChart();
     initializeHeatmap();
     initializeSmoothScrolling();
+  
+  // 初始化计算器
+  initializeCalculator();
+  
+  // 立即计算初始值
+  calculateValue();
+  
+  // 开始实时更新
     startRealTimeUpdates();
-    
-    // 获取用户位置并添加到热力图
-    getUserLocationAndAddToMap();
 });
 
 // 获取真实的Roblox玩家数量
@@ -128,13 +595,13 @@ async function getUserLocationAndAddToMap() {
         
         userMarker.bindPopup(`
             <div style="text-align: center;">
-                <strong>📍 你的位置</strong><br>
+                <strong>📍 Your Location</strong><br>
                 ${userLocation.city}, ${userLocation.countryName}<br>
-                <small>欢迎加入 ${ROBLOX_CONFIG.GAME_NAME} 社区！</small>
+                <small>Welcome to the ${ROBLOX_CONFIG.GAME_NAME} community!</small>
             </div>
         `);
         
-        console.log('用户位置已添加到地图:', userLocation);
+        console.log('User location added to map:', userLocation);
     }
 }
 
@@ -156,12 +623,12 @@ async function updatePlayerCount() {
         if (realData && realData.count > 0) {
             // 使用真实数据
             currentPlayerCount = realData.count;
-            console.log('获取到真实Roblox数据:', realData);
+            console.log('Fetched real Roblox data:', realData);
         } else {
             // 使用模拟数据作为备用
             const variation = Math.floor(Math.random() * 10000) - 5000;
             currentPlayerCount = Math.max(20000000, currentPlayerCount + variation);
-            console.log('使用模拟数据');
+            console.log('Using mock data');
         }
         
         // 格式化数字显示
@@ -185,7 +652,7 @@ async function updatePlayerCount() {
         }
         
     } catch (error) {
-        console.error('更新玩家数量失败:', error);
+        console.error('Failed to update player count:', error);
         // 出错时使用模拟数据
         const variation = Math.floor(Math.random() * 10000) - 5000;
         currentPlayerCount = Math.max(20000000, currentPlayerCount + variation);
@@ -273,7 +740,7 @@ async function fetchPlayerHistory() {
     if (!res.ok) throw new Error('Network error');
     return await res.json(); // [{date, count}, ...]
   } catch (e) {
-    console.warn('历史数据获取失败，使用模拟数据');
+    console.warn('Failed to fetch history data, using mock data');
     return mockPlayerData.history;
   }
 }
@@ -285,7 +752,7 @@ async function fetchPlayerHeatmap() {
     if (!res.ok) throw new Error('Network error');
     return await res.json(); // [{lat, lng, intensity, country}, ...]
   } catch (e) {
-    console.warn('热力图数据获取失败，使用模拟数据');
+    console.warn('Failed to fetch heatmap data, using mock data');
     return globalPlayerData;
   }
 }
@@ -295,7 +762,7 @@ let timelineChart;
 async function initializeTimelineChart() {
   const ctx = document.getElementById('timeline-chart').getContext('2d');
   const loadingEl = document.createElement('div');
-  loadingEl.textContent = '加载中...';
+  loadingEl.textContent = 'Loading...';
   loadingEl.style.textAlign = 'center';
   ctx.canvas.parentNode.appendChild(loadingEl);
   let history = [];
@@ -303,7 +770,7 @@ async function initializeTimelineChart() {
     history = await fetchPlayerHistory();
     loadingEl.remove();
   } catch {
-    loadingEl.textContent = '加载失败，显示模拟数据';
+    loadingEl.textContent = 'Failed to load, showing mock data';
     history = mockPlayerData.history;
   }
   timelineChart = new Chart(ctx, {
@@ -311,7 +778,7 @@ async function initializeTimelineChart() {
     data: {
       labels: history.map(item => item.date),
       datasets: [{
-        label: '玩家数量',
+        label: 'Player Count',
         data: history.map(item => item.count),
         borderColor: '#2ecc71',
         backgroundColor: 'rgba(46, 204, 113, 0.1)',
@@ -342,7 +809,7 @@ async function initializeTimelineChart() {
                 displayColors: false,
                 callbacks: {
                     label: function(context) {
-                        return `玩家数量: ${context.parsed.y.toLocaleString()}`;
+                        return `Player Count: ${context.parsed.y.toLocaleString()}`;
                     }
                 }
             }
@@ -383,7 +850,7 @@ async function initializeHeatmap() {
     attribution: '© OpenStreetMap contributors'
   }).addTo(map);
   const loadingEl = document.createElement('div');
-  loadingEl.textContent = '加载中...';
+  loadingEl.textContent = 'Loading...';
   loadingEl.style.position = 'absolute';
   loadingEl.style.left = '50%';
   loadingEl.style.top = '50%';
@@ -398,7 +865,7 @@ async function initializeHeatmap() {
     heatData = await fetchPlayerHeatmap();
     loadingEl.remove();
   } catch {
-    loadingEl.textContent = '加载失败，显示模拟数据';
+    loadingEl.textContent = 'Failed to load, showing mock data';
     heatData = globalPlayerData;
   }
   const heatmapData = heatData.map(point => [point.lat, point.lng, point.intensity]);
@@ -424,7 +891,7 @@ async function initializeHeatmap() {
     marker.bindPopup(`
         <div style="text-align: center;">
             <strong>${getCountryName(point.country)}</strong><br>
-            活跃玩家: ${Math.floor(point.intensity * 1000000).toLocaleString()}
+            Active Players: ${Math.floor(point.intensity * 1000000).toLocaleString()}
         </div>
     `);
   });
@@ -436,10 +903,10 @@ async function initializeHeatmap() {
 // 获取国家名称
 function getCountryName(countryCode) {
     const countries = {
-        'US': '美国', 'GB': '英国', 'FR': '法国', 'JP': '日本',
-        'CN': '中国', 'RU': '俄罗斯', 'AU': '澳大利亚', 'IN': '印度',
-        'KR': '韩国', 'AE': '阿联酋', 'BR': '巴西', 'MX': '墨西哥',
-        'IT': '意大利', 'DE': '德国', 'SE': '瑞典', 'NO': '挪威', 'FI': '芬兰'
+        'US': 'United States', 'GB': 'United Kingdom', 'FR': 'France', 'JP': 'Japan',
+        'CN': 'China', 'RU': 'Russia', 'AU': 'Australia', 'IN': 'India',
+        'KR': 'South Korea', 'AE': 'United Arab Emirates', 'BR': 'Brazil', 'MX': 'Mexico',
+        'IT': 'Italy', 'DE': 'Germany', 'SE': 'Sweden', 'NO': 'Norway', 'FI': 'Finland'
     };
     return countries[countryCode] || countryCode;
 }
@@ -469,28 +936,19 @@ function updateMapStats() {
 // 获取地区名称
 function getRegion(countryCode) {
     const regions = {
-        'US': '北美', 'CA': '北美', 'MX': '北美',
-        'GB': '欧洲', 'FR': '欧洲', 'DE': '欧洲', 'IT': '欧洲', 'SE': '欧洲', 'NO': '欧洲', 'FI': '欧洲', 'RU': '欧洲',
-        'JP': '亚洲', 'CN': '亚洲', 'KR': '亚洲', 'IN': '亚洲', 'AE': '亚洲',
-        'AU': '大洋洲', 'BR': '南美'
+        'US': 'North America', 'CA': 'North America', 'MX': 'North America',
+        'GB': 'Europe', 'FR': 'Europe', 'DE': 'Europe', 'IT': 'Europe', 'SE': 'Europe', 'NO': 'Europe', 'FI': 'Europe', 'RU': 'Europe',
+        'JP': 'Asia', 'CN': 'Asia', 'KR': 'Asia', 'IN': 'Asia', 'AE': 'Asia',
+        'AU': 'Oceania', 'BR': 'South America'
     };
-    return regions[countryCode] || '其他';
+    return regions[countryCode] || 'Other';
 }
 
 // 初始化平滑滚动
 function initializeSmoothScrolling() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
+    // 移除这个函数，因为我们已经用自定义的scrollToSection函数替代了
+    // 这个函数会导致页面自动滚动到锚点
+    console.log('Smooth scrolling disabled, using custom scroll function');
 }
 
 // ====== 5. 自动刷新所有数据 ======
@@ -521,7 +979,7 @@ window.addEventListener('load', function() {
     // 初始化一些延迟加载的元素
     setTimeout(() => {
         // 可以在这里添加一些延迟加载的功能
-        console.log('页面完全加载完成');
+        console.log('Page fully loaded');
     }, 1000);
 });
 
@@ -554,7 +1012,7 @@ document.addEventListener('keydown', function(e) {
 
 // 添加错误处理
 window.addEventListener('error', function(e) {
-    console.error('页面错误:', e.error);
+    console.error('Page error:', e.error);
     // 可以在这里添加错误上报逻辑
 });
 
@@ -563,7 +1021,7 @@ window.addEventListener('load', function() {
     // 页面加载性能监控
     if ('performance' in window) {
         const perfData = performance.getEntriesByType('navigation')[0];
-        console.log('页面加载时间:', perfData.loadEventEnd - perfData.loadEventStart, 'ms');
+        console.log('Page load time:', perfData.loadEventEnd - perfData.loadEventStart, 'ms');
     }
 });
 
@@ -576,3 +1034,22 @@ window.GrowTracker = {
     fetchRealRobloxPlayerCount,
     getUserLocation
 }; 
+
+// 自动切换后核心区块收缩消失，Tracker区块自动顶到顶部
+(function() {
+  const hero = document.querySelector('.hero');
+  const nextSection = document.querySelector('#stats-hero');
+  if (!hero || !nextSection) return;
+
+  let switched = false;
+  hero.addEventListener('scroll', function () {
+    if (switched) return;
+    if (hero.scrollTop + hero.clientHeight >= hero.scrollHeight - 2) {
+      switched = true;
+      hero.classList.add('hide-after-scroll');
+      setTimeout(() => {
+        nextSection.scrollIntoView({ behavior: 'smooth' });
+      }, 500); // 等动画收缩后再滚动
+    }
+  });
+})(); 

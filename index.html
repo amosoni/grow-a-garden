@@ -3,31 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grow a Garden - Roblox实时玩家统计与全球热力图</title>
-    <meta name="description" content="Grow a Garden 实时玩家统计、全球热力图、玩家趋势分析，最权威的 Roblox Grow a Garden 数据追踪与社区互动。">
-    <meta name="keywords" content="Grow a Garden, Roblox, 玩家统计, 实时在线, 热力图, 玩家趋势, Roblox数据, Grow a Garden Tracker, Grow a Garden Stats, Grow a Garden 实时">
+    <title>Grow a Garden Calculator - Roblox Fruit/Mutation Value Tool</title>
+    <meta name="description" content="Grow a Garden Calculator - The most complete Roblox fruit and mutation value calculator. Instantly calculate crop value, mutation multipliers, and optimize your Grow a Garden strategy!">
+    <meta name="keywords" content="grow a garden calculator, Roblox, fruit value, mutation calculator, crop value, Roblox Grow a Garden, value tool, mutation multipliers, Roblox calculator, grow a garden value, grow a garden mutation, grow a garden fruit calculator">
     <link rel="canonical" href="https://your-domain.com/">
     <!-- Open Graph for social sharing -->
-    <meta property="og:title" content="Grow a Garden - Roblox实时玩家统计与全球热力图">
-    <meta property="og:description" content="Grow a Garden 实时玩家统计、全球热力图、玩家趋势分析，最权威的 Roblox Grow a Garden 数据追踪与社区互动。">
+    <meta property="og:title" content="Grow a Garden Calculator - Roblox Fruit/Mutation Value Tool">
+    <meta property="og:description" content="Grow a Garden Calculator - The most complete Roblox fruit and mutation value calculator. Instantly calculate crop value, mutation multipliers, and optimize your Grow a Garden strategy!">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://your-domain.com/">
     <meta property="og:image" content="https://your-domain.com/og-image.jpg">
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Grow a Garden - Roblox实时玩家统计与全球热力图">
-    <meta name="twitter:description" content="Grow a Garden 实时玩家统计、全球热力图、玩家趋势分析，最权威的 Roblox Grow a Garden 数据追踪与社区互动。">
+    <meta name="twitter:title" content="Grow a Garden Calculator - Roblox Fruit/Mutation Value Tool">
+    <meta name="twitter:description" content="Grow a Garden Calculator - The most complete Roblox fruit and mutation value calculator. Instantly calculate crop value, mutation multipliers, and optimize your Grow a Garden strategy!">
     <meta name="twitter:image" content="https://your-domain.com/og-image.jpg">
     <!-- 结构化数据 JSON-LD -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      "name": "Grow a Garden 实时玩家统计",
+      "name": "Grow a Garden Calculator",
       "url": "https://your-domain.com/",
-      "description": "Grow a Garden 实时玩家统计、全球热力图、玩家趋势分析，最权威的 Roblox Grow a Garden 数据追踪与社区互动。",
+      "description": "Grow a Garden Calculator - The most complete Roblox fruit and mutation value calculator. Instantly calculate crop value, mutation multipliers, and optimize your Grow a Garden strategy!",
       "inLanguage": "zh-CN",
-      "keywords": "Grow a Garden, Roblox, 玩家统计, 实时在线, 热力图, 玩家趋势, Roblox数据, Grow a Garden Tracker, Grow a Garden Stats, Grow a Garden 实时"
+      "keywords": "grow a garden calculator, Roblox, fruit value, mutation calculator, crop value, Roblox Grow a Garden, value tool, mutation multipliers, Roblox calculator, grow a garden value, grow a garden mutation, grow a garden fruit calculator"
     }
     </script>
     <!-- Roblox-like color scheme -->
@@ -48,48 +48,7 @@
             background: url('grow-bg.jpg') center center/cover no-repeat;
             opacity: 0.5;
         }
-        .hero {
-            position: relative;
-            z-index: 1;
-            background: transparent !important;
-            box-shadow: none;
-            border-radius: 0;
-            margin-top: 60px;
-            text-align: center;
-        }
-        .hero-content {
-            padding: 3rem 2rem 2.5rem 2rem;
-            background: transparent !important;
-        }
-        .counter-container {
-            /* background: #fff; */
-            border-radius: 18px;
-            box-shadow: 0 4px 24px rgba(88,101,242,0.10);
-            margin: 2rem auto 0 auto;
-            max-width: 480px;
-            padding: 2rem 1.5rem 1.5rem 1.5rem;
-        }
-        .counter h2, .player-count {
-            color: #3b4cca;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        }
-        .player-count {
-            font-size: 3.5rem;
-            font-weight: 900;
-            letter-spacing: 2px;
-        }
-        .timeline-container, .map-container, .tips-section, .community-section {
-            border-radius: 18px;
-            margin-top: 2rem;
-        }
-        .milestone-card, .tip-card, .community-content {
-            border-radius: 14px;
-        }
-        @media (max-width: 600px) {
-            .hero-content { padding: 1.5rem 0.5rem; }
-            .counter-container { padding: 1.2rem 0.5rem; }
-            .player-count { font-size: 2.2rem; }
-        }
+        /* 移除其他内联样式，让CSS文件控制 */
     </style>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HG12TJB5LZ"></script>
     <script>
@@ -104,26 +63,121 @@
     <header>
         <nav>
             <a href="#" class="logo">🌱 Grow a Garden</a>
-            <a href="#stats">Live Stats</a>
-            <a href="#map">Global Heatmap</a>
-            <a href="#tips">Tips</a>
-            <a href="#community" class="discord-btn">💬 Discord</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('stats')">Live Stats</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('map')">Global Heatmap</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('tips')">Tips</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('community')" class="discord-btn">💬 Discord</a>
         </nav>
     </header>
     <section class="hero">
+        <div class="hero-blur-bg"></div>
         <div class="hero-content">
             <div class="hero-glass">
-                <h1 style="font-size:2.8rem;font-weight:800;letter-spacing:1px;margin-bottom:0.5rem;">🌱 Grow a Garden Real-Time Tracker</h1>
-                <p class="hero-subtitle" style="font-size:1.25rem;color:#23272a;opacity:0.92;margin-bottom:2.2rem;">See the live player count and global activity for Grow a Garden on Roblox!</p>
+                <h1>🌱 Grow a Garden Calculator</h1>
+                <h2>Roblox Fruit & Mutation Value Tool</h2>
+                <p class="hero-subtitle">Enter crop info to instantly calculate mutation value. The most complete Roblox Grow a Garden mutation multipliers!</p>
+                
+                <!-- 分类Tab -->
+                <div class="plant-tabs">
+                    <button class="tab active" data-category="all">All</button>
+                    <button class="tab" data-category="BaseValue">Base Value</button>
+                    <button class="tab" data-category="Exotic Seed Pack">Exotic Seed Pack</button>
+                    <button class="tab" data-category="Prehistoric Event">Prehistoric Event</button>
+                    <button class="tab" data-category="Event Seed Pack">Event Seed Pack</button>
+                </div>
+                
+                <!-- 搜索框 -->
+                <input type="text" class="plant-search" placeholder="Search for a plant...">
+                
+                <!-- 作物图片选择区 -->
+                <div class="plant-list" id="plant-list">
+                    <!-- 动态生成作物卡片 -->
+                </div>
+                
+                <!-- 变异工具栏 -->
+                <div class="mutation-toolbar">
+                    <div class="mutation-controls">
+                        <span class="mutation-title">Modifiers</span>
+                        <button class="mutation-help-btn">How to get each mutation?</button>
+                        <button class="mutation-sort-btn" data-sort="value">Sort by Value (Descending)</button>
+                        <button class="mutation-sort-btn" data-sort="alphabetical">Sort Alphabetically</button>
+                        <button class="mutation-hide-btn" id="hide-admin-btn">Hide Admin Mutations</button>
+                    </div>
+                    <input type="text" class="mutation-search" placeholder="Search for a mutation...">
+                </div>
+                
+                <!-- 变异选择区 -->
+                <div class="mutation-list" id="mutation-list">
+                    <!-- 动态生成变异按钮 -->
+                </div>
+                
+                <!-- 公式显示区 -->
+                <div class="formula-display">
+                    <span class="formula-text">(Rainbow/Gold) × (1 + Sum of Modifiers − Number of Modifiers)</span>
+                </div>
+                
+                <!-- 输入区 -->
+                <div class="input-section">
+                    <div class="input-row">
+                        <label>Weight (kg):</label>
+                        <input type="number" id="crop-weight" min="0" step="0.01" value="1.00">
+                    </div>
+                    <div class="input-row">
+                        <label>Amount of plants:</label>
+                        <input type="number" id="crop-amount" min="1" value="1">
+                    </div>
+                    <div class="input-row">
+                        <label>Friend Boost: <span id="friend-boost-value">0%</span></label>
+                        <input type="range" id="friend-boost" min="0" max="100" value="0">
+                    </div>
+                </div>
+                
+                <!-- 结果区 -->
+                <div class="result-section">
+                    <div class="result-main" id="calc-result">$0</div>
+                    <div class="result-unit" id="calc-result-unit"></div>
+                </div>
+                
+                <!-- 操作按钮区 -->
+                <div class="action-buttons">
+                    <button class="action-btn" id="add-to-list">Add Plant value to list</button>
+                    <button class="action-btn" id="clear-mutations">Clear Mutations</button>
+                    <button class="action-btn" id="max-mutations">Max Mutations</button>
+                    <button class="action-btn" id="toggle-mode">Toggle Value to Weight Mode</button>
+                </div>
+                
+                <!-- 反向计算区 -->
+                <div class="reverse-calc-section" id="reverse-calc" style="display: none;">
+                    <div class="input-row">
+                        <label>Input Value ($):</label>
+                        <input type="number" id="target-value" min="0" step="0.01">
+                    </div>
+                    <button class="action-btn" id="update-weight">Update</button>
+                    <div class="result-main" id="weight-result">≈0 kg</div>
+                </div>
+                
+                <!-- 历史记录区 -->
+                <div class="history-section">
+                    <h3>Plant History</h3>
+                    <div class="history-list" id="history-list">
+                        <!-- 动态生成历史记录 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="stats-hero" class="live-stats-section">
+        <div class="stats-container">
+            <h1>🌱 Grow a Garden Real-Time Tracker</h1>
+            <p class="stats-subtitle">See the live player count and global activity for Grow a Garden on Roblox!</p>
                 <div class="counter-container">
                     <div class="counter">
-                        <h2 style="font-size:1.3rem;font-weight:700;">Players Online Now</h2>
+                    <h2>Players Online Now</h2>
                         <div id="player-count" class="player-count">21,347,891</div>
                         <p class="update-time">Last updated: <span id="update-time">--:--:--</span></p>
                         <div class="trend-indicator">
                             <span id="trend-arrow">↗</span>
                             <span id="trend-text">+1,234</span>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -239,6 +293,7 @@
     </footer>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="plants_auto.js"></script>
     <script src="script.js"></script>
 </body>
 </html> 

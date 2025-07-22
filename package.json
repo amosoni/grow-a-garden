@@ -30,8 +30,8 @@
   },
   "homepage": "https://your-site.netlify.app",
   "devDependencies": {
-    "serve": "^14.2.1",
-    "live-server": "^1.2.2"
+    "live-server": "^1.2.2",
+    "serve": "^14.2.1"
   },
   "engines": {
     "node": ">=14.0.0"
@@ -40,5 +40,9 @@
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
-} 
+  ],
+  "dependencies": {
+    "axios": "^1.10.0",
+    "cheerio": "^1.1.2"
+  }
+}
