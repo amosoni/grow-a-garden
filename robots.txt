@@ -1,0 +1,24 @@
+User-agent: *
+Allow: /
+
+# AI-friendly robots.txt
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Common Crawl
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+# Sitemap
+Sitemap: https://growagarden.cv/sitemap.xml 
