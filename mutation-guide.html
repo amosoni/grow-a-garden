@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mutation Guide - Grow a Garden Guides</title>
+    <meta name="description" content="Master the mutation system in Grow a Garden. Learn how to create and combine mutations for maximum value.">
+    <meta name="keywords" content="grow a garden, mutations, mutation guide, rare mutations, mutation combinations, roblox">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Mutation Guide - Grow a Garden Guides">
+    <meta property="og:description" content="Master the mutation system in Grow a Garden. Learn how to create and combine mutations for maximum value.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://growagarden.cv/mutation-guide.html">
+    <meta property="og:image" content="https://growagarden.cv/mutation-guide-og.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mutation Guide - Grow a Garden Guides">
+    <meta name="twitter:description" content="Master the mutation system in Grow a Garden. Learn how to create and combine mutations for maximum value.">
+    <meta name="twitter:image" content="https://growagarden.cv/mutation-guide-og.jpg">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "Mutation Guide",
+      "description": "Master the mutation system in Grow a Garden. Learn how to create and combine mutations for maximum value",
+      "image": "https://growagarden.cv/mutation-guide-og.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "Grow a Garden Community"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Grow a Garden",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://growagarden.cv/logo.png"
+        }
+      },
+      "mainEntity": {
+        "@type": "HowTo",
+        "name": "Creating Mutations",
+        "description": "Complete guide to creating and combining mutations for maximum value",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Understanding Mutations",
+            "text": "Learn the basics of the mutation system and different mutation types"
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Mutation Combinations",
+            "text": "Master the art of combining different crops for mutations"
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Rare Mutations",
+            "text": "Discover techniques for creating rare and valuable mutations"
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Mutation Optimization",
+            "text": "Optimize your mutation process for maximum efficiency and value"
+          }
+        ]
+      }
+    }
+    </script>
+    
+    <!-- Roblox-like color scheme -->
+    <link rel="stylesheet" href="https://unpkg.com/simple.css@2.1.0/simple.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧬</text></svg>">
+    
+    <style>
+        body {
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .bg-blur {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: 0;
+            background: url('grow-bg.jpg') center center/cover no-repeat;
+            opacity: 0.3;
+            filter: blur(2px);
+        }
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+        .mutation-hero {
+            background: linear-gradient(135deg, #e91e63, #c2185b);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-top: 60px;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        .mutation-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        .mutation-hero h1,
+        .mutation-hero p {
+            position: relative;
+            z-index: 2;
+        }
+        .mutation-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: white !important;
+            text-shadow: 
+                0 2px 4px rgba(0,0,0,0.7),
+                0 1px 2px rgba(0,0,0,0.8);
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            -webkit-text-stroke: 0.5px rgba(0,0,0,0.2);
+        }
+        .mutation-hero p {
+            font-size: 1.2rem;
+            opacity: 1;
+            color: white !important;
+            text-shadow: 
+                0 1px 3px rgba(0,0,0,0.6),
+                0 1px 2px rgba(0,0,0,0.7);
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            -webkit-text-stroke: 0.3px rgba(0,0,0,0.15);
+        }
+        .guide-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .guide-card {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .guide-card h2 {
+            color: #23272a !important;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+        .guide-card h3 {
+            color: #2c3e50 !important;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .guide-card p, .guide-card li {
+            color: #34495e !important;
+            line-height: 1.6;
+            margin-bottom: 0.8rem;
+        }
+        .guide-card ul, .guide-card ol {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+        .guide-card li {
+            margin-bottom: 0.5rem;
+        }
+        .mutation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .mutation-item {
+            background: linear-gradient(135deg, #fce4ec, #f8bbd9);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 15px rgba(233, 30, 99, 0.2);
+            border: 2px solid #f48fb1;
+        }
+        .mutation-item h4 {
+            color: #c2185b !important;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+        .mutation-item p {
+            color: #880e4f !important;
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+            text-align: center;
+        }
+        .recipe-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .recipe-table th {
+            background: linear-gradient(135deg, #e91e63, #c2185b);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+        .recipe-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .recipe-table tr:nth-child(even) td {
+            background: rgba(233, 30, 99, 0.08);
+        }
+        .tip-box {
+            background: linear-gradient(135deg, #f1c40f, #f39c12);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            box-shadow: 0 4px 15px rgba(241, 196, 15, 0.3);
+        }
+        .tip-box strong {
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+            font-weight: 700;
+        }
+        .warning-box {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+        }
+        .warning-box strong {
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+            font-weight: 700;
+        }
+        .back-btn {
+            display: inline-block;
+            background: #5865f2;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+        .back-btn:hover {
+            background: #4752c4;
+            transform: translateY(-2px);
+        }
+        .mutation-tips {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .tip-card {
+            background: linear-gradient(135deg, #fce4ec, #f8bbd9);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 6px 20px rgba(233, 30, 99, 0.2);
+            border: 2px solid #f48fb1;
+        }
+        .tip-card h4 {
+            color: #c2185b !important;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .tip-card ul {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+        .tip-card li {
+            color: #880e4f !important;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* 面包屑导航样式 */
+        .breadcrumb-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+        }
+        .breadcrumb {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .breadcrumb ol {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .breadcrumb li {
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            color: #34495e;
+        }
+        .breadcrumb li:not(:last-child)::after {
+            content: "›";
+            margin: 0 0.5rem;
+            color: #e91e63;
+            font-weight: bold;
+        }
+        .breadcrumb a {
+            color: #e91e63;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .breadcrumb a:hover {
+            color: #c2185b;
+            text-decoration: underline;
+        }
+        .breadcrumb li[aria-current="page"] {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+    </style>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HG12TJB5LZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HG12TJB5LZ');
+    </script>
+</head>
+<body>
+    <div class="bg-blur"></div>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">🌱 Grow a Garden</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('stats')">Live Stats</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('map')">Global Heatmap</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('tips')">Tips</a>
+            <a href="guides.html">📚 Guides</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('community')" class="discord-btn">💬 Discord</a>
+        </nav>
+    </header>
+    
+    <section class="mutation-hero">
+        <h1>🧬 Mutation Guide in Grow a Garden</h1>
+        <p>Complete Guide: Master the Art of Creating Valuable Mutations</p>
+    </section>
+    
+    <!-- 面包屑导航 -->
+    <div class="breadcrumb-container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+                <li><a href="index.html">🏠 Home</a></li>
+                <li><a href="guides.html">📚 Guides</a></li>
+                <li aria-current="page">🧬 Mutation Guide</li>
+            </ol>
+        </nav>
+    </div>
+    
+    <div class="guide-section">
+        <div class="guide-card">
+            <h2>📋 Table of Contents</h2>
+            <ul>
+                <li><a href="#basics">Mutation Basics</a></li>
+                <li><a href="#types">Mutation Types</a></li>
+                <li><a href="#combinations">Mutation Combinations</a></li>
+                <li><a href="#rare">Rare Mutations</a></li>
+                <li><a href="#strategies">Mutation Strategies</a></li>
+                <li><a href="#optimization">Optimization Techniques</a></li>
+                <li><a href="#tips">Advanced Tips & Tricks</a></li>
+                <li><a href="#faq">Frequently Asked Questions</a></li>
+            </ul>
+        </div>
+        
+        <div class="guide-card" id="basics">
+            <h2>🧬 Mutation Basics</h2>
+            <p>The mutation system is one of the most complex and rewarding features in Grow a Garden. Understanding how mutations work is crucial for creating valuable crops and maximizing profits.</p>
+            
+            <h3>What are Mutations?</h3>
+            <p>Mutations are special variations of crops that occur when specific conditions are met during the growing process. These mutations can have enhanced properties such as increased yield, faster growth, higher value, or unique visual characteristics.</p>
+            
+            <h3>Core Mutation Principles:</h3>
+            <ol>
+                <li><strong>Compatibility:</strong> Not all crops can be combined for mutations</li>
+                <li><strong>Conditions:</strong> Specific growing conditions increase mutation chances</li>
+                <li><strong>Rarity:</strong> Mutations have different rarity levels affecting their value</li>
+                <li><strong>Inheritance:</strong> Some mutations can be passed down to offspring</li>
+                <li><strong>Stability:</strong> Mutations may be stable or unstable</li>
+            </ol>
+            
+            <div class="tip-box">
+                <strong>💡 Pro Tip:</strong> Start with basic mutations before attempting complex combinations. Patience and experimentation are key to success!
+            </div>
+        </div>
+        
+        <div class="guide-card" id="types">
+            <h2>🎨 Mutation Types</h2>
+            <p>Understanding the different types of mutations will help you choose the right strategies for your goals.</p>
+            
+            <h3>Mutation Categories</h3>
+            <div class="mutation-tips">
+                <div class="tip-card">
+                    <h4>🌱 Growth Mutations</h4>
+                    <ul>
+                        <li>Faster growth speed</li>
+                        <li>Increased yield per harvest</li>
+                        <li>Extended growing seasons</li>
+                        <li>Drought resistance</li>
+                    </ul>
+                </div>
+                <div class="tip-card">
+                    <h4>💰 Value Mutations</h4>
+                    <ul>
+                        <li>Higher market value</li>
+                        <li>Rare ingredient status</li>
+                        <li>Premium quality indicators</li>
+                        <li>Exclusive crafting recipes</li>
+                    </ul>
+                </div>
+                <div class="tip-card">
+                    <h4>🎨 Visual Mutations</h4>
+                    <ul>
+                        <li>Unique color variations</li>
+                        <li>Special visual effects</li>
+                        <li>Rare appearance patterns</li>
+                        <li>Animated elements</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Rarity Levels</h3>
+            <div class="mutation-grid">
+                <div class="mutation-item">
+                    <h4>Common</h4>
+                    <p>Basic mutations with minor improvements</p>
+                    <p>Success Rate: 15-25%</p>
+                </div>
+                <div class="mutation-item">
+                    <h4>Uncommon</h4>
+                    <p>Moderate improvements and value</p>
+                    <p>Success Rate: 8-15%</p>
+                </div>
+                <div class="mutation-item">
+                    <h4>Rare</h4>
+                    <p>Significant improvements and high value</p>
+                    <p>Success Rate: 3-8%</p>
+                </div>
+                <div class="mutation-item">
+                    <h4>Epic</h4>
+                    <p>Exceptional properties and premium value</p>
+                    <p>Success Rate: 1-3%</p>
+                </div>
+                <div class="mutation-item">
+                    <h4>Legendary</h4>
+                    <p>Ultra-rare mutations with unique properties</p>
+                    <p>Success Rate: 0.1-1%</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="guide-card" id="combinations">
+            <h2>🔗 Mutation Combinations</h2>
+            <p>Learning effective mutation combinations is the key to creating valuable crops. Here are some proven strategies.</p>
+            
+            <h3>Basic Combination Rules</h3>
+            <ul>
+                <li><strong>Compatible Families:</strong> Crops from the same family have higher mutation chances</li>
+                <li><strong>Growth Stage:</strong> Combining crops at similar growth stages increases success</li>
+                <li><strong>Environmental Factors:</strong> Weather and soil conditions affect mutation rates</li>
+                <li><strong>Mutation Items:</strong> Special items can boost mutation chances</li>
+                <li><strong>Timing:</strong> Golden hours provide better mutation opportunities</li>
+            </ul>
+            
+            <h3>Popular Combinations</h3>
+            <table class="recipe-table">
+                <thead>
+                    <tr>
+                        <th>Parent Crops</th>
+                        <th>Potential Mutation</th>
+                        <th>Success Rate</th>
+                        <th>Value Increase</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Tomato + Pepper</td>
+                        <td>Spicy Tomato</td>
+                        <td>12%</td>
+                        <td>+150%</td>
+                    </tr>
+                    <tr>
+                        <td>Carrot + Potato</td>
+                        <td>Golden Root</td>
+                        <td>8%</td>
+                        <td>+200%</td>
+                    </tr>
+                    <tr>
+                        <td>Lettuce + Spinach</td>
+                        <td>Super Greens</td>
+                        <td>15%</td>
+                        <td>+100%</td>
+                    </tr>
+                    <tr>
+                        <td>Corn + Wheat</td>
+                        <td>Golden Grain</td>
+                        <td>5%</td>
+                        <td>+300%</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="warning-box">
+                <strong>⚠️ Important:</strong> These combinations are examples and actual results may vary. Always experiment and document your findings!
+            </div>
+        </div>
+        
+        <div class="guide-card" id="rare">
+            <h2>💎 Rare Mutations</h2>
+            <p>Rare mutations are the most valuable and sought-after variations. Understanding how to create them is essential for advanced players.</p>
+            
+            <h3>Creating Rare Mutations</h3>
+            <ol>
+                <li><strong>Perfect Conditions:</strong> Ensure optimal growing conditions for both parent crops</li>
+                <li><strong>Mutation Boosters:</strong> Use special items that increase mutation chances</li>
+                <li><strong>Timing:</strong> Combine during special events or golden hours</li>
+                <li><strong>Patience:</strong> Rare mutations often require multiple attempts</li>
+                <li><strong>Documentation:</strong> Keep detailed records of successful combinations</li>
+            </ol>
+            
+            <h3>Rare Mutation Examples</h3>
+            <div class="mutation-tips">
+                <div class="tip-card">
+                    <h4>🌟 Rainbow Corn</h4>
+                    <ul>
+                        <li>Requires: Perfect Corn + Rainbow Crystal</li>
+                        <li>Success Rate: 2%</li>
+                        <li>Value: 10x normal corn</li>
+                        <li>Special: Changes color over time</li>
+                    </ul>
+                </div>
+                <div class="tip-card">
+                    <h4>⚡ Lightning Tomato</h4>
+                    <ul>
+                        <li>Requires: Tomato + Lightning Essence</li>
+                        <li>Success Rate: 1%</li>
+                        <li>Value: 15x normal tomato</li>
+                        <li>Special: Grows instantly</li>
+                    </ul>
+                </div>
+                <div class="tip-card">
+                    <h4>🌙 Moonflower</h4>
+                    <ul>
+                        <li>Requires: Sunflower + Moon Crystal</li>
+                        <li>Success Rate: 0.5%</li>
+                        <li>Value: 25x normal sunflower</li>
+                        <li>Special: Glows at night</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="guide-card" id="strategies">
+            <h2>🎯 Mutation Strategies</h2>
+            <p>Developing effective mutation strategies will help you maximize your success rate and profits.</p>
+            
+            <h3>Strategy Approaches</h3>
+            <div class="mutation-tips">
+                <div class="tip-card">
+                    <h4>📊 Systematic Approach</h4>
+                    <ul>
+                        <li>Test all possible combinations</li>
+                        <li>Document every attempt</li>
+                        <li>Analyze success patterns</li>
+                        <li>Optimize based on results</li>
+                    </ul>
+                </div>
+                <div class="tip-card">
+                    <h4>🎲 High-Risk Approach</h4>
+                    <ul>
+                        <li>Focus on rare mutations</li>
+                        <li>Use expensive boosters</li>
+                        <li>Accept lower success rates</li>
+                        <li>High reward potential</li>
+                    </ul>
+                </div>
+                <div class="tip-card">
+                    <h4>⚖️ Balanced Approach</h4>
+                    <ul>
+                        <li>Mix common and rare attempts</li>
+                        <li>Moderate investment levels</li>
+                        <li>Steady progress over time</li>
+                        <li>Reduced risk</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Optimization Tips</h3>
+            <ul>
+                <li><strong>Start Small:</strong> Begin with common mutations to build experience</li>
+                <li><strong>Invest Gradually:</strong> Increase investment as you master the system</li>
+                <li><strong>Network:</strong> Share findings with the community</li>
+                <li><strong>Stay Updated:</strong> Follow game updates for new combinations</li>
+                <li><strong>Be Patient:</strong> Rare mutations require time and persistence</li>
+            </ul>
+        </div>
+        
+        <div class="guide-card" id="optimization">
+            <h2>⚡ Optimization Techniques</h2>
+            <p>Optimizing your mutation process can significantly increase your success rate and efficiency.</p>
+            
+            <h3>Efficiency Strategies</h3>
+            <div class="mutation-tips">
+                <div class="tip-card">
+                    <h4>⏰ Time Optimization</h4>
+                    <ul>
+                        <li>Use golden hours for mutations</li>
+                        <li>Plan combinations during events</li>
+                        <li>Coordinate with community timing</li>
+                        <li>Optimize growing schedules</li>
+                    </ul>
+                </div>
+                <div class="tip-card">
+                    <h4>💰 Resource Optimization</h4>
+                    <ul>
+                        <li>Balance investment vs. return</li>
+                        <li>Use boosters strategically</li>
+                        <li>Focus on high-value targets</li>
+                        <li>Diversify mutation attempts</li>
+                    </ul>
+                </div>
+                <div class="tip-card">
+                    <h4>📈 Success Optimization</h4>
+                    <ul>
+                        <li>Perfect growing conditions</li>
+                        <li>Use compatible crop families</li>
+                        <li>Apply mutation boosters</li>
+                        <li>Monitor environmental factors</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="guide-card" id="tips">
+            <h2>💡 Advanced Tips & Tricks</h2>
+            <p>These advanced techniques will help you master the mutation system and achieve exceptional results.</p>
+            
+            <h3>Pro Tips</h3>
+            <ul>
+                <li><strong>Document Everything:</strong> Keep detailed records of all mutation attempts</li>
+                <li><strong>Community Collaboration:</strong> Share findings and learn from others</li>
+                <li><strong>Event Timing:</strong> Special events often boost mutation rates</li>
+                <li><strong>Weather Patterns:</strong> Certain weather conditions improve mutations</li>
+                <li><strong>Equipment Upgrades:</strong> Better tools increase mutation chances</li>
+            </ul>
+            
+            <h3>Common Mistakes to Avoid</h3>
+            <ol>
+                <li><strong>Rushing:</strong> Don't attempt complex mutations before mastering basics</li>
+                <li><strong>Over-investing:</strong> Balance your resources across different strategies</li>
+                <li><strong>Ignoring Conditions:</strong> Environmental factors significantly affect success</li>
+                <li><strong>Poor Documentation:</strong> Track your attempts to learn from failures</li>
+                <li><strong>Isolation:</strong> The community is a valuable resource for learning</li>
+            </ol>
+        </div>
+        
+        <div class="guide-card" id="faq">
+            <h2>❓ Frequently Asked Questions</h2>
+            
+            <h3>General Questions</h3>
+            <div class="mutation-tips">
+                <div class="tip-card">
+                    <h4>Q: How do I start with mutations?</h4>
+                    <p>A: Begin with basic crop combinations and gradually experiment with more complex combinations. Focus on learning the system before attempting rare mutations.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>Q: What increases mutation chances?</h4>
+                    <p>A: Perfect growing conditions, compatible crop families, mutation boosters, golden hours, and special events all increase mutation chances.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>Q: Are mutations permanent?</h4>
+                    <p>A: Some mutations are stable and can be reproduced, while others are unstable and may not occur again. Documentation helps identify patterns.</p>
+                </div>
+            </div>
+            
+            <h3>Advanced Questions</h3>
+            <div class="mutation-tips">
+                <div class="tip-card">
+                    <h4>Q: Can I sell mutations?</h4>
+                    <p>A: Yes, mutations often have significantly higher market value than regular crops. Rare mutations can be extremely valuable.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>Q: How do I create legendary mutations?</h4>
+                    <p>A: Legendary mutations require perfect conditions, rare ingredients, and often special events. They're extremely rare and valuable.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>Q: Do mutations affect crafting?</h4>
+                    <p>A: Yes, mutated crops often unlock special crafting recipes and can create enhanced versions of items.</p>
+                </div>
+            </div>
+        </div>
+        
+        <a href="guides.html" class="back-btn">← Back to Guides</a>
+    </div>
+</body>
+</html> 
