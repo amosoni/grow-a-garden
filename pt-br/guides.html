@@ -45,6 +45,151 @@
       </ol>
     </nav>
   </div>
+  <div class="guides-section">
+    <div class="guides-card">
+      <h2>🔍 Pesquisar e Filtrar</h2>
+      <div class="search-filter-container">
+        <input type="text" id="guide-search" placeholder="Pesquisar guias..." class="guide-search-input">
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">Todos</button>
+          <button class="filter-btn" data-filter="recipe">Receitas</button>
+          <button class="filter-btn" data-filter="farming">Agricultura</button>
+          <button class="filter-btn" data-filter="profit">Lucro</button>
+          <button class="filter-btn" data-filter="advanced">Avançado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 热门攻略 -->
+    <div class="guides-card">
+      <h2>🔥 Guias Populares</h2>
+      <div class="guides-grid">
+        <a href="/how-to-make-salad.html" class="guide-item featured-guide">
+          <div class="featured-badge">⭐ Mais Popular</div>
+          <h3>🥗 Guia de Saladas</h3>
+          <p>Domine a arte de fazer saladas. Aprenda coleta de ingredientes, receitas avançadas e métodos de melhoria de eficiência.</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">Iniciante</span>
+            <span class="guide-read-time">15 min leitura</span>
+            <span class="guide-views">🔥 2.5k visualizações</span>
+          </div>
+        </a>
+        
+        <a href="/how-to-make-pizza.html" class="guide-item">
+          <div class="trending-badge">📈 Tendência</div>
+          <h3>🍕 Guia de Pizza</h3>
+          <p>Aprenda a fazer pizzas deliciosas no Grow a Garden. Desde preparação da massa até combinações de coberturas.</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">Intermediário</span>
+            <span class="guide-read-time">25 min leitura</span>
+            <span class="guide-views">🔥 1.8k visualizações</span>
+          </div>
+        </a>
+        
+        <a href="/how-to-make-bread.html" class="guide-item">
+          <div class="new-badge">🆕 Novo</div>
+          <h3>🍞 Guia de Pão</h3>
+          <p>Domine técnicas de panificação no Grow a Garden. Aprenda tipos de farinha, gestão de fermento e otimização de assamento.</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">Iniciante</span>
+            <span class="guide-read-time">20 min leitura</span>
+            <span class="guide-views">🔥 1.2k visualizações</span>
+          </div>
+        </a>
+      </div>
+    </div>
+    
+    <!-- 食谱攻略 -->
+    <div class="category-section" data-category="recipe">
+      <h2 class="category-title">🍽️ Guias de Receitas</h2>
+      <div class="guides-grid">
+        <a href="/how-to-make-salad.html" class="guide-item">
+          <h3>🥗 Guia de Saladas</h3>
+          <p>Guia completo para fazer saladas perfeitas no Grow a Garden. Desde coleta básica de ingredientes até receitas avançadas.</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">Iniciante</span>
+            <span class="guide-read-time">15 min leitura</span>
+          </div>
+        </a>
+        
+        <a href="/how-to-make-pizza.html" class="guide-item">
+          <h3>🍕 Guia de Pizza</h3>
+          <p>Aprenda a fazer pizzas deliciosas no Grow a Garden. Desde preparação da massa até combinações de coberturas.</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">Intermediário</span>
+            <span class="guide-read-time">25 min leitura</span>
+          </div>
+        </a>
+        
+        <a href="/how-to-make-bread.html" class="guide-item">
+          <h3>🍞 Guia de Pão</h3>
+          <p>Domine técnicas de panificação. Aprenda tipos de farinha, gestão de fermento e otimização de assamento.</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">Iniciante</span>
+            <span class="guide-read-time">20 min leitura</span>
+          </div>
+        </a>
+        
+        <a href="/how-to-make-cake.html" class="guide-item">
+          <h3>🍰 Guia de Bolos</h3>
+          <p>Aprenda a fazer vários bolos deliciosos. Desde receitas básicas até técnicas avançadas de decoração.</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">Intermediário</span>
+            <span class="guide-read-time">30 min leitura</span>
+          </div>
+        </a>
+      </div>
+    </div>
+    
+    <!-- 种植攻略 -->
+    <div class="category-section" data-category="farming">
+      <h2 class="category-title">🌱 Guias de Agricultura</h2>
+      <div class="guides-grid">
+        <a href="/how-to-grow-corn.html" class="guide-item">
+          <h3>🌽 Guia de Cultivo de Milho</h3>
+          <p>Domine técnicas de cultivo de milho. Aprenda melhores tempos de plantio, estratégias de irrigação e otimização de colheita.</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">Iniciante</span>
+            <span class="guide-read-time">18 min leitura</span>
+          </div>
+        </a>
+        
+        <a href="/how-to-grow-oranges.html" class="guide-item">
+          <h3>🍊 Guia de Cultivo de Laranjas</h3>
+          <p>Aprenda técnicas de cultivo de laranjas. Processo completo desde seleção de sementes até colheita madura.</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">Intermediário</span>
+            <span class="guide-read-time">22 min leitura</span>
+          </div>
+        </a>
+      </div>
+    </div>
+    
+    <!-- 收益攻略 -->
+    <div class="category-section" data-category="profit">
+      <h2 class="category-title">💰 Guias de Lucro</h2>
+      <div class="guides-grid">
+        <a href="/how-to-make-money-fast.html" class="guide-item">
+          <h3>💸 Guia de Ganhar Dinheiro Rápido</h3>
+          <p>Aprenda os métodos mais rápidos para ganhar dinheiro. Domine o timing do mercado, seleção de culturas e estratégias de investimento.</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">Intermediário</span>
+            <span class="guide-read-time">35 min leitura</span>
+          </div>
+        </a>
+        
+        <a href="/profit-strategies.html" class="guide-item">
+          <h3>📈 Guia de Estratégias de Lucro</h3>
+          <p>Domine estratégias de lucro de longo prazo. Aprenda análise de mercado, gestão de riscos e portfólio de investimento.</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">Avançado</span>
+            <span class="guide-read-time">45 min leitura</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
   <script src="/i18n/i18n.js"></script>
+  <script src="/script.js"></script>
 </body>
 </html> 

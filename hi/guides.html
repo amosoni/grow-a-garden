@@ -37,6 +37,159 @@
     <h1 data-i18n="hero.guides.title">📚 Grow a Garden गाइड्स</h1>
     <p data-i18n="hero.guides.subtitle">रणनीतियों, रेसिपी और गेमप्ले टिप्स का पूरा संग्रह</p>
   </section>
+  <div class="breadcrumb-container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/index.html" data-i18n="breadcrumb.home">🏠 होम</a></li>
+        <li aria-current="page" data-i18n="breadcrumb.guides">📚 गाइड्स</li>
+      </ol>
+    </nav>
+  </div>
+  <div class="guides-section">
+    <div class="guides-card">
+      <h2>🔍 खोज और फ़िल्टर</h2>
+      <div class="search-filter-container">
+        <input type="text" id="guide-search" placeholder="गाइड खोजें..." class="guide-search-input">
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">सभी</button>
+          <button class="filter-btn" data-filter="recipe">रेसिपी</button>
+          <button class="filter-btn" data-filter="farming">खेती</button>
+          <button class="filter-btn" data-filter="profit">लाभ</button>
+          <button class="filter-btn" data-filter="advanced">उन्नत</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 热门攻略 -->
+    <div class="guides-card">
+      <h2>🔥 लोकप्रिय गाइड्स</h2>
+      <div class="guides-grid">
+        <a href="/how-to-make-salad.html" class="guide-item featured-guide">
+          <div class="featured-badge">⭐ सबसे लोकप्रिय</div>
+          <h3>🥗 सलाद बनाने का गाइड</h3>
+          <p>सलाद बनाने की कला में महारत हासिल करें। सामग्री इकट्ठा करना, उन्नत रेसिपी और दक्षता सुधार के तरीके सीखें।</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">शुरुआती</span>
+            <span class="guide-read-time">15 मिनट पढ़ने</span>
+            <span class="guide-views">🔥 2.5k देखे गए</span>
+          </div>
+        </a>
+        
+        <a href="/how-to-make-pizza.html" class="guide-item">
+          <div class="trending-badge">📈 ट्रेंडिंग</div>
+          <h3>🍕 पिज़्ज़ा बनाने का गाइड</h3>
+          <p>Grow a Garden में स्वादिष्ट पिज़्ज़ा बनाना सीखें। आटा तैयार करने से लेकर टॉपिंग के संयोजन तक।</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">मध्यम</span>
+            <span class="guide-read-time">25 मिनट पढ़ने</span>
+            <span class="guide-views">🔥 1.8k देखे गए</span>
+          </div>
+        </a>
+        
+        <a href="/how-to-make-bread.html" class="guide-item">
+          <div class="new-badge">🆕 नया</div>
+          <h3>🍞 रोटी बनाने का गाइड</h3>
+          <p>Grow a Garden में रोटी बनाने की तकनीकों में महारत हासिल करें। आटे के प्रकार, खमीर प्रबंधन और बेकिंग अनुकूलन सीखें।</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">शुरुआती</span>
+            <span class="guide-read-time">20 मिनट पढ़ने</span>
+            <span class="guide-views">🔥 1.2k देखे गए</span>
+          </div>
+        </a>
+      </div>
+    </div>
+    
+    <!-- 食谱攻略 -->
+    <div class="category-section" data-category="recipe">
+      <h2 class="category-title">🍽️ रेसिपी गाइड्स</h2>
+      <div class="guides-grid">
+        <a href="/how-to-make-salad.html" class="guide-item">
+          <h3>🥗 सलाद बनाने का गाइड</h3>
+          <p>Grow a Garden में परफेक्ट सलाद बनाने का पूरा गाइड। बुनियादी सामग्री इकट्ठा करने से लेकर उन्नत रेसिपी तक।</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">शुरुआती</span>
+            <span class="guide-read-time">15 मिनट पढ़ने</span>
+          </div>
+        </a>
+        
+        <a href="/how-to-make-pizza.html" class="guide-item">
+          <h3>🍕 पिज़्ज़ा बनाने का गाइड</h3>
+          <p>Grow a Garden में स्वादिष्ट पिज़्ज़ा बनाना सीखें। आटा तैयार करने से लेकर टॉपिंग के संयोजन तक।</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">मध्यम</span>
+            <span class="guide-read-time">25 मिनट पढ़ने</span>
+          </div>
+        </a>
+        
+        <a href="/how-to-make-bread.html" class="guide-item">
+          <h3>🍞 रोटी बनाने का गाइड</h3>
+          <p>रोटी बनाने की तकनीकों में महारत हासिल करें। आटे के प्रकार, खमीर प्रबंधन और बेकिंग अनुकूलन सीखें।</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">शुरुआती</span>
+            <span class="guide-read-time">20 मिनट पढ़ने</span>
+          </div>
+        </a>
+        
+        <a href="/how-to-make-cake.html" class="guide-item">
+          <h3>🍰 केक बनाने का गाइड</h3>
+          <p>विभिन्न स्वादिष्ट केक बनाना सीखें। बुनियादी रेसिपी से लेकर उन्नत सजावट तकनीकों तक।</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">मध्यम</span>
+            <span class="guide-read-time">30 मिनट पढ़ने</span>
+          </div>
+        </a>
+      </div>
+    </div>
+    
+    <!-- 种植攻略 -->
+    <div class="category-section" data-category="farming">
+      <h2 class="category-title">🌱 खेती गाइड्स</h2>
+      <div class="guides-grid">
+        <a href="/how-to-grow-corn.html" class="guide-item">
+          <h3>🌽 मक्का उगाने का गाइड</h3>
+          <p>मक्का उगाने की तकनीकों में महारत हासिल करें। इष्टतम बुवाई समय, सिंचाई रणनीतियों और फसल अनुकूलन सीखें।</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">शुरुआती</span>
+            <span class="guide-read-time">18 मिनट पढ़ने</span>
+          </div>
+        </a>
+        
+        <a href="/how-to-grow-oranges.html" class="guide-item">
+          <h3>🍊 संतरे उगाने का गाइड</h3>
+          <p>संतरे उगाने की तकनीकें सीखें। बीज चयन से लेकर परिपक्व फसल तक का पूरा प्रक्रिया।</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">मध्यम</span>
+            <span class="guide-read-time">22 मिनट पढ़ने</span>
+          </div>
+        </a>
+      </div>
+    </div>
+    
+    <!-- 收益攻略 -->
+    <div class="category-section" data-category="profit">
+      <h2 class="category-title">💰 लाभ गाइड्स</h2>
+      <div class="guides-grid">
+        <a href="/how-to-make-money-fast.html" class="guide-item">
+          <h3>💸 तेज़ पैसा कमाने का गाइड</h3>
+          <p>पैसा कमाने के सबसे तेज़ तरीके सीखें। बाज़ार का समय, फसल चयन और निवेश रणनीतियों में महारत हासिल करें।</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">मध्यम</span>
+            <span class="guide-read-time">35 मिनट पढ़ने</span>
+          </div>
+        </a>
+        
+        <a href="/profit-strategies.html" class="guide-item">
+          <h3>📈 लाभ रणनीतियों का गाइड</h3>
+          <p>दीर्घकालिक लाभ रणनीतियों में महारत हासिल करें। बाज़ार विश्लेषण, जोखिम प्रबंधन और निवेश पोर्टफोलियो सीखें।</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">उन्नत</span>
+            <span class="guide-read-time">45 मिनट पढ़ने</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
   <script src="/i18n/i18n.js"></script>
+  <script src="/script.js"></script>
 </body>
 </html> 

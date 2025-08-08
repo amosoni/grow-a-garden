@@ -1875,4 +1875,339 @@ html:not([data-scroll-behavior="smooth"]) {
   border: 1.5px solid rgba(255,255,255,0.25);
 } 
 
+/* 攻略页面样式 */
+.guides-hero {
+  text-align: center;
+  padding: 120px 20px 60px;
+  background: linear-gradient(135deg, var(--primary-blue), var(--accent-green));
+  color: var(--text-light);
+  margin-bottom: 40px;
+}
+
+.guides-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.guides-hero p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.breadcrumb-container {
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  padding: 0 20px;
+}
+
+.breadcrumb {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px 25px;
+  border-radius: var(--border-radius);
+  backdrop-filter: blur(10px);
+}
+
+.breadcrumb ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.breadcrumb li {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb li:not(:last-child)::after {
+  content: ">";
+  margin-left: 10px;
+  color: var(--text-light);
+  opacity: 0.6;
+}
+
+.breadcrumb a {
+  color: var(--text-light);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.breadcrumb a:hover {
+  color: var(--accent-yellow);
+}
+
+.breadcrumb li[aria-current="page"] {
+  color: var(--accent-yellow);
+  font-weight: bold;
+}
+
+.guides-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px 60px;
+}
+
+.guides-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius);
+  padding: 30px;
+  margin-bottom: 30px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.guides-card h2 {
+  color: var(--text-light);
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.search-filter-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.guide-search-input {
+  width: 100%;
+  padding: 15px 20px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--border-radius);
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-light);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.guide-search-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.guide-search-input:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 10px 20px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--border-radius);
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-light);
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.filter-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: var(--primary-blue);
+}
+
+.filter-btn.active {
+  background: var(--primary-blue);
+  border-color: var(--primary-blue);
+  color: var(--text-light);
+}
+
+.guides-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.guide-item {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--border-radius);
+  padding: 25px;
+  text-decoration: none;
+  color: var(--text-light);
+  transition: var(--transition);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.guide-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-blue), var(--accent-green));
+  transform: scaleX(0);
+  transition: var(--transition);
+}
+
+.guide-item:hover::before {
+  transform: scaleX(1);
+}
+
+.guide-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.featured-guide {
+  background: linear-gradient(135deg, rgba(88, 101, 242, 0.2), rgba(67, 181, 129, 0.2));
+  border: 2px solid var(--primary-blue);
+}
+
+.featured-badge, .trending-badge, .new-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  z-index: 1;
+}
+
+.featured-badge {
+  background: var(--accent-yellow);
+  color: var(--text-dark);
+}
+
+.trending-badge {
+  background: var(--accent-red);
+  color: var(--text-light);
+}
+
+.new-badge {
+  background: var(--accent-green);
+  color: var(--text-light);
+}
+
+.guide-item h3 {
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  font-weight: bold;
+  color: var(--text-light);
+}
+
+.guide-item p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.guide-meta {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.guide-difficulty, .guide-read-time, .guide-views {
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.guide-difficulty {
+  background: var(--accent-green);
+  color: var(--text-dark);
+}
+
+.guide-read-time {
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--text-light);
+}
+
+.guide-views {
+  background: var(--accent-red);
+  color: var(--text-light);
+}
+
+.category-section {
+  margin-top: 40px;
+}
+
+.category-title {
+  color: var(--text-light);
+  font-size: 1.6rem;
+  margin-bottom: 25px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+  .guides-hero {
+    padding: 100px 15px 40px;
+  }
+  
+  .guides-hero h1 {
+    font-size: 2rem;
+  }
+  
+  .guides-hero p {
+    font-size: 1rem;
+  }
+  
+  .guides-section {
+    padding: 0 15px 40px;
+  }
+  
+  .guides-card {
+    padding: 20px;
+  }
+  
+  .guides-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .filter-buttons {
+    justify-content: center;
+  }
+  
+  .guide-meta {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .guides-hero h1 {
+    font-size: 1.8rem;
+  }
+  
+  .guides-card {
+    padding: 15px;
+  }
+  
+  .guide-item {
+    padding: 20px;
+  }
+  
+  .guide-item h3 {
+    font-size: 1.1rem;
+  }
+  
+  .guide-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+} 
+
  

@@ -37,6 +37,159 @@
     <h1 data-i18n="hero.guides.title">📚 Panduan Grow a Garden</h1>
     <p data-i18n="hero.guides.subtitle">Koleksi lengkap strategi, resep, dan tips gameplay</p>
   </section>
+  <div class="breadcrumb-container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/index.html" data-i18n="breadcrumb.home">🏠 Beranda</a></li>
+        <li aria-current="page" data-i18n="breadcrumb.guides">📚 Panduan</li>
+      </ol>
+    </nav>
+  </div>
+  <div class="guides-section">
+    <div class="guides-card">
+      <h2>🔍 Cari dan Filter</h2>
+      <div class="search-filter-container">
+        <input type="text" id="guide-search" placeholder="Cari panduan..." class="guide-search-input">
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">Semua</button>
+          <button class="filter-btn" data-filter="recipe">Resep</button>
+          <button class="filter-btn" data-filter="farming">Pertanian</button>
+          <button class="filter-btn" data-filter="profit">Keuntungan</button>
+          <button class="filter-btn" data-filter="advanced">Lanjutan</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 热门攻略 -->
+    <div class="guides-card">
+      <h2>🔥 Panduan Populer</h2>
+      <div class="guides-grid">
+        <a href="/how-to-make-salad.html" class="guide-item featured-guide">
+          <div class="featured-badge">⭐ Paling Populer</div>
+          <h3>🥗 Panduan Membuat Salad</h3>
+          <p>Kuasai seni membuat salad. Pelajari pengumpulan bahan, resep lanjutan dan metode peningkatan efisiensi.</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">Pemula</span>
+            <span class="guide-read-time">15 menit baca</span>
+            <span class="guide-views">🔥 2.5k dilihat</span>
+          </div>
+        </a>
+        
+        <a href="/how-to-make-pizza.html" class="guide-item">
+          <div class="trending-badge">📈 Tren</div>
+          <h3>🍕 Panduan Membuat Pizza</h3>
+          <p>Pelajari cara membuat pizza lezat di Grow a Garden. Dari persiapan adonan hingga kombinasi topping.</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">Menengah</span>
+            <span class="guide-read-time">25 menit baca</span>
+            <span class="guide-views">🔥 1.8k dilihat</span>
+          </div>
+        </a>
+        
+        <a href="/how-to-make-bread.html" class="guide-item">
+          <div class="new-badge">🆕 Baru</div>
+          <h3>🍞 Panduan Membuat Roti</h3>
+          <p>Kuasi teknik pembuatan roti di Grow a Garden. Pelajari jenis tepung, manajemen ragi dan optimasi pemanggangan.</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">Pemula</span>
+            <span class="guide-read-time">20 menit baca</span>
+            <span class="guide-views">🔥 1.2k dilihat</span>
+          </div>
+        </a>
+      </div>
+    </div>
+    
+    <!-- 食谱攻略 -->
+    <div class="category-section" data-category="recipe">
+      <h2 class="category-title">🍽️ Panduan Resep</h2>
+      <div class="guides-grid">
+        <a href="/how-to-make-salad.html" class="guide-item">
+          <h3>🥗 Panduan Membuat Salad</h3>
+          <p>Panduan lengkap untuk membuat salad sempurna di Grow a Garden. Dari pengumpulan bahan dasar hingga resep lanjutan.</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">Pemula</span>
+            <span class="guide-read-time">15 menit baca</span>
+          </div>
+        </a>
+        
+        <a href="/how-to-make-pizza.html" class="guide-item">
+          <h3>🍕 Panduan Membuat Pizza</h3>
+          <p>Pelajari cara membuat pizza lezat di Grow a Garden. Dari persiapan adonan hingga kombinasi topping.</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">Menengah</span>
+            <span class="guide-read-time">25 menit baca</span>
+          </div>
+        </a>
+        
+        <a href="/how-to-make-bread.html" class="guide-item">
+          <h3>🍞 Panduan Membuat Roti</h3>
+          <p>Kuasi teknik pembuatan roti. Pelajari jenis tepung, manajemen ragi dan optimasi pemanggangan.</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">Pemula</span>
+            <span class="guide-read-time">20 menit baca</span>
+          </div>
+        </a>
+        
+        <a href="/how-to-make-cake.html" class="guide-item">
+          <h3>🍰 Panduan Membuat Kue</h3>
+          <p>Pelajari cara membuat berbagai kue lezat. Dari resep dasar hingga teknik dekorasi lanjutan.</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">Menengah</span>
+            <span class="guide-read-time">30 menit baca</span>
+          </div>
+        </a>
+      </div>
+    </div>
+    
+    <!-- 种植攻略 -->
+    <div class="category-section" data-category="farming">
+      <h2 class="category-title">🌱 Panduan Pertanian</h2>
+      <div class="guides-grid">
+        <a href="/how-to-grow-corn.html" class="guide-item">
+          <h3>🌽 Panduan Menanam Jagung</h3>
+          <p>Kuasi teknik menanam jagung. Pelajari waktu tanam optimal, strategi penyiraman dan optimasi panen.</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">Pemula</span>
+            <span class="guide-read-time">18 menit baca</span>
+          </div>
+        </a>
+        
+        <a href="/how-to-grow-oranges.html" class="guide-item">
+          <h3>🍊 Panduan Menanam Jeruk</h3>
+          <p>Pelajari teknik menanam jeruk. Proses lengkap dari pemilihan benih hingga panen matang.</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">Menengah</span>
+            <span class="guide-read-time">22 menit baca</span>
+          </div>
+        </a>
+      </div>
+    </div>
+    
+    <!-- 收益攻略 -->
+    <div class="category-section" data-category="profit">
+      <h2 class="category-title">💰 Panduan Keuntungan</h2>
+      <div class="guides-grid">
+        <a href="/how-to-make-money-fast.html" class="guide-item">
+          <h3>💸 Panduan Cepat Mendapatkan Uang</h3>
+          <p>Pelajari metode tercepat untuk mendapatkan uang. Kuasi timing pasar, pemilihan tanaman dan strategi investasi.</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">Menengah</span>
+            <span class="guide-read-time">35 menit baca</span>
+          </div>
+        </a>
+        
+        <a href="/profit-strategies.html" class="guide-item">
+          <h3>📈 Panduan Strategi Keuntungan</h3>
+          <p>Kuasi strategi keuntungan jangka panjang. Pelajari analisis pasar, manajemen risiko dan portofolio investasi.</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">Lanjutan</span>
+            <span class="guide-read-time">45 menit baca</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
   <script src="/i18n/i18n.js"></script>
+  <script src="/script.js"></script>
 </body>
 </html> 

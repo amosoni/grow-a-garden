@@ -1053,3 +1053,113 @@ window.GrowTracker = {
     }
   });
 })(); 
+
+// 攻略页面功能
+(function() {
+  // 检查是否在攻略页面
+  if (!document.querySelector('.guides-section')) return;
+  
+  const searchInput = document.getElementById('guide-search');
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const guideItems = document.querySelectorAll('.guide-item');
+  const categorySections = document.querySelectorAll('.category-section');
+  
+  // 搜索功能
+  function filterGuides() {
+    const searchTerm = searchInput.value.toLowerCase();
+    const activeFilter = document.querySelector('.filter-btn.active').getAttribute('data-filter');
+    
+    guideItems.forEach(item => {
+      const title = item.querySelector('h3').textContent.toLowerCase();
+      const description = item.querySelector('p').textContent.toLowerCase();
+      const category = item.closest('.category-section')?.getAttribute('data-category') || 'all';
+      
+      const matchesSearch = title.includes(searchTerm) || description.includes(searchTerm);
+      const matchesFilter = activeFilter === 'all' || category === activeFilter;
+      
+      if (matchesSearch && matchesFilter) {
+        item.style.display = 'block';
+        item.style.animation = 'fadeIn 0.3s ease-in-out';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+    
+    // 显示/隐藏分类标题
+    categorySections.forEach(section => {
+      const visibleItems = section.querySelectorAll('.guide-item[style*="block"]').length;
+      const categoryTitle = section.querySelector('.category-title');
+      
+      if (visibleItems === 0) {
+        if (categoryTitle) categoryTitle.style.display = 'none';
+      } else {
+        if (categoryTitle) categoryTitle.style.display = 'block';
+      }
+    });
+  }
+  
+  // 筛选按钮点击事件
+  filterButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      // 移除所有active类
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      // 添加active类到当前按钮
+      this.classList.add('active');
+      // 执行筛选
+      filterGuides();
+    });
+  });
+  
+  // 搜索输入事件
+  if (searchInput) {
+    searchInput.addEventListener('input', filterGuides);
+    searchInput.addEventListener('keyup', function(e) {
+      if (e.key === 'Enter') {
+        // 可以在这里添加回车搜索的特殊处理
+        console.log('Search submitted:', this.value);
+      }
+    });
+  }
+  
+  // 添加淡入动画
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  `;
+  document.head.appendChild(style);
+  
+  // 初始化
+  filterGuides();
+  
+  // 添加点击统计（可选）
+  guideItems.forEach(item => {
+    item.addEventListener('click', function() {
+      const title = this.querySelector('h3').textContent;
+      console.log('Guide clicked:', title);
+      // 这里可以添加统计代码
+    });
+  });
+  
+  // 添加键盘导航支持
+  document.addEventListener('keydown', function(e) {
+    if (e.target === searchInput) return;
+    
+    // Ctrl/Cmd + F 聚焦搜索框
+    if ((e.ctrlKey || e.metaKey) && e.key === 'f') {
+      e.preventDefault();
+      searchInput.focus();
+      searchInput.select();
+    }
+    
+    // ESC 清空搜索
+    if (e.key === 'Escape' && searchInput.value) {
+      searchInput.value = '';
+      filterGuides();
+    }
+  });
+  
+  console.log('Guides page functionality initialized');
+})(); 

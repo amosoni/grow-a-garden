@@ -37,6 +37,159 @@
     <h1 data-i18n="hero.guides.title">📚 Hướng dẫn Grow a Garden</h1>
     <p data-i18n="hero.guides.subtitle">Bộ sưu tập đầy đủ về chiến lược, công thức và mẹo chơi</p>
   </section>
+  <div class="breadcrumb-container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/index.html" data-i18n="breadcrumb.home">🏠 Trang chủ</a></li>
+        <li aria-current="page" data-i18n="breadcrumb.guides">📚 Hướng dẫn</li>
+      </ol>
+    </nav>
+  </div>
+  <div class="guides-section">
+    <div class="guides-card">
+      <h2>🔍 Tìm kiếm và Lọc</h2>
+      <div class="search-filter-container">
+        <input type="text" id="guide-search" placeholder="Tìm kiếm hướng dẫn..." class="guide-search-input">
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">Tất cả</button>
+          <button class="filter-btn" data-filter="recipe">Công thức</button>
+          <button class="filter-btn" data-filter="farming">Nông nghiệp</button>
+          <button class="filter-btn" data-filter="profit">Lợi nhuận</button>
+          <button class="filter-btn" data-filter="advanced">Nâng cao</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 热门攻略 -->
+    <div class="guides-card">
+      <h2>🔥 Hướng dẫn Phổ biến</h2>
+      <div class="guides-grid">
+        <a href="/how-to-make-salad.html" class="guide-item featured-guide">
+          <div class="featured-badge">⭐ Phổ biến nhất</div>
+          <h3>🥗 Hướng dẫn Làm Salad</h3>
+          <p>Làm chủ nghệ thuật làm salad. Học cách thu thập nguyên liệu, công thức nâng cao và phương pháp cải thiện hiệu quả.</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">Người mới</span>
+            <span class="guide-read-time">15 phút đọc</span>
+            <span class="guide-views">🔥 2.5k lượt xem</span>
+          </div>
+        </a>
+        
+        <a href="/how-to-make-pizza.html" class="guide-item">
+          <div class="trending-badge">📈 Xu hướng</div>
+          <h3>🍕 Hướng dẫn Làm Pizza</h3>
+          <p>Học cách làm pizza ngon trong Grow a Garden. Từ chuẩn bị bột đến kết hợp topping.</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">Trung cấp</span>
+            <span class="guide-read-time">25 phút đọc</span>
+            <span class="guide-views">🔥 1.8k lượt xem</span>
+          </div>
+        </a>
+        
+        <a href="/how-to-make-bread.html" class="guide-item">
+          <div class="new-badge">🆕 Mới</div>
+          <h3>🍞 Hướng dẫn Làm Bánh mì</h3>
+          <p>Làm chủ kỹ thuật làm bánh mì trong Grow a Garden. Học các loại bột, quản lý men và tối ưu hóa nướng.</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">Người mới</span>
+            <span class="guide-read-time">20 phút đọc</span>
+            <span class="guide-views">🔥 1.2k lượt xem</span>
+          </div>
+        </a>
+      </div>
+    </div>
+    
+    <!-- 食谱攻略 -->
+    <div class="category-section" data-category="recipe">
+      <h2 class="category-title">🍽️ Hướng dẫn Công thức</h2>
+      <div class="guides-grid">
+        <a href="/how-to-make-salad.html" class="guide-item">
+          <h3>🥗 Hướng dẫn Làm Salad</h3>
+          <p>Hướng dẫn hoàn chỉnh để làm salad hoàn hảo trong Grow a Garden. Từ thu thập nguyên liệu cơ bản đến công thức nâng cao.</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">Người mới</span>
+            <span class="guide-read-time">15 phút đọc</span>
+          </div>
+        </a>
+        
+        <a href="/how-to-make-pizza.html" class="guide-item">
+          <h3>🍕 Hướng dẫn Làm Pizza</h3>
+          <p>Học cách làm pizza ngon trong Grow a Garden. Từ chuẩn bị bột đến kết hợp topping.</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">Trung cấp</span>
+            <span class="guide-read-time">25 phút đọc</span>
+          </div>
+        </a>
+        
+        <a href="/how-to-make-bread.html" class="guide-item">
+          <h3>🍞 Hướng dẫn Làm Bánh mì</h3>
+          <p>Làm chủ kỹ thuật làm bánh mì. Học các loại bột, quản lý men và tối ưu hóa nướng.</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">Người mới</span>
+            <span class="guide-read-time">20 phút đọc</span>
+          </div>
+        </a>
+        
+        <a href="/how-to-make-cake.html" class="guide-item">
+          <h3>🍰 Hướng dẫn Làm Bánh</h3>
+          <p>Học cách làm các loại bánh ngon khác nhau. Từ công thức cơ bản đến kỹ thuật trang trí nâng cao.</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">Trung cấp</span>
+            <span class="guide-read-time">30 phút đọc</span>
+          </div>
+        </a>
+      </div>
+    </div>
+    
+    <!-- 种植攻略 -->
+    <div class="category-section" data-category="farming">
+      <h2 class="category-title">🌱 Hướng dẫn Nông nghiệp</h2>
+      <div class="guides-grid">
+        <a href="/how-to-grow-corn.html" class="guide-item">
+          <h3>🌽 Hướng dẫn Trồng Ngô</h3>
+          <p>Làm chủ kỹ thuật trồng ngô. Học thời gian trồng tối ưu, chiến lược tưới nước và tối ưu hóa thu hoạch.</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">Người mới</span>
+            <span class="guide-read-time">18 phút đọc</span>
+          </div>
+        </a>
+        
+        <a href="/how-to-grow-oranges.html" class="guide-item">
+          <h3>🍊 Hướng dẫn Trồng Cam</h3>
+          <p>Học kỹ thuật trồng cam. Quy trình hoàn chỉnh từ chọn hạt giống đến thu hoạch chín.</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">Trung cấp</span>
+            <span class="guide-read-time">22 phút đọc</span>
+          </div>
+        </a>
+      </div>
+    </div>
+    
+    <!-- 收益攻略 -->
+    <div class="category-section" data-category="profit">
+      <h2 class="category-title">💰 Hướng dẫn Lợi nhuận</h2>
+      <div class="guides-grid">
+        <a href="/how-to-make-money-fast.html" class="guide-item">
+          <h3>💸 Hướng dẫn Kiếm tiền Nhanh</h3>
+          <p>Học các phương pháp nhanh nhất để kiếm tiền. Làm chủ thời điểm thị trường, chọn cây trồng và chiến lược đầu tư.</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">Trung cấp</span>
+            <span class="guide-read-time">35 phút đọc</span>
+          </div>
+        </a>
+        
+        <a href="/profit-strategies.html" class="guide-item">
+          <h3>📈 Hướng dẫn Chiến lược Lợi nhuận</h3>
+          <p>Làm chủ chiến lược lợi nhuận dài hạn. Học phân tích thị trường, quản lý rủi ro và danh mục đầu tư.</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">Nâng cao</span>
+            <span class="guide-read-time">45 phút đọc</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
   <script src="/i18n/i18n.js"></script>
+  <script src="/script.js"></script>
 </body>
 </html> 
