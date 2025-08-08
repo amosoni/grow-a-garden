@@ -198,4 +198,10 @@
                 <changefreq>monthly</changefreq>
                 <priority>0.8</priority>
             </url>
+            <url>
+                <loc>https://growagarden.cv/how-to-grow-corn.html</loc>
+                <lastmod>2024-12-19</lastmod>
+                <changefreq>monthly</changefreq>
+                <priority>0.8</priority>
+            </url>
         </urlset} 
