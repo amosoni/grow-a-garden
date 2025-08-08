@@ -1,13 +1,70 @@
 {
   "nav.logo": "🌱 Grow a Garden",
-  "nav.live": "إحصاءات مباشرة",
-  "nav.map": "خريطة حرارية عالمية",
+  "nav.live": "الإحصائيات المباشرة",
+  "nav.map": "خريطة الحرارة العالمية",
   "nav.tips": "نصائح",
   "nav.guides": "📚 الأدلة",
   "nav.discord": "💬 Discord",
+  "hero.title": "🌱 حاسبة Grow a Garden",
+  "hero.subtitle": "أداة قيمة الفواكه والطفرات في Roblox",
+  "hero.description": "أدخل معلومات المحصول لحساب قيمة الطفرة فوراً. أكثر مضاعفات الطفرات اكتمالاً في Roblox Grow a Garden!",
+  "tabs.all": "الكل",
+  "tabs.baseValue": "القيمة الأساسية",
+  "tabs.exotic": "حزمة البذور الغريبة",
+  "tabs.prehistoric": "الحدث ما قبل التاريخ",
+  "tabs.event": "حزمة بذور الحدث",
+  "search.plant": "البحث عن نبات...",
+  "search.mutation": "البحث عن طفرة...",
+  "mutation.title": "المعدلات",
+  "mutation.help": "كيفية الحصول على كل طفرة؟",
+  "mutation.sortValue": "ترتيب حسب القيمة (تنازلي)",
+  "mutation.sortAlpha": "ترتيب أبجدي",
+  "mutation.hideAdmin": "إخفاء طفرات المدير",
+  "input.weight": "الوزن (كجم):",
+  "input.amount": "كمية النباتات:",
+  "input.friendBoost": "دفعة الصديق:",
+  "btn.addToList": "إضافة قيمة النبات إلى القائمة",
+  "btn.clearMutations": "مسح الطفرات",
+  "btn.maxMutations": "الطفرات القصوى",
+  "btn.toggleMode": "تبديل وضع القيمة إلى الوزن",
+  "map.title": "🌍 خريطة الحرارة العالمية للاعبين",
+  "map.loading": "جاري التحميل...",
+  "map.activeCountries": "البلدان النشطة",
+  "map.topRegion": "المنطقة الأولى",
+  "tips.title": "💡 نصائح سريعة",
+  "tips.watering.title": "كفاءة الري",
+  "tips.watering.goldenHours": "الساعات الذهبية",
+  "tips.watering.goldenHoursDesc": "7:00-9:00 في اللعبة (2x تأثير في الوقت الفعلي)",
+  "tips.watering.comboTrick": "خدعة الكومبو",
+  "tips.watering.comboTrickDesc": "انقر على إبريق الري 5 مرات لتأثير مخفي",
+  "tips.watering.bestFrequency": "أفضل تردد",
+  "tips.watering.bestFrequencyDesc": "اسق كل 30 دقيقة",
+  "tips.watering.watchVideo": "مشاهدة الفيديو →",
+  "tips.seed.title": "اختيار البذور",
+  "tips.seed.beginner": "مبتدئ",
+  "tips.seed.beginnerDesc": "دوار الشمس (نمو سريع، مكافآت مستقرة)",
+  "tips.seed.advanced": "متقدم",
+  "tips.seed.advancedDesc": "الوردة (قيمة عالية، تحتاج مهارة)",
+  "tips.seed.rare": "بذور نادرة",
+  "tips.seed.rareDesc": "محدودة في عطلات نهاية الأسبوع",
+  "tips.seed.seeGuide": "رؤية دليل البذور →",
+  "tips.achievement.title": "دليل الإنجازات",
+  "tips.achievement.beginner": "مبتدئ",
+  "tips.achievement.beginnerDesc": "ازرع 100 زهرة",
+  "tips.achievement.advanced": "متقدم",
+  "tips.achievement.advancedDesc": "سلسلة دخول 7 أيام",
+  "tips.achievement.hidden": "مخفي",
+  "tips.achievement.hiddenDesc": "ازرع في أوقات خاصة",
+  "tips.achievement.seeAll": "رؤية جميع الإنجازات →",
+  "community.title": "💬 انضم إلى مجتمعنا",
+  "community.description": "تحدث مع لاعبي Grow a Garden من جميع أنحاء العالم على Discord!",
+  "community.members": "أعضاء Discord",
+  "community.support": "الدعم عبر الإنترنت",
+  "community.messages": "الرسائل اليومية",
+  "community.joinDiscord": "🚀 انضم إلى Discord",
   "hero.guides.title": "📚 أدلة Grow a Garden",
   "hero.guides.subtitle": "مجموعة كاملة من الاستراتيجيات والوصفات ونصائح اللعب",
   "breadcrumb.home": "🏠 الرئيسية",
   "breadcrumb.guides": "📚 الأدلة",
-  "btn.back": "← الرجوع إلى الأدلة"
+  "btn.back": "← العودة إلى الأدلة"
 } 

@@ -84,6 +84,16 @@
             <select id="lang-switcher" aria-label="Language">
                 <option value="en">English</option>
                 <option value="zh-cn">简体中文</option>
+                <option value="es">Español</option>
+                <option value="pt-br">Português</option>
+                <option value="fr">Français</option>
+                <option value="de">Deutsch</option>
+                <option value="ru">Русский</option>
+                <option value="ar">العربية</option>
+                <option value="hi">हिन्दी</option>
+                <option value="id">Bahasa Indonesia</option>
+                <option value="vi">Tiếng Việt</option>
+                <option value="ja">日本語</option>
             </select>
         </nav>
     </header>
@@ -91,21 +101,21 @@
         <div class="hero-blur-bg"></div>
         <div class="hero-content">
             <div class="hero-glass">
-                <h1>🌱 Grow a Garden Calculator</h1>
-                <h2>Roblox Fruit & Mutation Value Tool</h2>
-                <p class="hero-subtitle">Enter crop info to instantly calculate mutation value. The most complete Roblox Grow a Garden mutation multipliers!</p>
+                <h1 data-i18n="hero.title">🌱 Grow a Garden Calculator</h1>
+                <h2 data-i18n="hero.subtitle">Roblox Fruit & Mutation Value Tool</h2>
+                <p class="hero-subtitle" data-i18n="hero.description">Enter crop info to instantly calculate mutation value. The most complete Roblox Grow a Garden mutation multipliers!</p>
                 
                 <!-- 分类Tab -->
                 <div class="plant-tabs">
-                    <button class="tab active" data-category="all">All</button>
-                    <button class="tab" data-category="BaseValue">Base Value</button>
-                    <button class="tab" data-category="Exotic Seed Pack">Exotic Seed Pack</button>
-                    <button class="tab" data-category="Prehistoric Event">Prehistoric Event</button>
-                    <button class="tab" data-category="Event Seed Pack">Event Seed Pack</button>
+                    <button class="tab active" data-category="all" data-i18n="tabs.all">All</button>
+                    <button class="tab" data-category="BaseValue" data-i18n="tabs.baseValue">Base Value</button>
+                    <button class="tab" data-category="Exotic Seed Pack" data-i18n="tabs.exotic">Exotic Seed Pack</button>
+                    <button class="tab" data-category="Prehistoric Event" data-i18n="tabs.prehistoric">Prehistoric Event</button>
+                    <button class="tab" data-category="Event Seed Pack" data-i18n="tabs.event">Event Seed Pack</button>
                 </div>
                 
                 <!-- 搜索框 -->
-                <input type="text" class="plant-search" placeholder="Search for a plant...">
+                <input type="text" class="plant-search" placeholder="Search for a plant..." data-i18n-placeholder="search.plant">
                 
                 <!-- 作物图片选择区 -->
                 <div class="plant-list" id="plant-list">
@@ -115,13 +125,13 @@
                 <!-- 变异工具栏 -->
                 <div class="mutation-toolbar">
                     <div class="mutation-controls">
-                        <span class="mutation-title">Modifiers</span>
-                        <button class="mutation-help-btn">How to get each mutation?</button>
-                        <button class="mutation-sort-btn" data-sort="value">Sort by Value (Descending)</button>
-                        <button class="mutation-sort-btn" data-sort="alphabetical">Sort Alphabetically</button>
-                        <button class="mutation-hide-btn" id="hide-admin-btn">Hide Admin Mutations</button>
+                        <span class="mutation-title" data-i18n="mutation.title">Modifiers</span>
+                        <button class="mutation-help-btn" data-i18n="mutation.help">How to get each mutation?</button>
+                        <button class="mutation-sort-btn" data-sort="value" data-i18n="mutation.sortValue">Sort by Value (Descending)</button>
+                        <button class="mutation-sort-btn" data-sort="alphabetical" data-i18n="mutation.sortAlpha">Sort Alphabetically</button>
+                        <button class="mutation-hide-btn" id="hide-admin-btn" data-i18n="mutation.hideAdmin">Hide Admin Mutations</button>
                     </div>
-                    <input type="text" class="mutation-search" placeholder="Search for a mutation...">
+                    <input type="text" class="mutation-search" placeholder="Search for a mutation..." data-i18n-placeholder="search.mutation">
                 </div>
                 
                 <!-- 变异选择区 -->
@@ -137,15 +147,15 @@
                 <!-- 输入区 -->
                 <div class="input-section">
                     <div class="input-row">
-                        <label>Weight (kg):</label>
+                        <label data-i18n="input.weight">Weight (kg):</label>
                         <input type="number" id="crop-weight" min="0" step="0.01" value="1.00">
                     </div>
                     <div class="input-row">
-                        <label>Amount of plants:</label>
+                        <label data-i18n="input.amount">Amount of plants:</label>
                         <input type="number" id="crop-amount" min="1" value="1">
                     </div>
                     <div class="input-row">
-                        <label>Friend Boost: <span id="friend-boost-value">0%</span></label>
+                        <label data-i18n="input.friendBoost">Friend Boost: <span id="friend-boost-value">0%</span></label>
                         <input type="range" id="friend-boost" min="0" max="100" value="0">
                     </div>
                 </div>
@@ -158,10 +168,10 @@
                 
                 <!-- 操作按钮区 -->
                 <div class="action-buttons">
-                    <button class="action-btn" id="add-to-list">Add Plant value to list</button>
-                    <button class="action-btn" id="clear-mutations">Clear Mutations</button>
-                    <button class="action-btn" id="max-mutations">Max Mutations</button>
-                    <button class="action-btn" id="toggle-mode">Toggle Value to Weight Mode</button>
+                    <button class="action-btn" id="add-to-list" data-i18n="btn.addToList">Add Plant value to list</button>
+                    <button class="action-btn" id="clear-mutations" data-i18n="btn.clearMutations">Clear Mutations</button>
+                    <button class="action-btn" id="max-mutations" data-i18n="btn.maxMutations">Max Mutations</button>
+                    <button class="action-btn" id="toggle-mode" data-i18n="btn.toggleMode">Toggle Value to Weight Mode</button>
                 </div>
                 
                 <!-- 反向计算区 -->
@@ -226,78 +236,78 @@
         </div>
     </section>
     <section id="map" class="map-section">
-        <h2><span class="title-glass">🌍 Global Player Heatmap</span></h2>
+        <h2><span class="title-glass" data-i18n="map.title">🌍 Global Player Heatmap</span></h2>
         <div class="map-container glass">
             <div id="heatmap">
-                <div id="heatmap-loading" style="display:none;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:rgba(255,255,255,0.8);padding:1rem 2rem;border-radius:1rem;z-index:10;">加载中...</div>
+                <div id="heatmap-loading" style="display:none;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:rgba(255,255,255,0.8);padding:1rem 2rem;border-radius:1rem;z-index:10;" data-i18n="map.loading">加载中...</div>
             </div>
             <div class="map-stats">
                 <div class="stat-item glass">
-                    <span class="stat-label">Active Countries</span>
+                    <span class="stat-label" data-i18n="map.activeCountries">Active Countries</span>
                     <span class="stat-value" id="active-countries">127</span>
                 </div>
                 <div class="stat-item glass">
-                    <span class="stat-label">Top Region</span>
+                    <span class="stat-label" data-i18n="map.topRegion">Top Region</span>
                     <span class="stat-value" id="top-region">North America</span>
                 </div>
             </div>
         </div>
     </section>
     <section id="tips" class="tips-section">
-        <h2><span class="title-glass">💡 Quick Tips</span></h2>
+        <h2><span class="title-glass" data-i18n="tips.title">💡 Quick Tips</span></h2>
         <div class="tips-grid">
             <div class="tip-card glass">
                 <div class="tip-icon">💧</div>
-                <h3>Watering Efficiency</h3>
+                <h3 data-i18n="tips.watering.title">Watering Efficiency</h3>
                 <ul>
-                    <li><strong>Golden Hours</strong>: 7:00-9:00 in-game (2x effect in real time)</li>
-                    <li><strong>Combo Trick</strong>: Click the watering can 5 times for a hidden effect</li>
-                    <li><strong>Best Frequency</strong>: Water every 30 minutes</li>
+                    <li><strong data-i18n="tips.watering.goldenHours">Golden Hours</strong>: <span data-i18n="tips.watering.goldenHoursDesc">7:00-9:00 in-game (2x effect in real time)</span></li>
+                    <li><strong data-i18n="tips.watering.comboTrick">Combo Trick</strong>: <span data-i18n="tips.watering.comboTrickDesc">Click the watering can 5 times for a hidden effect</span></li>
+                    <li><strong data-i18n="tips.watering.bestFrequency">Best Frequency</strong>: <span data-i18n="tips.watering.bestFrequencyDesc">Water every 30 minutes</span></li>
                 </ul>
-                <a href="#" class="tip-link">Watch Video →</a>
+                <a href="#" class="tip-link" data-i18n="tips.watering.watchVideo">Watch Video →</a>
             </div>
             <div class="tip-card glass">
                 <div class="tip-icon">🌱</div>
-                <h3>Seed Selection</h3>
+                <h3 data-i18n="tips.seed.title">Seed Selection</h3>
                 <ul>
-                    <li><strong>Beginner</strong>: Sunflower (fast growth, stable rewards)</li>
-                    <li><strong>Advanced</strong>: Rose (high value, needs skill)</li>
-                    <li><strong>Rare Seeds</strong>: Limited on weekends</li>
+                    <li><strong data-i18n="tips.seed.beginner">Beginner</strong>: <span data-i18n="tips.seed.beginnerDesc">Sunflower (fast growth, stable rewards)</span></li>
+                    <li><strong data-i18n="tips.seed.advanced">Advanced</strong>: <span data-i18n="tips.seed.advancedDesc">Rose (high value, needs skill)</span></li>
+                    <li><strong data-i18n="tips.seed.rare">Rare Seeds</strong>: <span data-i18n="tips.seed.rareDesc">Limited on weekends</span></li>
                 </ul>
-                <a href="#" class="tip-link">See Seed Guide →</a>
+                <a href="#" class="tip-link" data-i18n="tips.seed.seeGuide">See Seed Guide →</a>
             </div>
             <div class="tip-card glass">
                 <div class="tip-icon">🏆</div>
-                <h3>Achievement Guide</h3>
+                <h3 data-i18n="tips.achievement.title">Achievement Guide</h3>
                 <ul>
-                    <li><strong>Beginner</strong>: Plant 100 flowers</li>
-                    <li><strong>Advanced</strong>: 7-day login streak</li>
-                    <li><strong>Hidden</strong>: Plant at special times</li>
+                    <li><strong data-i18n="tips.achievement.beginner">Beginner</strong>: <span data-i18n="tips.achievement.beginnerDesc">Plant 100 flowers</span></li>
+                    <li><strong data-i18n="tips.achievement.advanced">Advanced</strong>: <span data-i18n="tips.achievement.advancedDesc">7-day login streak</span></li>
+                    <li><strong data-i18n="tips.achievement.hidden">Hidden</strong>: <span data-i18n="tips.achievement.hiddenDesc">Plant at special times</span></li>
                 </ul>
-                <a href="#" class="tip-link">See All Achievements →</a>
+                <a href="#" class="tip-link" data-i18n="tips.achievement.seeAll">See All Achievements →</a>
             </div>
         </div>
     </section>
     <section id="community" class="community-section">
-        <h2><span class="title-glass">💬 Join Our Community</span></h2>
+        <h2><span class="title-glass" data-i18n="community.title">💬 Join Our Community</span></h2>
         <div class="community-card">
             <div class="community-content">
-                <p>Chat with Grow a Garden players worldwide on Discord!</p>
+                <p data-i18n="community.description">Chat with Grow a Garden players worldwide on Discord!</p>
                 <div class="community-stats">
                     <div class="community-stat">
                         <span class="stat-number">50,000+</span>
-                        <span class="stat-label">Discord Members</span>
+                        <span class="stat-label" data-i18n="community.members">Discord Members</span>
                     </div>
                     <div class="community-stat">
                         <span class="stat-number">24/7</span>
-                        <span class="stat-label">Online Support</span>
+                        <span class="stat-label" data-i18n="community.support">Online Support</span>
                     </div>
                     <div class="community-stat">
                         <span class="stat-number">1000+</span>
-                        <span class="stat-label">Daily Messages</span>
+                        <span class="stat-label" data-i18n="community.messages">Daily Messages</span>
                     </div>
                 </div>
-                <a href="https://discord.gg/growagarden" class="discord-join-btn" target="_blank">
+                <a href="https://discord.gg/growagarden" class="discord-join-btn" target="_blank" data-i18n="community.joinDiscord">
                     🚀 Join Discord
                 </a>
             </div>

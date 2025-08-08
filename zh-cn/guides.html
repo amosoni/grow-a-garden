@@ -21,10 +21,20 @@
       <a href="javascript:void(0)" onclick="scrollToSection('tips')" data-i18n="nav.tips">小技巧</a>
       <a href="/guides.html" data-i18n="nav.guides">📚 攻略</a>
       <a href="javascript:void(0)" onclick="scrollToSection('community')" class="discord-btn" data-i18n="nav.discord">💬 交流</a>
-      <select id="lang-switcher" aria-label="Language">
-        <option value="en">English</option>
-        <option value="zh-cn" selected>简体中文</option>
-      </select>
+                  <select id="lang-switcher" aria-label="Language">
+                <option value="en">English</option>
+                <option value="zh-cn" selected>简体中文</option>
+                <option value="es">Español</option>
+                <option value="pt-br">Português</option>
+                <option value="fr">Français</option>
+                <option value="de">Deutsch</option>
+                <option value="ru">Русский</option>
+                <option value="ar">العربية</option>
+                <option value="hi">हिन्दी</option>
+                <option value="id">Bahasa Indonesia</option>
+                <option value="vi">Tiếng Việt</option>
+                <option value="ja">日本語</option>
+            </select>
     </nav>
   </header>
   <section class="guides-hero">
@@ -51,6 +61,135 @@
           <button class="filter-btn" data-filter="profit">收益</button>
           <button class="filter-btn" data-filter="advanced">进阶</button>
         </div>
+      </div>
+    </div>
+
+    <!-- 热门攻略 -->
+    <div class="guides-card">
+      <h2>🔥 热门攻略</h2>
+      <div class="guides-grid">
+        <a href="/how-to-make-salad.html" class="guide-item featured-guide">
+          <div class="featured-badge">⭐ 最受欢迎</div>
+          <h3>🥗 沙拉制作指南</h3>
+          <p>掌握沙拉制作的艺术。学习食材收集、高级食谱和效率提升方法。</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">新手</span>
+            <span class="guide-read-time">15分钟阅读</span>
+            <span class="guide-views">🔥 2.5k 浏览</span>
+          </div>
+        </a>
+        
+        <a href="/how-to-make-pizza.html" class="guide-item">
+          <div class="trending-badge">📈 热门</div>
+          <h3>🍕 披萨制作指南</h3>
+          <p>学习在种植花园中制作美味披萨。从面团准备到配料组合和收益策略。</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">中级</span>
+            <span class="guide-read-time">25分钟阅读</span>
+            <span class="guide-views">🔥 1.8k 浏览</span>
+          </div>
+        </a>
+        
+        <a href="/how-to-make-bread.html" class="guide-item">
+          <div class="new-badge">🆕 新</div>
+          <h3>🍞 面包制作指南</h3>
+          <p>掌握种植花园中的面包制作技巧。学习面粉类型、酵母管理和烘焙优化。</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">新手</span>
+            <span class="guide-read-time">20分钟阅读</span>
+            <span class="guide-views">🔥 1.2k 浏览</span>
+          </div>
+        </a>
+      </div>
+    </div>
+    
+    <!-- 食谱攻略 -->
+    <div class="category-section" data-category="recipe">
+      <h2 class="category-title">🍽️ 食谱攻略</h2>
+      <div class="guides-grid">
+        <a href="/how-to-make-salad.html" class="guide-item">
+          <h3>🥗 沙拉制作指南</h3>
+          <p>在种植花园中制作完美沙拉的完整指南。从基础食材收集到高级食谱。</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">新手</span>
+            <span class="guide-read-time">15分钟阅读</span>
+          </div>
+        </a>
+        
+        <a href="/how-to-make-pizza.html" class="guide-item">
+          <h3>🍕 披萨制作指南</h3>
+          <p>学习在种植花园中制作美味披萨。从面团准备到配料组合。</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">中级</span>
+            <span class="guide-read-time">25分钟阅读</span>
+          </div>
+        </a>
+        
+        <a href="/how-to-make-bread.html" class="guide-item">
+          <h3>🍞 面包制作指南</h3>
+          <p>掌握面包制作技巧。学习面粉类型、酵母管理和烘焙优化。</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">新手</span>
+            <span class="guide-read-time">20分钟阅读</span>
+          </div>
+        </a>
+        
+        <a href="/how-to-make-cake.html" class="guide-item">
+          <h3>🍰 蛋糕制作指南</h3>
+          <p>学习制作各种美味蛋糕。从基础配方到高级装饰技巧。</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">中级</span>
+            <span class="guide-read-time">30分钟阅读</span>
+          </div>
+        </a>
+      </div>
+    </div>
+    
+    <!-- 种植攻略 -->
+    <div class="category-section" data-category="farming">
+      <h2 class="category-title">🌱 种植攻略</h2>
+      <div class="guides-grid">
+        <a href="/how-to-grow-corn.html" class="guide-item">
+          <h3>🌽 玉米种植指南</h3>
+          <p>掌握玉米种植技巧。学习最佳种植时间、浇水策略和收获优化。</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">新手</span>
+            <span class="guide-read-time">18分钟阅读</span>
+          </div>
+        </a>
+        
+        <a href="/how-to-grow-oranges.html" class="guide-item">
+          <h3>🍊 橙子种植指南</h3>
+          <p>学习橙子种植技术。从种子选择到成熟收获的完整流程。</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">中级</span>
+            <span class="guide-read-time">22分钟阅读</span>
+          </div>
+        </a>
+      </div>
+    </div>
+    
+    <!-- 收益攻略 -->
+    <div class="category-section" data-category="profit">
+      <h2 class="category-title">💰 收益攻略</h2>
+      <div class="guides-grid">
+        <a href="/how-to-make-money-fast.html" class="guide-item">
+          <h3>💸 快速赚钱指南</h3>
+          <p>学习最快的赚钱方法。掌握市场时机、作物选择和投资策略。</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">中级</span>
+            <span class="guide-read-time">35分钟阅读</span>
+          </div>
+        </a>
+        
+        <a href="/profit-strategies.html" class="guide-item">
+          <h3>📈 收益策略指南</h3>
+          <p>掌握长期收益策略。学习市场分析、风险管理和投资组合。</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">高级</span>
+            <span class="guide-read-time">45分钟阅读</span>
+          </div>
+        </a>
       </div>
     </div>
   </div>
