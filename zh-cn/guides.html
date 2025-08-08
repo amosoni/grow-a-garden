@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>种植花园攻略 - 全部策略合集 | Grow a Garden Tips</title>
+  <link rel="canonical" href="https://growagarden.cv/zh-cn/guides.html">
+  <link rel="alternate" hreflang="en" href="https://growagarden.cv/en/guides.html">
+  <link rel="alternate" hreflang="zh-CN" href="https://growagarden.cv/zh-cn/guides.html">
+  <link rel="alternate" hreflang="x-default" href="https://growagarden.cv/guides.html">
+  <link rel="stylesheet" href="https://unpkg.com/simple.css@2.1.0/simple.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/index.html" class="logo" data-i18n="nav.logo">🌱 种植花园</a>
+      <a href="javascript:void(0)" onclick="scrollToSection('stats')" data-i18n="nav.live">实时数据</a>
+      <a href="javascript:void(0)" onclick="scrollToSection('map')" data-i18n="nav.map">全球热力图</a>
+      <a href="javascript:void(0)" onclick="scrollToSection('tips')" data-i18n="nav.tips">小技巧</a>
+      <a href="/guides.html" data-i18n="nav.guides">📚 攻略</a>
+      <a href="javascript:void(0)" onclick="scrollToSection('community')" class="discord-btn" data-i18n="nav.discord">💬 交流</a>
+      <select id="lang-switcher" aria-label="Language">
+        <option value="en">English</option>
+        <option value="zh-cn" selected>简体中文</option>
+      </select>
+    </nav>
+  </header>
+  <section class="guides-hero">
+    <h1 data-i18n="hero.guides.title">📚 种植花园攻略</h1>
+    <p data-i18n="hero.guides.subtitle">完整的策略、食谱与玩法技巧合集</p>
+  </section>
+  <div class="breadcrumb-container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/index.html" data-i18n="breadcrumb.home">🏠 首页</a></li>
+        <li aria-current="page" data-i18n="breadcrumb.guides">📚 攻略</li>
+      </ol>
+    </nav>
+  </div>
+  <div class="guides-section">
+    <div class="guides-card">
+      <h2>🔍 搜索与分类</h2>
+      <div class="search-filter-container">
+        <input type="text" id="guide-search" placeholder="搜索攻略..." class="guide-search-input">
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">全部</button>
+          <button class="filter-btn" data-filter="recipe">食谱</button>
+          <button class="filter-btn" data-filter="farming">种植</button>
+          <button class="filter-btn" data-filter="profit">收益</button>
+          <button class="filter-btn" data-filter="advanced">进阶</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/i18n/i18n.js"></script>
+</body>
+</html> 

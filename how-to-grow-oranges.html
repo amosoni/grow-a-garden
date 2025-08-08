@@ -18,6 +18,9 @@
   <meta name="twitter:title" content="How to Grow Oranges in Grow a Garden - Complete Guide">
   <meta name="twitter:description" content="Efficient orange farming with pruning, watering schedule and harvest timing.">
   <meta name="twitter:image" content="https://growagarden.cv/orange-guide-og.jpg">
+  <link rel="alternate" hreflang="en" href="https://growagarden.cv/en/how-to-grow-oranges.html">
+  <link rel="alternate" hreflang="zh-CN" href="https://growagarden.cv/zh-cn/how-to-grow-oranges.html">
+  <link rel="alternate" hreflang="x-default" href="https://growagarden.cv/how-to-grow-oranges.html">
 
   <script type="application/ld+json">
   {
@@ -75,12 +78,16 @@
   <div class="bg-blur"></div>
   <header>
     <nav>
-      <a href="index.html" class="logo">🌱 Grow a Garden</a>
-      <a href="javascript:void(0)" onclick="scrollToSection('stats')">Live Stats</a>
-      <a href="javascript:void(0)" onclick="scrollToSection('map')">Global Heatmap</a>
-      <a href="javascript:void(0)" onclick="scrollToSection('tips')">Tips</a>
-      <a href="guides.html">📚 Guides</a>
-      <a href="javascript:void(0)" onclick="scrollToSection('community')" class="discord-btn">💬 Discord</a>
+      <a href="index.html" class="logo" data-i18n="nav.logo">🌱 Grow a Garden</a>
+      <a href="javascript:void(0)" onclick="scrollToSection('stats')" data-i18n="nav.live">Live Stats</a>
+      <a href="javascript:void(0)" onclick="scrollToSection('map')" data-i18n="nav.map">Global Heatmap</a>
+      <a href="javascript:void(0)" onclick="scrollToSection('tips')" data-i18n="nav.tips">Tips</a>
+      <a href="guides.html" data-i18n="nav.guides">📚 Guides</a>
+      <a href="javascript:void(0)" onclick="scrollToSection('community')" class="discord-btn" data-i18n="nav.discord">💬 Discord</a>
+      <select id="lang-switcher" aria-label="Language">
+        <option value="en">English</option>
+        <option value="zh-cn">简体中文</option>
+      </select>
     </nav>
   </header>
 
@@ -147,5 +154,6 @@
   </div>
 
   <script src="script.js"></script>
+  <script src="/i18n/i18n.js"></script>
 </body>
 </html> 

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grow a Garden Guides - Complete Strategy Collection | Grow a Garden Tips</title>
+  <link rel="canonical" href="https://growagarden.cv/en/guides.html">
+  <link rel="alternate" hreflang="en" href="https://growagarden.cv/en/guides.html">
+  <link rel="alternate" hreflang="zh-CN" href="https://growagarden.cv/zh-cn/guides.html">
+  <link rel="alternate" hreflang="x-default" href="https://growagarden.cv/guides.html">
+  <link rel="stylesheet" href="https://unpkg.com/simple.css@2.1.0/simple.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/index.html" class="logo" data-i18n="nav.logo">🌱 Grow a Garden</a>
+      <a href="javascript:void(0)" onclick="scrollToSection('stats')" data-i18n="nav.live">Live Stats</a>
+      <a href="javascript:void(0)" onclick="scrollToSection('map')" data-i18n="nav.map">Global Heatmap</a>
+      <a href="javascript:void(0)" onclick="scrollToSection('tips')" data-i18n="nav.tips">Tips</a>
+      <a href="/guides.html" data-i18n="nav.guides">📚 Guides</a>
+      <a href="javascript:void(0)" onclick="scrollToSection('community')" class="discord-btn" data-i18n="nav.discord">💬 Discord</a>
+      <select id="lang-switcher" aria-label="Language">
+        <option value="en">English</option>
+        <option value="zh-cn">简体中文</option>
+      </select>
+    </nav>
+  </header>
+  <section class="guides-hero">
+    <h1 data-i18n="hero.guides.title">📚 Grow a Garden Guides</h1>
+    <p data-i18n="hero.guides.subtitle">Complete Collection of Strategies, Recipes, and Gameplay Tips</p>
+  </section>
+  <div class="breadcrumb-container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/index.html" data-i18n="breadcrumb.home">🏠 Home</a></li>
+        <li aria-current="page" data-i18n="breadcrumb.guides">📚 Guides</li>
+      </ol>
+    </nav>
+  </div>
+  <div class="guides-section">
+    <div class="guides-card">
+      <h2>🔍 Search & Filter Guides</h2>
+      <div class="search-filter-container">
+        <input type="text" id="guide-search" placeholder="Search guides..." class="guide-search-input">
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="recipe">Recipes</button>
+          <button class="filter-btn" data-filter="farming">Farming</button>
+          <button class="filter-btn" data-filter="profit">Profit</button>
+          <button class="filter-btn" data-filter="advanced">Advanced</button>
+        </div>
+      </div>
+    </div>
+    <div class="guides-card">
+      <h2>🔥 Trending Guides</h2>
+      <div class="guides-grid">
+        <a href="/how-to-make-salad.html" class="guide-item featured-guide">
+          <div class="featured-badge">⭐ Most Popular</div>
+          <h3>🥗 Salad Making Guide</h3>
+          <p>Master the art of salad making with our comprehensive guide.</p>
+          <div class="guide-meta"><span class="guide-difficulty">Beginner</span><span class="guide-read-time">15 min read</span></div>
+        </a>
+        <a href="/how-to-make-pizza.html" class="guide-item">
+          <div class="trending-badge">📈 Trending</div>
+          <h3>🍕 Pizza Making Guide</h3>
+          <p>From dough to toppings and profit strategies.</p>
+          <div class="guide-meta"><span class="guide-difficulty">Intermediate</span><span class="guide-read-time">25 min read</span></div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <script src="/i18n/i18n.js"></script>
+</body>
+</html> 
