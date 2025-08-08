@@ -1,5 +1,5 @@
 (function(){
-  const supported = ["en","zh-cn"];
+  const supported = ["en","zh-cn","es","pt-br","fr","de","ru","ar","hi","id","vi","ja"];
   const storageKey = "gag_lang";
 
   function getLangFromUrl(){
