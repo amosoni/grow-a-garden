@@ -1,0 +1,200 @@
+<!DOCTYPE html><html lang="id" dir="ltr"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Grow Apples in Grow a Garden - Complete Guide | Grow a Garden Tips</title>
+    <meta name="description" content="Learn how to grow apples efficiently in Roblox Grow a Garden! From planting saplings to fruiting and harvest, including watering schedule, pruning, and yield optimization.">
+    <meta name="keywords" content="how to grow apples in grow a garden, roblox apple farming, grow a garden guide, apple growing guide, orchard, pruning, watering schedule">
+    <link rel="canonical" href="https://growagarden.cv/how-to-grow-apples.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="How to Grow Apples in Grow a Garden - Complete Guide">
+    <meta property="og:description" content="Step-by-step apple farming guide: saplings, watering, pruning, fruiting, and pro tips for higher yields.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://growagarden.cv/how-to-grow-apples.html">
+    <meta property="og:image" content="https://growagarden.cv/apple-guide-og.jpg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How to Grow Apples in Grow a Garden - Complete Guide">
+    <meta name="twitter:description" content="Grow apples efficiently with optimal watering, pruning, and harvest timing.">
+    <meta name="twitter:image" content="https://growagarden.cv/apple-guide-og.jpg">
+
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to Grow Apples in Grow a Garden",
+      "description": "Efficient apple farming covering sapling planting, watering, pruning, fruiting, and harvesting.",
+      "image": "https://growagarden.cv/apple-guide-og.jpg",
+      "url": "https://growagarden.cv/how-to-grow-apples.html",
+      "inLanguage": "en",
+      "step": [
+        {"@type":"HowToStep","name":"Plant Saplings","text":"Plant apple saplings with proper spacing in full sun."},
+        {"@type":"HowToStep","name":"Water & Prune","text":"Water regularly and prune branches for better fruiting."},
+        {"@type":"HowToStep","name":"Fruiting & Harvest","text":"Wait for fruits to mature and harvest at peak color."}
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="https://unpkg.com/simple.css@2.1.0/simple.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍎</text></svg>">
+
+    <style>
+        body { position: relative; min-height: 100vh; overflow-x: hidden; }
+        .bg-blur { position: fixed; inset: 0; width: 100vw; height: 100vh; z-index: 0; background: url('grow-bg.jpg') center/cover no-repeat; opacity: .3; filter: blur(2px); pointer-events: none; }
+        .content-wrapper { position: relative; z-index: 1; }
+
+        .apple-hero { background: linear-gradient(135deg, #27ae60, #c0392b); color: #fff; padding: 4rem 2rem; text-align: center; margin-top: 60px; margin-bottom: 2rem; position: relative; }
+        .apple-hero::before { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,.2); z-index: 1; }
+        .apple-hero h1, .apple-hero p { position: relative; z-index: 2; }
+        .apple-hero h1 { font-size: 3rem; margin-bottom: 1rem; color: #fff!important; text-shadow: 0 2px 4px rgba(0,0,0,.7), 0 1px 2px rgba(0,0,0,.8); font-weight: 800; letter-spacing: .5px; -webkit-text-stroke: .5px rgba(0,0,0,.2); }
+        .apple-hero p { font-size: 1.2rem; color: #fff!important; text-shadow: 0 1px 3px rgba(0,0,0,.6), 0 1px 2px rgba(0,0,0,.7); font-weight: 600; letter-spacing: .3px; -webkit-text-stroke: .3px rgba(0,0,0,.15); }
+
+        .guide-section { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+        .guide-card { background: rgba(255,255,255,.98); backdrop-filter: blur(10px); border-radius: 12px; padding: 2rem; margin-bottom: 2rem; box-shadow: 0 8px 25px rgba(0,0,0,.15); border: 1px solid rgba(255,255,255,.3); }
+        .guide-card h2 { color: #23272a!important; font-weight: 700; margin-bottom: 1.5rem; text-shadow: 0 1px 2px rgba(0,0,0,.1); }
+        .guide-card h3 { color: #2c3e50!important; font-weight: 600; margin-bottom: 1rem; }
+        .guide-card p, .guide-card li { color: #34495e!important; font-weight: 500; line-height: 1.6; }
+
+        .requirement-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap: 1rem; margin: 2rem 0; }
+        .requirement-item { background: rgba(255,255,255,.95); border-radius: 8px; padding: 1rem; border-left: 4px solid #27ae60; box-shadow: 0 4px 12px rgba(0,0,0,.1); }
+
+        .growth-table { width: 100%; border-collapse: collapse; margin: 2rem 0; }
+        .growth-table th, .growth-table td { border: 1px solid #ddd; padding: .75rem; text-align: left; font-weight: 500; }
+        .growth-table th { background: #27ae60; color: #fff; font-weight: 700; text-shadow: 0 1px 2px rgba(0,0,0,.3); }
+        .growth-table td { color: #2c3e50!important; background: rgba(255,255,255,.9); }
+        .growth-table tr:nth-child(even) td { background: rgba(39,174,96,.08); }
+
+        .tip-box { background: linear-gradient(135deg,#f1c40f,#f39c12); color: #fff; padding: 1rem; border-radius: 8px; margin: 1rem 0; box-shadow: 0 4px 15px rgba(241,196,15,.3); }
+        .tip-box strong { text-shadow: 0 1px 2px rgba(0,0,0,.5); font-weight: 700; }
+        .back-btn { display: inline-block; background: #5865f2; color: #fff; padding: .75rem 1.5rem; text-decoration: none; border-radius: 8px; margin-bottom: 2rem; transition: all .3s ease; }
+        .back-btn:hover { background: #4752c4; transform: translateY(-2px); }
+
+        /* breadcrumb */
+        .breadcrumb-container { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; }
+        .breadcrumb { background: rgba(255,255,255,.95); backdrop-filter: blur(10px); border-radius: 8px; padding: .75rem 1rem; box-shadow: 0 2px 8px rgba(0,0,0,.1); border: 1px solid rgba(255,255,255,.3); }
+        .breadcrumb ol { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; flex-wrap: wrap; }
+        .breadcrumb li { display: flex; align-items: center; font-weight: 500; color: #34495e; }
+        .breadcrumb li:not(:last-child)::after { content: "›"; margin: 0 .5rem; color: #666; }
+        .breadcrumb a { color: #27ae60; text-decoration: none; transition: color .3s; }
+        .breadcrumb a:hover { color: #1f8d4d; }
+        .breadcrumb li[aria-current="page"] { color: #666; font-weight: bold; }
+
+        @media (max-width: 768px) { .apple-hero h1{font-size:2rem;} .guide-section{padding:1rem;} .guide-card{padding:1.5rem;} }
+    </style>
+</head>
+<body>
+    <div class="bg-blur"></div>
+
+    <header>
+        <nav>
+            <a href="/id/index.html" class="logo">🌱 Grow a Garden</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('stats')">Live Stats</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('map')">Global Heatmap</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('tips')">Tips</a>
+            <a href="/id/guides.html">📚 Panduan</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('community')" class="discord-btn">💬 Discord</a>
+        </nav>
+    </header>
+
+    <div class="content-wrapper">
+        <section class="apple-hero">
+            <h1>Panduan menanam Apel</h1>
+            <p>Budidaya Apel yang efisien: tanam, siram, panen.</p>
+        </section>
+
+        <div class="breadcrumb-container">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <ol>
+                    <li><a href="/id/index.html">🏠 Beranda</a></li>
+                    <li><a href="/id/guides.html">📚 Panduan</a></li>
+                    <li aria-current="page">🍎 Apple Growing</li>
+                </ol>
+            </nav>
+        </div>
+
+        <div class="guide-section">
+            <div class="guide-card">
+                <h2>🎯 Apple Growing Overview</h2>
+                <p>Apples are a premium fruit used in profitable recipes like pies and smoothies. Proper pruning and watering significantly improve yields.</p>
+                <ul>
+                    <li><strong>High Value:</strong> Used in pies and premium juices</li>
+                    <li><strong>Orchard Scaling:</strong> Plant multiple saplings for steady supply</li>
+                    <li><strong>Market Demand:</strong> Consistently high among players</li>
+                </ul>
+            </div>
+
+            <div class="guide-card">
+                <h2>🥘 Growing Requirements</h2>
+                <div class="requirement-grid">
+                    <div class="requirement-item"><h4>🌱 Apple Saplings</h4><p>Buy from seed/sapling shop</p></div>
+                    <div class="requirement-item"><h4>💧 Water</h4><p>Deep, regular watering</p></div>
+                    <div class="requirement-item"><h4>🌞 Full Sun</h4><p>Open areas with strong sunlight</p></div>
+                    <div class="requirement-item"><h4>✂️ Pruning</h4><p>Prune for airflow and fruit size</p></div>
+                    <div class="requirement-item"><h4>⏰ Time</h4><p>~60 minutes to mature</p></div>
+                    <div class="requirement-item"><h4>🛠️ Tools</h4><p>Watering can, pruning shears</p></div>
+                </div>
+            </div>
+
+            <div class="guide-card">
+                <h2>📝 Step-by-Step Apple Growing Guide</h2>
+                <h3>Step 1: Prepare Orchard</h3>
+                <ul>
+                    <li>Choose a flat, sunny area</li>
+                    <li>Plan 3x3 or 4x4 spacing for trees</li>
+                    <li>Ensure easy watering access</li>
+                </ul>
+                <h3>Step 2: Plant Saplings</h3>
+                <ul>
+                    <li>Dig holes and place saplings upright</li>
+                    <li>Backfill and firm soil gently</li>
+                    <li>Water thoroughly after planting</li>
+                </ul>
+                <h3>Step 3: Water &amp; Prune</h3>
+                <ul>
+                    <li>Water every 15-20 minutes in-game</li>
+                    <li>Prune inner branches for airflow</li>
+                    <li>Use golden hours (7:00-9:00) for growth boost</li>
+                </ul>
+                <h3>Step 4: Fruit Set &amp; Harvest</h3>
+                <ul>
+                    <li>Watch for color change to deep red</li>
+                    <li>Harvest gently to avoid damage</li>
+                    <li>Store in cool containers before selling</li>
+                </ul>
+            </div>
+
+            <div class="guide-card">
+                <h2>📊 Apple Growth Stages</h2>
+                <table class="growth-table">
+                    <thead><tr><th>Stage</th><th>Time</th><th>Appearance</th><th>Care Needed</th></tr></thead>
+                    <tbody>
+                        <tr><td>🌱 Sapling</td><td>0-10 min</td><td>Small tree</td><td>Regular watering</td></tr>
+                        <tr><td>🌿 Vegetative</td><td>10-30 min</td><td>Rapid leaf growth</td><td>Prune lightly</td></tr>
+                        <tr><td>🌼 Flowering</td><td>30-45 min</td><td>White blossoms</td><td>Do not overwater</td></tr>
+                        <tr><td>🍎 Fruiting</td><td>45-60 min</td><td>Apples forming</td><td>Moderate watering</td></tr>
+                        <tr><td>✅ Maturity</td><td>60+ min</td><td>Deep red color</td><td>Ready to harvest</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="guide-card">
+                <h2>💡 Pro Tips</h2>
+                <div class="tip-box"><strong>Prune Smart:</strong> Remove crossing branches to improve fruit size.</div>
+                <div class="tip-box"><strong>Golden Hours:</strong> Watering during 7:00-9:00 boosts growth speed.</div>
+                <div class="tip-box"><strong>Batch Harvest:</strong> Stagger planting for continuous fruit supply.</div>
+                <div class="tip-box"><strong>Recipe Synergy:</strong> Reserve premium apples for pies and smoothies.</div>
+            </div>
+
+            <div class="guide-card" style="text-align:center;">
+                <a href="/id/guides.html" class="back-btn">← Kembali ke panduan</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+ </body></html>

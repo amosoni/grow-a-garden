@@ -29,10 +29,25 @@
   [headers.values]
     Cache-Control = "public, max-age=3600"
 
+# Keep localized URLs canonical; no forced 301 from /:lang/*
+# If needed, you can add soft rewrites later.
+
+# Keep existing SPA rewrite last
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+
+# Optional: reduce indexing of param variants if any are used
+[[headers]]
+  for = "/guides.html?lang=*"
+  [headers.values]
+    X-Robots-Tag = "noindex, follow"
+
+[[headers]]
+  for = "/index.html?lang=*"
+  [headers.values]
+    X-Robots-Tag = "noindex, follow"
 
 [context.production.environment]
   NODE_ENV = "production"

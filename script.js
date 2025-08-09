@@ -409,7 +409,10 @@ function initializeCalculator() {
   // 隐藏管理员变异
   document.getElementById('hide-admin-btn').addEventListener('click', function() {
     hideAdminMutations = !hideAdminMutations;
-    this.textContent = hideAdminMutations ? 'Show Admin Mutations' : 'Hide Admin Mutations';
+    const t = (window.__gagTranslate ? window.__gagTranslate : null);
+    const showText = (t && t('mutation.showAdmin')) || 'Show Admin Mutations';
+    const hideText = (t && t('mutation.hideAdmin')) || 'Hide Admin Mutations';
+    this.textContent = hideAdminMutations ? showText : hideText;
     renderMutations();
   });
   
@@ -437,7 +440,10 @@ function initializeCalculator() {
 
   // 变异帮助按钮事件
   document.querySelector('.mutation-help-btn').addEventListener('click', function() {
-    let html = '<h3>How to get each mutation?</h3><ul style="text-align:left;">';
+    const t = (window.__gagTranslate ? window.__gagTranslate : null);
+    const title = (t && t('mutation.helpTitle')) || 'How to get each mutation?';
+    const closeText = (t && t('common.close')) || 'Close';
+    let html = `<h3>${title}</h3><ul style="text-align:left;">`;
     mutations.forEach(m => {
       html += `<li><b>${m.name}</b>: ${m.desc}</li>`;
     });
@@ -447,7 +453,7 @@ function initializeCalculator() {
     modal.style.left = '0'; modal.style.top = '0'; modal.style.width = '100vw'; modal.style.height = '100vh';
     modal.style.background = 'rgba(0,0,0,0.4)';
     modal.style.zIndex = 99999;
-    modal.innerHTML = `<div style=\"background:#fff;padding:2em 2em 1em 2em;max-width:500px;margin:5vh auto;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.2);\">${html}<div style=\"text-align:right;\"><button id=\"close-mutation-help\" style=\"margin-top:1em;\">Close</button></div></div>`;
+    modal.innerHTML = `<div style=\"background:#fff;padding:2em 2em 1em 2em;max-width:500px;margin:5vh auto;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.2);\">${html}<div style=\"text-align:right;\"><button id=\"close-mutation-help\" style=\"margin-top:1em;\">${closeText}</button></div></div>`;
     modal.addEventListener('click', e => { if (e.target.id === 'close-mutation-help' || e.target === modal) modal.remove(); });
     document.body.appendChild(modal);
   });

@@ -6,7 +6,20 @@
     <title>Grow a Garden Calculator - Roblox Fruit/Mutation Value Tool</title>
     <meta name="description" content="Grow a Garden Calculator - Complete Roblox fruit and mutation value calculator. Calculate crop value, mutation multipliers, and optimize your Grow a Garden strategy!">
     <meta name="keywords" content="grow a garden calculator, Roblox, fruit value, mutation calculator, crop value, Roblox Grow a Garden, value tool">
-    <link rel="canonical" href="https://your-domain.com/">
+    <link rel="canonical" href="/index.html">
+    <link rel="alternate" hreflang="en" href="/index.html?lang=en">
+    <link rel="alternate" hreflang="zh-CN" href="/index.html?lang=zh-cn">
+    <link rel="alternate" hreflang="es" href="/index.html?lang=es">
+    <link rel="alternate" hreflang="pt-BR" href="/index.html?lang=pt-br">
+    <link rel="alternate" hreflang="fr" href="/index.html?lang=fr">
+    <link rel="alternate" hreflang="de" href="/index.html?lang=de">
+    <link rel="alternate" hreflang="ru" href="/index.html?lang=ru">
+    <link rel="alternate" hreflang="ar" href="/index.html?lang=ar">
+    <link rel="alternate" hreflang="hi" href="/index.html?lang=hi">
+    <link rel="alternate" hreflang="id" href="/index.html?lang=id">
+    <link rel="alternate" hreflang="vi" href="/index.html?lang=vi">
+    <link rel="alternate" hreflang="ja" href="/index.html?lang=ja">
+    <link rel="alternate" hreflang="x-default" href="/index.html">
     <!-- Open Graph for social sharing -->
     <meta property="og:title" content="Grow a Garden Calculator - Roblox Fruit/Mutation Value Tool">
     <meta property="og:description" content="Grow a Garden Calculator - Complete Roblox fruit and mutation value calculator. Calculate crop value, mutation multipliers, and optimize your Grow a Garden strategy!">
@@ -57,19 +70,19 @@
       gtag('js', new Date());
       gtag('config', 'G-HG12TJB5LZ');
     </script>
-    <link rel="alternate" hreflang="en" href="https://growagarden.cv/en/">
-    <link rel="alternate" hreflang="zh-CN" href="https://growagarden.cv/zh-cn/">
-    <link rel="alternate" hreflang="es" href="https://growagarden.cv/es/">
-    <link rel="alternate" hreflang="pt-BR" href="https://growagarden.cv/pt-br/">
-    <link rel="alternate" hreflang="fr" href="https://growagarden.cv/fr/">
-    <link rel="alternate" hreflang="de" href="https://growagarden.cv/de/">
-    <link rel="alternate" hreflang="ru" href="https://growagarden.cv/ru/">
-    <link rel="alternate" hreflang="ar" href="https://growagarden.cv/ar/">
-    <link rel="alternate" hreflang="hi" href="https://growagarden.cv/hi/">
-    <link rel="alternate" hreflang="id" href="https://growagarden.cv/id/">
-    <link rel="alternate" hreflang="vi" href="https://growagarden.cv/vi/">
-    <link rel="alternate" hreflang="ja" href="https://growagarden.cv/ja/">
-    <link rel="alternate" hreflang="x-default" href="https://growagarden.cv/">
+    <link rel="alternate" hreflang="en" href="/index.html?lang=en">
+    <link rel="alternate" hreflang="zh-CN" href="/index.html?lang=zh-cn">
+    <link rel="alternate" hreflang="es" href="/index.html?lang=es">
+    <link rel="alternate" hreflang="pt-BR" href="/index.html?lang=pt-br">
+    <link rel="alternate" hreflang="fr" href="/index.html?lang=fr">
+    <link rel="alternate" hreflang="de" href="/index.html?lang=de">
+    <link rel="alternate" hreflang="ru" href="/index.html?lang=ru">
+    <link rel="alternate" hreflang="ar" href="/index.html?lang=ar">
+    <link rel="alternate" hreflang="hi" href="/index.html?lang=hi">
+    <link rel="alternate" hreflang="id" href="/index.html?lang=id">
+    <link rel="alternate" hreflang="vi" href="/index.html?lang=vi">
+    <link rel="alternate" hreflang="ja" href="/index.html?lang=ja">
+    <link rel="alternate" hreflang="x-default" href="/index.html">
 </head>
 <body>
     <div class="bg-blur"></div>
@@ -155,7 +168,7 @@
                         <input type="number" id="crop-amount" min="1" value="1">
                     </div>
                     <div class="input-row">
-                        <label data-i18n="input.friendBoost">Friend Boost: <span id="friend-boost-value">0%</span></label>
+                        <label><span data-i18n="input.friendBoostLabel">Friend Boost:</span> <span id="friend-boost-value">0%</span></label>
                         <input type="range" id="friend-boost" min="0" max="100" value="0">
                     </div>
                 </div>
@@ -177,16 +190,16 @@
                 <!-- 反向计算区 -->
                 <div class="reverse-calc-section" id="reverse-calc" style="display: none;">
                     <div class="input-row">
-                        <label>Input Value ($):</label>
+                        <label data-i18n="reverse.inputValue">Input Value ($):</label>
                         <input type="number" id="target-value" min="0" step="0.01">
                     </div>
-                    <button class="action-btn" id="update-weight">Update</button>
-                    <div class="result-main" id="weight-result">≈0 kg</div>
+                    <button class="action-btn" id="update-weight" data-i18n="reverse.update">Update</button>
+                    <div class="result-main" id="weight-result">≈0 <span data-i18n="unit.kg">kg</span></div>
                 </div>
                 
                 <!-- 历史记录区 -->
                 <div class="history-section">
-                    <h3>Plant History</h3>
+                    <h3 data-i18n="history.title">Plant History</h3>
                     <div class="history-list" id="history-list">
                         <!-- 动态生成历史记录 -->
                     </div>
@@ -196,13 +209,13 @@
     </section>
     <section id="stats-hero" class="live-stats-section">
         <div class="stats-container">
-            <h1>🌱 Grow a Garden Real-Time Tracker</h1>
-            <p class="stats-subtitle">See the live player count and global activity for Grow a Garden on Roblox!</p>
+            <h1 data-i18n="statsHero.title">🌱 Grow a Garden Real-Time Tracker</h1>
+            <p class="stats-subtitle" data-i18n="statsHero.subtitle">See the live player count and global activity for Grow a Garden on Roblox!</p>
                 <div class="counter-container">
                     <div class="counter">
-                    <h2>Players Online Now</h2>
+                    <h2 data-i18n="stats.onlineNow">Players Online Now</h2>
                         <div id="player-count" class="player-count">21,347,891</div>
-                        <p class="update-time">Last updated: <span id="update-time">--:--:--</span></p>
+                        <p class="update-time"><span data-i18n="stats.lastUpdated">Last updated:</span> <span id="update-time">--:--:--</span></p>
                         <div class="trend-indicator">
                             <span id="trend-arrow">↗</span>
                             <span id="trend-text">+1,234</span>
@@ -212,26 +225,26 @@
         </div>
     </section>
     <section id="stats" class="stats-section">
-        <h2><span class="title-glass">📈 Player Count Milestones</span></h2>
+        <h2><span class="title-glass" data-i18n="stats.milestonesTitle">📈 Player Count Milestones</span></h2>
         <div class="timeline-container glass">
-            <div id="timeline-loading" style="display:none;text-align:center;">加载中...</div>
+            <div id="timeline-loading" style="display:none;text-align:center;" data-i18n="timeline.loading">加载中...</div>
             <canvas id="timeline-chart"></canvas>
         </div>
         <div class="milestone-cards">
             <div class="milestone-card glass">
                 <div class="milestone-date">2024-01-15</div>
                 <div class="milestone-count">21,347,891</div>
-                <div class="milestone-desc">All-time Peak</div>
+                <div class="milestone-desc" data-i18n="stats.milestone.allTimePeak">All-time Peak</div>
             </div>
             <div class="milestone-card glass">
                 <div class="milestone-date">2024-01-14</div>
                 <div class="milestone-count">19,876,543</div>
-                <div class="milestone-desc">19 Million Milestone</div>
+                <div class="milestone-desc" data-i18n="stats.milestone.m19">19 Million Milestone</div>
             </div>
             <div class="milestone-card glass">
                 <div class="milestone-date">2024-01-13</div>
                 <div class="milestone-count">18,234,567</div>
-                <div class="milestone-desc">18 Million Milestone</div>
+                <div class="milestone-desc" data-i18n="stats.milestone.m18">18 Million Milestone</div>
             </div>
         </div>
     </section>
@@ -315,8 +328,8 @@
     </section>
     <footer>
         <div class="footer-content">
-            <p>&copy; 2025 Grow a Garden - Real-Time Player Tracker</p>
-            <p>Not official. Data for reference only.</p>
+            <p data-i18n="footer.copyright">© 2025 Grow a Garden - Real-Time Player Tracker</p>
+            <p data-i18n="footer.disclaimer">Not official. Data for reference only.</p>
         </div>
     </footer>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>

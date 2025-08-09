@@ -20,9 +20,12 @@
   "mutation.sortValue": "ترتيب حسب القيمة (تنازلي)",
   "mutation.sortAlpha": "ترتيب أبجدي",
   "mutation.hideAdmin": "إخفاء طفرات المدير",
+  "mutation.showAdmin": "إظهار طفرات المدير",
+  "mutation.helpTitle": "كيفية الحصول على كل طفرة؟",
   "input.weight": "الوزن (كجم):",
   "input.amount": "كمية النباتات:",
   "input.friendBoost": "دفعة الصديق:",
+  "input.friendBoostLabel": "دفعة الصديق:",
   "btn.addToList": "إضافة قيمة النبات إلى القائمة",
   "btn.clearMutations": "مسح الطفرات",
   "btn.maxMutations": "الطفرات القصوى",
@@ -62,6 +65,22 @@
   "community.support": "الدعم عبر الإنترنت",
   "community.messages": "الرسائل اليومية",
   "community.joinDiscord": "🚀 انضم إلى Discord",
+  "statsHero.title": "🌱 متعقب Grow a Garden في الوقت الفعلي",
+  "statsHero.subtitle": "شاهد عدد اللاعبين المباشر والنشاط العالمي لـ Grow a Garden على Roblox!",
+  "stats.onlineNow": "اللاعبون المتصلون الآن",
+  "stats.lastUpdated": "آخر تحديث:",
+  "stats.milestonesTitle": "📈 معالم عدد اللاعبين",
+  "stats.milestone.allTimePeak": "أعلى رقم تاريخي",
+  "stats.milestone.m19": "معلم 19 مليون",
+  "stats.milestone.m18": "معلم 18 مليون",
+  "reverse.inputValue": "القيمة المُدخلة ($):",
+  "reverse.update": "تحديث",
+  "history.title": "سجل النباتات",
+  "common.close": "إغلاق",
+  "timeline.loading": "جاري التحميل...",
+  "unit.kg": "كجم",
+  "footer.disclaimer": "غير رسمي. البيانات للمرجع فقط.",
+  "footer.copyright": "© 2025 Grow a Garden - متعقب اللاعبين في الوقت الفعلي",
   "hero.guides.title": "📚 أدلة Grow a Garden",
   "hero.guides.subtitle": "مجموعة كاملة من الاستراتيجيات والوصفات ونصائح اللعب",
   "breadcrumb.home": "🏠 الرئيسية",

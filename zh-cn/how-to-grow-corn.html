@@ -1,42 +1,186 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
+<!DOCTYPE html><html lang="zh-cn" dir="ltr"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>在 Grow a Garden 中如何种植玉米 - 完整攻略</title>
-  <link rel="canonical" href="https://growagarden.cv/zh-cn/how-to-grow-corn.html">
+  <title>How to Grow Corn in Grow a Garden - Complete Guide | Grow a Garden Tips</title>
+  <meta name="description" content="Learn how to grow corn efficiently in Roblox Grow a Garden! From seed planting to harvest timing, including watering schedule, fertilization, and profit tips.">
+  <meta name="keywords" content="how to grow corn in grow a garden, corn farming, grow a garden guide, corn watering, corn harvest, profit">
+  <link rel="canonical" href="https://growagarden.cv/how-to-grow-corn.html">
+
+  <meta property="og:title" content="How to Grow Corn in Grow a Garden - Complete Guide">
+  <meta property="og:description" content="Step-by-step corn farming: planting, watering, fertilization, growth stages, and harvesting for best profit.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://growagarden.cv/how-to-grow-corn.html">
+  <meta property="og:image" content="https://growagarden.cv/corn-guide-og.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Grow Corn in Grow a Garden - Complete Guide">
+  <meta name="twitter:description" content="Efficient corn farming with timing, watering, and harvest strategies.">
+  <meta name="twitter:image" content="https://growagarden.cv/corn-guide-og.jpg">
   <link rel="alternate" hreflang="en" href="https://growagarden.cv/en/how-to-grow-corn.html">
-  <link rel="alternate" hreflang="zh-CN" href="https://growagarden.cv/zh-cn/how-to-grow-corn.html">
-  <link rel="alternate" hreflang="x-default" href="https://growagarden.cv/how-to-grow-corn.html">
+   <link rel="alternate" hreflang="zh-CN" href="https://growagarden.cv/zh-cn/how-to-grow-corn.html">
+   <link rel="alternate" hreflang="es" href="https://growagarden.cv/es/how-to-grow-corn.html">
+   <link rel="alternate" hreflang="pt-BR" href="https://growagarden.cv/pt-br/how-to-grow-corn.html">
+   <link rel="alternate" hreflang="fr" href="https://growagarden.cv/fr/how-to-grow-corn.html">
+   <link rel="alternate" hreflang="de" href="https://growagarden.cv/de/how-to-grow-corn.html">
+   <link rel="alternate" hreflang="ru" href="https://growagarden.cv/ru/how-to-grow-corn.html">
+   <link rel="alternate" hreflang="ar" href="https://growagarden.cv/ar/how-to-grow-corn.html">
+   <link rel="alternate" hreflang="hi" href="https://growagarden.cv/hi/how-to-grow-corn.html">
+   <link rel="alternate" hreflang="id" href="https://growagarden.cv/id/how-to-grow-corn.html">
+   <link rel="alternate" hreflang="vi" href="https://growagarden.cv/vi/how-to-grow-corn.html">
+   <link rel="alternate" hreflang="ja" href="https://growagarden.cv/ja/how-to-grow-corn.html">
+   <link rel="alternate" hreflang="x-default" href="https://growagarden.cv/how-to-grow-corn.html">
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"HowTo",
+    "name":"How to Grow Corn in Grow a Garden",
+    "description":"Efficient corn farming guide covering planting, watering, fertilization, growth stages, and harvesting.",
+    "image":"https://growagarden.cv/corn-guide-og.jpg",
+    "url":"https://growagarden.cv/how-to-grow-corn.html",
+    "inLanguage":"en",
+    "step":[
+      {"@type":"HowToStep","name":"Prepare Field","text":"Clear weeds, set straight rows, and prepare fertile soil."},
+      {"@type":"HowToStep","name":"Plant Seeds","text":"Plant corn seeds at proper depth and spacing; water immediately."},
+      {"@type":"HowToStep","name":"Water & Fertilize","text":"Follow a regular watering schedule and apply fertilizer at knee-high stage."},
+      {"@type":"HowToStep","name":"Harvest","text":"Harvest when ears are filled and silks are dry."}
+    ]
+  }
+  </script>
+
   <link rel="stylesheet" href="https://unpkg.com/simple.css@2.1.0/simple.min.css">
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌽</text></svg>">
+
+  <style>
+    body{position:relative;min-height:100vh;overflow-x:hidden}
+    .bg-blur{position:fixed;inset:0;width:100vw;height:100vh;z-index:0;background:url('grow-bg.jpg') center/cover no-repeat;opacity:.3;filter:blur(2px);pointer-events:none}
+    .content-wrapper{position:relative;z-index:1}
+    .corn-hero{background:linear-gradient(135deg,#f59e0b,#fbbf24);color:#fff;padding:4rem 2rem;text-align:center;margin-top:60px;margin-bottom:2rem;position:relative}
+    .corn-hero::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.2);z-index:1}
+    .corn-hero h1,.corn-hero p{position:relative;z-index:2}
+    .corn-hero h1{font-size:3rem;margin-bottom:1rem;color:#fff!important;text-shadow:0 2px 4px rgba(0,0,0,.7),0 1px 2px rgba(0,0,0,.8);font-weight:800;letter-spacing:.5px;-webkit-text-stroke:.5px rgba(0,0,0,.2)}
+    .corn-hero p{font-size:1.2rem;color:#fff!important;text-shadow:0 1px 3px rgba(0,0,0,.6),0 1px 2px rgba(0,0,0,.7);font-weight:600;letter-spacing:.3px;-webkit-text-stroke:.3px rgba(0,0,0,.15)}
+    .guide-section{max-width:1200px;margin:0 auto;padding:2rem}
+    .guide-card{background:rgba(255,255,255,.98);backdrop-filter:blur(10px);border-radius:12px;padding:2rem;margin-bottom:2rem;box-shadow:0 8px 25px rgba(0,0,0,.15);border:1px solid rgba(255,255,255,.3)}
+    .guide-card h2{color:#23272a!important;font-weight:700;margin-bottom:1.5rem;text-shadow:0 1px 2px rgba(0,0,0,.1)}
+    .guide-card h3{color:#2c3e50!important;font-weight:600;margin-bottom:1rem}
+    .guide-card p,.guide-card li{color:#34495e!important;font-weight:500;line-height:1.6}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem;margin:2rem 0}
+    .grid-item{background:rgba(255,255,255,.95);border-radius:8px;padding:1rem;border-left:4px solid #f59e0b;box-shadow:0 4px 12px rgba(0,0,0,.1)}
+    .info-table{width:100%;border-collapse:collapse;margin:2rem 0}
+    .info-table th,.info-table td{border:1px solid #ddd;padding:.75rem;text-align:left;font-weight:500}
+    .info-table th{background:#f59e0b;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.3)}
+    .info-table tr:nth-child(even) td{background:rgba(245,158,11,.08)}
+    .tip-box{background:linear-gradient(135deg,#f1c40f,#f39c12);color:#fff;padding:1rem;border-radius:8px;margin:1rem 0;box-shadow:0 4px 15px rgba(241,196,15,.3)}
+    .back-btn{display:inline-block;background:#5865f2;color:#fff;padding:.75rem 1.5rem;text-decoration:none;border-radius:8px;margin-bottom:2rem;transition:all .3s ease}
+    .back-btn:hover{background:#4752c4;transform:translateY(-2px)}
+    .breadcrumb-container{max-width:1200px;margin:0 auto;padding:1rem 2rem}
+    .breadcrumb{background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-radius:8px;padding:.75rem 1rem;box-shadow:0 2px 8px rgba(0,0,0,.1);border:1px solid rgba(255,255,255,.3)}
+    .breadcrumb ol{list-style:none;margin:0;padding:0;display:flex;align-items:center;flex-wrap:wrap}
+    .breadcrumb li{display:flex;align-items:center;font-weight:500;color:#34495e}
+    .breadcrumb li:not(:last-child)::after{content:"›";margin:0 .5rem;color:#666}
+    .breadcrumb a{color:#f59e0b;text-decoration:none;transition:color .3s}
+    .breadcrumb a:hover{color:#d97706}
+    .breadcrumb li[aria-current="page"]{color:#666;font-weight:bold}
+    @media (max-width:768px){.corn-hero h1{font-size:2rem}.guide-section{padding:1rem}.guide-card{padding:1.5rem}}
+  </style>
 </head>
 <body>
+  <div class="bg-blur"></div>
   <header>
     <nav>
-      <a href="/index.html" class="logo" data-i18n="nav.logo">🌱 种植花园</a>
-      <a href="/guides.html" data-i18n="nav.guides">📚 攻略</a>
-                  <select id="lang-switcher" aria-label="Language">
-                <option value="en">English</option>
-                <option value="zh-cn" selected>简体中文</option>
-                <option value="es">Español</option>
-                <option value="pt-br">Português</option>
-                <option value="fr">Français</option>
-                <option value="de">Deutsch</option>
-                <option value="ru">Русский</option>
-                <option value="ar">العربية</option>
-                <option value="hi">हिन्दी</option>
-                <option value="id">Bahasa Indonesia</option>
-                <option value="vi">Tiếng Việt</option>
-                <option value="ja">日本語</option>
-            </select>
+      <a href="/zh-cn/index.html" class="logo" data-i18n="nav.logo">🌱 Grow a Garden</a>
+      <a href="javascript:void(0)" onclick="scrollToSection('stats')" data-i18n="nav.live">Live Stats</a>
+      <a href="javascript:void(0)" onclick="scrollToSection('map')" data-i18n="nav.map">Global Heatmap</a>
+      <a href="javascript:void(0)" onclick="scrollToSection('tips')" data-i18n="nav.tips">Tips</a>
+      <a href="/zh-cn/guides.html" data-i18n="nav.guides">📚 攻略</a>
+      <a href="javascript:void(0)" onclick="scrollToSection('community')" class="discord-btn" data-i18n="nav.discord">💬 Discord</a>
+      <select id="lang-switcher" aria-label="Language">
+        <option value="en">English</option>
+        <option value="zh-cn">简体中文</option>
+      </select>
     </nav>
   </header>
-  <main>
-    <h1>🌽 玉米种植完整攻略</h1>
-    <p>从播种、浇水、施肥到收获的详细流程与收益建议。</p>
-    <a href="/guides.html" class="back-btn" data-i18n="btn.back">← 返回攻略</a>
-  </main>
+
+  <div class="content-wrapper">
+    <section class="corn-hero">
+      <h1>玉米栽培指南</h1>
+      <p>高效种植玉米：播种、浇水、施肥与收获。</p>
+    </section>
+
+    <div class="breadcrumb-container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/zh-cn/index.html">🏠 首页</a></li>
+          <li><a href="/zh-cn/guides.html">📚 攻略</a></li>
+          <li aria-current="page">🌽 Corn Growing</li>
+        </ol>
+      </nav>
+    </div>
+
+    <div class="guide-section">
+      <div class="guide-card">
+        <h2>🎯 Why Grow Corn?</h2>
+        <ul>
+          <li><strong>High Yield:</strong> Consistent production per field</li>
+          <li><strong>Recipe Demand:</strong> Used for advanced cooking and animal feed</li>
+          <li><strong>Stable Profit:</strong> Good ROI with proper timing</li>
+        </ul>
+      </div>
+
+      <div class="guide-card">
+        <h2>🥘 Requirements</h2>
+        <div class="grid">
+          <div class="grid-item"><h4>🌽 Corn Seeds</h4><p>Buy from seed shop</p></div>
+          <div class="grid-item"><h4>💧 Water</h4><p>Regular deep watering</p></div>
+          <div class="grid-item"><h4>🌞 Sunlight</h4><p>Full sun exposure</p></div>
+          <div class="grid-item"><h4>🧪 Fertilizer</h4><p>Apply at knee-high stage</p></div>
+          <div class="grid-item"><h4>🛠️ Tools</h4><p>Watering can, hoe</p></div>
+        </div>
+      </div>
+
+      <div class="guide-card">
+        <h2>📝 Step-by-Step Guide</h2>
+        <h3>Step 1: Prepare Field</h3>
+        <ul><li>Clear weeds and set straight rows (lanes every 2–3 rows)</li><li>Improve soil with compost</li></ul>
+        <h3>Step 2: Plant Seeds</h3>
+        <ul><li>Depth: 1–2 inches; Spacing: 8–12 inches</li><li>Water immediately after planting</li></ul>
+        <h3>Step 3: Water &amp; Fertilize</h3>
+        <ul><li>Deep watering every cycle; golden-hour loops 07:00–09:00</li><li>Fertilize when plants reach knee height</li></ul>
+        <h3>Step 4: Harvest</h3>
+        <ul><li>Harvest when ears are full and silks are brown/dry</li><li>Store cool; sell in bundles</li></ul>
+      </div>
+
+      <div class="guide-card">
+        <h2>📊 Corn Growth Stages</h2>
+        <table class="info-table">
+          <thead><tr><th>Stage</th><th>Time</th><th>Appearance</th><th>Care</th></tr></thead>
+          <tbody>
+            <tr><td>🌱 Seedling</td><td>0–5 min</td><td>Small shoots</td><td>Light watering</td></tr>
+            <tr><td>🌿 Vegetative</td><td>5–20 min</td><td>Rapid leaf growth</td><td>Deep watering</td></tr>
+            <tr><td>🌾 Tasseling</td><td>20–30 min</td><td>Tassels forming</td><td>Fertilize; moderate watering</td></tr>
+            <tr><td>🌽 Ear Filling</td><td>30–40 min</td><td>Ears swelling</td><td>Maintain moisture</td></tr>
+            <tr><td>✅ Maturity</td><td>40–45 min</td><td>Brown silks</td><td>Ready to harvest</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="guide-card">
+        <h2>💡 Pro Tips</h2>
+        <div class="tip-box"><strong>Block Planting:</strong> Plant in squares rather than single rows for better pollination.</div>
+        <div class="tip-box"><strong>Water Discipline:</strong> Deep, less frequent watering improves root strength.</div>
+        <div class="tip-box"><strong>Market Timing:</strong> Bundle ears and sell at peak hours for higher prices.</div>
+      </div>
+
+      <div class="guide-card" style="text-align:center;">
+        <a href="/zh-cn/guides.html" class="back-btn">← 返回攻略</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
   <script src="/i18n/i18n.js"></script>
-</body>
-</html> 
+
+ </body></html>

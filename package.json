@@ -8,7 +8,16 @@
     "dev": "npx live-server --port=8000 --open=/",
     "build": "echo '静态网站，无需构建'",
     "deploy": "echo '请使用Netlify Drop部署'",
-    "test": "echo '暂无测试'"
+    "test": "echo '暂无测试'",
+    "i18n:report": "node scripts/generate-missing.js",
+    "i18n:sync-guides": "node scripts/sync-guides.js",
+    "i18n:auto": "node scripts/auto-translate-stubs.js",
+    "i18n:expand": "node scripts/expand-localized-articles.js",
+    "i18n:compose": "node scripts/compose-localized-articles.js",
+    "i18n:body": "node scripts/translate-articles-bodies.js",
+    "i18n:audit": "node scripts/i18n-audit.js",
+    "i18n:staticize": "node scripts/staticize-pages.js",
+    "i18n:all": "npm run i18n:report && npm run i18n:auto && npm run i18n:sync-guides && npm run i18n:expand && npm run i18n:compose && npm run i18n:body && npm run i18n:staticize && npm run i18n:audit"
   },
   "keywords": [
     "grow-a-garden",

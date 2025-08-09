@@ -1,42 +1,151 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
+<!DOCTYPE html><html lang="ja" dir="ltr"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grow a Gardenで友達と遊ぶ方法 - ガイド</title>
-  <link rel="canonical" href="https://growagarden.cv/ja/how-to-play-with-friends.html">
-  <link rel="alternate" hreflang="en" href="https://growagarden.cv/how-to-play-with-friends.html">
-  <link rel="alternate" hreflang="ja" href="https://growagarden.cv/ja/how-to-play-with-friends.html">
-  <link rel="alternate" hreflang="x-default" href="https://growagarden.cv/how-to-play-with-friends.html">
+  <title>How to Play with Friends in Grow a Garden - Co-op Guide | Grow a Garden Tips</title>
+  <meta name="description" content="Play Grow a Garden with friends: how to invite, form teams, share tasks, trade items, and run efficient co-op farms with communication tips.">
+  <meta name="keywords" content="grow a garden play with friends, co-op, team, trade, invite, multiplayer, guide">
+  <link rel="canonical" href="https://growagarden.cv/how-to-play-with-friends.html">
+
+  <meta property="og:title" content="How to Play with Friends in Grow a Garden - Co-op Guide">
+  <meta property="og:description" content="Invite friends, organize roles, trade efficiently, and scale your farm together.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://growagarden.cv/how-to-play-with-friends.html">
+  <meta property="og:image" content="https://growagarden.cv/co-op-guide-og.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Play with Friends in Grow a Garden - Co-op Guide">
+  <meta name="twitter:description" content="Step-by-step co-op setup and best practices for multi-player farms.">
+  <meta name="twitter:image" content="https://growagarden.cv/co-op-guide-og.jpg">
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"HowTo",
+    "name":"How to Play with Friends in Grow a Garden",
+    "description":"Invite friends, form teams, delegate roles, and farm efficiently together.",
+    "image":"https://growagarden.cv/co-op-guide-og.jpg",
+    "url":"https://growagarden.cv/how-to-play-with-friends.html",
+    "inLanguage":"en",
+    "step":[
+      {"@type":"HowToStep","name":"Invite & Join","text":"Invite friends from the friends list, join the same server, and meet at the hub."},
+      {"@type":"HowToStep","name":"Assign Roles","text":"Split roles: growers, waterers, processors, sellers, and logistics."},
+      {"@type":"HowToStep","name":"Trade & Share","text":"Use trading to balance resources and keep production lines flowing."}
+    ]
+  }
+  </script>
+
   <link rel="stylesheet" href="https://unpkg.com/simple.css@2.1.0/simple.min.css">
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👥</text></svg>">
+
+  <style>
+    body{position:relative;min-height:100vh;overflow-x:hidden}
+    .bg-blur{position:fixed;inset:0;width:100vw;height:100vh;z-index:0;background:url('grow-bg.jpg') center/cover no-repeat;opacity:.3;filter:blur(2px);pointer-events:none}
+    .content-wrapper{position:relative;z-index:1}
+    .coop-hero{background:linear-gradient(135deg,#7c3aed,#2563eb);color:#fff;padding:4rem 2rem;text-align:center;margin-top:60px;margin-bottom:2rem;position:relative}
+    .coop-hero::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.2);z-index:1}
+    .coop-hero h1,.coop-hero p{position:relative;z-index:2}
+    .coop-hero h1{font-size:3rem;margin-bottom:1rem;color:#fff!important;text-shadow:0 2px 4px rgba(0,0,0,.7),0 1px 2px rgba(0,0,0,.8);font-weight:800;letter-spacing:.5px;-webkit-text-stroke:.5px rgba(0,0,0,.2)}
+    .coop-hero p{font-size:1.2rem;color:#fff!important;text-shadow:0 1px 3px rgba(0,0,0,.6),0 1px 2px rgba(0,0,0,.7);font-weight:600;letter-spacing:.3px;-webkit-text-stroke:.3px rgba(0,0,0,.15)}
+    .guide-section{max-width:1200px;margin:0 auto;padding:2rem}
+    .guide-card{background:rgba(255,255,255,.98);backdrop-filter:blur(10px);border-radius:12px;padding:2rem;margin-bottom:2rem;box-shadow:0 8px 25px rgba(0,0,0,.15);border:1px solid rgba(255,255,255,.3)}
+    .guide-card h2{color:#23272a!important;font-weight:700;margin-bottom:1.5rem;text-shadow:0 1px 2px rgba(0,0,0,.1)}
+    .guide-card h3{color:#2c3e50!important;font-weight:600;margin-bottom:1rem}
+    .guide-card p,.guide-card li{color:#34495e!important;font-weight:500;line-height:1.6}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem;margin:2rem 0}
+    .grid-item{background:rgba(255,255,255,.95);border-radius:8px;padding:1rem;border-left:4px solid #7c3aed;box-shadow:0 4px 12px rgba(0,0,0,.1)}
+    .tip-box{background:linear-gradient(135deg,#f1c40f,#f39c12);color:#fff;padding:1rem;border-radius:8px;margin:1rem 0;box-shadow:0 4px 15px rgba(241,196,15,.3)}
+    .tip-box strong{font-weight:700}
+    .back-btn{display:inline-block;background:#5865f2;color:#fff;padding:.75rem 1.5rem;text-decoration:none;border-radius:8px;margin-bottom:2rem;transition:all .3s ease}
+    .back-btn:hover{background:#4752c4;transform:translateY(-2px)}
+    .breadcrumb-container{max-width:1200px;margin:0 auto;padding:1rem 2rem}
+    .breadcrumb{background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-radius:8px;padding:.75rem 1rem;box-shadow:0 2px 8px rgba(0,0,0,.1);border:1px solid rgba(255,255,255,.3)}
+    .breadcrumb ol{list-style:none;margin:0;padding:0;display:flex;align-items:center;flex-wrap:wrap}
+    .breadcrumb li{display:flex;align-items:center;font-weight:500;color:#34495e}
+    .breadcrumb li:not(:last-child)::after{content:"›";margin:0 .5rem;color:#666}
+    .breadcrumb a{color:#7c3aed;text-decoration:none;transition:color .3s}
+    .breadcrumb a:hover{color:#6d28d9}
+    .breadcrumb li[aria-current="page"]{color:#666;font-weight:bold}
+    @media (max-width:768px){.coop-hero h1{font-size:2rem}.guide-section{padding:1rem}.guide-card{padding:1.5rem}}
+  </style>
 </head>
 <body>
+  <div class="bg-blur"></div>
   <header>
     <nav>
-      <a href="/index.html" class="logo" data-i18n="nav.logo">🌱 Grow a Garden</a>
-      <a href="/guides.html" data-i18n="nav.guides">📚 ガイド</a>
-                  <select id="lang-switcher" aria-label="Language">
-                <option value="en">English</option>
-                <option value="zh-cn">简体中文</option>
-                <option value="es">Español</option>
-                <option value="pt-br">Português</option>
-                <option value="fr">Français</option>
-                <option value="de">Deutsch</option>
-                <option value="ru">Русский</option>
-                <option value="ar">العربية</option>
-                <option value="hi">हिन्दी</option>
-                <option value="id">Bahasa Indonesia</option>
-                <option value="vi">Tiếng Việt</option>
-                <option value="ja" selected>日本語</option>
-            </select>
+      <a href="/ja/index.html" class="logo">🌱 Grow a Garden</a>
+      <a href="javascript:void(0)" onclick="scrollToSection('stats')">Live Stats</a>
+      <a href="javascript:void(0)" onclick="scrollToSection('map')">Global Heatmap</a>
+      <a href="javascript:void(0)" onclick="scrollToSection('tips')">Tips</a>
+      <a href="/ja/guides.html">📚 ガイド</a>
+      <a href="javascript:void(0)" onclick="scrollToSection('community')" class="discord-btn">💬 Discord</a>
     </nav>
   </header>
-  <main>
-    <h1>👥 友達と遊ぶ方法</h1>
-    <p>サーバー設定、農場での協力、マルチプレイヤーイベント。</p>
-    <a href="/guides.html" class="back-btn" data-i18n="btn.back">← ガイドに戻る</a>
-  </main>
-  <script src="/i18n/i18n.js"></script>
-</body>
-</html> 
+
+  <div class="content-wrapper">
+    <section class="coop-hero">
+      <h1>友達と遊ぶ</h1>
+      <p>友達と協力し、役割分担と取引で効率的な農場を。</p>
+    </section>
+
+    <div class="breadcrumb-container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/ja/index.html">🏠 ホーム</a></li>
+          <li><a href="/ja/guides.html">📚 ガイド</a></li>
+          <li aria-current="page">👥 Play with Friends</li>
+        </ol>
+      </nav>
+    </div>
+
+    <div class="guide-section">
+      <div class="guide-card">
+        <h2>🎯 Why Co-op?</h2>
+        <ul>
+          <li><strong>Higher Throughput:</strong> Parallel tasks (plant, water, process, sell)</li>
+          <li><strong>Specialization:</strong> Roles boost efficiency and quality</li>
+          <li><strong>Economy of Scale:</strong> Shared tools and centralized storage</li>
+        </ul>
+      </div>
+
+      <div class="guide-card">
+        <h2>🧩 Team Setup</h2>
+        <div class="grid">
+          <div class="grid-item"><h4>📨 Invites</h4><p>Join same server; invite from friends list; meet at hub.</p></div>
+          <div class="grid-item"><h4>🧑‍🌾 Growers</h4><p>Seed, plant, harvest; prep batches for processing.</p></div>
+          <div class="grid-item"><h4>🚿 Waterers</h4><p>Golden-hour watering loops and hydration checks.</p></div>
+          <div class="grid-item"><h4>👩‍🍳 Processors</h4><p>Run mills, mixers, ovens in assembly order.</p></div>
+          <div class="grid-item"><h4>🛒 Sellers</h4><p>Monitor prices, bundle items, time peak hours.</p></div>
+          <div class="grid-item"><h4>🚚 Logistics</h4><p>Move goods between fields, storage, and market.</p></div>
+        </div>
+      </div>
+
+      <div class="guide-card">
+        <h2>📝 Co-op Playbook</h2>
+        <h3>Step 1: Meet &amp; Assign</h3>
+        <ul><li>Create a shared plan and assign roles</li><li>Pick production targets (e.g., pies, smoothies)</li></ul>
+        <h3>Step 2: Sync Watering</h3>
+        <ul><li>Use synchronized loops during 7:00–9:00</li><li>Alternate breaks to keep fields hydrated</li></ul>
+        <h3>Step 3: Run Assembly Line</h3>
+        <ul><li>Route crops → storage → processing → market</li><li>Track bottlenecks and rebalance roles</li></ul>
+        <h3>Step 4: Trade Smart</h3>
+        <ul><li>Trade deficits (eggs/butter/sugar) to keep lines flowing</li><li>Bundle finished goods for better prices</li></ul>
+      </div>
+
+      <div class="guide-card">
+        <h2>💡 Pro Tips</h2>
+        <div class="tip-box"><strong>Voice/Chat:</strong> Keep comms short: “Water loop A”, “Send sugar to oven”.</div>
+        <div class="tip-box"><strong>Shared Storage:</strong> Label chests per ingredient to avoid confusion.</div>
+        <div class="tip-box"><strong>Rotation:</strong> Swap roles every 30–60 mins to avoid burnout.</div>
+      </div>
+
+      <div class="guide-card" style="text-align:center;">
+        <a href="/ja/guides.html" class="back-btn">← ガイドに戻る</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+ </body></html>

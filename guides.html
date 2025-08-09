@@ -49,6 +49,21 @@
       ]
     }
     </script>
+    <base href="/">
+    <link rel="canonical" href="/guides.html">
+    <link rel="alternate" hreflang="en" href="/guides.html?lang=en">
+    <link rel="alternate" hreflang="zh-CN" href="/guides.html?lang=zh-cn">
+    <link rel="alternate" hreflang="es" href="/guides.html?lang=es">
+    <link rel="alternate" hreflang="pt-BR" href="/guides.html?lang=pt-br">
+    <link rel="alternate" hreflang="fr" href="/guides.html?lang=fr">
+    <link rel="alternate" hreflang="de" href="/guides.html?lang=de">
+    <link rel="alternate" hreflang="ru" href="/guides.html?lang=ru">
+    <link rel="alternate" hreflang="ar" href="/guides.html?lang=ar">
+    <link rel="alternate" hreflang="hi" href="/guides.html?lang=hi">
+    <link rel="alternate" hreflang="id" href="/guides.html?lang=id">
+    <link rel="alternate" hreflang="vi" href="/guides.html?lang=vi">
+    <link rel="alternate" hreflang="ja" href="/guides.html?lang=ja">
+    <link rel="alternate" hreflang="x-default" href="/guides.html">
     
     <!-- Roblox-like color scheme -->
     <link rel="stylesheet" href="https://unpkg.com/simple.css@2.1.0/simple.min.css">
@@ -459,25 +474,25 @@
     <div class="guides-section">
         <!-- 搜索和筛选功能 -->
         <div class="guides-card">
-            <h2>🔍 Search & Filter Guides</h2>
+            <h2 data-i18n="guides.searchFilter">🔍 Search & Filter Guides</h2>
             <div class="search-filter-container">
-                <input type="text" id="guide-search" placeholder="Search guides..." class="guide-search-input">
+                <input type="text" id="guide-search" class="guide-search-input" data-i18n-placeholder="guides.searchPlaceholder" placeholder="Search guides...">
                 <div class="filter-buttons">
-                    <button class="filter-btn active" data-filter="all">All</button>
-                    <button class="filter-btn" data-filter="recipe">Recipes</button>
-                    <button class="filter-btn" data-filter="farming">Farming</button>
-                    <button class="filter-btn" data-filter="profit">Profit</button>
-                    <button class="filter-btn" data-filter="advanced">Advanced</button>
+                    <button class="filter-btn active" data-filter="all" data-i18n="guides.filter.all">All</button>
+                    <button class="filter-btn" data-filter="recipe" data-i18n="guides.filter.recipe">Recipes</button>
+                    <button class="filter-btn" data-filter="farming" data-i18n="guides.filter.farming">Farming</button>
+                    <button class="filter-btn" data-filter="profit" data-i18n="guides.filter.profit">Profit</button>
+                    <button class="filter-btn" data-filter="advanced" data-i18n="guides.filter.advanced">Advanced</button>
                 </div>
             </div>
         </div>
 
         <!-- 热门攻略 -->
         <div class="guides-card">
-            <h2>🔥 Trending Guides</h2>
+            <h2 data-i18n="guides.trendingTitle">🔥 Trending Guides</h2>
             <div class="guides-grid">
                 <a href="how-to-make-salad.html" class="guide-item featured-guide">
-                    <div class="featured-badge">⭐ Most Popular</div>
+                    <div class="featured-badge" data-i18n="guides.badge.mostPopular">⭐ Most Popular</div>
                     <h3>🥗 Salad Making Guide</h3>
                     <p>Master the art of salad making with our comprehensive guide. Learn ingredient collection, advanced recipes, and efficiency improvement methods.</p>
                     <div class="guide-meta">
@@ -488,13 +503,12 @@
                 </a>
                 
                 <a href="how-to-make-pizza.html" class="guide-item">
-                    <div class="trending-badge">📈 Trending</div>
+                    <div class="trending-badge" data-i18n="guides.badge.trending">📈 Trending</div>
                     <h3>🍕 Pizza Making Guide</h3>
-                    <p>Learn how to make delicious pizzas in Grow a Garden. From dough preparation to topping combinations and profit strategies.</p>
+                    <p>Discover the best techniques for dough preparation, topping combinations, and baking to perfection.</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">Intermediate</span>
                         <span class="guide-read-time">25 min read</span>
-                        <span class="guide-views">🔥 1.8k views</span>
                     </div>
                 </a>
                 
@@ -869,7 +883,7 @@
             </div>
         </div>
         
-        <a href="index.html" class="back-btn">← Back to Main Calculator</a>
+        <a href="index.html" class="back-btn" data-i18n="guides.back">← Back to Main Calculator</a>
     </div>
     
     <script src="script.js"></script>

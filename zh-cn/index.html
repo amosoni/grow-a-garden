@@ -1,28 +1,100 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>种植花园计算器 - Roblox 作物/变异价值工具</title>
-  <link rel="canonical" href="https://growagarden.cv/zh-cn/">
-  <link rel="alternate" hreflang="en" href="https://growagarden.cv/en/">
-  <link rel="alternate" hreflang="zh-CN" href="https://growagarden.cv/zh-cn/">
-  <link rel="alternate" hreflang="x-default" href="https://growagarden.cv/">
-  <link rel="stylesheet" href="https://unpkg.com/simple.css@2.1.0/simple.min.css">
-  <link rel="stylesheet" href="/styles.css">
+<!DOCTYPE html><html lang="zh-cn" dir="ltr"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grow a Garden Calculator - Roblox Fruit/Mutation Value Tool</title>
+    <meta name="description" content="Grow a Garden Calculator - Complete Roblox fruit and mutation value calculator. Calculate crop value, mutation multipliers, and optimize your Grow a Garden strategy!">
+    <meta name="keywords" content="grow a garden calculator, Roblox, fruit value, mutation calculator, crop value, Roblox Grow a Garden, value tool">
+    <link rel="canonical" href="/index.html">
+    <link rel="alternate" hreflang="en" href="/index.html?lang=en">
+    <link rel="alternate" hreflang="zh-CN" href="/index.html?lang=zh-cn">
+    <link rel="alternate" hreflang="es" href="/index.html?lang=es">
+    <link rel="alternate" hreflang="pt-BR" href="/index.html?lang=pt-br">
+    <link rel="alternate" hreflang="fr" href="/index.html?lang=fr">
+    <link rel="alternate" hreflang="de" href="/index.html?lang=de">
+    <link rel="alternate" hreflang="ru" href="/index.html?lang=ru">
+    <link rel="alternate" hreflang="ar" href="/index.html?lang=ar">
+    <link rel="alternate" hreflang="hi" href="/index.html?lang=hi">
+    <link rel="alternate" hreflang="id" href="/index.html?lang=id">
+    <link rel="alternate" hreflang="vi" href="/index.html?lang=vi">
+    <link rel="alternate" hreflang="ja" href="/index.html?lang=ja">
+    <link rel="alternate" hreflang="x-default" href="/index.html">
+    <!-- Open Graph for social sharing -->
+    <meta property="og:title" content="Grow a Garden Calculator - Roblox Fruit/Mutation Value Tool">
+    <meta property="og:description" content="Grow a Garden Calculator - Complete Roblox fruit and mutation value calculator. Calculate crop value, mutation multipliers, and optimize your Grow a Garden strategy!">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-domain.com/">
+    <meta property="og:image" content="https://your-domain.com/og-image.jpg">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Grow a Garden Calculator - Roblox Fruit/Mutation Value Tool">
+    <meta name="twitter:description" content="Grow a Garden Calculator - Complete Roblox fruit and mutation value calculator. Calculate crop value, mutation multipliers, and optimize your Grow a Garden strategy!">
+    <meta name="twitter:image" content="https://your-domain.com/og-image.jpg">
+    <!-- 结构化数据 JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Grow a Garden Calculator",
+      "url": "https://your-domain.com/",
+      "description": "Grow a Garden Calculator - Complete Roblox fruit and mutation value calculator. Calculate crop value, mutation multipliers, and optimize your Grow a Garden strategy!",
+      "inLanguage": "zh-CN",
+      "keywords": "grow a garden calculator, Roblox, fruit value, mutation calculator, crop value, Roblox Grow a Garden, value tool"
+    }
+    </script>
+    <!-- Roblox-like color scheme -->
+    <link rel="stylesheet" href="https://unpkg.com/simple.css@2.1.0/simple.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
+    <style>
+        body {
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .bg-blur {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: 0;
+            background: url('grow-bg.jpg') center center/cover no-repeat;
+            opacity: 0.5;
+        }
+        /* 移除其他内联样式，让CSS文件控制 */
+    </style>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-HG12TJB5LZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HG12TJB5LZ');
+    </script>
+    <link rel="alternate" hreflang="en" href="/index.html?lang=en">
+    <link rel="alternate" hreflang="zh-CN" href="/index.html?lang=zh-cn">
+    <link rel="alternate" hreflang="es" href="/index.html?lang=es">
+    <link rel="alternate" hreflang="pt-BR" href="/index.html?lang=pt-br">
+    <link rel="alternate" hreflang="fr" href="/index.html?lang=fr">
+    <link rel="alternate" hreflang="de" href="/index.html?lang=de">
+    <link rel="alternate" hreflang="ru" href="/index.html?lang=ru">
+    <link rel="alternate" hreflang="ar" href="/index.html?lang=ar">
+    <link rel="alternate" hreflang="hi" href="/index.html?lang=hi">
+    <link rel="alternate" hreflang="id" href="/index.html?lang=id">
+    <link rel="alternate" hreflang="vi" href="/index.html?lang=vi">
+    <link rel="alternate" hreflang="ja" href="/index.html?lang=ja">
+    <link rel="alternate" hreflang="x-default" href="/index.html">
 </head>
 <body>
-  <header>
-    <nav>
-      <a href="/index.html" class="logo" data-i18n="nav.logo">🌱 种植花园</a>
-      <a href="javascript:void(0)" data-i18n="nav.live">实时数据</a>
-      <a href="javascript:void(0)" data-i18n="nav.map">全球热力图</a>
-      <a href="javascript:void(0)" data-i18n="nav.tips">小技巧</a>
-      <a href="/guides.html" data-i18n="nav.guides">📚 攻略</a>
-      <a href="javascript:void(0)" class="discord-btn" data-i18n="nav.discord">💬 交流</a>
-                  <select id="lang-switcher" aria-label="Language">
+    <div class="bg-blur"></div>
+    <header>
+        <nav>
+            <a href="#" class="logo" data-i18n="nav.logo">🌱 种植花园</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('stats')" data-i18n="nav.live">实时数据</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('map')" data-i18n="nav.map">全球热力图</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('tips')" data-i18n="nav.tips">小技巧</a>
+            <a href="/zh-cn/guides.html" data-i18n="nav.guides">📚 攻略</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('community')" class="discord-btn" data-i18n="nav.discord">💬 交流</a>
+            <select id="lang-switcher" aria-label="Language">
                 <option value="en">English</option>
-                <option value="zh-cn" selected>简体中文</option>
+                <option value="zh-cn">简体中文</option>
                 <option value="es">Español</option>
                 <option value="pt-br">Português</option>
                 <option value="fr">Français</option>
@@ -34,12 +106,232 @@
                 <option value="vi">Tiếng Việt</option>
                 <option value="ja">日本語</option>
             </select>
-    </nav>
-  </header>
-  <main>
-    <h1>🌱 种植花园计算器</h1>
-    <p>Roblox 作物与变异价值计算工具</p>
-  </main>
-  <script src="/i18n/i18n.js"></script>
-</body>
-</html> 
+        </nav>
+    </header>
+    <section class="hero">
+        <div class="hero-blur-bg"></div>
+        <div class="hero-content">
+            <div class="hero-glass">
+                <h1 data-i18n="hero.title">🌱 种植花园计算器</h1>
+                <h2 data-i18n="hero.subtitle">Roblox 水果与变异价值工具</h2>
+                <p class="hero-subtitle" data-i18n="hero.description">输入作物信息即可立即计算变异价值。最完整的 Roblox 种植花园变异倍数！</p>
+                
+                <!-- 分类Tab -->
+                <div class="plant-tabs">
+                    <button class="tab active" data-category="all" data-i18n="tabs.all">全部</button>
+                    <button class="tab" data-category="BaseValue" data-i18n="tabs.baseValue">基础价值</button>
+                    <button class="tab" data-category="Exotic Seed Pack" data-i18n="tabs.exotic">异域种子包</button>
+                    <button class="tab" data-category="Prehistoric Event" data-i18n="tabs.prehistoric">史前事件</button>
+                    <button class="tab" data-category="Event Seed Pack" data-i18n="tabs.event">事件种子包</button>
+                </div>
+                
+                <!-- 搜索框 -->
+                <input type="text" class="plant-search" placeholder="搜索植物..." data-i18n-placeholder="search.plant">
+                
+                <!-- 作物图片选择区 -->
+                <div class="plant-list" id="plant-list">
+                    <!-- 动态生成作物卡片 -->
+                </div>
+                
+                <!-- 变异工具栏 -->
+                <div class="mutation-toolbar">
+                    <div class="mutation-controls">
+                        <span class="mutation-title" data-i18n="mutation.title">修饰符</span>
+                        <button class="mutation-help-btn" data-i18n="mutation.help">如何获得每种变异？</button>
+                        <button class="mutation-sort-btn" data-sort="value" data-i18n="mutation.sortValue">按价值排序（降序）</button>
+                        <button class="mutation-sort-btn" data-sort="alphabetical" data-i18n="mutation.sortAlpha">按字母排序</button>
+                        <button class="mutation-hide-btn" id="hide-admin-btn" data-i18n="mutation.hideAdmin">隐藏管理员变异</button>
+                    </div>
+                    <input type="text" class="mutation-search" placeholder="搜索变异..." data-i18n-placeholder="search.mutation">
+                </div>
+                
+                <!-- 变异选择区 -->
+                <div class="mutation-list" id="mutation-list">
+                    <!-- 动态生成变异按钮 -->
+                </div>
+                
+                <!-- 公式显示区 -->
+                <div class="formula-display">
+                    <span class="formula-text">(Rainbow/Gold) × (1 + Sum of Modifiers − Number of Modifiers)</span>
+                </div>
+                
+                <!-- 输入区 -->
+                <div class="input-section">
+                    <div class="input-row">
+                        <label data-i18n="input.weight">重量（公斤）：</label>
+                        <input type="number" id="crop-weight" min="0" step="0.01" value="1.00">
+                    </div>
+                    <div class="input-row">
+                        <label data-i18n="input.amount">植物数量：</label>
+                        <input type="number" id="crop-amount" min="1" value="1">
+                    </div>
+                    <div class="input-row">
+                        <label><span data-i18n="input.friendBoostLabel">好友加成：</span> <span id="friend-boost-value">0%</span></label>
+                        <input type="range" id="friend-boost" min="0" max="100" value="0">
+                    </div>
+                </div>
+                
+                <!-- 结果区 -->
+                <div class="result-section">
+                    <div class="result-main" id="calc-result">$0</div>
+                    <div class="result-unit" id="calc-result-unit"></div>
+                </div>
+                
+                <!-- 操作按钮区 -->
+                <div class="action-buttons">
+                    <button class="action-btn" id="add-to-list" data-i18n="btn.addToList">添加植物价值到列表</button>
+                    <button class="action-btn" id="clear-mutations" data-i18n="btn.clearMutations">清除变异</button>
+                    <button class="action-btn" id="max-mutations" data-i18n="btn.maxMutations">最大变异</button>
+                    <button class="action-btn" id="toggle-mode" data-i18n="btn.toggleMode">切换价值到重量模式</button>
+                </div>
+                
+                <!-- 反向计算区 -->
+                <div class="reverse-calc-section" id="reverse-calc" style="display: none;">
+                    <div class="input-row">
+                        <label data-i18n="reverse.inputValue">目标价值（$）：</label>
+                        <input type="number" id="target-value" min="0" step="0.01">
+                    </div>
+                    <button class="action-btn" id="update-weight" data-i18n="reverse.update">更新</button>
+                    <div class="result-main" id="weight-result">≈0 <span data-i18n="unit.kg">公斤</span></div>
+                </div>
+                
+                <!-- 历史记录区 -->
+                <div class="history-section">
+                    <h3 data-i18n="history.title">植物历史记录</h3>
+                    <div class="history-list" id="history-list">
+                        <!-- 动态生成历史记录 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="stats-hero" class="live-stats-section">
+        <div class="stats-container">
+            <h1 data-i18n="statsHero.title">🌱 种植花园实时追踪</h1>
+            <p class="stats-subtitle" data-i18n="statsHero.subtitle">查看 Roblox 种植花园的实时在线人数与全球活跃度！</p>
+                <div class="counter-container">
+                    <div class="counter">
+                    <h2 data-i18n="stats.onlineNow">当前在线玩家</h2>
+                        <div id="player-count" class="player-count">21,347,891</div>
+                        <p class="update-time"><span data-i18n="stats.lastUpdated">最后更新：</span> <span id="update-time">--:--:--</span></p>
+                        <div class="trend-indicator">
+                            <span id="trend-arrow">↗</span>
+                            <span id="trend-text">+1,234</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="stats" class="stats-section">
+        <h2><span class="title-glass" data-i18n="stats.milestonesTitle">📈 玩家数量里程碑</span></h2>
+        <div class="timeline-container glass">
+            <div id="timeline-loading" style="display:none;text-align:center;" data-i18n="timeline.loading">加载中...</div>
+            <canvas id="timeline-chart"></canvas>
+        </div>
+        <div class="milestone-cards">
+            <div class="milestone-card glass">
+                <div class="milestone-date">2024-01-15</div>
+                <div class="milestone-count">21,347,891</div>
+                <div class="milestone-desc" data-i18n="stats.milestone.allTimePeak">历史峰值</div>
+            </div>
+            <div class="milestone-card glass">
+                <div class="milestone-date">2024-01-14</div>
+                <div class="milestone-count">19,876,543</div>
+                <div class="milestone-desc" data-i18n="stats.milestone.m19">1900 万里程碑</div>
+            </div>
+            <div class="milestone-card glass">
+                <div class="milestone-date">2024-01-13</div>
+                <div class="milestone-count">18,234,567</div>
+                <div class="milestone-desc" data-i18n="stats.milestone.m18">1800 万里程碑</div>
+            </div>
+        </div>
+    </section>
+    <section id="map" class="map-section">
+        <h2><span class="title-glass" data-i18n="map.title">🌍 全球玩家热力图</span></h2>
+        <div class="map-container glass">
+            <div id="heatmap">
+                <div id="heatmap-loading" style="display:none;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:rgba(255,255,255,0.8);padding:1rem 2rem;border-radius:1rem;z-index:10;" data-i18n="map.loading">加载中...</div>
+            </div>
+            <div class="map-stats">
+                <div class="stat-item glass">
+                    <span class="stat-label" data-i18n="map.activeCountries">活跃国家</span>
+                    <span class="stat-value" id="active-countries">127</span>
+                </div>
+                <div class="stat-item glass">
+                    <span class="stat-label" data-i18n="map.topRegion">顶级地区</span>
+                    <span class="stat-value" id="top-region">North America</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="tips" class="tips-section">
+        <h2><span class="title-glass" data-i18n="tips.title">💡 快速提示</span></h2>
+        <div class="tips-grid">
+            <div class="tip-card glass">
+                <div class="tip-icon">💧</div>
+                <h3 data-i18n="tips.watering.title">浇水效率</h3>
+                <ul>
+                    <li><strong data-i18n="tips.watering.goldenHours">黄金时段</strong>: <span data-i18n="tips.watering.goldenHoursDesc">游戏内 7:00-9:00（实时 2 倍效果）</span></li>
+                    <li><strong data-i18n="tips.watering.comboTrick">连击技巧</strong>: <span data-i18n="tips.watering.comboTrickDesc">连续点击浇水壶 5 次获得隐藏效果</span></li>
+                    <li><strong data-i18n="tips.watering.bestFrequency">最佳频率</strong>: <span data-i18n="tips.watering.bestFrequencyDesc">每 30 分钟浇水一次</span></li>
+                </ul>
+                <a href="#" class="tip-link" data-i18n="tips.watering.watchVideo">观看视频 →</a>
+            </div>
+            <div class="tip-card glass">
+                <div class="tip-icon">🌱</div>
+                <h3 data-i18n="tips.seed.title">种子选择</h3>
+                <ul>
+                    <li><strong data-i18n="tips.seed.beginner">新手</strong>: <span data-i18n="tips.seed.beginnerDesc">向日葵（快速生长，稳定奖励）</span></li>
+                    <li><strong data-i18n="tips.seed.advanced">高级</strong>: <span data-i18n="tips.seed.advancedDesc">玫瑰（高价值，需要技巧）</span></li>
+                    <li><strong data-i18n="tips.seed.rare">稀有种子</strong>: <span data-i18n="tips.seed.rareDesc">周末限量</span></li>
+                </ul>
+                <a href="#" class="tip-link" data-i18n="tips.seed.seeGuide">查看种子指南 →</a>
+            </div>
+            <div class="tip-card glass">
+                <div class="tip-icon">🏆</div>
+                <h3 data-i18n="tips.achievement.title">成就指南</h3>
+                <ul>
+                    <li><strong data-i18n="tips.achievement.beginner">新手</strong>: <span data-i18n="tips.achievement.beginnerDesc">种植 100 朵花</span></li>
+                    <li><strong data-i18n="tips.achievement.advanced">高级</strong>: <span data-i18n="tips.achievement.advancedDesc">7 天连续登录</span></li>
+                    <li><strong data-i18n="tips.achievement.hidden">隐藏</strong>: <span data-i18n="tips.achievement.hiddenDesc">在特殊时间种植</span></li>
+                </ul>
+                <a href="#" class="tip-link" data-i18n="tips.achievement.seeAll">查看所有成就 →</a>
+            </div>
+        </div>
+    </section>
+    <section id="community" class="community-section">
+        <h2><span class="title-glass" data-i18n="community.title">💬 加入我们的社区</span></h2>
+        <div class="community-card">
+            <div class="community-content">
+                <p data-i18n="community.description">在 Discord 上与全球种植花园玩家聊天！</p>
+                <div class="community-stats">
+                    <div class="community-stat">
+                        <span class="stat-number">50,000+</span>
+                        <span class="stat-label" data-i18n="community.members">Discord 成员</span>
+                    </div>
+                    <div class="community-stat">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label" data-i18n="community.support">在线支持</span>
+                    </div>
+                    <div class="community-stat">
+                        <span class="stat-number">1000+</span>
+                        <span class="stat-label" data-i18n="community.messages">每日消息</span>
+                    </div>
+                </div>
+                <a href="https://discord.gg/growagarden" class="discord-join-btn" target="_blank" data-i18n="community.joinDiscord">🚀 加入 Discord</a>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-content">
+            <p data-i18n="footer.copyright">© 2025 种植花园 - 实时玩家追踪</p>
+            <p data-i18n="footer.disclaimer">非官方。数据仅供参考。</p>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="plants_auto.js"></script>
+    <script src="script.js"></script>
+    <script src="/i18n/i18n.js"></script>
+
+ </body></html>

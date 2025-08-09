@@ -1,0 +1,800 @@
+<!DOCTYPE html><html lang="ja" dir="ltr"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Make Cake in Grow a Garden - Complete Guide | Grow a Garden Tips</title>
+    <meta name="description" content="Learn how to make beautiful cakes in Roblox Grow a Garden! From frosting techniques to decoration methods, including all cake-making tips, best ingredient combinations, and efficiency improvement methods.">
+    <meta name="keywords" content="how to make cake in grow a garden, roblox cake recipe, grow a garden guide, cake making guide, roblox farming game, cake ingredients collection, grow a garden tips">
+    <link rel="canonical" href="https://your-domain.com/how-to-make-cake.html">
+    
+    <!-- Open Graph for social sharing -->
+    <meta property="og:title" content="How to Make Cake in Grow a Garden - Complete Guide">
+    <meta property="og:description" content="Learn how to make beautiful cakes in Roblox Grow a Garden! From frosting techniques to decoration methods, including all cake-making tips.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://your-domain.com/how-to-make-cake.html">
+    <meta property="og:image" content="https://your-domain.com/cake-guide-og.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How to Make Cake in Grow a Garden - Complete Guide">
+    <meta name="twitter:description" content="Learn how to make beautiful cakes in Roblox Grow a Garden! From frosting techniques to decoration methods.">
+    <meta name="twitter:image" content="https://your-domain.com/cake-guide-og.jpg">
+    
+    <!-- Structured Data JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to Make Cake in Grow a Garden",
+      "description": "Learn how to make beautiful cakes in Roblox Grow a Garden, including frosting techniques, decoration methods, and efficiency improvement tips.",
+      "image": "https://your-domain.com/cake-guide-og.jpg",
+      "url": "https://your-domain.com/how-to-make-cake.html",
+      "inLanguage": "en",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Prepare Batter",
+          "text": "Mix flour, sugar, eggs and other ingredients to create cake batter in Grow a Garden"
+        },
+        {
+          "@type": "HowToStep", 
+          "name": "Bake Cake",
+          "text": "Bake the batter in the cake maker to create delicious cakes"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Add Frosting",
+          "text": "Use advanced recipes and special ingredients to make higher quality cakes"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Roblox-like color scheme -->
+    <link rel="stylesheet" href="https://unpkg.com/simple.css@2.1.0/simple.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎂</text></svg>">
+    
+    <style>
+        body {
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .bg-blur {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: 0;
+            background: url('grow-bg.jpg') center center/cover no-repeat;
+            opacity: 0.3;
+            filter: blur(2px);
+            pointer-events: none;
+        }
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+        .cake-hero {
+            background: linear-gradient(135deg, #e91e63, #c2185b);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-top: 60px;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        .cake-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        .cake-hero h1,
+        .cake-hero p {
+            position: relative;
+            z-index: 2;
+        }
+        .cake-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: white !important;
+            text-shadow: 
+                0 2px 4px rgba(0,0,0,0.7),
+                0 1px 2px rgba(0,0,0,0.8);
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            -webkit-text-stroke: 0.5px rgba(0,0,0,0.2);
+        }
+        .cake-hero p {
+            font-size: 1.2rem;
+            opacity: 1;
+            color: white !important;
+            text-shadow: 
+                0 1px 3px rgba(0,0,0,0.6),
+                0 1px 2px rgba(0,0,0,0.7);
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            -webkit-text-stroke: 0.3px rgba(0,0,0,0.15);
+        }
+        .guide-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .guide-card {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .guide-card h2 {
+            color: #23272a !important;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+        .guide-card h3 {
+            color: #2c3e50 !important;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .guide-card p, .guide-card li {
+            color: #34495e !important;
+            font-weight: 500;
+            line-height: 1.6;
+        }
+        .ingredient-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .ingredient-item {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 8px;
+            padding: 1rem;
+            border-left: 4px solid #e91e63;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .ingredient-item h4 {
+            color: #23272a !important;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .ingredient-item p {
+            color: #34495e !important;
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+        }
+        .recipe-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+        }
+        .recipe-table th,
+        .recipe-table td {
+            border: 1px solid #ddd;
+            padding: 0.75rem;
+            text-align: left;
+            font-weight: 500;
+        }
+        .recipe-table th {
+            background: #e91e63;
+            color: white;
+            font-weight: 700;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+        .recipe-table td {
+            color: #2c3e50 !important;
+            background: rgba(255, 255, 255, 0.9);
+        }
+        .recipe-table tr:nth-child(even) td {
+            background: rgba(233, 30, 99, 0.08);
+        }
+        .tip-box {
+            background: linear-gradient(135deg, #f1c40f, #f39c12);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            box-shadow: 0 4px 15px rgba(241, 196, 15, 0.3);
+        }
+        .tip-box strong {
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+            font-weight: 700;
+        }
+        .warning-box {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+        }
+        .warning-box strong {
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+            font-weight: 700;
+        }
+        .back-btn {
+            display: inline-block;
+            background: #5865f2;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+        .back-btn:hover {
+            background: #4752c4;
+            transform: translateY(-2px);
+        }
+        .cake-variety {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .cake-card {
+            background: linear-gradient(135deg, #fce4ec, #f8bbd9);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 6px 20px rgba(233, 30, 99, 0.2);
+            border: 2px solid #f48fb1;
+        }
+        .cake-card h4 {
+            color: #c2185b !important;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .cake-card ul {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+        .cake-card li {
+            color: #5d4037 !important;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* 面包屑导航样式 */
+        .breadcrumb-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+        }
+        .breadcrumb {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .breadcrumb ol {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .breadcrumb li {
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            color: #34495e;
+        }
+        .breadcrumb li:not(:last-child)::after {
+            content: "›";
+            margin: 0 0.5rem;
+            color: #e91e63;
+            font-weight: bold;
+        }
+        .breadcrumb a {
+            color: #e91e63;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .breadcrumb a:hover {
+            color: #c2185b;
+            text-decoration: underline;
+        }
+        .breadcrumb li[aria-current="page"] {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+    </style>
+    
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-HG12TJB5LZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HG12TJB5LZ');
+    </script>
+</head>
+<body>
+    <div class="bg-blur"></div>
+    <header>
+        <nav>
+            <a href="/ja/index.html" class="logo">🌱 Grow a Garden</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('stats')">Live Stats</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('map')">Global Heatmap</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('tips')">Tips</a>
+            <a href="/ja/guides.html">📚 ガイド</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('community')" class="discord-btn">💬 Discord</a>
+        </nav>
+    </header>
+    
+    <section class="cake-hero">
+        <h1>ケーキ作りのガイド</h1>
+        <p>Grow a Gardenでケーキを作るコツを学びましょう。</p>
+    </section>
+    
+    <!-- 面包屑导航 -->
+    <div class="breadcrumb-container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+                <li><a href="/ja/index.html">🏠 ホーム</a></li>
+                <li><a href="/ja/guides.html">📚 ガイド</a></li>
+                <li aria-current="page">🎂 Cake Making</li>
+            </ol>
+        </nav>
+    </div>
+    
+    <div class="guide-section">
+        <div class="guide-card">
+            <h2>📋 目次</h2>
+            <ul>
+                <li><a href="#basics">基本的なケーキ作り</a></li>
+                <li><a href="#ingredients">必須食材リスト</a></li>
+                <li><a href="#recipes">上級ケーキレシピ</a></li>
+                <li><a href="#varieties">Cake Varieties &amp; Types</a></li>
+                <li><a href="#frosting">Frosting Techniques</a></li>
+                <li><a href="#decoration">Decoration Methods</a></li>
+                <li><a href="#tips">Making Tips &amp; Tricks</a></li>
+                <li><a href="#efficiency">効率改善の方法</a></li>
+                <li><a href="#faq">よくある質問</a></li>
+            </ul>
+        </div>
+        
+        <div class="guide-card" id="basics">
+            <h2>🎂 基本的なケーキ作り</h2>
+            <p>In Grow a Garden, cake making is one of the most rewarding and profitable crafting activities. By growing various ingredients and mastering baking techniques, you can create beautiful cakes to earn significant rewards.</p>
+            
+            <h3>作り方：</h3>
+            <ol>
+                <li><strong>Prepare Batter</strong>: Mix flour, sugar, eggs, and other ingredients to create cake batter</li>
+                <li><strong>Water Management</strong>: Regularly water your plants to ensure healthy growth</li>
+                <li><strong>Harvest Timing</strong>: Wait for plants to fully mature before harvesting</li>
+                <li><strong>Bake Cake</strong>: Put batter into the cake maker to create delicious cakes</li>
+                <li><strong>Add Frosting</strong>: Apply frosting and decorations for premium cakes</li>
+            </ol>
+            
+            <div class="tip-box">
+                <strong>💡 プロのコツ：</strong> Watering during golden hours (7:00-9:00 in-game) provides double effects, greatly increasing plant growth speed and ingredient quality!
+            </div>
+        </div>
+        
+        <div class="guide-card" id="ingredients">
+            <h2>🥚 必須食材リスト</h2>
+            <p>Making quality cakes requires various fresh ingredients. Here's the ingredient list categorized by importance:</p>
+            
+            <h3>基本食材（初心者向け）</h3>
+            <div class="ingredient-grid">
+                <div class="ingredient-item">
+                    <h4>🌾 Flour</h4>
+                    <p>Growth Time: 45 minutes</p>
+                    <p>Value: Basic</p>
+                    <p>Use: Base ingredient for cake batter</p>
+                </div>
+                <div class="ingredient-item">
+                    <h4>🍯 Sugar</h4>
+                    <p>Growth Time: 30 minutes</p>
+                    <p>Value: Basic</p>
+                    <p>Use: Sweetening agent for cakes</p>
+                </div>
+                <div class="ingredient-item">
+                    <h4>🥚 Eggs</h4>
+                    <p>Growth Time: 60 minutes</p>
+                    <p>Value: Medium</p>
+                    <p>Use: Binding agent and texture</p>
+                </div>
+                <div class="ingredient-item">
+                    <h4>🥛 Milk</h4>
+                    <p>Growth Time: 40 minutes</p>
+                    <p>Value: Medium</p>
+                    <p>Use: Moisture and richness</p>
+                </div>
+            </div>
+            
+            <h3>上級食材（中級者）</h3>
+            <div class="ingredient-grid">
+                <div class="ingredient-item">
+                    <h4>🍫 Chocolate</h4>
+                    <p>Growth Time: 90 minutes</p>
+                    <p>Value: High</p>
+                    <p>Use: Chocolate cake varieties</p>
+                </div>
+                <div class="ingredient-item">
+                    <h4>🍓 Strawberry</h4>
+                    <p>Growth Time: 75 minutes</p>
+                    <p>Value: High</p>
+                    <p>Use: Strawberry cake varieties</p>
+                </div>
+                <div class="ingredient-item">
+                    <h4>🥜 Vanilla Bean</h4>
+                    <p>Growth Time: 120 minutes</p>
+                    <p>Value: High</p>
+                    <p>Use: Vanilla cake varieties</p>
+                </div>
+                <div class="ingredient-item">
+                    <h4>🍯 Honey</h4>
+                    <p>Growth Time: 100 minutes</p>
+                    <p>Value: High</p>
+                    <p>Use: Natural sweetener for cakes</p>
+                </div>
+            </div>
+            
+            <h3>希少食材（上級者）</h3>
+            <div class="ingredient-grid">
+                <div class="ingredient-item">
+                    <h4>🌰 Nuts</h4>
+                    <p>Growth Time: 150 minutes</p>
+                    <p>Value: Rare</p>
+                    <p>Use: Nut cake varieties</p>
+                </div>
+                <div class="ingredient-item">
+                    <h4>🍇 Raisins</h4>
+                    <p>Growth Time: 180 minutes</p>
+                    <p>Value: Rare</p>
+                    <p>Use: Fruit cake varieties</p>
+                </div>
+                <div class="ingredient-item">
+                    <h4>🍊 Orange</h4>
+                    <p>Growth Time: 200 minutes</p>
+                    <p>Value: Rare</p>
+                    <p>Use: Citrus cake varieties</p>
+                </div>
+                <div class="ingredient-item">
+                    <h4>🥥 Coconut</h4>
+                    <p>Growth Time: 240 minutes</p>
+                    <p>Value: Rare</p>
+                    <p>Use: Tropical cake varieties</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="guide-card" id="recipes">
+            <h2>🍽️ 上級ケーキレシピ</h2>
+            <p>食材の組み合わせによって、さまざまなレベルや効果のケーキを作れます。以下の表で詳しいレシピを確認してください：</p>
+            
+            <h3>Basic Cake Recipes</h3>
+            <table class="recipe-table">
+                <thead>
+                    <tr>
+                        <th>Cake Name</th>
+                        <th>必要な材料</th>
+                        <th>調理時間</th>
+                        <th>報酬価値</th>
+                        <th>難易度</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Vanilla Cake</td>
+                        <td>Flour + Sugar + Eggs + Milk + Vanilla</td>
+                        <td>5 minutes</td>
+                        <td>100 coins</td>
+                        <td>Easy</td>
+                    </tr>
+                    <tr>
+                        <td>Chocolate Cake</td>
+                        <td>Flour + Sugar + Eggs + Milk + Chocolate</td>
+                        <td>6 minutes</td>
+                        <td>150 coins</td>
+                        <td>Easy</td>
+                    </tr>
+                    <tr>
+                        <td>Strawberry Cake</td>
+                        <td>Flour + Sugar + Eggs + Milk + Strawberry</td>
+                        <td>7 minutes</td>
+                        <td>180 coins</td>
+                        <td>Medium</td>
+                    </tr>
+                    <tr>
+                        <td>Honey Cake</td>
+                        <td>Flour + Sugar + Eggs + Milk + Honey</td>
+                        <td>8 minutes</td>
+                        <td>200 coins</td>
+                        <td>Medium</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>上級ケーキレシピ</h3>
+            <table class="recipe-table">
+                <thead>
+                    <tr>
+                        <th>Cake Name</th>
+                        <th>必要な材料</th>
+                        <th>調理時間</th>
+                        <th>報酬価値</th>
+                        <th>難易度</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Nut Cake</td>
+                        <td>Flour + Sugar + Eggs + Milk + Nuts</td>
+                        <td>10 minutes</td>
+                        <td>250 coins</td>
+                        <td>Hard</td>
+                    </tr>
+                    <tr>
+                        <td>Fruit Cake</td>
+                        <td>Flour + Sugar + Eggs + Milk + Raisins</td>
+                        <td>12 minutes</td>
+                        <td>300 coins</td>
+                        <td>Hard</td>
+                    </tr>
+                    <tr>
+                        <td>Citrus Cake</td>
+                        <td>Flour + Sugar + Eggs + Milk + Orange</td>
+                        <td>15 minutes</td>
+                        <td>350 coins</td>
+                        <td>Expert</td>
+                    </tr>
+                    <tr>
+                        <td>Tropical Cake</td>
+                        <td>Flour + Sugar + Eggs + Milk + Coconut</td>
+                        <td>18 minutes</td>
+                        <td>400 coins</td>
+                        <td>Expert</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>プレミアムケーキレシピ</h3>
+            <table class="recipe-table">
+                <thead>
+                    <tr>
+                        <th>Cake Name</th>
+                        <th>必要な材料</th>
+                        <th>調理時間</th>
+                        <th>報酬価値</th>
+                        <th>難易度</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Rainbow Cake</td>
+                        <td>All Basic + All Advanced + All Rare</td>
+                        <td>25 minutes</td>
+                        <td>800 coins</td>
+                        <td>Master</td>
+                    </tr>
+                    <tr>
+                        <td>Wedding Cake</td>
+                        <td>All Ingredients + Special Decorations</td>
+                        <td>30 minutes</td>
+                        <td>1200 coins</td>
+                        <td>Legendary</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="guide-card" id="varieties">
+            <h2>🎨 Cake Varieties &amp; Types</h2>
+            <p>ケーキには多くの種類があり、それぞれ特徴や報酬が異なります：</p>
+            
+            <div class="cake-variety">
+                <div class="cake-card">
+                    <h4>🎂 Classic Cakes</h4>
+                    <ul>
+                        <li>Vanilla Cake - Traditional vanilla flavor</li>
+                        <li>Chocolate Cake - Rich chocolate taste</li>
+                        <li>Strawberry Cake - Fresh berry flavor</li>
+                        <li>Honey Cake - Natural sweetness</li>
+                    </ul>
+                </div>
+                
+                <div class="cake-card">
+                    <h4>🍰 Specialty Cakes</h4>
+                    <ul>
+                        <li>Nut Cake - Mixed nuts variety</li>
+                        <li>Fruit Cake - Dried fruit blend</li>
+                        <li>Citrus Cake - Orange zest flavor</li>
+                        <li>Tropical Cake - Coconut paradise</li>
+                    </ul>
+                </div>
+                
+                <div class="cake-card">
+                    <h4>🎨 Decorative Cakes</h4>
+                    <ul>
+                        <li>Rainbow Cake - Colorful layers</li>
+                        <li>Wedding Cake - Elegant design</li>
+                        <li>Birthday Cake - Celebration style</li>
+                        <li>Artisan Cake - Premium quality</li>
+                    </ul>
+                </div>
+                
+                <div class="cake-card">
+                    <h4>🍫 Premium Cakes</h4>
+                    <ul>
+                        <li>Chocolate Truffle - Rich chocolate</li>
+                        <li>Red Velvet - Classic favorite</li>
+                        <li>Carrot Cake - Healthy option</li>
+                        <li>Cheesecake - Creamy delight</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="guide-card" id="frosting">
+            <h2>🎨 Frosting Techniques</h2>
+            <p>Master these frosting techniques to create beautiful and delicious cakes:</p>
+            
+            <h3>Basic Frosting Types</h3>
+            <ul>
+                <li><strong>Buttercream Frosting:</strong> Classic smooth and creamy frosting</li>
+                <li><strong>Chocolate Ganache:</strong> Rich chocolate glaze for premium cakes</li>
+                <li><strong>Cream Cheese Frosting:</strong> Tangy and smooth for special cakes</li>
+                <li><strong>Whipped Cream:</strong> Light and fluffy for fresh cakes</li>
+            </ul>
+            
+            <h3>Advanced Techniques</h3>
+            <ul>
+                <li><strong>Piping:</strong> Create decorative borders and patterns</li>
+                <li><strong>Layering:</strong> Build multi-layer cakes with proper frosting</li>
+                <li><strong>Color Mixing:</strong> Create custom colors for themed cakes</li>
+                <li><strong>Texture Effects:</strong> Add texture with different tools</li>
+            </ul>
+            
+            <div class="tip-box">
+                <strong>💡 プロのコツ：</strong> Use high-quality ingredients for frosting to ensure smooth application and better taste!
+            </div>
+        </div>
+        
+        <div class="guide-card" id="decoration">
+            <h2>✨ Decoration Methods</h2>
+            <p>Learn advanced decoration techniques to make your cakes stand out:</p>
+            
+            <h3>Basic Decorations</h3>
+            <ul>
+                <li><strong>Sprinkles:</strong> Add color and texture to cakes</li>
+                <li><strong>Fresh Fruits:</strong> Natural and healthy decoration</li>
+                <li><strong>Edible Flowers:</strong> Elegant and beautiful</li>
+                <li><strong>Chocolate Shavings:</strong> Rich and decorative</li>
+            </ul>
+            
+            <h3>Advanced Decorations</h3>
+            <ul>
+                <li><strong>Fondant:</strong> Create smooth, professional-looking cakes</li>
+                <li><strong>Royal Icing:</strong> Perfect for detailed decorations</li>
+                <li><strong>Marzipan:</strong> Create edible sculptures</li>
+                <li><strong>Airbrushing:</strong> Add gradients and effects</li>
+            </ul>
+            
+            <h3>Theme Decorations</h3>
+            <ul>
+                <li><strong>Birthday Themes:</strong> Balloons, candles, and party decorations</li>
+                <li><strong>Wedding Themes:</strong> Elegant flowers and lace patterns</li>
+                <li><strong>Holiday Themes:</strong> Seasonal colors and motifs</li>
+                <li><strong>Character Themes:</strong> Custom designs for special occasions</li>
+            </ul>
+        </div>
+        
+        <div class="guide-card" id="tips">
+            <h2>💡 Making Tips &amp; Tricks</h2>
+            <p>これらのコツを身につければ、ケーキ作りの達人になれます：</p>
+            
+            <h3>🌱 Growing Tips</h3>
+            <ul>
+                <li><strong>Optimal Watering:</strong> Water plants every 2-3 hours for maximum growth speed</li>
+                <li><strong>Golden Hours:</strong> Water during 7:00-9:00 in-game time for double effects</li>
+                <li><strong>Harvest Timing:</strong> Wait for plants to fully mature (100% growth) before harvesting</li>
+                <li><strong>Soil Quality:</strong> Use premium soil for rare ingredients to increase success rate</li>
+            </ul>
+            
+            <h3>🎂 Making Tips</h3>
+            <ul>
+                <li><strong>Batter Quality:</strong> Higher quality ingredients produce better cake batter</li>
+                <li><strong>Baking Time:</strong> Don't overbake cakes to maintain moisture</li>
+                <li><strong>Recipe Efficiency:</strong> Master basic recipes before attempting advanced ones</li>
+                <li><strong>Storage Management:</strong> Keep ingredients organized for quick access</li>
+            </ul>
+            
+            <h3>💰 Profit Optimization</h3>
+            <ul>
+                <li><strong>Market Timing:</strong> Sell cakes during peak demand hours</li>
+                <li><strong>Quality vs Quantity:</strong> Focus on high-quality cakes for better profit margins</li>
+                <li><strong>Recipe Mastery:</strong> Master rare recipes for exclusive market access</li>
+                <li><strong>Supply Chain:</strong> Maintain steady ingredient supply for continuous production</li>
+            </ul>
+            
+            <div class="tip-box">
+                <strong>💡 プロのコツ：</strong> Combine rare ingredients with basic ones to create unique cake varieties that can sell for premium prices!
+            </div>
+        </div>
+        
+        <div class="guide-card" id="efficiency">
+            <h2>⚡ 効率改善の方法</h2>
+            <p>以下の上級戦略で、ケーキ作りの効率を最大化しましょう：</p>
+            
+            <h3>🏭 Production Optimization</h3>
+            <ul>
+                <li><strong>Automated Systems:</strong> Set up automated watering systems for consistent growth</li>
+                <li><strong>Batch Processing:</strong> Process multiple cakes simultaneously</li>
+                <li><strong>Ingredient Rotation:</strong> Rotate crops to maintain soil fertility</li>
+                <li><strong>Quality Control:</strong> Monitor ingredient quality for consistent results</li>
+            </ul>
+            
+            <h3>📊 Advanced Strategies</h3>
+            <ul>
+                <li><strong>Market Analysis:</strong> Track cake demand patterns for optimal production</li>
+                <li><strong>Recipe Optimization:</strong> Develop efficient ingredient combinations</li>
+                <li><strong>Resource Management:</strong> Balance ingredient costs with cake profits</li>
+                <li><strong>Skill Development:</strong> Improve cake-making skills for better results</li>
+            </ul>
+            
+            <div class="warning-box">
+                <strong>⚠️ 重要：</strong> Don't overproduce basic cakes when the market is saturated. Focus on quality and variety for better profits.
+            </div>
+        </div>
+        
+        <div class="guide-card" id="faq">
+            <h2>❓ よくある質問</h2>
+            
+            <h3>Q: 基本的なケーキはどのくらいで作れますか？</h3>
+            <p>A: Basic cakes take 5-8 minutes to make, while advanced recipes can take 10-30 minutes depending on complexity.</p>
+            
+            <h3>Q: What's the most profitable cake recipe?</h3>
+            <p>A: Premium cakes like Rainbow Cake and Wedding Cake offer the highest profit margins, but require rare ingredients.</p>
+            
+            <h3>Q: ケーキを他のプレイヤーに販売できますか？</h3>
+            <p>A: Yes, you can sell cakes in the marketplace or trade them with other players for other items.</p>
+            
+            <h3>Q: レア食材のレシピはどうやって解放しますか？</h3>
+            <p>A: Rare recipes are unlocked by reaching higher levels and completing special quests in the game.</p>
+            
+            <h3>Q: What's the best time to water my ingredient plants?</h3>
+            <p>A: Water during golden hours (7:00-9:00 in-game time) for double growth effects and better ingredient quality.</p>
+            
+            <h3>Q: How can I increase my cake-making efficiency?</h3>
+            <p>A: Focus on mastering basic recipes first, then gradually work on advanced recipes. Use batch production and maintain a steady supply of quality ingredients.</p>
+        </div>
+        
+        <div class="guide-card">
+            <h2>🎯 次のステップ</h2>
+            <p>Now that you've learned the basics of cake making in Grow a Garden, here are your next steps:</p>
+            
+            <ol>
+                <li><strong>Start Small:</strong> Begin with basic cake recipes to build your skills</li>
+                <li><strong>Expand Your Garden:</strong> Plant a variety of ingredients for different recipes</li>
+                <li><strong>Master Advanced Recipes:</strong> Work on complex cake varieties for higher profits</li>
+                <li><strong>Join the Community:</strong> Connect with other players to share tips and strategies</li>
+                <li><strong>Stay Updated:</strong> Keep up with game updates for new recipes and features</li>
+            </ol>
+            
+            <div class="tip-box">
+                <strong>💡 Community Tip:</strong> Join our Discord server to connect with other cake makers, share recipes, and get the latest tips and tricks!
+            </div>
+        </div>
+        
+        <a href="/ja/guides.html" class="back-btn">← ガイドに戻る</a>
+    </div>
+    
+    <script src="script.js"></script>
+
+ </body></html>

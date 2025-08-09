@@ -1,27 +1,98 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Калькулятор Grow a Garden - Инструмент стоимости фруктов и мутаций Roblox</title>
-  <link rel="canonical" href="https://growagarden.cv/ru/index.html">
-  <link rel="alternate" hreflang="en" href="https://growagarden.cv/en/index.html">
-  <link rel="alternate" hreflang="zh-CN" href="https://growagarden.cv/zh-cn/index.html">
-  <link rel="alternate" hreflang="ru" href="https://growagarden.cv/ru/index.html">
-  <link rel="alternate" hreflang="x-default" href="https://growagarden.cv/index.html">
-  <link rel="stylesheet" href="https://unpkg.com/simple.css@2.1.0/simple.min.css">
-  <link rel="stylesheet" href="/styles.css">
+<!DOCTYPE html><html lang="ru" dir="ltr"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grow a Garden Calculator - Roblox Fruit/Mutation Value Tool</title>
+    <meta name="description" content="Grow a Garden Calculator - Complete Roblox fruit and mutation value calculator. Calculate crop value, mutation multipliers, and optimize your Grow a Garden strategy!">
+    <meta name="keywords" content="grow a garden calculator, Roblox, fruit value, mutation calculator, crop value, Roblox Grow a Garden, value tool">
+    <link rel="canonical" href="/index.html">
+    <link rel="alternate" hreflang="en" href="/index.html?lang=en">
+    <link rel="alternate" hreflang="zh-CN" href="/index.html?lang=zh-cn">
+    <link rel="alternate" hreflang="es" href="/index.html?lang=es">
+    <link rel="alternate" hreflang="pt-BR" href="/index.html?lang=pt-br">
+    <link rel="alternate" hreflang="fr" href="/index.html?lang=fr">
+    <link rel="alternate" hreflang="de" href="/index.html?lang=de">
+    <link rel="alternate" hreflang="ru" href="/index.html?lang=ru">
+    <link rel="alternate" hreflang="ar" href="/index.html?lang=ar">
+    <link rel="alternate" hreflang="hi" href="/index.html?lang=hi">
+    <link rel="alternate" hreflang="id" href="/index.html?lang=id">
+    <link rel="alternate" hreflang="vi" href="/index.html?lang=vi">
+    <link rel="alternate" hreflang="ja" href="/index.html?lang=ja">
+    <link rel="alternate" hreflang="x-default" href="/index.html">
+    <!-- Open Graph for social sharing -->
+    <meta property="og:title" content="Grow a Garden Calculator - Roblox Fruit/Mutation Value Tool">
+    <meta property="og:description" content="Grow a Garden Calculator - Complete Roblox fruit and mutation value calculator. Calculate crop value, mutation multipliers, and optimize your Grow a Garden strategy!">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-domain.com/">
+    <meta property="og:image" content="https://your-domain.com/og-image.jpg">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Grow a Garden Calculator - Roblox Fruit/Mutation Value Tool">
+    <meta name="twitter:description" content="Grow a Garden Calculator - Complete Roblox fruit and mutation value calculator. Calculate crop value, mutation multipliers, and optimize your Grow a Garden strategy!">
+    <meta name="twitter:image" content="https://your-domain.com/og-image.jpg">
+    <!-- 结构化数据 JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Grow a Garden Calculator",
+      "url": "https://your-domain.com/",
+      "description": "Grow a Garden Calculator - Complete Roblox fruit and mutation value calculator. Calculate crop value, mutation multipliers, and optimize your Grow a Garden strategy!",
+      "inLanguage": "zh-CN",
+      "keywords": "grow a garden calculator, Roblox, fruit value, mutation calculator, crop value, Roblox Grow a Garden, value tool"
+    }
+    </script>
+    <!-- Roblox-like color scheme -->
+    <link rel="stylesheet" href="https://unpkg.com/simple.css@2.1.0/simple.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
+    <style>
+        body {
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .bg-blur {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: 0;
+            background: url('grow-bg.jpg') center center/cover no-repeat;
+            opacity: 0.5;
+        }
+        /* 移除其他内联样式，让CSS文件控制 */
+    </style>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-HG12TJB5LZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HG12TJB5LZ');
+    </script>
+    <link rel="alternate" hreflang="en" href="/index.html?lang=en">
+    <link rel="alternate" hreflang="zh-CN" href="/index.html?lang=zh-cn">
+    <link rel="alternate" hreflang="es" href="/index.html?lang=es">
+    <link rel="alternate" hreflang="pt-BR" href="/index.html?lang=pt-br">
+    <link rel="alternate" hreflang="fr" href="/index.html?lang=fr">
+    <link rel="alternate" hreflang="de" href="/index.html?lang=de">
+    <link rel="alternate" hreflang="ru" href="/index.html?lang=ru">
+    <link rel="alternate" hreflang="ar" href="/index.html?lang=ar">
+    <link rel="alternate" hreflang="hi" href="/index.html?lang=hi">
+    <link rel="alternate" hreflang="id" href="/index.html?lang=id">
+    <link rel="alternate" hreflang="vi" href="/index.html?lang=vi">
+    <link rel="alternate" hreflang="ja" href="/index.html?lang=ja">
+    <link rel="alternate" hreflang="x-default" href="/index.html">
 </head>
 <body>
-  <header>
-    <nav>
-      <a href="/index.html" class="logo" data-i18n="nav.logo">🌱 Grow a Garden</a>
-      <a href="javascript:void(0)" onclick="scrollToSection('stats')" data-i18n="nav.live">Живая статистика</a>
-      <a href="javascript:void(0)" onclick="scrollToSection('map')" data-i18n="nav.map">Глобальная тепловая карта</a>
-      <a href="javascript:void(0)" onclick="scrollToSection('tips')" data-i18n="nav.tips">Советы</a>
-      <a href="/guides.html" data-i18n="nav.guides">📚 Руководства</a>
-      <a href="javascript:void(0)" onclick="scrollToSection('community')" class="discord-btn" data-i18n="nav.discord">💬 Общение</a>
-                  <select id="lang-switcher" aria-label="Language">
+    <div class="bg-blur"></div>
+    <header>
+        <nav>
+            <a href="#" class="logo" data-i18n="nav.logo">🌱 Grow a Garden</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('stats')" data-i18n="nav.live">Живая Статистика</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('map')" data-i18n="nav.map">Глобальная Тепловая Карта</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('tips')" data-i18n="nav.tips">Советы</a>
+            <a href="/ru/guides.html" data-i18n="nav.guides">📚 Руководства</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('community')" class="discord-btn" data-i18n="nav.discord">💬 Discord</a>
+            <select id="lang-switcher" aria-label="Language">
                 <option value="en">English</option>
                 <option value="zh-cn">简体中文</option>
                 <option value="es">Español</option>
@@ -35,19 +106,232 @@
                 <option value="vi">Tiếng Việt</option>
                 <option value="ja">日本語</option>
             </select>
-    </nav>
-  </header>
-  <section class="hero">
-    <div class="hero-blur-bg"></div>
-    <div class="hero-content">
-      <div class="hero-glass">
-        <h1>🌱 Калькулятор Grow a Garden</h1>
-        <h2>Инструмент стоимости фруктов и мутаций Roblox</h2>
-        <p class="hero-subtitle">Введите информацию о растении для мгновенного расчета стоимости мутации. Самый точный множитель мутации Roblox Grow a Garden.</p>
-      </div>
-    </div>
-  </section>
-  <script src="/i18n/i18n.js"></script>
-  <script src="/script.js"></script>
-</body>
-</html>
+        </nav>
+    </header>
+    <section class="hero">
+        <div class="hero-blur-bg"></div>
+        <div class="hero-content">
+            <div class="hero-glass">
+                <h1 data-i18n="hero.title">🌱 Калькулятор Grow a Garden</h1>
+                <h2 data-i18n="hero.subtitle">Инструмент стоимости фруктов и мутаций Roblox</h2>
+                <p class="hero-subtitle" data-i18n="hero.description">Введите информацию о культуре для мгновенного расчета стоимости мутации. Самые полные множители мутаций Roblox Grow a Garden!</p>
+                
+                <!-- 分类Tab -->
+                <div class="plant-tabs">
+                    <button class="tab active" data-category="all" data-i18n="tabs.all">Все</button>
+                    <button class="tab" data-category="BaseValue" data-i18n="tabs.baseValue">Базовая Стоимость</button>
+                    <button class="tab" data-category="Exotic Seed Pack" data-i18n="tabs.exotic">Экзотический Пакет Семян</button>
+                    <button class="tab" data-category="Prehistoric Event" data-i18n="tabs.prehistoric">Доисторическое Событие</button>
+                    <button class="tab" data-category="Event Seed Pack" data-i18n="tabs.event">Пакет Семян События</button>
+                </div>
+                
+                <!-- 搜索框 -->
+                <input type="text" class="plant-search" placeholder="Поиск растения..." data-i18n-placeholder="search.plant">
+                
+                <!-- 作物图片选择区 -->
+                <div class="plant-list" id="plant-list">
+                    <!-- 动态生成作物卡片 -->
+                </div>
+                
+                <!-- 变异工具栏 -->
+                <div class="mutation-toolbar">
+                    <div class="mutation-controls">
+                        <span class="mutation-title" data-i18n="mutation.title">Модификаторы</span>
+                        <button class="mutation-help-btn" data-i18n="mutation.help">Как получить каждую мутацию?</button>
+                        <button class="mutation-sort-btn" data-sort="value" data-i18n="mutation.sortValue">Сортировать по Стоимости (Убывание)</button>
+                        <button class="mutation-sort-btn" data-sort="alphabetical" data-i18n="mutation.sortAlpha">Сортировать по Алфавиту</button>
+                        <button class="mutation-hide-btn" id="hide-admin-btn" data-i18n="mutation.hideAdmin">Скрыть Админские Мутации</button>
+                    </div>
+                    <input type="text" class="mutation-search" placeholder="Поиск мутации..." data-i18n-placeholder="search.mutation">
+                </div>
+                
+                <!-- 变异选择区 -->
+                <div class="mutation-list" id="mutation-list">
+                    <!-- 动态生成变异按钮 -->
+                </div>
+                
+                <!-- 公式显示区 -->
+                <div class="formula-display">
+                    <span class="formula-text">(Rainbow/Gold) × (1 + Sum of Modifiers − Number of Modifiers)</span>
+                </div>
+                
+                <!-- 输入区 -->
+                <div class="input-section">
+                    <div class="input-row">
+                        <label data-i18n="input.weight">Вес (кг):</label>
+                        <input type="number" id="crop-weight" min="0" step="0.01" value="1.00">
+                    </div>
+                    <div class="input-row">
+                        <label data-i18n="input.amount">Количество растений:</label>
+                        <input type="number" id="crop-amount" min="1" value="1">
+                    </div>
+                    <div class="input-row">
+                        <label><span data-i18n="input.friendBoostLabel">Буст друга:</span> <span id="friend-boost-value">0%</span></label>
+                        <input type="range" id="friend-boost" min="0" max="100" value="0">
+                    </div>
+                </div>
+                
+                <!-- 结果区 -->
+                <div class="result-section">
+                    <div class="result-main" id="calc-result">$0</div>
+                    <div class="result-unit" id="calc-result-unit"></div>
+                </div>
+                
+                <!-- 操作按钮区 -->
+                <div class="action-buttons">
+                    <button class="action-btn" id="add-to-list" data-i18n="btn.addToList">Добавить стоимость растения в список</button>
+                    <button class="action-btn" id="clear-mutations" data-i18n="btn.clearMutations">Очистить Мутации</button>
+                    <button class="action-btn" id="max-mutations" data-i18n="btn.maxMutations">Максимальные Мутации</button>
+                    <button class="action-btn" id="toggle-mode" data-i18n="btn.toggleMode">Переключить Режим Стоимости на Вес</button>
+                </div>
+                
+                <!-- 反向计算区 -->
+                <div class="reverse-calc-section" id="reverse-calc" style="display: none;">
+                    <div class="input-row">
+                        <label data-i18n="reverse.inputValue">Входное значение ($):</label>
+                        <input type="number" id="target-value" min="0" step="0.01">
+                    </div>
+                    <button class="action-btn" id="update-weight" data-i18n="reverse.update">Обновить</button>
+                    <div class="result-main" id="weight-result">≈0 <span data-i18n="unit.kg">кг</span></div>
+                </div>
+                
+                <!-- 历史记录区 -->
+                <div class="history-section">
+                    <h3 data-i18n="history.title">История Растений</h3>
+                    <div class="history-list" id="history-list">
+                        <!-- 动态生成历史记录 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="stats-hero" class="live-stats-section">
+        <div class="stats-container">
+            <h1 data-i18n="statsHero.title">🌱 Трекер в Реальном Времени Grow a Garden</h1>
+            <p class="stats-subtitle" data-i18n="statsHero.subtitle">Смотрите количество игроков онлайн и глобальную активность Grow a Garden в Roblox!</p>
+                <div class="counter-container">
+                    <div class="counter">
+                    <h2 data-i18n="stats.onlineNow">Сейчас онлайн</h2>
+                        <div id="player-count" class="player-count">21,347,891</div>
+                        <p class="update-time"><span data-i18n="stats.lastUpdated">Последнее обновление:</span> <span id="update-time">--:--:--</span></p>
+                        <div class="trend-indicator">
+                            <span id="trend-arrow">↗</span>
+                            <span id="trend-text">+1,234</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="stats" class="stats-section">
+        <h2><span class="title-glass" data-i18n="stats.milestonesTitle">📈 Вехи по Количеству Игроков</span></h2>
+        <div class="timeline-container glass">
+            <div id="timeline-loading" style="display:none;text-align:center;" data-i18n="timeline.loading">Загрузка...</div>
+            <canvas id="timeline-chart"></canvas>
+        </div>
+        <div class="milestone-cards">
+            <div class="milestone-card glass">
+                <div class="milestone-date">2024-01-15</div>
+                <div class="milestone-count">21,347,891</div>
+                <div class="milestone-desc" data-i18n="stats.milestone.allTimePeak">Абсолютный пик</div>
+            </div>
+            <div class="milestone-card glass">
+                <div class="milestone-date">2024-01-14</div>
+                <div class="milestone-count">19,876,543</div>
+                <div class="milestone-desc" data-i18n="stats.milestone.m19">Веха 19 миллионов</div>
+            </div>
+            <div class="milestone-card glass">
+                <div class="milestone-date">2024-01-13</div>
+                <div class="milestone-count">18,234,567</div>
+                <div class="milestone-desc" data-i18n="stats.milestone.m18">Веха 18 миллионов</div>
+            </div>
+        </div>
+    </section>
+    <section id="map" class="map-section">
+        <h2><span class="title-glass" data-i18n="map.title">🌍 Глобальная Тепловая Карта Игроков</span></h2>
+        <div class="map-container glass">
+            <div id="heatmap">
+                <div id="heatmap-loading" style="display:none;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:rgba(255,255,255,0.8);padding:1rem 2rem;border-radius:1rem;z-index:10;" data-i18n="map.loading">Загрузка...</div>
+            </div>
+            <div class="map-stats">
+                <div class="stat-item glass">
+                    <span class="stat-label" data-i18n="map.activeCountries">Активные Страны</span>
+                    <span class="stat-value" id="active-countries">127</span>
+                </div>
+                <div class="stat-item glass">
+                    <span class="stat-label" data-i18n="map.topRegion">Топ Регион</span>
+                    <span class="stat-value" id="top-region">North America</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="tips" class="tips-section">
+        <h2><span class="title-glass" data-i18n="tips.title">💡 Быстрые Советы</span></h2>
+        <div class="tips-grid">
+            <div class="tip-card glass">
+                <div class="tip-icon">💧</div>
+                <h3 data-i18n="tips.watering.title">Эффективность Полива</h3>
+                <ul>
+                    <li><strong data-i18n="tips.watering.goldenHours">Золотые Часы</strong>: <span data-i18n="tips.watering.goldenHoursDesc">7:00-9:00 в игре (2x эффект в реальном времени)</span></li>
+                    <li><strong data-i18n="tips.watering.comboTrick">Комбо Трюк</strong>: <span data-i18n="tips.watering.comboTrickDesc">Нажмите на лейку 5 раз для скрытого эффекта</span></li>
+                    <li><strong data-i18n="tips.watering.bestFrequency">Лучшая Частота</strong>: <span data-i18n="tips.watering.bestFrequencyDesc">Поливайте каждые 30 минут</span></li>
+                </ul>
+                <a href="#" class="tip-link" data-i18n="tips.watering.watchVideo">Смотреть Видео →</a>
+            </div>
+            <div class="tip-card glass">
+                <div class="tip-icon">🌱</div>
+                <h3 data-i18n="tips.seed.title">Выбор Семян</h3>
+                <ul>
+                    <li><strong data-i18n="tips.seed.beginner">Новичок</strong>: <span data-i18n="tips.seed.beginnerDesc">Подсолнух (быстрый рост, стабильные награды)</span></li>
+                    <li><strong data-i18n="tips.seed.advanced">Продвинутый</strong>: <span data-i18n="tips.seed.advancedDesc">Роза (высокая стоимость, нужны навыки)</span></li>
+                    <li><strong data-i18n="tips.seed.rare">Редкие Семена</strong>: <span data-i18n="tips.seed.rareDesc">Ограничены по выходным</span></li>
+                </ul>
+                <a href="#" class="tip-link" data-i18n="tips.seed.seeGuide">Смотреть Руководство по Семенам →</a>
+            </div>
+            <div class="tip-card glass">
+                <div class="tip-icon">🏆</div>
+                <h3 data-i18n="tips.achievement.title">Руководство по Достижениям</h3>
+                <ul>
+                    <li><strong data-i18n="tips.achievement.beginner">Новичок</strong>: <span data-i18n="tips.achievement.beginnerDesc">Посадите 100 цветов</span></li>
+                    <li><strong data-i18n="tips.achievement.advanced">Продвинутый</strong>: <span data-i18n="tips.achievement.advancedDesc">7-дневная серия входа</span></li>
+                    <li><strong data-i18n="tips.achievement.hidden">Скрытое</strong>: <span data-i18n="tips.achievement.hiddenDesc">Сажайте в особое время</span></li>
+                </ul>
+                <a href="#" class="tip-link" data-i18n="tips.achievement.seeAll">Смотреть Все Достижения →</a>
+            </div>
+        </div>
+    </section>
+    <section id="community" class="community-section">
+        <h2><span class="title-glass" data-i18n="community.title">💬 Присоединяйтесь к Нашему Сообществу</span></h2>
+        <div class="community-card">
+            <div class="community-content">
+                <p data-i18n="community.description">Общайтесь с игроками Grow a Garden со всего мира в Discord!</p>
+                <div class="community-stats">
+                    <div class="community-stat">
+                        <span class="stat-number">50,000+</span>
+                        <span class="stat-label" data-i18n="community.members">Участники Discord</span>
+                    </div>
+                    <div class="community-stat">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label" data-i18n="community.support">Онлайн Поддержка</span>
+                    </div>
+                    <div class="community-stat">
+                        <span class="stat-number">1000+</span>
+                        <span class="stat-label" data-i18n="community.messages">Ежедневные Сообщения</span>
+                    </div>
+                </div>
+                <a href="https://discord.gg/growagarden" class="discord-join-btn" target="_blank" data-i18n="community.joinDiscord">🚀 Присоединиться к Discord</a>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-content">
+            <p data-i18n="footer.copyright">© 2025 Grow a Garden - Трекер игроков в реальном времени</p>
+            <p data-i18n="footer.disclaimer">Неофициально. Данные только для справки.</p>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="plants_auto.js"></script>
+    <script src="script.js"></script>
+    <script src="/i18n/i18n.js"></script>
+
+ </body></html>
