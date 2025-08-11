@@ -44,7 +44,7 @@
     <!-- Roblox-like color scheme -->
     <link rel="stylesheet" href="https://unpkg.com/simple.css@2.1.0/simple.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
     <style>
         body {
@@ -52,13 +52,7 @@
             min-height: 100vh;
             overflow-x: hidden;
         }
-        .bg-blur {
-            position: fixed;
-            top: 0; left: 0; width: 100vw; height: 100vh;
-            z-index: 0;
-            background: url('grow-bg.jpg') center center/cover no-repeat;
-            opacity: 0.5;
-        }
+        /* 背景样式由CSS文件控制 */
         /* 移除其他内联样式，让CSS文件控制 */
     </style>
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-HG12TJB5LZ"></script>
@@ -209,14 +203,14 @@
         <div class="stats-container">
             <h1 data-i18n="statsHero.title">🌱 Rastreador en Tiempo Real de Grow a Garden</h1>
             <p class="stats-subtitle" data-i18n="statsHero.subtitle">¡Mira el conteo de jugadores en vivo y la actividad global de Grow a Garden en Roblox!</p>
-                <div class="counter-container">
-                    <div class="counter">
-                    <h2 data-i18n="stats.onlineNow">Jugadores en línea ahora</h2>
-                        <div id="player-count" class="player-count">21,347,891</div>
-                        <p class="update-time"><span data-i18n="stats.lastUpdated">Última actualización:</span> <span id="update-time">--:--:--</span></p>
-                        <div class="trend-indicator">
-                            <span id="trend-arrow">↗</span>
-                            <span id="trend-text">+1,234</span>
+                                                    <div class="counter-container" style="text-align: center !important; display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: center !important; width: 100% !important;">
+                <div class="counter" style="text-align: center !important; display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: center !important; width: 100% !important;">
+                    <h2 data-i18n="stats.onlineNow" style="text-align: center !important; width: 100% !important; display: block !important;">Jugadores en línea</h2>
+                    <div id="player-count" class="player-count" style="text-align: center !important; width: 100% !important; display: block !important;">21,347,891</div>
+                    <p class="update-time" style="text-align: center !important; width: 100% !important; display: block !important;"><span data-i18n="stats.lastUpdated">Última actualización:</span> <span id="update-time">--:--:--</span></p>
+                    <div class="trend-indicator" style="text-align: center !important; width: 100% !important; display: flex !important; justify-content: center !important; align-items: center !important;">
+                        <span id="trend-arrow">↗</span>
+                        <span id="trend-text">+1,234</span>
                     </div>
                 </div>
             </div>
@@ -322,7 +316,11 @@
             </div>
         </div>
     </section>
-    <footer>
+        <script>
+      // 修复植物图片映射文件路径 - 必须在其他脚本之前设置
+      window.PLANT_IMG_MAP_URL = '/plant_img_map_local.json';
+    </script>
+<footer>
         <div class="footer-content">
             <p data-i18n="footer.copyright">© 2025 Grow a Garden - Rastreador de Jugadores en Tiempo Real</p>
             <p data-i18n="footer.disclaimer">No oficial. Datos solo de referencia.</p>
@@ -330,8 +328,10 @@
     </footer>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="plants_auto.js"></script>
-    <script src="script.js"></script>
-    <script src="/i18n/i18n.js"></script>
+    <script src="../plants_auto.js"></script>
+    <script src="../script.js"></script>
+    <script src="../i18n/i18n.js">
+
+</script>
 
  </body></html>

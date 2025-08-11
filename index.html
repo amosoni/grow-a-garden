@@ -65,10 +65,29 @@
     </style>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HG12TJB5LZ"></script>
     <script>
+      // 自动重定向到英文版本
+      (function() {
+        // 检查URL参数中是否已经有语言设置
+        var urlParams = new URLSearchParams(window.location.search);
+        var lang = urlParams.get('lang');
+        
+        // 如果没有语言参数，默认重定向到英文
+        if (!lang) {
+          window.location.replace('/en/index.html');
+          return;
+        }
+        
+        // 如果有语言参数，重定向到对应的语言目录
+        if (lang !== 'en') {
+          window.location.replace('/' + lang + '/index.html');
+          return;
+        }
+      })();
+      
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-HG12TJB5LZ');
+      gtag('config', 'G-HG12TJB5Z');
     </script>
     <link rel="alternate" hreflang="en" href="/index.html?lang=en">
     <link rel="alternate" hreflang="zh-CN" href="/index.html?lang=zh-cn">

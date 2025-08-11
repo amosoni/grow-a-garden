@@ -81,5 +81,22 @@
   "hero.guides.subtitle": "Koleksi lengkap strategi, resep, dan tips gameplay",
   "breadcrumb.home": "🏠 Beranda",
   "breadcrumb.guides": "📚 Panduan",
-  "btn.back": "← Kembali ke Panduan"
+  "btn.back": "← Kembali ke Panduan",
+  "guides.searchFilter": "🔍 Cari dan Filter",
+  "guides.searchPlaceholder": "Cari panduan...",
+  "guides.filter.all": "Semua",
+  "guides.filter.recipe": "Resep",
+  "guides.filter.farming": "Pertanian",
+  "guides.filter.profit": "Keuntungan",
+  "guides.filter.advanced": "Lanjutan",
+  "guides.trendingTitle": "🔥 Panduan Trending",
+  "guides.badge.mostPopular": "⭐ Paling Populer",
+  "guides.badge.trending": "📈 Trending",
+  "guides.back": "← Kembali ke Kalkulator Utama",
+
+  "guides.guideItems.spaghetti.title": "🍝 Panduan Membuat Spaghetti",
+  "guides.guideItems.spaghetti.description": "Pelajari cara membuat spaghetti lezat di Grow a Garden. Dari persiapan pasta hingga teknik saus dan memasak yang sempurna.",
+  "guides.guideItems.spaghetti.difficulty": "Menengah",
+  "guides.guideItems.spaghetti.readTime": "25 menit baca",
+  "guides.guideItems.spaghetti.views": "🔥 1.8k dilihat"
 } 

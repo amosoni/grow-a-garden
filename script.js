@@ -1,5 +1,58 @@
+// 防止自动滚动的函数
+function preventAutoScroll() {
+  // 立即移除URL中的锚点
+  if (window.location.hash) {
+    const hash = window.location.hash;
+    window.history.replaceState(null, null, window.location.pathname);
+    
+    // 如果需要滚动到特定section，使用我们的函数
+    const sectionId = hash.substring(1);
+    if (sectionId && sectionId !== '') {
+      setTimeout(() => {
+        scrollToSection(sectionId);
+      }, 100);
+    }
+  }
+  
+  // 确保页面滚动到顶部
+  window.scrollTo(0, 0);
+  
+  // 禁用所有可能导致自动滚动的行为
+  document.addEventListener('DOMContentLoaded', function() {
+    // 移除所有锚点链接的默认行为
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const href = this.getAttribute('href');
+        if (href && href !== '#') {
+          const sectionId = href.substring(1);
+          scrollToSection(sectionId);
+        }
+      });
+    });
+  });
+  
+  // 防止浏览器自动滚动到锚点
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+}
+
 // 立即防止自动滚动
 preventAutoScroll();
+
+// 全局plants数组检查
+console.log('=== GLOBAL PLANTS CHECK ===');
+console.log('plants array at script load:', typeof plants, plants ? plants.length : 'undefined');
+console.log('window.plants:', typeof window.plants, window.plants ? window.plants.length : 'undefined');
+
+// 尝试从window对象获取plants数组
+if (typeof window.plants !== 'undefined' && window.plants && window.plants.length > 0) {
+  console.log('Found plants in window object:', window.plants.length);
+  plants = window.plants;
+} else {
+  console.log('No plants found in window object');
+}
 
 // 完整的变异数据
 const mutations = [
@@ -64,7 +117,7 @@ let map;
 let heatmapLayer;
 let playerCountHistory = [];
 let currentPlayerCount = 21347891;
-let selectedPlant = plants[0];
+let selectedPlant = null; // 初始化为null，等plants加载后再设置
 let selectedMutations = [];
 let plantHistory = [];
 let hideAdminMutations = false;
@@ -117,16 +170,79 @@ const globalPlayerData = [
 
 // 加载植物图片映射
 let plantImgMap = {};
-fetch('plant_img_map_final.json')
-  .then(res => res.json())
+let imageMapLoaded = false;
+
+console.log('🔍 开始加载植物图片映射...');
+console.log('🔍 PLANT_IMG_MAP_URL:', window.PLANT_IMG_MAP_URL);
+
+fetch(window.PLANT_IMG_MAP_URL || 'plant_img_map_local.json')
+  .then(res => {
+    console.log('🔍 图片映射文件响应状态:', res.status, res.statusText);
+    if (!res.ok) {
+      throw new Error(`HTTP ${res.status}: ${res.statusText}`);
+    }
+    return res.json();
+  })
   .then(data => {
     plantImgMap = data;
-    renderPlants(); // 图片映射加载后渲染
+    imageMapLoaded = true;
+    console.log('✅ 植物图片映射加载成功，总数:', Object.keys(plantImgMap).length);
+    console.log('🔍 前5个图片映射:', Object.entries(plantImgMap).slice(0, 5));
+    
+    // 等待植物数据加载完成后再渲染
+    waitForPlantsAndRender();
+  })
+  .catch(error => {
+    console.error('❌ 加载植物图片映射失败:', error);
+    // 如果加载失败，使用默认图片
+    plantImgMap = {};
+    imageMapLoaded = false;
+    waitForPlantsAndRender();
   });
+
+// 等待植物数据加载完成后再渲染
+function waitForPlantsAndRender() {
+  console.log('🔍 等待植物数据加载...');
+  
+  // 检查植物数据是否已加载
+  if (typeof plants !== 'undefined' && plants && plants.length > 0) {
+    console.log('✅ 植物数据已加载，开始渲染...');
+    renderPlants();
+  } else {
+    console.log('⏳ 植物数据未加载，等待100ms后重试...');
+    setTimeout(waitForPlantsAndRender, 100);
+  }
+}
 
 // 渲染作物列表
 function renderPlants(category = 'all', searchTerm = '') {
+  console.log('=== renderPlants START ===');
+  console.log('category:', category, 'searchTerm:', searchTerm);
+  console.log('plantImgMap loaded:', imageMapLoaded);
+  console.log('plantImgMap keys:', Object.keys(plantImgMap).length);
+  console.log('plants array:', plants ? plants.length : 'undefined');
+  
+  // 检查植物数据是否可用
+  if (!plants || plants.length === 0) {
+    console.error('❌ 植物数据未加载，等待数据加载...');
+    return;
+  }
+  
+  // 检查图片映射的详细信息
+  if (imageMapLoaded && Object.keys(plantImgMap).length > 0) {
+    console.log('🔍 图片映射示例:');
+    const sampleKeys = ['amberspine', 'pineapple', 'cherryblossom'];
+    sampleKeys.forEach(key => {
+      console.log(`  ${key}: ${plantImgMap[key]}`);
+    });
+  }
+  
   const plantList = document.getElementById('plant-list');
+  if (!plantList) {
+    console.error('❌ plant-list element not found!');
+    return;
+  }
+  
   let filteredPlants = plants;
   
   // 按分类筛选
@@ -136,20 +252,32 @@ function renderPlants(category = 'all', searchTerm = '') {
   
   // 按搜索词筛选
   if (searchTerm) {
-    filteredPlants = filteredPlants.filter(plant => 
+    filteredPlants = plants.filter(plant => 
       plant.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
   }
   
-  plantList.innerHTML = filteredPlants.map(plant => `
-    <div class="plant-item ${selectedPlant.key === plant.key ? 'selected' : ''}" data-plant="${plant.key}">
-      <div class="plant-icon">
-        <img src="${plantImgMap[plant.key] || 'https://your-cdn.com/default-plant.png'}" alt="${plant.name}" style="width:32px;height:32px;object-fit:contain;">
+  console.log('filteredPlants:', filteredPlants.length);
+  
+  plantList.innerHTML = filteredPlants.map(plant => {
+    const imgSrc = plantImgMap[plant.key];
+    console.log(`Plant ${plant.key}: imgSrc = ${imgSrc}`);
+    
+    // 如果没有找到图片路径，使用本地占位符
+    const finalImgSrc = imgSrc || '/images/plants/Placeholder.png';
+    
+    return `
+      <div class="plant-item ${selectedPlant.key === plant.key ? 'selected' : ''}" data-plant="${plant.key}">
+        <div class="plant-icon">
+          <img src="${finalImgSrc}" alt="${plant.name}" style="width:32px;height:32px;object-fit:contain;" 
+               onload="console.log('✅ 图片加载成功:', this.src)" 
+               onerror="console.log('❌ 图片加载失败:', this.src)">
+        </div>
+        <span>${plant.name}</span>
+        <div class="plant-value">$${plant.value}</div>
       </div>
-      <span>${plant.name}</span>
-      <div class="plant-value">$${plant.value}</div>
-    </div>
-  `).join('');
+    `;
+  }).join('');
   
   // 添加点击事件
   document.querySelectorAll('.plant-item').forEach(item => {
@@ -169,7 +297,27 @@ function renderPlants(category = 'all', searchTerm = '') {
 
 // 渲染变异列表
 function renderMutations(searchTerm = '') {
+  console.log('=== renderMutations START ===');
+  console.log('searchTerm:', searchTerm);
+  
   const mutationList = document.getElementById('mutation-list');
+  
+  // 调试信息
+  console.log('renderMutations called');
+  console.log('mutationList element:', mutationList);
+  console.log('mutations array:', mutations);
+  console.log('mutations length:', mutations.length);
+  
+  if (!mutationList) {
+    console.error('mutation-list element not found!');
+    return;
+  }
+  
+  if (!mutations || mutations.length === 0) {
+    console.error('mutations array is empty or undefined!');
+    return;
+  }
+  
   let filteredMutations = mutations;
   
   // 隐藏管理员变异
@@ -190,6 +338,8 @@ function renderMutations(searchTerm = '') {
   } else {
     filteredMutations.sort((a, b) => a.name.localeCompare(b.name));
   }
+  
+  console.log('filteredMutations:', filteredMutations);
   
   mutationList.innerHTML = filteredMutations.map(mutation => `
     <button class="mutation-chip ${selectedMutations.includes(mutation.key) ? 'selected' : ''} ${mutation.admin ? 'admin' : ''}" 
@@ -217,6 +367,8 @@ function renderMutations(searchTerm = '') {
       calculateValue();
     });
   });
+  
+  console.log('=== renderMutations END ===');
 }
 
 // 计算价值
@@ -372,8 +524,22 @@ function toggleMode() {
 
 // 初始化计算器
 function initializeCalculator() {
+  console.log('initializeCalculator called');
+  console.log('plants array at initializeCalculator:', typeof plants, plants ? plants.length : 'undefined');
+  
+  // 确保plants已加载
+  if (typeof plants !== 'undefined' && plants.length > 0) {
+    selectedPlant = plants[0];
+    console.log('selectedPlant set to:', selectedPlant);
+  } else {
+    console.error('plants array not loaded yet');
+    return;
+  }
+  
   // 渲染初始数据
+  console.log('calling renderPlants...');
   renderPlants();
+  console.log('calling renderMutations...');
   renderMutations();
   
   // 分类Tab事件
@@ -473,48 +639,13 @@ function scrollToSection(sectionId) {
   }
 }
 
-// 防止页面加载时自动滚动到锚点
-function preventAutoScroll() {
-  // 立即移除URL中的锚点
-  if (window.location.hash) {
-    const hash = window.location.hash;
-    window.history.replaceState(null, null, window.location.pathname);
-    
-    // 如果需要滚动到特定section，使用我们的函数
-    const sectionId = hash.substring(1);
-    if (sectionId && sectionId !== '') {
-      setTimeout(() => {
-        scrollToSection(sectionId);
-      }, 100);
-    }
-  }
-  
-  // 确保页面滚动到顶部
-  window.scrollTo(0, 0);
-  
-  // 禁用所有可能导致自动滚动的行为
-  document.addEventListener('DOMContentLoaded', function() {
-    // 移除所有锚点链接的默认行为
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const href = this.getAttribute('href');
-        if (href && href !== '#') {
-          const sectionId = href.substring(1);
-          scrollToSection(sectionId);
-        }
-      });
-    });
-  });
-  
-  // 防止浏览器自动滚动到锚点
-  if ('scrollRestoration' in history) {
-    history.scrollRestoration = 'manual';
-  }
-}
+
 
 // 页面加载时初始化
 document.addEventListener('DOMContentLoaded', function() {
+  console.log('DOMContentLoaded triggered');
+  console.log('plants array at DOMContentLoaded:', typeof plants, plants ? plants.length : 'undefined');
+  
   // 防止自动滚动
   preventAutoScroll();
   
@@ -524,11 +655,12 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeHeatmap();
     initializeSmoothScrolling();
   
-  // 初始化计算器
-  initializeCalculator();
-  
-  // 立即计算初始值
-  calculateValue();
+  // 延迟初始化计算器，确保plants数组完全加载
+  setTimeout(function() {
+    console.log('Delayed initialization - plants array:', typeof plants, plants ? plants.length : 'undefined');
+    initializeCalculator();
+    calculateValue();
+  }, 100);
   
   // 开始实时更新
     startRealTimeUpdates();
@@ -989,16 +1121,15 @@ window.addEventListener('load', function() {
     }, 1000);
 });
 
-// 添加滚动动画
-window.addEventListener('scroll', function() {
-    const scrolled = window.pageYOffset;
-    const parallax = document.querySelector('.hero');
-    
-    if (parallax) {
-        const speed = scrolled * 0.5;
-        parallax.style.transform = `translateY(${speed}px)`;
-    }
-});
+// 移除滚动时的parallax位移，避免加载时抖动
+// window.addEventListener('scroll', function() {
+//   const scrolled = window.pageYOffset;
+//   const parallax = document.querySelector('.hero');
+//   if (parallax) {
+//     const speed = scrolled * 0.5;
+//     parallax.style.transform = `translateY(${speed}px)`;
+//   }
+// });
 
 // 添加键盘快捷键
 document.addEventListener('keydown', function(e) {
@@ -1041,24 +1172,23 @@ window.GrowTracker = {
     getUserLocation
 }; 
 
-// 自动切换后核心区块收缩消失，Tracker区块自动顶到顶部
-(function() {
-  const hero = document.querySelector('.hero');
-  const nextSection = document.querySelector('#stats-hero');
-  if (!hero || !nextSection) return;
-
-  let switched = false;
-  hero.addEventListener('scroll', function () {
-    if (switched) return;
-    if (hero.scrollTop + hero.clientHeight >= hero.scrollHeight - 2) {
-      switched = true;
-      hero.classList.add('hide-after-scroll');
-      setTimeout(() => {
-        nextSection.scrollIntoView({ behavior: 'smooth' });
-      }, 500); // 等动画收缩后再滚动
-    }
-  });
-})(); 
+// 取消“滚动到底部自动收缩并跳转下一段”的行为，避免页面自己滚
+// (function() {
+//   const hero = document.querySelector('.hero');
+//   const nextSection = document.querySelector('#stats-hero');
+//   if (!hero || !nextSection) return;
+//   let switched = false;
+//   hero.addEventListener('scroll', function () {
+//     if (switched) return;
+//     if (hero.scrollTop + hero.clientHeight >= hero.scrollHeight - 2) {
+//       switched = true;
+//       hero.classList.add('hide-after-scroll');
+//       setTimeout(() => {
+//         nextSection.scrollIntoView({ behavior: 'smooth' });
+//       }, 500);
+//     }
+//   });
+// })(); 
 
 // 攻略页面功能
 (function() {

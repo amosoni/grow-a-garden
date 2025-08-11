@@ -71,6 +71,27 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
     
+    <script>
+      // 自动重定向到英文版本
+      (function() {
+        // 检查URL参数中是否已经有语言设置
+        var urlParams = new URLSearchParams(window.location.search);
+        var lang = urlParams.get('lang');
+        
+        // 如果没有语言参数，默认重定向到英文
+        if (!lang) {
+          window.location.replace('/en/guides.html');
+          return;
+        }
+        
+        // 如果有语言参数，重定向到对应的语言目录
+        if (lang !== 'en') {
+          window.location.replace('/' + lang + '/guides.html');
+          return;
+        }
+      })();
+    </script>
+    
     <style>
         body {
             position: relative;
@@ -522,6 +543,17 @@
                         <span class="guide-views">🔥 1.2k views</span>
                     </div>
                 </a>
+                
+                <a href="how-to-make-spaghetti.html" class="guide-item">
+                    <div class="trending-badge" data-i18n="guides.badge.trending">📈 Trending</div>
+                    <h3>🍝 Spaghetti Making Guide</h3>
+                    <p>Learn how to make delicious spaghetti in Grow a Garden. From pasta preparation to sauce making and perfect cooking techniques.</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">Intermediate</span>
+                        <span class="guide-read-time">25 min read</span>
+                        <span class="guide-views">🔥 1.8k views</span>
+                    </div>
+                </a>
             </div>
         </div>
         
@@ -580,6 +612,15 @@
                     <div class="guide-meta">
                         <span class="guide-difficulty">Advanced</span>
                         <span class="guide-read-time">30 min read</span>
+                    </div>
+                </a>
+                
+                <a href="how-to-make-spaghetti.html" class="guide-item">
+                    <h3>🍝 Spaghetti Making Guide</h3>
+                    <p>Learn how to make delicious spaghetti in Grow a Garden. From pasta preparation to sauce making and perfect cooking techniques.</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">Intermediate</span>
+                        <span class="guide-read-time">25 min read</span>
                     </div>
                 </a>
                 

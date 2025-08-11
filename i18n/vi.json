@@ -81,5 +81,22 @@
   "hero.guides.subtitle": "Bộ sưu tập hoàn chỉnh các chiến lược, công thức và mẹo chơi game",
   "breadcrumb.home": "🏠 Trang Chủ",
   "breadcrumb.guides": "📚 Hướng Dẫn",
-  "btn.back": "← Quay Lại Hướng Dẫn"
+  "btn.back": "← Quay Lại Hướng Dẫn",
+  "guides.searchFilter": "🔍 Tìm Kiếm và Lọc",
+  "guides.searchPlaceholder": "Tìm kiếm hướng dẫn...",
+  "guides.filter.all": "Tất Cả",
+  "guides.filter.recipe": "Công Thức",
+  "guides.filter.farming": "Nông Nghiệp",
+  "guides.filter.profit": "Lợi Nhuận",
+  "guides.filter.advanced": "Nâng Cao",
+  "guides.trendingTitle": "🔥 Hướng Dẫn Xu Hướng",
+  "guides.badge.mostPopular": "⭐ Phổ Biến Nhất",
+  "guides.badge.trending": "📈 Xu Hướng",
+  "guides.back": "← Quay Lại Máy Tính Chính",
+
+  "guides.guideItems.spaghetti.title": "🍝 Hướng Dẫn Làm Spaghetti",
+  "guides.guideItems.spaghetti.description": "Học cách làm spaghetti ngon trong Grow a Garden. Từ chuẩn bị mì ống đến kỹ thuật nước sốt và nấu ăn hoàn hảo.",
+  "guides.guideItems.spaghetti.difficulty": "Trung Bình",
+  "guides.guideItems.spaghetti.readTime": "25 phút đọc",
+  "guides.guideItems.spaghetti.views": "🔥 1.8k lượt xem"
 } 

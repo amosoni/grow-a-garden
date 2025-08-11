@@ -810,3 +810,8 @@ const plants = [
     "value": 1
   }
 ];
+
+// 调试信息
+console.log('plants_auto.js loaded');
+console.log('plants array defined:', typeof plants !== 'undefined');
+console.log('plants array length:', plants ? plants.length : 'undefined');

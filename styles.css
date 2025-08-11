@@ -1,33 +1,113 @@
-/* Global color variables for Roblox-like style */
-:root {
-    --primary-dark: #23272a;
-    --primary-blue: #5865f2;
-    --accent-green: #43b581;
-    --accent-yellow: #f1c40f;
-    --accent-red: #e74c3c;
-    --text-dark: #23272a;
-    --text-light: #f5f6fa;
-    --bg-light: #f5f6fa;
-    --bg-dark: #23272a;
-    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --shadow-hover: 0 8px 15px rgba(0, 0, 0, 0.2);
-    --border-radius: 12px;
-    --transition: all 0.3s ease;
-}
+/* ========================================
+   GROW A GARDEN - 布局结构优化
+   ========================================
+   
+   布局结构：
+   1. <body> - flexbox垂直布局容器
+   2. <header> - 固定导航栏
+   3. <main> - 主要内容区域 (flex: 1)
+   4. <footer> - 页脚 (margin-top: auto)
+   
+   主要区块：
+   - .hero - 英雄区域
+   - .live-stats-section - 实时统计
+   - .stats-section - 里程碑统计
+   - .map-section - 地图区域
+   - .tips-section - 提示区域
+   - .community-section - 社区区域
+   ======================================== */
 
-* {
-    box-sizing: border-box;
+/* 基础布局结构 */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: var(--text-dark);
-    margin: 0;
-    padding: 0;
-    background: var(--bg-dark);
+    display: flex;
+    flex-direction: column;
     min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: #ffffff;
+    background: var(--bg-dark);
     overflow-x: hidden;
+    width: 100%;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+}
+
+/* 主要内容区域占据剩余空间 */
+.hero, .live-stats-section, .stats-section, .map-section, .tips-section, .community-section {
+    flex: 1 0 auto;
+    margin: 0 auto;
+    max-width: 1200px;
+    position: relative;
+    z-index: 1;
+    /* 添加section之间的视觉分隔 */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 最后一个section不需要底部边框 */
+.community-section {
+    border-bottom: none;
+}
+
+/* 增强section之间的视觉层次 */
+.hero + .live-stats-section,
+.live-stats-section + .stats-section,
+.stats-section + .map-section,
+.map-section + .tips-section,
+.tips-section + .community-section {
+    margin-top: 1rem; /* 添加额外的顶部间距 */
+}
+
+/* 优化section内部元素的间距一致性 */
+.hero-glass > * + *,
+.tip-card > * + *,
+.milestone-card > * + *,
+.stat-item > * + * {
+    margin-top: 1rem; /* 统一内部元素的间距 */
+}
+
+/* 确保标题和内容之间有足够的呼吸空间 */
+.hero h1 + .hero h2,
+.hero h2 + .hero-subtitle,
+.tip-card h3 + ul,
+.milestone-card .milestone-date + .milestone-count {
+    margin-top: 1.5rem;
+}
+
+/* 统一section间距 - 一致的布局 */
+.hero {
+    padding: 3rem 2rem 2rem 2rem; /* Hero section 顶部多一些空间 */
+}
+
+.live-stats-section {
+    padding: 2.5rem 2rem 2.5rem 2rem; /* 上下一致 */
+}
+
+.stats-section {
+    padding: 2.5rem 2rem;
+}
+
+.map-section {
+    padding: 2.5rem 2rem;
+}
+
+.tips-section {
+    padding: 2.5rem 2rem;
+}
+
+.community-section {
+    padding: 2.5rem 2rem 3rem 2rem; /* 底部多一些空间 */
+}
+
+/* Footer自动贴在底部 */
+footer {
+    flex-shrink: 0;
+    margin-top: auto;
     width: 100%;
 }
 
@@ -85,10 +165,13 @@ nav {
 
 .logo {
     font-size: 1.5rem;
-    font-weight: bold;
+    font-weight: 700;
     color: var(--primary-blue);
     text-decoration: none;
     transition: var(--transition);
+    letter-spacing: 0.02em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .logo:hover {
@@ -102,6 +185,10 @@ nav a {
     border-radius: var(--border-radius);
     transition: var(--transition);
     margin: 0 0.25rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 nav a:hover {
@@ -124,15 +211,16 @@ nav a:hover {
   position: relative;
   z-index: 1; /* 降低z-index，避免覆盖其他区块 */
   margin-top: 60px; /* 为固定导航栏留出空间 */
-    display: flex;
+  display: flex;
   align-items: flex-start;
-    justify-content: center;
-  padding: 2rem 2rem 6rem 2rem; /* 增加底部padding，为下一个区块留出空间 */
+  justify-content: center;
+  padding: 2rem 2rem 2rem 2rem; /* 统一上下内边距，移除多余大空白 */
   min-height: auto; /* 使用自动高度 */
-  margin-bottom: 800px; /* 添加大量底部间距，确保与下一个区块分离 */
+  margin-bottom: 2rem; /* 统一区块间距，避免超大空白 */
   overflow: visible; /* 确保内容可见 */
   border-bottom: none; /* 移除底部边框 */
   isolation: isolate; /* 创建新的层叠上下文 */
+  flex: 1 !important;
 }
 
 .hero-blur-bg {
@@ -163,46 +251,51 @@ nav a:hover {
     backdrop-filter: blur(20px); /* 添加毛玻璃效果 */
     -webkit-backdrop-filter: blur(20px); /* Safari支持 */
     border-radius: 20px;
-    padding: 2rem 1.5rem 5rem 1.5rem; /* 大幅增加底部padding */
+    padding: 2rem 1.5rem 2rem 1.5rem; /* 减少底部padding */
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15); /* 增强阴影效果 */
     border: 1px solid rgba(255, 255, 255, 0.4); /* 更明显的边框 */
     max-width: 1600px; /* 增加最大宽度 */
-    margin: 0 auto 4rem auto; /* 增加底部margin */
+    margin: 0 auto 2rem auto; /* 减少底部margin */
     overflow: visible; /* 允许内容自然流动 */
 }
 
 .hero h1 {
-    font-size: 2rem; /* 进一步减小字体 */
-    margin-bottom: 0.8rem; /* 进一步减少底部间距 */
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 0 0 0.6rem 0; /* 更紧凑的下间距 */
+    text-align: center;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-    animation: fadeInUp 1s ease;
-    color: #23272a !important;
-    text-shadow:
-        0 2px 8px #fff,
-        0 1px 2px rgba(0,0,0,0.28),
-        0 0 2px #fff;
-    font-weight: 800;
-    letter-spacing: 0.5px;
-    text-align: center; /* 居中对齐 */
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .hero h2 {
-    text-align: center; /* H2位置居中 */
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--accent-green);
+    margin: 0 0 1rem 0; /* 缩小与下面内容的间距 */
+    text-align: center;
+    letter-spacing: 0.01em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .hero-subtitle {
-    font-size: 1rem; /* 进一步减小字体 */
-    margin-bottom: 1rem; /* 进一步减少底部间距 */
-    opacity: 0.9;
-    animation: fadeInUp 1s ease 0.2s both;
-    color: #23272a !important;
-    text-shadow:
-        0 2px 8px #fff,
-        0 1px 2px rgba(0,0,0,0.28),
-        0 0 2px #fff;
-    font-weight: 600; /* 稍微减轻字重 */
-    letter-spacing: 0.5px;
-    text-align: center; /* 居中对齐 */
+    font-size: 1.1rem;
+    color: var(--text-light);
+    text-align: center;
+    margin: 0 0 1rem 0; /* 与下方控件更紧凑 */
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* 计数器样式 */
@@ -232,6 +325,7 @@ nav a:hover {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     color: var(--primary-blue);
+    text-align: center;
 }
 
 .player-count {
@@ -241,11 +335,13 @@ nav a:hover {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
     margin: 1rem 0;
     animation: pulse 2s infinite;
+    text-align: center;
 }
 
 .update-time {
     color: var(--primary-dark);
     font-size: 0.9rem;
+    text-align: center;
 }
 
 .trend-indicator {
@@ -272,16 +368,18 @@ nav a:hover {
     max-width: 800px;
     margin: 4rem auto 6rem;
     background: none !important;
+    text-align: center;
 }
 
 .milestone-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 6rem;
+    gap: 3rem; /* 减少卡片之间的间距，让布局更紧凑 */
     max-width: 1200px;
-    margin: 8rem auto 6rem auto;
+    margin: 4rem auto 3rem auto; /* 减少上下margin，让布局更协调 */
     position: relative;
     z-index: 1;
+    text-align: center;
 }
 
 .milestone-card {
@@ -318,16 +416,16 @@ nav a:hover {
 
 /* 地图区域 */
 .map-section {
-    padding: 6rem 2rem 4rem 2rem; /* 减少顶部padding */
     background: none !important;
     box-shadow: none !important;
     border-radius: 0 !important;
+    flex: 1 !important;
 }
 
 .map-section h2 {
     text-align: center;
     font-size: 2.5rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem; /* 统一间距 */
     color: #23272a !important;
     font-weight: 900 !important;
     letter-spacing: 0.5px;
@@ -352,8 +450,8 @@ nav a:hover {
 .map-stats {
     display: flex;
     justify-content: space-around;
-    margin-top: 2rem;
-    gap: 2rem;
+    margin-top: 2.5rem; /* 增加顶部间距 */
+    gap: 2.5rem; /* 增加统计项之间的间距 */
 }
 
 .stat-item {
@@ -362,17 +460,17 @@ nav a:hover {
     text-align: center;
     box-shadow: var(--shadow);
     flex: 1;
-    background: rgba(30,34,45,0.65) !important;
-    box-shadow: 0 8px 32px rgba(31,38,135,0.37);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: rgba(255,255,255,0.9) !important; /* 浅色背景，配合深色文字 */
+    box-shadow: 0 8px 32px rgba(31,38,135,0.12);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-radius: 18px;
-    border: 1.5px solid rgba(255,255,255,0.18);
+    border: 1px solid rgba(0,0,0,0.06);
 }
 
 .stat-item * {
-    color: #fff !important;
-    text-shadow: 0 2px 8px #23272a, 0 1px 2px rgba(0,0,0,0.18);
+    color: #23272a !important; /* 深色文本更易读 */
+    text-shadow: none;
 }
 
 .stat-label {
@@ -391,16 +489,16 @@ nav a:hover {
 
 /* 攻略区域 */
 .tips-section {
-    padding: 6rem 2rem 4rem 2rem; /* 减少顶部padding */
     background: none !important;
     box-shadow: none !important;
     border-radius: 0 !important;
+    flex: 1 !important;
 }
 
 .tips-section h2 {
     text-align: center;
     font-size: 2.5rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem; /* 统一间距 */
     color: #23272a !important;
     font-weight: 900 !important;
     letter-spacing: 0.5px;
@@ -412,7 +510,7 @@ nav a:hover {
 .tips-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    gap: 2.5rem; /* 增加卡片之间的间距 */
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -438,32 +536,44 @@ nav a:hover {
 }
 
 .tip-card h3 {
-    color: var(--primary-blue);
-    margin-bottom: 1rem;
+    color: #ffffff;
+    margin: 0 0 1rem 0;
     font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .tip-card ul {
     list-style: none;
     padding: 0;
-    margin-bottom: 1.5rem;
+    margin: 0 0 1.5rem 0;
 }
 
 .tip-card li {
-    padding: 0.5rem 0;
-    border-bottom: 1px solid #eee;
-    color: var(--primary-dark);
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.6;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .tip-card li:last-child {
-    border-bottom: none;
+    margin-bottom: 0;
 }
 
 .tip-link {
+    display: inline-block;
     color: var(--primary-blue);
     text-decoration: none;
-    font-weight: bold;
-    transition: var(--transition);
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .tip-link:hover {
@@ -472,16 +582,16 @@ nav a:hover {
 
 /* 社区区域 */
 .community-section {
-    padding: 6rem 2rem 4rem 2rem; /* 减少顶部padding */
     background: none !important;
     box-shadow: none !important;
     border-radius: 0 !important;
+    flex: 1 !important;
 }
 
 .community-section h2 {
     text-align: center;
     font-size: 2.5rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem; /* 统一间距 */
     color: #23272a !important;
     font-weight: 900 !important;
     letter-spacing: 0.5px;
@@ -516,26 +626,36 @@ nav a:hover {
 }
 
 .community-stats {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 3rem;
-    gap: 2rem;
+  display: flex !important;
+  justify-content: space-around !important;
+  margin-bottom: 3rem !important;
+  gap: 2.5rem !important; /* 增加统计项之间的间距 */
 }
 
 .community-stat {
-    text-align: center;
+  text-align: center !important;
+  background: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
 }
 
+/* 确保统计数字和标签样式清晰 */
 .stat-number {
-    display: block;
-    font-size: 2rem;
-    font-weight: bold;
-    color: var(--accent-yellow);
+  display: block !important;
+  font-size: 2rem !important;
+  font-weight: bold !important;
+  color: var(--accent-yellow) !important;
+  text-shadow: none !important;
 }
 
 .stat-label {
-    font-size: 0.9rem;
-    opacity: 0.8;
+  font-size: 0.9rem !important;
+  opacity: 0.8 !important;
+  color: var(--text-dark) !important;
+  text-shadow: none !important;
 }
 
 .discord-join-btn {
@@ -571,12 +691,12 @@ nav a:hover {
 
 /* 统一区块间距管理 */
 #stats-hero {
-  margin-top: 1500px; /* 进一步增加顶部间距 */
-  position: relative; /* 添加相对定位 */
-  z-index: 10; /* 提高z-index */
-  padding-top: 2rem; /* 添加顶部内边距 */
-  border-top: 3px solid rgba(255,255,255,0.2); /* 添加顶部边框 */
-  clear: both; /* 清除浮动 */
+  margin-top: 2rem; /* 与上一区块保持一致 */
+  position: relative;
+  z-index: 10;
+  padding-top: 0;
+  border-top: none;
+  clear: both;
 }
 
 .live-stats-section,
@@ -585,14 +705,13 @@ nav a:hover {
 .tips-section,
 .community-section {
   position: relative;
-  z-index: 5; /* 提高下面区块的z-index */
-  margin-top: 0; /* 移除顶部间距，由第一个区块控制 */
-  margin-bottom: 6rem; /* 保持底部间距 */
-  background: var(--bg-dark); /* 添加背景色，防止透明效果导致的重叠 */
-  padding-top: 6rem; /* 增加顶部内边距 */
-  border-top: 2px solid rgba(255,255,255,0.15); /* 添加更明显的顶部边框 */
-  box-shadow: 0 -15px 40px rgba(0,0,0,0.25); /* 增强顶部阴影效果 */
-  position: relative; /* 确保相对定位 */
+  z-index: 1;
+  margin-top: 0;
+  margin-bottom: 2.5rem; /* 统一的下间距 */
+  background: transparent; /* 去掉额外背景避免色块 */
+  padding-top: 0; /* 去掉额外顶部内边距 */
+  border-top: none; /* 去掉分隔线 */
+  box-shadow: none; /* 去掉阴影 */
 }
 
 /* 移动端统一区块间距管理 */
@@ -602,26 +721,50 @@ nav a:hover {
   .map-section,
   .tips-section,
   .community-section {
-    margin-top: 8rem; /* 移动端也保持足够的顶部间距 */
-    margin-bottom: 4rem; /* 移动端保持底部间距 */
-    padding-top: 3rem; /* 增加顶部内边距 */
+    margin-top: 0;
+    margin-bottom: 2rem; /* 移动端统一下间距 */
+    padding-top: 0;
   }
 }
 
 /* 页脚 */
-footer, .footer-content, .footer-content p {
-    background: rgba(35, 39, 42, 0.98) !important;
+/* ========================================
+   页脚样式优化
+   ======================================== */
+
+/* 页脚美化 - 优化版本 */
+footer {
+    background: linear-gradient(135deg, rgba(35, 39, 42, 0.95), rgba(45, 49, 52, 0.95)) !important;
     color: #fff !important;
-    text-shadow: none !important;
-    box-shadow: none !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3) !important;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.2) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
     border: none !important;
-    position: relative;
-    z-index: 2;
+    position: relative !important;
+    z-index: 2 !important;
     font-weight: 400 !important;
-    font-size: 1.1rem !important;
+    font-size: 0.9rem !important;
     text-align: center !important;
+    padding: 0.8rem 2rem !important;
+    margin-top: 1.5rem !important;
+    border-top: 1px solid rgba(255,255,255,0.1) !important;
+    min-height: auto !important;
+}
+
+.footer-content {
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.footer-content p {
+    margin: 0.3rem 0 !important;
+    opacity: 0.9 !important;
+    font-size: 0.9rem !important;
+    line-height: 1.4 !important;
 }
 
 .footer-content p {
@@ -704,6 +847,7 @@ footer, .footer-content, .footer-content p {
     
     .counter {
         padding: 1.5rem;
+        text-align: center !important;
     }
     
     .stats-section,
@@ -782,9 +926,9 @@ footer, .footer-content, .footer-content p {
 .bg-blur {
     position: fixed;
     top: 0; left: 0; width: 100vw; height: 100vh;
-    z-index: -1; /* 降低背景模糊层的z-index，确保它不会覆盖内容 */
+    z-index: -2; /* 进一步降低背景模糊层的z-index，确保它在所有内容之下 */
     background: url('grow-bg.jpg') center center/cover no-repeat;
-    opacity: 0.25;
+    opacity: 0.3; /* 稍微增加透明度 */
     filter: blur(8px);
     -webkit-filter: blur(8px);
 }
@@ -794,7 +938,7 @@ footer, .footer-content, .footer-content p {
   display: flex;
   justify-content: center;
   gap: 0.3rem; /* 进一步减少间距 */
-  margin: 0 0 0.6rem 0; /* 进一步减少底部间距 */
+  margin: 0 0 0.4rem 0; /* 进一步减少底部间距 */
   padding: 0;
   flex-wrap: wrap;
   width: 100%;
@@ -804,12 +948,12 @@ footer, .footer-content, .footer-content p {
 }
 
 .tab {
-  padding: 0.4em 1.2em; /* 大幅减少padding */
+  padding: 0.3em 1em; /* 进一步减少padding */
   border-radius: 1.2em; /* 减小圆角 */
   background: #23272a;
   color: #fff;
   border: none;
-  font-size: 0.9em; /* 减少字体大小 */
+  font-size: 0.85em; /* 进一步减少字体大小 */
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -831,19 +975,21 @@ footer, .footer-content, .footer-content p {
 
 /* 植物搜索 */
 .plant-search {
-  width: 100%;
-  max-width: 600px; /* 增加最大宽度 */
-  padding: 0.5em 0.8em; /* 进一步减少padding */
-  border-radius: 8px; /* 进一步减小圆角 */
-  border: 2px solid #d1d5db;
-  font-size: 0.9em; /* 进一步减小字体 */
-  background: rgba(255, 255, 255, 0.8); /* 稍微减少透明度 */
-  backdrop-filter: blur(10px); /* 添加毛玻璃效果 */
-  -webkit-backdrop-filter: blur(10px); /* Safari支持 */
-  margin: 0.4rem auto; /* 进一步减少上下间距 */
-  box-sizing: border-box;
-  display: block;
-  transition: border-color 0.3s ease;
+     width: 100%;
+     max-width: 500px;
+     padding: 0.8rem 1.2rem;
+     border: 2px solid #e1e5e9;
+     border-radius: var(--border-radius);
+     font-size: 1rem;
+     font-weight: 400;
+     letter-spacing: 0.01em;
+     background: white;
+     color: #333333;
+     transition: var(--transition);
+     margin: 0 auto 1.5rem auto;
+     display: block;
+     -webkit-font-smoothing: antialiased;
+     -moz-osx-font-smoothing: grayscale;
 }
 
 .plant-search:focus {
@@ -853,17 +999,17 @@ footer, .footer-content, .footer-content p {
 }
 
 /* 植物列表 */
-.plant-list {
+ .plant-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); /* 稍微增加最小宽度以改善显示 */
-  gap: 0.6rem; /* 增加间距以改善视觉效果 */
-  margin: 1rem 0; /* 增加上下间距 */
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* 放大卡片 */
+  gap: 0.8rem;
+  margin: 0.8rem 0;
   width: 100%;
   padding: 0;
-  max-width: 1400px; /* 增加最大宽度 */
+  max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
-  max-height: 280px; /* 增加最大高度以显示更多内容 */
+  max-height: 340px; /* 显示更多行 */
   overflow-y: auto;
   padding-right: 0.5rem;
 }
@@ -872,9 +1018,10 @@ footer, .footer-content, .footer-content p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-    width: 100%;
-  height: 70px; /* 进一步减少高度 */
+  justify-content: flex-start;
+  width: 100%;
+  min-height: 130px; /* 放大卡片高度 */
+  height: auto;
   background: #23272a;
   color: #fff;
   border-radius: 6px; /* 进一步减小圆角 */
@@ -882,7 +1029,7 @@ footer, .footer-content, .footer-content p {
   cursor: pointer;
   transition: all 0.3s ease;
   border: 2px solid transparent;
-  padding: 0.4em 0.2em 0.2em 0.2em; /* 进一步减少padding */
+  padding: 0.5rem 0.4rem; /* 合理的内边距 */
   position: relative;
 }
 
@@ -901,24 +1048,37 @@ footer, .footer-content, .footer-content p {
 }
 
 .plant-icon {
-  font-size: 1.3em; /* 进一步减少图标大小 */
-  margin-bottom: 0.05em; /* 进一步减少底部间距 */
+  margin-bottom: 0.4rem;
   line-height: 1;
 }
 
+.plant-icon img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
 .plant-item span {
-  font-size: 0.8em; /* 减少字体大小 */
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  font-size: 0.9rem; /* 显示名称 */
   font-weight: 600;
-  margin-top: 0.1em; /* 减少顶部间距 */
+  margin-top: 0.25rem; 
   text-align: center;
-  line-height: 1.1; /* 减少行高 */
+  line-height: 1.2;
+  color: #ffffff;
 }
 
 .plant-value {
-  font-size: 0.7em; /* 减少字体大小 */
+  font-size: 0.8rem; /* 显示数值 */
   font-weight: 500;
   color: #43b581;
-  margin-top: 0.1em; /* 大幅减少顶部间距 */
+  margin-top: 0.2rem;
   opacity: 0.9;
 }
 
@@ -926,8 +1086,8 @@ footer, .footer-content, .footer-content p {
 .mutation-toolbar {
     display: flex;
     flex-direction: column;
-  gap: 0.4rem; /* 进一步减少间距 */
-  margin: 0.8rem 0; /* 进一步减少上下间距 */
+  gap: 0.3rem; /* 进一步减少间距 */
+  margin: 0.6rem 0; /* 进一步减少上下间距 */
   width: 100%;
   max-width: 1200px; /* 增加最大宽度 */
   margin-left: auto;
@@ -938,10 +1098,10 @@ footer, .footer-content, .footer-content p {
 .mutation-controls {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.8rem;
+  gap: 0.6rem;
     align-items: center;
     justify-content: center;
-  padding: 1rem;
+  padding: 0.8rem;
   background: rgba(255,255,255,0.6); /* 稍微增加透明度 */
   backdrop-filter: blur(10px); /* 添加毛玻璃效果 */
   -webkit-backdrop-filter: blur(10px); /* Safari支持 */
@@ -952,19 +1112,19 @@ footer, .footer-content, .footer-content p {
 .mutation-title {
   font-weight: bold;
   color: #23272a;
-  margin-right: 1.5rem;
-  font-size: 1.1em;
+  margin-right: 1rem;
+  font-size: 1em;
 }
 
 .mutation-help-btn,
 .mutation-sort-btn,
 .mutation-hide-btn {
-  padding: 0.5em 1em;
+  padding: 0.4em 0.8em;
   border-radius: 0.8em;
   background: #f1f3fa;
   color: #23272a;
   border: none;
-  font-size: 0.9em;
+  font-size: 0.85em;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -988,7 +1148,7 @@ footer, .footer-content, .footer-content p {
 .mutation-search {
   width: 100%;
   max-width: 500px;
-  padding: 0.8em 1.2em;
+  padding: 0.6em 1em;
   border-radius: 12px;
   border: 2px solid #d1d5db;
   font-size: 1em;
@@ -1008,34 +1168,50 @@ footer, .footer-content, .footer-content p {
 
 /* 变异列表 */
 .mutation-list {
-  display: flex;
+  display: flex !important;
   flex-wrap: wrap;
-  gap: 0.5rem; /* 增加间距以改善视觉效果 */
+  gap: 0.4rem; /* 减少间距 */
   justify-content: center;
-  margin: 1rem 0; /* 增加上下间距 */
+  margin: 0.8rem 0; /* 减少上下间距 */
   width: 100%;
-  padding: 0;
+  padding: 1rem; /* 增加内边距 */
   max-width: 1400px; /* 增加最大宽度 */
   margin-left: auto;
   margin-right: auto;
-  max-height: 200px; /* 增加最大高度以显示更多内容 */
+  max-height: 200px; /* 增加高度 */
   overflow-y: auto;
-  padding-right: 0.5rem;
+  padding-right: 1rem;
+  /* 确保变异列表可见 */
+  min-height: 80px;
+  background: rgba(255, 255, 255, 0.15); /* 更明显的背景 */
+  border: 2px solid rgba(255, 255, 255, 0.3); /* 更明显的边框 */
+  border-radius: 12px;
+  /* 确保正确的定位 */
+  position: relative;
+  z-index: 10;
+  /* 强制显示 */
+  visibility: visible !important;
+  opacity: 1 !important;
+  height: auto !important;
 }
 
 .mutation-chip {
-  padding: 0.4em 1em; /* 大幅减少padding */
-  border-radius: 1.2em; /* 减小圆角 */
-  background: #f1f3fa;
-  color: #23272a;
-  border: none;
-  font-size: 0.85em; /* 减少字体大小 */
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin: 0.2em; /* 减少margin */
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  border: 1px solid rgba(0,0,0,0.05);
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 0.8rem;
+    margin: 0.2rem;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid #e1e5e9;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    color: #23272a !important; /* 强制深色文字 */
+    backdrop-filter: blur(10px);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .mutation-chip:hover {
@@ -1046,7 +1222,7 @@ footer, .footer-content, .footer-content p {
 
 .mutation-chip.selected {
   background: #5865f2;
-  color: #fff;
+  color: #ffffff !important; /* 选中态白字 */
   transform: scale(1.05);
   font-weight: bold;
   box-shadow: 0 6px 20px rgba(88,101,242,0.3);
@@ -1054,8 +1230,8 @@ footer, .footer-content, .footer-content p {
 
 /* 公式显示区 */
 .formula-display {
-  margin: 2rem auto; /* 进一步增加上下间距 */
-  padding: 1.5rem; /* 增加padding */
+  margin: 1.5rem auto; /* 减少上下间距 */
+  padding: 1.2rem; /* 减少padding */
   background: rgba(88,101,242,0.25); /* 增加不透明度 */
   backdrop-filter: blur(10px); /* 添加毛玻璃效果 */
   -webkit-backdrop-filter: blur(10px); /* Safari支持 */
@@ -1070,22 +1246,28 @@ footer, .footer-content, .footer-content p {
 }
 
 .formula-text {
-  font-family: 'Courier New', monospace;
-  font-size: 0.9em; /* 进一步减少字体大小 */
-  color: #23272a;
-  font-weight: 600;
-  margin: 0;
+   font-size: 1rem;
+   font-weight: 600;
+   color: #23272a !important; /* 深色文字，确保可读 */
+   text-align: center;
+   padding: 0.8rem;
+   background: #ffffff; /* 纯白底 */
+   border-radius: var(--border-radius);
+   border: 2px solid #d1d5db; /* 更柔和的边框 */
+   letter-spacing: 0.02em;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
 }
 
 /* 输入区 */
 .input-section {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem; /* 增加间距 */
-  margin: 2rem auto; /* 增加上下间距 */
+  gap: 1rem; /* 减少间距 */
+  margin: 1.5rem auto; /* 减少上下间距 */
   width: 100%;
   max-width: 600px; /* 增加最大宽度 */
-  padding: 2rem; /* 增加padding */
+  padding: 1.5rem; /* 减少padding */
   background: rgba(255,255,255,0.85); /* 增加不透明度 */
   border-radius: 12px; /* 适当增加圆角 */
   border: 1px solid rgba(255,255,255,0.5); /* 更明显的边框 */
@@ -1099,30 +1281,33 @@ footer, .footer-content, .footer-content p {
 .input-row {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 0.6rem;
 }
 
 .input-row label {
-  font-weight: 600;
-  color: #23272a;
-  font-size: 1.1em;
-  margin-bottom: 0.3rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: block;
+    margin-bottom: 0.3rem;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.01em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .input-row input[type="number"] {
-  padding: 0.8em 1em;
-  border-radius: 8px;
-  border: 1px solid rgba(209,213,219,0.8);
-  font-size: 1.1em;
-  background: rgba(255,255,255,0.95); /* 增加不透明度，提高可读性 */
-  backdrop-filter: blur(10px); /* 添加毛玻璃效果 */
-  -webkit-backdrop-filter: blur(10px); /* Safari支持 */
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  width: 100%; /* 确保宽度填满容器 */
+    width: 100%;
+    padding: 0.6rem;
+    border: 2px solid #e1e5e9;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    transition: var(--transition);
+    background: white;
+    color: var(--text-dark);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .input-row input[type="number"]:focus {
@@ -1141,7 +1326,7 @@ footer, .footer-content, .footer-content p {
   background: linear-gradient(to right, #d1d5db 0%, #d1d5db 50%, #5865f2 50%, #5865f2 100%);
   outline: none;
   -webkit-appearance: none;
-  margin-top: 0.5rem;
+  margin-top: 0.3rem;
   box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
 }
 
@@ -1165,11 +1350,11 @@ footer, .footer-content, .footer-content p {
 
 /* 结果区 */
 .result-section {
-  margin: 2rem auto; /* 增加上下间距 */
+  margin: 1.5rem auto; /* 减少上下间距 */
   text-align: center;
   width: 100%;
   max-width: 700px; /* 增加最大宽度 */
-  padding: 2rem; /* 增加padding */
+  padding: 1.5rem; /* 减少padding */
   background: rgba(67,181,129,0.25); /* 增加不透明度 */
   backdrop-filter: blur(10px); /* 添加毛玻璃效果 */
   -webkit-backdrop-filter: blur(10px); /* Safari支持 */
@@ -1181,13 +1366,15 @@ footer, .footer-content, .footer-content p {
 }
 
 .result-main {
-  font-size: 2.5em; /* 增加字体大小，使结果更突出 */
-  color: #43b581;
-  font-weight: bold;
-  letter-spacing: 2px;
-  margin-bottom: 0.5rem; /* 增加底部间距 */
-  text-shadow: 0 2px 4px rgba(67,181,129,0.2);
-  padding: 0.5rem 0; /* 增加上下内边距 */
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent-green);
+    text-align: center;
+    margin: 0.8rem 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    letter-spacing: -0.02em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .result-unit {
@@ -1201,26 +1388,28 @@ footer, .footer-content, .footer-content p {
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem; /* 进一步减少间距 */
-  margin: 0.6rem auto; /* 进一步减少上下间距 */
+  margin: 0.5rem auto; /* 进一步减少上下间距 */
   justify-content: center;
   width: 100%;
   max-width: 900px; /* 增加最大宽度 */
 }
 
 .action-btn {
-  padding: 0.6em 1.2em; /* 进一步减少padding */
-  border-radius: 8px; /* 进一步减小圆角 */
-  border: none;
-  background: linear-gradient(135deg, #5865f2 0%, #404eed 100%);
-  color: #fff;
-  font-size: 0.85em; /* 进一步减小字体 */
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 3px 12px rgba(88,101,242,0.3);
-  min-width: 120px; /* 进一步减少最小宽度 */
-  position: relative;
-  overflow: hidden;
+    background: linear-gradient(135deg, var(--primary-blue), #404eed);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .action-btn::before {
@@ -1251,8 +1440,8 @@ footer, .footer-content, .footer-content p {
 
 /* 反向计算区 */
 .reverse-calc-section {
-  margin: 1.5rem auto; /* 增加上下间距 */
-  padding: 1.5rem; /* 增加padding */
+  margin: 1rem auto; /* 减少上下间距 */
+  padding: 1.2rem; /* 减少padding */
   background: rgba(255,255,255,0.7); /* 更透明的背景 */
   backdrop-filter: blur(15px); /* 添加毛玻璃效果 */
   -webkit-backdrop-filter: blur(15px); /* Safari支持 */
@@ -1265,7 +1454,7 @@ footer, .footer-content, .footer-content p {
 
 /* 历史记录区 */
 .history-section {
-  margin: 2rem auto; /* 增加上下间距 */
+  margin: 1.5rem auto; /* 减少上下间距 */
   width: 100%;
   max-width: 900px;
   padding: 1rem; /* 增加padding */
@@ -1274,18 +1463,18 @@ footer, .footer-content, .footer-content p {
 .history-section h3 {
   text-align: center;
   color: #23272a;
-  margin-bottom: 1.5rem;
-  font-size: 1.8em;
+  margin-bottom: 1.2rem;
+  font-size: 1.6em;
   font-weight: bold;
 }
 
 .history-list {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  max-height: 300px; /* 减少最大高度 */
+  gap: 0.8rem;
+  max-height: 250px; /* 进一步减少最大高度 */
   overflow-y: auto;
-  padding: 1rem;
+  padding: 0.8rem;
   background: rgba(255,255,255,0.7);
   border-radius: 12px;
   border: 1px solid rgba(0,0,0,0.05);
@@ -1296,9 +1485,9 @@ footer, .footer-content, .footer-content p {
 .history-list:empty::after {
   content: "No history yet";
   text-align: center;
-  color: #666;
+  color: #23272a; /* 统一为深色 */
   font-style: italic;
-  padding: 2rem;
+  padding: 1.5rem;
   display: block;
 }
 
@@ -1306,7 +1495,7 @@ footer, .footer-content, .footer-content p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.2rem;
+  padding: 1rem;
   background: rgba(255,255,255,0.9);
   border-radius: 12px;
   border-left: 4px solid #43b581;
@@ -1420,18 +1609,19 @@ footer, .footer-content, .footer-content p {
   
   /* 植物列表移动端 */
   .plant-list {
-    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr)); /* 适中的最小宽度 */
-    gap: 0.4rem; /* 适中的间距 */
-    margin: 1rem 0; /* 保持合理的上下间距 */
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* 放大卡片 */
+    gap: 0.6rem;
+    margin: 1rem 0;
     max-width: 100%;
-    max-height: 240px; /* 增加高度以显示更多内容 */
+    max-height: 320px; /* 显示更多行 */
     overflow-y: auto;
     padding-right: 0.3rem;
   }
   
   .plant-item {
-    height: 55px; /* 进一步减少高度 */
-    padding: 0.3em 0.1em 0.1em 0.1em; /* 进一步减少padding */
+    min-height: 120px;
+    height: auto;
+    padding: 0.6rem 0.5rem;
   }
   
   .plant-icon {
@@ -1609,12 +1799,13 @@ footer, .footer-content, .footer-content p {
   }
   
   .plant-list {
-    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-    gap: 0.6rem;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 0.8rem;
   }
   
   .plant-item {
-    height: 90px;
+    min-height: 130px;
+    height: auto;
   }
   
   .plant-icon {
@@ -1706,13 +1897,11 @@ html:not([data-scroll-behavior="smooth"]) {
   margin: 0 auto;
   width: 100%;
   max-width: 1200px;
-  padding: 6rem 2rem 4rem 2rem; /* 增加上下padding */
   position: relative;
   z-index: 1;
   display: block !important; /* 确保显示 */
   visibility: visible !important; /* 确保可见 */
   min-height: 200px; /* 确保有最小高度 */
-  background: rgba(255, 0, 0, 0.1); /* 临时红色背景用于调试 */
 }
 
 /* 统计区域样式 */
@@ -1720,13 +1909,12 @@ html:not([data-scroll-behavior="smooth"]) {
   margin: 0 auto;
   width: 100%;
   max-width: 1200px;
-  padding: 6rem 2rem 4rem 2rem; /* 增加上下padding */
   position: relative;
   z-index: 1;
   display: block !important; /* 确保显示 */
   visibility: visible !important; /* 确保可见 */
   min-height: 200px; /* 确保有最小高度 */
-  background: rgba(0, 255, 0, 0.1); /* 临时绿色背景用于调试 */
+  text-align: center !important;
 }
 
 .stats-container {
@@ -1738,7 +1926,7 @@ html:not([data-scroll-behavior="smooth"]) {
   max-width: 700px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  text-align: center;
+  text-align: center !important;
   position: relative;
   z-index: 1;
   display: block !important; /* 确保显示 */
@@ -1751,6 +1939,7 @@ html:not([data-scroll-behavior="smooth"]) {
   letter-spacing: 1px;
   margin-bottom: 0.5rem;
   color: #23272a;
+  text-align: center;
 }
 
 .stats-subtitle {
@@ -1758,6 +1947,7 @@ html:not([data-scroll-behavior="smooth"]) {
   color: #23272a;
   opacity: 0.92;
   margin-bottom: 2.2rem;
+  text-align: center;
 }
 
 /* 确保统计区域的计数器容器不会与计算器重叠 */
@@ -1768,6 +1958,11 @@ html:not([data-scroll-behavior="smooth"]) {
   margin: 2rem auto 0 auto;
   max-width: 480px;
   padding: 2rem 1.5rem 1.5rem 1.5rem;
+  text-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
 .stats-section .counter h2 {
@@ -1776,6 +1971,9 @@ html:not([data-scroll-behavior="smooth"]) {
   font-size: 1.3rem;
   font-weight: 700;
   margin-bottom: 1rem;
+  text-align: center !important;
+  display: block !important;
+  width: 100% !important;
 }
 
 .stats-section .player-count {
@@ -1785,21 +1983,28 @@ html:not([data-scroll-behavior="smooth"]) {
   font-weight: 900;
   letter-spacing: 2px;
   margin-bottom: 1rem;
+  text-align: center !important;
+  display: block !important;
+  width: 100% !important;
 }
 
 .stats-section .update-time {
   color: #666;
   font-size: 1rem;
   margin-bottom: 0.5rem;
+  text-align: center !important;
+  display: block !important;
+  width: 100% !important;
 }
 
 .stats-section .trend-indicator {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   gap: 0.5rem;
   font-size: 1.1rem;
   font-weight: 600;
+  width: 100% !important;
 }
 
 .stats-section .trend-indicator span:first-child {
@@ -2208,6 +2413,318 @@ html:not([data-scroll-behavior="smooth"]) {
     align-items: flex-start;
     gap: 8px;
   }
+} 
+
+/* 卡片标题和描述文本优化 */
+.guides-card h2,
+.tip-card h3,
+.guide-item h3,
+.category-title {
+    color: #ffffff !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* 卡片描述文本 */
+.tip-card p,
+.guide-item p,
+.guide-item .guide-meta,
+.breadcrumb a {
+    color: #ffffff !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* 导航和链接文本 */
+nav a,
+.breadcrumb a,
+.tip-link {
+    color: #ffffff !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* 按钮文本保持清晰 */
+.action-btn,
+.filter-btn,
+.discord-btn {
+    color: #ffffff !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+} 
+
+/* 强制居中对齐live-stats-section的统计数据 */
+.live-stats-section .counter-container {
+  text-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+}
+
+.live-stats-section .counter h2 {
+  text-align: center !important;
+  display: block !important;
+  width: 100% !important;
+}
+
+.live-stats-section .player-count {
+  text-align: center !important;
+  display: block !important;
+  width: 100% !important;
+}
+
+.live-stats-section .update-time {
+  text-align: center !important;
+  display: block !important;
+  width: 100% !important;
+}
+
+.live-stats-section .trend-indicator {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+}
+
+/* 保留live-stats-section的卡片样式，去掉毛玻璃效果 */
+.live-stats-section {
+  background: rgba(255, 255, 255, 0.95) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+  border-radius: 20px !important;
+  padding: 3rem 2rem !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.live-stats-section .stats-container {
+  background: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+}
+
+.live-stats-section .stats-container h1 {
+  color: var(--text-dark) !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+.live-stats-section .stats-subtitle {
+  color: var(--text-dark) !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1) !important;
+} 
+
+/* 强制居中统计数据 - 最高优先级 */
+.live-stats-section .counter-container,
+.live-stats-section .counter,
+.live-stats-section .counter h2,
+.live-stats-section .player-count,
+.live-stats-section .update-time,
+.live-stats-section .trend-indicator {
+  text-align: center !important;
+  display: block !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+}
+
+.live-stats-section .counter-container {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.live-stats-section .trend-indicator {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+/* 确保所有子元素都居中 */
+.live-stats-section .counter-container * {
+  text-align: center !important;
+} 
+
+/* 统一区域间距和样式 */
+.live-stats-section,
+.stats-section,
+.map-section,
+.tips-section,
+.community-section {
+  margin-top: 2rem !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+  border-radius: 20px !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* 调整tips-grid的间距 */
+.tips-grid {
+  gap: 2rem !important;
+  margin-top: 2rem !important;
+}
+
+/* 调整tip-card的样式 */
+.tip-card {
+  background: rgba(255, 255, 255, 0.9) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08) !important;
+  border-radius: 16px !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* 调整milestone-cards的样式 */
+.milestone-cards {
+  gap: 2rem !important;
+  margin-top: 2rem !important;
+}
+
+.milestone-card {
+  background: rgba(255, 255, 255, 0.9) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08) !important;
+  border-radius: 16px !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* 调整timeline-container的样式 */
+.timeline-container {
+  background: rgba(255, 255, 255, 0.9) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08) !important;
+  border-radius: 16px !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* 调整map-container的样式 */
+.map-container {
+  background: rgba(255, 255, 255, 0.9) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08) !important;
+  border-radius: 16px !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* 调整community-card的样式 */
+.community-card {
+  background: rgba(255, 255, 255, 0.9) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08) !important;
+  border-radius: 16px !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+} 
+
+/* 调整页面布局，让内容区域两边留空 */
+.live-stats-section,
+.stats-section,
+.map-section,
+.tips-section,
+.community-section {
+  max-width: 1200px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: 90% !important;
+}
+
+/* 调整tips-grid的布局 */
+.tips-grid {
+  gap: 2rem !important;
+  margin-top: 2rem !important;
+  justify-content: center !important;
+}
+
+/* 调整milestone-cards的布局 */
+.milestone-cards {
+  gap: 2rem !important;
+  margin-top: 2rem !important;
+  justify-content: center !important;
+}
+
+/* 调整community-stats的布局 */
+.community-stats {
+  display: flex !important;
+  justify-content: space-around !important;
+  margin-bottom: 3rem !important;
+  gap: 2rem !important;
+}
+
+.community-stat {
+  text-align: center !important;
+  background: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* 确保统计数字和标签样式清晰 */
+.stat-number {
+  display: block !important;
+  font-size: 2rem !important;
+  font-weight: bold !important;
+  color: var(--accent-yellow) !important;
+  text-shadow: none !important;
+}
+
+.stat-label {
+  font-size: 0.9rem !important;
+  opacity: 0.8 !important;
+  color: var(--text-dark) !important;
+  text-shadow: none !important;
+}
+
+/* 确保移动端也有合适的边距 */
+@media (max-width: 768px) {
+  .live-stats-section,
+  .stats-section,
+  .map-section,
+  .tips-section,
+  .community-section {
+    width: 95% !important;
+    padding: 2rem 1rem !important;
+  }
+  
+  .tips-grid,
+  .milestone-cards {
+    gap: 1rem !important;
+  }
+} 
+
+/* ========================================
+   CSS变量和基础样式
+   ======================================== */
+
+/* Global color variables for Roblox-like style */
+:root {
+    --primary-dark: #23272a;
+    --primary-blue: #5865f2;
+    --accent-green: #43b581;
+    --accent-yellow: #f1c40f;
+    --accent-red: #e74c3c;
+    --text-dark: #23272a;
+    --text-light: #f5f6fa;
+    --bg-light: #f5f6fa;
+    --bg-dark: #23272a;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 8px 15px rgba(0, 0, 0, 0.2);
+    --border-radius: 12px;
+    --transition: all 0.3s ease;
+}
+
+/* 字体渲染优化 */
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "kern" 1;
+    font-kerning: normal;
+}
+
+* {
+    box-sizing: border-box;
 } 
 
  

@@ -1,9 +1,9 @@
 {
   "nav.logo": "🌱 Grow a Garden",
-  "nav.live": "الإحصائيات المباشرة",
-  "nav.map": "خريطة الحرارة العالمية",
+  "nav.live": "إحصائيات مباشرة",
+  "nav.map": "خريطة حرارية عالمية",
   "nav.tips": "نصائح",
-  "nav.guides": "📚 الأدلة",
+  "nav.guides": "📚 أدلة",
   "nav.discord": "💬 Discord",
   "hero.title": "🌱 حاسبة Grow a Garden",
   "hero.subtitle": "أداة قيمة الفواكه والطفرات في Roblox",
@@ -11,7 +11,7 @@
   "tabs.all": "الكل",
   "tabs.baseValue": "القيمة الأساسية",
   "tabs.exotic": "حزمة البذور الغريبة",
-  "tabs.prehistoric": "الحدث ما قبل التاريخ",
+  "tabs.prehistoric": "حدث ما قبل التاريخ",
   "tabs.event": "حزمة بذور الحدث",
   "search.plant": "البحث عن نبات...",
   "search.mutation": "البحث عن طفرة...",
@@ -19,8 +19,8 @@
   "mutation.help": "كيفية الحصول على كل طفرة؟",
   "mutation.sortValue": "ترتيب حسب القيمة (تنازلي)",
   "mutation.sortAlpha": "ترتيب أبجدي",
-  "mutation.hideAdmin": "إخفاء طفرات المدير",
-  "mutation.showAdmin": "إظهار طفرات المدير",
+  "mutation.hideAdmin": "إخفاء طفرات المشرف",
+  "mutation.showAdmin": "إظهار طفرات المشرف",
   "mutation.helpTitle": "كيفية الحصول على كل طفرة؟",
   "input.weight": "الوزن (كجم):",
   "input.amount": "كمية النباتات:",
@@ -28,20 +28,20 @@
   "input.friendBoostLabel": "دفعة الصديق:",
   "btn.addToList": "إضافة قيمة النبات إلى القائمة",
   "btn.clearMutations": "مسح الطفرات",
-  "btn.maxMutations": "الطفرات القصوى",
+  "btn.maxMutations": "أقصى طفرات",
   "btn.toggleMode": "تبديل وضع القيمة إلى الوزن",
-  "map.title": "🌍 خريطة الحرارة العالمية للاعبين",
+  "map.title": "🌍 خريطة حرارية عالمية للاعبين",
   "map.loading": "جاري التحميل...",
-  "map.activeCountries": "البلدان النشطة",
+  "map.activeCountries": "الدول النشطة",
   "map.topRegion": "المنطقة الأولى",
   "tips.title": "💡 نصائح سريعة",
   "tips.watering.title": "كفاءة الري",
   "tips.watering.goldenHours": "الساعات الذهبية",
-  "tips.watering.goldenHoursDesc": "7:00-9:00 في اللعبة (2x تأثير في الوقت الفعلي)",
-  "tips.watering.comboTrick": "خدعة الكومبو",
+  "tips.watering.goldenHoursDesc": "7:00-9:00 في اللعبة (2x تأثير في الوقت الحقيقي)",
+  "tips.watering.comboTrick": "خدعة المجموعة",
   "tips.watering.comboTrickDesc": "انقر على إبريق الري 5 مرات لتأثير مخفي",
-  "tips.watering.bestFrequency": "أفضل تردد",
-  "tips.watering.bestFrequencyDesc": "اسق كل 30 دقيقة",
+  "tips.watering.bestFrequency": "أفضل تكرار",
+  "tips.watering.bestFrequencyDesc": "اسقِ كل 30 دقيقة",
   "tips.watering.watchVideo": "مشاهدة الفيديو →",
   "tips.seed.title": "اختيار البذور",
   "tips.seed.beginner": "مبتدئ",
@@ -50,7 +50,7 @@
   "tips.seed.advancedDesc": "الوردة (قيمة عالية، تحتاج مهارة)",
   "tips.seed.rare": "بذور نادرة",
   "tips.seed.rareDesc": "محدودة في عطلات نهاية الأسبوع",
-  "tips.seed.seeGuide": "رؤية دليل البذور →",
+  "tips.seed.seeGuide": "مشاهدة دليل البذور →",
   "tips.achievement.title": "دليل الإنجازات",
   "tips.achievement.beginner": "مبتدئ",
   "tips.achievement.beginnerDesc": "ازرع 100 زهرة",
@@ -58,32 +58,49 @@
   "tips.achievement.advancedDesc": "سلسلة دخول 7 أيام",
   "tips.achievement.hidden": "مخفي",
   "tips.achievement.hiddenDesc": "ازرع في أوقات خاصة",
-  "tips.achievement.seeAll": "رؤية جميع الإنجازات →",
+  "tips.achievement.seeAll": "مشاهدة جميع الإنجازات →",
   "community.title": "💬 انضم إلى مجتمعنا",
   "community.description": "تحدث مع لاعبي Grow a Garden من جميع أنحاء العالم على Discord!",
   "community.members": "أعضاء Discord",
-  "community.support": "الدعم عبر الإنترنت",
-  "community.messages": "الرسائل اليومية",
-  "community.joinDiscord": "🚀 انضم إلى Discord",
-  "statsHero.title": "🌱 متعقب Grow a Garden في الوقت الفعلي",
+  "community.support": "دعم عبر الإنترنت",
+  "community.messages": "رسائل يومية",
+  "community.joinDiscord": "🚀 الانضمام إلى Discord",
+  "statsHero.title": "🌱 متتبع Grow a Garden المباشر",
   "statsHero.subtitle": "شاهد عدد اللاعبين المباشر والنشاط العالمي لـ Grow a Garden على Roblox!",
-  "stats.onlineNow": "اللاعبون المتصلون الآن",
+  "stats.onlineNow": "اللاعبون متصلون الآن",
   "stats.lastUpdated": "آخر تحديث:",
   "stats.milestonesTitle": "📈 معالم عدد اللاعبين",
-  "stats.milestone.allTimePeak": "أعلى رقم تاريخي",
+  "stats.milestone.allTimePeak": "الذروة على الإطلاق",
   "stats.milestone.m19": "معلم 19 مليون",
   "stats.milestone.m18": "معلم 18 مليون",
-  "reverse.inputValue": "القيمة المُدخلة ($):",
+  "reverse.inputValue": "قيمة الإدخال ($):",
   "reverse.update": "تحديث",
-  "history.title": "سجل النباتات",
+  "history.title": "تاريخ النباتات",
   "common.close": "إغلاق",
   "timeline.loading": "جاري التحميل...",
   "unit.kg": "كجم",
-  "footer.disclaimer": "غير رسمي. البيانات للمرجع فقط.",
-  "footer.copyright": "© 2025 Grow a Garden - متعقب اللاعبين في الوقت الفعلي",
+  "footer.disclaimer": "غير رسمي. البيانات للاسترشاد فقط.",
+  "footer.copyright": "© 2025 Grow a Garden - متتبع اللاعبين المباشر",
   "hero.guides.title": "📚 أدلة Grow a Garden",
   "hero.guides.subtitle": "مجموعة كاملة من الاستراتيجيات والوصفات ونصائح اللعب",
   "breadcrumb.home": "🏠 الرئيسية",
   "breadcrumb.guides": "📚 الأدلة",
-  "btn.back": "← العودة إلى الأدلة"
+  "btn.back": "← العودة إلى الأدلة",
+  "guides.searchFilter": "🔍 البحث والتصفية",
+  "guides.searchPlaceholder": "البحث عن أدلة...",
+  "guides.filter.all": "الكل",
+  "guides.filter.recipe": "وصفات",
+  "guides.filter.farming": "الزراعة",
+  "guides.filter.profit": "الربح",
+  "guides.filter.advanced": "متقدم",
+  "guides.trendingTitle": "🔥 الأدلة الرائجة",
+  "guides.badge.mostPopular": "⭐ الأكثر شعبية",
+  "guides.badge.trending": "📈 رائج",
+  "guides.back": "← العودة إلى الحاسبة الرئيسية",
+
+  "guides.guideItems.spaghetti.title": "🍝 دليل صنع السباغيتي",
+  "guides.guideItems.spaghetti.description": "تعلم كيفية صنع السباغيتي اللذيذ في Grow a Garden. من تحضير المعكرونة إلى تقنيات الصلصة والطبخ المثالي.",
+  "guides.guideItems.spaghetti.difficulty": "متوسط",
+  "guides.guideItems.spaghetti.readTime": "25 دقيقة قراءة",
+  "guides.guideItems.spaghetti.views": "🔥 1.8k مشاهدة"
 } 

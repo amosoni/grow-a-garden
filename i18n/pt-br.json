@@ -85,5 +85,22 @@
   "hero.guides.subtitle": "Coleção completa de estratégias, receitas e dicas de jogo",
   "breadcrumb.home": "🏠 Início",
   "breadcrumb.guides": "📚 Guias",
-  "btn.back": "← Voltar aos Guias"
+  "btn.back": "← Voltar aos Guias",
+  "guides.searchFilter": "🔍 Pesquisar e Filtrar",
+  "guides.searchPlaceholder": "Pesquisar guias...",
+  "guides.filter.all": "Todos",
+  "guides.filter.recipe": "Receitas",
+  "guides.filter.farming": "Agricultura",
+  "guides.filter.profit": "Lucro",
+  "guides.filter.advanced": "Avançado",
+  "guides.trendingTitle": "🔥 Guias em Alta",
+  "guides.badge.mostPopular": "⭐ Mais Popular",
+  "guides.badge.trending": "📈 Em Alta",
+  "guides.back": "← Voltar à Calculadora Principal",
+
+  "guides.guideItems.spaghetti.title": "🍝 Guia para Fazer Espaguete",
+  "guides.guideItems.spaghetti.description": "Aprenda a fazer deliciosos espaguetes no Grow a Garden. Desde a preparação da massa até técnicas de molho e cozimento perfeito.",
+  "guides.guideItems.spaghetti.difficulty": "Intermediário",
+  "guides.guideItems.spaghetti.readTime": "25 min de leitura",
+  "guides.guideItems.spaghetti.views": "🔥 1.8k visualizações"
 } 
