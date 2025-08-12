@@ -295,16 +295,30 @@
 </head>
 <body>
     <div class="bg-blur"></div>
-    <header>
-        <nav>
-            <a href="/ar/index.html" class="logo">🌱 Grow a Garden</a>
-            <a href="javascript:void(0)" onclick="scrollToSection('stats')">Live Stats</a>
-            <a href="javascript:void(0)" onclick="scrollToSection('map')">Global Heatmap</a>
-            <a href="javascript:void(0)" onclick="scrollToSection('tips')">Tips</a>
-            <a href="/ar/guides.html">📚 الإرشادات</a>
-            <a href="javascript:void(0)" onclick="scrollToSection('community')" class="discord-btn">💬 Discord</a>
-        </nav>
-    </header>
+        <header>
+    <nav>
+      <a href="/index.html" class="logo" data-i18n="nav.logo">🌱 Grow a Garden</a>
+      <a href="/index.html#stats" data-i18n="nav.live">إحصائيات مباشرة</a>
+      <a href="/index.html#map" data-i18n="nav.map">خريطة حرارية عالمية</a>
+      <a href="/index.html#tips" data-i18n="nav.tips">نصائح</a>
+      <a href="/guides.html" data-i18n="nav.guides">📚 الأدلة</a>
+      <a href="/index.html#community" class="discord-btn" data-i18n="nav.discord">💬 Discord</a>
+                  <select id="lang-switcher" aria-label="Language">
+                <option value="en" >English</option>
+                <option value="zh-cn" >简体中文</option>
+                <option value="es" >Español</option>
+                <option value="pt-br" >Português</option>
+                <option value="fr" >Français</option>
+                <option value="de" >Deutsch</option>
+                <option value="ru" >Русский</option>
+                <option value="ar" selected="">العربية</option>
+                <option value="hi" >हिन्दी</option>
+                <option value="id" >Bahasa Indonesia</option>
+                <option value="vi" >Tiếng Việt</option>
+                <option value="ja" >日本語</option>
+            </select>
+    </nav>
+  </header>
     
     <section class="salad-hero">
         <h1>دليل صنع سلطة</h1>

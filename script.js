@@ -175,30 +175,60 @@ let imageMapLoaded = false;
 console.log('🔍 开始加载植物图片映射...');
 console.log('🔍 PLANT_IMG_MAP_URL:', window.PLANT_IMG_MAP_URL);
 
-fetch(window.PLANT_IMG_MAP_URL || 'plant_img_map_local.json')
-  .then(res => {
-    console.log('🔍 图片映射文件响应状态:', res.status, res.statusText);
-    if (!res.ok) {
-      throw new Error(`HTTP ${res.status}: ${res.statusText}`);
+async function tryFetchJson(url) {
+  try {
+    const res = await fetch(url, { cache: 'no-cache' });
+    console.log('🔍 尝试加载映射:', url, '→', res.status);
+    if (!res.ok) return null;
+    const data = await res.json();
+    if (data && typeof data === 'object' && Object.keys(data).length > 0) {
+      return data;
     }
-    return res.json();
-  })
-  .then(data => {
-    plantImgMap = data;
+    return null;
+  } catch (e) {
+    console.warn('⚠️ 加载失败:', url, e.message);
+    return null;
+  }
+}
+
+(async function loadPlantImageMap() {
+  // 依次尝试这些候选URL（前面的优先）
+  const candidates = [
+    window.PLANT_IMG_MAP_URL,
+    '/plant_img_map_local.json',
+    './plant_img_map_local.json',
+    '/plant_img_map_fixed2.json',
+    '/plant_img_map_fixed.json',
+    '/plant_img_map.json',
+    '/plant_img_map_final.json'
+  ].filter(Boolean);
+
+  let loaded = null;
+  for (const url of candidates) {
+    // 避免重复尝试相同字符串
+    if (loaded) break;
+    loaded = await tryFetchJson(url);
+  }
+
+  if (loaded) {
+    // 统一键名为小写，避免大小写不一致
+    const normalized = {};
+    Object.keys(loaded).forEach(k => {
+      normalized[String(k).toLowerCase()] = loaded[k];
+    });
+    plantImgMap = normalized;
     imageMapLoaded = true;
     console.log('✅ 植物图片映射加载成功，总数:', Object.keys(plantImgMap).length);
     console.log('🔍 前5个图片映射:', Object.entries(plantImgMap).slice(0, 5));
-    
     // 等待植物数据加载完成后再渲染
     waitForPlantsAndRender();
-  })
-  .catch(error => {
-    console.error('❌ 加载植物图片映射失败:', error);
-    // 如果加载失败，使用默认图片
+  } else {
+    console.error('❌ 所有候选映射均加载失败，使用占位图');
     plantImgMap = {};
     imageMapLoaded = false;
     waitForPlantsAndRender();
-  });
+  }
+})();
 
 // 等待植物数据加载完成后再渲染
 function waitForPlantsAndRender() {
@@ -260,7 +290,8 @@ function renderPlants(category = 'all', searchTerm = '') {
   console.log('filteredPlants:', filteredPlants.length);
   
   plantList.innerHTML = filteredPlants.map(plant => {
-    const imgSrc = plantImgMap[plant.key];
+    const keyLower = String(plant.key || '').toLowerCase();
+    const imgSrc = plantImgMap[keyLower];
     console.log(`Plant ${plant.key}: imgSrc = ${imgSrc}`);
     
     // 如果没有找到图片路径，使用本地占位符

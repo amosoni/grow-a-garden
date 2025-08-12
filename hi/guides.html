@@ -2,7 +2,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <base href="/">
-  <title>Grow a Garden गाइड्स - पूरा संग्रह</title>
+  <title>Grow a Garden गाइड - पूर्ण संग्रह</title>
   <link rel="canonical" href="https://growagarden.cv/hi/guides.html">
   <link rel="alternate" hreflang="en" href="https://growagarden.cv/en/guides.html">
   <link rel="alternate" hreflang="zh-CN" href="https://growagarden.cv/zh-cn/guides.html">
@@ -12,38 +12,34 @@
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-  <header>
+    <header>
     <nav>
       <a href="/index.html" class="logo" data-i18n="nav.logo">🌱 Grow a Garden</a>
-      <a href="/guides.html" data-i18n="nav.guides">📚 गाइड्स</a>
+      <a href="/index.html#stats" data-i18n="nav.live">ライブ統計</a>
+      <a href="/index.html#map" data-i18n="nav.map">グローバルヒートマップ</a>
+      <a href="/index.html#tips" data-i18n="nav.tips">ヒント</a>
+      <a href="/guides.html" data-i18n="nav.guides">📚 गाइड</a>
+      <a href="/index.html#community" class="discord-btn" data-i18n="nav.discord">💬 Discord</a>
                   <select id="lang-switcher" aria-label="Language">
-                <option value="en">English</option>
-                <option value="zh-cn">简体中文</option>
-                <option value="es">Español</option>
-                <option value="pt-br">Português</option>
-                <option value="fr">Français</option>
-                <option value="de">Deutsch</option>
-                <option value="ru">Русский</option>
-                <option value="ar">العربية</option>
+                <option value="en" >English</option>
+                <option value="zh-cn" >简体中文</option>
+                <option value="es" >Español</option>
+                <option value="pt-br" >Português</option>
+                <option value="fr" >Français</option>
+                <option value="de" >Deutsch</option>
+                <option value="ru" >Русский</option>
+                <option value="ar" >العربية</option>
                 <option value="hi" selected="">हिन्दी</option>
-                <option value="id">Bahasa Indonesia</option>
-                <option value="vi">Tiếng Việt</option>
-                <option value="ja">日本語</option>
+                <option value="id" >Bahasa Indonesia</option>
+                <option value="vi" >Tiếng Việt</option>
+                            <option value="ja" >日本語</option>
             </select>
     </nav>
   </header>
   <section class="guides-hero">
-    <h1 data-i18n="hero.guides.title">📚 Grow a Garden गाइड्स</h1>
-    <p data-i18n="hero.guides.subtitle">रणनीतियों, व्यंजनों और गेमप्ले टिप्स का पूर्ण संग्रह</p>
+    <h1 data-i18n="hero.guides.title">📚 Grow a Garden गाइड</h1>
+    <p data-i18n="hero.guides.subtitle">रणनीतियों, व्यंजनों और गेम टिप्स का पूर्ण संग्रह</p>
   </section>
-  <div class="breadcrumb-container">
-    <nav class="breadcrumb" aria-label="Breadcrumb">
-      <ol>
-        <li><a href="/index.html" data-i18n="breadcrumb.home">🏠 होम</a></li>
-        <li aria-current="page" data-i18n="breadcrumb.guides">📚 गाइड्स</li>
-      </ol>
-    </nav>
-  </div>
   <div class="guides-section">
     <div class="guides-card">
       <h2>🔍 खोज और फ़िल्टर</h2>
@@ -51,8 +47,8 @@
         <input type="text" id="guide-search" placeholder="गाइड खोजें..." class="guide-search-input">
         <div class="filter-buttons">
           <button class="filter-btn active" data-filter="all">सभी</button>
-          <button class="filter-btn" data-filter="recipe">रेसिपी</button>
-          <button class="filter-btn" data-filter="farming">खेती</button>
+          <button class="filter-btn" data-filter="recipe">व्यंजन</button>
+          <button class="filter-btn" data-filter="farming">कृषि</button>
           <button class="filter-btn" data-filter="profit">लाभ</button>
           <button class="filter-btn" data-filter="advanced">उन्नत</button>
         </div>
@@ -61,38 +57,38 @@
 
     <!-- 热门攻略 -->
     <div class="guides-card">
-      <h2>🔥 लोकप्रिय गाइड्स</h2>
+      <h2>🔥 लोकप्रिय गाइड</h2>
       <div class="guides-grid">
         <a href="/hi/how-to-make-salad.html" class="guide-item featured-guide">
           <div class="featured-badge">⭐ सबसे लोकप्रिय</div>
           <h3>सलाद बनाने की गाइड</h3>
-          <p>Grow a Garden में सलाद बनाना सीखें।</p>
+          <p>Grow a Garden में सलाद बनाने के टिप्स सीखें।</p>
           <div class="guide-meta">
             <span class="guide-difficulty">शुरुआती</span>
-            <span class="guide-read-time">15 मिनट पढ़ने</span>
-            <span class="guide-views">🔥 2.5k देखे गए</span>
+            <span class="guide-read-time">15 मिनट पढ़ने में</span>
+            <span class="guide-views">🔥 2.5k दृश्य</span>
           </div>
         </a>
         
         <a href="/hi/how-to-make-pizza.html" class="guide-item">
-          <div class="trending-badge">📈 ट्रेंडिंग</div>
-          <h3>पिज़्ज़ा बनाने की गाइड</h3>
-          <p>Grow a Garden में पिज़्ज़ा बनाना सीखें।</p>
+          <div class="trending-badge">📈 ट्रेंड</div>
+          <h3>पिज्जा बनाने की गाइड</h3>
+          <p>Grow a Garden में पिज्जा बनाने के टिप्स सीखें।</p>
           <div class="guide-meta">
             <span class="guide-difficulty">मध्यम</span>
-            <span class="guide-read-time">25 मिनट पढ़ने</span>
-            <span class="guide-views">🔥 1.8k देखे गए</span>
+            <span class="guide-read-time">25 मिनट पढ़ने में</span>
+            <span class="guide-views">🔥 1.8k दृश्य</span>
           </div>
         </a>
         
         <a href="/hi/how-to-make-bread.html" class="guide-item">
           <div class="new-badge">🆕 नया</div>
           <h3>ब्रेड बनाने की गाइड</h3>
-          <p>Grow a Garden में ब्रेड बनाना सीखें।</p>
+          <p>Grow a Garden में ब्रेड बनाने के टिप्स सीखें।</p>
           <div class="guide-meta">
             <span class="guide-difficulty">शुरुआती</span>
-            <span class="guide-read-time">20 मिनट पढ़ने</span>
-            <span class="guide-views">🔥 1.2k देखे गए</span>
+            <span class="guide-read-time">20 मिनट पढ़ने में</span>
+            <span class="guide-views">🔥 1.2k दृश्य</span>
           </div>
         </a>
       </div>
@@ -100,409 +96,409 @@
     
     <!-- 食谱攻略 -->
     <div class="category-section" data-category="recipe">
-      <h2 class="category-title">🍽️ रेसिपी गाइड्स</h2>
+      <h2 class="category-title">🍽️ व्यंजनガイド</h2>
       <div class="guides-grid">
         <a href="/hi/how-to-make-salad.html" class="guide-item">
-          <h3>🥗 सलाद बनाने का गाइड</h3>
-          <p>Grow a Garden में परफेक्ट सलाद बनाने का पूरा गाइड। बुनियादी सामग्री इकट्ठा करने से लेकर उन्नत रेसिपी तक।</p>
+          <h3>🥗 सलाद बनाने की गाइड</h3>
+          <p>Grow a Gardenで完璧なサラダを作るための完全ガイド。基本的な材料収集から高度なव्यंजनまで。</p>
           <div class="guide-meta">
             <span class="guide-difficulty">शुरुआती</span>
-            <span class="guide-read-time">15 मिनट पढ़ने</span>
+            <span class="guide-read-time">15 मिनट पढ़ने में</span>
           </div>
         </a>
         
         <a href="/hi/how-to-make-pizza.html" class="guide-item">
-          <h3>🍕 पिज़्ज़ा बनाने का गाइड</h3>
-          <p>Grow a Garden में स्वादिष्ट पिज़्ज़ा बनाना सीखें। आटा तैयार करने से लेकर टॉपिंग के संयोजन तक।</p>
+          <h3>🍕 पिज्जा बनाने की गाइड</h3>
+          <p>Grow a Gardenで美味しいピザの作り方を学びます。生地の準備からトッピングの組み合わせまで。</p>
           <div class="guide-meta">
             <span class="guide-difficulty">मध्यम</span>
-            <span class="guide-read-time">25 मिनट पढ़ने</span>
+            <span class="guide-read-time">25 मिनट पढ़ने में</span>
           </div>
         </a>
         
         <a href="/hi/how-to-make-bread.html" class="guide-item">
-          <h3>🍞 रोटी बनाने का गाइड</h3>
-          <p>रोटी बनाने की तकनीकों में महारत हासिल करें। आटे के प्रकार, खमीर प्रबंधन और बेकिंग अनुकूलन सीखें।</p>
+          <h3>🍞 ब्रेड बनाने की गाइड</h3>
+          <p>パン作りの技術を習得。小麦粉の種類、酵母管理、焼成の最適化を学びます。</p>
           <div class="guide-meta">
             <span class="guide-difficulty">शुरुआती</span>
-            <span class="guide-read-time">20 मिनट पढ़ने</span>
+            <span class="guide-read-time">20 मिनट पढ़ने में</span>
           </div>
         </a>
         
         <a href="/hi/how-to-make-cake.html" class="guide-item">
           <h3>केक बनाने की गाइड</h3>
-          <p>Grow a Garden में केक बनाना सीखें।</p>
+          <p>Grow a Garden में केक बनाने के टिप्स सीखें।</p>
           <div class="guide-meta">
             <span class="guide-difficulty">मध्यम</span>
-            <span class="guide-read-time">30 मिनट पढ़ने</span>
+            <span class="guide-read-time">30 मिनट पढ़ने में</span>
           </div>
         </a>
       <a href="/hi/ice-cream-recipe.html" class="guide-item">
-                    <h3>आइसक्रीम रेसिपीガイド</h3>
-                    <p>स्वादिष्ट आइसक्रीम के संयोजन व अनुपात सीखें; लाभ अनुकूलित करें।</p>
+                    <h3>アイスクリームव्यंजनガイド</h3>
+                    <p>美味しいアイスクリームの配合と比率を学び、लाभと味を最適化。</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">मध्यम</span>
-                        <span class="guide-read-time">18 मिनट</span>
+                        <span class="guide-read-time">18 मिनट पढ़ने में</span>
                     </div>
                 </a><a href="/hi/how-to-make-donut.html" class="guide-item">
                     <h3>डोनट बनाने की गाइड</h3>
-                    <p>Grow a Garden में डोनट बनाना सीखें।</p>
+                    <p>Grow a Garden में डोनट बनाने के टिप्स सीखें。</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">मध्यम</span>
-                        <span class="guide-read-time">20 मिनट</span>
+                        <span class="guide-read-time">20 मिनट पढ़ने में</span>
                     </div>
                 </a><a href="/hi/how-to-make-pie.html" class="guide-item">
                     <h3>पाई बनाने की गाइड</h3>
-                    <p>Grow a Garden में पाई बनाना सीखें।</p>
+                    <p>Grow a Garden में पाई बनाने के टिप्स सीखें।</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">मध्यम</span>
-                        <span class="guide-read-time">25 मिनट</span>
+                        <span class="guide-read-time">25 मिनट पढ़ने में</span>
                     </div>
                 </a><a href="/hi/how-to-make-cookies.html" class="guide-item">
                     <h3>कुकी बनाने की गाइड</h3>
-                    <p>Grow a Garden में कुकी बनाना सीखें।</p>
+                    <p>Grow a Garden में कुकी बनाने के टिप्स सीखें。</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">शुरुआती</span>
-                        <span class="guide-read-time">20 मिनट</span>
+                        <span class="guide-read-time">20 मिनट पढ़ने में</span>
                     </div>
                 </a><a href="/hi/how-to-make-smoothie.html" class="guide-item">
                     <h3>स्मूदी बनाने की गाइड</h3>
-                    <p>Grow a Garden में स्मूदी बनाना सीखें।</p>
+                    <p>Grow a Garden में स्मूदी बनाने के टिप्स सीखें。</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">शुरुआती</span>
-                        <span class="guide-read-time">18 मिनट</span>
+                        <span class="guide-read-time">18 मिनट पढ़ने में</span>
                     </div>
                 </a><a href="/hi/how-to-make-sandwich.html" class="guide-item">
                     <h3>सैंडविच बनाने की गाइड</h3>
-                    <p>Grow a Garden में सैंडविच बनाना सीखें।</p>
+                    <p>Grow a Garden में सैंडविच बनाने के टिप्स सीखें。</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">शुरुआती</span>
-                        <span class="guide-read-time">22 मिनट</span>
+                        <span class="guide-read-time">22 मिनट पढ़ने में</span>
                     </div>
                 </a><a href="/hi/how-to-make-salad.html" class="guide-item">
                     <h3>सलाद बनाने की गाइड</h3>
-                    <p>Grow a Garden में सलाद बनाना सीखें।</p>
+                    <p>Grow a Garden में सलाद बनाने के टिप्स सीखें।</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">शुरुआती</span>
-                        <span class="guide-read-time">15 मिनट</span>
+                        <span class="guide-read-time">15 मिनट पढ़ने में</span>
                     </div>
                 </a><a href="/hi/how-to-make-pizza.html" class="guide-item">
-                    <h3>पिज़्ज़ा बनाने की गाइड</h3>
-                    <p>Grow a Garden में पिज़्ज़ा बनाना सीखें।</p>
+                    <h3>पिज्जा बनाने की गाइड</h3>
+                    <p>Grow a Garden में पिज्जा बनाने के टिप्स सीखें।</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">मध्यम</span>
-                        <span class="guide-read-time">25 मिनट</span>
+                        <span class="guide-read-time">25 मिनट पढ़ने में</span>
                     </div>
                 </a><a href="/hi/how-to-make-bread.html" class="guide-item">
                     <h3>ब्रेड बनाने की गाइड</h3>
-                    <p>Grow a Garden में ब्रेड बनाना सीखें।</p>
+                    <p>Grow a Garden में ब्रेड बनाने के टिप्स सीखें।</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">शुरुआती</span>
-                        <span class="guide-read-time">20 मिनट</span>
+                        <span class="guide-read-time">20 मिनट पढ़ने में</span>
                     </div>
                 </a><a href="/hi/ice-cream-recipe.html" class="guide-item">
-                    <h3>आइसक्रीम रेसिपीガイド</h3>
-                    <p>स्वादिष्ट आइसक्रीम के संयोजन व अनुपात सीखें; लाभ अनुकूलित करें।</p>
+                    <h3>アイスクリームव्यंजनガイド</h3>
+                    <p>美味しいアイスクリームの配合と比率を学び、लाभと味を最適化。</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">मध्यम</span>
-                        <span class="guide-read-time">18 मिनट</span>
+                        <span class="guide-read-time">18 मिनट पढ़ने में</span>
                     </div>
                 </a><a href="/hi/how-to-make-donut.html" class="guide-item">
                     <h3>डोनट बनाने की गाइड</h3>
-                    <p>Grow a Garden में डोनट बनाना सीखें।</p>
+                    <p>Grow a Garden में डोनट बनाने के टिप्स सीखें。</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">मध्यम</span>
-                        <span class="guide-read-time">20 मिनट</span>
+                        <span class="guide-read-time">20 मिनट पढ़ने में</span>
                     </div>
                 </a><a href="/hi/how-to-make-cake.html" class="guide-item">
                     <h3>केक बनाने की गाइड</h3>
-                    <p>Grow a Garden में केक बनाना सीखें।</p>
+                    <p>Grow a Garden में केक बनाने के टिप्स सीखें।</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">उन्नत</span>
-                        <span class="guide-read-time">30 मिनट</span>
+                        <span class="guide-read-time">30 मिनट पढ़ने में</span>
                     </div>
                 </a><a href="/hi/how-to-make-pie.html" class="guide-item">
                     <h3>पाई बनाने की गाइड</h3>
-                    <p>Grow a Garden में पाई बनाना सीखें।</p>
+                    <p>Grow a Garden में पाई बनाने के टिप्स सीखें।</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">मध्यम</span>
-                        <span class="guide-read-time">25 मिनट</span>
+                        <span class="guide-read-time">25 मिनट पढ़ने में</span>
                     </div>
                 </a><a href="/hi/how-to-make-cookies.html" class="guide-item">
                     <h3>कुकी बनाने की गाइड</h3>
-                    <p>Grow a Garden में कुकी बनाना सीखें।</p>
+                    <p>Grow a Garden में कुकी बनाने के टिप्स सीखें。</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">शुरुआती</span>
-                        <span class="guide-read-time">20 मिनट</span>
+                        <span class="guide-read-time">20 मिनट पढ़ने में</span>
                     </div>
                 </a><a href="/hi/how-to-make-smoothie.html" class="guide-item">
                     <h3>स्मूदी बनाने की गाइड</h3>
-                    <p>Grow a Garden में स्मूदी बनाना सीखें।</p>
+                    <p>Grow a Garden में स्मूदी बनाने के टिप्स सीखें。</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">शुरुआती</span>
-                        <span class="guide-read-time">18 मिनट</span>
+                        <span class="guide-read-time">18 मिनट पढ़ने में</span>
                     </div>
                 </a><a href="/hi/how-to-make-money-fast.html" class="guide-item">
-                    <h3>जल्दी पैसे कमाने की गाइड</h3>
-                    <p>Grow a Garden में {noun} बनाना सीखें।</p>
+                    <h3>तेजी से पैसा कमाने का गाइड</h3>
+                    <p>Grow a Gardenで{noun}を作るコツを学びましょう。</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">उन्नत</span>
-                        <span class="guide-read-time">25 मिनट</span>
+                        <span class="guide-read-time">25 मिनट पढ़ने में</span>
                     </div>
                 </a><a href="/hi/how-to-make-sandwich.html" class="guide-item">
                     <h3>सैंडविच बनाने की गाइड</h3>
-                    <p>Grow a Garden में सैंडविच बनाना सीखें।</p>
+                    <p>Grow a Garden में सैंडविच बनाने के टिप्स सीखें。</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">शुरुआती</span>
-                        <span class="guide-read-time">22 मिनट</span>
+                        <span class="guide-read-time">22 मिनट पढ़ने में</span>
                     </div>
                 </a></div>
     </div>
     
     <!-- 种植攻略 -->
     <div class="category-section" data-category="farming">
-      <h2 class="category-title">🌱 खेती गाइड्स</h2>
+      <h2 class="category-title">🌱 कृषि गाइड</h2>
       <div class="guides-grid">
         <a href="/hi/how-to-grow-corn.html" class="guide-item">
-          <h3>मकई उगाने की गाइड</h3>
-          <p>मकई की कुशल खेती: बोना, सिंचाई, फसल।</p>
+          <h3>मक्का उगाने का गाइड</h3>
+          <p>मक्का की कुशल खेती: बुवाई, सिंचाई, कटाई।</p>
           <div class="guide-meta">
             <span class="guide-difficulty">शुरुआती</span>
-            <span class="guide-read-time">18 मिनट पढ़ने</span>
+            <span class="guide-read-time">18 मिनट पढ़ने में</span>
           </div>
         </a>
         
         <a href="/hi/how-to-grow-oranges.html" class="guide-item">
-          <h3>संतरा उगाने की गाइड</h3>
-          <p>संतरा की कुशल खेती: बोना, सिंचाई, फसल।</p>
+          <h3>संतरा उगाने का गाइड</h3>
+          <p>संतरे की कुशल खेती: बुवाई, सिंचाई, कटाई।</p>
           <div class="guide-meta">
             <span class="guide-difficulty">मध्यम</span>
-            <span class="guide-read-time">22 मिनट पढ़ने</span>
+            <span class="guide-read-time">22 मिनट पढ़ने में</span>
           </div>
         </a>
       <a href="/hi/how-to-grow-wheat.html" class="guide-item">
-                    <h3>गेहूं उगाने की गाइड</h3>
-                    <p>गेहूं की कुशल खेती: बोना, सिंचाई, फसल।</p>
+                    <h3>गेहूं उगाने का गाइड</h3>
+                    <p>गेहूं की कुशल खेती: बुवाई, सिंचाई, कटाई।</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">शुरुआती</span>
-                        <span class="guide-read-time">20 मिनट</span>
+                        <span class="guide-read-time">20 मिनट पढ़ने में</span>
                     </div>
                 </a><a href="farming-basics.html" class="guide-item">
-                    <h3>खेती की बुनियादी बातें</h3>
-                    <p>बुनियादी खेती, सिंचाई और फसल प्रबंधन।</p>
+                    <h3>栽培の基礎</h3>
+                    <p>基本的な栽培技術・水やり・作物管理のポイント。</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">शुरुआती</span>
-                        <span class="guide-read-time">12 मिनट</span>
+                        <span class="guide-read-time">12 मिनट पढ़ने में</span>
                     </div>
                 </a><a href="watering-strategies.html" class="guide-item">
-                    <h3>सिंचाई रणनीतियाँ</h3>
-                    <p>सिंचाई का समय, आवृत्ति और दक्षता सीखें।</p>
+                    <h3>水やり戦略</h3>
+                    <p>最適な水やりのタイミング・頻度・効率を学ぶ。</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">शुरुआती</span>
-                        <span class="guide-read-time">10 मिनट</span>
+                        <span class="guide-read-time">10 मिनट पढ़ने में</span>
                     </div>
                 </a><a href="crop-rotation.html" class="guide-item">
-                    <h3>फसल चक्र मार्गदर्शिका</h3>
-                    <p>फसल चक्र रणनीतियाँ मिट्टी की उर्वरता बनाए रखें।</p>
+                    <h3>फसल चक्र गाइड</h3>
+                    <p>効果的な輪作戦略で土壌肥沃度を維持し収量を最大化。</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">मध्यम</span>
-                        <span class="guide-read-time">15 मिनट</span>
+                        <span class="guide-read-time">15 मिनट पढ़ने में</span>
                     </div>
                 </a><a href="seed-selection.html" class="guide-item">
                     <h3>बीज चयन गाइड</h3>
-                    <p>उपयुक्त बीज चुनें, समय व लाभ तुलना करें।</p>
+                    <p>戦略に合う種を選び、成長とलाभを比較。</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">मध्यम</span>
-                        <span class="guide-read-time">18 मिनट</span>
+                        <span class="guide-read-time">18 मिनट पढ़ने में</span>
                     </div>
                 </a><a href="/hi/how-to-grow-carrots.html" class="guide-item">
-                    <h3>गाजर उगाने की गाइड</h3>
-                    <p>गाजर की कुशल खेती: बोना, सिंचाई, फसल।</p>
+                    <h3>गाजर उगाने का गाइड</h3>
+                    <p>गाजर की कुशल खेती: बुवाई, सिंचाई, कटाई।</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">शुरुआती</span>
-                        <span class="guide-read-time">18 मिनट</span>
+                        <span class="guide-read-time">18 मिनट पढ़ने में</span>
                     </div>
                 </a><a href="/hi/how-to-grow-apples.html" class="guide-item">
-                    <h3>सेब उगाने की गाइड</h3>
-                    <p>सेब की कुशल खेती: बोना, सिंचाई, फसल।</p>
+                    <h3>सेब उगाने का गाइड</h3>
+                    <p>सेब की कुशल खेती: बुवाई, सिंचाई, कटाई।</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">मध्यम</span>
-                        <span class="guide-read-time">22 मिनट</span>
+                        <span class="guide-read-time">22 मिनट पढ़ने में</span>
                     </div>
                 </a><a href="/hi/how-to-grow-berries.html" class="guide-item">
-                    <h3>बेरी उगाने की गाइड</h3>
-                    <p>बेरी की कुशल खेती: बोना, सिंचाई, फसल।</p>
+                    <h3>बेरी उगाने का गाइड</h3>
+                    <p>बेरी की कुशल खेती: बुवाई, सिंचाई, कटाई।</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">मध्यम</span>
-                        <span class="guide-read-time">20 मिनट</span>
+                        <span class="guide-read-time">20 मिनट पढ़ने में</span>
                     </div>
                 </a><a href="/hi/how-to-build-farm.html" class="guide-item">
-                    <h3>फार्म बनाने की गाइड</h3>
-                    <p>कुशल फार्म लेआउट: सिंचाई, भंडारण, प्रसंस्करण व मार्ग।</p>
+                    <h3>खेत बनाने का गाइड</h3>
+                    <p>効率的な農場レイアウトの設計：灌漑、保管、加工、導線を最適化。</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">मध्यम</span>
-                        <span class="guide-read-time">24 मिनट</span>
+                        <span class="guide-read-time">24 मिनट पढ़ने में</span>
                     </div>
                 </a><a href="/hi/how-to-grow-wheat.html" class="guide-item">
-                    <h3>गेहूं उगाने की गाइड</h3>
-                    <p>गेहूं की कुशल खेती: बोना, सिंचाई, फसल।</p>
+                    <h3>गेहूं उगाने का गाइड</h3>
+                    <p>गेहूं की कुशल खेती: बुवाई, सिंचाई, कटाई।</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">शुरुआती</span>
-                        <span class="guide-read-time">20 मिनट</span>
+                        <span class="guide-read-time">20 मिनट पढ़ने में</span>
                     </div>
                 </a><a href="/hi/how-to-grow-carrots.html" class="guide-item">
-                    <h3>गाजर उगाने की गाइड</h3>
-                    <p>गाजर की कुशल खेती: बोना, सिंचाई, फसल।</p>
+                    <h3>गाजर उगाने का गाइड</h3>
+                    <p>गाजर की कुशल खेती: बुवाई, सिंचाई, कटाई।</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">शुरुआती</span>
-                        <span class="guide-read-time">18 मिनट</span>
+                        <span class="guide-read-time">18 मिनट पढ़ने में</span>
                     </div>
                 </a><a href="/hi/how-to-grow-apples.html" class="guide-item">
-                    <h3>सेब उगाने की गाइड</h3>
-                    <p>सेब की कुशल खेती: बोना, सिंचाई, फसल।</p>
+                    <h3>सेब उगाने का गाइड</h3>
+                    <p>सेब की कुशल खेती: बुवाई, सिंचाई, कटाई।</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">मध्यम</span>
-                        <span class="guide-read-time">22 मिनट</span>
+                        <span class="guide-read-time">22 मिनट पढ़ने में</span>
                     </div>
                 </a><a href="/hi/how-to-grow-oranges.html" class="guide-item">
-                    <h3>संतरा उगाने की गाइड</h3>
-                    <p>संतरा की कुशल खेती: बोना, सिंचाई, फसल।</p>
+                    <h3>संतरा उगाने का गाइड</h3>
+                    <p>संतरे की कुशल खेती: बुवाई, सिंचाई, कटाई।</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">मध्यम</span>
-                        <span class="guide-read-time">21 मिनट</span>
+                        <span class="guide-read-time">21 मिनट पढ़ने में</span>
                     </div>
                 </a><a href="/hi/how-to-grow-berries.html" class="guide-item">
-                    <h3>बेरी उगाने की गाइड</h3>
-                    <p>बेरी की कुशल खेती: बोना, सिंचाई, फसल।</p>
+                    <h3>बेरी उगाने का गाइड</h3>
+                    <p>बेरी की कुशल खेती: बुवाई, सिंचाई, कटाई।</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">मध्यम</span>
-                        <span class="guide-read-time">20 मिनट</span>
+                        <span class="guide-read-time">20 मिनट पढ़ने में</span>
                     </div>
                 </a><a href="/hi/how-to-grow-corn.html" class="guide-item">
-                    <h3>मकई उगाने की गाइड</h3>
-                    <p>मकई की कुशल खेती: बोना, सिंचाई, फसल।</p>
+                    <h3>मक्का उगाने का गाइड</h3>
+                    <p>मक्का की कुशल खेती: बुवाई, सिंचाई, कटाई।</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">मध्यम</span>
-                        <span class="guide-read-time">21 मिनट</span>
+                        <span class="guide-read-time">21 मिनट पढ़ने में</span>
                     </div>
                 </a><a href="/hi/how-to-build-farm.html" class="guide-item">
-                    <h3>फार्म बनाने की गाइड</h3>
-                    <p>कुशल फार्म लेआउट: सिंचाई, भंडारण, प्रसंस्करण व मार्ग।</p>
+                    <h3>खेत बनाने का गाइड</h3>
+                    <p>効率的な農場レイアウトの設計：灌漑、保管、加工、導線を最適化。</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">मध्यम</span>
-                        <span class="guide-read-time">24 मिनट</span>
+                        <span class="guide-read-time">24 मिनट पढ़ने में</span>
                     </div>
                 </a></div>
     </div>
     
     <!-- 收益攻略 -->
     <div class="category-section" data-category="profit">
-      <h2 class="category-title">💰 लाभ गाइड्स</h2>
+      <h2 class="category-title">💰 लाभ गाइड</h2>
       <div class="guides-grid">
         <a href="/hi/how-to-make-money-fast.html" class="guide-item">
-          <h3>जल्दी पैसे कमाने की गाइड</h3>
-          <p>Grow a Garden में {noun} बनाना सीखें।</p>
+          <h3>तेजी से पैसा कमाने का गाइड</h3>
+          <p>Grow a Gardenで{noun}を作るコツを学びましょう。</p>
           <div class="guide-meta">
             <span class="guide-difficulty">मध्यम</span>
-            <span class="guide-read-time">35 मिनट पढ़ने</span>
+            <span class="guide-read-time">35 मिनट पढ़ने में</span>
           </div>
         </a>
         
         <a href="/profit-strategies.html" class="guide-item">
           <h3>लाभ रणनीति गाइड</h3>
-          <p>दीर्घकालीन लाभ रणनीतियाँ, बाज़ार विश्लेषण व जोखिम नियंत्रण सीखें।</p>
+          <p>長期的なलाभ戦略、市場分析とリスク管理、販売の最適化を学ぶ。</p>
           <div class="guide-meta">
             <span class="guide-difficulty">उन्नत</span>
-            <span class="guide-read-time">45 मिनट पढ़ने</span>
+            <span class="guide-read-time">45 मिनट पढ़ने में</span>
           </div>
         </a>
       <a href="market-analysis.html" class="guide-item">
-                    <h3>बाज़ार विश्लेषण</h3>
-                    <p>बाजार रुझानों का विश्लेषण करें और लाभदायक अवसर पहचानें।</p>
+                    <h3>マーケット分析</h3>
+                    <p>市場動向を分析し、लाभ機会を見極め、販売戦略を最適化。</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">उन्नत</span>
-                        <span class="guide-read-time">20 मिनट</span>
+                        <span class="guide-read-time">20 मिनट पढ़ने में</span>
                     </div>
                 </a><a href="resource-management.html" class="guide-item">
-                    <h3>संसाधन प्रबंधन</h3>
-                    <p>संसाधन आवंटन, इन्वेंट्री व लागत अनुकूलन में महारत पाएं।</p>
+                    <h3>リソース管理</h3>
+                    <p>資源配分、在庫管理、コスト最適化などを習得。</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">मध्यम</span>
-                        <span class="guide-read-time">16 मिनट</span>
+                        <span class="guide-read-time">16 मिनट पढ़ने में</span>
                     </div>
                 </a><a href="investment-guide.html" class="guide-item">
                     <h3>निवेश गाइड</h3>
-                    <p>लंबी अवधि में अधिकतम रिटर्न हेतु कहाँ निवेश करें सीखें।</p>
+                    <p>投資先の見極めと長期リターン最大化の方法を学ぶ。</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">विशेषज्ञ</span>
-                        <span class="guide-read-time">25 मिनट</span>
+                        <span class="guide-read-time">25 मिनट पढ़ने में</span>
                     </div>
                 </a></div>
     </div>
   <div class="category-section" data-category="co-op">
-            <h2 class="category-title">👥 सहयोग व संचालन</h2>
+            <h2 class="category-title">👥 सहयोग और संचालन</h2>
             <div class="guides-grid">
                 <a href="/hi/how-to-play-with-friends.html" class="guide-item">
-                    <h3>दोस्तों के साथ खेलें</h3>
-                    <p>दोस्तों के साथ सहयोग, भूमिकाएँ और व्यापार।</p>
+                    <h3>友達と遊ぶ</h3>
+                    <p>友達と協力し、役割分担と取引で効率的な農場を。</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">मध्यम</span>
-                        <span class="guide-read-time">18 मिनट</span>
+                        <span class="guide-read-time">18 मिनट पढ़ने में</span>
                     </div>
                 </a>
 
                 <a href="storage-and-logistics.html" class="guide-item">
-                    <h3>भंडारण और लॉजिस्टिक्स</h3>
-                    <p>भंडारण व मार्ग से लॉजिस्टिक्स कुशल बनाएं।</p>
+                    <h3>保管と物流</h3>
+                    <p>保管とルート設計で物流効率を上げる。</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">मध्यम</span>
-                        <span class="guide-read-time">20 मिनट</span>
+                        <span class="guide-read-time">20 मिनट पढ़ने में</span>
                     </div>
                 </a>
             <a href="/hi/how-to-play-with-friends.html" class="guide-item">
-                    <h3>दोस्तों के साथ खेलें</h3>
-                    <p>दोस्तों के साथ सहयोग, भूमिकाएँ और व्यापार।</p>
+                    <h3>友達と遊ぶ</h3>
+                    <p>友達と協力し、役割分担と取引で効率的な農場を。</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">मध्यम</span>
-                        <span class="guide-read-time">18 मिनट</span>
+                        <span class="guide-read-time">18 मिनट पढ़ने में</span>
                     </div>
                 </a></div>
         </div><div class="category-section" data-category="advanced">
             <h2 class="category-title">🎮 उन्नत गाइड</h2>
             <div class="guides-grid">
                 <a href="game-mechanics.html" class="guide-item">
-                    <h3>गेम मैकेनिक्स</h3>
-                    <p>गेम मेकॅनिक्स, म्यूटेशन्स और उन्नत玩法 में गहराई से जाएँ।</p>
+                    <h3>ゲームメカニクス</h3>
+                    <p>ゲームメカニクス、変異、特別イベント、उन्नत要素を深掘り。</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">विशेषज्ञ</span>
-                        <span class="guide-read-time">35 मिनट</span>
+                        <span class="guide-read-time">35 मिनट पढ़ने में</span>
                     </div>
                 </a>
                 
                 <a href="mutation-guide.html" class="guide-item">
-                    <h3>म्यूटेशन गाइड</h3>
-                    <p>अधिकतम लाभ के लिए म्यूटेशन सिस्टम में महारत पाएं।</p>
+                    <h3>उत्परिवर्तन गाइड</h3>
+                    <p>ミューテーションシステムを理解し、最大लाभのために組み合わせる。</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">विशेषज्ञ</span>
-                        <span class="guide-read-time">40 मिनट</span>
+                        <span class="guide-read-time">40 मिनट पढ़ने में</span>
                     </div>
                 </a>
                 
                 <a href="special-events.html" class="guide-item">
-                    <h3>विशेष इवेंट</h3>
-                    <p>विशेष इवेंट, अवसर और विशेष पुरस्कारों की पूरी गाइड।</p>
+                    <h3>スペシャルイベント</h3>
+                    <p>सीमित समय के इवेंट, विशेष अवसरों और विशेष पुरस्कारों का पूरा गाइड।</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">उन्नत</span>
-                        <span class="guide-read-time">28 मिनट</span>
+                        <span class="guide-read-time">28 मिनट पढ़ने में</span>
                     </div>
                 </a>
                 
                 <a href="speed-running.html" class="guide-item">
-                    <h3>स्पीड रनिंग</h3>
-                    <p>उच्च दक्षता व रिकॉर्ड के लिए स्पीड रनिंग तकनीकें।</p>
+                    <h3>スピードランニング</h3>
+                    <p>効率を最大化し記録更新を目指すスピードラン技術。</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">विशेषज्ञ</span>
-                        <span class="guide-read-time">30 मिनट</span>
+                        <span class="guide-read-time">30 मिनट पढ़ने में</span>
                     </div>
                 </a>
             </div>
@@ -510,31 +506,39 @@
             <h2>💡 त्वरित सुझाव</h2>
             <div class="tips-grid">
                 <div class="tip-item">
-                    <h4>⏰ गोल्डन घंटे</h4>
-                    <p>गेम में 7:00-9:00 बजे पानी दें – डबल प्रभाव।</p>
+                    <h4>⏰ ゴールデンアワー</h4>
+                    <p>ゲーム内 7:00〜9:00 に水やりすると成長効果が2倍。</p>
                 </div>
                 <div class="tip-item">
-                    <h4>🎯 गुणवत्ता मायने रखती है</h4>
-                    <p>बेहतर सामग्री से बेहतर रेसिपी और ज़्यादा मुनाफा मिलता है।</p>
+                    <h4>🎯 品質が重要</h4>
+                    <p>高品質の材料はより良いव्यंजनと高いलाभにつながります。</p>
                 </div>
                 <div class="tip-item">
-                    <h4>📈 बाज़ार समय</h4>
-                    <p>मांग के शिखर पर बेचें ताकि अधिकतम लाभ हो।</p>
+                    <h4>📈 マーケットタイミング</h4>
+                    <p>需要が高い時間に販売してलाभを最大化。</p>
                 </div>
                 <div class="tip-item">
-                    <h4>📚 रेसिपी महारत</h4>
-                    <p>उन्नत से पहले बुनियादी रेसिपी पर महारत पाएं।</p>
+                    <h4>📚 व्यंजन習熟</h4>
+                    <p>उन्नतव्यंजनの前に基本を習得して効率アップ。</p>
                 </div>
                 <div class="tip-item">
-                    <h4>🤝 सामुदायिक सीख</h4>
-                    <p>Discord से अनुभवी खिलाड़ियों से सीखें।</p>
+                    <h4>🤝 コミュニティ学習</h4>
+                    <p>Discordで他のプレイヤーから学びましょう。</p>
                 </div>
                 <div class="tip-item">
-                    <h4>🔄 नियमित अपडेट</h4>
-                    <p>नई गाइड और रणनीतियों के लिए नियमित रूप से देखें।</p>
+                    <h4>🔄 定期的な更新</h4>
+                    <p>नए गाइड और अपडेटेड रणनीतियों के लिए नियमित रूप से जांचें।</p>
                 </div>
             </div>
-        </div><a href="/hi/index.html" class="back-btn" data-i18n="guides.back">← मुख्य कैलकुलेटर पर वापस</a></div>
+        </div>
+        
+        <div class="guides-card">
+            <h2>🏠 नेविगेशन</h2>
+            <div class="back-link-container">
+                <a href="/hi/index.html" class="back-btn" data-i18n="guides.back">← मुख्य कैलकुलेटर पर वापस जाएं</a>
+            </div>
+        </div>
+    </div>
   <script src="../i18n/i18n.js"></script>
   <script src="../script.js"></script>
 

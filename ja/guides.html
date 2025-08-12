@@ -12,22 +12,26 @@
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-  <header>
+    <header>
     <nav>
       <a href="/index.html" class="logo" data-i18n="nav.logo">🌱 Grow a Garden</a>
+      <a href="/index.html#stats" data-i18n="nav.live">ライブ統計</a>
+      <a href="/index.html#map" data-i18n="nav.map">グローバルヒートマップ</a>
+      <a href="/index.html#tips" data-i18n="nav.tips">ヒント</a>
       <a href="/guides.html" data-i18n="nav.guides">📚 ガイド</a>
+      <a href="/index.html#community" class="discord-btn" data-i18n="nav.discord">💬 Discord</a>
                   <select id="lang-switcher" aria-label="Language">
-                <option value="en">English</option>
-                <option value="zh-cn">简体中文</option>
-                <option value="es">Español</option>
-                <option value="pt-br">Português</option>
-                <option value="fr">Français</option>
-                <option value="de">Deutsch</option>
-                <option value="ru">Русский</option>
-                <option value="ar">العربية</option>
-                <option value="hi">हिन्दी</option>
-                <option value="id">Bahasa Indonesia</option>
-                <option value="vi">Tiếng Việt</option>
+                <option value="en" >English</option>
+                <option value="zh-cn" >简体中文</option>
+                <option value="es" >Español</option>
+                <option value="pt-br" >Português</option>
+                <option value="fr" >Français</option>
+                <option value="de" >Deutsch</option>
+                <option value="ru" >Русский</option>
+                <option value="ar" >العربية</option>
+                <option value="hi" >हिन्दी</option>
+                <option value="id" >Bahasa Indonesia</option>
+                <option value="vi" >Tiếng Việt</option>
                 <option value="ja" selected="">日本語</option>
             </select>
     </nav>
@@ -526,7 +530,15 @@
                     <p>新しいガイドと最新戦略のために定期的に確認。</p>
                 </div>
             </div>
-        </div><a href="/ja/index.html" class="back-btn" data-i18n="guides.back">← メイン計算機に戻る</a></div>
+        </div>
+        
+        <div class="guides-card">
+            <h2>🏠 ナビゲーション</h2>
+            <div class="back-link-container">
+                <a href="/ja/index.html" class="back-btn" data-i18n="guides.back">← メイン計算機に戻る</a>
+            </div>
+        </div>
+    </div>
   <script src="../i18n/i18n.js"></script>
   <script src="../script.js"></script>
 

@@ -2,7 +2,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <base href="/">
-  <title>Гайды по Grow a Garden - Полная коллекция</title>
+  <title>Grow a Garden Руководства - Полная Коллекция</title>
   <link rel="canonical" href="https://growagarden.cv/ru/guides.html">
   <link rel="alternate" hreflang="en" href="https://growagarden.cv/en/guides.html">
   <link rel="alternate" hreflang="zh-CN" href="https://growagarden.cv/zh-cn/guides.html">
@@ -12,39 +12,43 @@
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-  <header>
+    <header>
     <nav>
       <a href="/index.html" class="logo" data-i18n="nav.logo">🌱 Grow a Garden</a>
+      <a href="/index.html#stats" data-i18n="nav.live">ライブ統計</a>
+      <a href="/index.html#map" data-i18n="nav.map">グローバルヒートマップ</a>
+      <a href="/index.html#tips" data-i18n="nav.tips">ヒント</a>
       <a href="/guides.html" data-i18n="nav.guides">📚 Руководства</a>
+      <a href="/index.html#community" class="discord-btn" data-i18n="nav.discord">💬 Discord</a>
                   <select id="lang-switcher" aria-label="Language">
-                <option value="en">English</option>
-                <option value="zh-cn">简体中文</option>
-                <option value="es">Español</option>
-                <option value="pt-br">Português</option>
-                <option value="fr">Français</option>
-                <option value="de">Deutsch</option>
+                <option value="en" >English</option>
+                <option value="zh-cn" >简体中文</option>
+                <option value="es" >Español</option>
+                <option value="pt-br" >Português</option>
+                <option value="fr" >Français</option>
+                <option value="de" >Deutsch</option>
                 <option value="ru" selected="">Русский</option>
-                <option value="ar">العربية</option>
-                <option value="hi">हिन्दी</option>
-                <option value="id">Bahasa Indonesia</option>
-                <option value="vi">Tiếng Việt</option>
-                <option value="ja">日本語</option>
+                <option value="ar" >العربية</option>
+                <option value="hi" >हिन्दी</option>
+                <option value="id" >Bahasa Indonesia</option>
+                <option value="vi" >Tiếng Việt</option>
+                            <option value="ja" >日本語</option>
             </select>
     </nav>
   </header>
   <section class="guides-hero">
-    <h1 data-i18n="hero.guides.title">📚 Руководства Grow a Garden</h1>
+    <h1 data-i18n="hero.guides.title">📚 Grow a Garden Руководства</h1>
     <p data-i18n="hero.guides.subtitle">Полная коллекция стратегий, рецептов и игровых советов</p>
   </section>
   <div class="guides-section">
     <div class="guides-card">
-      <h2>🔍 Поиск и Фильтрация</h2>
+      <h2>🔍 Поиск и Фильтры</h2>
       <div class="search-filter-container">
         <input type="text" id="guide-search" placeholder="Поиск руководств..." class="guide-search-input">
         <div class="filter-buttons">
           <button class="filter-btn active" data-filter="all">Все</button>
           <button class="filter-btn" data-filter="recipe">Рецепты</button>
-          <button class="filter-btn" data-filter="farming">Фермерство</button>
+          <button class="filter-btn" data-filter="farming">Сельское хозяйство</button>
           <button class="filter-btn" data-filter="profit">Прибыль</button>
           <button class="filter-btn" data-filter="advanced">Продвинутый</button>
         </div>
@@ -56,34 +60,34 @@
       <h2>🔥 Популярные Руководства</h2>
       <div class="guides-grid">
         <a href="/ru/how-to-make-salad.html" class="guide-item featured-guide">
-          <div class="featured-badge">⭐ Самое Популярное</div>
-          <h3>Гайд по Салат</h3>
-          <p>Научитесь готовить Салат в Grow a Garden.</p>
+          <div class="featured-badge">⭐ Самые Популярные</div>
+          <h3>Руководство по приготовлению салатов</h3>
+          <p>Изучите секреты приготовления салатов в Grow a Garden.</p>
           <div class="guide-meta">
             <span class="guide-difficulty">Новичок</span>
-            <span class="guide-read-time">15 мин чтения</span>
+            <span class="guide-read-time">15 минут чтения</span>
             <span class="guide-views">🔥 2.5k просмотров</span>
           </div>
         </a>
         
         <a href="/ru/how-to-make-pizza.html" class="guide-item">
           <div class="trending-badge">📈 Тренд</div>
-          <h3>Гайд по Пицца</h3>
-          <p>Научитесь готовить Пицца в Grow a Garden.</p>
+          <h3>Руководство по приготовлению пиццы</h3>
+          <p>Изучите секреты приготовления пиццы в Grow a Garden.</p>
           <div class="guide-meta">
             <span class="guide-difficulty">Средний</span>
-            <span class="guide-read-time">25 мин чтения</span>
+            <span class="guide-read-time">25 минут чтения</span>
             <span class="guide-views">🔥 1.8k просмотров</span>
           </div>
         </a>
         
         <a href="/ru/how-to-make-bread.html" class="guide-item">
           <div class="new-badge">🆕 Новое</div>
-          <h3>Гайд по Хлеб</h3>
-          <p>Научитесь готовить Хлеб в Grow a Garden.</p>
+          <h3>Руководство по выпечке хлеба</h3>
+          <p>Изучите секреты выпечки хлеба в Grow a Garden.</p>
           <div class="guide-meta">
             <span class="guide-difficulty">Новичок</span>
-            <span class="guide-read-time">20 мин чтения</span>
+            <span class="guide-read-time">20 минут чтения</span>
             <span class="guide-views">🔥 1.2k просмотров</span>
           </div>
         </a>
@@ -92,441 +96,449 @@
     
     <!-- 食谱攻略 -->
     <div class="category-section" data-category="recipe">
-      <h2 class="category-title">🍽️ Руководства по Рецептам</h2>
+      <h2 class="category-title">🍽️ Руководства по рецептам</h2>
       <div class="guides-grid">
         <a href="/ru/how-to-make-salad.html" class="guide-item">
-          <h3>🥗 Руководство по Салатам</h3>
+          <h3>🥗 Руководство по приготовлению салатов</h3>
           <p>Полное руководство по приготовлению идеальных салатов в Grow a Garden. От базового сбора ингредиентов до продвинутых рецептов.</p>
           <div class="guide-meta">
             <span class="guide-difficulty">Новичок</span>
-            <span class="guide-read-time">15 мин чтения</span>
+            <span class="guide-read-time">15 минут чтения</span>
           </div>
         </a>
         
         <a href="/ru/how-to-make-pizza.html" class="guide-item">
-          <h3>🍕 Руководство по Пицце</h3>
-          <p>Научитесь готовить вкусную пиццу в Grow a Garden. От приготовления теста до комбинаций начинок.</p>
+          <h3>🍕 Руководство по приготовлению пиццы</h3>
+          <p>Изучите, как готовить вкусную пиццу в Grow a Garden. От подготовки теста до комбинаций начинок.</p>
           <div class="guide-meta">
             <span class="guide-difficulty">Средний</span>
-            <span class="guide-read-time">25 мин чтения</span>
+            <span class="guide-read-time">25 минут чтения</span>
           </div>
         </a>
         
         <a href="/ru/how-to-make-bread.html" class="guide-item">
-          <h3>🍞 Руководство по Хлебу</h3>
-          <p>Освойте техники выпечки. Изучите типы муки, управление дрожжами и оптимизацию выпечки.</p>
+          <h3>🍞 Руководство по выпечке хлеба</h3>
+          <p>Освойте технику выпечки хлеба. Изучите типы муки, управление дрожжами и оптимизацию выпекания.</p>
           <div class="guide-meta">
             <span class="guide-difficulty">Новичок</span>
-            <span class="guide-read-time">20 мин чтения</span>
+            <span class="guide-read-time">20 минут чтения</span>
           </div>
         </a>
         
         <a href="/ru/how-to-make-cake.html" class="guide-item">
-          <h3>Гайд по Торт</h3>
-          <p>Научитесь готовить Торт в Grow a Garden.</p>
+          <h3>Руководство по приготовлению тортов</h3>
+          <p>Изучите секреты приготовления тортов в Grow a Garden.</p>
           <div class="guide-meta">
             <span class="guide-difficulty">Средний</span>
-            <span class="guide-read-time">30 мин чтения</span>
+            <span class="guide-read-time">30 минут чтения</span>
           </div>
         </a>
       <a href="/ru/ice-cream-recipe.html" class="guide-item">
                     <h3>Руководство по рецептам мороженого</h3>
-                    <p>Изучите рецептуры и пропорции для вкусного и прибыльного мороженого.</p>
+                    <p>Изучите рецепты и пропорции вкусного мороженого для оптимизации прибыли и вкуса.</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">Средний</span>
-                        <span class="guide-read-time">18 мин</span>
+                        <span class="guide-read-time">18 минут чтения</span>
                     </div>
                 </a><a href="/ru/how-to-make-donut.html" class="guide-item">
-                    <h3>Гайд по пончик</h3>
-                    <p>Научитесь готовить пончик в Grow a Garden.</p>
+                    <h3>Руководство по приготовлению пончиков</h3>
+                    <p>Изучите секреты приготовления пончиков в Grow a Garden.</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">Средний</span>
-                        <span class="guide-read-time">20 мин</span>
+                        <span class="guide-read-time">20 минут чтения</span>
                     </div>
                 </a><a href="/ru/how-to-make-pie.html" class="guide-item">
-                    <h3>Гайд по Пирог</h3>
-                    <p>Научитесь готовить Пирог в Grow a Garden.</p>
+                    <h3>Руководство по приготовлению пирогов</h3>
+                    <p>Изучите секреты приготовления пирогов в Grow a Garden.</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">Средний</span>
-                        <span class="guide-read-time">25 мин</span>
+                        <span class="guide-read-time">25 минут чтения</span>
                     </div>
                 </a><a href="/ru/how-to-make-cookies.html" class="guide-item">
-                    <h3>Гайд по Печенье</h3>
-                    <p>Научитесь готовить Печенье в Grow a Garden.</p>
+                    <h3>Руководство по приготовлению печенья</h3>
+                    <p>Изучите секреты приготовления печенья в Grow a Garden.</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">Новичок</span>
-                        <span class="guide-read-time">20 мин</span>
+                        <span class="guide-read-time">20 минут чтения</span>
                     </div>
                 </a><a href="/ru/how-to-make-smoothie.html" class="guide-item">
-                    <h3>Гайд по Смузи</h3>
-                    <p>Научитесь готовить Смузи в Grow a Garden.</p>
+                    <h3>Руководство по приготовлению смузи</h3>
+                    <p>Изучите секреты приготовления смузи в Grow a Garden.</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">Новичок</span>
-                        <span class="guide-read-time">18 мин</span>
+                        <span class="guide-read-time">18 минут чтения</span>
                     </div>
                 </a><a href="/ru/how-to-make-sandwich.html" class="guide-item">
-                    <h3>Гайд по Сэндвич</h3>
-                    <p>Научитесь готовить Сэндвич в Grow a Garden.</p>
+                    <h3>Руководство по приготовлению сэндвичей</h3>
+                    <p>Изучите секреты приготовления сэндвичей в Grow a Garden.</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">Новичок</span>
-                        <span class="guide-read-time">22 мин</span>
+                        <span class="guide-read-time">22 минут чтения</span>
                     </div>
                 </a><a href="/ru/how-to-make-salad.html" class="guide-item">
-                    <h3>Гайд по Салат</h3>
-                    <p>Научитесь готовить Салат в Grow a Garden.</p>
+                    <h3>Руководство по приготовлению салатов</h3>
+                    <p>Изучите секреты приготовления салатов в Grow a Garden.</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">Новичок</span>
-                        <span class="guide-read-time">15 мин</span>
+                        <span class="guide-read-time">15 минут чтения</span>
                     </div>
                 </a><a href="/ru/how-to-make-pizza.html" class="guide-item">
-                    <h3>Гайд по Пицца</h3>
-                    <p>Научитесь готовить Пицца в Grow a Garden.</p>
+                    <h3>Руководство по приготовлению пиццы</h3>
+                    <p>Изучите секреты приготовления пиццы в Grow a Garden.</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">Средний</span>
-                        <span class="guide-read-time">25 мин</span>
+                        <span class="guide-read-time">25 минут чтения</span>
                     </div>
                 </a><a href="/ru/how-to-make-bread.html" class="guide-item">
-                    <h3>Гайд по Хлеб</h3>
-                    <p>Научитесь готовить Хлеб в Grow a Garden.</p>
+                    <h3>Руководство по выпечке хлеба</h3>
+                    <p>Изучите секреты выпечки хлеба в Grow a Garden.</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">Новичок</span>
-                        <span class="guide-read-time">20 мин</span>
+                        <span class="guide-read-time">20 минут чтения</span>
                     </div>
                 </a><a href="/ru/ice-cream-recipe.html" class="guide-item">
                     <h3>Руководство по рецептам мороженого</h3>
-                    <p>Изучите рецептуры и пропорции для вкусного и прибыльного мороженого.</p>
+                    <p>Изучите рецепты и пропорции вкусного мороженого для оптимизации прибыли и вкуса.</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">Средний</span>
-                        <span class="guide-read-time">18 мин</span>
+                        <span class="guide-read-time">18 минут чтения</span>
                     </div>
                 </a><a href="/ru/how-to-make-donut.html" class="guide-item">
-                    <h3>Гайд по пончик</h3>
-                    <p>Научитесь готовить пончик в Grow a Garden.</p>
+                    <h3>Руководство по приготовлению пончиков</h3>
+                    <p>Изучите секреты приготовления пончиков в Grow a Garden.</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">Средний</span>
-                        <span class="guide-read-time">20 мин</span>
+                        <span class="guide-read-time">20 минут чтения</span>
                     </div>
                 </a><a href="/ru/how-to-make-cake.html" class="guide-item">
-                    <h3>Гайд по Торт</h3>
-                    <p>Научитесь готовить Торт в Grow a Garden.</p>
+                    <h3>Руководство по приготовлению тортов</h3>
+                    <p>Изучите секреты приготовления тортов в Grow a Garden.</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">Продвинутый</span>
-                        <span class="guide-read-time">30 мин</span>
+                        <span class="guide-read-time">30 минут чтения</span>
                     </div>
                 </a><a href="/ru/how-to-make-pie.html" class="guide-item">
-                    <h3>Гайд по Пирог</h3>
-                    <p>Научитесь готовить Пирог в Grow a Garden.</p>
+                    <h3>Руководство по приготовлению пирогов</h3>
+                    <p>Изучите секреты приготовления пирогов в Grow a Garden.</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">Средний</span>
-                        <span class="guide-read-time">25 мин</span>
+                        <span class="guide-read-time">25 минут чтения</span>
                     </div>
                 </a><a href="/ru/how-to-make-cookies.html" class="guide-item">
-                    <h3>Гайд по Печенье</h3>
-                    <p>Научитесь готовить Печенье в Grow a Garden.</p>
+                    <h3>Руководство по приготовлению печенья</h3>
+                    <p>Изучите секреты приготовления печенья в Grow a Garden.</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">Новичок</span>
-                        <span class="guide-read-time">20 мин</span>
+                        <span class="guide-read-time">20 минут чтения</span>
                     </div>
                 </a><a href="/ru/how-to-make-smoothie.html" class="guide-item">
-                    <h3>Гайд по Смузи</h3>
-                    <p>Научитесь готовить Смузи в Grow a Garden.</p>
+                    <h3>Руководство по приготовлению смузи</h3>
+                    <p>Изучите секреты приготовления смузи в Grow a Garden.</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">Новичок</span>
-                        <span class="guide-read-time">18 мин</span>
+                        <span class="guide-read-time">18 минут чтения</span>
                     </div>
                 </a><a href="/ru/how-to-make-money-fast.html" class="guide-item">
-                    <h3>Гайд по быстрому заработку</h3>
-                    <p>Научитесь готовить {noun} в Grow a Garden.</p>
+                    <h3>Руководство по быстрому заработку</h3>
+                    <p>Grow a Gardenで{noun}を作るコツを学びましょう。</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">Продвинутый</span>
-                        <span class="guide-read-time">25 мин</span>
+                        <span class="guide-read-time">25 минут чтения</span>
                     </div>
                 </a><a href="/ru/how-to-make-sandwich.html" class="guide-item">
-                    <h3>Гайд по Сэндвич</h3>
-                    <p>Научитесь готовить Сэндвич в Grow a Garden.</p>
+                    <h3>Руководство по приготовлению сэндвичей</h3>
+                    <p>Изучите секреты приготовления сэндвичей в Grow a Garden.</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">Новичок</span>
-                        <span class="guide-read-time">22 мин</span>
+                        <span class="guide-read-time">22 минут чтения</span>
                     </div>
                 </a></div>
     </div>
     
     <!-- 种植攻略 -->
     <div class="category-section" data-category="farming">
-      <h2 class="category-title">🌱 Руководства по Фермерству</h2>
+      <h2 class="category-title">🌱 Руководства по сельскому хозяйству</h2>
       <div class="guides-grid">
         <a href="/ru/how-to-grow-corn.html" class="guide-item">
-          <h3>Гайд по выращиванию Кукуруза</h3>
-          <p>Эффективное выращивание Кукуруза: посадка, полив, сбор.</p>
+          <h3>Руководство по выращиванию кукурузы</h3>
+          <p>Эффективное выращивание кукурузы: посев, полив, сбор урожая.</p>
           <div class="guide-meta">
             <span class="guide-difficulty">Новичок</span>
-            <span class="guide-read-time">18 мин чтения</span>
+            <span class="guide-read-time">18 минут чтения</span>
           </div>
         </a>
         
         <a href="/ru/how-to-grow-oranges.html" class="guide-item">
-          <h3>Гайд по выращиванию Апельсин</h3>
-          <p>Эффективное выращивание Апельсин: посадка, полив, сбор.</p>
+          <h3>Руководство по выращиванию апельсинов</h3>
+          <p>Эффективное выращивание апельсинов: посев, полив, сбор урожая.</p>
           <div class="guide-meta">
             <span class="guide-difficulty">Средний</span>
-            <span class="guide-read-time">22 мин чтения</span>
+            <span class="guide-read-time">22 минут чтения</span>
           </div>
         </a>
       <a href="/ru/how-to-grow-wheat.html" class="guide-item">
-                    <h3>Гайд по выращиванию Пшеница</h3>
-                    <p>Эффективное выращивание Пшеница: посадка, полив, сбор.</p>
+                    <h3>Руководство по выращиванию пшеницы</h3>
+                    <p>Эффективное выращивание пшеницы: посев, полив, сбор урожая.</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">Новичок</span>
-                        <span class="guide-read-time">20 мин</span>
+                        <span class="guide-read-time">20 минут чтения</span>
                     </div>
                 </a><a href="farming-basics.html" class="guide-item">
-                    <h3>Основы земледелия</h3>
-                    <p>Базовые техники: полив и управление культурами.</p>
+                    <h3>栽培の基礎</h3>
+                    <p>基本的な栽培技術・水やり・作物管理のポイント。</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">Новичок</span>
-                        <span class="guide-read-time">12 мин</span>
+                        <span class="guide-read-time">12 минут чтения</span>
                     </div>
                 </a><a href="watering-strategies.html" class="guide-item">
-                    <h3>Стратегии полива</h3>
-                    <p>Время, частота и эффективность полива.</p>
+                    <h3>水やり戦略</h3>
+                    <p>最適な水やりのタイミング・頻度・効率を学ぶ。</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">Новичок</span>
-                        <span class="guide-read-time">10 мин</span>
+                        <span class="guide-read-time">10 минут чтения</span>
                     </div>
                 </a><a href="crop-rotation.html" class="guide-item">
                     <h3>Руководство по севообороту</h3>
-                    <p>Эффективный севооборот для плодородия.</p>
+                    <p>効果的な輪作戦略で土壌肥沃度を維持し収量を最大化。</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">Средний</span>
-                        <span class="guide-read-time">15 мин</span>
+                        <span class="guide-read-time">15 минут чтения</span>
                     </div>
                 </a><a href="seed-selection.html" class="guide-item">
-                    <h3>Выбор семян – руководство</h3>
-                    <p>Выбирайте семена; сравнивайте сроки и урожайность.</p>
+                    <h3>Руководство по выбору семян</h3>
+                    <p>戦略に合う種を選び、成長とПрибыльを比較。</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">Средний</span>
-                        <span class="guide-read-time">18 мин</span>
+                        <span class="guide-read-time">18 минут чтения</span>
                     </div>
                 </a><a href="/ru/how-to-grow-carrots.html" class="guide-item">
-                    <h3>Гайд по выращиванию Морковь</h3>
-                    <p>Эффективное выращивание Морковь: посадка, полив, сбор.</p>
+                    <h3>Руководство по выращиванию моркови</h3>
+                    <p>Эффективное выращивание моркови: посев, полив, сбор урожая.</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">Новичок</span>
-                        <span class="guide-read-time">18 мин</span>
+                        <span class="guide-read-time">18 минут чтения</span>
                     </div>
                 </a><a href="/ru/how-to-grow-apples.html" class="guide-item">
-                    <h3>Гайд по выращиванию Яблоко</h3>
-                    <p>Эффективное выращивание Яблоко: посадка, полив, сбор.</p>
+                    <h3>Руководство по выращиванию яблок</h3>
+                    <p>Эффективное выращивание яблок: посев, полив, сбор урожая.</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">Средний</span>
-                        <span class="guide-read-time">22 мин</span>
+                        <span class="guide-read-time">22 минут чтения</span>
                     </div>
                 </a><a href="/ru/how-to-grow-berries.html" class="guide-item">
-                    <h3>Гайд по выращиванию Ягоды</h3>
-                    <p>Эффективное выращивание Ягоды: посадка, полив, сбор.</p>
+                    <h3>Руководство по выращиванию ягод</h3>
+                    <p>Эффективное выращивание ягод: посев, полив, сбор урожая.</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">Средний</span>
-                        <span class="guide-read-time">20 мин</span>
+                        <span class="guide-read-time">20 минут чтения</span>
                     </div>
                 </a><a href="/ru/how-to-build-farm.html" class="guide-item">
                     <h3>Руководство по строительству фермы</h3>
-                    <p>Проектирование эффективной фермы: орошение, склад, переработка и потоки.</p>
+                    <p>効率的な農場レイアウトの設計：灌漑、保管、加工、導線を最適化。</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">Средний</span>
-                        <span class="guide-read-time">24 мин</span>
+                        <span class="guide-read-time">24 минут чтения</span>
                     </div>
                 </a><a href="/ru/how-to-grow-wheat.html" class="guide-item">
-                    <h3>Гайд по выращиванию Пшеница</h3>
-                    <p>Эффективное выращивание Пшеница: посадка, полив, сбор.</p>
+                    <h3>Руководство по выращиванию пшеницы</h3>
+                    <p>Эффективное выращивание пшеницы: посев, полив, сбор урожая.</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">Новичок</span>
-                        <span class="guide-read-time">20 мин</span>
+                        <span class="guide-read-time">20 минут чтения</span>
                     </div>
                 </a><a href="/ru/how-to-grow-carrots.html" class="guide-item">
-                    <h3>Гайд по выращиванию Морковь</h3>
-                    <p>Эффективное выращивание Морковь: посадка, полив, сбор.</p>
+                    <h3>Руководство по выращиванию моркови</h3>
+                    <p>Эффективное выращивание моркови: посев, полив, сбор урожая.</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">Новичок</span>
-                        <span class="guide-read-time">18 мин</span>
+                        <span class="guide-read-time">18 минут чтения</span>
                     </div>
                 </a><a href="/ru/how-to-grow-apples.html" class="guide-item">
-                    <h3>Гайд по выращиванию Яблоко</h3>
-                    <p>Эффективное выращивание Яблоко: посадка, полив, сбор.</p>
+                    <h3>Руководство по выращиванию яблок</h3>
+                    <p>Эффективное выращивание яблок: посев, полив, сбор урожая.</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">Средний</span>
-                        <span class="guide-read-time">22 мин</span>
+                        <span class="guide-read-time">22 минут чтения</span>
                     </div>
                 </a><a href="/ru/how-to-grow-oranges.html" class="guide-item">
-                    <h3>Гайд по выращиванию Апельсин</h3>
-                    <p>Эффективное выращивание Апельсин: посадка, полив, сбор.</p>
+                    <h3>Руководство по выращиванию апельсинов</h3>
+                    <p>Эффективное выращивание апельсинов: посев, полив, сбор урожая.</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">Средний</span>
-                        <span class="guide-read-time">21 мин</span>
+                        <span class="guide-read-time">21 минут чтения</span>
                     </div>
                 </a><a href="/ru/how-to-grow-berries.html" class="guide-item">
-                    <h3>Гайд по выращиванию Ягоды</h3>
-                    <p>Эффективное выращивание Ягоды: посадка, полив, сбор.</p>
+                    <h3>Руководство по выращиванию ягод</h3>
+                    <p>Эффективное выращивание ягод: посев, полив, сбор урожая.</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">Средний</span>
-                        <span class="guide-read-time">20 мин</span>
+                        <span class="guide-read-time">20 минут чтения</span>
                     </div>
                 </a><a href="/ru/how-to-grow-corn.html" class="guide-item">
-                    <h3>Гайд по выращиванию Кукуруза</h3>
-                    <p>Эффективное выращивание Кукуруза: посадка, полив, сбор.</p>
+                    <h3>Руководство по выращиванию кукурузы</h3>
+                    <p>Эффективное выращивание кукурузы: посев, полив, сбор урожая.</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">Средний</span>
-                        <span class="guide-read-time">21 мин</span>
+                        <span class="guide-read-time">21 минут чтения</span>
                     </div>
                 </a><a href="/ru/how-to-build-farm.html" class="guide-item">
                     <h3>Руководство по строительству фермы</h3>
-                    <p>Проектирование эффективной фермы: орошение, склад, переработка и потоки.</p>
+                    <p>効率的な農場レイアウトの設計：灌漑、保管、加工、導線を最適化。</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">Средний</span>
-                        <span class="guide-read-time">24 мин</span>
+                        <span class="guide-read-time">24 минут чтения</span>
                     </div>
                 </a></div>
     </div>
     
     <!-- 收益攻略 -->
     <div class="category-section" data-category="profit">
-      <h2 class="category-title">💰 Руководства по Прибыли</h2>
+      <h2 class="category-title">💰 Руководства по прибыли</h2>
       <div class="guides-grid">
         <a href="/ru/how-to-make-money-fast.html" class="guide-item">
-          <h3>Гайд по быстрому заработку</h3>
-          <p>Научитесь готовить {noun} в Grow a Garden.</p>
+          <h3>Руководство по быстрому заработку</h3>
+          <p>Grow a Gardenで{noun}を作るコツを学びましょう。</p>
           <div class="guide-meta">
             <span class="guide-difficulty">Средний</span>
-            <span class="guide-read-time">35 мин чтения</span>
+            <span class="guide-read-time">35 минут чтения</span>
           </div>
         </a>
         
         <a href="/profit-strategies.html" class="guide-item">
-          <h3>Стратегии прибыли</h3>
-          <p>Освойте долгосрочные стратегии прибыли, анализ рынка и управление рисками.</p>
+          <h3>Руководство по стратегиям прибыли</h3>
+          <p>長期的なПрибыль戦略、市場分析とリスク管理、販売の最適化を学ぶ。</p>
           <div class="guide-meta">
             <span class="guide-difficulty">Продвинутый</span>
-            <span class="guide-read-time">45 мин чтения</span>
+            <span class="guide-read-time">45 минут чтения</span>
           </div>
         </a>
       <a href="market-analysis.html" class="guide-item">
-                    <h3>Анализ рынка</h3>
-                    <p>Научитесь анализировать тренды и находить выгодные возможности.</p>
+                    <h3>マーケット分析</h3>
+                    <p>市場動向を分析し、Прибыль機会を見極め、販売戦略を最適化。</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">Продвинутый</span>
-                        <span class="guide-read-time">20 мин</span>
+                        <span class="guide-read-time">20 минут чтения</span>
                     </div>
                 </a><a href="resource-management.html" class="guide-item">
-                    <h3>Управление ресурсами</h3>
-                    <p>Освойте распределение ресурсов, запасы и оптимизацию затрат.</p>
+                    <h3>リソース管理</h3>
+                    <p>資源配分、在庫管理、コスト最適化などを習得。</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">Средний</span>
-                        <span class="guide-read-time">16 мин</span>
+                        <span class="guide-read-time">16 минут чтения</span>
                     </div>
                 </a><a href="investment-guide.html" class="guide-item">
-                    <h3>Инвестиционный гайд</h3>
-                    <p>Узнайте, куда инвестировать для максимальной доходности.</p>
+                    <h3>Руководство по инвестициям</h3>
+                    <p>投資先の見極めと長期リターン最大化の方法を学ぶ。</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">Эксперт</span>
-                        <span class="guide-read-time">25 мин</span>
+                        <span class="guide-read-time">25 минут чтения</span>
                     </div>
                 </a></div>
     </div>
   <div class="category-section" data-category="co-op">
-            <h2 class="category-title">👥 Совместная игра и операции</h2>
+            <h2 class="category-title">👥 Сотрудничество и Эксплуатация</h2>
             <div class="guides-grid">
                 <a href="/ru/how-to-play-with-friends.html" class="guide-item">
-                    <h3>Играть с друзьями</h3>
-                    <p>Играйте с друзьями: роли и обмен.</p>
+                    <h3>友達と遊ぶ</h3>
+                    <p>友達と協力し、役割分担と取引で効率的な農場を。</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">Средний</span>
-                        <span class="guide-read-time">18 мин</span>
+                        <span class="guide-read-time">18 минут чтения</span>
                     </div>
                 </a>
 
                 <a href="storage-and-logistics.html" class="guide-item">
-                    <h3>Хранение и логистика</h3>
-                    <p>Оптимизируйте логистику: склад и маршруты.</p>
+                    <h3>保管と物流</h3>
+                    <p>保管とルート設計で物流効率を上げる。</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">Средний</span>
-                        <span class="guide-read-time">20 мин</span>
+                        <span class="guide-read-time">20 минут чтения</span>
                     </div>
                 </a>
             <a href="/ru/how-to-play-with-friends.html" class="guide-item">
-                    <h3>Играть с друзьями</h3>
-                    <p>Играйте с друзьями: роли и обмен.</p>
+                    <h3>友達と遊ぶ</h3>
+                    <p>友達と協力し、役割分担と取引で効率的な農場を。</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">Средний</span>
-                        <span class="guide-read-time">18 мин</span>
+                        <span class="guide-read-time">18 минут чтения</span>
                     </div>
                 </a></div>
         </div><div class="category-section" data-category="advanced">
             <h2 class="category-title">🎮 Продвинутые руководства</h2>
             <div class="guides-grid">
                 <a href="game-mechanics.html" class="guide-item">
-                    <h3>Механики игры</h3>
-                    <p>Погружение в механики, мутации, события и продвинутый геймплей.</p>
+                    <h3>ゲームメカニクス</h3>
+                    <p>ゲームメカニクス、変異、特別イベント、Продвинутый要素を深掘り。</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">Эксперт</span>
-                        <span class="guide-read-time">35 мин</span>
+                        <span class="guide-read-time">35 минут чтения</span>
                     </div>
                 </a>
                 
                 <a href="mutation-guide.html" class="guide-item">
                     <h3>Руководство по мутациям</h3>
-                    <p>Освойте систему мутаций для максимальной выгоды.</p>
+                    <p>ミューテーションシステムを理解し、最大Прибыльのために組み合わせる。</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">Эксперт</span>
-                        <span class="guide-read-time">40 мин</span>
+                        <span class="guide-read-time">40 минут чтения</span>
                     </div>
                 </a>
                 
                 <a href="special-events.html" class="guide-item">
-                    <h3>Особые события</h3>
-                    <p>Полное руководство по спецсобытиям, возможностям и наградам.</p>
+                    <h3>スペシャルイベント</h3>
+                    <p>Полное руководство по ограниченным по времени событиям, особым возможностям и эксклюзивным наградам.</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">Продвинутый</span>
-                        <span class="guide-read-time">28 мин</span>
+                        <span class="guide-read-time">28 минут чтения</span>
                     </div>
                 </a>
                 
                 <a href="speed-running.html" class="guide-item">
-                    <h3>Скоростное прохождение</h3>
-                    <p>Техники спидрана для максимальной эффективности и рекордов.</p>
+                    <h3>スピードランニング</h3>
+                    <p>効率を最大化し記録更新を目指すスピードラン技術。</p>
                     <div class="guide-meta">
                         <span class="guide-difficulty">Эксперт</span>
-                        <span class="guide-read-time">30 мин</span>
+                        <span class="guide-read-time">30 минут чтения</span>
                     </div>
                 </a>
             </div>
         </div><div class="guides-card">
-            <h2>💡 Быстрые советы</h2>
+            <h2>💡 Быстрые Советы</h2>
             <div class="tips-grid">
                 <div class="tip-item">
-                    <h4>⏰ Золотые часы</h4>
-                    <p>Поливайте с 7:00 до 9:00 — двойной эффект роста.</p>
+                    <h4>⏰ ゴールデンアワー</h4>
+                    <p>ゲーム内 7:00〜9:00 に水やりすると成長効果が2倍。</p>
                 </div>
                 <div class="tip-item">
-                    <h4>🎯 Качество важно</h4>
-                    <p>Лучшие ингредиенты — лучшие рецепты и прибыль.</p>
+                    <h4>🎯 品質が重要</h4>
+                    <p>高品質の材料はより良いРецептыと高いПрибыльにつながります。</p>
                 </div>
                 <div class="tip-item">
-                    <h4>📈 Тайминг рынка</h4>
-                    <p>Продавайте в пик спроса для максимальной прибыли.</p>
+                    <h4>📈 マーケットタイミング</h4>
+                    <p>需要が高い時間に販売してПрибыльを最大化。</p>
                 </div>
                 <div class="tip-item">
-                    <h4>📚 Мастерство рецептов</h4>
-                    <p>Освойте базовые рецепты перед сложными.</p>
+                    <h4>📚 Рецепты習熟</h4>
+                    <p>ПродвинутыйРецептыの前に基本を習得して効率アップ。</p>
                 </div>
                 <div class="tip-item">
-                    <h4>🤝 Обучение в сообществе</h4>
-                    <p>Вступайте в Discord и учитесь у опытных игроков.</p>
+                    <h4>🤝 コミュニティ学習</h4>
+                    <p>Discordで他のプレイヤーから学びましょう。</p>
                 </div>
                 <div class="tip-item">
-                    <h4>🔄 Регулярные обновления</h4>
-                    <p>Чаще заглядывайте за новыми гайдами и стратегиями.</p>
+                    <h4>🔄 定期的な更新</h4>
+                    <p>Регулярно проверяйте наличие новых руководств и обновленных стратегий.</p>
                 </div>
             </div>
-        </div><a href="/ru/index.html" class="back-btn" data-i18n="guides.back">← Назад к основному калькулятору</a></div>
+        </div>
+        
+        <div class="guides-card">
+            <h2>🏠 Навигация</h2>
+            <div class="back-link-container">
+                <a href="/ru/index.html" class="back-btn" data-i18n="guides.back">← Вернуться к Главному Калькулятору</a>
+            </div>
+        </div>
+    </div>
   <script src="../i18n/i18n.js"></script>
   <script src="../script.js"></script>
 

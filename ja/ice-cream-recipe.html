@@ -247,16 +247,30 @@
 </head>
 <body>
     <div class="bg-blur"></div>
-    <header>
-        <nav>
-            <a href="/ja/index.html" class="logo">🌱 Grow a Garden</a>
-            <a href="javascript:void(0)" onclick="scrollToSection('stats')">Live Stats</a>
-            <a href="javascript:void(0)" onclick="scrollToSection('map')">Global Heatmap</a>
-            <a href="javascript:void(0)" onclick="scrollToSection('tips')">Tips</a>
-            <a href="/ja/guides.html">📚 ガイド</a>
-            <a href="javascript:void(0)" onclick="scrollToSection('community')" class="discord-btn">💬 Discord</a>
-        </nav>
-    </header>
+        <header>
+    <nav>
+      <a href="/index.html" class="logo" data-i18n="nav.logo">🌱 Grow a Garden</a>
+      <a href="/index.html#stats" data-i18n="nav.live">ライブ統計</a>
+      <a href="/index.html#map" data-i18n="nav.map">グローバルヒートマップ</a>
+      <a href="/index.html#tips" data-i18n="nav.tips">ヒント</a>
+      <a href="/guides.html" data-i18n="nav.guides">📚 ガイド</a>
+      <a href="/index.html#community" class="discord-btn" data-i18n="nav.discord">💬 Discord</a>
+                  <select id="lang-switcher" aria-label="Language">
+                <option value="en" >English</option>
+                <option value="zh-cn" >简体中文</option>
+                <option value="es" >Español</option>
+                <option value="pt-br" >Português</option>
+                <option value="fr" >Français</option>
+                <option value="de" >Deutsch</option>
+                <option value="ru" >Русский</option>
+                <option value="ar" >العربية</option>
+                <option value="hi" >हिन्दी</option>
+                <option value="id" >Bahasa Indonesia</option>
+                <option value="vi" >Tiếng Việt</option>
+                <option value="ja" selected="">日本語</option>
+            </select>
+    </nav>
+  </header>
     
     <section class="ice-cream-hero">
         <h1>アイスクリームレシピガイド</h1>

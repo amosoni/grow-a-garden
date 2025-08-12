@@ -2693,6 +2693,29 @@ nav a,
   }
 } 
 
+/* 统一guides-card之间的间距 */
+.guides-card {
+  margin-bottom: 30px !important;
+}
+
+.guides-card:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* 统一category-section之间的间距 */
+.category-section {
+  margin-bottom: 30px !important;
+}
+
+.category-section:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* 调整tips-grid的顶部间距，使其与标题更紧密 */
+.tips-grid {
+  margin-top: 15px !important;
+}
+
 /* ========================================
    CSS变量和基础样式
    ======================================== */
@@ -2725,6 +2748,88 @@ nav a,
 
 * {
     box-sizing: border-box;
+} 
+
+/* 返回链接容器样式 */
+.back-link-container {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.back-btn {
+  display: inline-block;
+  padding: 15px 30px;
+  background: linear-gradient(135deg, var(--primary-blue), var(--accent-green));
+  color: var(--text-light);
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: var(--transition);
+  border: 2px solid transparent;
+}
+
+.back-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--accent-yellow);
+  background: linear-gradient(135deg, var(--accent-green), var(--primary-blue));
+}
+
+/* 提示项目卡片样式 */
+.tip-item {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--border-radius);
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.tip-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-yellow), var(--accent-green));
+  transform: scaleX(0);
+  transition: var(--transition);
+}
+
+.tip-item:hover::before {
+  transform: scaleX(1);
+}
+
+.tip-item:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--accent-yellow);
+}
+
+.tip-item h4 {
+  color: var(--text-light);
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.tip-item p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* 调整tips-grid布局 */
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
 } 
 
  
