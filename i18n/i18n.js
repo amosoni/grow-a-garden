@@ -118,6 +118,9 @@
       // Hydrate Article pages content (body text) when localized exists
       await hydrateArticleFromLocalized(lang);
 
+      // NEW: Localize article labels via keys (works on both root and localized paths)
+      localizeArticleLabels(lang, dict);
+
       // Re-run link rewriting to ensure injected links also carry ?lang
       rewriteLocalLinks(lang);
     }catch(e){ console.warn("i18n load failed", e); }
@@ -482,8 +485,9 @@
       const tmp = document.implementation.createHTMLDocument('x');
       tmp.documentElement.innerHTML = html;
       const mainLocal = tmp.querySelector('main');
-      if (mainLocal && mainCur) {
-        mainCur.replaceWith(mainLocal);
+      const mainCur2 = document.querySelector('main');
+      if (mainLocal && mainCur2) {
+        mainCur2.replaceWith(mainLocal);
       } else if (mainLocal) {
         const h1C = document.querySelector('h1');
         if (h1C) h1C.textContent = (mainLocal.querySelector('h1')?.textContent || h1C.textContent);
@@ -546,6 +550,51 @@
     }catch(_e){}
   }
   
+  // NEW: Localize article labels via keys and basic pattern rules
+  function localizeArticleLabels(lang, dict){
+    try{
+      const base = (location.pathname.split('/').pop() || '').toLowerCase();
+      if (!/^[a-z0-9-]+\.html$/.test(base)) return;
+      // Only target salad for now
+      if (base !== 'how-to-make-salad.html') return;
+      const t = (k)=> (dict && dict[k]) || null;
+      // Section titles
+      const h3List = Array.from(document.querySelectorAll('h3'));
+      h3List.forEach(h3=>{
+        const tx = (h3.textContent||'').trim();
+        if (/^basic salad recipes$/i.test(tx) && t('salad.recipes.basicTitle')) h3.textContent = t('salad.recipes.basicTitle');
+        if (/^luxury salad recipes$/i.test(tx) && t('salad.recipes.luxuryTitle')) h3.textContent = t('salad.recipes.luxuryTitle');
+      });
+      // Table headers
+      document.querySelectorAll('table thead th').forEach(th=>{
+        const s = (th.textContent||'').trim().toLowerCase();
+        if (/^name|salad name$/i.test(s) && t('salad.recipes.headers.name')) th.textContent = t('salad.recipes.headers.name');
+        if (/^ingredients|needed ingredients$/i.test(s) && t('salad.recipes.headers.ingredients')) th.textContent = t('salad.recipes.headers.ingredients');
+        if (/^time|cook time|prep time|調理時間$/i.test(s) && t('salad.recipes.headers.time')) th.textContent = t('salad.recipes.headers.time');
+        if (/^rewards|reward value$/i.test(s) && t('salad.recipes.headers.rewards')) th.textContent = t('salad.recipes.headers.rewards');
+        if (/^effects|special effect|特別効果$/i.test(s) && t('salad.recipes.headers.effect')) th.textContent = t('salad.recipes.headers.effect');
+      });
+      // Effects common phrases
+      const FX = {
+        'basic nutrition': 'salad.effects.basicNutrition',
+        'vitamin rich': 'salad.effects.vitaminRich',
+        'high moisture': 'salad.effects.highMoisture'
+      };
+      document.querySelectorAll('td, p, li, span').forEach(el=>{
+        const raw = (el.textContent||'').trim();
+        const lower = raw.toLowerCase();
+        Object.keys(FX).forEach(k=>{ if (lower === k && t(FX[k])) el.textContent = t(FX[k]); });
+        // time like "5 minutes"
+        el.textContent = el.textContent.replace(/(\d+)\s*minutes/gi, (m, g1)=>{
+          if (lang === 'ja') return `${g1}分`;
+          if (lang === 'zh-cn') return `${g1} 分钟`;
+          if (lang === 'es') return `${g1} minutos`;
+          return m;
+        });
+      });
+    }catch(_e){}
+  }
+
   function switchLang(lang){
     if (!supported.includes(lang)) return;
     localStorage.setItem(storageKey, lang);
