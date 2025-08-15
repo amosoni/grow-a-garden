@@ -73,21 +73,33 @@
         
         // 如果没有语言参数，默认重定向到英文
         if (!lang) {
-          window.location.replace('/en/index.html');
-          return;
+          // 检查当前路径是否已经在语言目录中
+          var currentPath = window.location.pathname;
+          if (!currentPath.includes('/en/') && !currentPath.includes('/zh-cn/') && 
+              !currentPath.includes('/es/') && !currentPath.includes('/pt-br/') && 
+              !currentPath.includes('/fr/') && !currentPath.includes('/de/') && 
+              !currentPath.includes('/ru/') && !currentPath.includes('/ar/') && 
+              !currentPath.includes('/hi/') && !currentPath.includes('/id/') && 
+              !currentPath.includes('/vi/') && !currentPath.includes('/ja/')) {
+            window.location.replace('/en/index.html');
+            return;
+          }
         }
         
         // 如果有语言参数，重定向到对应的语言目录
-        if (lang !== 'en') {
-          window.location.replace('/' + lang + '/index.html');
-          return;
+        if (lang && lang !== 'en') {
+          var currentPath = window.location.pathname;
+          if (!currentPath.includes('/' + lang + '/')) {
+            window.location.replace('/' + lang + '/index.html');
+            return;
+          }
         }
       })();
       
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-HG12TJB5Z');
+      gtag('config', 'G-HG12TJB5LZ');
     </script>
     <link rel="alternate" hreflang="en" href="/index.html?lang=en">
     <link rel="alternate" hreflang="zh-CN" href="/index.html?lang=zh-cn">
@@ -112,6 +124,7 @@
             <a href="javascript:void(0)" onclick="scrollToSection('map')" data-i18n="nav.map">Global Heatmap</a>
             <a href="javascript:void(0)" onclick="scrollToSection('tips')" data-i18n="nav.tips">Tips</a>
             <a href="guides.html" data-i18n="nav.guides">📚 Guides</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('online')" data-i18n="nav.online">🎮 Online</a>
             <a href="javascript:void(0)" onclick="scrollToSection('community')" class="discord-btn" data-i18n="nav.discord">💬 Discord</a>
             <select id="lang-switcher" aria-label="Language">
                 <option value="en">English</option>
@@ -317,6 +330,45 @@
                     <li><strong data-i18n="tips.achievement.hidden">Hidden</strong>: <span data-i18n="tips.achievement.hiddenDesc">Plant at special times</span></li>
                 </ul>
                 <a href="#" class="tip-link" data-i18n="tips.achievement.seeAll">See All Achievements →</a>
+            </div>
+        </div>
+    </section>
+    <section id="online" class="online-section">
+        <h2><span class="title-glass" data-i18n="online.title">🎮 Play Grow a Garden Online</span></h2>
+        <div class="online-container glass">
+            <div class="game-preview">
+                <div class="game-icon">🌱</div>
+                <h3 data-i18n="online.gameTitle">Grow a Garden</h3>
+                <p class="game-description" data-i18n="online.gameDescription">
+                    Experience the ultimate farming adventure! Plant seeds, grow crops, discover mutations, 
+                    and build your dream garden in this addictive Roblox game.
+                </p>
+                <div class="game-features">
+                    <div class="game-feature">
+                        <span class="feature-icon">🌱</span>
+                        <span data-i18n="online.feature.plant">Plant & Grow</span>
+                    </div>
+                    <div class="game-feature">
+                        <span class="feature-icon">🧬</span>
+                        <span data-i18n="online.feature.mutations">Mutations</span>
+                    </div>
+                    <div class="game-feature">
+                        <span class="feature-icon">💰</span>
+                        <span data-i18n="online.feature.profit">Profit</span>
+                    </div>
+                    <div class="game-feature">
+                        <span class="feature-icon">👥</span>
+                        <span data-i18n="online.feature.multiplayer">Multiplayer</span>
+                    </div>
+                </div>
+                <div class="game-actions">
+                    <a href="https://www.miniplay.com/embed/grow-a-garden" target="_blank" class="play-btn" data-i18n="online.playNow">
+                        🎮 Play Now on MiniPlay
+                    </a>
+                    <a href="game.html" class="play-btn secondary" data-i18n="online.playOnSite">
+                        🏠 Play on Our Site
+                    </a>
+                </div>
             </div>
         </div>
     </section>

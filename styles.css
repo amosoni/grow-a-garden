@@ -39,7 +39,7 @@ body {
 }
 
 /* 主要内容区域占据剩余空间 */
-.hero, .live-stats-section, .stats-section, .map-section, .tips-section, .community-section {
+.hero, .live-stats-section, .stats-section, .map-section, .tips-section, .online-section, .community-section {
     flex: 1 0 auto;
     margin: 0 auto;
     max-width: 1200px;
@@ -50,7 +50,7 @@ body {
 }
 
 /* 最后一个section不需要底部边框 */
-.community-section {
+.online-section {
     border-bottom: none;
 }
 
@@ -59,7 +59,8 @@ body {
 .live-stats-section + .stats-section,
 .stats-section + .map-section,
 .map-section + .tips-section,
-.tips-section + .community-section {
+.tips-section + .online-section,
+.online-section + .community-section {
     margin-top: 1rem; /* 添加额外的顶部间距 */
 }
 
@@ -97,6 +98,10 @@ body {
 }
 
 .tips-section {
+    padding: 2.5rem 2rem;
+}
+
+.online-section {
     padding: 2.5rem 2rem;
 }
 
@@ -152,6 +157,43 @@ header {
   z-index: 9999;
   background: rgba(35, 39, 42, 0.95);
   backdrop-filter: blur(10px);
+}
+
+/* 攻略页面导航栏样式 */
+.nav-container {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 9999 !important;
+    background: rgba(35, 39, 42, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+}
+
+/* 攻略页面主体样式 */
+.guide-page {
+    position: relative !important;
+    min-height: 100vh !important;
+    overflow-x: hidden !important;
+}
+
+.guide-page .bg-blur {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: 0 !important;
+    background: url('grow-bg.jpg') center center/cover no-repeat !important;
+    opacity: 0.3 !important;
+    filter: blur(2px) !important;
+}
+
+.guide-page .content-wrapper {
+    position: relative !important;
+    z-index: 1 !important;
+    margin-top: 60px !important; /* 为固定导航栏留出空间 */
 }
 
 nav {
@@ -578,6 +620,134 @@ nav a:hover {
 
 .tip-link:hover {
     color: #404eed;
+}
+
+/* 在线游戏区域 */
+.online-section {
+    background: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    flex: 1 !important;
+}
+
+.online-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
+    color: #23272a !important;
+    font-weight: 900 !important;
+    letter-spacing: 0.5px;
+    text-shadow: none !important;
+    background: none !important;
+    opacity: 1 !important;
+}
+
+.online-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem;
+    text-align: center;
+}
+
+.game-preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.game-icon {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+}
+
+.game-preview h3 {
+    color: #ffffff;
+    font-size: 2.5rem;
+    margin: 0;
+    font-weight: 700;
+}
+
+.game-description {
+    color: #e0e0e0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0;
+}
+
+.game-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+    max-width: 600px;
+}
+
+.game-feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.game-feature:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.feature-icon {
+    font-size: 2rem;
+}
+
+.game-feature span:last-child {
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.game-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.play-btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.play-btn:first-child {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+}
+
+.play-btn:first-child:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.play-btn.secondary {
+    background: transparent;
+    color: #ffffff;
+    border-color: #667eea;
+}
+
+.play-btn.secondary:hover {
+    background: #667eea;
+    color: white;
+    transform: translateY(-3px);
 }
 
 /* 社区区域 */
@@ -2830,6 +3000,127 @@ nav a,
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
   margin-top: 20px;
+} 
+
+/* 强制覆盖simple.css的样式 */
+.guide-page header.nav-container {
+    background: rgba(35, 39, 42, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.guide-page header.nav-container nav {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.guide-page header.nav-container nav a {
+    color: #ffffff !important;
+    background: transparent !important;
+    border: none !important;
+    text-decoration: none !important;
+}
+
+.guide-page header.nav-container nav a:hover {
+    background: rgba(88, 101, 242, 0.8) !important;
+    color: white !important;
+    transform: translateY(-2px) !important;
+}
+
+.guide-page header.nav-container .discord-btn {
+    background: #5865f2 !important;
+    color: white !important;
+    border-radius: 6px !important;
+    padding: 0.5rem 1rem !important;
+}
+
+.guide-page header.nav-container .discord-btn:hover {
+    background: #4752c4 !important;
+    transform: translateY(-2px) !important;
+}
+
+/* 确保攻略页面的背景图片正确显示 */
+.guide-page .bg-blur {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: 0 !important;
+    background: url('grow-bg.jpg') center center/cover no-repeat !important;
+    opacity: 0.3 !important;
+    filter: blur(2px) !important;
+}
+
+/* 确保攻略页面的内容有正确的间距 */
+.guide-page .content-wrapper {
+    position: relative !important;
+    z-index: 1 !important;
+    margin-top: 60px !important; /* 为固定导航栏留出空间 */
+}
+
+/* 确保攻略页面的hero区域有正确的样式 */
+.guide-page .salad-hero,
+.guide-page .pizza-hero,
+.guide-page .cake-hero,
+.guide-page .bread-hero,
+.guide-page .donut-hero,
+.guide-page .cookies-hero,
+.guide-page .pie-hero,
+.guide-page .sandwich-hero,
+.guide-page .smoothie-hero,
+.guide-page .spaghetti-hero,
+.guide-page .ice-cream-hero {
+    background: linear-gradient(135deg, #43b581, #2ecc71) !important;
+    color: white !important;
+    padding: 4rem 2rem !important;
+    text-align: center !important;
+    margin-top: 0 !important; /* 移除顶部间距，因为content-wrapper已经有了 */
+    margin-bottom: 2rem !important;
+    position: relative !important;
+    border-radius: 12px !important;
+    margin-left: 2rem !important;
+    margin-right: 2rem !important;
+}
+
+.guide-page .salad-hero h1,
+.guide-page .pizza-hero h1,
+.guide-page .cake-hero h1,
+.guide-page .bread-hero h1,
+.guide-page .donut-hero h1,
+.guide-page .cookies-hero h1,
+.guide-page .pie-hero h1,
+.guide-page .sandwich-hero h1,
+.guide-page .smoothie-hero h1,
+.guide-page .spaghetti-hero h1,
+.guide-page .ice-cream-hero h1 {
+    font-size: 3rem !important;
+    margin-bottom: 1rem !important;
+    color: white !important;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.7), 0 1px 2px rgba(0,0,0,0.8) !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.5px !important;
+}
+
+.guide-page .salad-hero p,
+.guide-page .pizza-hero p,
+.guide-page .cake-hero p,
+.guide-page .bread-hero p,
+.guide-page .donut-hero p,
+.guide-page .cookies-hero p,
+.guide-page .pie-hero p,
+.guide-page .sandwich-hero p,
+.guide-page .smoothie-hero p,
+.guide-page .spaghetti-hero p,
+.guide-page .ice-cream-hero p {
+    font-size: 1.2rem !important;
+    color: white !important;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.6), 0 1px 2px rgba(0,0,0,0.7) !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.3px !important;
 } 
 
  
