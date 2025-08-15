@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>国旗图片测试</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f0f0f0;
+        }
+        .test-section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .language-selector {
+            position: relative;
+            display: inline-block;
+        }
+        .lang-btn {
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: inherit;
+        }
+        .lang-btn .flag-img {
+            width: 24px;
+            height: 16px;
+            object-fit: cover;
+            border-radius: 2px;
+            vertical-align: middle;
+        }
+        .lang-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px 0;
+            min-width: 150px;
+            display: none;
+            z-index: 1000;
+        }
+        .lang-option {
+            padding: 10px 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .lang-option:hover {
+            background: #f0f0f0;
+        }
+        .lang-option .flag-img {
+            width: 20px;
+            height: 14px;
+            object-fit: cover;
+            border-radius: 2px;
+            vertical-align: middle;
+        }
+        .flag-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .flag-item {
+            text-align: center;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+        }
+        .flag-item img {
+            width: 40px;
+            height: 30px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🇺🇸 国旗图片测试页面</h1>
+    
+    <div class="test-section">
+        <h2>国旗图片显示测试</h2>
+        <div class="flag-grid">
+            <div class="flag-item">
+                <img src="flags/en.png" alt="US Flag">
+                <div>🇺🇸 US</div>
+            </div>
+            <div class="flag-item">
+                <img src="flags/zh-cn.png" alt="CN Flag">
+                <div>🇨🇳 CN</div>
+            </div>
+            <div class="flag-item">
+                <img src="flags/es.png" alt="ES Flag">
+                <div>🇪🇸 ES</div>
+            </div>
+            <div class="flag-item">
+                <img src="flags/pt-br.png" alt="BR Flag">
+                <div>🇧🇷 BR</div>
+            </div>
+            <div class="flag-item">
+                <img src="flags/fr.png" alt="FR Flag">
+                <div>🇫🇷 FR</div>
+            </div>
+            <div class="flag-item">
+                <img src="flags/de.png" alt="DE Flag">
+                <div>🇩🇪 DE</div>
+            </div>
+            <div class="flag-item">
+                <img src="flags/ru.png" alt="RU Flag">
+                <div>🇷🇺 RU</div>
+            </div>
+            <div class="flag-item">
+                <img src="flags/ar.png" alt="SA Flag">
+                <div>🇸🇦 SA</div>
+            </div>
+            <div class="flag-item">
+                <img src="flags/hi.png" alt="IN Flag">
+                <div>🇮🇳 IN</div>
+            </div>
+            <div class="flag-item">
+                <img src="flags/vi.png" alt="VN Flag">
+                <div>🇻🇳 VN</div>
+            </div>
+            <div class="flag-item">
+                <img src="flags/ja.png" alt="JP Flag">
+                <div>🇯🇵 JP</div>
+            </div>
+        </div>
+        <p>如果上面显示的是国旗图片，说明图片加载正常</p>
+    </div>
+    
+    <div class="test-section">
+        <h2>语言切换器测试</h2>
+        <div class="language-selector">
+            <button class="lang-btn" onclick="toggleDropdown()">
+                <img src="flags/en.png" alt="US Flag" class="flag-img">
+                <span class="code">US</span>
+            </button>
+            <div class="lang-dropdown" id="langDropdown">
+                <div class="lang-option" onclick="selectLang('en', 'flags/en.png', 'US')">
+                    <img src="flags/en.png" alt="US Flag" class="flag-img">
+                    <span class="code">US</span>
+                </div>
+                <div class="lang-option" onclick="selectLang('zh-cn', 'flags/zh-cn.png', 'CN')">
+                    <img src="flags/zh-cn.png" alt="CN Flag" class="flag-img">
+                    <span class="code">CN</span>
+                </div>
+                <div class="lang-option" onclick="selectLang('es', 'flags/es.png', 'ES')">
+                    <img src="flags/es.png" alt="ES Flag" class="flag-img">
+                    <span class="code">ES</span>
+                </div>
+                <div class="lang-option" onclick="selectLang('pt-br', 'flags/pt-br.png', 'BR')">
+                    <img src="flags/pt-br.png" alt="BR Flag" class="flag-img">
+                    <span class="code">BR</span>
+                </div>
+                <div class="lang-option" onclick="selectLang('fr', 'flags/fr.png', 'FR')">
+                    <img src="flags/fr.png" alt="FR Flag" class="flag-img">
+                    <span class="code">FR</span>
+                </div>
+                <div class="lang-option" onclick="selectLang('de', 'flags/de.png', 'DE')">
+                    <img src="flags/de.png" alt="DE Flag" class="flag-img">
+                    <span class="code">DE</span>
+                </div>
+                <div class="lang-option" onclick="selectLang('ru', 'flags/ru.png', 'RU')">
+                    <img src="flags/ru.png" alt="RU Flag" class="flag-img">
+                    <span class="code">RU</span>
+                </div>
+                <div class="lang-option" onclick="selectLang('ar', 'flags/ar.png', 'SA')">
+                    <img src="flags/ar.png" alt="SA Flag" class="flag-img">
+                    <span class="code">SA</span>
+                </div>
+                <div class="lang-option" onclick="selectLang('hi', 'flags/hi.png', 'IN')">
+                    <img src="flags/hi.png" alt="IN Flag" class="flag-img">
+                    <span class="code">IN</span>
+                </div>
+                <div class="lang-option" onclick="selectLang('vi', 'flags/vi.png', 'VN')">
+                    <img src="flags/vi.png" alt="VN Flag" class="flag-img">
+                    <span class="code">VN</span>
+                </div>
+                <div class="lang-option" onclick="selectLang('ja', 'flags/ja.png', 'JP')">
+                    <img src="flags/ja.png" alt="JP Flag" class="flag-img">
+                    <span class="code">JP</span>
+                </div>
+            </div>
+        </div>
+        <p>测试下拉菜单中的国旗显示和切换功能</p>
+    </div>
+    
+    <div class="test-section">
+        <h2>测试结果</h2>
+        <p><strong>当前选择的语言:</strong> <span id="current-lang">US</span></p>
+        <p><strong>当前国旗:</strong> <span id="current-flag">flags/en.png</span></p>
+    </div>
+    
+    <script>
+        function toggleDropdown() {
+            const dropdown = document.getElementById('langDropdown');
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
+        
+        function selectLang(lang, flagSrc, code) {
+            const btn = document.querySelector('.lang-btn');
+            btn.querySelector('.flag-img').src = flagSrc;
+            btn.querySelector('.code').textContent = code;
+            document.getElementById('langDropdown').style.display = 'none';
+            
+            // 更新测试结果
+            document.getElementById('current-lang').textContent = code;
+            document.getElementById('current-flag').textContent = flagSrc;
+            
+            console.log('选择语言:', lang, flagSrc, code);
+        }
+        
+        // 点击其他地方隐藏下拉菜单
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.language-selector')) {
+                document.getElementById('langDropdown').style.display = 'none';
+            }
+        });
+        
+        // 检查图片加载状态
+        window.addEventListener('load', function() {
+            const images = document.querySelectorAll('img');
+            let loadedCount = 0;
+            let totalCount = images.length;
+            
+            images.forEach(img => {
+                if (img.complete) {
+                    loadedCount++;
+                } else {
+                    img.addEventListener('load', () => {
+                        loadedCount++;
+                        if (loadedCount === totalCount) {
+                            console.log('所有国旗图片加载完成');
+                        }
+                    });
+                    img.addEventListener('error', () => {
+                        console.error('图片加载失败:', img.src);
+                    });
+                }
+            });
+            
+            if (loadedCount === totalCount) {
+                console.log('所有国旗图片加载完成');
+            }
+        });
+    </script>
+</body>
+</html> 

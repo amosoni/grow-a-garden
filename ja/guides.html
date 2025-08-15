@@ -1,545 +1,174 @@
-<!DOCTYPE html><html lang="ja" dir="ltr"><head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <base href="/">
-  <title>Grow a Garden ガイド - 総合コレクション</title>
-  <link rel="canonical" href="https://growagarden.cv/ja/guides.html">
-  <link rel="alternate" hreflang="en" href="https://growagarden.cv/en/guides.html">
-  <link rel="alternate" hreflang="zh-CN" href="https://growagarden.cv/zh-cn/guides.html">
-  <link rel="alternate" hreflang="ja" href="https://growagarden.cv/ja/guides.html">
-  <link rel="alternate" hreflang="x-default" href="https://growagarden.cv/guides.html">
-  <link rel="stylesheet" href="https://unpkg.com/simple.css@2.1.0/simple.min.css">
-  <link rel="stylesheet" href="../styles.css">
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>栽培ガイド - Grow a Garden</title>
+    <link rel="canonical" href="../ja/guides.html">
+    <link rel="stylesheet" href="unpkg.com/simple.css@2.1.0/simple.min.css">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
+    <script src="../unified_i18n_system.js"></script>
 </head>
 <body>
     <header>
-    <nav>
-      <a href="/index.html" class="logo" data-i18n="nav.logo">🌱 Grow a Garden</a>
-      <a href="/index.html#stats" data-i18n="nav.live">ライブ統計</a>
-      <a href="/index.html#map" data-i18n="nav.map">グローバルヒートマップ</a>
-      <a href="/index.html#tips" data-i18n="nav.tips">ヒント</a>
-      <a href="/guides.html" data-i18n="nav.guides">📚 ガイド</a>
-      <a href="/index.html#community" class="discord-btn" data-i18n="nav.discord">💬 Discord</a>
-                  <select id="lang-switcher" aria-label="Language">
-                <option value="en" >English</option>
-                <option value="zh-cn" >简体中文</option>
-                <option value="es" >Español</option>
-                <option value="pt-br" >Português</option>
-                <option value="fr" >Français</option>
-                <option value="de" >Deutsch</option>
-                <option value="ru" >Русский</option>
-                <option value="ar" >العربية</option>
-                <option value="hi" >हिन्दी</option>
-                <option value="id" >Bahasa Indonesia</option>
-                <option value="vi" >Tiếng Việt</option>
-                <option value="ja" selected="">日本語</option>
-            </select>
-    </nav>
-  </header>
-  <section class="guides-hero">
-    <h1 data-i18n="hero.guides.title">📚 Grow a Garden ガイド</h1>
-    <p data-i18n="hero.guides.subtitle">戦略、レシピ、ゲームプレイのヒントの完全コレクション</p>
-  </section>
-  <div class="guides-section">
-    <div class="guides-card">
-      <h2>🔍 検索とフィルター</h2>
-      <div class="search-filter-container">
-        <input type="text" id="guide-search" placeholder="ガイドを検索..." class="guide-search-input">
-        <div class="filter-buttons">
-          <button class="filter-btn active" data-filter="all">すべて</button>
-          <button class="filter-btn" data-filter="recipe">レシピ</button>
-          <button class="filter-btn" data-filter="farming">農業</button>
-          <button class="filter-btn" data-filter="profit">利益</button>
-          <button class="filter-btn" data-filter="advanced">上級</button>
-        </div>
-      </div>
+        <nav>
+            <a href="../index.html" class="logo" data-i18n="nav.logo">🌱 Grow a Garden</a>
+            <a href="../index.html#stats" data-i18n="nav.live">Live Stats</a>
+            <a href="../index.html#map" data-i18n="nav.map">Global Heatmap</a>
+            <a href="../index.html#tips" data-i18n="nav.tips">Tips</a>
+            <a href="guides.html" data-i18n="nav.guides">📚 Guides</a>
+            <a href="../online.html" data-i18n="nav.online">🎮 Online</a>
+            <a href="../index.html#community" class="discord-btn" data-i18n="nav.discord">💬 Discord</a>
+            <select id="lang-switcher" aria-label="Language">
+<option value="en" >🇺🇸 English</option>
+<option value="zh-cn" >🇨🇳 简体中文</option>
+<option value="es" >🇪🇸 Español</option>
+<option value="pt-br" >🇧🇷 Português</option>
+<option value="fr" >🇫🇷 Français</option>
+<option value="de" >🇩🇪 Deutsch</option>
+<option value="ru" >🇷🇺 Русский</option>
+<option value="ar" >🇸🇦 العربية</option>
+<option value="hi" >🇮🇳 हिन्दी</option>
+<option value="id" >🇮🇩 Bahasa Indonesia</option>
+<option value="vi" >🇻🇳 Tiếng Việt</option>
+<option value="ja" selected>🇯🇵 日本語</option>
+</select>
+        </nav>
+    </header>
+    <div class="bg-blur"></div>
+    <div class="content-wrapper">
+        <!-- 导航栏 -->
+        
+
+        <!-- 主要内容 -->
+        <main>
+            <div class="hero-section">
+                <h1>栽培ガイド</h1>
+                <p data-i18n="guides.hero.description">Master the art of farming and cooking in Grow a Garden</p>
+            </div>
+
+            <!-- 热门攻略 -->
+            <section class="guides-section">
+                <h2 data-i18n="guides.popular.title">🔥 Popular Guides</h2>
+                <div class="guides-grid">
+                    <a href="how-to-make-salad.html" class="guide-card">
+                        <div class="card-badge popular" data-i18n="guides.badges.popular">⭐ Most Popular</div>
+                        <h3 data-i18n="guides.salad.title">🥗 Salad Making Guide</h3>
+                        <p data-i18n="guides.salad.description">Master the art of salad making with our comprehensive guide.</p>
+                        <div class="card-meta">
+                            <span class="difficulty beginner" data-i18n="guides.difficulty.beginner">Beginner</span>
+                            <span class="read-time" data-i18n="guides.readTime" data-i18n-params=\'{"minutes": "15"}\'>15 min read</span>
+                            <span class="views" data-i18n="guides.views" data-i18n-params=\'{"count": "2.5k"}\'>🔥 2.5k views</span>
+                        </div>
+                    </a>
+                    
+                    <a href="how-to-make-pizza.html" class="guide-card">
+                        <div class="card-badge trending" data-i18n="guides.badges.trending">📈 Trending</div>
+                        <h3 data-i18n="guides.pizza.title">🍕 Pizza Making Guide</h3>
+                        <p data-i18n="guides.pizza.description">Learn how to make delicious pizza in Grow a Garden.</p>
+                        <div class="card-meta">
+                            <span class="difficulty intermediate" data-i18n="guides.difficulty.intermediate">Intermediate</span>
+                            <span class="read-time" data-i18n="guides.readTime" data-i18n-params=\'{"minutes": "25"}\'>25 min read</span>
+                            <span class="views" data-i18n="guides.views" data-i18n-params=\'{"count": "1.8k"}\'>🔥 1.8k views</span>
+                        </div>
+                    </a>
+                    
+                    <a href="how-to-make-bread.html" class="guide-card">
+                        <div class="card-badge new" data-i18n="guides.badges.new">🆕 New</div>
+                        <h3 data-i18n="guides.bread.title">🍞 Bread Making Guide</h3>
+                        <p data-i18n="guides.bread.description">Master bread making techniques in Grow a Garden.</p>
+                        <div class="card-meta">
+                            <span class="difficulty beginner" data-i18n="guides.difficulty.beginner">Beginner</span>
+                            <span class="read-time" data-i18n="guides.readTime" data-i18n-params=\'{"minutes": "20"}\'>20 min read</span>
+                            <span class="views" data-i18n="guides.views" data-i18n-params=\'{"count": "1.2k"}\'>🔥 1.2k views</span>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- 所有攻略 -->
+            <section class="guides-section">
+                <h2 data-i18n="guides.all.title">📚 All Guides</h2>
+                <div class="guides-grid">
+                    <a href="how-to-grow-apples.html" class="guide-card">
+                        <h3 data-i18n="guides.apple.title">🍎 Apple Growing Guide</h3>
+                        <p data-i18n="guides.apple.description">Learn how to grow delicious apples in your garden.</p>
+                        <div class="card-meta">
+                            <span class="difficulty beginner" data-i18n="guides.difficulty.beginner">Beginner</span>
+                            <span class="read-time" data-i18n="guides.readTime" data-i18n-params=\'{"minutes": "12"}\'>12 min read</span>
+                        </div>
+                    </a>
+                    
+                    <a href="how-to-grow-oranges.html" class="guide-card">
+                        <h3 data-i18n="guides.orange.title">🍊 Orange Growing Guide</h3>
+                        <p data-i18n="guides.orange.description">Master the art of growing sweet oranges.</p>
+                        <div class="card-meta">
+                            <span class="difficulty intermediate" data-i18n="guides.difficulty.intermediate">Intermediate</span>
+                            <span class="read-time" data-i18n="guides.readTime" data-i18n-params=\'{"minutes": "18"}\'>18 min read</span>
+                        </div>
+                    </a>
+                    
+                    <a href="how-to-make-cake.html" class="guide-card">
+                        <h3 data-i18n="guides.cake.title">🎂 Cake Making Guide</h3>
+                        <p data-i18n="guides.cake.description">Create delicious cakes with our expert tips.</p>
+                        <div class="card-meta">
+                            <span class="difficulty intermediate" data-i18n="guides.difficulty.intermediate">Intermediate</span>
+                            <span class="read-time" data-i18n="guides.readTime" data-i18n-params=\'{"minutes": "30"}\'>30 min read</span>
+                        </div>
+                    </a>
+                    
+                    <a href="how-to-make-cookies.html" class="guide-card">
+                        <h3 data-i18n="guides.cookie.title">🍪 Cookie Making Guide</h3>
+                        <p>Bake perfect cookies every time.</p>
+                        <div class="card-meta">
+                            <span class="difficulty beginner" data-i18n="guides.difficulty.beginner">Beginner</span>
+                            <span class="read-time" data-i18n="guides.readTime" data-i18n-params=\'{"minutes": "20"}\'>20 min read</span>
+                        </div>
+                    </a>
+                    
+                    <a href="how-to-make-smoothie.html" class="guide-card">
+                        <h3 data-i18n="guides.smoothie.title">🥤 Smoothie Making Guide</h3>
+                        <p>Create healthy and delicious smoothies.</p>
+                        <div class="card-meta">
+                            <span class="difficulty beginner" data-i18n="guides.difficulty.beginner">Beginner</span>
+                            <span class="read-time" data-i18n="guides.readTime" data-i18n-params=\'{"minutes": "18"}\'>18 min read</span>
+                        </div>
+                    </a>
+                    
+                    <a href="how-to-build-farm.html" class="guide-card">
+                        <h3 data-i18n="guides.farm.title">🏗️ Farm Building Guide</h3>
+                        <p>Design and build your perfect farm layout.</p>
+                        <div class="card-meta">
+                            <span class="difficulty advanced">Advanced</span>
+                            <span class="read-time" data-i18n="guides.readTime" data-i18n-params=\'{"minutes": "45"}\'>45 min read</span>
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </main>
+</div>
+</body>
+
+        <footer class="footer">
+            <p>&copy; 2025 Grow a Garden. All rights reserved.</p>
+        </footer>
     </div>
 
-    <!-- 热门攻略 -->
-    <div class="guides-card">
-      <h2>🔥 人気のガイド</h2>
-      <div class="guides-grid">
-        <a href="/ja/how-to-make-salad.html" class="guide-item featured-guide">
-          <div class="featured-badge">⭐ 最も人気</div>
-          <h3>サラダ作りのガイド</h3>
-          <p>Grow a Gardenでサラダを作るコツを学びましょう。</p>
-          <div class="guide-meta">
-            <span class="guide-difficulty">初心者</span>
-            <span class="guide-read-time">15分読了</span>
-            <span class="guide-views">🔥 2.5k 閲覧</span>
-          </div>
-        </a>
-        
-        <a href="/ja/how-to-make-pizza.html" class="guide-item">
-          <div class="trending-badge">📈 トレンド</div>
-          <h3>ピザ作りのガイド</h3>
-          <p>Grow a Gardenでピザを作るコツを学びましょう。</p>
-          <div class="guide-meta">
-            <span class="guide-difficulty">中級</span>
-            <span class="guide-read-time">25分読了</span>
-            <span class="guide-views">🔥 1.8k 閲覧</span>
-          </div>
-        </a>
-        
-        <a href="/ja/how-to-make-bread.html" class="guide-item">
-          <div class="new-badge">🆕 新着</div>
-          <h3>パン作りのガイド</h3>
-          <p>Grow a Gardenでパンを作るコツを学びましょう。</p>
-          <div class="guide-meta">
-            <span class="guide-difficulty">初心者</span>
-            <span class="guide-read-time">20分読了</span>
-            <span class="guide-views">🔥 1.2k 閲覧</span>
-          </div>
-        </a>
-      </div>
-    </div>
-    
-    <!-- 食谱攻略 -->
-    <div class="category-section" data-category="recipe">
-      <h2 class="category-title">🍽️ レシピガイド</h2>
-      <div class="guides-grid">
-        <a href="/ja/how-to-make-salad.html" class="guide-item">
-          <h3>🥗 サラダ作りのガイド</h3>
-          <p>Grow a Gardenで完璧なサラダを作るための完全ガイド。基本的な材料収集から高度なレシピまで。</p>
-          <div class="guide-meta">
-            <span class="guide-difficulty">初心者</span>
-            <span class="guide-read-time">15分読了</span>
-          </div>
-        </a>
-        
-        <a href="/ja/how-to-make-pizza.html" class="guide-item">
-          <h3>🍕 ピザ作りのガイド</h3>
-          <p>Grow a Gardenで美味しいピザの作り方を学びます。生地の準備からトッピングの組み合わせまで。</p>
-          <div class="guide-meta">
-            <span class="guide-difficulty">中級</span>
-            <span class="guide-read-time">25分読了</span>
-          </div>
-        </a>
-        
-        <a href="/ja/how-to-make-bread.html" class="guide-item">
-          <h3>🍞 パン作りのガイド</h3>
-          <p>パン作りの技術を習得。小麦粉の種類、酵母管理、焼成の最適化を学びます。</p>
-          <div class="guide-meta">
-            <span class="guide-difficulty">初心者</span>
-            <span class="guide-read-time">20分読了</span>
-          </div>
-        </a>
-        
-        <a href="/ja/how-to-make-cake.html" class="guide-item">
-          <h3>ケーキ作りのガイド</h3>
-          <p>Grow a Gardenでケーキを作るコツを学びましょう。</p>
-          <div class="guide-meta">
-            <span class="guide-difficulty">中級</span>
-            <span class="guide-read-time">30分読了</span>
-          </div>
-        </a>
-      <a href="/ja/ice-cream-recipe.html" class="guide-item">
-                    <h3>アイスクリームレシピガイド</h3>
-                    <p>美味しいアイスクリームの配合と比率を学び、利益と味を最適化。</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">中級</span>
-                        <span class="guide-read-time">18分読了</span>
-                    </div>
-                </a><a href="/ja/how-to-make-donut.html" class="guide-item">
-                    <h3>ドーナツ作りのガイド</h3>
-                    <p>Grow a Gardenでドーナツを作るコツを学びましょう。</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">中級</span>
-                        <span class="guide-read-time">20分読了</span>
-                    </div>
-                </a><a href="/ja/how-to-make-pie.html" class="guide-item">
-                    <h3>パイ作りのガイド</h3>
-                    <p>Grow a Gardenでパイを作るコツを学びましょう。</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">中級</span>
-                        <span class="guide-read-time">25分読了</span>
-                    </div>
-                </a><a href="/ja/how-to-make-cookies.html" class="guide-item">
-                    <h3>クッキー作りのガイド</h3>
-                    <p>Grow a Gardenでクッキーを作るコツを学びましょう。</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">初心者</span>
-                        <span class="guide-read-time">20分読了</span>
-                    </div>
-                </a><a href="/ja/how-to-make-smoothie.html" class="guide-item">
-                    <h3>スムージー作りのガイド</h3>
-                    <p>Grow a Gardenでスムージーを作るコツを学びましょう。</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">初心者</span>
-                        <span class="guide-read-time">18分読了</span>
-                    </div>
-                </a><a href="/ja/how-to-make-sandwich.html" class="guide-item">
-                    <h3>サンドイッチ作りのガイド</h3>
-                    <p>Grow a Gardenでサンドイッチを作るコツを学びましょう。</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">初心者</span>
-                        <span class="guide-read-time">22分読了</span>
-                    </div>
-                </a><a href="/ja/how-to-make-salad.html" class="guide-item">
-                    <h3>サラダ作りのガイド</h3>
-                    <p>Grow a Gardenでサラダを作るコツを学びましょう。</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">初心者</span>
-                        <span class="guide-read-time">15分読了</span>
-                    </div>
-                </a><a href="/ja/how-to-make-pizza.html" class="guide-item">
-                    <h3>ピザ作りのガイド</h3>
-                    <p>Grow a Gardenでピザを作るコツを学びましょう。</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">中級</span>
-                        <span class="guide-read-time">25分読了</span>
-                    </div>
-                </a><a href="/ja/how-to-make-bread.html" class="guide-item">
-                    <h3>パン作りのガイド</h3>
-                    <p>Grow a Gardenでパンを作るコツを学びましょう。</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">初心者</span>
-                        <span class="guide-read-time">20分読了</span>
-                    </div>
-                </a><a href="/ja/ice-cream-recipe.html" class="guide-item">
-                    <h3>アイスクリームレシピガイド</h3>
-                    <p>美味しいアイスクリームの配合と比率を学び、利益と味を最適化。</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">中級</span>
-                        <span class="guide-read-time">18分読了</span>
-                    </div>
-                </a><a href="/ja/how-to-make-donut.html" class="guide-item">
-                    <h3>ドーナツ作りのガイド</h3>
-                    <p>Grow a Gardenでドーナツを作るコツを学びましょう。</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">中級</span>
-                        <span class="guide-read-time">20分読了</span>
-                    </div>
-                </a><a href="/ja/how-to-make-cake.html" class="guide-item">
-                    <h3>ケーキ作りのガイド</h3>
-                    <p>Grow a Gardenでケーキを作るコツを学びましょう。</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">上級</span>
-                        <span class="guide-read-time">30分読了</span>
-                    </div>
-                </a><a href="/ja/how-to-make-pie.html" class="guide-item">
-                    <h3>パイ作りのガイド</h3>
-                    <p>Grow a Gardenでパイを作るコツを学びましょう。</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">中級</span>
-                        <span class="guide-read-time">25分読了</span>
-                    </div>
-                </a><a href="/ja/how-to-make-cookies.html" class="guide-item">
-                    <h3>クッキー作りのガイド</h3>
-                    <p>Grow a Gardenでクッキーを作るコツを学びましょう。</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">初心者</span>
-                        <span class="guide-read-time">20分読了</span>
-                    </div>
-                </a><a href="/ja/how-to-make-smoothie.html" class="guide-item">
-                    <h3>スムージー作りのガイド</h3>
-                    <p>Grow a Gardenでスムージーを作るコツを学びましょう。</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">初心者</span>
-                        <span class="guide-read-time">18分読了</span>
-                    </div>
-                </a><a href="/ja/how-to-make-money-fast.html" class="guide-item">
-                    <h3>早くお金を稼ぐガイド</h3>
-                    <p>Grow a Gardenで{noun}を作るコツを学びましょう。</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">上級</span>
-                        <span class="guide-read-time">25分読了</span>
-                    </div>
-                </a><a href="/ja/how-to-make-sandwich.html" class="guide-item">
-                    <h3>サンドイッチ作りのガイド</h3>
-                    <p>Grow a Gardenでサンドイッチを作るコツを学びましょう。</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">初心者</span>
-                        <span class="guide-read-time">22分読了</span>
-                    </div>
-                </a></div>
-    </div>
-    
-    <!-- 种植攻略 -->
-    <div class="category-section" data-category="farming">
-      <h2 class="category-title">🌱 農業ガイド</h2>
-      <div class="guides-grid">
-        <a href="/ja/how-to-grow-corn.html" class="guide-item">
-          <h3>トウモロコシ栽培ガイド</h3>
-          <p>効率的なトウモロコシの栽培：播種・水やり・収穫。</p>
-          <div class="guide-meta">
-            <span class="guide-difficulty">初心者</span>
-            <span class="guide-read-time">18分読了</span>
-          </div>
-        </a>
-        
-        <a href="/ja/how-to-grow-oranges.html" class="guide-item">
-          <h3>オレンジ栽培ガイド</h3>
-          <p>効率的なオレンジの栽培：播種・水やり・収穫。</p>
-          <div class="guide-meta">
-            <span class="guide-difficulty">中級</span>
-            <span class="guide-read-time">22分読了</span>
-          </div>
-        </a>
-      <a href="/ja/how-to-grow-wheat.html" class="guide-item">
-                    <h3>小麦栽培ガイド</h3>
-                    <p>効率的な小麦の栽培：播種・水やり・収穫。</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">初心者</span>
-                        <span class="guide-read-time">20分読了</span>
-                    </div>
-                </a><a href="farming-basics.html" class="guide-item">
-                    <h3>栽培の基礎</h3>
-                    <p>基本的な栽培技術・水やり・作物管理のポイント。</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">初心者</span>
-                        <span class="guide-read-time">12分読了</span>
-                    </div>
-                </a><a href="watering-strategies.html" class="guide-item">
-                    <h3>水やり戦略</h3>
-                    <p>最適な水やりのタイミング・頻度・効率を学ぶ。</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">初心者</span>
-                        <span class="guide-read-time">10分読了</span>
-                    </div>
-                </a><a href="crop-rotation.html" class="guide-item">
-                    <h3>輪作ガイド</h3>
-                    <p>効果的な輪作戦略で土壌肥沃度を維持し収量を最大化。</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">中級</span>
-                        <span class="guide-read-time">15分読了</span>
-                    </div>
-                </a><a href="seed-selection.html" class="guide-item">
-                    <h3>種子選びガイド</h3>
-                    <p>戦略に合う種を選び、成長と利益を比較。</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">中級</span>
-                        <span class="guide-read-time">18分読了</span>
-                    </div>
-                </a><a href="/ja/how-to-grow-carrots.html" class="guide-item">
-                    <h3>ニンジン栽培ガイド</h3>
-                    <p>効率的なニンジンの栽培：播種・水やり・収穫。</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">初心者</span>
-                        <span class="guide-read-time">18分読了</span>
-                    </div>
-                </a><a href="/ja/how-to-grow-apples.html" class="guide-item">
-                    <h3>リンゴ栽培ガイド</h3>
-                    <p>効率的なリンゴの栽培：播種・水やり・収穫。</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">中級</span>
-                        <span class="guide-read-time">22分読了</span>
-                    </div>
-                </a><a href="/ja/how-to-grow-berries.html" class="guide-item">
-                    <h3>ベリー栽培ガイド</h3>
-                    <p>効率的なベリーの栽培：播種・水やり・収穫。</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">中級</span>
-                        <span class="guide-read-time">20分読了</span>
-                    </div>
-                </a><a href="/ja/how-to-build-farm.html" class="guide-item">
-                    <h3>農場づくりのガイド</h3>
-                    <p>効率的な農場レイアウトの設計：灌漑、保管、加工、導線を最適化。</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">中級</span>
-                        <span class="guide-read-time">24分読了</span>
-                    </div>
-                </a><a href="/ja/how-to-grow-wheat.html" class="guide-item">
-                    <h3>小麦栽培ガイド</h3>
-                    <p>効率的な小麦の栽培：播種・水やり・収穫。</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">初心者</span>
-                        <span class="guide-read-time">20分読了</span>
-                    </div>
-                </a><a href="/ja/how-to-grow-carrots.html" class="guide-item">
-                    <h3>ニンジン栽培ガイド</h3>
-                    <p>効率的なニンジンの栽培：播種・水やり・収穫。</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">初心者</span>
-                        <span class="guide-read-time">18分読了</span>
-                    </div>
-                </a><a href="/ja/how-to-grow-apples.html" class="guide-item">
-                    <h3>リンゴ栽培ガイド</h3>
-                    <p>効率的なリンゴの栽培：播種・水やり・収穫。</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">中級</span>
-                        <span class="guide-read-time">22分読了</span>
-                    </div>
-                </a><a href="/ja/how-to-grow-oranges.html" class="guide-item">
-                    <h3>オレンジ栽培ガイド</h3>
-                    <p>効率的なオレンジの栽培：播種・水やり・収穫。</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">中級</span>
-                        <span class="guide-read-time">21分読了</span>
-                    </div>
-                </a><a href="/ja/how-to-grow-berries.html" class="guide-item">
-                    <h3>ベリー栽培ガイド</h3>
-                    <p>効率的なベリーの栽培：播種・水やり・収穫。</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">中級</span>
-                        <span class="guide-read-time">20分読了</span>
-                    </div>
-                </a><a href="/ja/how-to-grow-corn.html" class="guide-item">
-                    <h3>トウモロコシ栽培ガイド</h3>
-                    <p>効率的なトウモロコシの栽培：播種・水やり・収穫。</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">中級</span>
-                        <span class="guide-read-time">21分読了</span>
-                    </div>
-                </a><a href="/ja/how-to-build-farm.html" class="guide-item">
-                    <h3>農場づくりのガイド</h3>
-                    <p>効率的な農場レイアウトの設計：灌漑、保管、加工、導線を最適化。</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">中級</span>
-                        <span class="guide-read-time">24分読了</span>
-                    </div>
-                </a></div>
-    </div>
-    
-    <!-- 收益攻略 -->
-    <div class="category-section" data-category="profit">
-      <h2 class="category-title">💰 利益ガイド</h2>
-      <div class="guides-grid">
-        <a href="/ja/how-to-make-money-fast.html" class="guide-item">
-          <h3>早くお金を稼ぐガイド</h3>
-          <p>Grow a Gardenで{noun}を作るコツを学びましょう。</p>
-          <div class="guide-meta">
-            <span class="guide-difficulty">中級</span>
-            <span class="guide-read-time">35分読了</span>
-          </div>
-        </a>
-        
-        <a href="/profit-strategies.html" class="guide-item">
-          <h3>利益戦略ガイド</h3>
-          <p>長期的な利益戦略、市場分析とリスク管理、販売の最適化を学ぶ。</p>
-          <div class="guide-meta">
-            <span class="guide-difficulty">上級</span>
-            <span class="guide-read-time">45分読了</span>
-          </div>
-        </a>
-      <a href="market-analysis.html" class="guide-item">
-                    <h3>マーケット分析</h3>
-                    <p>市場動向を分析し、利益機会を見極め、販売戦略を最適化。</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">上級</span>
-                        <span class="guide-read-time">20分読了</span>
-                    </div>
-                </a><a href="resource-management.html" class="guide-item">
-                    <h3>リソース管理</h3>
-                    <p>資源配分、在庫管理、コスト最適化などを習得。</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">中級</span>
-                        <span class="guide-read-time">16分読了</span>
-                    </div>
-                </a><a href="investment-guide.html" class="guide-item">
-                    <h3>投資ガイド</h3>
-                    <p>投資先の見極めと長期リターン最大化の方法を学ぶ。</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">エキスパート</span>
-                        <span class="guide-read-time">25分読了</span>
-                    </div>
-                </a></div>
-    </div>
-  <div class="category-section" data-category="co-op">
-            <h2 class="category-title">👥 協力と運用</h2>
-            <div class="guides-grid">
-                <a href="/ja/how-to-play-with-friends.html" class="guide-item">
-                    <h3>友達と遊ぶ</h3>
-                    <p>友達と協力し、役割分担と取引で効率的な農場を。</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">中級</span>
-                        <span class="guide-read-time">18分読了</span>
-                    </div>
-                </a>
+    <script>
+        function toggleLanguageMenu() {
+            const dropdown = document.getElementById('langDropdown');
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
 
-                <a href="storage-and-logistics.html" class="guide-item">
-                    <h3>保管と物流</h3>
-                    <p>保管とルート設計で物流効率を上げる。</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">中級</span>
-                        <span class="guide-read-time">20分読了</span>
-                    </div>
-                </a>
-            <a href="/ja/how-to-play-with-friends.html" class="guide-item">
-                    <h3>友達と遊ぶ</h3>
-                    <p>友達と協力し、役割分担と取引で効率的な農場を。</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">中級</span>
-                        <span class="guide-read-time">18分読了</span>
-                    </div>
-                </a></div>
-        </div><div class="category-section" data-category="advanced">
-            <h2 class="category-title">🎮 上級ガイド</h2>
-            <div class="guides-grid">
-                <a href="game-mechanics.html" class="guide-item">
-                    <h3>ゲームメカニクス</h3>
-                    <p>ゲームメカニクス、変異、特別イベント、上級要素を深掘り。</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">エキスパート</span>
-                        <span class="guide-read-time">35分読了</span>
-                    </div>
-                </a>
-                
-                <a href="mutation-guide.html" class="guide-item">
-                    <h3>ミューテーションガイド</h3>
-                    <p>ミューテーションシステムを理解し、最大利益のために組み合わせる。</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">エキスパート</span>
-                        <span class="guide-read-time">40分読了</span>
-                    </div>
-                </a>
-                
-                <a href="special-events.html" class="guide-item">
-                    <h3>スペシャルイベント</h3>
-                    <p>期間限定イベント、特別なチャンス、限定報酬の完全ガイド。</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">上級</span>
-                        <span class="guide-read-time">28分読了</span>
-                    </div>
-                </a>
-                
-                <a href="speed-running.html" class="guide-item">
-                    <h3>スピードランニング</h3>
-                    <p>効率を最大化し記録更新を目指すスピードラン技術。</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">エキスパート</span>
-                        <span class="guide-read-time">30分読了</span>
-                    </div>
-                </a>
-            </div>
-        </div><div class="guides-card">
-            <h2>💡 クイックヒント</h2>
-            <div class="tips-grid">
-                <div class="tip-item">
-                    <h4>⏰ ゴールデンアワー</h4>
-                    <p>ゲーム内 7:00〜9:00 に水やりすると成長効果が2倍。</p>
-                </div>
-                <div class="tip-item">
-                    <h4>🎯 品質が重要</h4>
-                    <p>高品質の材料はより良いレシピと高い利益につながります。</p>
-                </div>
-                <div class="tip-item">
-                    <h4>📈 マーケットタイミング</h4>
-                    <p>需要が高い時間に販売して利益を最大化。</p>
-                </div>
-                <div class="tip-item">
-                    <h4>📚 レシピ習熟</h4>
-                    <p>上級レシピの前に基本を習得して効率アップ。</p>
-                </div>
-                <div class="tip-item">
-                    <h4>🤝 コミュニティ学習</h4>
-                    <p>Discordで他のプレイヤーから学びましょう。</p>
-                </div>
-                <div class="tip-item">
-                    <h4>🔄 定期的な更新</h4>
-                    <p>新しいガイドと最新戦略のために定期的に確認。</p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="guides-card">
-            <h2>🏠 ナビゲーション</h2>
-            <div class="back-link-container">
-                <a href="/ja/index.html" class="back-btn" data-i18n="guides.back">← メイン計算機に戻る</a>
-            </div>
-        </div>
-    </div>
-  <script src="../i18n/i18n.js"></script>
-  <script src="../script.js"></script>
-
- </body></html>
+        // 点击外部关闭语言菜单
+        document.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('langDropdown');
+            const langBtn = document.querySelector('.lang-btn');
+            if (!langBtn.contains(event.target) && !dropdown.contains(event.target)) {
+                dropdown.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>国旗Emoji测试</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f0f0f0;
+        }
+        .test-section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .flag-test {
+            font-size: 2rem;
+            margin: 10px 0;
+        }
+        .emoji-fonts {
+            font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", "Android Emoji", "EmojiSymbols", "EmojiOne Mozilla", "Twemoji Mozilla", "Segoe UI Symbol", Arial, sans-serif;
+        }
+        .language-selector {
+            position: relative;
+            display: inline-block;
+        }
+        .lang-btn {
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: inherit;
+        }
+        .lang-btn .flag {
+            font-size: 1.2rem;
+            font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", "Android Emoji", "EmojiSymbols", "EmojiOne Mozilla", "Twemoji Mozilla", "Segoe UI Symbol", Arial, sans-serif;
+        }
+        .lang-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px 0;
+            min-width: 150px;
+            display: none;
+            z-index: 1000;
+        }
+        .lang-option {
+            padding: 10px 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .lang-option:hover {
+            background: #f0f0f0;
+        }
+        .lang-option .flag {
+            font-size: 1.2rem;
+            font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", "Android Emoji", "EmojiSymbols", "EmojiOne Mozilla", "Twemoji Mozilla", "Segoe UI Symbol", Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>🇺🇸 国旗Emoji测试页面</h1>
+    
+    <div class="test-section">
+        <h2>基本Emoji测试</h2>
+        <div class="flag-test">🚀 🌟 💡 🎯 🏆</div>
+        <p>如果上面显示的是方块或问号，说明浏览器不支持emoji</p>
+    </div>
+    
+    <div class="test-section">
+        <h2>国旗Emoji测试</h2>
+        <div class="flag-test emoji-fonts">🇺🇸 🇨🇳 🇪🇸 🇧🇷 🇫🇷 🇩🇪 🇷🇺 🇸🇦 🇮🇳 🇮🇩 🇻🇳 🇯🇵</div>
+        <p>使用emoji字体：如果显示正常，说明字体支持</p>
+    </div>
+    
+    <div class="test-section">
+        <h2>语言切换器测试</h2>
+        <div class="language-selector">
+            <button class="lang-btn" onclick="toggleDropdown()">
+                <span class="flag">🇺🇸</span>
+                <span class="code">US</span>
+            </button>
+            <div class="lang-dropdown" id="langDropdown">
+                <div class="lang-option" onclick="selectLang('en', '🇺🇸', 'US')">
+                    <span class="flag">🇺🇸</span>
+                    <span class="code">US</span>
+                </div>
+                <div class="lang-option" onclick="selectLang('zh-cn', '🇨🇳', 'CN')">
+                    <span class="flag">🇨🇳</span>
+                    <span class="code">CN</span>
+                </div>
+                <div class="lang-option" onclick="selectLang('es', '🇪🇸', 'ES')">
+                    <span class="flag">🇪🇸</span>
+                    <span class="code">ES</span>
+                </div>
+                <div class="lang-option" onclick="selectLang('pt-br', '🇧🇷', 'BR')">
+                    <span class="flag">🇧🇷</span>
+                    <span class="code">BR</span>
+                </div>
+                <div class="lang-option" onclick="selectLang('fr', '🇫🇷', 'FR')">
+                    <span class="flag">🇫🇷</span>
+                    <span class="code">FR</span>
+                </div>
+                <div class="lang-option" onclick="selectLang('de', '🇩🇪', 'DE')">
+                    <span class="flag">🇩🇪</span>
+                    <span class="code">DE</span>
+                </div>
+                <div class="lang-option" onclick="selectLang('ru', '🇷🇺', 'RU')">
+                    <span class="flag">🇷🇺</span>
+                    <span class="code">RU</span>
+                </div>
+                <div class="lang-option" onclick="selectLang('ar', '🇸🇦', 'SA')">
+                    <span class="flag">🇸🇦</span>
+                    <span class="code">SA</span>
+                </div>
+                <div class="lang-option" onclick="selectLang('hi', '🇮🇳', 'IN')">
+                    <span class="flag">🇮🇳</span>
+                    <span class="code">IN</span>
+                </div>
+                <div class="lang-option" onclick="selectLang('id', '🇮🇩', 'ID')">
+                    <span class="flag">🇮🇩</span>
+                    <span class="code">ID</span>
+                </div>
+                <div class="lang-option" onclick="selectLang('vi', '🇻🇳', 'VN')">
+                    <span class="flag">🇻🇳</span>
+                    <span class="code">VN</span>
+                </div>
+                <div class="lang-option" onclick="selectLang('ja', '🇯🇵', 'JP')">
+                    <span class="flag">🇯🇵</span>
+                    <span class="code">JP</span>
+                </div>
+            </div>
+        </div>
+        <p>测试下拉菜单中的国旗显示和切换功能</p>
+    </div>
+    
+    <div class="test-section">
+        <h2>浏览器信息</h2>
+        <p><strong>User Agent:</strong> <span id="user-agent"></span></p>
+        <p><strong>Platform:</strong> <span id="platform"></span></p>
+        <p><strong>Emoji支持:</strong> <span id="emoji-support"></span></p>
+    </div>
+    
+    <script>
+        function toggleDropdown() {
+            const dropdown = document.getElementById('langDropdown');
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
+        
+        function selectLang(lang, flag, code) {
+            const btn = document.querySelector('.lang-btn');
+            btn.querySelector('.flag').textContent = flag;
+            btn.querySelector('.code').textContent = code;
+            document.getElementById('langDropdown').style.display = 'none';
+            console.log('选择语言:', lang, flag, code);
+        }
+        
+        // 显示浏览器信息
+        document.getElementById('user-agent').textContent = navigator.userAgent;
+        document.getElementById('platform').textContent = navigator.platform;
+        
+        // 测试emoji支持
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+        ctx.font = '16px Arial';
+        const emojiTest = '🇺🇸';
+        const metrics = ctx.measureText(emojiTest);
+        const emojiSupported = metrics.width > 16; // emoji通常比普通字符宽
+        document.getElementById('emoji-support').textContent = emojiSupported ? '支持' : '不支持';
+        
+        // 点击其他地方隐藏下拉菜单
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.language-selector')) {
+                document.getElementById('langDropdown').style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html> 

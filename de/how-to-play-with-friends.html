@@ -1,165 +1,304 @@
-<!DOCTYPE html><html lang="de" dir="ltr"><head>
+<!DOCTYPE html>
+<html lang="de">
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wie man Play With Friends in Garten anbauen - Vollständige Anleitung | Tipps für Garten anbauen</title>
-  <meta name="description" content="Lernen Sie, wie man play with friends! Lernen Sie, wie man play with friends trong Grow a Garden.">
-  <meta name="keywords" content="wie man play with friends trong grow a garden, roblox play with friends guide, grow a garden guide, play with friends making guide, roblox farming game, play with friends ingredients collection, grow a garden tips">
-  <link rel="canonical" href="https://growagarden.cv/how-to-play-with-friends.html">
+  <title>Play With Friends en Grow a Garden - Vollständiger Leitfaden | Anbautipps</title>
+  <link rel="canonical" href="growagarden.cv/de/how-to-play-with-friends.html">
+  <link rel="alternate" hreflang="en" href="growagarden.cv/en/how-to-play-with-friends.html">
+  <link rel="alternate" hreflang="x-default" href="growagarden.cv/how-to-play-with-friends.html">
+  <link rel="stylesheet" href="unpkg.com/simple.css@2.1.0/simple.min.css">
+  <link rel="stylesheet" href="/styles.css">
 
-  <meta property="og:title" content="Wie man Play With Friends in Garten anbauen - Vollständige Anleitung | Tipps für Garten anbauen">
-  <meta property="og:description" content="Lernen Sie, wie man play with friends trong Grow a Garden! Lernen Sie, wie man play with friends.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://growagarden.cv/how-to-play-with-friends.html">
-  <meta property="og:image" content="https://growagarden.cv/co-op-guide-og.jpg">
+        <style>
+        #lang-switcher {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            color: white;
+            padding: 8px 12px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        #lang-switcher:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        #lang-switcher option {
+            background: #2c3e50;
+            color: white;
+            padding: 8px;
+        }
+        
+        #lang-switcher option:hover {
+            background: #34495e;
+        }
+        </style>
+        
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Wie man Play With Friends in Garten anbauen - Vollständige Anleitung | Tipps für Garten anbauen">
-  <meta name="twitter:description" content="Lernen Sie, wie man play with friends trong Grow a Garden! Lernen Sie, wie man play with friends.">
-  <meta name="twitter:image" content="https://growagarden.cv/co-op-guide-og.jpg">
-
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"HowTo",
-    "name":"How to Play with Friends in Grow a Garden",
-    "description":"Invite friends, form teams, delegate roles, and farm efficiently together.",
-    "image":"https://growagarden.cv/co-op-guide-og.jpg",
-    "url":"https://growagarden.cv/how-to-play-with-friends.html",
-    "inLanguage":"en",
-    "step":[
-      {"@type":"HowToStep","name":"Invite & Join","text":"Invite friends from the friends list, join the same server, and meet at the hub."},
-      {"@type":"HowToStep","name":"Assign Roles","text":"Split roles: growers, waterers, processors, sellers, and logistics."},
-      {"@type":"HowToStep","name":"Trade & Share","text":"Use trading to balance resources and keep production lines flowing."}
-    ]
-  }
-  </script>
-
-  <link rel="stylesheet" href="https://unpkg.com/simple.css@2.1.0/simple.min.css">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👥</text></svg>">
-
-  <style>
-    body{position:relative;min-height:100vh;overflow-x:hidden}
-    .bg-blur{position:fixed;inset:0;width:100vw;height:100vh;z-index:0;background: url('grow-bg.jpg') center/cover no-repeat;opacity:.3;filter:blur(2px);pointer-events:none}
-    .content-wrapper{position:relative;z-index:1}
-    .coop-hero{background:linear-gradient(135deg,#7c3aed,#2563eb);color:#fff;padding:4rem 2rem;text-align:center;margin-top:60px;margin-bottom:2rem;position:relative}
-    .coop-hero::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.2);z-index:1}
-    .coop-hero h1,.coop-hero p{position:relative;z-index:2}
-    .coop-hero h1{font-size:3rem;margin-bottom:1rem;color:#fff!important;text-shadow:0 2px 4px rgba(0,0,0,.7),0 1px 2px rgba(0,0,0,.8);font-weight:800;letter-spacing:.5px;-webkit-text-stroke:.5px rgba(0,0,0,.2)}
-    .coop-hero p{font-size:1.2rem;color:#fff!important;text-shadow:0 1px 3px rgba(0,0,0,.6),0 1px 2px rgba(0,0,0,.7);font-weight:600;letter-spacing:.3px;-webkit-text-stroke:.3px rgba(0,0,0,.15)}
-    .guide-section{max-width:1200px;margin:0 auto;padding:2rem}
-    .guide-card{background:rgba(255,255,255,.98);backdrop-filter:blur(10px);border-radius:12px;padding:2rem;margin-bottom:2rem;box-shadow:0 8px 25px rgba(0,0,0,.15);border:1px solid rgba(255,255,255,.3)}
-    .guide-card h2{color:#23272a!important;font-weight:700;margin-bottom:1.5rem;text-shadow:0 1px 2px rgba(0,0,0,.1)}
-    .guide-card h3{color:#2c3e50!important;font-weight:600;margin-bottom:1rem}
-    .guide-card p,.guide-card li{color:#34495e!important;font-weight:500;line-height:1.6}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem;margin:2rem 0}
-    .grid-item{background:rgba(255,255,255,.95);border-radius:8px;padding:1rem;border-left:4px solid #7c3aed;box-shadow:0 4px 12px rgba(0,0,0,.1)}
-    .tip-box{background:linear-gradient(135deg,#f1c40f,#f39c12);color:#fff;padding:1rem;border-radius:8px;margin:1rem 0;box-shadow:0 4px 15px rgba(241,196,15,.3)}
-    .tip-box strong{font-weight:700}
-    .back-btn{display:inline-block;background:#5865f2;color:#fff;padding:.75rem 1.5rem;text-decoration:none;border-radius:8px;margin-bottom:2rem;transition:all .3s ease}
-    .back-btn:hover{background:#4752c4;transform:translateY(-2px)}
-    .breadcrumb-container{max-width:1200px;margin:0 auto;padding:1rem 2rem}
-    .breadcrumb{background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-radius:8px;padding:.75rem 1rem;box-shadow:0 2px 8px rgba(0,0,0,.1);border:1px solid rgba(255,255,255,.3)}
-    .breadcrumb ol{list-style:none;margin:0;padding:0;display:flex;align-items:center;flex-wrap:wrap}
-    .breadcrumb li{display:flex;align-items:center;font-weight:500;color:#34495e}
-    .breadcrumb li:not(:last-child)::after{content:"›";margin:0 .5rem;color:#666}
-    .breadcrumb a{color:#7c3aed;text-decoration:none;transition:color .3s}
-    .breadcrumb a:hover{color:#6d28d9}
-    .breadcrumb li[aria-current="page"]{color:#666;font-weight:bold}
-    @media (max-width:768px){.coop-hero h1{font-size:2rem}.guide-section{padding:1rem}.guide-card{padding:1.5rem}}
-  </style>
+        <style>
+        .language-selector {
+            position: relative;
+            display: inline-block;
+        }
+        .lang-btn {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 8px 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+        .lang-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+        .lang-btn .flag-img {
+            width: 20px;
+            height: 14px;
+            object-fit: cover;
+            border-radius: 2px;
+            vertical-align: middle;
+        }
+        .lang-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: rgba(0, 0, 0, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 8px 0;
+            min-width: 150px;
+            display: none;
+            z-index: 1000;
+            backdrop-filter: blur(20px);
+        }
+        .lang-option {
+            padding: 8px 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: background-color 0.2s;
+        }
+        .lang-option:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .lang-option .flag-img {
+            width: 18px;
+            height: 12px;
+            object-fit: cover;
+            border-radius: 2px;
+            vertical-align: middle;
+        }
+        </style>
+    <script src="../unified_i18n_system.js"></script>
 </head>
 <body>
-  <div class="bg-blur"></div>
-      <header>
-    <nav>
-      <a href="/index.html" class="logo" data-i18n="nav.logo">🌱 Grow a Garden</a>
-      <a href="/index.html#stats" data-i18n="nav.live">Live-Statistiken</a>
-      <a href="/index.html#map" data-i18n="nav.map">Globale Wärmekarte</a>
-      <a href="/index.html#tips" data-i18n="nav.tips">Tipps</a>
-      <a href="/guides.html" data-i18n="nav.guides">📚 Anleitungen</a>
-      <a href="/index.html#community" class="discord-btn" data-i18n="nav.discord">💬 Discord</a>
-                  <select id="lang-switcher" aria-label="Language">
-                <option value="en" >English</option>
-                <option value="zh-cn" >简体中文</option>
-                <option value="es" >Español</option>
-                <option value="pt-br" >Português</option>
-                <option value="fr" >Français</option>
-                <option value="de" selected="">Deutsch</option>
-                <option value="ru" >Русский</option>
-                <option value="ar" >العربية</option>
-                <option value="hi" >हिन्दी</option>
-                <option value="id" >Bahasa Indonesia</option>
-                <option value="vi" >Tiếng Việt</option>
-                <option value="ja" >日本語</option>
-            </select>
-    </nav>
-  </header>
+    <header>
+        <nav>
+            <a href="../index.html" class="logo" data-i18n="nav.logo">🌱 Grow a Garden</a>
+            <a href="../index.html#stats" data-i18n="nav.live">Live Stats</a>
+            <a href="../index.html#map" data-i18n="nav.map">Global Heatmap</a>
+            <a href="../index.html#tips" data-i18n="nav.tips">Tips</a>
+            <a href="guides.html" data-i18n="nav.guides">📚 Guides</a>
+            <a href="../online.html" data-i18n="nav.online">🎮 Online</a>
+            <a href="../index.html#community" class="discord-btn" data-i18n="nav.discord">💬 Discord</a>
+            <select id="lang-switcher" aria-label="Language">
+<option value="en" >🇺🇸 English</option>
+<option value="zh-cn" >🇨🇳 简体中文</option>
+<option value="es" >🇪🇸 Español</option>
+<option value="pt-br" >🇧🇷 Português</option>
+<option value="fr" >🇫🇷 Français</option>
+<option value="de" selected>🇩🇪 Deutsch</option>
+<option value="ru" >🇷🇺 Русский</option>
+<option value="ar" >🇸🇦 العربية</option>
+<option value="hi" >🇮🇳 हिन्दी</option>
+<option value="id" >🇮🇩 Bahasa Indonesia</option>
+<option value="vi" >🇻🇳 Tiếng Việt</option>
+<option value="ja" >🇯🇵 日本語</option>
+</select>
+        </nav>
+    </header>
+  <header>
+        <nav>
+            <a href="#" class="logo" data-i18n="nav.logo">🌱 Grow a Garden</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('stats')" data-i18n="nav.live">Live Stats</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('map')" data-i18n="nav.map">Global Heatmap</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('tips')" data-i18n="nav.tips">Tips</a>
+            <a href="../de/guides.html" data-i18n="nav.guides">📚 Guides</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('community')" class="discord-btn" data-i18n="nav.discord">💬 Discord</a>
+                        
+                    <div class="lang-option" data-lang="zh-cn">
+                        <img src="../flags/zh-cn.png" alt="CN Flag" class="flag-img">
+                        <span class="code" data-i18n="how-to-play-with-friends.span.cn">CN</span>
+                    </div>
+                    <div class="lang-option" data-lang="es">
+                        <img src="../flags/es.png" alt="ES Flag" class="flag-img">
+                        <span class="code" data-i18n="how-to-play-with-friends.span.es">ES</span>
+                    </div>
+                    <div class="lang-option" data-lang="pt-br">
+                        <img src="../flags/pt-br.png" alt="BR Flag" class="flag-img">
+                        <span class="code" data-i18n="how-to-play-with-friends.span.br">BR</span>
+                    </div>
+                    <div class="lang-option" data-lang="fr">
+                        <img src="../flags/fr.png" alt="FR Flag" class="flag-img">
+                        <span class="code" data-i18n="how-to-play-with-friends.span.fr">FR</span>
+                    </div>
+                    <div class="lang-option" data-lang="de">
+                        <img src="../flags/de.png" alt="DE Flag" class="flag-img">
+                        <span class="code" data-i18n="how-to-play-with-friends.span.de">DE</span>
+                    </div>
+                    <div class="lang-option" data-lang="ru">
+                        <img src="../flags/ru.png" alt="RU Flag" class="flag-img">
+                        <span class="code" data-i18n="how-to-play-with-friends.span.ru">RU</span>
+                    </div>
+                    <div class="lang-option" data-lang="ar">
+                        <img src="../flags/ar.png" alt="SA Flag" class="flag-img">
+                        <span class="code" data-i18n="how-to-play-with-friends.span.sa">SA</span>
+                    </div>
+                    <div class="lang-option" data-lang="hi">
+                        <img src="../flags/hi.png" alt="IN Flag" class="flag-img">
+                        <span class="code" data-i18n="how-to-play-with-friends.span.in">IN</span>
+                    </div>
+                    <div class="lang-option" data-lang="id">
+                        <img src="../flags/en.png" alt="ID Flag" class="flag-img">
+                        <span class="code" data-i18n="how-to-play-with-friends.span.id">ID</span>
+                    </div>
+                    <div class="lang-option" data-lang="vi">
+                        <img src="../flags/vi.png" alt="VN Flag" class="flag-img">
+                        <span class="code" data-i18n="how-to-play-with-friends.span.vn">VN</span>
+                    </div>
+                    <div class="lang-option" data-lang="ja">
+                        <img src="../flags/ja.png" alt="JP Flag" class="flag-img">
+                        <span class="code" data-i18n="how-to-play-with-friends.span.jp">JP</span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+  <main>
+    <h1 data-i18n="how-to-play-with-friends.h1.how.to.play.with.friends.in.grow.a.garden">👥 How to Play with Friends in Grow a Garden</h1>
+    <p data-i18n="how-to-play-with-friends.p.complete.guide.multiplayer.gaming">Complete Guide: Multiplayer Gaming</p>
+    <a data-i18n="link.←_back_to_guides">← Back to Guides</a>
+  </main>
+</div>
+</body>
+  <script src="/i18n/i18n.js"></script>
 
-  <div class="content-wrapper">
-    <section class="coop-hero">
-      <h1 data-i18n="Mit Freunden spielen.hero.title">Mit Freunden spielen</h1>
-      <p>Mit Freunden zusammenarbeiten – Rollen &amp; Handel.</p>
-    </section>
-
-    <div class="breadcrumb-container">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <ol>
-          <li><a href="/de/index.html">🏠 Startseite</a></li>
-          <li><a href="/de/guides.html">📚 Guides</a></li>
-          <li aria-current="page" data-i18n="🎯_play_with_friends.breadcrumb.current">🎯 Play With Friends</li>
-        </ol>
-      </nav>
-    </div>
-
-    <div class="guide-section">
-      <div class="guide-card">
-        <h2>🎯 Why Co-op?</h2>
-        <ul>
-          <li><strong>Higher Throughput:</strong> Parallel tasks (plant, water, process, sell)</li>
-          <li><strong>Specialization:</strong> Roles boost efficiency and quality</li>
-          <li><strong>Economy of Scale:</strong> Shared tools and centralized storage</li>
-        </ul>
-      </div>
-
-      <div class="guide-card">
-        <h2>🧩 Team Setup</h2>
-        <div class="grid">
-          <div class="grid-item"><h4>📨 Invites</h4><p>Join same server; invite from friends list; meet at hub.</p></div>
-          <div class="grid-item"><h4>🧑‍🌾 Growers</h4><p>Seed, plant, harvest; prep batches for processing.</p></div>
-          <div class="grid-item"><h4>🚿 Waterers</h4><p>Golden-hour watering loops and hydration checks.</p></div>
-          <div class="grid-item"><h4>👩‍🍳 Processors</h4><p>Run mills, mixers, ovens in assembly order.</p></div>
-          <div class="grid-item"><h4>🛒 Sellers</h4><p>Monitor prices, bundle items, time peak hours.</p></div>
-          <div class="grid-item"><h4>🚚 Logistics</h4><p>Move goods between fields, storage, and market.</p></div>
+        <div class="footer-content">
+            <p data-i18n="footer.copyright">© 2025 Grow a Garden - Real-Time Player Tracker</p>
+            <p data-i18n="footer.disclaimer">Not official. Data for reference only.</p>
         </div>
-      </div>
+    
 
-      <div class="guide-card">
-        <h2>📝 Co-op Playbook</h2>
-        <h3>Step 1: Meet &amp; Assign</h3>
-        <ul><li>Create a shared plan and assign roles</li><li>Pick production targets (e.g., pies, smoothies)</li></ul>
-        <h3>Step 2: Sync Watering</h3>
-        <ul><li>Use synchronized loops during 7:00–9:00</li><li>Alternate breaks to keep fields hydrated</li></ul>
-        <h3>Step 3: Run Assembly Line</h3>
-        <ul><li>Route crops → storage → processing → market</li><li>Track bottlenecks and rebalance roles</li></ul>
-        <h3>Step 4: Trade Smart</h3>
-        <ul><li>Trade deficits (eggs/butter/sugar) to keep lines flowing</li><li>Bundle finished goods for better prices</li></ul>
-      </div>
+        <script>
+        // 语言选择器功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const langOptions = document.querySelectorAll('.lang-option');
+            const currentLangBtn = document.querySelector('.lang-btn');
+            const langDropdown = document.querySelector('.lang-dropdown');
+            
+            if (!currentLangBtn || !langDropdown) return;
+            
+            // 为每个语言选项添加点击事件
+            langOptions.forEach(option => {
+                option.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const lang = this.getAttribute('data-lang');
+                    const flagElement = this.querySelector('.flag-img');
+                    const codeElement = this.querySelector('.code');
+                    
+                    if (flagElement && codeElement) {
+                        const currentFlagElement = currentLangBtn.querySelector('.flag-img');
+                        const currentCodeElement = currentLangBtn.querySelector('.code');
+                        
+                        if (currentFlagElement && currentCodeElement) {
+                            currentFlagElement.src = flagElement.src;
+                            currentCodeElement.textContent = codeElement.textContent;
+                            currentLangBtn.setAttribute('data-lang', lang);
+                        }
+                    }
+                    
+                    // 跳转到对应语言页面
+                    const currentPath = window.location.pathname;
+                    let newPath;
+                    
+                    if (currentPath.includes('/zh-cn/') || currentPath.includes('/en/') || 
+                        currentPath.includes('/es/') || currentPath.includes('/pt-br/') || 
+                        currentPath.includes('/fr/') || currentPath.includes('/de/') || 
+                        currentPath.includes('/ru/') || currentPath.includes('/ar/') || 
+                        currentPath.includes('/hi/') || currentPath.includes('/id/') || 
+                        currentPath.includes('/vi/') || currentPath.includes('/ja/')) {
+                        newPath = currentPath.replace(/\/(zh-cn|en|es|pt-br|fr|de|ru|ar|hi|id|vi|ja)\//, '/' + lang + '/');
+                    } else {
+                        newPath = '/' + lang + currentPath;
+                    }
+                    
+                    window.location.href = newPath;
+                    langDropdown.style.display = 'none';
+                });
+            });
+            
+            // 点击按钮显示/隐藏下拉菜单
+            currentLangBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const isVisible = langDropdown.style.display === 'block';
+                langDropdown.style.display = isVisible ? 'none' : 'block';
+            });
+            
+            // 点击其他地方隐藏下拉菜单
+            document.addEventListener('click', function() {
+                langDropdown.style.display = 'none';
+            });
+            
+            // 设置当前语言
+            const currentPath = window.location.pathname;
+            const langMatch = currentPath.match(/\/(zh-cn|en|es|pt-br|fr|de|ru|ar|hi|id|vi|ja)\//);
+            if (langMatch) {
+                const currentLang = langMatch[1];
+                currentLangBtn.setAttribute('data-lang', currentLang);
+                
+                const targetOption = document.querySelector(`.lang-option[data-lang="${currentLang}"]`);
+                if (targetOption) {
+                    const flagElement = targetOption.querySelector('.flag-img');
+                    const codeElement = targetOption.querySelector('.code');
+                    const currentFlagElement = currentLangBtn.querySelector('.flag-img');
+                    const currentCodeElement = currentLangBtn.querySelector('.code');
+                    
+                    if (flagElement && codeElement && currentFlagElement && currentCodeElement) {
+                        currentFlagElement.src = flagElement.src;
+                        currentCodeElement.textContent = codeElement.textContent;
+                    }
+                }
+            }
+        });
+        </script>
 
-      <div class="guide-card">
-        <h2>💡 Pro Tips</h2>
-        <div class="tip-box"><strong>Voice/Chat:</strong> Keep comms short: “Water loop A”, “Send sugar to oven”.</div>
-        <div class="tip-box"><strong>Shared Storage:</strong> Label chests per ingredient to avoid confusion.</div>
-        <div class="tip-box"><strong>Rotation:</strong> Swap roles every 30–60 mins to avoid burnout.</div>
-      </div>
-
-      <div class="guide-card" style="text-align:center;">
-        <a href="/de/guides.html" class="back-btn">← Zurück zu den Guides</a>
-      </div>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
-
- </body></html>
+    <script>
+        // 页面加载完成后自动应用国际化
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.i18nSystem && window.i18nSystem.isReady()) {
+                // 如果国际化系统已准备就绪，直接应用翻译
+                window.i18nSystem.applyTranslations();
+            } else {
+                // 等待国际化系统初始化完成
+                const checkReady = setInterval(() => {
+                    if (window.i18nSystem && window.i18nSystem.isReady()) {
+                        window.i18nSystem.applyTranslations();
+                        clearInterval(checkReady);
+                    }
+                }, 100);
+            }
+        });
+    </script>
+</body>
+</html> 

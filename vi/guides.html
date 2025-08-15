@@ -1,545 +1,174 @@
-<!DOCTYPE html><html lang="vi" dir="ltr"><head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <base href="/">
-  <title>Hướng Dẫn Trồng Vườn - Bộ Sưu Tập Đầy Đủ</title>
-  <link rel="canonical" href="https://growagarden.cv/vi/guides.html">
-  <link rel="alternate" hreflang="en" href="https://growagarden.cv/en/guides.html">
-  <link rel="alternate" hreflang="zh-CN" href="https://growagarden.cv/zh-cn/guides.html">
-  <link rel="alternate" hreflang="vi" href="https://growagarden.cv/vi/guides.html">
-  <link rel="alternate" hreflang="x-default" href="https://growagarden.cv/guides.html">
-  <link rel="stylesheet" href="https://unpkg.com/simple.css@2.1.0/simple.min.css">
-  <link rel="stylesheet" href="../styles.css">
+<!DOCTYPE html>
+<html lang="vi" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hướng dẫn trồng trọt - Grow a Garden</title>
+    <link rel="canonical" href="../vi/guides.html">
+    <link rel="stylesheet" href="unpkg.com/simple.css@2.1.0/simple.min.css">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
+    <script src="../unified_i18n_system.js"></script>
 </head>
 <body>
     <header>
-    <nav>
-      <a href="/index.html" class="logo" data-i18n="nav.logo">🌱 Trồng Vườn</a>
-      <a href="/index.html#stats" data-i18n="nav.live">Thống Kê Trực Tiếp</a>
-      <a href="/index.html#map" data-i18n="nav.map">Bản Đồ Nhiệt Toàn Cầu</a>
-      <a href="/index.html#tips" data-i18n="nav.tips">Mẹo</a>
-      <a href="/guides.html" data-i18n="nav.guides">📚 Hướng dẫn</a>
-      <a href="/index.html#community" class="discord-btn" data-i18n="nav.discord">💬 Discord</a>
-                  <select id="lang-switcher" aria-label="Language">
-                <option value="en" >English</option>
-                <option value="zh-cn" >简体中文</option>
-                <option value="es" >Español</option>
-                <option value="pt-br" >Português</option>
-                <option value="fr" >Français</option>
-                <option value="de" >Deutsch</option>
-                <option value="ru" >Русский</option>
-                <option value="ar" >العربية</option>
-                <option value="hi" >हिन्दी</option>
-                <option value="id" >Bahasa Indonesia</option>
-                <option value="vi" selected="">Tiếng Việt</option>
-                            <option value="ja" >日本語</option>
-            </select>
-    </nav>
-  </header>
-  <section class="guides-hero">
-    <h1 data-i18n="hero.guides.title">📚 Hướng Dẫn Trồng Vườn</h1>
-    <p data-i18n="hero.guides.subtitle">Bộ sưu tập đầy đủ chiến lược, công thức và mẹo chơi</p>
-  </section>
-  <div class="guides-section">
-    <div class="guides-card">
-      <h2>🔍 Tìm Kiếm và Lọc</h2>
-      <div class="search-filter-container">
-        <input type="text" id="guide-search" placeholder="Tìm kiếm hướng dẫn..." class="guide-search-input">
-        <div class="filter-buttons">
-          <button class="filter-btn active" data-filter="all">Tất cả</button>
-          <button class="filter-btn" data-filter="recipe">Công thức</button>
-          <button class="filter-btn" data-filter="farming">Nông nghiệp</button>
-          <button class="filter-btn" data-filter="profit">Lợi nhuận</button>
-          <button class="filter-btn" data-filter="advanced">Nâng cao</button>
-        </div>
-      </div>
+        <nav>
+            <a href="../index.html" class="logo" data-i18n="nav.logo">🌱 Grow a Garden</a>
+            <a href="../index.html#stats" data-i18n="nav.live">Live Stats</a>
+            <a href="../index.html#map" data-i18n="nav.map">Global Heatmap</a>
+            <a href="../index.html#tips" data-i18n="nav.tips">Tips</a>
+            <a href="guides.html" data-i18n="nav.guides">📚 Guides</a>
+            <a href="../online.html" data-i18n="nav.online">🎮 Online</a>
+            <a href="../index.html#community" class="discord-btn" data-i18n="nav.discord">💬 Discord</a>
+            <select id="lang-switcher" aria-label="Language">
+<option value="en" >🇺🇸 English</option>
+<option value="zh-cn" >🇨🇳 简体中文</option>
+<option value="es" >🇪🇸 Español</option>
+<option value="pt-br" >🇧🇷 Português</option>
+<option value="fr" >🇫🇷 Français</option>
+<option value="de" >🇩🇪 Deutsch</option>
+<option value="ru" >🇷🇺 Русский</option>
+<option value="ar" >🇸🇦 العربية</option>
+<option value="hi" >🇮🇳 हिन्दी</option>
+<option value="id" >🇮🇩 Bahasa Indonesia</option>
+<option value="vi" selected>🇻🇳 Tiếng Việt</option>
+<option value="ja" >🇯🇵 日本語</option>
+</select>
+        </nav>
+    </header>
+    <div class="bg-blur"></div>
+    <div class="content-wrapper">
+        <!-- 导航栏 -->
+        
+
+        <!-- 主要内容 -->
+        <main>
+            <div class="hero-section">
+                <h1>Hướng dẫn trồng trọt</h1>
+                <p data-i18n="guides.hero.description">Master the art of farming and cooking in Grow a Garden</p>
+            </div>
+
+            <!-- 热门攻略 -->
+            <section class="guides-section">
+                <h2 data-i18n="guides.popular.title">🔥 Popular Guides</h2>
+                <div class="guides-grid">
+                    <a href="vi/how-to-make-salad.html" class="guide-card">
+                        <div class="card-badge popular" data-i18n="guides.badges.popular">⭐ Most Popular</div>
+                        <h3 data-i18n="guides.salad.title">🥗 Salad Making Guide</h3>
+                        <p data-i18n="guides.salad.description">Master the art of salad making with our comprehensive guide.</p>
+                        <div class="card-meta">
+                            <span class="difficulty beginner" data-i18n="guides.difficulty.beginner">Beginner</span>
+                            <span class="read-time" data-i18n="guides.readTime" data-i18n-params=\'{"minutes": "15"}\'>15 min read</span>
+                            <span class="views" data-i18n="guides.views" data-i18n-params=\'{"count": "2.5k"}\'>🔥 2.5k views</span>
+                        </div>
+                    </a>
+                    
+                    <a href="vi/how-to-make-pizza.html" class="guide-card">
+                        <div class="card-badge trending" data-i18n="guides.badges.trending">📈 Trending</div>
+                        <h3 data-i18n="guides.pizza.title">🍕 Pizza Making Guide</h3>
+                        <p data-i18n="guides.pizza.description">Learn how to make delicious pizza in Grow a Garden.</p>
+                        <div class="card-meta">
+                            <span class="difficulty intermediate" data-i18n="guides.difficulty.intermediate">Intermediate</span>
+                            <span class="read-time" data-i18n="guides.readTime" data-i18n-params=\'{"minutes": "25"}\'>25 min read</span>
+                            <span class="views" data-i18n="guides.views" data-i18n-params=\'{"count": "1.8k"}\'>🔥 1.8k views</span>
+                        </div>
+                    </a>
+                    
+                    <a href="vi/how-to-make-bread.html" class="guide-card">
+                        <div class="card-badge new" data-i18n="guides.badges.new">🆕 New</div>
+                        <h3 data-i18n="guides.bread.title">🍞 Bread Making Guide</h3>
+                        <p data-i18n="guides.bread.description">Master bread making techniques in Grow a Garden.</p>
+                        <div class="card-meta">
+                            <span class="difficulty beginner" data-i18n="guides.difficulty.beginner">Beginner</span>
+                            <span class="read-time" data-i18n="guides.readTime" data-i18n-params=\'{"minutes": "20"}\'>20 min read</span>
+                            <span class="views" data-i18n="guides.views" data-i18n-params=\'{"count": "1.2k"}\'>🔥 1.2k views</span>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- 所有攻略 -->
+            <section class="guides-section">
+                <h2 data-i18n="guides.all.title">📚 All Guides</h2>
+                <div class="guides-grid">
+                    <a href="vi/how-to-grow-apples.html" class="guide-card">
+                        <h3 data-i18n="guides.apple.title">🍎 Apple Growing Guide</h3>
+                        <p data-i18n="guides.apple.description">Learn how to grow delicious apples in your garden.</p>
+                        <div class="card-meta">
+                            <span class="difficulty beginner" data-i18n="guides.difficulty.beginner">Beginner</span>
+                            <span class="read-time" data-i18n="guides.readTime" data-i18n-params=\'{"minutes": "12"}\'>12 min read</span>
+                        </div>
+                    </a>
+                    
+                    <a href="vi/how-to-grow-oranges.html" class="guide-card">
+                        <h3 data-i18n="guides.orange.title">🍊 Orange Growing Guide</h3>
+                        <p data-i18n="guides.orange.description">Master the art of growing sweet oranges.</p>
+                        <div class="card-meta">
+                            <span class="difficulty intermediate" data-i18n="guides.difficulty.intermediate">Intermediate</span>
+                            <span class="read-time" data-i18n="guides.readTime" data-i18n-params=\'{"minutes": "18"}\'>18 min read</span>
+                        </div>
+                    </a>
+                    
+                    <a href="vi/how-to-make-cake.html" class="guide-card">
+                        <h3 data-i18n="guides.cake.title">🎂 Cake Making Guide</h3>
+                        <p data-i18n="guides.cake.description">Create delicious cakes with our expert tips.</p>
+                        <div class="card-meta">
+                            <span class="difficulty intermediate" data-i18n="guides.difficulty.intermediate">Intermediate</span>
+                            <span class="read-time" data-i18n="guides.readTime" data-i18n-params=\'{"minutes": "30"}\'>30 min read</span>
+                        </div>
+                    </a>
+                    
+                    <a href="vi/how-to-make-cookies.html" class="guide-card">
+                        <h3 data-i18n="guides.cookie.title">🍪 Cookie Making Guide</h3>
+                        <p>Bake perfect cookies every time.</p>
+                        <div class="card-meta">
+                            <span class="difficulty beginner" data-i18n="guides.difficulty.beginner">Beginner</span>
+                            <span class="read-time" data-i18n="guides.readTime" data-i18n-params=\'{"minutes": "20"}\'>20 min read</span>
+                        </div>
+                    </a>
+                    
+                    <a href="vi/how-to-make-smoothie.html" class="guide-card">
+                        <h3 data-i18n="guides.smoothie.title">🥤 Smoothie Making Guide</h3>
+                        <p>Create healthy and delicious smoothies.</p>
+                        <div class="card-meta">
+                            <span class="difficulty beginner" data-i18n="guides.difficulty.beginner">Beginner</span>
+                            <span class="read-time" data-i18n="guides.readTime" data-i18n-params=\'{"minutes": "18"}\'>18 min read</span>
+                        </div>
+                    </a>
+                    
+                    <a href="vi/how-to-build-farm.html" class="guide-card">
+                        <h3 data-i18n="guides.farm.title">🏗️ Farm Building Guide</h3>
+                        <p>Design and build your perfect farm layout.</p>
+                        <div class="card-meta">
+                            <span class="difficulty advanced">Advanced</span>
+                            <span class="read-time" data-i18n="guides.readTime" data-i18n-params=\'{"minutes": "45"}\'>45 min read</span>
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </main>
+</div>
+</body>
+
+        <footer class="footer">
+            <p>&copy; 2025 Grow a Garden. All rights reserved.</p>
+        </footer>
     </div>
 
-    <!-- 热门攻略 -->
-    <div class="guides-card">
-      <h2>🔥 Hướng Dẫn Xu Hướng</h2>
-      <div class="guides-grid">
-        <a href="/vi/how-to-make-salad.html" class="guide-item featured-guide">
-          <div class="featured-badge">⭐ Phổ Biến Nhất</div>
-          <h3>Hướng Dẫn Làm Salad</h3>
-          <p>Học mẹo làm salad trong Trồng Vườn.</p>
-          <div class="guide-meta">
-            <span class="guide-difficulty">Người mới</span>
-            <span class="guide-read-time">15 phút đọc</span>
-            <span class="guide-views">🔥 2.5k lượt xem</span>
-          </div>
-        </a>
-        
-        <a href="/vi/how-to-make-pizza.html" class="guide-item">
-          <div class="trending-badge">📈 Xu Hướng</div>
-          <h3>Hướng Dẫn Làm Pizza</h3>
-          <p>Học mẹo làm pizza trong Trồng Vườn.</p>
-          <div class="guide-meta">
-            <span class="guide-difficulty">Trung cấp</span>
-            <span class="guide-read-time">25 phút đọc</span>
-            <span class="guide-views">🔥 1.8k lượt xem</span>
-          </div>
-        </a>
-        
-        <a href="/vi/how-to-make-bread.html" class="guide-item">
-          <div class="new-badge">🆕 Mới</div>
-          <h3>Hướng Dẫn Làm Bánh Mì</h3>
-          <p>Học mẹo làm bánh mì trong Trồng Vườn.</p>
-          <div class="guide-meta">
-            <span class="guide-difficulty">Người mới</span>
-            <span class="guide-read-time">20 phút đọc</span>
-            <span class="guide-views">🔥 1.2k lượt xem</span>
-          </div>
-        </a>
-      </div>
-    </div>
-    
-    <!-- 食谱攻略 -->
-    <div class="category-section" data-category="recipe">
-      <h2 class="category-title">🍽️ Hướng Dẫn Công Thức</h2>
-      <div class="guides-grid">
-        <a href="/vi/how-to-make-salad.html" class="guide-item">
-          <h3>🥗 Hướng Dẫn Làm Salad</h3>
-          <p>Hướng dẫn hoàn chỉnh để làm salad hoàn hảo trong Trồng Vườn. Từ thu thập nguyên liệu cơ bản đến công thức nâng cao.</p>
-          <div class="guide-meta">
-            <span class="guide-difficulty">Người mới</span>
-            <span class="guide-read-time">15 phút đọc</span>
-          </div>
-        </a>
-        
-        <a href="/vi/how-to-make-pizza.html" class="guide-item">
-          <h3>🍕 Hướng Dẫn Làm Pizza</h3>
-          <p>Học cách làm pizza ngon trong Trồng Vườn. Từ chuẩn bị bột đến kết hợp topping.</p>
-          <div class="guide-meta">
-            <span class="guide-difficulty">Trung cấp</span>
-            <span class="guide-read-time">25 phút đọc</span>
-          </div>
-        </a>
-        
-        <a href="/vi/how-to-make-bread.html" class="guide-item">
-          <h3>🍞 Hướng Dẫn Làm Bánh Mì</h3>
-          <p>Làm chủ kỹ thuật làm bánh mì. Học về các loại bột mì, quản lý men và tối ưu hóa nướng bánh.</p>
-          <div class="guide-meta">
-            <span class="guide-difficulty">Người mới</span>
-            <span class="guide-read-time">20 phút đọc</span>
-          </div>
-        </a>
-        
-        <a href="/vi/how-to-make-cake.html" class="guide-item">
-          <h3>Hướng Dẫn Làm Bánh</h3>
-          <p>Học mẹo làm bánh trong Trồng Vườn.</p>
-          <div class="guide-meta">
-            <span class="guide-difficulty">Trung cấp</span>
-            <span class="guide-read-time">30 phút đọc</span>
-          </div>
-        </a>
-      <a href="/vi/ice-cream-recipe.html" class="guide-item">
-                    <h3>Hướng Dẫn Công Thức Kem</h3>
-                    <p>Học công thức và tỷ lệ kem ngon để tối ưu hóa lợi nhuận và hương vị.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Trung cấp</span>
-                        <span class="guide-read-time">18 phút đọc</span>
-                    </div>
-                </a><a href="/vi/how-to-make-donut.html" class="guide-item">
-                    <h3>Hướng Dẫn Làm Donut</h3>
-                    <p>Học mẹo làm donut trong Trồng Vườn.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Trung cấp</span>
-                        <span class="guide-read-time">20 phút đọc</span>
-                    </div>
-                </a><a href="/vi/how-to-make-pie.html" class="guide-item">
-                    <h3>Hướng Dẫn Làm Bánh Pie</h3>
-                    <p>Học mẹo làm bánh pie trong Trồng Vườn.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Trung cấp</span>
-                        <span class="guide-read-time">25 phút đọc</span>
-                    </div>
-                </a><a href="/vi/how-to-make-cookies.html" class="guide-item">
-                    <h3>Hướng Dẫn Làm Bánh Quy</h3>
-                    <p>Học mẹo làm bánh quy trong Trồng Vườn.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Người mới</span>
-                        <span class="guide-read-time">20 phút đọc</span>
-                    </div>
-                </a><a href="/vi/how-to-make-smoothie.html" class="guide-item">
-                    <h3>Hướng Dẫn Làm Sinh Tố</h3>
-                    <p>Học mẹo làm sinh tố trong Trồng Vườn.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Người mới</span>
-                        <span class="guide-read-time">18 phút đọc</span>
-                    </div>
-                </a><a href="/vi/how-to-make-sandwich.html" class="guide-item">
-                    <h3>Hướng Dẫn Làm Bánh Mì Kẹp</h3>
-                    <p>Học mẹo làm bánh mì kẹp trong Trồng Vườn.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Người mới</span>
-                        <span class="guide-read-time">22 phút đọc</span>
-                    </div>
-                </a><a href="/vi/how-to-make-salad.html" class="guide-item">
-                    <h3>Hướng Dẫn Làm Salad</h3>
-                    <p>Học mẹo làm salad trong Trồng Vườn.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Người mới</span>
-                        <span class="guide-read-time">15 phút đọc</span>
-                    </div>
-                </a><a href="/vi/how-to-make-pizza.html" class="guide-item">
-                    <h3>Hướng Dẫn Làm Pizza</h3>
-                    <p>Học mẹo làm pizza trong Trồng Vườn.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Trung cấp</span>
-                        <span class="guide-read-time">25 phút đọc</span>
-                    </div>
-                </a><a href="/vi/how-to-make-bread.html" class="guide-item">
-                    <h3>Hướng Dẫn Làm Bánh Mì</h3>
-                    <p>Học mẹo làm bánh mì trong Trồng Vườn.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Người mới</span>
-                        <span class="guide-read-time">20 phút đọc</span>
-                    </div>
-                </a><a href="/vi/ice-cream-recipe.html" class="guide-item">
-                    <h3>アイスクリームCông thứcガイド</h3>
-                    <p>Học công thức và tỷ lệ kem ngon để tối ưu hóa lợi nhuận và hương vị.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Trung cấp</span>
-                        <span class="guide-read-time">18 phút đọc</span>
-                    </div>
-                </a><a href="/vi/how-to-make-donut.html" class="guide-item">
-                    <h3>Hướng Dẫn Làm Donut</h3>
-                    <p>Học mẹo làm donut trong Trồng Vườn.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Trung cấp</span>
-                        <span class="guide-read-time">20 phút đọc</span>
-                    </div>
-                </a><a href="/vi/how-to-make-cake.html" class="guide-item">
-                    <h3>Hướng Dẫn Làm Bánh</h3>
-                    <p>Học mẹo làm bánh trong Trồng Vườn.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Nâng cao</span>
-                        <span class="guide-read-time">30 phút đọc</span>
-                    </div>
-                </a><a href="/vi/how-to-make-pie.html" class="guide-item">
-                    <h3>Hướng Dẫn Làm Bánh Pie</h3>
-                    <p>Học mẹo làm bánh pie trong Trồng Vườn.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Trung cấp</span>
-                        <span class="guide-read-time">25 phút đọc</span>
-                    </div>
-                </a><a href="/vi/how-to-make-cookies.html" class="guide-item">
-                    <h3>Hướng Dẫn Làm Bánh Quy</h3>
-                    <p>Học mẹo làm bánh quy trong Trồng Vườn.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Người mới</span>
-                        <span class="guide-read-time">20 phút đọc</span>
-                    </div>
-                </a><a href="/vi/how-to-make-smoothie.html" class="guide-item">
-                    <h3>Hướng Dẫn Làm Sinh Tố</h3>
-                    <p>Học mẹo làm sinh tố trong Trồng Vườn.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Người mới</span>
-                        <span class="guide-read-time">18 phút đọc</span>
-                    </div>
-                </a><a href="/vi/how-to-make-money-fast.html" class="guide-item">
-                    <h3>Hướng dẫn Kiếm tiền Nhanh</h3>
-                    <p>Học mẹo kiếm tiền nhanh trong Trồng Vườn.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Nâng cao</span>
-                        <span class="guide-read-time">25 phút đọc</span>
-                    </div>
-                </a><a href="/vi/how-to-make-sandwich.html" class="guide-item">
-                    <h3>Hướng Dẫn Làm Bánh Mì Kẹp</h3>
-                    <p>Học mẹo làm bánh mì kẹp trong Trồng Vườn.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Người mới</span>
-                        <span class="guide-read-time">22 phút đọc</span>
-                    </div>
-                </a></div>
-    </div>
-    
-    <!-- 种植攻略 -->
-    <div class="category-section" data-category="farming">
-      <h2 class="category-title">🌱 Hướng dẫn Nông nghiệp</h2>
-      <div class="guides-grid">
-        <a href="/vi/how-to-grow-corn.html" class="guide-item">
-          <h3>Hướng dẫn Trồng Ngô</h3>
-          <p>Trồng ngô hiệu quả: gieo hạt, tưới nước, thu hoạch.</p>
-          <div class="guide-meta">
-            <span class="guide-difficulty">Người mới</span>
-            <span class="guide-read-time">18 phút đọc</span>
-          </div>
-        </a>
-        
-        <a href="/vi/how-to-grow-oranges.html" class="guide-item">
-          <h3>Hướng dẫn Trồng Cam</h3>
-          <p>Trồng cam hiệu quả: gieo hạt, tưới nước, thu hoạch.</p>
-          <div class="guide-meta">
-            <span class="guide-difficulty">Trung cấp</span>
-            <span class="guide-read-time">22 phút đọc</span>
-          </div>
-        </a>
-      <a href="/vi/how-to-grow-wheat.html" class="guide-item">
-                    <h3>Hướng dẫn Trồng Lúa mì</h3>
-                    <p>Trồng lúa mì hiệu quả: gieo hạt, tưới nước, thu hoạch.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Người mới</span>
-                        <span class="guide-read-time">20 phút đọc</span>
-                    </div>
-                </a><a href="farming-basics.html" class="guide-item">
-                    <h3>Cơ Bản Về Trồng Trọt</h3>
-                    <p>Những điểm quan trọng về kỹ thuật trồng trọt cơ bản, tưới nước và quản lý cây trồng.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Người mới</span>
-                        <span class="guide-read-time">12 phút đọc</span>
-                    </div>
-                </a><a href="watering-strategies.html" class="guide-item">
-                    <h3>Chiến Lược Tưới Nước</h3>
-                    <p>Học về thời gian, tần suất và hiệu quả tưới nước tối ưu.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Người mới</span>
-                        <span class="guide-read-time">10 phút đọc</span>
-                    </div>
-                </a><a href="crop-rotation.html" class="guide-item">
-                    <h3>Hướng dẫn Luân canh</h3>
-                    <p>Chiến lược luân canh hiệu quả để duy trì độ phì nhiêu của đất và tối đa hóa sản lượng.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Trung cấp</span>
-                        <span class="guide-read-time">15 phút đọc</span>
-                    </div>
-                </a><a href="seed-selection.html" class="guide-item">
-                    <h3>Hướng dẫn Chọn Hạt giống</h3>
-                    <p>Chọn hạt giống phù hợp với chiến lược của bạn và so sánh sự phát triển và lợi nhuận.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Trung cấp</span>
-                        <span class="guide-read-time">18 phút đọc</span>
-                    </div>
-                </a><a href="/vi/how-to-grow-carrots.html" class="guide-item">
-                    <h3>Hướng dẫn Trồng Cà rốt</h3>
-                    <p>Trồng cà rốt hiệu quả: gieo hạt, tưới nước, thu hoạch.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Người mới</span>
-                        <span class="guide-read-time">18 phút đọc</span>
-                    </div>
-                </a><a href="/vi/how-to-grow-apples.html" class="guide-item">
-                    <h3>Hướng dẫn Trồng Táo</h3>
-                    <p>Trồng táo hiệu quả: gieo hạt, tưới nước, thu hoạch.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Trung cấp</span>
-                        <span class="guide-read-time">22 phút đọc</span>
-                    </div>
-                </a><a href="/vi/how-to-grow-berries.html" class="guide-item">
-                    <h3>Hướng dẫn Trồng Quả mọng</h3>
-                    <p>Trồng quả mọng hiệu quả: gieo hạt, tưới nước, thu hoạch.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Trung cấp</span>
-                        <span class="guide-read-time">20 phút đọc</span>
-                    </div>
-                </a><a href="/vi/how-to-build-farm.html" class="guide-item">
-                    <h3>Hướng dẫn Xây dựng Nông trại</h3>
-                    <p>Thiết kế bố cục nông trại hiệu quả: tối ưu hóa tưới tiêu, lưu trữ, chế biến và tuyến đường.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Trung cấp</span>
-                        <span class="guide-read-time">24 phút đọc</span>
-                    </div>
-                </a><a href="/vi/how-to-grow-wheat.html" class="guide-item">
-                    <h3>Hướng dẫn Trồng Lúa mì</h3>
-                    <p>Trồng lúa mì hiệu quả: gieo hạt, tưới nước, thu hoạch.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Người mới</span>
-                        <span class="guide-read-time">20 phút đọc</span>
-                    </div>
-                </a><a href="/vi/how-to-grow-carrots.html" class="guide-item">
-                    <h3>Hướng dẫn Trồng Cà rốt</h3>
-                    <p>Trồng cà rốt hiệu quả: gieo hạt, tưới nước, thu hoạch.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Người mới</span>
-                        <span class="guide-read-time">18 phút đọc</span>
-                    </div>
-                </a><a href="/vi/how-to-grow-apples.html" class="guide-item">
-                    <h3>Hướng dẫn Trồng Táo</h3>
-                    <p>Trồng táo hiệu quả: gieo hạt, tưới nước, thu hoạch.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Trung cấp</span>
-                        <span class="guide-read-time">22 phút đọc</span>
-                    </div>
-                </a><a href="/vi/how-to-grow-oranges.html" class="guide-item">
-                    <h3>Hướng dẫn Trồng Cam</h3>
-                    <p>Trồng cam hiệu quả: gieo hạt, tưới nước, thu hoạch.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Trung cấp</span>
-                        <span class="guide-read-time">21 phút đọc</span>
-                    </div>
-                </a><a href="/vi/how-to-grow-berries.html" class="guide-item">
-                    <h3>Hướng dẫn Trồng Quả mọng</h3>
-                    <p>Trồng quả mọng hiệu quả: gieo hạt, tưới nước, thu hoạch.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Trung cấp</span>
-                        <span class="guide-read-time">20 phút đọc</span>
-                    </div>
-                </a><a href="/vi/how-to-grow-corn.html" class="guide-item">
-                    <h3>Hướng dẫn Trồng Ngô</h3>
-                    <p>Trồng ngô hiệu quả: gieo hạt, tưới nước, thu hoạch.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Trung cấp</span>
-                        <span class="guide-read-time">21 phút đọc</span>
-                    </div>
-                </a><a href="/vi/how-to-build-farm.html" class="guide-item">
-                    <h3>Hướng dẫn Xây dựng Nông trại</h3>
-                    <p>Thiết kế bố cục nông trại hiệu quả: tối ưu hóa tưới tiêu, lưu trữ, chế biến và tuyến đường.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Trung cấp</span>
-                        <span class="guide-read-time">24 phút đọc</span>
-                    </div>
-                </a></div>
-    </div>
-    
-    <!-- 收益攻略 -->
-    <div class="category-section" data-category="profit">
-      <h2 class="category-title">💰 Hướng dẫn Lợi nhuận</h2>
-      <div class="guides-grid">
-        <a href="/vi/how-to-make-money-fast.html" class="guide-item">
-          <h3>Hướng dẫn Kiếm tiền Nhanh</h3>
-          <p>Học mẹo kiếm tiền nhanh trong Trồng Vườn.</p>
-          <div class="guide-meta">
-            <span class="guide-difficulty">Trung cấp</span>
-            <span class="guide-read-time">35 phút đọc</span>
-          </div>
-        </a>
-        
-        <a href="/profit-strategies.html" class="guide-item">
-          <h3>Hướng dẫn Chiến lược Lợi nhuận</h3>
-          <p>Học chiến lược lợi nhuận dài hạn, phân tích thị trường và quản lý rủi ro, tối ưu hóa bán hàng.</p>
-          <div class="guide-meta">
-            <span class="guide-difficulty">Nâng cao</span>
-            <span class="guide-read-time">45 phút đọc</span>
-          </div>
-        </a>
-      <a href="market-analysis.html" class="guide-item">
-                    <h3>Phân Tích Thị Trường</h3>
-                    <p>Phân tích xu hướng thị trường, xác định cơ hội lợi nhuận và tối ưu hóa chiến lược bán hàng.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Nâng cao</span>
-                        <span class="guide-read-time">20 phút đọc</span>
-                    </div>
-                </a><a href="resource-management.html" class="guide-item">
-                    <h3>Quản Lý Tài Nguyên</h3>
-                    <p>Làm chủ phân bổ tài nguyên, quản lý kho và tối ưu hóa chi phí.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Trung cấp</span>
-                        <span class="guide-read-time">16 phút đọc</span>
-                    </div>
-                </a><a href="investment-guide.html" class="guide-item">
-                    <h3>Hướng dẫn Đầu tư</h3>
-                    <p>Học cách xác định mục tiêu đầu tư và tối đa hóa lợi nhuận dài hạn.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Chuyên gia</span>
-                        <span class="guide-read-time">25 phút đọc</span>
-                    </div>
-                </a></div>
-    </div>
-  <div class="category-section" data-category="co-op">
-            <h2 class="category-title">👥 Hợp Tác và Vận Hành</h2>
-            <div class="guides-grid">
-                <a href="/vi/how-to-play-with-friends.html" class="guide-item">
-                    <h3>Chơi với Bạn Bè</h3>
-                    <p>Hợp tác với bạn bè, phân chia vai trò và xây dựng nông trại hiệu quả thông qua thương mại.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Trung cấp</span>
-                        <span class="guide-read-time">18 phút đọc</span>
-                    </div>
-                </a>
+    <script>
+        function toggleLanguageMenu() {
+            const dropdown = document.getElementById('langDropdown');
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
 
-                <a href="storage-and-logistics.html" class="guide-item">
-                    <h3>Lưu Trữ và Hậu Cần</h3>
-                    <p>Tăng hiệu quả hậu cần thông qua lưu trữ và thiết kế tuyến đường.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Trung cấp</span>
-                        <span class="guide-read-time">20 phút đọc</span>
-                    </div>
-                </a>
-            <a href="/vi/how-to-play-with-friends.html" class="guide-item">
-                    <h3>Chơi với Bạn Bè</h3>
-                    <p>Hợp tác với bạn bè, phân chia vai trò và xây dựng nông trại hiệu quả thông qua thương mại.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Trung cấp</span>
-                        <span class="guide-read-time">18 phút đọc</span>
-                    </div>
-                </a></div>
-        </div><div class="category-section" data-category="advanced">
-            <h2 class="category-title">🎮 Hướng dẫn Nâng cao</h2>
-            <div class="guides-grid">
-                <a href="game-mechanics.html" class="guide-item">
-                    <h3>Cơ Chế Trò Chơi</h3>
-                    <p>Đào sâu vào cơ chế trò chơi, đột biến, sự kiện đặc biệt và các yếu tố nâng cao.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Chuyên gia</span>
-                        <span class="guide-read-time">35 phút đọc</span>
-                    </div>
-                </a>
-                
-                <a href="mutation-guide.html" class="guide-item">
-                    <h3>Hướng dẫn Đột biến</h3>
-                    <p>Hiểu hệ thống đột biến và kết hợp chúng để có lợi nhuận tối đa.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Chuyên gia</span>
-                        <span class="guide-read-time">40 phút đọc</span>
-                    </div>
-                </a>
-                
-                <a href="special-events.html" class="guide-item">
-                    <h3>Sự Kiện Đặc Biệt</h3>
-                    <p>Hướng dẫn hoàn chỉnh cho các sự kiện có thời hạn, cơ hội đặc biệt và phần thưởng độc quyền.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Nâng cao</span>
-                        <span class="guide-read-time">28 phút đọc</span>
-                    </div>
-                </a>
-                
-                <a href="speed-running.html" class="guide-item">
-                    <h3>Speedrunning</h3>
-                    <p>Kỹ thuật speedrunning để tối đa hóa hiệu quả và theo đuổi kỷ lục.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Chuyên gia</span>
-                        <span class="guide-read-time">30 phút đọc</span>
-                    </div>
-                </a>
-            </div>
-        </div><div class="guides-card">
-            <h2>💡 Mẹo Nhanh</h2>
-            <div class="tips-grid">
-                <div class="tip-item">
-                    <h4>⏰ Giờ Vàng</h4>
-                    <p>Tưới cây của bạn từ 7:00-9:00 trong trò chơi để có hiệu ứng tăng trưởng gấp đôi.</p>
-                </div>
-                <div class="tip-item">
-                    <h4>🎯 Chất Lượng Quan Trọng</h4>
-                    <p>Nguyên liệu chất lượng cao dẫn đến công thức tốt hơn và lợi nhuận cao hơn.</p>
-                </div>
-                <div class="tip-item">
-                    <h4>📈 Thời Điểm Thị Trường</h4>
-                    <p>Bán vào thời điểm nhu cầu cao để tối đa hóa lợi nhuận.</p>
-                </div>
-                <div class="tip-item">
-                    <h4>📚 Thành Thạo Công Thức</h4>
-                    <p>Làm chủ những điều cơ bản trước khi thử công thức nâng cao để tăng hiệu quả.</p>
-                </div>
-                <div class="tip-item">
-                    <h4>🤝 Học Từ Cộng Đồng</h4>
-                    <p>Tham gia máy chủ Discord của chúng tôi để học từ những người chơi có kinh nghiệm.</p>
-                </div>
-                <div class="tip-item">
-                    <h4>🔄 定期的な更新</h4>
-                    <p>Kiểm tra thường xuyên để có hướng dẫn mới và chiến lược cập nhật.</p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="guides-card">
-            <h2>🏠 Điều Hướng</h2>
-            <div class="back-link-container">
-                <a href="/vi/index.html" class="back-btn" data-i18n="guides.back">← Quay Lại Máy Tính Chính</a>
-            </div>
-        </div>
-    </div>
-  <script src="../i18n/i18n.js"></script>
-  <script src="../script.js"></script>
-
- </body></html>
+        // 点击外部关闭语言菜单
+        document.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('langDropdown');
+            const langBtn = document.querySelector('.lang-btn');
+            if (!langBtn.contains(event.target) && !dropdown.contains(event.target)) {
+                dropdown.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

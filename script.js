@@ -1329,4 +1329,95 @@ window.GrowTracker = {
   });
   
   console.log('Guides page functionality initialized');
+
+// ===== i18n 国际化系统 =====
+let currentLanguage = 'en';
+let translations = {};
+
+// 加载语言包
+async function loadLanguagePack(lang) {
+  try {
+    const response = await fetch(`../i18n/${lang}.json`);
+    if (response.ok) {
+      translations = await response.json();
+      currentLanguage = lang;
+      applyTranslations();
+      console.log(`Language pack loaded: ${lang}`);
+    } else {
+      console.warn(`Failed to load language pack: ${lang}`);
+    }
+  } catch (error) {
+    console.error(`Error loading language pack: ${error}`);
+  }
+}
+
+// 应用翻译
+function applyTranslations() {
+  const elements = document.querySelectorAll('[data-i18n]');
+  elements.forEach(element => {
+    const key = element.getAttribute('data-i18n');
+    if (translations[key]) {
+      element.textContent = translations[key];
+    }
+  });
+}
+
+// 语言切换
+function switchLanguage(lang) {
+  loadLanguagePack(lang);
+}
+
+// 自动检测语言
+function detectLanguage() {
+  // 从URL路径检测语言
+  const path = window.location.pathname;
+  if (path.includes('/zh-cn/')) {
+    return 'zh-cn';
+  } else if (path.includes('/ja/')) {
+    return 'ja';
+  } else if (path.includes('/es/')) {
+    return 'es';
+  } else if (path.includes('/fr/')) {
+    return 'fr';
+  } else if (path.includes('/de/')) {
+    return 'de';
+  } else if (path.includes('/ru/')) {
+    return 'ru';
+  } else if (path.includes('/ar/')) {
+    return 'ar';
+  } else if (path.includes('/hi/')) {
+    return 'hi';
+  } else if (path.includes('/id/')) {
+    return 'id';
+  } else if (path.includes('/vi/')) {
+    return 'vi';
+  } else if (path.includes('/pt-br/')) {
+    return 'pt-br';
+  } else {
+    return 'en'; // 默认英文
+  }
+}
+
+// 初始化i18n
+async function initI18n() {
+  const detectedLang = detectLanguage();
+  await loadLanguagePack(detectedLang);
+  
+  // 设置语言切换器
+  const langSwitcher = document.getElementById('lang-switcher');
+  if (langSwitcher) {
+    langSwitcher.value = detectedLang;
+    langSwitcher.addEventListener('change', (e) => {
+      switchLanguage(e.target.value);
+    });
+  }
+}
+
+// 页面加载完成后初始化i18n
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initI18n);
+} else {
+  initI18n();
+}
+
 })(); 

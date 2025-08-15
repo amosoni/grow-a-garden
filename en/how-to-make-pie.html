@@ -1,0 +1,816 @@
+<!DOCTYPE html><html lang="en" dir="ltr"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Make Pie in Grow a Garden - Complete Recipe Guide</title>
+    <meta name="description" content="Learn how to make pie in Roblox Grow a Garden! Master pie making for profit.">
+    <meta name="keywords" content="如何在种植花园中 make pie 在 种植花园 中, roblox make pie guide, grow a garden guide, make pie making guide, roblox farming game, make pie ingredients collection, grow a garden tips">
+    <link rel="canonical" href="growagarden.cv/en/how-to-make-pie.html">
+    
+    <!-- Open Graph for social sharing -->
+    <meta property="og:title" content="如何在种植花园中 make pie - 完整指南 | 种植花园技巧">
+    <meta property="og:description" content="学习如何在Roblox种植花园中 make pie 在 种植花园 中! 学习如何在Roblox种植花园中 make pie.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://growagarden.cv/en/how-to-make-pie.html">
+    <meta property="og:image" content="https://growagarden.cv/pie-guide-og.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="如何在种植花园中 make pie - 完整指南 | 种植花园技巧">
+    <meta name="twitter:description" content="学习如何在Roblox种植花园中 make pie 在 种植花园 中! 学习如何在Roblox种植花园中 make pie.">
+    <meta name="twitter:image" content="https://growagarden.cv/en/how-to-make-pie.html">
+    
+    <!-- Structured Data JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to Make Pie in Grow a Garden - Complete Recipe Guide",
+      "description": "Learn how to make pie in Roblox Grow a Garden! Master pie making for high profit.",
+      "image": "https://growagarden.cv/how-to-make-pie-guide-og.jpg",
+      "url": "https://growagarden.cv/en/how-to-make-pie.html",
+      "inLanguage": "EN",
+      "step": [
+        {"@type":"HowToStep","name":"Prepare","text":"Get ready to start your farming journey."},
+        {"@type":"HowToStep","name":"Plant","text":"Follow the planting guidelines for best results."},
+        {"@type":"HowToStep","name":"Harvest","text":"Collect your crops when they are ready."}
+      ]
+    }
+    </script>
+    
+    <!-- Roblox-like color scheme -->
+    <link rel="stylesheet" href="unpkg.com/simple.css@2.1.0/simple.min.css">
+    <link rel="stylesheet" href="unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥧</text></svg>">
+    
+    <style>
+        body {
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .bg-blur {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: 0;
+            background: url('grow-bg.jpg') center center/cover no-repeat;
+            opacity: 0.3;
+            filter: blur(2px);
+            pointer-events: none;
+        }
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+        .pie-hero {
+            background: linear-gradient(135deg, #ff9800, #f57c00);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-top: 60px;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        .pie-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        .pie-hero h1,
+        .pie-hero p {
+            position: relative;
+            z-index: 2;
+        }
+        .pie-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: white !important;
+            text-shadow: 
+                0 2px 4px rgba(0,0,0,0.7),
+                0 1px 2px rgba(0,0,0,0.8);
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            -webkit-text-stroke: 0.5px rgba(0,0,0,0.2);
+        }
+        .pie-hero p {
+            font-size: 1.2rem;
+            opacity: 1;
+            color: white !important;
+            text-shadow: 
+                0 1px 3px rgba(0,0,0,0.6),
+                0 1px 2px rgba(0,0,0,0.7);
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            -webkit-text-stroke: 0.3px rgba(0,0,0,0.15);
+        }
+        .guide-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .guide-card {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .guide-card h2 {
+            color: #23272a !important;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+        .guide-card h3 {
+            color: #2c3e50 !important;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .guide-card p, .guide-card li {
+            color: #34495e !important;
+            font-weight: 500;
+            line-height: 1.6;
+        }
+        .ingredient-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .ingredient-item {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 8px;
+            padding: 1rem;
+            border-left: 4px solid #ff9800;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .ingredient-item h4 {
+            color: #23272a !important;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .ingredient-item p {
+            color: #34495e !important;
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+        }
+        .recipe-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+        }
+        .recipe-table th,
+        .recipe-table td {
+            border: 1px solid #ddd;
+            padding: 0.75rem;
+            text-align: left;
+            font-weight: 500;
+        }
+        .recipe-table th {
+            background: #ff9800;
+            color: white;
+            font-weight: 700;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+        .recipe-table td {
+            color: #2c3e50 !important;
+            background: rgba(255, 255, 255, 0.9);
+        }
+        .recipe-table tr:nth-child(even) td {
+            background: rgba(255, 152, 0, 0.08);
+        }
+        .tip-box {
+            background: linear-gradient(135deg, #f1c40f, #f39c12);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            box-shadow: 0 4px 15px rgba(241, 196, 15, 0.3);
+        }
+        .tip-box strong {
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+            font-weight: 700;
+        }
+        .warning-box {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+        }
+        .warning-box strong {
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+            font-weight: 700;
+        }
+        .back-btn {
+            display: inline-block;
+            background: #5865f2;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+        .back-btn:hover {
+            background: #4752c4;
+            transform: translateY(-2px);
+        }
+        .pie-variety {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .pie-card {
+            background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 6px 20px rgba(255, 152, 0, 0.2);
+            border: 2px solid #ffcc02;
+        }
+        .pie-card h4 {
+            color: #e65100 !important;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .pie-card ul {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+        .pie-card li {
+            color: #5d4037 !important;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* 面包屑导航样式 */
+        .breadcrumb-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+        }
+        .breadcrumb {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .breadcrumb ol {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .breadcrumb li {
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            color: #34495e;
+        }
+        .breadcrumb li:not(:last-child)::after {
+            content: "›";
+            margin: 0 0.5rem;
+            color: #666;
+        }
+        .breadcrumb a {
+            color: #ff9800;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .breadcrumb a:hover {
+            color: #e65100;
+        }
+        .breadcrumb li[aria-current="page"] {
+            color: #666;
+            font-weight: bold;
+        }
+        @media (max-width: 768px) {
+            .pie-hero h1 {
+                font-size: 2rem;
+            }
+            .guide-section {
+                padding: 1rem;
+            }
+            .guide-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+
+        <style>
+        #lang-switcher {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            color: white;
+            padding: 8px 12px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        #lang-switcher:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        #lang-switcher option {
+            background: #2c3e50;
+            color: white;
+            padding: 8px;
+        }
+        
+        #lang-switcher option:hover {
+            background: #34495e;
+        }
+        </style>
+        
+
+        <style>
+        .language-selector {
+            position: relative;
+            display: inline-block;
+        }
+        .lang-btn {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 8px 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+        .lang-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+        .lang-btn .flag-img {
+            width: 20px;
+            height: 14px;
+            object-fit: cover;
+            border-radius: 2px;
+            vertical-align: middle;
+        }
+        .lang-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: rgba(0, 0, 0, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 8px 0;
+            min-width: 150px;
+            display: none;
+            z-index: 1000;
+            backdrop-filter: blur(20px);
+        }
+        .lang-option {
+            padding: 8px 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: background-color 0.2s;
+        }
+        .lang-option:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .lang-option .flag-img {
+            width: 18px;
+            height: 12px;
+            object-fit: cover;
+            border-radius: 2px;
+            vertical-align: middle;
+        }
+        </style>
+    <script src="../unified_i18n_system.js"></script>
+</head>
+<body>
+    <div class="bg-blur"></div>
+    
+        <header>
+        <nav>
+            <a href="#" class="logo" data-i18n="nav.logo">🌱 Grow a Garden</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('stats')" data-i18n="nav.live">Live Stats</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('map')" data-i18n="nav.map">Global Heatmap</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('tips')" data-i18n="nav.tips">Tips</a>
+            <a href="../en/guides.html" data-i18n="nav.guides">📚 Guides</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('community')" class="discord-btn" data-i18n="nav.discord">💬 Discord</a>
+                        <div class="language-selector">
+                <button class="lang-btn current" data-lang="en">
+                    <img src="../flags/en.png" alt="US Flag" class="flag-img">
+                    <span class="code" data-i18n="how-to-make-pie.span.us">US</span>
+                </button>
+                <div class="lang-dropdown">
+                    <div class="lang-option" data-lang="en">
+                        <img src="../flags/en.png" alt="US Flag" class="flag-img">
+                        <span class="code" data-i18n="how-to-make-pie.span.us_1">US</span>
+                    </div>
+                    <div class="lang-option" data-lang="zh-cn">
+                        <img src="../flags/zh-cn.png" alt="CN Flag" class="flag-img">
+                        <span class="code" data-i18n="how-to-make-pie.span.cn">CN</span>
+                    </div>
+                    <div class="lang-option" data-lang="es">
+                        <img src="../flags/es.png" alt="ES Flag" class="flag-img">
+                        <span class="code" data-i18n="how-to-make-pie.span.es">ES</span>
+                    </div>
+                    <div class="lang-option" data-lang="pt-br">
+                        <img src="../flags/pt-br.png" alt="BR Flag" class="flag-img">
+                        <span class="code" data-i18n="how-to-make-pie.span.br">BR</span>
+                    </div>
+                    <div class="lang-option" data-lang="fr">
+                        <img src="../flags/fr.png" alt="FR Flag" class="flag-img">
+                        <span class="code" data-i18n="how-to-make-pie.span.fr">FR</span>
+                    </div>
+                    <div class="lang-option" data-lang="de">
+                        <img src="../flags/de.png" alt="DE Flag" class="flag-img">
+                        <span class="code" data-i18n="how-to-make-pie.span.de">DE</span>
+                    </div>
+                    <div class="lang-option" data-lang="ru">
+                        <img src="../flags/ru.png" alt="RU Flag" class="flag-img">
+                        <span class="code" data-i18n="how-to-make-pie.span.ru">RU</span>
+                    </div>
+                    <div class="lang-option" data-lang="ar">
+                        <img src="../flags/ar.png" alt="SA Flag" class="flag-img">
+                        <span class="code" data-i18n="how-to-make-pie.span.sa">SA</span>
+                    </div>
+                    <div class="lang-option" data-lang="hi">
+                        <img src="../flags/hi.png" alt="IN Flag" class="flag-img">
+                        <span class="code" data-i18n="how-to-make-pie.span.in">IN</span>
+                    </div>
+                    <div class="lang-option" data-lang="id">
+                        <img src="../flags/en.png" alt="ID Flag" class="flag-img">
+                        <span class="code" data-i18n="how-to-make-pie.span.id">ID</span>
+                    </div>
+                    <div class="lang-option" data-lang="vi">
+                        <img src="../flags/vi.png" alt="VN Flag" class="flag-img">
+                        <span class="code" data-i18n="how-to-make-pie.span.vn">VN</span>
+                    </div>
+                    <div class="lang-option" data-lang="ja">
+                        <img src="../flags/ja.png" alt="JP Flag" class="flag-img">
+                        <span class="code" data-i18n="how-to-make-pie.span.jp">JP</span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="content-wrapper">
+        <!-- Hero Section -->
+        <section class="pie-hero">
+            <h1 data-i18n="how-to-make-pie.h1.how.to.make.pie.in.grow.a.garden">🥧 How to Make Pie in Grow a Garden</h1>
+            <p data-i18n="学习在_grow_a_garden_中制作馅饼的技巧。.hero.subtitle">学习在 Grow a Garden 中制作馅饼的技巧。</p>
+        </section>
+
+        <!-- Breadcrumb Navigation -->
+        <div class="breadcrumb-container">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <ol>
+                    <li><a href="../en/index.html" data-i18n="how-to-make-pie.a.home">🏠 Home</a></li>
+                    <li><a href="../en/guides.html" data-i18n="how-to-make-pie.a.guides">📚 Guides</a></li>
+                    <li aria-current="page" data-i18n="how-to-make-pie.li.make.pie">🎯 Make Pie</li>
+                </ol>
+            </nav>
+        </div>
+
+        <div class="guide-section">
+            <!-- Overview Card -->
+            <div class="guide-card">
+                <h2 data-i18n="how-to-make-pie.h2.pie.making.overview">🎯 Pie Making Overview</h2>
+                <p data-i18n="making_pies_in_grow_a_garden_is_a_rewarding_culinary_adventure_that_combines_farming_skills_with_cooking_expertise._pies_are_one_of_the_most_profitable_items_in_the_game,_offering_excellent_returns_on_investment_when_made_correctly..hero.subtitle">Making pies in Grow a Garden is a rewarding culinary adventure that combines farming skills with cooking expertise. Pies are one of the most profitable items in the game, offering excellent returns on investment when made correctly.</p>
+                
+                <h3 data-i18n="how-to-make-pie.h3.why.make.pies">Why Make Pies?</h3>
+                <ul>
+                    <li><strong data-i18n="how-to-make-pie.strong.high.利润.margins">High 利润 Margins:</strong> Pies sell for premium prices in the market</li>
+                    <li><strong data-i18n="how-to-make-pie.strong.versatile.ingredients">Versatile Ingredients:</strong> Can be made with various fruits and fillings</li>
+                    <li><strong data-i18n="how-to-make-pie.strong.skill.development">Skill Development:</strong> Improves your cooking and farming abilities</li>
+                    <li><strong data-i18n="how-to-make-pie.strong.market.demand">Market Demand:</strong> Always in high demand from other players</li>
+                </ul>
+            </div>
+
+            <!-- Ingredients Card -->
+            <div class="guide-card">
+                <h2 data-i18n="how-to-make-pie.h2.所需食材">🥘 所需食材</h2>
+                <p data-i18n="how-to-make-pie.p.complete.recipe.guide.pie.making">Complete Recipe Guide: Pie Making</p>
+                
+                <div class="ingredient-grid">
+                    <div class="ingredient-item">
+                        <h4 data-i18n="how-to-make-pie.h4.flour">🌾 Flour</h4>
+                        <p data-i18n="ingredient.use">pie crust的基础原料</p>
+                        <small data-i18n="how-to-make-pie.small.grow.wheat.and.process.into.flour">Grow wheat and process into flour</small>
+                    </div>
+                    <div class="ingredient-item">
+                        <h4 data-i18n="how-to-make-pie.h4.butter">🧈 Butter</h4>
+                        <p data-i18n="how-to-make-pie.p.essential.for.flaky.crust">Essential for flaky crust</p>
+                        <small data-i18n="how-to-make-pie.small.process.milk.from.cows">Process milk from cows</small>
+                    </div>
+                    <div class="ingredient-item">
+                        <h4 data-i18n="how-to-make-pie.h4.fruits">🍎 Fruits</h4>
+                        <p data-i18n="how-to-make-pie.p.main.filling.ingredient">Main filling ingredient</p>
+                        <small data-i18n="how-to-make-pie.small.apples.berries.or.other.fruits">Apples, berries, or other fruits</small>
+                    </div>
+                    <div class="ingredient-item">
+                        <h4 data-i18n="how-to-make-pie.h4.sugar">🍯 Sugar</h4>
+                        <p data-i18n="how-to-make-pie.p.sweetens.the.filling">Sweetens the filling</p>
+                        <small data-i18n="how-to-make-pie.small.process.sugar.cane">Process sugar cane</small>
+                    </div>
+                    <div class="ingredient-item">
+                        <h4 data-i18n="how-to-make-pie.h4.eggs">🥚 Eggs</h4>
+                        <p data-i18n="how-to-make-pie.p.binds.the.crust.together">Binds the crust together</p>
+                        <small data-i18n="how-to-make-pie.small.collect.from.chickens">Collect from chickens</small>
+                    </div>
+                    <div class="ingredient-item">
+                        <h4 data-i18n="how-to-make-pie.h4.salt">🧂 Salt</h4>
+                        <p data-i18n="how-to-make-pie.p.enhances.flavor">Enhances flavor</p>
+                        <small data-i18n="how-to-make-pie.small.mine.from.salt.deposits">Mine from salt deposits</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Steps Card -->
+            <div class="guide-card">
+                <h2 data-i18n="how-to-make-pie.h2.step.by.step.pie.making.guide">📝 Step-by-Step Pie Making Guide</h2>
+                
+                <h3 data-i18n="how-to-make-pie.h3.step.1.prepare.your.farm">Step 1: Prepare Your Farm</h3>
+                <p data-i18n="how-to-make-pie.p.set.up.dedicated.farming.areas.for.pie.ingredients">Set up dedicated farming areas for pie ingredients:</p>
+                <ul>
+                    <li data-i18n="how-to-make-pie.li.plant.wheat.fields.for.flour.production">Plant wheat fields for flour production</li>
+                    <li data-i18n="how-to-make-pie.li.establish.fruit.orchards.apples.berries">Establish fruit orchards (apples, berries)</li>
+                    <li data-i18n="how-to-make-pie.li.set.up.dairy.farms.for.butter">Set up dairy farms for butter</li>
+                    <li data-i18n="how-to-make-pie.li.create.sugar.cane.plantations">Create sugar cane plantations</li>
+                </ul>
+
+                <h3 data-i18n="how-to-make-pie.h3.step.2.gather.ingredients">Step 2: Gather Ingredients</h3>
+                <p data-i18n="how-to-make-pie.p.collect.all.necessary.ingredients">Collect all necessary ingredients:</p>
+                <ul>
+                    <li><strong data-i18n="how-to-make-pie.strong.flour">Flour:</strong> Harvest wheat and process in mill</li>
+                    <li><strong data-i18n="how-to-make-pie.strong.butter">Butter:</strong> Milk cows and churn butter</li>
+                    <li><strong data-i18n="how-to-make-pie.strong.fruits">Fruits:</strong> Pick fresh fruits from trees</li>
+                    <li><strong data-i18n="how-to-make-pie.strong.sugar">Sugar:</strong> Process sugar cane</li>
+                    <li><strong data-i18n="how-to-make-pie.strong.eggs">Eggs:</strong> Collect from chicken coops</li>
+                </ul>
+
+                <h3 data-i18n="how-to-make-pie.h3.step.3.make.pie.crust">Step 3: Make Pie Crust</h3>
+                <p data-i18n="how-to-make-pie.p.create.the.perfect.pie.crust">Create the perfect pie crust:</p>
+                <ul>
+                    <li data-i18n="how-to-make-pie.li.mix.flour.butter.and.salt.in.mixing.bowl">Mix flour, butter, and salt in mixing bowl</li>
+                    <li data-i18n="how-to-make-pie.li.add.cold.water.gradually.while.mixing">Add cold water gradually while mixing</li>
+                    <li data-i18n="how-to-make-pie.li.knead.dough.until.smooth.and.elastic">Knead dough until smooth and elastic</li>
+                    <li data-i18n="how-to-make-pie.li.chill.dough.for.30.分钟.before.rolling">Chill dough for 30 分钟 before rolling</li>
+                    <li data-i18n="how-to-make-pie.li.roll.out.dough.to.fit.pie.pan">Roll out dough to fit pie pan</li>
+                </ul>
+
+                <h3 data-i18n="how-to-make-pie.h3.step.4.prepare.filling">Step 4: Prepare Filling</h3>
+                <p data-i18n="how-to-make-pie.p.create.delicious.pie.filling">Create delicious pie filling:</p>
+                <ul>
+                    <li data-i18n="how-to-make-pie.li.wash.and.slice.fruits">Wash and slice fruits</li>
+                    <li data-i18n="how-to-make-pie.li.mix.fruits.with.sugar.and.spices">Mix fruits with sugar and spices</li>
+                    <li data-i18n="how-to-make-pie.li.add.thickening.agent.if.needed">Add thickening agent if needed</li>
+                    <li data-i18n="list.let_filling_rest_for_15_分钟">Let filling rest for 15 分钟</li>
+                </ul>
+
+                <h3 data-i18n="how-to-make-pie.h3.step.5.assemble.pie">Step 5: Assemble Pie</h3>
+                <p data-i18n="how-to-make-pie.p.put.everything.together">Put everything together:</p>
+                <ul>
+                    <li data-i18n="how-to-make-pie.li.line.pie.pan.with.bottom.crust">Line pie pan with bottom crust</li>
+                    <li data-i18n="how-to-make-pie.li.fill.with.prepared.fruit.mixture">Fill with prepared fruit mixture</li>
+                    <li data-i18n="how-to-make-pie.li.add.top.crust.or.lattice.design">Add top crust or lattice design</li>
+                    <li data-i18n="how-to-make-pie.li.brush.with.egg.wash.for.golden.color">Brush with egg wash for golden color</li>
+                    <li data-i18n="how-to-make-pie.li.cut.steam.vents.in.top.crust">Cut steam vents in top crust</li>
+                </ul>
+
+                <h3 data-i18n="how-to-make-pie.h3.step.6.bake.pie">Step 6: Bake Pie</h3>
+                <p data-i18n="how-to-make-pie.p.bake.to.perfection">Bake to perfection:</p>
+                <ul>
+                    <li data-i18n="how-to-make-pie.li.preheat.oven.to.correct.temperature">Preheat oven to correct temperature</li>
+                    <li data-i18n="how-to-make-pie.li.place.pie.in.center.of.oven">Place pie in center of oven</li>
+                    <li data-i18n="how-to-make-pie.li.bake.for.45.60.分钟">Bake for 45-60 分钟</li>
+                    <li data-i18n="how-to-make-pie.li.check.for.golden.brown.crust">Check for golden brown crust</li>
+                    <li data-i18n="how-to-make-pie.li.let.cool.before.serving">Let cool before serving</li>
+                </ul>
+            </div>
+
+            <!-- Tips Card -->
+            <div class="guide-card">
+                <h2 data-i18n="how-to-make-pie.h2.pro.tips.for.perfect.pies">💡 Pro Tips for Perfect Pies</h2>
+                
+                <div class="tip-box">
+                    <strong data-i18n="how-to-make-pie.strong.ingredient.quality">🎯 Ingredient Quality:</strong> Use the highest quality ingredients for better pie results. Fresh fruits and premium flour make a significant difference.
+                </div>
+                
+                <div class="tip-box">
+                    <strong data-i18n="how-to-make-pie.strong.timing.is.everything">⏰ Timing is Everything:</strong> Don't rush the process. Let dough chill properly and allow pies to cool completely before cutting.
+                </div>
+                
+                <div class="tip-box">
+                    <strong data-i18n="how-to-make-pie.strong.temperature.control">🌡️ Temperature Control:</strong> Keep ingredients cold when making crust. Warm butter can make the crust tough instead of flaky.
+                </div>
+                
+                <div class="tip-box">
+                    <strong data-i18n="how-to-make-pie.strong.batch.production">📊 Batch Production:</strong> Make multiple pies at once to maximize efficiency and profits. Set up assembly line production.
+                </div>
+                
+                <div class="tip-box">
+                    <strong data-i18n="how-to-make-pie.strong.market.strategy">🏪 Market Strategy:</strong> Time your pie production with market demand. Sell during peak hours for maximum profit.
+                </div>
+                
+                <div class="tip-box">
+                    <strong data-i18n="how-to-make-pie.strong.recipe.variations">🔄 Recipe Variations:</strong> Experiment with different fruit combinations and spices to create unique pie flavors that stand out in the market.
+                </div>
+            </div>
+
+            <!-- Pie Varieties Card -->
+            <div class="guide-card">
+                <h2 data-i18n="how-to-make-pie.h2.popular.pie.varieties">🥧 Popular Pie Varieties</h2>
+                
+                <div class="pie-variety">
+                    <div class="pie-card">
+                        <h4 data-i18n="how-to-make-pie.h4.apple.pie">🍎 Apple Pie</h4>
+                        <ul>
+                            <li data-i18n="how-to-make-pie.li.classic.american.favorite">Classic American favorite</li>
+                            <li data-i18n="how-to-make-pie.li.high.market.demand">High market demand</li>
+                            <li data-i18n="how-to-make-pie.li.good.profit.margins">Good profit margins</li>
+                            <li data-i18n="how-to-make-pie.li.easy.to.make">Easy to make</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pie-card">
+                        <h4 data-i18n="how-to-make-pie.h4.berry.pie">🫐 Berry Pie</h4>
+                        <ul>
+                            <li data-i18n="how-to-make-pie.li.premium.pricing">Premium pricing</li>
+                            <li data-i18n="how-to-make-pie.li.seasonal.availability">Seasonal availability</li>
+                            <li data-i18n="how-to-make-pie.li.unique.flavor.profiles">Unique flavor profiles</li>
+                            <li data-i18n="how-to-make-pie.li.high.end.market">High-end market</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pie-card">
+                        <h4 data-i18n="how-to-make-pie.h4.peach.pie">🍑 Peach Pie</h4>
+                        <ul>
+                            <li data-i18n="how-to-make-pie.li.summer.specialty">Summer specialty</li>
+                            <li data-i18n="how-to-make-pie.li.sweet.and.juicy">Sweet and juicy</li>
+                            <li data-i18n="how-to-make-pie.li.moderate.difficulty">Moderate difficulty</li>
+                            <li data-i18n="how-to-make-pie.li.good.for.beginners">Good for beginners</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Card -->
+            <div class="guide-card">
+                <h2 data-i18n="how-to-make-pie.h2.常见问题">❓ 常见问题</h2>
+                
+                <h3 data-i18n="how-to-make-pie.h3.q.whats.the.best.fruit.for.making.pies">Q: What's the best fruit for making pies?</h3>
+                <p data-i18n="how-to-make-pie.p.a.apples.are.the.most.popular.choice.due.to.their.">A: Apples are the most popular choice due to their availability and flavor. Berries also work well and can command higher prices.</p>
+                
+                <h3 data-i18n="how-to-make-pie.h3.q.how.long.does.it.take.to.make.a.pie">Q: How long does it take to make a pie?</h3>
+                <p data-i18n="content.a_from_ingredient_gathering_to_finished_pie,_expect_2_3_hours_with_practice_and_proper_setup,_you_can_reduce_this_time_significantly">A: From ingredient gathering to finished pie, expect 2-3 hours. With practice and proper setup, you can reduce this time significantly.</p>
+                
+                <h3 data-i18n="how-to-make-pie.h3.q.can.i.make.pies.without.an.oven">Q: Can I make pies without an oven?</h3>
+                <p data-i18n="how-to-make-pie.p.a.no.you.need.an.oven.to.bake.pies.make.sure.to.bu">A: No, you need an oven to bake pies. Make sure to build or purchase an oven before attempting pie making.</p>
+                
+                <h3 data-i18n="how-to-make-pie.h3.q.how.much.profit.can.i.make.from.pies">Q: How much profit can I make from pies?</h3>
+                <p data-i18n="how-to-make-pie.p.a.pies.typically.sell.for.2.3x.the.cost.of.ingredi">A: Pies typically sell for 2-3x the cost of ingredients. With efficient production, you can earn 500-1000 coins per pie.</p>
+                
+                <h3 data-i18n="how-to-make-pie.h3.q.whats.the.difference.between.regular.and.premium">Q: What's the difference between regular and premium pies?</h3>
+                <p data-i18n="content.a_premium_pies_use_higher_quality_ingredients_and_sell_for_significantly_more_focus_on_quality_over_quantity_for_maximum_profit">A: Premium pies use higher quality ingredients and sell for significantly more. Focus on quality over quantity for maximum profit.</p>
+                
+                <h3 data-i18n="how-to-make-pie.h3.q.how.do.i.prevent.my.pie.crust.from.being.soggy">Q: How do I prevent my pie crust from being soggy?</h3>
+                <p data-i18n="how-to-make-pie.p.a.pre.bake.the.bottom.crust.for.10.分钟.before.addin">A: Pre-bake the bottom crust for 10 分钟 before adding filling, and ensure your filling isn't too wet before baking.</p>
+            </div>
+        </div>
+        
+        <!-- Back Button -->
+        <div class="guide-section" style="text-align: center;">
+            <a href="../en/guides.html" class="back-btn" data-i18n="how-to-make-pie.a.返回攻略">← 返回攻略</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+ 
+        <div class="footer-content">
+            <p data-i18n="footer.copyright">© 2025 Grow a Garden - Real-Time Player Tracker</p>
+            <p data-i18n="footer.disclaimer">Not official. Data for reference only.</p>
+        </div>
+    
+
+        <script>
+        // 语言选择器功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const langOptions = document.querySelectorAll('.lang-option');
+            const currentLangBtn = document.querySelector('.lang-btn');
+            const langDropdown = document.querySelector('.lang-dropdown');
+            
+            if (!currentLangBtn || !langDropdown) return;
+            
+            // 为每个语言选项添加点击事件
+            langOptions.forEach(option => {
+                option.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const lang = this.getAttribute('data-lang');
+                    const flagElement = this.querySelector('.flag-img');
+                    const codeElement = this.querySelector('.code');
+                    
+                    if (flagElement && codeElement) {
+                        const currentFlagElement = currentLangBtn.querySelector('.flag-img');
+                        const currentCodeElement = currentLangBtn.querySelector('.code');
+                        
+                        if (currentFlagElement && currentCodeElement) {
+                            currentFlagElement.src = flagElement.src;
+                            currentCodeElement.textContent = codeElement.textContent;
+                            currentLangBtn.setAttribute('data-lang', lang);
+                        }
+                    }
+                    
+                    // 跳转到对应语言页面
+                    const currentPath = window.location.pathname;
+                    let newPath;
+                    
+                    if (currentPath.includes('/zh-cn/') || currentPath.includes('/en/') || 
+                        currentPath.includes('/es/') || currentPath.includes('/pt-br/') || 
+                        currentPath.includes('/fr/') || currentPath.includes('/de/') || 
+                        currentPath.includes('/ru/') || currentPath.includes('/ar/') || 
+                        currentPath.includes('/hi/') || currentPath.includes('/id/') || 
+                        currentPath.includes('/vi/') || currentPath.includes('/ja/')) {
+                        newPath = currentPath.replace(/\/(zh-cn|en|es|pt-br|fr|de|ru|ar|hi|id|vi|ja)\//, '/' + lang + '/');
+                    } else {
+                        newPath = '/' + lang + currentPath;
+                    }
+                    
+                    window.location.href = newPath;
+                    langDropdown.style.display = 'none';
+                });
+            });
+            
+            // 点击按钮显示/隐藏下拉菜单
+            currentLangBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const isVisible = langDropdown.style.display === 'block';
+                langDropdown.style.display = isVisible ? 'none' : 'block';
+            });
+            
+            // 点击其他地方隐藏下拉菜单
+            document.addEventListener('click', function() {
+                langDropdown.style.display = 'none';
+            });
+            
+            // 设置当前语言
+            const currentPath = window.location.pathname;
+            const langMatch = currentPath.match(/\/(zh-cn|en|es|pt-br|fr|de|ru|ar|hi|id|vi|ja)\//);
+            if (langMatch) {
+                const currentLang = langMatch[1];
+                currentLangBtn.setAttribute('data-lang', currentLang);
+                
+                const targetOption = document.querySelector(`.lang-option[data-lang="${currentLang}"]`);
+                if (targetOption) {
+                    const flagElement = targetOption.querySelector('.flag-img');
+                    const codeElement = targetOption.querySelector('.code');
+                    const currentFlagElement = currentLangBtn.querySelector('.flag-img');
+                    const currentCodeElement = currentLangBtn.querySelector('.code');
+                    
+                    if (flagElement && codeElement && currentFlagElement && currentCodeElement) {
+                        currentFlagElement.src = flagElement.src;
+                        currentCodeElement.textContent = codeElement.textContent;
+                    }
+                }
+            }
+        });
+        </script>
+
+    <script>
+        // 页面加载完成后自动应用国际化
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.i18nSystem && window.i18nSystem.isReady()) {
+                // 如果国际化系统已准备就绪，直接应用翻译
+                window.i18nSystem.applyTranslations();
+            } else {
+                // 等待国际化系统初始化完成
+                const checkReady = setInterval(() => {
+                    if (window.i18nSystem && window.i18nSystem.isReady()) {
+                        window.i18nSystem.applyTranslations();
+                        clearInterval(checkReady);
+                    }
+                }, 100);
+            }
+        });
+    </script>
+</body></html>

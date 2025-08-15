@@ -1,545 +1,174 @@
-<!DOCTYPE html><html lang="ar" dir="rtl"><head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <base href="/">
-  <title>أدلة زراعة الحديقة - مجموعة كاملة</title>
-  <link rel="canonical" href="https://growagarden.cv/ar/guides.html">
-  <link rel="alternate" hreflang="en" href="https://growagarden.cv/en/guides.html">
-  <link rel="alternate" hreflang="zh-CN" href="https://growagarden.cv/zh-cn/guides.html">
-  <link rel="alternate" hreflang="ar" href="https://growagarden.cv/ar/guides.html">
-  <link rel="alternate" hreflang="x-default" href="https://growagarden.cv/guides.html">
-  <link rel="stylesheet" href="https://unpkg.com/simple.css@2.1.0/simple.min.css">
-  <link rel="stylesheet" href="../styles.css">
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أدلة الزراعة - Grow a Garden</title>
+    <link rel="canonical" href="../ar/guides.html">
+    <link rel="stylesheet" href="unpkg.com/simple.css@2.1.0/simple.min.css">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
+    <script src="../unified_i18n_system.js"></script>
 </head>
 <body>
     <header>
-    <nav>
-      <a href="/index.html" class="logo" data-i18n="nav.logo">🌱 زراعة الحديقة</a>
-      <a href="/index.html#stats" data-i18n="nav.live">الإحصائيات</a>
-      <a href="/index.html#map" data-i18n="nav.map">خريطة الحرارة العالمية</a>
-      <a href="/index.html#tips" data-i18n="nav.tips">النصائح</a>
-      <a href="/guides.html" data-i18n="nav.guides">📚 أدلة</a>
-      <a href="/index.html#community" class="discord-btn" data-i18n="nav.discord">💬 Discord</a>
-                  <select id="lang-switcher" aria-label="Language">
-                <option value="en" >English</option>
-                <option value="zh-cn" >简体中文</option>
-                <option value="es" >Español</option>
-                <option value="pt-br" >Português</option>
-                <option value="fr" >Français</option>
-                <option value="de" >Deutsch</option>
-                <option value="ru" >Русский</option>
-                <option value="ar" selected="">العربية</option>
-                <option value="hi" >हिन्दी</option>
-                <option value="id" >Bahasa Indonesia</option>
-                <option value="vi" >Tiếng Việt</option>
-                            <option value="ja" >日本語</option>
-            </select>
-    </nav>
-  </header>
-  <section class="guides-hero">
-    <h1 data-i18n="hero.guides.title">📚 أدلة زراعة الحديقة</h1>
-    <p data-i18n="hero.guides.subtitle">مجموعة كاملة من الاستراتيجيات والوصفات ونصائح اللعب</p>
-  </section>
-  <div class="guides-section">
-    <div class="guides-card">
-      <h2>🔍 البحث والتصفية</h2>
-      <div class="search-filter-container">
-        <input type="text" id="guide-search" placeholder="البحث عن الأدلة..." class="guide-search-input">
-        <div class="filter-buttons">
-          <button class="filter-btn active" data-filter="all">الكل</button>
-          <button class="filter-btn" data-filter="recipe">الوصفات</button>
-          <button class="filter-btn" data-filter="farming">الزراعة</button>
-          <button class="filter-btn" data-filter="profit">الربح</button>
-          <button class="filter-btn" data-filter="advanced">متقدم</button>
-        </div>
-      </div>
+        <nav>
+            <a href="../index.html" class="logo" data-i18n="nav.logo">🌱 Grow a Garden</a>
+            <a href="../index.html#stats" data-i18n="nav.live">Live Stats</a>
+            <a href="../index.html#map" data-i18n="nav.map">Global Heatmap</a>
+            <a href="../index.html#tips" data-i18n="nav.tips">Tips</a>
+            <a href="guides.html" data-i18n="nav.guides">📚 Guides</a>
+            <a href="../online.html" data-i18n="nav.online">🎮 Online</a>
+            <a href="../index.html#community" class="discord-btn" data-i18n="nav.discord">💬 Discord</a>
+            <select id="lang-switcher" aria-label="Language">
+<option value="en" >🇺🇸 English</option>
+<option value="zh-cn" >🇨🇳 简体中文</option>
+<option value="es" >🇪🇸 Español</option>
+<option value="pt-br" >🇧🇷 Português</option>
+<option value="fr" >🇫🇷 Français</option>
+<option value="de" >🇩🇪 Deutsch</option>
+<option value="ru" >🇷🇺 Русский</option>
+<option value="ar" selected>🇸🇦 العربية</option>
+<option value="hi" >🇮🇳 हिन्दी</option>
+<option value="id" >🇮🇩 Bahasa Indonesia</option>
+<option value="vi" >🇻🇳 Tiếng Việt</option>
+<option value="ja" >🇯🇵 日本語</option>
+</select>
+        </nav>
+    </header>
+    <div class="bg-blur"></div>
+    <div class="content-wrapper">
+        <!-- 导航栏 -->
+        
+
+        <!-- 主要内容 -->
+        <main>
+            <div class="hero-section">
+                <h1>أدلة الزراعة</h1>
+                <p data-i18n="guides.hero.description">Master the art of farming and cooking in Grow a Garden</p>
+            </div>
+
+            <!-- 热门攻略 -->
+            <section class="guides-section">
+                <h2 data-i18n="guides.popular.title">🔥 Popular Guides</h2>
+                <div class="guides-grid">
+                    <a href="ar/how-to-make-salad.html" class="guide-card">
+                        <div class="card-badge popular" data-i18n="guides.badges.popular">⭐ Most Popular</div>
+                        <h3 data-i18n="guides.salad.title">🥗 Salad Making Guide</h3>
+                        <p data-i18n="guides.salad.description">Master the art of salad making with our comprehensive guide.</p>
+                        <div class="card-meta">
+                            <span class="difficulty beginner" data-i18n="guides.difficulty.beginner">Beginner</span>
+                            <span class="read-time" data-i18n="guides.readTime" data-i18n-params=\'{"minutes": "15"}\'>15 min read</span>
+                            <span class="views" data-i18n="guides.views" data-i18n-params=\'{"count": "2.5k"}\'>🔥 2.5k views</span>
+                        </div>
+                    </a>
+                    
+                    <a href="ar/how-to-make-pizza.html" class="guide-card">
+                        <div class="card-badge trending" data-i18n="guides.badges.trending">📈 Trending</div>
+                        <h3 data-i18n="guides.pizza.title">🍕 Pizza Making Guide</h3>
+                        <p data-i18n="guides.pizza.description">Learn how to make delicious pizza in Grow a Garden.</p>
+                        <div class="card-meta">
+                            <span class="difficulty intermediate" data-i18n="guides.difficulty.intermediate">Intermediate</span>
+                            <span class="read-time" data-i18n="guides.readTime" data-i18n-params=\'{"minutes": "25"}\'>25 min read</span>
+                            <span class="views" data-i18n="guides.views" data-i18n-params=\'{"count": "1.8k"}\'>🔥 1.8k views</span>
+                        </div>
+                    </a>
+                    
+                    <a href="ar/how-to-make-bread.html" class="guide-card">
+                        <div class="card-badge new" data-i18n="guides.badges.new">🆕 New</div>
+                        <h3 data-i18n="guides.bread.title">🍞 Bread Making Guide</h3>
+                        <p data-i18n="guides.bread.description">Master bread making techniques in Grow a Garden.</p>
+                        <div class="card-meta">
+                            <span class="difficulty beginner" data-i18n="guides.difficulty.beginner">Beginner</span>
+                            <span class="read-time" data-i18n="guides.readTime" data-i18n-params=\'{"minutes": "20"}\'>20 min read</span>
+                            <span class="views" data-i18n="guides.views" data-i18n-params=\'{"count": "1.2k"}\'>🔥 1.2k views</span>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- 所有攻略 -->
+            <section class="guides-section">
+                <h2 data-i18n="guides.all.title">📚 All Guides</h2>
+                <div class="guides-grid">
+                    <a href="ar/how-to-grow-apples.html" class="guide-card">
+                        <h3 data-i18n="guides.apple.title">🍎 Apple Growing Guide</h3>
+                        <p data-i18n="guides.apple.description">Learn how to grow delicious apples in your garden.</p>
+                        <div class="card-meta">
+                            <span class="difficulty beginner" data-i18n="guides.difficulty.beginner">Beginner</span>
+                            <span class="read-time" data-i18n="guides.readTime" data-i18n-params=\'{"minutes": "12"}\'>12 min read</span>
+                        </div>
+                    </a>
+                    
+                    <a href="ar/how-to-grow-oranges.html" class="guide-card">
+                        <h3 data-i18n="guides.orange.title">🍊 Orange Growing Guide</h3>
+                        <p data-i18n="guides.orange.description">Master the art of growing sweet oranges.</p>
+                        <div class="card-meta">
+                            <span class="difficulty intermediate" data-i18n="guides.difficulty.intermediate">Intermediate</span>
+                            <span class="read-time" data-i18n="guides.readTime" data-i18n-params=\'{"minutes": "18"}\'>18 min read</span>
+                        </div>
+                    </a>
+                    
+                    <a href="ar/how-to-make-cake.html" class="guide-card">
+                        <h3 data-i18n="guides.cake.title">🎂 Cake Making Guide</h3>
+                        <p data-i18n="guides.cake.description">Create delicious cakes with our expert tips.</p>
+                        <div class="card-meta">
+                            <span class="difficulty intermediate" data-i18n="guides.difficulty.intermediate">Intermediate</span>
+                            <span class="read-time" data-i18n="guides.readTime" data-i18n-params=\'{"minutes": "30"}\'>30 min read</span>
+                        </div>
+                    </a>
+                    
+                    <a href="ar/how-to-make-cookies.html" class="guide-card">
+                        <h3 data-i18n="guides.cookie.title">🍪 Cookie Making Guide</h3>
+                        <p>Bake perfect cookies every time.</p>
+                        <div class="card-meta">
+                            <span class="difficulty beginner" data-i18n="guides.difficulty.beginner">Beginner</span>
+                            <span class="read-time" data-i18n="guides.readTime" data-i18n-params=\'{"minutes": "20"}\'>20 min read</span>
+                        </div>
+                    </a>
+                    
+                    <a href="ar/how-to-make-smoothie.html" class="guide-card">
+                        <h3 data-i18n="guides.smoothie.title">🥤 Smoothie Making Guide</h3>
+                        <p>Create healthy and delicious smoothies.</p>
+                        <div class="card-meta">
+                            <span class="difficulty beginner" data-i18n="guides.difficulty.beginner">Beginner</span>
+                            <span class="read-time" data-i18n="guides.readTime" data-i18n-params=\'{"minutes": "18"}\'>18 min read</span>
+                        </div>
+                    </a>
+                    
+                    <a href="ar/how-to-build-farm.html" class="guide-card">
+                        <h3 data-i18n="guides.farm.title">🏗️ Farm Building Guide</h3>
+                        <p>Design and build your perfect farm layout.</p>
+                        <div class="card-meta">
+                            <span class="difficulty advanced">Advanced</span>
+                            <span class="read-time" data-i18n="guides.readTime" data-i18n-params=\'{"minutes": "45"}\'>45 min read</span>
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </main>
+</div>
+</body>
+
+        <footer class="footer">
+            <p>&copy; 2025 Grow a Garden. All rights reserved.</p>
+        </footer>
     </div>
 
-    <!-- 热门攻略 -->
-    <div class="guides-card">
-      <h2>🔥 الأدلة الشائعة</h2>
-      <div class="guides-grid">
-        <a href="/ar/how-to-make-salad.html" class="guide-item featured-guide">
-          <div class="featured-badge">⭐ الأكثر شعبية</div>
-          <h3>دليل صنع السلطات</h3>
-          <p>تعلم نصائح صنع السلطات في زراعة الحديقة.</p>
-          <div class="guide-meta">
-            <span class="guide-difficulty">مبتدئ</span>
-            <span class="guide-read-time">15 دقائق للقراءة</span>
-            <span class="guide-views">🔥 2.5k مشاهدات</span>
-          </div>
-        </a>
-        
-        <a href="/ar/how-to-make-pizza.html" class="guide-item">
-          <div class="trending-badge">📈 الاتجاه</div>
-          <h3>دليل صنع البيتزا</h3>
-          <p>تعلم نصائح صنع البيتزا في زراعة الحديقة.</p>
-          <div class="guide-meta">
-            <span class="guide-difficulty">متوسط</span>
-            <span class="guide-read-time">25 دقائق للقراءة</span>
-            <span class="guide-views">🔥 1.8k مشاهدات</span>
-          </div>
-        </a>
-        
-        <a href="/ar/how-to-make-bread.html" class="guide-item">
-          <div class="new-badge">🆕 جديد</div>
-          <h3>دليل صنع الخبز</h3>
-          <p>تعلم نصائح صنع الخبز في زراعة الحديقة.</p>
-          <div class="guide-meta">
-            <span class="guide-difficulty">مبتدئ</span>
-            <span class="guide-read-time">20 دقائق للقراءة</span>
-            <span class="guide-views">🔥 1.2k مشاهدات</span>
-          </div>
-        </a>
-      </div>
-    </div>
-    
-    <!-- 食谱攻略 -->
-    <div class="category-section" data-category="recipe">
-      <h2 class="category-title">🍽️ أدلة الوصفات</h2>
-      <div class="guides-grid">
-        <a href="/ar/how-to-make-salad.html" class="guide-item">
-          <h3>🥗 دليل صنع السلطات</h3>
-          <p>دليل شامل لصنع سلطات مثالية في زراعة الحديقة. من جمع المواد الأساسية إلى الوصفات المتقدمة.</p>
-          <div class="guide-meta">
-            <span class="guide-difficulty">مبتدئ</span>
-            <span class="guide-read-time">15 دقائق للقراءة</span>
-          </div>
-        </a>
-        
-        <a href="/ar/how-to-make-pizza.html" class="guide-item">
-          <h3>🍕 دليل صنع البيتزا</h3>
-          <p>تعلم كيفية صنع بيتزا لذيذة في زراعة الحديقة. من تحضير العجين إلى تركيبات الإضافات.</p>
-          <div class="guide-meta">
-            <span class="guide-difficulty">متوسط</span>
-            <span class="guide-read-time">25 دقائق للقراءة</span>
-          </div>
-        </a>
-        
-        <a href="/ar/how-to-make-bread.html" class="guide-item">
-          <h3>🍞 دليل صنع الخبز</h3>
-          <p>أتقن تقنيات صنع الخبز. تعلم أنواع الدقيق وإدارة الخميرة وتحسين الخبز.</p>
-          <div class="guide-meta">
-            <span class="guide-difficulty">مبتدئ</span>
-            <span class="guide-read-time">20 دقائق للقراءة</span>
-          </div>
-        </a>
-        
-        <a href="/ar/how-to-make-cake.html" class="guide-item">
-          <h3>دليل صنع الكيك</h3>
-          <p>تعلم نصائح صنع الكيك في زراعة الحديقة.</p>
-          <div class="guide-meta">
-            <span class="guide-difficulty">متوسط</span>
-            <span class="guide-read-time">30 دقائق للقراءة</span>
-          </div>
-        </a>
-      <a href="/ar/ice-cream-recipe.html" class="guide-item">
-                    <h3>دليل وصفات الآيس كريم</h3>
-                    <p>تعلم وصفات ونسب الآيس كريم اللذيذ لتحسين الربح والطعم.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">متوسط</span>
-                        <span class="guide-read-time">18 دقائق للقراءة</span>
-                    </div>
-                </a><a href="/ar/how-to-make-donut.html" class="guide-item">
-                    <h3>دليل صنع الدونات</h3>
-                    <p>تعلم نصائح صنع الدونات في زراعة الحديقة.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">متوسط</span>
-                        <span class="guide-read-time">20 دقائق للقراءة</span>
-                    </div>
-                </a><a href="/ar/how-to-make-pie.html" class="guide-item">
-                    <h3>دليل صنع الفطائر</h3>
-                    <p>تعلم نصائح صنع الفطائر في زراعة الحديقة.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">متوسط</span>
-                        <span class="guide-read-time">25 دقائق للقراءة</span>
-                    </div>
-                </a><a href="/ar/how-to-make-cookies.html" class="guide-item">
-                    <h3>دليل صنع البسكويت</h3>
-                    <p>تعلم نصائح صنع البسكويت في زراعة الحديقة.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">مبتدئ</span>
-                        <span class="guide-read-time">20 دقائق للقراءة</span>
-                    </div>
-                </a><a href="/ar/how-to-make-smoothie.html" class="guide-item">
-                    <h3>دليل صنع العصائر</h3>
-                    <p>تعلم نصائح صنع العصائر في زراعة الحديقة.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">مبتدئ</span>
-                        <span class="guide-read-time">18 دقائق للقراءة</span>
-                    </div>
-                </a><a href="/ar/how-to-make-sandwich.html" class="guide-item">
-                    <h3>دليل صنع الساندويتشات</h3>
-                    <p>تعلم نصائح صنع الساندويتشات في زراعة الحديقة.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">مبتدئ</span>
-                        <span class="guide-read-time">22 دقائق للقراءة</span>
-                    </div>
-                </a><a href="/ar/how-to-make-salad.html" class="guide-item">
-                    <h3>دليل صنع السلطات</h3>
-                    <p>تعلم نصائح صنع السلطات في زراعة الحديقة.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">مبتدئ</span>
-                        <span class="guide-read-time">15 دقائق للقراءة</span>
-                    </div>
-                </a><a href="/ar/how-to-make-pizza.html" class="guide-item">
-                    <h3>دليل صنع البيتزا</h3>
-                    <p>تعلم نصائح صنع البيتزا في زراعة الحديقة.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">متوسط</span>
-                        <span class="guide-read-time">25 دقائق للقراءة</span>
-                    </div>
-                </a><a href="/ar/how-to-make-bread.html" class="guide-item">
-                    <h3>دليل صنع الخبز</h3>
-                    <p>تعلم نصائح صنع الخبز في زراعة الحديقة.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">مبتدئ</span>
-                        <span class="guide-read-time">20 دقائق للقراءة</span>
-                    </div>
-                </a><a href="/ar/ice-cream-recipe.html" class="guide-item">
-                    <h3>دليل وصفات الآيس كريم</h3>
-                    <p>تعلم وصفات ونسب الآيس كريم اللذيذ لتحسين الربح والطعم.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">متوسط</span>
-                        <span class="guide-read-time">18 دقائق للقراءة</span>
-                    </div>
-                </a><a href="/ar/how-to-make-donut.html" class="guide-item">
-                    <h3>دليل صنع الدونات</h3>
-                    <p>تعلم نصائح صنع الدونات في زراعة الحديقة.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">متوسط</span>
-                        <span class="guide-read-time">20 دقائق للقراءة</span>
-                    </div>
-                </a><a href="/ar/how-to-make-cake.html" class="guide-item">
-                    <h3>دليل صنع الكيك</h3>
-                    <p>تعلم نصائح صنع الكيك في زراعة الحديقة.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">متقدم</span>
-                        <span class="guide-read-time">30 دقائق للقراءة</span>
-                    </div>
-                </a><a href="/ar/how-to-make-pie.html" class="guide-item">
-                    <h3>دليل صنع الفطائر</h3>
-                    <p>تعلم نصائح صنع الفطائر في زراعة الحديقة.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">متوسط</span>
-                        <span class="guide-read-time">25 دقائق للقراءة</span>
-                    </div>
-                </a><a href="/ar/how-to-make-cookies.html" class="guide-item">
-                    <h3>دليل صنع البسكويت</h3>
-                    <p>تعلم نصائح صنع البسكويت في زراعة الحديقة.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">مبتدئ</span>
-                        <span class="guide-read-time">20 دقائق للقراءة</span>
-                    </div>
-                </a><a href="/ar/how-to-make-smoothie.html" class="guide-item">
-                    <h3>دليل صنع العصائر</h3>
-                    <p>تعلم نصائح صنع العصائر في زراعة الحديقة.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">مبتدئ</span>
-                        <span class="guide-read-time">18 دقائق للقراءة</span>
-                    </div>
-                </a><a href="/ar/how-to-make-money-fast.html" class="guide-item">
-                    <h3>دليل كسب المال بسرعة</h3>
-                    <p>تعلم نصائح كسب المال بسرعة في زراعة الحديقة.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">متقدم</span>
-                        <span class="guide-read-time">25 دقائق للقراءة</span>
-                    </div>
-                </a><a href="/ar/how-to-make-sandwich.html" class="guide-item">
-                    <h3>دليل صنع الساندويتشات</h3>
-                    <p>تعلم نصائح صنع الساندويتشات في زراعة الحديقة.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">مبتدئ</span>
-                        <span class="guide-read-time">22 دقائق للقراءة</span>
-                    </div>
-                </a></div>
-    </div>
-    
-    <!-- 种植攻略 -->
-    <div class="category-section" data-category="farming">
-      <h2 class="category-title">🌱 أدلة الزراعة</h2>
-      <div class="guides-grid">
-        <a href="/ar/how-to-grow-corn.html" class="guide-item">
-          <h3>دليل زراعة الذرة</h3>
-          <p>زراعة الذرة بكفاءة: بذر، ري، حصاد.</p>
-          <div class="guide-meta">
-            <span class="guide-difficulty">مبتدئ</span>
-            <span class="guide-read-time">18 دقائق للقراءة</span>
-          </div>
-        </a>
-        
-        <a href="/ar/how-to-grow-oranges.html" class="guide-item">
-          <h3>دليل زراعة البرتقال</h3>
-          <p>زراعة البرتقال بكفاءة: بذر، ري، حصاد.</p>
-          <div class="guide-meta">
-            <span class="guide-difficulty">متوسط</span>
-            <span class="guide-read-time">22 دقائق للقراءة</span>
-          </div>
-        </a>
-      <a href="/ar/how-to-grow-wheat.html" class="guide-item">
-                    <h3>دليل زراعة القمح</h3>
-                    <p>زراعة القمح بكفاءة: بذر، ري، حصاد.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">مبتدئ</span>
-                        <span class="guide-read-time">20 دقائق للقراءة</span>
-                    </div>
-                </a><a href="farming-basics.html" class="guide-item">
-                    <h3>أساسيات الزراعة</h3>
-                    <p>النقاط الأساسية لتقنيات الزراعة الأساسية والري وإدارة المحاصيل.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">مبتدئ</span>
-                        <span class="guide-read-time">12 دقائق للقراءة</span>
-                    </div>
-                </a><a href="watering-strategies.html" class="guide-item">
-                    <h3>استراتيجيات الري</h3>
-                    <p>تعلم التوقيت والتردد والكفاءة المثلى للري.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">مبتدئ</span>
-                        <span class="guide-read-time">10 دقائق للقراءة</span>
-                    </div>
-                </a><a href="crop-rotation.html" class="guide-item">
-                    <h3>دليل تناوب المحاصيل</h3>
-                    <p>استراتيجيات تناوب المحاصيل الفعالة للحفاظ على خصوبة التربة وتعظيم المحصول.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">متوسط</span>
-                        <span class="guide-read-time">15 دقائق للقراءة</span>
-                    </div>
-                </a><a href="seed-selection.html" class="guide-item">
-                    <h3>دليل اختيار البذور</h3>
-                    <p>اختر البذور التي تناسب استراتيجيتك وقارن النمو والربح.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">متوسط</span>
-                        <span class="guide-read-time">18 دقائق للقراءة</span>
-                    </div>
-                </a><a href="/ar/how-to-grow-carrots.html" class="guide-item">
-                    <h3>دليل زراعة الجزر</h3>
-                    <p>زراعة الجزر بكفاءة: بذر، ري، حصاد.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">مبتدئ</span>
-                        <span class="guide-read-time">18 دقائق للقراءة</span>
-                    </div>
-                </a><a href="/ar/how-to-grow-apples.html" class="guide-item">
-                    <h3>دليل زراعة التفاح</h3>
-                    <p>زراعة التفاح بكفاءة: بذر، ري، حصاد.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">متوسط</span>
-                        <span class="guide-read-time">22 دقائق للقراءة</span>
-                    </div>
-                </a><a href="/ar/how-to-grow-berries.html" class="guide-item">
-                    <h3>دليل زراعة التوت</h3>
-                    <p>زراعة التوت بكفاءة: بذر، ري، حصاد.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">متوسط</span>
-                        <span class="guide-read-time">20 دقائق للقراءة</span>
-                    </div>
-                </a><a href="/ar/how-to-build-farm.html" class="guide-item">
-                    <h3>دليل بناء المزرعة</h3>
-                    <p>تصميم تخطيط مزرعة فعال: تحسين الري والتخزين والمعالجة والطرق.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">متوسط</span>
-                        <span class="guide-read-time">24 دقائق للقراءة</span>
-                    </div>
-                </a><a href="/ar/how-to-grow-wheat.html" class="guide-item">
-                    <h3>دليل زراعة القمح</h3>
-                    <p>زراعة القمح بكفاءة: بذر، ري، حصاد.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">مبتدئ</span>
-                        <span class="guide-read-time">20 دقائق للقراءة</span>
-                    </div>
-                </a><a href="/ar/how-to-grow-carrots.html" class="guide-item">
-                    <h3>دليل زراعة الجزر</h3>
-                    <p>زراعة الجزر بكفاءة: بذر، ري، حصاد.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">مبتدئ</span>
-                        <span class="guide-read-time">18 دقائق للقراءة</span>
-                    </div>
-                </a><a href="/ar/how-to-grow-apples.html" class="guide-item">
-                    <h3>دليل زراعة التفاح</h3>
-                    <p>زراعة التفاح بكفاءة: بذر، ري، حصاد.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">متوسط</span>
-                        <span class="guide-read-time">22 دقائق للقراءة</span>
-                    </div>
-                </a><a href="/ar/how-to-grow-oranges.html" class="guide-item">
-                    <h3>دليل زراعة البرتقال</h3>
-                    <p>زراعة البرتقال بكفاءة: بذر، ري، حصاد.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">متوسط</span>
-                        <span class="guide-read-time">21 دقائق للقراءة</span>
-                    </div>
-                </a><a href="/ar/how-to-grow-berries.html" class="guide-item">
-                    <h3>دليل زراعة التوت</h3>
-                    <p>زراعة التوت بكفاءة: بذر، ري، حصاد.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">متوسط</span>
-                        <span class="guide-read-time">20 دقائق للقراءة</span>
-                    </div>
-                </a><a href="/ar/how-to-grow-corn.html" class="guide-item">
-                    <h3>دليل زراعة الذرة</h3>
-                    <p>زراعة الذرة بكفاءة: بذر، ري، حصاد.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">متوسط</span>
-                        <span class="guide-read-time">21 دقائق للقراءة</span>
-                    </div>
-                </a><a href="/ar/how-to-build-farm.html" class="guide-item">
-                    <h3>دليل بناء المزرعة</h3>
-                    <p>تصميم تخطيط مزرعة فعال: تحسين الري والتخزين والمعالجة والطرق.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">متوسط</span>
-                        <span class="guide-read-time">24 دقائق للقراءة</span>
-                    </div>
-                </a></div>
-    </div>
-    
-    <!-- 收益攻略 -->
-    <div class="category-section" data-category="profit">
-      <h2 class="category-title">💰 أدلة الربح</h2>
-      <div class="guides-grid">
-        <a href="/ar/how-to-make-money-fast.html" class="guide-item">
-          <h3>دليل كسب المال بسرعة</h3>
-          <p>تعلم نصائح كسب المال بسرعة في زراعة الحديقة.</p>
-          <div class="guide-meta">
-            <span class="guide-difficulty">متوسط</span>
-            <span class="guide-read-time">35 دقائق للقراءة</span>
-          </div>
-        </a>
-        
-        <a href="/profit-strategies.html" class="guide-item">
-          <h3>دليل استراتيجيات الربح</h3>
-          <p>تعلم استراتيجيات الربح طويلة المدى وتحليل السوق وإدارة المخاطر وتحسين المبيعات.</p>
-          <div class="guide-meta">
-            <span class="guide-difficulty">متقدم</span>
-            <span class="guide-read-time">45 دقائق للقراءة</span>
-          </div>
-        </a>
-      <a href="market-analysis.html" class="guide-item">
-                    <h3>تحليل السوق</h3>
-                    <p>حلل اتجاهات السوق وحدد فرص الربح وحسن استراتيجية المبيعات.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">متقدم</span>
-                        <span class="guide-read-time">20 دقائق للقراءة</span>
-                    </div>
-                </a><a href="resource-management.html" class="guide-item">
-                    <h3>إدارة الموارد</h3>
-                    <p>أتقن توزيع الموارد وإدارة المخزون وتحسين التكاليف.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">متوسط</span>
-                        <span class="guide-read-time">16 دقائق للقراءة</span>
-                    </div>
-                </a><a href="investment-guide.html" class="guide-item">
-                    <h3>دليل الاستثمار</h3>
-                    <p>تعلم كيفية تحديد أهداف الاستثمار وتعظيم العوائد طويلة المدى.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">خبير</span>
-                        <span class="guide-read-time">25 دقائق للقراءة</span>
-                    </div>
-                </a></div>
-    </div>
-  <div class="category-section" data-category="co-op">
-            <h2 class="category-title">👥 التعاون والتشغيل</h2>
-            <div class="guides-grid">
-                <a href="/ar/how-to-play-with-friends.html" class="guide-item">
-                    <h3>اللعب مع الأصدقاء</h3>
-                    <p>تعاون مع الأصدقاء ووزع الأدوار وابن مزرعة فعالة من خلال التجارة.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">متوسط</span>
-                        <span class="guide-read-time">18 دقائق للقراءة</span>
-                    </div>
-                </a>
+    <script>
+        function toggleLanguageMenu() {
+            const dropdown = document.getElementById('langDropdown');
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
 
-                <a href="storage-and-logistics.html" class="guide-item">
-                    <h3>التخزين والخدمات اللوجستية</h3>
-                    <p>حسن كفاءة الخدمات اللوجستية من خلال التخزين وتخطيط الطرق.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">متوسط</span>
-                        <span class="guide-read-time">20 دقائق للقراءة</span>
-                    </div>
-                </a>
-            <a href="/ar/how-to-play-with-friends.html" class="guide-item">
-                    <h3>اللعب مع الأصدقاء</h3>
-                    <p>تعاون مع الأصدقاء ووزع الأدوار وابن مزرعة فعالة من خلال التجارة.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">متوسط</span>
-                        <span class="guide-read-time">18 دقائق للقراءة</span>
-                    </div>
-                </a></div>
-        </div><div class="category-section" data-category="advanced">
-            <h2 class="category-title">🎮 أدلة متقدمة</h2>
-            <div class="guides-grid">
-                <a href="game-mechanics.html" class="guide-item">
-                    <h3>آليات اللعبة</h3>
-                    <p>استكشف بعمق آليات اللعبة والطفرات والأحداث الخاصة والعناصر المتقدمة.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">خبير</span>
-                        <span class="guide-read-time">35 دقائق للقراءة</span>
-                    </div>
-                </a>
-                
-                <a href="mutation-guide.html" class="guide-item">
-                    <h3>دليل الطفرات</h3>
-                    <p>افهم نظام الطفرات واجمعها للحصول على أقصى ربح.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">خبير</span>
-                        <span class="guide-read-time">40 دقائق للقراءة</span>
-                    </div>
-                </a>
-                
-                <a href="special-events.html" class="guide-item">
-                    <h3>أحداث خاصة</h3>
-                    <p>دليل شامل للأحداث المحدودة زمنياً والفرص الخاصة والمكافآت الحصرية.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">متقدم</span>
-                        <span class="guide-read-time">28 دقائق للقراءة</span>
-                    </div>
-                </a>
-                
-                <a href="speed-running.html" class="guide-item">
-                    <h3>سبيد رانينغ</h3>
-                    <p>تقنيات السبيد رانينغ لتعظيم الكفاءة والسعي لتحقيق الأرقام القياسية.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">خبير</span>
-                        <span class="guide-read-time">30 دقائق للقراءة</span>
-                    </div>
-                </a>
-            </div>
-        </div><div class="guides-card">
-            <h2>💡 نصائح سريعة</h2>
-            <div class="tips-grid">
-                <div class="tip-item">
-                    <h4>⏰ الساعة الذهبية</h4>
-                    <p>اسق نباتاتك من الساعة 7:00 إلى 9:00 في اللعبة للحصول على تأثيرات نمو مضاعفة.</p>
-                </div>
-                <div class="tip-item">
-                    <h4>🎯 الجودة مهمة</h4>
-                    <p>المواد عالية الجودة تؤدي إلى وصفات أفضل وربح أعلى.</p>
-                </div>
-                <div class="tip-item">
-                    <h4>📈 توقيت السوق</h4>
-                    <p>بع في أوقات الطلب العالي لتعظيم الربح.</p>
-                </div>
-                <div class="tip-item">
-                    <h4>📚 إتقان الوصفات</h4>
-                    <p>أتقن الأساسيات قبل محاولة الوصفات المتقدمة لتحسين الكفاءة.</p>
-                </div>
-                <div class="tip-item">
-                    <h4>🤝 التعلم المجتمعي</h4>
-                    <p>انضم إلى خادم Discord الخاص بنا للتعلم من اللاعبين ذوي الخبرة.</p>
-                </div>
-                <div class="tip-item">
-                    <h4>🔄 定期的な更新</h4>
-                    <p>تحقق بانتظام من وجود أدلة جديدة واستراتيجيات محدثة.</p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="guides-card">
-            <h2>🏠 التنقل</h2>
-            <div class="back-link-container">
-                <a href="/ar/index.html" class="back-btn" data-i18n="guides.back">← العودة إلى الحاسبة الرئيسية</a>
-            </div>
-        </div>
-    </div>
-  <script src="../i18n/i18n.js"></script>
-  <script src="../script.js"></script>
-
- </body></html>
+        // 点击外部关闭语言菜单
+        document.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('langDropdown');
+            const langBtn = document.querySelector('.lang-btn');
+            if (!langBtn.contains(event.target) && !dropdown.contains(event.target)) {
+                dropdown.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

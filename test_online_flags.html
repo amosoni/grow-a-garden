@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online.html 国旗切换测试</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f0f0f0;
+        }
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .language-selector {
+            position: relative;
+            display: inline-block;
+            margin: 20px 0;
+        }
+        .lang-btn {
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 24px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: inherit;
+            font-size: 16px;
+            min-width: 120px;
+        }
+        .lang-btn .flag-img {
+            width: 24px;
+            height: 16px;
+            object-fit: cover;
+            border-radius: 2px;
+            vertical-align: middle;
+        }
+        .lang-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 8px 0;
+            min-width: 150px;
+            display: none;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .lang-option {
+            padding: 12px 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: background-color 0.2s;
+        }
+        .lang-option:hover {
+            background: #f8f9fa;
+        }
+        .lang-option .flag-img {
+            width: 20px;
+            height: 14px;
+            object-fit: cover;
+            border-radius: 2px;
+            vertical-align: middle;
+        }
+        .debug-info {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #007bff;
+        }
+        .debug-info h3 {
+            margin-top: 0;
+            color: #007bff;
+        }
+        .debug-info pre {
+            background: #e9ecef;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        .test-buttons {
+            margin: 20px 0;
+        }
+        .test-btn {
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .test-btn:hover {
+            background: #218838;
+        }
+        .error {
+            color: #dc3545;
+            font-weight: bold;
+        }
+        .success {
+            color: #28a745;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🔍 Online.html 国旗切换功能测试</h1>
+        
+        <div class="debug-info">
+            <h3>测试说明</h3>
+            <p>这个页面模拟了 online.html 的国旗切换功能，用于诊断问题。</p>
+        </div>
+        
+        <div class="language-selector">
+            <button class="lang-btn" id="currentLangBtn">
+                <img src="flags/en.png" alt="US Flag" class="flag-img">
+                <span class="code">US</span>
+            </button>
+            <div class="lang-dropdown" id="langDropdown">
+                <div class="lang-option" data-lang="en">
+                    <img src="flags/en.png" alt="US Flag" class="flag-img">
+                    <span class="code">US</span>
+                </div>
+                <div class="lang-option" data-lang="zh-cn">
+                    <img src="flags/zh-cn.png" alt="CN Flag" class="flag-img">
+                    <span class="code">CN</span>
+                </div>
+                <div class="lang-option" data-lang="es">
+                    <img src="flags/es.png" alt="ES Flag" class="flag-img">
+                    <span class="code">ES</span>
+                </div>
+                <div class="lang-option" data-lang="pt-br">
+                    <img src="flags/pt-br.png" alt="BR Flag" class="flag-img">
+                    <span class="code">BR</span>
+                </div>
+                <div class="lang-option" data-lang="fr">
+                    <img src="flags/fr.png" alt="FR Flag" class="flag-img">
+                    <span class="code">FR</span>
+                </div>
+                <div class="lang-option" data-lang="de">
+                    <img src="flags/de.png" alt="DE Flag" class="flag-img">
+                    <span class="code">DE</span>
+                </div>
+                <div class="lang-option" data-lang="ru">
+                    <img src="flags/ru.png" alt="RU Flag" class="flag-img">
+                    <span class="code">RU</span>
+                </div>
+                <div class="lang-option" data-lang="ar">
+                    <img src="flags/ar.png" alt="SA Flag" class="flag-img">
+                    <span class="code">SA</span>
+                </div>
+                <div class="lang-option" data-lang="hi">
+                    <img src="flags/hi.png" alt="IN Flag" class="flag-img">
+                    <span class="code">IN</span>
+                </div>
+                <div class="lang-option" data-lang="id">
+                    <img src="flags/en.png" alt="ID Flag" class="flag-img">
+                    <span class="code">ID</span>
+                </div>
+                <div class="lang-option" data-lang="vi">
+                    <img src="flags/vi.png" alt="VN Flag" class="flag-img">
+                    <span class="code">VN</span>
+                </div>
+                <div class="lang-option" data-lang="ja">
+                    <img src="flags/ja.png" alt="JP Flag" class="flag-img">
+                    <span class="code">JP</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="test-buttons">
+            <button class="test-btn" onclick="testFlagSwitching()">🧪 测试国旗切换</button>
+            <button class="test-btn" onclick="testElementSelection()">🔍 测试元素选择</button>
+            <button class="test-btn" onclick="testImageLoading()">🖼️ 测试图片加载</button>
+            <button class="test-btn" onclick="clearLog()">🗑️ 清空日志</button>
+        </div>
+        
+        <div class="debug-info">
+            <h3>调试信息</h3>
+            <div id="debugOutput">
+                <p>点击测试按钮开始诊断...</p>
+            </div>
+        </div>
+        
+        <div class="debug-info">
+            <h3>当前状态</h3>
+            <p><strong>当前语言:</strong> <span id="currentLang">en</span></p>
+            <p><strong>当前国旗:</strong> <span id="currentFlag">flags/en.png</span></p>
+            <p><strong>当前代码:</strong> <span id="currentCode">US</span></p>
+        </div>
+    </div>
+    
+    <script>
+        // 模拟 online.html 的JavaScript逻辑
+        document.addEventListener('DOMContentLoaded', function() {
+            const langOptions = document.querySelectorAll('.lang-option');
+            const currentLangBtn = document.querySelector('#currentLangBtn');
+            const langDropdown = document.querySelector('#langDropdown');
+            
+            log('🚀 语言选择器初始化完成');
+            
+            // 为每个语言选项添加点击事件
+            langOptions.forEach(option => {
+                option.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const lang = this.getAttribute('data-lang');
+                    const flagElement = this.querySelector('.flag-img');
+                    const codeElement = this.querySelector('.code');
+                    
+                    log(`📝 点击语言选项: ${lang}`);
+                    
+                    if (flagElement && codeElement) {
+                        // 复制国旗图片到当前按钮
+                        const currentFlagElement = currentLangBtn.querySelector('.flag-img');
+                        const currentCodeElement = currentLangBtn.querySelector('.code');
+                        
+                        if (currentFlagElement && currentCodeElement) {
+                            // 复制国旗图片的src和代码
+                            currentFlagElement.src = flagElement.src;
+                            currentCodeElement.textContent = codeElement.textContent;
+                            currentLangBtn.setAttribute('data-lang', lang);
+                            
+                            // 更新显示状态
+                            updateCurrentStatus(lang, flagElement.src, codeElement.textContent);
+                            
+                            log(`✅ 已更新语言按钮为: ${lang}`);
+                        } else {
+                            log(`❌ 未找到当前按钮的元素`, 'error');
+                        }
+                    } else {
+                        log(`❌ 未找到语言选项的元素`, 'error');
+                    }
+                    
+                    // 隐藏下拉菜单
+                    langDropdown.style.display = 'none';
+                });
+            });
+            
+            // 点击按钮显示/隐藏下拉菜单
+            currentLangBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const isVisible = langDropdown.style.display === 'block';
+                langDropdown.style.display = isVisible ? 'none' : 'block';
+                log(`🔄 切换下拉菜单显示: ${!isVisible}`);
+            });
+            
+            // 点击其他地方隐藏下拉菜单
+            document.addEventListener('click', function() {
+                langDropdown.style.display = 'none';
+            });
+            
+            // 初始化当前语言
+            initializeLanguage();
+        });
+        
+        function initializeLanguage() {
+            log('🔧 开始初始化语言...');
+            
+            const currentLangBtn = document.querySelector('#currentLangBtn');
+            const currentLang = currentLangBtn.getAttribute('data-lang') || 'en';
+            
+            log(`🌍 检测到语言: ${currentLang}`);
+            
+            // 根据当前语言设置正确的国旗和代码
+            const targetOption = document.querySelector(`.lang-option[data-lang="${currentLang}"]`);
+            if (targetOption) {
+                const flagElement = targetOption.querySelector('.flag-img');
+                const codeElement = targetOption.querySelector('.code');
+                const currentFlagElement = currentLangBtn.querySelector('.flag-img');
+                const currentCodeElement = currentLangBtn.querySelector('.code');
+                
+                if (flagElement && codeElement && currentFlagElement && currentCodeElement) {
+                    currentFlagElement.src = flagElement.src;
+                    currentCodeElement.textContent = codeElement.textContent;
+                    updateCurrentStatus(currentLang, flagElement.src, codeElement.textContent);
+                    log(`✅ 已设置国旗和代码: ${currentLang}`);
+                } else {
+                    log(`❌ 元素未找到，等待DOM加载...`, 'error');
+                }
+            } else {
+                log(`❌ 未找到语言选项: ${currentLang}`, 'error');
+            }
+        }
+        
+        function updateCurrentStatus(lang, flagSrc, code) {
+            document.getElementById('currentLang').textContent = lang;
+            document.getElementById('currentFlag').textContent = flagSrc;
+            document.getElementById('currentCode').textContent = code;
+        }
+        
+        function testFlagSwitching() {
+            log('🧪 开始测试国旗切换功能...');
+            
+            // 测试切换到中文
+            const zhOption = document.querySelector('.lang-option[data-lang="zh-cn"]');
+            if (zhOption) {
+                zhOption.click();
+                log('✅ 测试切换到中文完成');
+            } else {
+                log('❌ 未找到中文选项', 'error');
+            }
+        }
+        
+        function testElementSelection() {
+            log('🔍 开始测试元素选择...');
+            
+            const elements = {
+                '当前按钮': document.querySelector('#currentLangBtn'),
+                '国旗图片': document.querySelector('#currentLangBtn .flag-img'),
+                '语言代码': document.querySelector('#currentLangBtn .code'),
+                '下拉菜单': document.querySelector('#langDropdown'),
+                '语言选项数量': document.querySelectorAll('.lang-option').length
+            };
+            
+            Object.entries(elements).forEach(([name, element]) => {
+                if (element) {
+                    log(`✅ ${name}: 找到`);
+                } else {
+                    log(`❌ ${name}: 未找到`, 'error');
+                }
+            });
+        }
+        
+        function testImageLoading() {
+            log('🖼️ 开始测试图片加载...');
+            
+            const images = document.querySelectorAll('.flag-img');
+            let loadedCount = 0;
+            let totalCount = images.length;
+            
+            images.forEach((img, index) => {
+                if (img.complete) {
+                    loadedCount++;
+                    log(`✅ 图片 ${index + 1}: 已加载 (${img.src})`);
+                } else {
+                    log(`⏳ 图片 ${index + 1}: 加载中 (${img.src})`);
+                    img.addEventListener('load', () => {
+                        loadedCount++;
+                        log(`✅ 图片 ${index + 1}: 加载完成 (${img.src})`);
+                    });
+                    img.addEventListener('error', () => {
+                        log(`❌ 图片 ${index + 1}: 加载失败 (${img.src})`, 'error');
+                    });
+                }
+            });
+            
+            if (loadedCount === totalCount) {
+                log(`🎉 所有图片已加载完成 (${loadedCount}/${totalCount})`);
+            } else {
+                log(`⏳ 图片加载进度: ${loadedCount}/${totalCount}`);
+            }
+        }
+        
+        function log(message, type = 'info') {
+            const debugOutput = document.getElementById('debugOutput');
+            const timestamp = new Date().toLocaleTimeString();
+            const className = type === 'error' ? 'error' : type === 'success' ? 'success' : '';
+            
+            const logEntry = document.createElement('p');
+            logEntry.className = className;
+            logEntry.innerHTML = `[${timestamp}] ${message}`;
+            
+            debugOutput.appendChild(logEntry);
+            debugOutput.scrollTop = debugOutput.scrollHeight;
+            
+            console.log(`[${timestamp}] ${message}`);
+        }
+        
+        function clearLog() {
+            document.getElementById('debugOutput').innerHTML = '<p>日志已清空...</p>';
+        }
+    </script>
+</body>
+</html> 

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grow a Garden Game Test - MiniPlay Version</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #f0f0f0;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .game-frame {
+            width: 100%;
+            height: 600px;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .status {
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+            background: #e8f5e8;
+            border: 1px solid #27ae60;
+            transition: all 0.3s ease;
+        }
+        .btn {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .btn:hover {
+            background: #2980b9;
+        }
+        .btn:disabled {
+            background: #bdc3c7;
+            cursor: not-allowed;
+        }
+        .error {
+            background: #ffeaea;
+            border-color: #e74c3c;
+            color: #c0392b;
+        }
+        .warning {
+            background: #fff3cd;
+            border-color: #ffc107;
+            color: #856404;
+        }
+        .success {
+            background: #e8f5e8;
+            border-color: #27ae60;
+            color: #155724;
+        }
+        .loading {
+            background: #e3f2fd;
+            border-color: #2196f3;
+            color: #0d47a1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌱 Grow a Garden Game Test (MiniPlay)</h1>
+        <p>Testing the online game: <a href="https://www.miniplay.com/embed/grow-a-garden" target="_blank" rel="noopener noreferrer">Game Link</a></p>
+        
+        <div>
+            <button class="btn" id="loadBtn">🎮 Load Game</button>
+            <button class="btn" id="checkBtn">🔍 Check Status</button>
+            <button class="btn" id="reloadBtn">🔄 Reload Game</button>
+            <button class="btn" id="clearBtn">🧹 Clear Status</button>
+            <button class="btn" id="testBtn">🧪 Test Iframe</button>
+        </div>
+        
+        <div class="status" id="status">Ready to test. Click "Load Game" to begin.</div>
+        
+        <!-- 简单的JavaScript测试 -->
+        <div style="margin: 10px 0; padding: 10px; background: #e3f2fd; border-radius: 5px; border-left: 4px solid #2196f3;">
+            <strong>JavaScript Test:</strong> 
+            <span id="jsTest">Testing...</span>
+            <button id="testJSBtn" style="margin-left: 10px; padding: 5px 10px; background: #2196f3; color: white; border: none; border-radius: 3px; cursor: pointer;">Test JS</button>
+        </div>
+        
+        <iframe id="gameFrame" class="game-frame" style="display: none;" frameborder="0" allowfullscreen sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals allow-presentation"></iframe>
+        
+        <div id="debugInfo" style="margin-top: 20px; padding: 15px; background: #f8f9fa; border-radius: 5px; font-family: monospace; font-size: 12px; display: none;">
+            <h4>MiniPlay Game Information:</h4>
+            <div id="debugContent"></div>
+            <div style="margin-top: 10px; padding: 10px; background: #e8f5e8; border-radius: 3px; border-left: 4px solid #27ae60;">
+                <strong>MiniPlay Platform Features:</strong><br>
+                • High-quality game embedding<br>
+                • Mobile-friendly interface<br>
+                • Fast loading times<br>
+                • Cross-platform compatibility<br>
+                • Optimized for casual gaming
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 全局变量
+        let gameLoaded = false;
+        let loadAttempts = 0;
+        const maxLoadAttempts = 3;
+        
+        // 核心函数定义
+        function updateStatus(message, type = 'success') {
+            const status = document.getElementById('status');
+            if (status) {
+                status.innerHTML = message;
+                status.className = `status ${type}`;
+            }
+        }
+        
+        function loadGame() {
+            console.log('loadGame function called');
+            const gameFrame = document.getElementById('gameFrame');
+            const loadBtn = document.getElementById('loadBtn');
+            
+            if (!gameFrame || !loadBtn) {
+                console.error('Required elements not found');
+                return;
+            }
+            
+            loadBtn.disabled = true;
+            loadAttempts++;
+            
+            updateStatus('Loading MiniPlay game... Please wait.', 'loading');
+            
+            // 主要使用MiniPlay的游戏地址
+            const gameUrls = [
+                'https://www.miniplay.com/embed/grow-a-garden',
+                'https://miniplay.com/embed/grow-a-garden',
+                'https://www.miniplay.com/grow-a-garden'
+            ];
+            
+            const currentUrl = gameUrls[Math.min(loadAttempts - 1, gameUrls.length - 1)];
+            console.log('Loading game from:', currentUrl);
+            
+            // 为MiniPlay游戏设置特定的iframe属性
+            gameFrame.src = currentUrl;
+            gameFrame.style.display = 'block';
+            
+            // 设置加载超时
+            const loadTimeout = setTimeout(() => {
+                if (!gameLoaded) {
+                    handleLoadError('MiniPlay game loading timeout. Please try again.');
+                }
+            }, 30000); // 30秒超时
+            
+            gameFrame.onload = function() {
+                console.log('Game iframe loaded successfully');
+                clearTimeout(loadTimeout);
+                gameLoaded = true;
+                loadBtn.disabled = false;
+                updateStatus('✅ MiniPlay game loaded successfully!', 'success');
+                showDebugInfo('Game loaded from: ' + currentUrl + '\nPlatform: MiniPlay\nStatus: Active');
+            };
+            
+            gameFrame.onerror = function() {
+                console.error('Game iframe failed to load');
+                clearTimeout(loadTimeout);
+                handleLoadError('Failed to load MiniPlay game from: ' + currentUrl);
+            };
+        }
+        
+        function handleLoadError(errorMessage) {
+            console.error('Load error:', errorMessage);
+            const loadBtn = document.getElementById('loadBtn');
+            if (loadBtn) loadBtn.disabled = false;
+            
+            if (loadAttempts < maxLoadAttempts) {
+                updateStatus(`❌ ${errorMessage} Retrying... (Attempt ${loadAttempts}/${maxLoadAttempts})`, 'warning');
+                setTimeout(() => {
+                    loadGame();
+                }, 2000);
+            } else {
+                updateStatus(`❌ ${errorMessage} All attempts failed. Please check your internet connection or try again later.`, 'error');
+                showDebugInfo('Load attempts: ' + loadAttempts + '\nLast error: ' + errorMessage);
+            }
+        }
+        
+        function checkStatus() {
+            console.log('checkStatus function called');
+            if (gameLoaded) {
+                updateStatus('✅ MiniPlay game is running and accessible.', 'success');
+            } else {
+                updateStatus('❌ MiniPlay game is not loaded. Please load the game first.', 'error');
+            }
+        }
+        
+        function reloadGame() {
+            console.log('reloadGame function called');
+            gameLoaded = false;
+            loadAttempts = 0;
+            const gameFrame = document.getElementById('gameFrame');
+            if (gameFrame) {
+                gameFrame.style.display = 'none';
+                gameFrame.src = '';
+            }
+            updateStatus('Game reloaded. Ready to load again.', 'success');
+            hideDebugInfo();
+        }
+        
+        function clearStatus() {
+            console.log('clearStatus function called');
+            updateStatus('Status cleared. Ready to test.', 'success');
+        }
+        
+        function showDebugInfo(info) {
+            const debugInfo = document.getElementById('debugInfo');
+            const debugContent = document.getElementById('debugContent');
+            if (debugInfo && debugContent) {
+                debugContent.textContent = info;
+                debugInfo.style.display = 'block';
+            }
+        }
+        
+        function hideDebugInfo() {
+            const debugInfo = document.getElementById('debugInfo');
+            if (debugInfo) debugInfo.style.display = 'none';
+        }
+        
+        function testIframe() {
+            console.log('testIframe function called');
+            const gameFrame = document.getElementById('gameFrame');
+            
+            updateStatus('Testing iframe functionality...', 'loading');
+            
+            // 测试一个简单的HTML页面
+            const testHtml = `
+                <!DOCTYPE html>
+                <html>
+                <head><title>Test</title></head>
+                <body style="background: #f0f0f0; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; font-family: Arial, sans-serif;">
+                    <div style="text-align: center; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                        <h2>🎮 Iframe Test Successful!</h2>
+                        <p>Your iframe is working correctly.</p>
+                        <p>Now try loading the MiniPlay game.</p>
+                    </div>
+                </body>
+                </html>
+            `;
+            
+            if (gameFrame) {
+                gameFrame.style.display = 'block';
+                gameFrame.srcdoc = testHtml;
+                
+                setTimeout(() => {
+                    updateStatus('✅ Iframe test completed. Iframe is working!', 'success');
+                    showDebugInfo('Iframe test: PASSED\nIframe functionality: OK\nReady for game loading');
+                }, 2000);
+            }
+        }
+        
+        // 简单的JavaScript测试函数
+        function testJS() {
+            console.log('testJS function called');
+            const jsTest = document.getElementById('jsTest');
+            if (jsTest) {
+                jsTest.textContent = '✅ JavaScript is working!';
+                jsTest.style.color = 'green';
+                console.log('JavaScript test function executed successfully');
+                
+                // 测试按钮事件监听器
+                const loadBtn = document.getElementById('loadBtn');
+                if (loadBtn) {
+                    loadBtn.style.border = '3px solid #27ae60';
+                    loadBtn.style.background = '#27ae60';
+                    loadBtn.textContent = '🎮 Load Game (READY!)';
+                }
+                
+                // 测试其他函数
+                setTimeout(() => {
+                    if (typeof loadGame === 'function') {
+                        jsTest.textContent = '✅ JavaScript is working! (loadGame function available)';
+                    } else {
+                        jsTest.textContent = '❌ loadGame function not found';
+                        jsTest.style.color = 'red';
+                    }
+                }, 1000);
+            }
+        }
+        
+        // 页面加载完成后的初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded, initializing...');
+            
+            // 确保所有函数都在全局作用域中
+            window.loadGame = loadGame;
+            window.checkStatus = checkStatus;
+            window.reloadGame = reloadGame;
+            window.clearStatus = clearStatus;
+            window.testIframe = testIframe;
+            window.testJS = testJS;
+            
+            updateStatus('Page loaded successfully. Ready to test.', 'success');
+            
+            // 测试函数是否可用
+            console.log('loadGame function:', typeof loadGame);
+            console.log('checkStatus function:', typeof checkStatus);
+            console.log('testIframe function:', typeof testIframe);
+            
+            // 为所有按钮添加点击事件监听器
+            const loadBtn = document.getElementById('loadBtn');
+            if (loadBtn) {
+                loadBtn.addEventListener('click', function(e) {
+                    console.log('Load button clicked via addEventListener');
+                    e.preventDefault();
+                    loadGame();
+                });
+            }
+            
+            const checkBtn = document.getElementById('checkBtn');
+            if (checkBtn) {
+                checkBtn.addEventListener('click', function(e) {
+                    console.log('Check status button clicked via addEventListener');
+                    e.preventDefault();
+                    checkStatus();
+                });
+            }
+            
+            const reloadBtn = document.getElementById('reloadBtn');
+            if (reloadBtn) {
+                reloadBtn.addEventListener('click', function(e) {
+                    console.log('Reload button clicked via addEventListener');
+                    e.preventDefault();
+                    reloadGame();
+                });
+            }
+            
+            const clearBtn = document.getElementById('clearBtn');
+            if (clearBtn) {
+                clearBtn.addEventListener('click', function(e) {
+                    console.log('Clear button clicked via addEventListener');
+                    e.preventDefault();
+                    clearStatus();
+                });
+            }
+            
+            const testBtn = document.getElementById('testBtn');
+            if (testBtn) {
+                testBtn.addEventListener('click', function(e) {
+                    console.log('Test iframe button clicked via addEventListener');
+                    e.preventDefault();
+                    testIframe();
+                });
+            }
+            
+            const testJSBtn = document.getElementById('testJSBtn');
+            if (testJSBtn) {
+                testJSBtn.addEventListener('click', function(e) {
+                    console.log('Test JS button clicked via addEventListener');
+                    e.preventDefault();
+                    testJS();
+                });
+            }
+            
+            console.log('All event listeners attached successfully');
+        });
+        
+        // 添加全局错误处理
+        window.addEventListener('error', function(e) {
+            console.error('JavaScript error:', e.error);
+            updateStatus('❌ JavaScript error: ' + e.message, 'error');
+        });
+        
+        console.log('Script loaded successfully');
+    </script>
+</body>
+</html> 

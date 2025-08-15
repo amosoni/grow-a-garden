@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>国旗Emoji测试</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f0f0f0;
+        }
+        
+        .test-section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .emoji-test {
+            font-size: 2rem;
+            margin: 10px 0;
+        }
+        
+        .flag-test {
+            font-size: 1.5rem;
+            margin: 5px 0;
+        }
+        
+        select {
+            font-size: 1.2rem;
+            padding: 10px;
+            margin: 10px 0;
+            min-width: 200px;
+        }
+        
+        .emoji-fonts {
+            font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", "Android Emoji", "EmojiSymbols", "EmojiOne Mozilla", "Twemoji Mozilla", "Segoe UI Symbol", Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>🇺🇸 国旗Emoji测试页面</h1>
+    
+    <div class="test-section">
+        <h2>基本Emoji测试</h2>
+        <div class="emoji-test">
+            🚀 🌟 💡 🎯 🏆
+        </div>
+        <p>如果上面显示的是方块或问号，说明浏览器不支持emoji</p>
+    </div>
+    
+    <div class="test-section">
+        <h2>国旗Emoji测试</h2>
+        <div class="flag-test emoji-fonts">
+            🇺🇸 🇨🇳 🇪🇸 🇧🇷 🇫🇷 🇩🇪 🇷🇺 🇸🇦 🇮🇳 🇮🇩 🇻🇳 🇯🇵
+        </div>
+        <p>使用emoji字体：如果显示正常，说明字体支持</p>
+    </div>
+    
+    <div class="test-section">
+        <h2>语言切换器测试</h2>
+        <select class="emoji-fonts">
+            <option value="en">🇺🇸 English</option>
+            <option value="zh-cn">🇨🇳 简体中文</option>
+            <option value="es">🇪🇸 Español</option>
+            <option value="pt-br">🇧🇷 Português</option>
+            <option value="fr">🇫🇷 Français</option>
+            <option value="de">🇩🇪 Deutsch</option>
+            <option value="ru">🇷🇺 Русский</option>
+            <option value="ar">🇸🇦 العربية</option>
+            <option value="hi">🇮🇳 हिन्दी</option>
+            <option value="id">🇮🇩 Bahasa Indonesia</option>
+            <option value="vi">🇻🇳 Tiếng Việt</option>
+            <option value="ja">🇯🇵 日本語</option>
+        </select>
+        <p>测试下拉菜单中的国旗显示</p>
+    </div>
+    
+    <div class="test-section">
+        <h2>CSS强制Emoji显示测试</h2>
+        <div style="font-family: 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', 'Android Emoji', 'EmojiSymbols', 'EmojiOne Mozilla', 'Twemoji Mozilla', 'Segoe UI Symbol', Arial, sans-serif !important; font-size: 2rem;">
+            🇺🇸 🇨🇳 🇪🇸 🇧🇷 🇫🇷 🇩🇪 🇷🇺 🇸🇦 🇮🇳 🇮🇩 🇻🇳 🇯🇵
+        </div>
+        <p>使用!important强制应用emoji字体</p>
+    </div>
+    
+    <div class="test-section">
+        <h2>浏览器信息</h2>
+        <p><strong>User Agent:</strong> <span id="user-agent"></span></p>
+        <p><strong>Platform:</strong> <span id="platform"></span></p>
+        <p><strong>Emoji支持:</strong> <span id="emoji-support"></span></p>
+    </div>
+    
+    <script>
+        // 显示浏览器信息
+        document.getElementById('user-agent').textContent = navigator.userAgent;
+        document.getElementById('platform').textContent = navigator.platform;
+        
+        // 测试emoji支持
+        function testEmojiSupport() {
+            const emoji = '🇺🇸';
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            ctx.font = '16px Arial';
+            ctx.fillText(emoji, 0, 16);
+            const data = ctx.getImageData(0, 0, 16, 16).data;
+            let hasData = false;
+            for (let i = 0; i < data.length; i += 4) {
+                if (data[i + 3] > 0) {
+                    hasData = true;
+                    break;
+                }
+            }
+            document.getElementById('emoji-support').textContent = hasData ? '✅ 支持' : '❌ 不支持';
+        }
+        
+        testEmojiSupport();
+    </script>
+</body>
+</html> 

@@ -6,7 +6,7 @@
     <title>Grow a Garden Calculator - Roblox Fruit/Mutation Value Tool</title>
     <meta name="description" content="Grow a Garden Calculator - Complete Roblox fruit and mutation value calculator. Calculate crop value, mutation multipliers, and optimize your Grow a Garden strategy!">
     <meta name="keywords" content="grow a garden calculator, Roblox, fruit value, mutation calculator, crop value, Roblox Grow a Garden, value tool">
-    <link rel="canonical" href="/index.html">
+    <link rel="canonical" href="../index.html">
     <link rel="alternate" hreflang="en" href="/index.html?lang=en">
     <link rel="alternate" hreflang="zh-CN" href="/index.html?lang=zh-cn">
     <link rel="alternate" hreflang="es" href="/index.html?lang=es">
@@ -19,7 +19,7 @@
     <link rel="alternate" hreflang="id" href="/index.html?lang=id">
     <link rel="alternate" hreflang="vi" href="/index.html?lang=vi">
     <link rel="alternate" hreflang="ja" href="/index.html?lang=ja">
-    <link rel="alternate" hreflang="x-default" href="/index.html">
+    <link rel="alternate" hreflang="x-default" href="../index.html">
     <!-- Open Graph for social sharing -->
     <meta property="og:title" content="Grow a Garden Calculator - Roblox Fruit/Mutation Value Tool">
     <meta property="og:description" content="Grow a Garden Calculator - Complete Roblox fruit and mutation value calculator. Calculate crop value, mutation multipliers, and optimize your Grow a Garden strategy!">
@@ -44,10 +44,10 @@
     }
     </script>
     <!-- Roblox-like color scheme -->
-    <link rel="stylesheet" href="https://unpkg.com/simple.css@2.1.0/simple.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="unpkg.com/simple.css@2.1.0/simple.min.css">
+    <link rel="stylesheet" href="unpkg.com/leaflet@1.9.4/dist/leaflet.css">
     <link rel="stylesheet" href="../styles.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
+    <link rel="icon" href="www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
     <style>
         body {
             position: relative;
@@ -76,7 +76,99 @@
     <link rel="alternate" hreflang="id" href="/index.html?lang=id">
     <link rel="alternate" hreflang="vi" href="/index.html?lang=vi">
     <link rel="alternate" hreflang="ja" href="/index.html?lang=ja">
-    <link rel="alternate" hreflang="x-default" href="/index.html">
+    <link rel="alternate" hreflang="x-default" href="../index.html">
+
+        <style>
+        #lang-switcher {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            color: white;
+            padding: 8px 12px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        #lang-switcher:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        #lang-switcher option {
+            background: #2c3e50;
+            color: white;
+            padding: 8px;
+        }
+        
+        #lang-switcher option:hover {
+            background: #34495e;
+        }
+        </style>
+        
+
+        <style>
+        .language-selector {
+            position: relative;
+            display: inline-block;
+        }
+        .lang-btn {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 8px 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+        .lang-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+        .lang-btn .flag-img {
+            width: 20px;
+            height: 14px;
+            object-fit: cover;
+            border-radius: 2px;
+            vertical-align: middle;
+        }
+        .lang-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: rgba(0, 0, 0, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 8px 0;
+            min-width: 150px;
+            display: none;
+            z-index: 1000;
+            backdrop-filter: blur(20px);
+        }
+        .lang-option {
+            padding: 8px 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: background-color 0.2s;
+        }
+        .lang-option:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .lang-option .flag-img {
+            width: 18px;
+            height: 12px;
+            object-fit: cover;
+            border-radius: 2px;
+            vertical-align: middle;
+        }
+        </style>
+    <script src="../unified_i18n_system.js"></script>
 </head>
 <body>
     <div class="bg-blur"></div>
@@ -86,22 +178,65 @@
             <a href="javascript:void(0)" onclick="scrollToSection('stats')" data-i18n="nav.live">Live Stats</a>
             <a href="javascript:void(0)" onclick="scrollToSection('map')" data-i18n="nav.map">Global Heatmap</a>
             <a href="javascript:void(0)" onclick="scrollToSection('tips')" data-i18n="nav.tips">Tips</a>
-            <a href="/en/guides.html" data-i18n="nav.guides">📚 Guides</a>
+            <a href="../en/guides.html" data-i18n="nav.guides">📚 Guides</a>
+            <a href="en/../online.html" data-i18n="nav.online">🎮 Online</a>
             <a href="javascript:void(0)" onclick="scrollToSection('community')" class="discord-btn" data-i18n="nav.discord">💬 Discord</a>
-            <select id="lang-switcher" aria-label="Language">
-                <option value="en">English</option>
-                <option value="zh-cn">简体中文</option>
-                <option value="es">Español</option>
-                <option value="pt-br">Português</option>
-                <option value="fr">Français</option>
-                <option value="de">Deutsch</option>
-                <option value="ru">Русский</option>
-                <option value="ar">العربية</option>
-                <option value="hi">हिन्दी</option>
-                <option value="id">Bahasa Indonesia</option>
-                <option value="vi">Tiếng Việt</option>
-                <option value="ja">日本語</option>
-            </select>
+                        <div class="language-selector">
+                <button class="lang-btn current" data-lang="en">
+                    <img src="../flags/en.png" alt="US Flag" class="flag-img">
+                    <span class="code" data-i18n="index.span.us">US</span>
+                </button>
+                <div class="lang-dropdown">
+                    <div class="lang-option" data-lang="en">
+                        <img src="../flags/en.png" alt="US Flag" class="flag-img">
+                        <span class="code" data-i18n="index.span.us_1">US</span>
+                    </div>
+                    <div class="lang-option" data-lang="zh-cn">
+                        <img src="../flags/zh-cn.png" alt="CN Flag" class="flag-img">
+                        <span class="code" data-i18n="index.span.cn">CN</span>
+                    </div>
+                    <div class="lang-option" data-lang="es">
+                        <img src="../flags/es.png" alt="ES Flag" class="flag-img">
+                        <span class="code" data-i18n="index.span.es">ES</span>
+                    </div>
+                    <div class="lang-option" data-lang="pt-br">
+                        <img src="../flags/pt-br.png" alt="BR Flag" class="flag-img">
+                        <span class="code" data-i18n="index.span.br">BR</span>
+                    </div>
+                    <div class="lang-option" data-lang="fr">
+                        <img src="../flags/fr.png" alt="FR Flag" class="flag-img">
+                        <span class="code" data-i18n="index.span.fr">FR</span>
+                    </div>
+                    <div class="lang-option" data-lang="de">
+                        <img src="../flags/de.png" alt="DE Flag" class="flag-img">
+                        <span class="code" data-i18n="index.span.de">DE</span>
+                    </div>
+                    <div class="lang-option" data-lang="ru">
+                        <img src="../flags/ru.png" alt="RU Flag" class="flag-img">
+                        <span class="code" data-i18n="index.span.ru">RU</span>
+                    </div>
+                    <div class="lang-option" data-lang="ar">
+                        <img src="../flags/ar.png" alt="SA Flag" class="flag-img">
+                        <span class="code" data-i18n="index.span.sa">SA</span>
+                    </div>
+                    <div class="lang-option" data-lang="hi">
+                        <img src="../flags/hi.png" alt="IN Flag" class="flag-img">
+                        <span class="code" data-i18n="index.span.in">IN</span>
+                    </div>
+                    <div class="lang-option" data-lang="id">
+                        <img src="../flags/en.png" alt="ID Flag" class="flag-img">
+                        <span class="code" data-i18n="index.span.id">ID</span>
+                    </div>
+                    <div class="lang-option" data-lang="vi">
+                        <img src="../flags/vi.png" alt="VN Flag" class="flag-img">
+                        <span class="code" data-i18n="index.span.vn">VN</span>
+                    </div>
+                    <div class="lang-option" data-lang="ja">
+                        <img src="../flags/ja.png" alt="JP Flag" class="flag-img">
+                        <span class="code" data-i18n="index.span.jp">JP</span>
+                    </div>
+                </div>
+            </div>
         </nav>
     </header>
     <section class="hero">
@@ -114,15 +249,15 @@
                 
                 <!-- 分类Tab -->
                 <div class="plant-tabs">
-                    <button class="tab active" data-category="all" data-i18n="tabs.all">All</button>
-                    <button class="tab" data-category="BaseValue" data-i18n="tabs.baseValue">Base Value</button>
-                    <button class="tab" data-category="Exotic Seed Pack" data-i18n="tabs.exotic">Exotic Seed Pack</button>
-                    <button class="tab" data-category="Prehistoric Event" data-i18n="tabs.prehistoric">Prehistoric Event</button>
-                    <button class="tab" data-category="Event Seed Pack" data-i18n="tabs.event">Event Seed Pack</button>
+                    <button class="tab active" data-category="all" data-i18n="tabs.all"><span data-i18n="index.button.all">All</span></button>
+                    <button class="tab" data-category="BaseValue" data-i18n="tabs.baseValue"><span data-i18n="index.button.base.value">Base Value</span></button>
+                    <button class="tab" data-category="Exotic Seed Pack" data-i18n="tabs.exotic"><span data-i18n="index.button.exotic.seed.pack">Exotic Seed Pack</span></button>
+                    <button class="tab" data-category="Prehistoric Event" data-i18n="tabs.prehistoric"><span data-i18n="index.button.prehistoric.event">Prehistoric Event</span></button>
+                    <button class="tab" data-category="Event Seed Pack" data-i18n="tabs.event"><span data-i18n="index.button.event.seed.pack">Event Seed Pack</span></button>
                 </div>
                 
                 <!-- 搜索框 -->
-                <input type="text" class="plant-search" placeholder="Search for a plant..." data-i18n-placeholder="search.plant">
+                <input type="text" class="plant-search" placeholder="Search for a plant..." data-i18n-placeholder="data-i18n="index.input.placeholder.searchplant"">
                 
                 <!-- 作物图片选择区 -->
                 <div class="plant-list" id="plant-list">
@@ -133,12 +268,12 @@
                 <div class="mutation-toolbar">
                     <div class="mutation-controls">
                         <span class="mutation-title" data-i18n="mutation.title">Modifiers</span>
-                        <button class="mutation-help-btn" data-i18n="mutation.help">How to get each mutation?</button>
-                        <button class="mutation-sort-btn" data-sort="value" data-i18n="mutation.sortValue">Sort by Value (Descending)</button>
-                        <button class="mutation-sort-btn" data-sort="alphabetical" data-i18n="mutation.sortAlpha">Sort Alphabetically</button>
-                        <button class="mutation-hide-btn" id="hide-admin-btn" data-i18n="mutation.hideAdmin">Hide Admin Mutations</button>
+                        <button class="mutation-help-btn" data-i18n="mutation.help"><span data-i18n="index.button.how.to.get.each.mutation">How to get each mutation?</span></button>
+                        <button class="mutation-sort-btn" data-sort="value" data-i18n="mutation.sortValue"><span data-i18n="index.button.sort.by.value.descending">Sort by Value (Descending)</span></button>
+                        <button class="mutation-sort-btn" data-sort="alphabetical" data-i18n="mutation.sortAlpha"><span data-i18n="index.button.sort.alphabetically">Sort Alphabetically</span></button>
+                        <button class="mutation-hide-btn" id="hide-admin-btn" data-i18n="mutation.hideAdmin"><span data-i18n="index.button.hide.admin.mutations">Hide Admin Mutations</span></button>
                     </div>
-                    <input type="text" class="mutation-search" placeholder="Search for a mutation..." data-i18n-placeholder="search.mutation">
+                    <input type="text" class="mutation-search" placeholder="Search for a mutation..." data-i18n-placeholder="data-i18n="index.input.placeholder.searchmutation"">
                 </div>
                 
                 <!-- 变异选择区 -->
@@ -148,21 +283,21 @@
                 
                 <!-- 公式显示区 -->
                 <div class="formula-display">
-                    <span class="formula-text">(Rainbow/Gold) × (1 + Sum of Modifiers − Number of Modifiers)</span>
+                    <span class="formula-text" data-i18n="index.span.rainbowgold.1.sum.of.modifiers.number.of.modifiers">(Rainbow/Gold) × (1 + Sum of Modifiers − Number of Modifiers)</span>
                 </div>
                 
                 <!-- 输入区 -->
                 <div class="input-section">
                     <div class="input-row">
-                        <label data-i18n="input.weight">Weight (kg):</label>
+                        <label data-i18n="input.weight"><span data-i18n="index.label.weight.kg">Weight (kg):</span></label>
                         <input type="number" id="crop-weight" min="0" step="0.01" value="1.00">
                     </div>
                     <div class="input-row">
-                        <label data-i18n="input.amount">Amount of plants:</label>
+                        <label data-i18n="input.amount"><span data-i18n="index.label.amount.of.plants">Amount of plants:</span></label>
                         <input type="number" id="crop-amount" min="1" value="1">
                     </div>
                     <div class="input-row">
-                        <label><span data-i18n="input.friendBoostLabel">Friend Boost:</span> <span id="friend-boost-value">0%</span></label>
+                        <label><span data-i18n="input.friendBoostLabel">Friend Boost:</span> <span id="friend-boost-value" data-i18n="index.span.0">0%</span></label>
                         <input type="range" id="friend-boost" min="0" max="100" value="0">
                     </div>
                 </div>
@@ -175,19 +310,19 @@
                 
                 <!-- 操作按钮区 -->
                 <div class="action-buttons">
-                    <button class="action-btn" id="add-to-list" data-i18n="btn.addToList">Add Plant value to list</button>
-                    <button class="action-btn" id="clear-mutations" data-i18n="btn.clearMutations">Clear Mutations</button>
-                    <button class="action-btn" id="max-mutations" data-i18n="btn.maxMutations">Max Mutations</button>
-                    <button class="action-btn" id="toggle-mode" data-i18n="btn.toggleMode">Toggle Value to Weight Mode</button>
+                    <button class="action-btn" id="add-to-list" data-i18n="btn.addToList"><span data-i18n="index.button.add.plant.value.to.list">Add Plant value to list</span></button>
+                    <button class="action-btn" id="clear-mutations" data-i18n="btn.clearMutations"><span data-i18n="index.button.clear.mutations">Clear Mutations</span></button>
+                    <button class="action-btn" id="max-mutations" data-i18n="btn.maxMutations"><span data-i18n="index.button.max.mutations">Max Mutations</span></button>
+                    <button class="action-btn" id="toggle-mode" data-i18n="btn.toggleMode"><span data-i18n="index.button.toggle.value.to.weight.mode">Toggle Value to Weight Mode</span></button>
                 </div>
                 
                 <!-- 反向计算区 -->
                 <div class="reverse-calc-section" id="reverse-calc" style="display: none;">
                     <div class="input-row">
-                        <label data-i18n="reverse.inputValue">Input Value ($):</label>
+                        <label data-i18n="reverse.inputValue"><span data-i18n="index.label.input.value">Input Value ($):</span></label>
                         <input type="number" id="target-value" min="0" step="0.01">
                     </div>
-                    <button class="action-btn" id="update-weight" data-i18n="reverse.update">Update</button>
+                    <button class="action-btn" id="update-weight" data-i18n="reverse.update"><span data-i18n="index.button.update">Update</span></button>
                     <div class="result-main" id="weight-result">≈0 <span data-i18n="unit.kg">kg</span></div>
                 </div>
                 
@@ -212,7 +347,7 @@
                         <p class="update-time"><span data-i18n="stats.lastUpdated">Last updated:</span> <span id="update-time">--:--:--</span></p>
                         <div class="trend-indicator">
                             <span id="trend-arrow">↗</span>
-                            <span id="trend-text">+1,234</span>
+                            <span id="trend-text" data-i18n="index.span.1234">+1,234</span>
                     </div>
                 </div>
             </div>
@@ -227,17 +362,17 @@
         <div class="milestone-cards">
             <div class="milestone-card glass">
                 <div class="milestone-date">2024-01-15</div>
-                <div class="milestone-count">21,347,891</div>
+                <div class="milestone-count" data-i18n="index.div.21347891">21,347,891</div>
                 <div class="milestone-desc" data-i18n="stats.milestone.allTimePeak">All-time Peak</div>
             </div>
             <div class="milestone-card glass">
                 <div class="milestone-date">2024-01-14</div>
-                <div class="milestone-count">19,876,543</div>
+                <div class="milestone-count" data-i18n="index.div.19876543">19,876,543</div>
                 <div class="milestone-desc" data-i18n="stats.milestone.m19">19 Million Milestone</div>
             </div>
             <div class="milestone-card glass">
                 <div class="milestone-date">2024-01-13</div>
-                <div class="milestone-count">18,234,567</div>
+                <div class="milestone-count" data-i18n="index.div.18234567">18,234,567</div>
                 <div class="milestone-desc" data-i18n="stats.milestone.m18">18 Million Milestone</div>
             </div>
         </div>
@@ -255,7 +390,7 @@
                 </div>
                 <div class="stat-item glass">
                     <span class="stat-label" data-i18n="map.topRegion">Top Region</span>
-                    <span class="stat-value" id="top-region">North America</span>
+                    <span class="stat-value" id="top-region" data-i18n="index.span.north.america">North America</span>
                 </div>
             </div>
         </div>
@@ -302,7 +437,7 @@
                 <p data-i18n="community.description">Chat with Grow a Garden players worldwide on Discord!</p>
                 <div class="community-stats">
                     <div class="community-stat">
-                        <span class="stat-number">50,000+</span>
+                        <span class="stat-number" data-i18n="index.span.50000">50,000+</span>
                         <span class="stat-label" data-i18n="community.members">Discord Members</span>
                     </div>
                     <div class="community-stat">
@@ -310,11 +445,11 @@
                         <span class="stat-label" data-i18n="community.support">Online Support</span>
                     </div>
                     <div class="community-stat">
-                        <span class="stat-number">1000+</span>
+                        <span class="stat-number" data-i18n="index.span.1000">1000+</span>
                         <span class="stat-label" data-i18n="community.messages">Daily Messages</span>
                     </div>
                 </div>
-                <a href="https://discord.gg/growagarden" class="discord-join-btn" target="_blank" data-i18n="community.joinDiscord">
+                <a href="discord.gg/growagarden" class="discord-join-btn" target="_blank" data-i18n="community.joinDiscord">
                     🚀 Join Discord
                 </a>
             </div>
@@ -335,5 +470,106 @@
     <script src="../plants_auto.js"></script>
     <script src="../script.js"></script>
     <script src="../i18n/i18n.js"></script>
+
+        <script>
+        // 语言选择器功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const langOptions = document.querySelectorAll('.lang-option');
+            const currentLangBtn = document.querySelector('.lang-btn');
+            const langDropdown = document.querySelector('.lang-dropdown');
+            
+            if (!currentLangBtn || !langDropdown) return;
+            
+            // 为每个语言选项添加点击事件
+            langOptions.forEach(option => {
+                option.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const lang = this.getAttribute('data-lang');
+                    const flagElement = this.querySelector('.flag-img');
+                    const codeElement = this.querySelector('.code');
+                    
+                    if (flagElement && codeElement) {
+                        const currentFlagElement = currentLangBtn.querySelector('.flag-img');
+                        const currentCodeElement = currentLangBtn.querySelector('.code');
+                        
+                        if (currentFlagElement && currentCodeElement) {
+                            currentFlagElement.src = flagElement.src;
+                            currentCodeElement.textContent = codeElement.textContent;
+                            currentLangBtn.setAttribute('data-lang', lang);
+                        }
+                    }
+                    
+                    // 跳转到对应语言页面
+                    const currentPath = window.location.pathname;
+                    let newPath;
+                    
+                    if (currentPath.includes('/zh-cn/') || currentPath.includes('/en/') || 
+                        currentPath.includes('/es/') || currentPath.includes('/pt-br/') || 
+                        currentPath.includes('/fr/') || currentPath.includes('/de/') || 
+                        currentPath.includes('/ru/') || currentPath.includes('/ar/') || 
+                        currentPath.includes('/hi/') || currentPath.includes('/id/') || 
+                        currentPath.includes('/vi/') || currentPath.includes('/ja/')) {
+                        newPath = currentPath.replace(/\/(zh-cn|en|es|pt-br|fr|de|ru|ar|hi|id|vi|ja)\//, '/' + lang + '/');
+                    } else {
+                        newPath = '/' + lang + currentPath;
+                    }
+                    
+                    window.location.href = newPath;
+                    langDropdown.style.display = 'none';
+                });
+            });
+            
+            // 点击按钮显示/隐藏下拉菜单
+            currentLangBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const isVisible = langDropdown.style.display === 'block';
+                langDropdown.style.display = isVisible ? 'none' : 'block';
+            });
+            
+            // 点击其他地方隐藏下拉菜单
+            document.addEventListener('click', function() {
+                langDropdown.style.display = 'none';
+            });
+            
+            // 设置当前语言
+            const currentPath = window.location.pathname;
+            const langMatch = currentPath.match(/\/(zh-cn|en|es|pt-br|fr|de|ru|ar|hi|id|vi|ja)\//);
+            if (langMatch) {
+                const currentLang = langMatch[1];
+                currentLangBtn.setAttribute('data-lang', currentLang);
+                
+                const targetOption = document.querySelector(`.lang-option[data-lang="${currentLang}"]`);
+                if (targetOption) {
+                    const flagElement = targetOption.querySelector('.flag-img');
+                    const codeElement = targetOption.querySelector('.code');
+                    const currentFlagElement = currentLangBtn.querySelector('.flag-img');
+                    const currentCodeElement = currentLangBtn.querySelector('.code');
+                    
+                    if (flagElement && codeElement && currentFlagElement && currentCodeElement) {
+                        currentFlagElement.src = flagElement.src;
+                        currentCodeElement.textContent = codeElement.textContent;
+                    }
+                }
+            }
+        });
+        </script>
+
+    <script>
+        // 页面加载完成后自动应用国际化
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.i18nSystem && window.i18nSystem.isReady()) {
+                // 如果国际化系统已准备就绪，直接应用翻译
+                window.i18nSystem.applyTranslations();
+            } else {
+                // 等待国际化系统初始化完成
+                const checkReady = setInterval(() => {
+                    if (window.i18nSystem && window.i18nSystem.isReady()) {
+                        window.i18nSystem.applyTranslations();
+                        clearInterval(checkReady);
+                    }
+                }, 100);
+            }
+        });
+    </script>
 </body>
 </html> 

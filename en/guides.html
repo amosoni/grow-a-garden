@@ -1,39 +1,173 @@
-<!DOCTYPE html><html lang="ja" dir="ltr"><head>
+<!DOCTYPE html><html lang="en" dir="ltr"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <base href="/">
   <title>Grow a Garden Guides - Complete Collection</title>
-  <link rel="canonical" href="https://growagarden.cv/en/guides.html">
-  <link rel="alternate" hreflang="en" href="https://growagarden.cv/en/guides.html">
-  <link rel="alternate" hreflang="zh-CN" href="https://growagarden.cv/zh-cn/guides.html">
-  <link rel="alternate" hreflang="ja" href="https://growagarden.cv/en/guides.html">
-  <link rel="alternate" hreflang="x-default" href="https://growagarden.cv/guides.html">
-  <link rel="stylesheet" href="https://unpkg.com/simple.css@2.1.0/simple.min.css">
+  <link rel="canonical" href="../en/guides.html">
+  <link rel="alternate" hreflang="en" href="../en/guides.html">
+  <link rel="alternate" hreflang="zh-CN" href="../zh-cn/guides.html">
+  <link rel="alternate" hreflang="ja" href="../en/guides.html">
+  <link rel="alternate" hreflang="x-default" href="growagarden.cv/guides.html">
+  <link rel="stylesheet" href="unpkg.com/simple.css@2.1.0/simple.min.css">
   <link rel="stylesheet" href="../styles.css">
+
+        <style>
+        #lang-switcher {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            color: white;
+            padding: 8px 12px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        #lang-switcher:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        #lang-switcher option {
+            background: #2c3e50;
+            color: white;
+            padding: 8px;
+        }
+        
+        #lang-switcher option:hover {
+            background: #34495e;
+        }
+        </style>
+        
+
+        <style>
+        .language-selector {
+            position: relative;
+            display: inline-block;
+        }
+        .lang-btn {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 8px 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+        .lang-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+        .lang-btn .flag-img {
+            width: 20px;
+            height: 14px;
+            object-fit: cover;
+            border-radius: 2px;
+            vertical-align: middle;
+        }
+        .lang-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: rgba(0, 0, 0, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 8px 0;
+            min-width: 150px;
+            display: none;
+            z-index: 1000;
+            backdrop-filter: blur(20px);
+        }
+        .lang-option {
+            padding: 8px 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: background-color 0.2s;
+        }
+        .lang-option:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .lang-option .flag-img {
+            width: 18px;
+            height: 12px;
+            object-fit: cover;
+            border-radius: 2px;
+            vertical-align: middle;
+        }
+        </style>
+    <script src="../unified_i18n_system.js"></script>
 </head>
 <body>
     <header>
     <nav>
-      <a href="/index.html" class="logo" data-i18n="nav.logo">🌱 Grow a Garden</a>
-      <a href="/index.html#stats" data-i18n="nav.live">Live</a>
-      <a href="/index.html#map" data-i18n="nav.map">Global Heatmap</a>
-      <a href="/index.html#tips" data-i18n="nav.tips">Hints</a>
-      <a href="/guides.html" data-i18n="nav.guides">📚 Guides</a>
-      <a href="/index.html#community" class="discord-btn" data-i18n="nav.discord">💬 Discord</a>
-                  <select id="lang-switcher" aria-label="Language">
-                <option value="en" >English</option>
-                <option value="zh-cn" >简体中文</option>
-                <option value="es" >Español</option>
-                <option value="pt-br" >Português</option>
-                <option value="fr" >Français</option>
-                <option value="de" >Deutsch</option>
-                <option value="ru" >Русский</option>
-                <option value="ar" >العربية</option>
-                <option value="hi" >हिन्दी</option>
-                <option value="id" >Bahasa Indonesia</option>
-                <option value="vi" >Tiếng Việt</option>
-                <option value="ja" >日本語</option>
-            </select>
+      <a href="../index.html" class="logo" data-i18n="nav.logo">🌱 Grow a Garden</a>
+      <a href="../index.html#stats" data-i18n="nav.live">Live</a>
+      <a href="../index.html#map" data-i18n="nav.map">Global Heatmap</a>
+      <a href="../index.html#tips" data-i18n="nav.tips">Hints</a>
+      <a href="guides.html" data-i18n="nav.guides">📚 Guides</a>
+      <a href="../index.html#community" class="discord-btn" data-i18n="nav.discord">💬 Discord</a>
+                              <div class="language-selector">
+                <button class="lang-btn current" data-lang="en">
+                    <img src="../flags/en.png" alt="US Flag" class="flag-img">
+                    <span class="code" data-i18n="guides.span.us">US</span>
+                </button>
+                <div class="lang-dropdown">
+                    <div class="lang-option" data-lang="en">
+                        <img src="../flags/en.png" alt="US Flag" class="flag-img">
+                        <span class="code" data-i18n="guides.span.us_1">US</span>
+                    </div>
+                    <div class="lang-option" data-lang="zh-cn">
+                        <img src="../flags/zh-cn.png" alt="CN Flag" class="flag-img">
+                        <span class="code" data-i18n="guides.span.cn">CN</span>
+                    </div>
+                    <div class="lang-option" data-lang="es">
+                        <img src="../flags/es.png" alt="ES Flag" class="flag-img">
+                        <span class="code" data-i18n="guides.span.es">ES</span>
+                    </div>
+                    <div class="lang-option" data-lang="pt-br">
+                        <img src="../flags/pt-br.png" alt="BR Flag" class="flag-img">
+                        <span class="code" data-i18n="guides.span.br">BR</span>
+                    </div>
+                    <div class="lang-option" data-lang="fr">
+                        <img src="../flags/fr.png" alt="FR Flag" class="flag-img">
+                        <span class="code" data-i18n="guides.span.fr">FR</span>
+                    </div>
+                    <div class="lang-option" data-lang="de">
+                        <img src="../flags/de.png" alt="DE Flag" class="flag-img">
+                        <span class="code" data-i18n="guides.span.de">DE</span>
+                    </div>
+                    <div class="lang-option" data-lang="ru">
+                        <img src="../flags/ru.png" alt="RU Flag" class="flag-img">
+                        <span class="code" data-i18n="guides.span.ru">RU</span>
+                    </div>
+                    <div class="lang-option" data-lang="ar">
+                        <img src="../flags/ar.png" alt="SA Flag" class="flag-img">
+                        <span class="code" data-i18n="guides.span.sa">SA</span>
+                    </div>
+                    <div class="lang-option" data-lang="hi">
+                        <img src="../flags/hi.png" alt="IN Flag" class="flag-img">
+                        <span class="code" data-i18n="guides.span.in">IN</span>
+                    </div>
+                    <div class="lang-option" data-lang="id">
+                        <img src="../flags/en.png" alt="ID Flag" class="flag-img">
+                        <span class="code" data-i18n="guides.span.id">ID</span>
+                    </div>
+                    <div class="lang-option" data-lang="vi">
+                        <img src="../flags/vi.png" alt="VN Flag" class="flag-img">
+                        <span class="code" data-i18n="guides.span.vn">VN</span>
+                    </div>
+                    <div class="lang-option" data-lang="ja">
+                        <img src="../flags/ja.png" alt="JP Flag" class="flag-img">
+                        <span class="code" data-i18n="guides.span.jp">JP</span>
+                    </div>
+                </div>
+            </div>
     </nav>
   </header>
   <section class="guides-hero">
@@ -42,53 +176,53 @@
   </section>
   <div class="guides-section">
     <div class="guides-card">
-      <h2>🔍 Search & Filter Guides</h2>
+      <h2 data-i18n="guides.h2.search.filter.guides">🔍 Search & Filter Guides</h2>
       <div class="search-filter-container">
-        <input type="text" id="guide-search" placeholder="Search guides..." class="guide-search-input">
+        <input type="text" id="guide-search" placeholder="data-i18n="guides.input.placeholder.search.guides"" class="guide-search-input">
         <div class="filter-buttons">
-          <button class="filter-btn active" data-filter="all">All</button>
-          <button class="filter-btn" data-filter="recipe">Recipes</button>
-          <button class="filter-btn" data-filter="farming">Farming</button>
-          <button class="filter-btn" data-filter="profit">Profit</button>
-          <button class="filter-btn" data-filter="advanced">Advanced</button>
+          <button class="filter-btn active" data-filter="all"><span data-i18n="guides.button.all">All</span></button>
+          <button class="filter-btn" data-filter="recipe"><span data-i18n="guides.button.recipes">Recipes</span></button>
+          <button class="filter-btn" data-filter="farming"><span data-i18n="guides.button.farming">Farming</span></button>
+          <button class="filter-btn" data-filter="profit"><span data-i18n="guides.button.profit">Profit</span></button>
+          <button class="filter-btn" data-filter="advanced"><span data-i18n="guides.button.advanced">Advanced</span></button>
         </div>
       </div>
     </div>
 
     <!-- 热门攻略 -->
     <div class="guides-card">
-      <h2>🔥 Trending Guides</h2>
+      <h2 data-i18n="guides.h2.trending.guides">🔥 Trending Guides</h2>
       <div class="guides-grid">
-        <a href="/en/how-to-make-salad.html" class="guide-item featured-guide">
+        <a href="en/how-to-make-salad.html" class="guide-item featured-guide">
           <div class="featured-badge">⭐ Most Popular</div>
-          <h3>Salad Making Guide</h3>
-          <p>Master the art of salad making with our comprehensive guide.</p>
+          <h3 data-i18n="guides.h3.salad.making.guide">Salad Making Guide</h3>
+          <p data-i18n="guides.p.master.the.art.of.salad.making.with.our.comprehens">Master the art of salad making with our comprehensive guide.</p>
           <div class="guide-meta">
-            <span class="guide-difficulty">Beginner</span>
-            <span class="guide-read-time">15 min read</span>
-            <span class="guide-views">🔥 2.5k views</span>
+            <span class="guide-difficulty" data-i18n="guides.span.beginner">Beginner</span>
+            <span class="guide-read-time" data-i18n="guides.span.15.min.read">15 min read</span>
+            <span class="guide-views" data-i18n="guides.span.25k.views">🔥 2.5k views</span>
           </div>
         </a>
         
-        <a href="/en/how-to-make-pizza.html" class="guide-item">
-          <div class="trending-badge">📈 Trending</div>
-          <h3>Pizza Making Guide</h3>
-          <p>Learn how to make delicious pizza in Grow a Garden. From dough preparation to topping combinations.</p>
+        <a href="en/how-to-make-pizza.html" class="guide-item">
+          <div class="trending-badge" data-i18n="guides.div.trending">📈 Trending</div>
+          <h3 data-i18n="guides.h3.pizza.making.guide">Pizza Making Guide</h3>
+          <p data-i18n="guides.p.learn.how.to.make.delicious.pizza.in.grow.a.garden">Learn how to make delicious pizza in Grow a Garden. From dough preparation to topping combinations.</p>
           <div class="guide-meta">
-            <span class="guide-difficulty">Intermediate</span>
-            <span class="guide-read-time">25 min read</span>
-            <span class="guide-views">🔥 1.8k views</span>
+            <span class="guide-difficulty" data-i18n="guides.span.intermediate">Intermediate</span>
+            <span class="guide-read-time" data-i18n="guides.span.25.min.read">25 min read</span>
+            <span class="guide-views" data-i18n="guides.span.18k.views">🔥 1.8k views</span>
           </div>
         </a>
         
-        <a href="/en/how-to-make-bread.html" class="guide-item">
-          <div class="new-badge">🆕 New</div>
-          <h3>Bread Making Guide</h3>
-          <p>Master bread making techniques in Grow a Garden. Learn about flour types, yeast management, and baking optimization.</p>
+        <a href="en/how-to-make-bread.html" class="guide-item">
+          <div class="new-badge" data-i18n="guides.div.new">🆕 New</div>
+          <h3 data-i18n="guides.h3.bread.making.guide">Bread Making Guide</h3>
+          <p data-i18n="guides.p.master.bread.making.techniques.in.grow.a.garden.le">Master bread making techniques in Grow a Garden. Learn about flour types, yeast management, and baking optimization.</p>
           <div class="guide-meta">
-            <span class="guide-difficulty">Beginner</span>
-            <span class="guide-read-time">20 min read</span>
-            <span class="guide-views">🔥 1.2k views</span>
+            <span class="guide-difficulty" data-i18n="guides.span.beginner_1">Beginner</span>
+            <span class="guide-read-time" data-i18n="guides.span.20.min.read">20 min read</span>
+            <span class="guide-views" data-i18n="guides.span.12k.views">🔥 1.2k views</span>
           </div>
         </a>
       </div>
@@ -96,450 +230,551 @@
     
     <!-- 食谱攻略 -->
     <div class="category-section" data-category="recipe">
-      <h2 class="category-title">🍽️ Recipe Guides</h2>
+      <h2 class="category-title" data-i18n="guides.h2.recipe.guides">🍽️ Recipe Guides</h2>
       <div class="guides-grid">
-        <a href="/en/how-to-make-salad.html" class="guide-item">
-          <h3>🥗 Salad Making Guide</h3>
-          <p>Complete guide to making perfect salads in Grow a Garden. From basic ingredient collection to advanced recipes.</p>
+        <a href="en/how-to-make-salad.html" class="guide-item">
+          <h3 data-i18n="guides.h3.salad.making.guide_1">🥗 Salad Making Guide</h3>
+          <p data-i18n="guides.p.complete.guide.to.making.perfect.salads.in.grow.a.">Complete guide to making perfect salads in Grow a Garden. From basic ingredient collection to advanced recipes.</p>
           <div class="guide-meta">
-            <span class="guide-difficulty">Beginner</span>
-            <span class="guide-read-time">15 min read</span>
+            <span class="guide-difficulty" data-i18n="guides.span.beginner_2">Beginner</span>
+            <span class="guide-read-time" data-i18n="guides.span.15.min.read_1">15 min read</span>
           </div>
         </a>
         
-        <a href="/en/how-to-make-pizza.html" class="guide-item">
-          <h3>🍕 Pizza Making Guide</h3>
-          <p>Learn how to make delicious pizza in Grow a Garden. From dough preparation to topping combinations. From dough preparation to topping combinations.</p>
+        <a href="en/how-to-make-pizza.html" class="guide-item">
+          <h3 data-i18n="guides.h3.pizza.making.guide_1">🍕 Pizza Making Guide</h3>
+          <p data-i18n="guides.p.learn.how.to.make.delicious.pizza.in.grow.a.garden_1">Learn how to make delicious pizza in Grow a Garden. From dough preparation to topping combinations. From dough preparation to topping combinations.</p>
           <div class="guide-meta">
-            <span class="guide-difficulty">Intermediate</span>
-            <span class="guide-read-time">25 min read</span>
+            <span class="guide-difficulty" data-i18n="guides.span.intermediate_1">Intermediate</span>
+            <span class="guide-read-time" data-i18n="guides.span.25.min.read_1">25 min read</span>
           </div>
         </a>
         
-        <a href="/en/how-to-make-bread.html" class="guide-item">
-          <h3>🍞 Bread Making Guide</h3>
-          <p>Master bread making techniques. Learn about flour types, yeast management, and baking optimization.</p>
+        <a href="en/how-to-make-bread.html" class="guide-item">
+          <h3 data-i18n="guides.h3.bread.making.guide_1">🍞 Bread Making Guide</h3>
+          <p data-i18n="guides.p.master.bread.making.techniques.learn.about.flour.t">Master bread making techniques. Learn about flour types, yeast management, and baking optimization.</p>
           <div class="guide-meta">
-            <span class="guide-difficulty">Beginner</span>
-            <span class="guide-read-time">20 min read</span>
+            <span class="guide-difficulty" data-i18n="guides.span.beginner_3">Beginner</span>
+            <span class="guide-read-time" data-i18n="guides.span.20.min.read_1">20 min read</span>
           </div>
         </a>
         
-        <a href="/en/how-to-make-cake.html" class="guide-item">
-          <h3>Cake Making Guide</h3>
-          <p>Learn cake making tips in Grow a Garden. Master the art of cake decoration and flavor combinations.</p>
+        <a href="en/how-to-make-cake.html" class="guide-item">
+          <h3 data-i18n="guides.h3.cake.making.guide">Cake Making Guide</h3>
+          <p data-i18n="guides.p.learn.cake.making.tips.in.grow.a.garden.master.the">Learn cake making tips in Grow a Garden. Master the art of cake decoration and flavor combinations.</p>
           <div class="guide-meta">
-            <span class="guide-difficulty">Intermediate</span>
-            <span class="guide-read-time">30 min read</span>
+            <span class="guide-difficulty" data-i18n="guides.span.intermediate_2">Intermediate</span>
+            <span class="guide-read-time" data-i18n="guides.span.30.min.read">30 min read</span>
           </div>
         </a>
-      <a href="/en/ice-cream-recipe.html" class="guide-item">
-                    <h3>Ice Cream Recipe Guides</h3>
-                    <p>Learn delicious ice cream recipes and ratios to optimize profit and taste.</p>
+      <a href="en/ice-cream-recipe.html" class="guide-item">
+                    <h3 data-i18n="guides.h3.ice.cream.recipe.guides">Ice Cream Recipe Guides</h3>
+                    <p data-i18n="guides.p.learn.delicious.ice.cream.recipes.and.ratios.to.op">Learn delicious ice cream recipes and ratios to optimize profit and taste.</p>
                     <div class="guide-meta">
-                        <span class="guide-difficulty">Intermediate</span>
-                        <span class="guide-read-time">18 min read</span>
+                        <span class="guide-difficulty" data-i18n="guides.span.intermediate_3">Intermediate</span>
+                        <span class="guide-read-time" data-i18n="guides.span.18.min.read">18 min read</span>
                     </div>
-                </a><a href="/en/how-to-make-donut.html" class="guide-item">
-                    <h3>Donut Making Guide</h3>
-                    <p>Learn donut making tips in Grow a Garden. Perfect your donut recipes and techniques.</p>
+                </a><a href="en/how-to-make-donut.html" class="guide-item">
+                    <h3 data-i18n="guides.h3.donut.making.guide">Donut Making Guide</h3>
+                    <p data-i18n="guides.p.learn.donut.making.tips.in.grow.a.garden.perfect.y">Learn donut making tips in Grow a Garden. Perfect your donut recipes and techniques.</p>
                     <div class="guide-meta">
-                        <span class="guide-difficulty">Intermediate</span>
-                        <span class="guide-read-time">20 min read</span>
+                        <span class="guide-difficulty" data-i18n="guides.span.intermediate_4">Intermediate</span>
+                        <span class="guide-read-time" data-i18n="guides.span.20.min.read_2">20 min read</span>
                     </div>
-                </a><a href="/en/how-to-make-pie.html" class="guide-item">
-                    <h3>Pie Making Guide</h3>
-                    <p>Learn pie making tips in Grow a Garden. Create delicious sweet and savory pies.</p>
+                </a><a href="en/how-to-make-pie.html" class="guide-item">
+                    <h3 data-i18n="guides.h3.pie.making.guide">Pie Making Guide</h3>
+                    <p data-i18n="guides.p.learn.pie.making.tips.in.grow.a.garden.create.deli">Learn pie making tips in Grow a Garden. Create delicious sweet and savory pies.</p>
                     <div class="guide-meta">
-                        <span class="guide-difficulty">Intermediate</span>
-                        <span class="guide-read-time">25 min read</span>
+                        <span class="guide-difficulty" data-i18n="guides.span.intermediate_5">Intermediate</span>
+                        <span class="guide-read-time" data-i18n="guides.span.25.min.read_2">25 min read</span>
                     </div>
-                </a><a href="/en/how-to-make-cookies.html" class="guide-item">
-                    <h3>Cookie Making Guide</h3>
-                    <p>Learn cookie making tips in Grow a Garden. Bake perfect cookies every time.</p>
+                </a><a href="en/how-to-make-cookies.html" class="guide-item">
+                    <h3 data-i18n="guides.h3.cookie.making.guide">Cookie Making Guide</h3>
+                    <p data-i18n="guides.p.learn.cookie.making.tips.in.grow.a.garden.bake.per">Learn cookie making tips in Grow a Garden. Bake perfect cookies every time.</p>
                     <div class="guide-meta">
-                        <span class="guide-difficulty">Beginner</span>
-                        <span class="guide-read-time">20 min read</span>
+                        <span class="guide-difficulty" data-i18n="guides.span.beginner_4">Beginner</span>
+                        <span class="guide-read-time" data-i18n="guides.span.20.min.read_3">20 min read</span>
                     </div>
-                </a><a href="/en/how-to-make-smoothie.html" class="guide-item">
-                    <h3>Smoothie Making Guide</h3>
-                    <p>Learn smoothie making tips in Grow a Garden. Create healthy and delicious smoothies.</p>
+                </a><a href="en/how-to-make-smoothie.html" class="guide-item">
+                    <h3 data-i18n="guides.h3.smoothie.making.guide">Smoothie Making Guide</h3>
+                    <p data-i18n="guides.p.learn.smoothie.making.tips.in.grow.a.garden.create">Learn smoothie making tips in Grow a Garden. Create healthy and delicious smoothies.</p>
                     <div class="guide-meta">
-                        <span class="guide-difficulty">Beginner</span>
-                        <span class="guide-read-time">18 min read</span>
+                        <span class="guide-difficulty" data-i18n="guides.span.beginner_5">Beginner</span>
+                        <span class="guide-read-time" data-i18n="guides.span.18.min.read_1">18 min read</span>
                     </div>
-                </a><a href="/en/how-to-make-sandwich.html" class="guide-item">
-                    <h3>Sandwich Making Guide</h3>
-                    <p>Learn sandwich making tips in Grow a Garden. Build perfect sandwiches with fresh ingredients.</p>
+                </a><a href="en/how-to-make-sandwich.html" class="guide-item">
+                    <h3 data-i18n="guides.h3.sandwich.making.guide">Sandwich Making Guide</h3>
+                    <p data-i18n="guides.p.learn.sandwich.making.tips.in.grow.a.garden.build.">Learn sandwich making tips in Grow a Garden. Build perfect sandwiches with fresh ingredients.</p>
                     <div class="guide-meta">
-                        <span class="guide-difficulty">Beginner</span>
-                        <span class="guide-read-time">22 min read</span>
+                        <span class="guide-difficulty" data-i18n="guides.span.beginner_6">Beginner</span>
+                        <span class="guide-read-time" data-i18n="guides.span.22.min.read">22 min read</span>
                     </div>
-                </a><a href="/en/how-to-make-salad.html" class="guide-item">
-                    <h3>Salad Making Guide</h3>
-                    <p>Master the art of salad making with our comprehensive guide.</p>
+                </a><a href="en/how-to-make-salad.html" class="guide-item">
+                    <h3 data-i18n="guides.h3.salad.making.guide_2">Salad Making Guide</h3>
+                    <p data-i18n="guides.p.master.the.art.of.salad.making.with.our.comprehens_1">Master the art of salad making with our comprehensive guide.</p>
                     <div class="guide-meta">
-                        <span class="guide-difficulty">Beginner</span>
-                        <span class="guide-read-time">15 min read</span>
+                        <span class="guide-difficulty" data-i18n="guides.span.beginner_7">Beginner</span>
+                        <span class="guide-read-time" data-i18n="guides.span.15.min.read_2">15 min read</span>
                     </div>
-                </a><a href="/en/how-to-make-pizza.html" class="guide-item">
-                    <h3>Pizza Making Guide</h3>
-                    <p>Learn how to make delicious pizza in Grow a Garden. From dough preparation to topping combinations.</p>
+                </a><a href="en/how-to-make-pizza.html" class="guide-item">
+                    <h3 data-i18n="guides.h3.pizza.making.guide_2">Pizza Making Guide</h3>
+                    <p data-i18n="guides.p.learn.how.to.make.delicious.pizza.in.grow.a.garden_2">Learn how to make delicious pizza in Grow a Garden. From dough preparation to topping combinations.</p>
                     <div class="guide-meta">
-                        <span class="guide-difficulty">Intermediate</span>
-                        <span class="guide-read-time">25 min read</span>
+                        <span class="guide-difficulty" data-i18n="guides.span.intermediate_6">Intermediate</span>
+                        <span class="guide-read-time" data-i18n="guides.span.25.min.read_3">25 min read</span>
                     </div>
-                </a><a href="/en/how-to-make-bread.html" class="guide-item">
-                    <h3>Bread Making Guide</h3>
-                    <p>Master bread making techniques in Grow a Garden. Learn about flour types, yeast management, and baking optimization.</p>
+                </a><a href="en/how-to-make-bread.html" class="guide-item">
+                    <h3 data-i18n="guides.h3.bread.making.guide_2">Bread Making Guide</h3>
+                    <p data-i18n="guides.p.master.bread.making.techniques.in.grow.a.garden.le_1">Master bread making techniques in Grow a Garden. Learn about flour types, yeast management, and baking optimization.</p>
                     <div class="guide-meta">
-                        <span class="guide-difficulty">Beginner</span>
-                        <span class="guide-read-time">20 min read</span>
+                        <span class="guide-difficulty" data-i18n="guides.span.beginner_8">Beginner</span>
+                        <span class="guide-read-time" data-i18n="guides.span.20.min.read_4">20 min read</span>
                     </div>
-                </a><a href="/en/ice-cream-recipe.html" class="guide-item">
-                    <h3>Ice Cream Recipe Guides</h3>
-                    <p>Learn delicious ice cream recipes and ratios to optimize profit and taste.</p>
+                </a><a href="en/ice-cream-recipe.html" class="guide-item">
+                    <h3 data-i18n="guides.h3.ice.cream.recipe.guides_1">Ice Cream Recipe Guides</h3>
+                    <p data-i18n="guides.p.learn.delicious.ice.cream.recipes.and.ratios.to.op_1">Learn delicious ice cream recipes and ratios to optimize profit and taste.</p>
                     <div class="guide-meta">
-                        <span class="guide-difficulty">Intermediate</span>
-                        <span class="guide-read-time">18 min read</span>
+                        <span class="guide-difficulty" data-i18n="guides.span.intermediate_7">Intermediate</span>
+                        <span class="guide-read-time" data-i18n="guides.span.18.min.read_2">18 min read</span>
                     </div>
-                </a><a href="/en/how-to-make-donut.html" class="guide-item">
-                    <h3>Donut Making Guide</h3>
-                    <p>Learn donut making tips in Grow a Garden. Perfect your donut recipes and techniques.</p>
+                </a><a href="en/how-to-make-donut.html" class="guide-item">
+                    <h3 data-i18n="guides.h3.donut.making.guide_1">Donut Making Guide</h3>
+                    <p data-i18n="guides.p.learn.donut.making.tips.in.grow.a.garden.perfect.y_1">Learn donut making tips in Grow a Garden. Perfect your donut recipes and techniques.</p>
                     <div class="guide-meta">
-                        <span class="guide-difficulty">Intermediate</span>
-                        <span class="guide-read-time">20 min read</span>
+                        <span class="guide-difficulty" data-i18n="guides.span.intermediate_8">Intermediate</span>
+                        <span class="guide-read-time" data-i18n="guides.span.20.min.read_5">20 min read</span>
                     </div>
-                </a><a href="/en/how-to-make-cake.html" class="guide-item">
-                    <h3>Cake Making Guide</h3>
-                    <p>Learn cake making tips in Grow a Garden. Master the art of cake decoration and flavor combinations.</p>
+                </a><a href="en/how-to-make-cake.html" class="guide-item">
+                    <h3 data-i18n="guides.h3.cake.making.guide_1">Cake Making Guide</h3>
+                    <p data-i18n="guides.p.learn.cake.making.tips.in.grow.a.garden.master.the_1">Learn cake making tips in Grow a Garden. Master the art of cake decoration and flavor combinations.</p>
                     <div class="guide-meta">
-                        <span class="guide-difficulty">Advanced</span>
-                        <span class="guide-read-time">30 min read</span>
+                        <span class="guide-difficulty" data-i18n="guides.span.advanced">Advanced</span>
+                        <span class="guide-read-time" data-i18n="guides.span.30.min.read_1">30 min read</span>
                     </div>
-                </a><a href="/en/how-to-make-pie.html" class="guide-item">
-                    <h3>Pie Making Guide</h3>
-                    <p>Learn pie making tips in Grow a Garden. Create delicious sweet and savory pies.</p>
+                </a><a href="en/how-to-make-pie.html" class="guide-item">
+                    <h3 data-i18n="guides.h3.pie.making.guide_1">Pie Making Guide</h3>
+                    <p data-i18n="guides.p.learn.pie.making.tips.in.grow.a.garden.create.deli_1">Learn pie making tips in Grow a Garden. Create delicious sweet and savory pies.</p>
                     <div class="guide-meta">
-                        <span class="guide-difficulty">Intermediate</span>
-                        <span class="guide-read-time">25 min read</span>
+                        <span class="guide-difficulty" data-i18n="guides.span.intermediate_9">Intermediate</span>
+                        <span class="guide-read-time" data-i18n="guides.span.25.min.read_4">25 min read</span>
                     </div>
-                </a><a href="/en/how-to-make-cookies.html" class="guide-item">
-                    <h3>Cookie Making Guide</h3>
-                    <p>Learn cookie making tips in Grow a Garden. Bake perfect cookies every time.</p>
+                </a><a href="en/how-to-make-cookies.html" class="guide-item">
+                    <h3 data-i18n="guides.h3.cookie.making.guide_1">Cookie Making Guide</h3>
+                    <p data-i18n="guides.p.learn.cookie.making.tips.in.grow.a.garden.bake.per_1">Learn cookie making tips in Grow a Garden. Bake perfect cookies every time.</p>
                     <div class="guide-meta">
-                        <span class="guide-difficulty">Beginner</span>
-                        <span class="guide-read-time">20 min read</span>
+                        <span class="guide-difficulty" data-i18n="guides.span.beginner_9">Beginner</span>
+                        <span class="guide-read-time" data-i18n="guides.span.20.min.read_6">20 min read</span>
                     </div>
-                </a><a href="/en/how-to-make-smoothie.html" class="guide-item">
-                    <h3>Smoothie Making Guide</h3>
-                    <p>Learn smoothie making tips in Grow a Garden. Create healthy and delicious smoothies.</p>
+                </a><a href="en/how-to-make-smoothie.html" class="guide-item">
+                    <h3 data-i18n="guides.h3.smoothie.making.guide_1">Smoothie Making Guide</h3>
+                    <p data-i18n="guides.p.learn.smoothie.making.tips.in.grow.a.garden.create_1">Learn smoothie making tips in Grow a Garden. Create healthy and delicious smoothies.</p>
                     <div class="guide-meta">
-                        <span class="guide-difficulty">Beginner</span>
-                        <span class="guide-read-time">18 min read</span>
+                        <span class="guide-difficulty" data-i18n="guides.span.beginner_10">Beginner</span>
+                        <span class="guide-read-time" data-i18n="guides.span.18.min.read_3">18 min read</span>
                     </div>
-                </a><a href="/en/how-to-make-money-fast.html" class="guide-item">
-                    <h3>Fast Money Making Guide</h3>
-                    <p>Learn tips for making money fast in Grow a Garden.</p>
+                </a><a href="en/how-to-make-money-fast.html" class="guide-item">
+                    <h3 data-i18n="guides.h3.fast.money.making.guide">Fast Money Making Guide</h3>
+                    <p data-i18n="guides.p.learn.tips.for.making.money.fast.in.grow.a.garden">Learn tips for making money fast in Grow a Garden.</p>
                     <div class="guide-meta">
-                        <span class="guide-difficulty">Advanced</span>
-                        <span class="guide-read-time">25 min read</span>
+                        <span class="guide-difficulty" data-i18n="guides.span.advanced_1">Advanced</span>
+                        <span class="guide-read-time" data-i18n="guides.span.25.min.read_5">25 min read</span>
                     </div>
-                </a><a href="/en/how-to-make-sandwich.html" class="guide-item">
-                    <h3>Sandwich Making Guide</h3>
-                    <p>Learn sandwich making tips in Grow a Garden. Build perfect sandwiches with fresh ingredients.</p>
+                </a><a href="en/how-to-make-sandwich.html" class="guide-item">
+                    <h3 data-i18n="guides.h3.sandwich.making.guide_1">Sandwich Making Guide</h3>
+                    <p data-i18n="guides.p.learn.sandwich.making.tips.in.grow.a.garden.build._1">Learn sandwich making tips in Grow a Garden. Build perfect sandwiches with fresh ingredients.</p>
                     <div class="guide-meta">
-                        <span class="guide-difficulty">Beginner</span>
-                        <span class="guide-read-time">22 min read</span>
+                        <span class="guide-difficulty" data-i18n="guides.span.beginner_11">Beginner</span>
+                        <span class="guide-read-time" data-i18n="guides.span.22.min.read_1">22 min read</span>
                     </div>
                 </a></div>
     </div>
     
     <!-- 种植攻略 -->
     <div class="category-section" data-category="farming">
-      <h2 class="category-title">🌱 Farming Guides</h2>
+      <h2 class="category-title" data-i18n="guides.h2.farming.guides">🌱 Farming Guides</h2>
       <div class="guides-grid">
-        <a href="/en/how-to-grow-corn.html" class="guide-item">
-          <h3>Corn Growing Guide</h3>
-          <p>Efficient corn cultivation: planting, watering, harvesting.</p>
+        <a href="en/how-to-grow-corn.html" class="guide-item">
+          <h3 data-i18n="guides.h3.corn.growing.guide">Corn Growing Guide</h3>
+          <p data-i18n="guides.p.efficient.corn.cultivation.planting.watering.harve">Efficient corn cultivation: planting, watering, harvesting.</p>
           <div class="guide-meta">
-            <span class="guide-difficulty">Beginner</span>
-            <span class="guide-read-time">18 min read</span>
+            <span class="guide-difficulty" data-i18n="guides.span.beginner_12">Beginner</span>
+            <span class="guide-read-time" data-i18n="guides.span.18.min.read_4">18 min read</span>
           </div>
         </a>
         
-        <a href="/en/how-to-grow-oranges.html" class="guide-item">
-          <h3>Orange Growing Guide</h3>
-          <p>Efficient orange cultivation: planting, watering, harvesting.</p>
+        <a href="en/how-to-grow-oranges.html" class="guide-item">
+          <h3 data-i18n="guides.h3.orange.growing.guide">Orange Growing Guide</h3>
+          <p data-i18n="guides.p.efficient.orange.cultivation.planting.watering.har">Efficient orange cultivation: planting, watering, harvesting.</p>
           <div class="guide-meta">
-            <span class="guide-difficulty">Intermediate</span>
-            <span class="guide-read-time">22 min read</span>
+            <span class="guide-difficulty" data-i18n="guides.span.intermediate_10">Intermediate</span>
+            <span class="guide-read-time" data-i18n="guides.span.22.min.read_2">22 min read</span>
           </div>
         </a>
-      <a href="/en/how-to-grow-wheat.html" class="guide-item">
-                    <h3>Wheat Growing Guide</h3>
-                    <p>Efficient wheat cultivation: planting, watering, harvesting.</p>
+      <a href="en/how-to-grow-wheat.html" class="guide-item">
+                    <h3 data-i18n="guides.h3.wheat.growing.guide">Wheat Growing Guide</h3>
+                    <p data-i18n="guides.p.efficient.wheat.cultivation.planting.watering.harv">Efficient wheat cultivation: planting, watering, harvesting.</p>
                     <div class="guide-meta">
-                        <span class="guide-difficulty">Beginner</span>
-                        <span class="guide-read-time">20 min read</span>
+                        <span class="guide-difficulty" data-i18n="guides.span.beginner_13">Beginner</span>
+                        <span class="guide-read-time" data-i18n="guides.span.20.min.read_7">20 min read</span>
                     </div>
-                </a><a href="farming-basics.html" class="guide-item">
-                    <h3>Farming Basics</h3>
-                    <p>Basic cultivation techniques, watering, crop management points.</p>
+                </a><a href="en/farming-basics.html" class="guide-item">
+                    <h3 data-i18n="guides.h3.farming.basics">Farming Basics</h3>
+                    <p data-i18n="guides.p.basic.cultivation.techniques.watering.crop.managem">Basic cultivation techniques, watering, crop management points.</p>
                     <div class="guide-meta">
-                        <span class="guide-difficulty">Beginner</span>
-                        <span class="guide-read-time">12 min read</span>
+                        <span class="guide-difficulty" data-i18n="guides.span.beginner_14">Beginner</span>
+                        <span class="guide-read-time" data-i18n="guides.span.12.min.read">12 min read</span>
                     </div>
-                </a><a href="watering-strategies.html" class="guide-item">
-                    <h3>Watering Strategies</h3>
-                    <p>Learn optimal watering timing, frequency, and efficiency.</p>
+                </a><a href="en/watering-strategies.html" class="guide-item">
+                    <h3 data-i18n="guides.h3.watering.strategies">Watering Strategies</h3>
+                    <p data-i18n="guides.p.learn.optimal.watering.timing.frequency.and.effici">Learn optimal watering timing, frequency, and efficiency.</p>
                     <div class="guide-meta">
-                        <span class="guide-difficulty">Beginner</span>
-                        <span class="guide-read-time">10 min read</span>
+                        <span class="guide-difficulty" data-i18n="guides.span.beginner_15">Beginner</span>
+                        <span class="guide-read-time" data-i18n="guides.span.10.min.read">10 min read</span>
                     </div>
-                </a><a href="crop-rotation.html" class="guide-item">
-                    <h3>Crop Rotation Guide</h3>
-                    <p>Maintain soil fertility and maximize yield with effective crop rotation strategies.</p>
+                </a><a href="en/crop-rotation.html" class="guide-item">
+                    <h3 data-i18n="guides.h3.crop.rotation.guide">Crop Rotation Guide</h3>
+                    <p data-i18n="guides.p.maintain.soil.fertility.and.maximize.yield.with.ef">Maintain soil fertility and maximize yield with effective crop rotation strategies.</p>
                     <div class="guide-meta">
-                        <span class="guide-difficulty">Intermediate</span>
-                        <span class="guide-read-time">15 min read</span>
+                        <span class="guide-difficulty" data-i18n="guides.span.intermediate_11">Intermediate</span>
+                        <span class="guide-read-time" data-i18n="guides.span.15.min.read_3">15 min read</span>
                     </div>
-                </a><a href="seed-selection.html" class="guide-item">
-                    <h3>Seed Selection Guide</h3>
-                    <p>Choose seeds that match your strategy and compare growth and profit.</p>
+                </a><a href="en/seed-selection.html" class="guide-item">
+                    <h3 data-i18n="guides.h3.seed.selection.guide">Seed Selection Guide</h3>
+                    <p data-i18n="guides.p.choose.seeds.that.match.your.strategy.and.compare.">Choose seeds that match your strategy and compare growth and profit.</p>
                     <div class="guide-meta">
-                        <span class="guide-difficulty">Intermediate</span>
-                        <span class="guide-read-time">18 min read</span>
+                        <span class="guide-difficulty" data-i18n="guides.span.intermediate_12">Intermediate</span>
+                        <span class="guide-read-time" data-i18n="guides.span.18.min.read_5">18 min read</span>
                     </div>
-                </a><a href="/en/how-to-grow-carrots.html" class="guide-item">
-                    <h3>Carrot Growing Guide</h3>
-                    <p>Efficient carrot cultivation: planting, watering, harvesting.</p>
+                </a><a href="en/how-to-grow-carrots.html" class="guide-item">
+                    <h3 data-i18n="guides.h3.carrot.growing.guide">Carrot Growing Guide</h3>
+                    <p data-i18n="guides.p.efficient.carrot.cultivation.planting.watering.har">Efficient carrot cultivation: planting, watering, harvesting.</p>
                     <div class="guide-meta">
-                        <span class="guide-difficulty">Beginner</span>
-                        <span class="guide-read-time">18 min read</span>
+                        <span class="guide-difficulty" data-i18n="guides.span.beginner_16">Beginner</span>
+                        <span class="guide-read-time" data-i18n="guides.span.18.min.read_6">18 min read</span>
                     </div>
-                </a><a href="/en/how-to-grow-apples.html" class="guide-item">
-                    <h3>Apple Growing Guide</h3>
-                    <p>Efficient apple cultivation: planting, watering, harvesting.</p>
+                </a><a href="en/how-to-grow-apples.html" class="guide-item">
+                    <h3 data-i18n="guides.h3.apple.growing.guide">Apple Growing Guide</h3>
+                    <p data-i18n="guides.p.efficient.apple.cultivation.planting.watering.harv">Efficient apple cultivation: planting, watering, harvesting.</p>
                     <div class="guide-meta">
-                        <span class="guide-difficulty">Intermediate</span>
-                        <span class="guide-read-time">22 min read</span>
+                        <span class="guide-difficulty" data-i18n="guides.span.intermediate_13">Intermediate</span>
+                        <span class="guide-read-time" data-i18n="guides.span.22.min.read_3">22 min read</span>
                     </div>
-                </a><a href="/en/how-to-grow-berries.html" class="guide-item">
-                    <h3>Berry Growing Guide</h3>
-                    <p>Efficient berry cultivation: planting, watering, harvesting.</p>
+                </a><a href="en/how-to-grow-berries.html" class="guide-item">
+                    <h3 data-i18n="guides.h3.berry.growing.guide">Berry Growing Guide</h3>
+                    <p data-i18n="guides.p.efficient.berry.cultivation.planting.watering.harv">Efficient berry cultivation: planting, watering, harvesting.</p>
                     <div class="guide-meta">
-                        <span class="guide-difficulty">Intermediate</span>
-                        <span class="guide-read-time">20 min read</span>
+                        <span class="guide-difficulty" data-i18n="guides.span.intermediate_14">Intermediate</span>
+                        <span class="guide-read-time" data-i18n="guides.span.20.min.read_8">20 min read</span>
                     </div>
-                </a><a href="/en/how-to-build-farm.html" class="guide-item">
-                    <h3>Farm Building Guide</h3>
-                    <p>Design efficient farm layouts: optimize irrigation, storage, processing, and pathways.</p>
+                </a><a href="en/how-to-build-farm.html" class="guide-item">
+                    <h3 data-i18n="guides.h3.farm.building.guide">Farm Building Guide</h3>
+                    <p data-i18n="guides.p.design.efficient.farm.layouts.optimize.irrigation.">Design efficient farm layouts: optimize irrigation, storage, processing, and pathways.</p>
                     <div class="guide-meta">
-                        <span class="guide-difficulty">Intermediate</span>
-                        <span class="guide-read-time">24 min read</span>
+                        <span class="guide-difficulty" data-i18n="guides.span.intermediate_15">Intermediate</span>
+                        <span class="guide-read-time" data-i18n="guides.span.24.min.read">24 min read</span>
                     </div>
-                </a><a href="/en/how-to-grow-wheat.html" class="guide-item">
-                    <h3>Wheat Growing Guide</h3>
-                    <p>Efficient wheat cultivation: planting, watering, harvesting.</p>
+                </a><a href="en/how-to-grow-wheat.html" class="guide-item">
+                    <h3 data-i18n="guides.h3.wheat.growing.guide_1">Wheat Growing Guide</h3>
+                    <p data-i18n="guides.p.efficient.wheat.cultivation.planting.watering.harv_1">Efficient wheat cultivation: planting, watering, harvesting.</p>
                     <div class="guide-meta">
-                        <span class="guide-difficulty">Beginner</span>
-                        <span class="guide-read-time">20 min read</span>
+                        <span class="guide-difficulty" data-i18n="guides.span.beginner_17">Beginner</span>
+                        <span class="guide-read-time" data-i18n="guides.span.20.min.read_9">20 min read</span>
                     </div>
-                </a><a href="/en/how-to-grow-carrots.html" class="guide-item">
-                    <h3>Carrot Growing Guide</h3>
-                    <p>Efficient carrot cultivation: planting, watering, harvesting.</p>
+                </a><a href="en/how-to-grow-carrots.html" class="guide-item">
+                    <h3 data-i18n="guides.h3.carrot.growing.guide_1">Carrot Growing Guide</h3>
+                    <p data-i18n="guides.p.efficient.carrot.cultivation.planting.watering.har_1">Efficient carrot cultivation: planting, watering, harvesting.</p>
                     <div class="guide-meta">
-                        <span class="guide-difficulty">Beginner</span>
-                        <span class="guide-read-time">18 min read</span>
+                        <span class="guide-difficulty" data-i18n="guides.span.beginner_18">Beginner</span>
+                        <span class="guide-read-time" data-i18n="guides.span.18.min.read_7">18 min read</span>
                     </div>
-                </a><a href="/en/how-to-grow-apples.html" class="guide-item">
-                    <h3>Apple Growing Guide</h3>
-                    <p>Efficient apple cultivation: planting, watering, harvesting.</p>
+                </a><a href="en/how-to-grow-apples.html" class="guide-item">
+                    <h3 data-i18n="guides.h3.apple.growing.guide_1">Apple Growing Guide</h3>
+                    <p data-i18n="guides.p.efficient.apple.cultivation.planting.watering.harv_1">Efficient apple cultivation: planting, watering, harvesting.</p>
                     <div class="guide-meta">
-                        <span class="guide-difficulty">Intermediate</span>
-                        <span class="guide-read-time">22 min read</span>
+                        <span class="guide-difficulty" data-i18n="guides.span.intermediate_16">Intermediate</span>
+                        <span class="guide-read-time" data-i18n="guides.span.22.min.read_4">22 min read</span>
                     </div>
-                </a><a href="/en/how-to-grow-oranges.html" class="guide-item">
-                    <h3>Orange Growing Guide</h3>
-                    <p>Efficient orange cultivation: planting, watering, harvesting.</p>
+                </a><a href="en/how-to-grow-oranges.html" class="guide-item">
+                    <h3 data-i18n="guides.h3.orange.growing.guide_1">Orange Growing Guide</h3>
+                    <p data-i18n="guides.p.efficient.orange.cultivation.planting.watering.har_1">Efficient orange cultivation: planting, watering, harvesting.</p>
                     <div class="guide-meta">
-                        <span class="guide-difficulty">Intermediate</span>
-                        <span class="guide-read-time">21 min read</span>
+                        <span class="guide-difficulty" data-i18n="guides.span.intermediate_17">Intermediate</span>
+                        <span class="guide-read-time" data-i18n="guides.span.21.min.read">21 min read</span>
                     </div>
-                </a><a href="/en/how-to-grow-berries.html" class="guide-item">
-                    <h3>Berry Growing Guide</h3>
-                    <p>Efficient berry cultivation: planting, watering, harvesting.</p>
+                </a><a href="en/how-to-grow-berries.html" class="guide-item">
+                    <h3 data-i18n="guides.h3.berry.growing.guide_1">Berry Growing Guide</h3>
+                    <p data-i18n="guides.p.efficient.berry.cultivation.planting.watering.harv_1">Efficient berry cultivation: planting, watering, harvesting.</p>
                     <div class="guide-meta">
-                        <span class="guide-difficulty">Intermediate</span>
-                        <span class="guide-read-time">20 min read</span>
+                        <span class="guide-difficulty" data-i18n="guides.span.intermediate_18">Intermediate</span>
+                        <span class="guide-read-time" data-i18n="guides.span.20.min.read_10">20 min read</span>
                     </div>
-                </a><a href="/en/how-to-grow-corn.html" class="guide-item">
-                    <h3>Corn Growing Guide</h3>
-                    <p>Efficient corn cultivation: planting, watering, harvesting.</p>
+                </a><a href="en/how-to-grow-corn.html" class="guide-item">
+                    <h3 data-i18n="guides.h3.corn.growing.guide_1">Corn Growing Guide</h3>
+                    <p data-i18n="guides.p.efficient.corn.cultivation.planting.watering.harve_1">Efficient corn cultivation: planting, watering, harvesting.</p>
                     <div class="guide-meta">
-                        <span class="guide-difficulty">Intermediate</span>
-                        <span class="guide-read-time">21 min read</span>
+                        <span class="guide-difficulty" data-i18n="guides.span.intermediate_19">Intermediate</span>
+                        <span class="guide-read-time" data-i18n="guides.span.21.min.read_1">21 min read</span>
                     </div>
-                </a><a href="/en/how-to-build-farm.html" class="guide-item">
-                    <h3>Farm Building Guide</h3>
-                    <p>Design efficient farm layouts: optimize irrigation, storage, processing, and pathways.</p>
+                </a><a href="en/how-to-build-farm.html" class="guide-item">
+                    <h3 data-i18n="guides.h3.farm.building.guide_1">Farm Building Guide</h3>
+                    <p data-i18n="guides.p.design.efficient.farm.layouts.optimize.irrigation._1">Design efficient farm layouts: optimize irrigation, storage, processing, and pathways.</p>
                     <div class="guide-meta">
-                        <span class="guide-difficulty">Intermediate</span>
-                        <span class="guide-read-time">24 min read</span>
+                        <span class="guide-difficulty" data-i18n="guides.span.intermediate_20">Intermediate</span>
+                        <span class="guide-read-time" data-i18n="guides.span.24.min.read_1">24 min read</span>
                     </div>
                 </a></div>
     </div>
     
     <!-- 收益攻略 -->
     <div class="category-section" data-category="profit">
-      <h2 class="category-title">💰 Profit Guides</h2>
+      <h2 class="category-title" data-i18n="guides.h2.profit.guides">💰 Profit Guides</h2>
       <div class="guides-grid">
-        <a href="/en/how-to-make-money-fast.html" class="guide-item">
-          <h3>Fast Money Making Guide</h3>
-          <p>Learn tips for making money fast in Grow a Garden.</p>
+        <a href="en/how-to-make-money-fast.html" class="guide-item">
+          <h3 data-i18n="guides.h3.fast.money.making.guide_1">Fast Money Making Guide</h3>
+          <p data-i18n="guides.p.learn.tips.for.making.money.fast.in.grow.a.garden_1">Learn tips for making money fast in Grow a Garden.</p>
           <div class="guide-meta">
-            <span class="guide-difficulty">Intermediate</span>
-            <span class="guide-read-time">35 min read</span>
+            <span class="guide-difficulty" data-i18n="guides.span.intermediate_21">Intermediate</span>
+            <span class="guide-read-time" data-i18n="guides.span.35.min.read">35 min read</span>
           </div>
         </a>
         
-        <a href="/profit-strategies.html" class="guide-item">
-          <h3>Profit Strategy Guide</h3>
-          <p>Learn long-term profit strategies, market analysis and risk management, sales optimization.</p>
+        <a href="profit-strategies.html" class="guide-item">
+          <h3 data-i18n="guides.h3.profit.strategy.guide">Profit Strategy Guide</h3>
+          <p data-i18n="guides.p.learn.long.term.profit.strategies.market.analysis.">Learn long-term profit strategies, market analysis and risk management, sales optimization.</p>
           <div class="guide-meta">
-            <span class="guide-difficulty">Advanced</span>
-            <span class="guide-read-time">45 min read</span>
+            <span class="guide-difficulty" data-i18n="guides.span.advanced_2">Advanced</span>
+            <span class="guide-read-time" data-i18n="guides.span.45.min.read">45 min read</span>
           </div>
         </a>
-      <a href="market-analysis.html" class="guide-item">
-                    <h3>Market Analysis</h3>
-                    <p>Analyze market trends, identify profit opportunities, optimize sales strategies.</p>
+      <a href="en/market-analysis.html" class="guide-item">
+                    <h3 data-i18n="guides.h3.market.analysis">Market Analysis</h3>
+                    <p data-i18n="guides.p.analyze.market.trends.identify.profit.opportunitie">Analyze market trends, identify profit opportunities, optimize sales strategies.</p>
                     <div class="guide-meta">
-                        <span class="guide-difficulty">Advanced</span>
-                        <span class="guide-read-time">20 min read</span>
+                        <span class="guide-difficulty" data-i18n="guides.span.advanced_3">Advanced</span>
+                        <span class="guide-read-time" data-i18n="guides.span.20.min.read_11">20 min read</span>
                     </div>
-                </a><a href="resource-management.html" class="guide-item">
-                    <h3>Resource Management</h3>
-                    <p>Master resource allocation, inventory management, cost optimization.</p>
+                </a><a href="en/resource-management.html" class="guide-item">
+                    <h3 data-i18n="guides.h3.resource.management">Resource Management</h3>
+                    <p data-i18n="guides.p.master.resource.allocation.inventory.management.co">Master resource allocation, inventory management, cost optimization.</p>
                     <div class="guide-meta">
-                        <span class="guide-difficulty">Intermediate</span>
-                        <span class="guide-read-time">16 min read</span>
+                        <span class="guide-difficulty" data-i18n="guides.span.intermediate_22">Intermediate</span>
+                        <span class="guide-read-time" data-i18n="guides.span.16.min.read">16 min read</span>
                     </div>
-                </a><a href="investment-guide.html" class="guide-item">
-                    <h3>Investment Guide</h3>
-                    <p>Learn how to identify investment targets and maximize long-term returns.</p>
+                </a><a href="en/investment-guide.html" class="guide-item">
+                    <h3 data-i18n="guides.h3.investment.guide">Investment Guide</h3>
+                    <p data-i18n="guides.p.learn.how.to.identify.investment.targets.and.maxim">Learn how to identify investment targets and maximize long-term returns.</p>
                     <div class="guide-meta">
-                        <span class="guide-difficulty">Expert</span>
-                        <span class="guide-read-time">25 min read</span>
+                        <span class="guide-difficulty" data-i18n="guides.span.expert">Expert</span>
+                        <span class="guide-read-time" data-i18n="guides.span.25.min.read_6">25 min read</span>
                     </div>
                 </a></div>
     </div>
   <div class="category-section" data-category="co-op">
-            <h2 class="category-title">👥 Cooperation & Operations</h2>
+            <h2 class="category-title" data-i18n="guides.h2.cooperation.operations">👥 Cooperation & Operations</h2>
             <div class="guides-grid">
-                <a href="/en/how-to-play-with-friends.html" class="guide-item">
-                    <h3>Play with Friends</h3>
-                    <p>Collaborate with friends to build efficient farms through role division and trading.</p>
+                <a href="en/how-to-play-with-friends.html" class="guide-item">
+                    <h3 data-i18n="guides.h3.play.with.friends">Play with Friends</h3>
+                    <p data-i18n="guides.p.collaborate.with.friends.to.build.efficient.farms.">Collaborate with friends to build efficient farms through role division and trading.</p>
                     <div class="guide-meta">
-                        <span class="guide-difficulty">Intermediate</span>
-                        <span class="guide-read-time">18 min read</span>
+                        <span class="guide-difficulty" data-i18n="guides.span.intermediate_23">Intermediate</span>
+                        <span class="guide-read-time" data-i18n="guides.span.18.min.read_8">18 min read</span>
                     </div>
                 </a>
 
-                <a href="storage-and-logistics.html" class="guide-item">
-                    <h3>Storage & Logistics</h3>
-                    <p>Improve logistics efficiency through storage and route design.</p>
+                <a href="en/storage-and-logistics.html" class="guide-item">
+                    <h3 data-i18n="guides.h3.storage.logistics">Storage & Logistics</h3>
+                    <p data-i18n="guides.p.improve.logistics.efficiency.through.storage.and.r">Improve logistics efficiency through storage and route design.</p>
                     <div class="guide-meta">
-                        <span class="guide-difficulty">Intermediate</span>
-                        <span class="guide-read-time">20 min read</span>
+                        <span class="guide-difficulty" data-i18n="guides.span.intermediate_24">Intermediate</span>
+                        <span class="guide-read-time" data-i18n="guides.span.20.min.read_12">20 min read</span>
                     </div>
                 </a>
-            <a href="/en/how-to-play-with-friends.html" class="guide-item">
-                    <h3>Play with Friends</h3>
-                    <p>Collaborate with friends to build efficient farms through role division and trading.</p>
+            <a href="en/how-to-play-with-friends.html" class="guide-item">
+                    <h3 data-i18n="guides.h3.play.with.friends_1">Play with Friends</h3>
+                    <p data-i18n="guides.p.collaborate.with.friends.to.build.efficient.farms._1">Collaborate with friends to build efficient farms through role division and trading.</p>
                     <div class="guide-meta">
-                        <span class="guide-difficulty">Intermediate</span>
-                        <span class="guide-read-time">18 min read</span>
+                        <span class="guide-difficulty" data-i18n="guides.span.intermediate_25">Intermediate</span>
+                        <span class="guide-read-time" data-i18n="guides.span.18.min.read_9">18 min read</span>
                     </div>
                 </a></div>
         </div><div class="category-section" data-category="advanced">
-            <h2 class="category-title">🎮 Advanced Guides</h2>
+            <h2 class="category-title" data-i18n="guides.h2.advanced.guides">🎮 Advanced Guides</h2>
             <div class="guides-grid">
-                <a href="game-mechanics.html" class="guide-item">
-                    <h3>Game Mechanics</h3>
-                    <p>Deep dive into game mechanics, mutations, special events, and advanced elements.</p>
+                <a href="en/game-mechanics.html" class="guide-item">
+                    <h3 data-i18n="guides.h3.game.mechanics">Game Mechanics</h3>
+                    <p data-i18n="guides.p.deep.dive.into.game.mechanics.mutations.special.ev">Deep dive into game mechanics, mutations, special events, and advanced elements.</p>
                     <div class="guide-meta">
-                        <span class="guide-difficulty">Expert</span>
-                        <span class="guide-read-time">35 min read</span>
+                        <span class="guide-difficulty" data-i18n="guides.span.expert_1">Expert</span>
+                        <span class="guide-read-time" data-i18n="guides.span.35.min.read_1">35 min read</span>
                     </div>
                 </a>
                 
-                <a href="mutation-guide.html" class="guide-item">
-                    <h3>Mutation Guide</h3>
-                    <p>Understand the mutation system and combine for maximum profit.</p>
+                <a href="en/mutation-guide.html" class="guide-item">
+                    <h3 data-i18n="guides.h3.mutation.guide">Mutation Guide</h3>
+                    <p data-i18n="guides.p.understand.the.mutation.system.and.combine.for.max">Understand the mutation system and combine for maximum profit.</p>
                     <div class="guide-meta">
-                        <span class="guide-difficulty">Expert</span>
-                        <span class="guide-read-time">40 min read</span>
+                        <span class="guide-difficulty" data-i18n="guides.span.expert_2">Expert</span>
+                        <span class="guide-read-time" data-i18n="guides.span.40.min.read">40 min read</span>
                     </div>
                 </a>
                 
-                <a href="special-events.html" class="guide-item">
-                    <h3>Special Events</h3>
-                    <p>Complete guide to limited-time events, special opportunities, and exclusive rewards.</p>
+                <a href="en/special-events.html" class="guide-item">
+                    <h3 data-i18n="guides.h3.special.events">Special Events</h3>
+                    <p data-i18n="guides.p.complete.guide.to.limited.time.events.special.oppo">Complete guide to limited-time events, special opportunities, and exclusive rewards.</p>
                     <div class="guide-meta">
-                        <span class="guide-difficulty">Advanced</span>
-                        <span class="guide-read-time">28 min read</span>
+                        <span class="guide-difficulty" data-i18n="guides.span.advanced_4">Advanced</span>
+                        <span class="guide-read-time" data-i18n="guides.span.28.min.read">28 min read</span>
                     </div>
                 </a>
                 
-                <a href="speed-running.html" class="guide-item">
-                    <h3>Speedrunning</h3>
-                    <p>Speedrunning techniques to maximize efficiency and break records.</p>
+                <a href="en/speed-running.html" class="guide-item">
+                    <h3 data-i18n="guides.h3.speedrunning">Speedrunning</h3>
+                    <p data-i18n="guides.p.speedrunning.techniques.to.maximize.efficiency.and">Speedrunning techniques to maximize efficiency and break records.</p>
                     <div class="guide-meta">
-                        <span class="guide-difficulty">Expert</span>
-                        <span class="guide-read-time">30 min read</span>
+                        <span class="guide-difficulty" data-i18n="guides.span.expert_3">Expert</span>
+                        <span class="guide-read-time" data-i18n="guides.span.30.min.read_2">30 min read</span>
                     </div>
                 </a>
             </div>
         </div><div class="guides-card">
-            <h2>💡 Quick Hints</h2>
+            <h2 data-i18n="guides.h2.quick.hints">💡 Quick Hints</h2>
             <div class="tips-grid">
                 <div class="tip-item">
-                    <h4>⏰ Golden Hour</h4>
-                    <p>Watering at 7:00-9:00 in-game doubles growth effects.</p>
+                    <h4 data-i18n="guides.h4.golden.hour">⏰ Golden Hour</h4>
+                    <p data-i18n="guides.p.watering.at.700.900.in.game.doubles.growth.effects">Watering at 7:00-9:00 in-game doubles growth effects.</p>
                 </div>
                 <div class="tip-item">
-                    <h4>🎯 Quality Matters</h4>
-                    <p>High-quality materials lead to better recipes and higher profits.</p>
+                    <h4 data-i18n="guides.h4.quality.matters">🎯 Quality Matters</h4>
+                    <p data-i18n="guides.p.high.quality.materials.lead.to.better.recipes.and.">High-quality materials lead to better recipes and higher profits.</p>
                 </div>
                 <div class="tip-item">
-                    <h4>📈 Market Timing</h4>
-                    <p>Sell during peak demand to maximize profits.</p>
+                    <h4 data-i18n="guides.h4.market.timing">📈 Market Timing</h4>
+                    <p data-i18n="guides.p.sell.during.peak.demand.to.maximize.profits">Sell during peak demand to maximize profits.</p>
                 </div>
                 <div class="tip-item">
-                    <h4>📚 Recipe Mastery</h4>
-                    <p>Master basics before advanced recipes to improve efficiency.</p>
+                    <h4 data-i18n="guides.h4.recipe.mastery">📚 Recipe Mastery</h4>
+                    <p data-i18n="guides.p.master.basics.before.advanced.recipes.to.improve.e">Master basics before advanced recipes to improve efficiency.</p>
                 </div>
                 <div class="tip-item">
-                    <h4>🤝 Community Learning</h4>
-                    <p>Learn from other players on Discord.</p>
+                    <h4 data-i18n="guides.h4.community.learning">🤝 Community Learning</h4>
+                    <p data-i18n="guides.p.learn.from.other.players.on.discord">Learn from other players on Discord.</p>
                 </div>
                 <div class="tip-item">
-                    <h4>🔄 Regular Updates</h4>
-                    <p>Check regularly for new guides and latest strategies.</p>
+                    <h4 data-i18n="guides.h4.regular.updates">🔄 Regular Updates</h4>
+                    <p data-i18n="guides.p.check.regularly.for.new.guides.and.latest.strategi">Check regularly for new guides and latest strategies.</p>
                 </div>
             </div>
         </div>
         
         <div class="guides-card">
-            <h2>🏠 Navigation</h2>
+            <h2 data-i18n="guides.h2.navigation">🏠 Navigation</h2>
             <div class="back-link-container">
-                <a href="/en/index.html" class="back-btn" data-i18n="guides.back">← Back to Main Calculator</a>
+                <a href="../en/index.html" class="back-btn" data-i18n="guides.back">← Back to Main Calculator</a>
             </div>
         </div>
     </div>
   <script src="../i18n/i18n.js"></script>
   <script src="../script.js"></script>
 
- </body></html>
+ 
+        <script>
+        // 语言选择器功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const langOptions = document.querySelectorAll('.lang-option');
+            const currentLangBtn = document.querySelector('.lang-btn');
+            const langDropdown = document.querySelector('.lang-dropdown');
+            
+            if (!currentLangBtn || !langDropdown) return;
+            
+            // 为每个语言选项添加点击事件
+            langOptions.forEach(option => {
+                option.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const lang = this.getAttribute('data-lang');
+                    const flagElement = this.querySelector('.flag-img');
+                    const codeElement = this.querySelector('.code');
+                    
+                    if (flagElement && codeElement) {
+                        const currentFlagElement = currentLangBtn.querySelector('.flag-img');
+                        const currentCodeElement = currentLangBtn.querySelector('.code');
+                        
+                        if (currentFlagElement && currentCodeElement) {
+                            currentFlagElement.src = flagElement.src;
+                            currentCodeElement.textContent = codeElement.textContent;
+                            currentLangBtn.setAttribute('data-lang', lang);
+                        }
+                    }
+                    
+                    // 跳转到对应语言页面
+                    const currentPath = window.location.pathname;
+                    let newPath;
+                    
+                    if (currentPath.includes('/zh-cn/') || currentPath.includes('/en/') || 
+                        currentPath.includes('/es/') || currentPath.includes('/pt-br/') || 
+                        currentPath.includes('/fr/') || currentPath.includes('/de/') || 
+                        currentPath.includes('/ru/') || currentPath.includes('/ar/') || 
+                        currentPath.includes('/hi/') || currentPath.includes('/id/') || 
+                        currentPath.includes('/vi/') || currentPath.includes('/ja/')) {
+                        newPath = currentPath.replace(/\/(zh-cn|en|es|pt-br|fr|de|ru|ar|hi|id|vi|ja)\//, '/' + lang + '/');
+                    } else {
+                        newPath = '/' + lang + currentPath;
+                    }
+                    
+                    window.location.href = newPath;
+                    langDropdown.style.display = 'none';
+                });
+            });
+            
+            // 点击按钮显示/隐藏下拉菜单
+            currentLangBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const isVisible = langDropdown.style.display === 'block';
+                langDropdown.style.display = isVisible ? 'none' : 'block';
+            });
+            
+            // 点击其他地方隐藏下拉菜单
+            document.addEventListener('click', function() {
+                langDropdown.style.display = 'none';
+            });
+            
+            // 设置当前语言
+            const currentPath = window.location.pathname;
+            const langMatch = currentPath.match(/\/(zh-cn|en|es|pt-br|fr|de|ru|ar|hi|id|vi|ja)\//);
+            if (langMatch) {
+                const currentLang = langMatch[1];
+                currentLangBtn.setAttribute('data-lang', currentLang);
+                
+                const targetOption = document.querySelector(`.lang-option[data-lang="${currentLang}"]`);
+                if (targetOption) {
+                    const flagElement = targetOption.querySelector('.flag-img');
+                    const codeElement = targetOption.querySelector('.code');
+                    const currentFlagElement = currentLangBtn.querySelector('.flag-img');
+                    const currentCodeElement = currentLangBtn.querySelector('.code');
+                    
+                    if (flagElement && codeElement && currentFlagElement && currentCodeElement) {
+                        currentFlagElement.src = flagElement.src;
+                        currentCodeElement.textContent = codeElement.textContent;
+                    }
+                }
+            }
+        });
+        </script>
+
+    <script>
+        // 页面加载完成后自动应用国际化
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.i18nSystem && window.i18nSystem.isReady()) {
+                // 如果国际化系统已准备就绪，直接应用翻译
+                window.i18nSystem.applyTranslations();
+            } else {
+                // 等待国际化系统初始化完成
+                const checkReady = setInterval(() => {
+                    if (window.i18nSystem && window.i18nSystem.isReady()) {
+                        window.i18nSystem.applyTranslations();
+                        clearInterval(checkReady);
+                    }
+                }, 100);
+            }
+        });
+    </script>
+</body></html>

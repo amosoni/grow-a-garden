@@ -1,545 +1,174 @@
-<!DOCTYPE html><html lang="de" dir="ltr"><head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <base href="/">
-  <title>Anleitungen für Garten anbauen - Vollständige Sammlung</title>
-  <link rel="canonical" href="https://growagarden.cv/de/guides.html">
-  <link rel="alternate" hreflang="en" href="https://growagarden.cv/en/guides.html">
-  <link rel="alternate" hreflang="zh-CN" href="https://growagarden.cv/zh-cn/guides.html">
-  <link rel="alternate" hreflang="de" href="https://growagarden.cv/de/guides.html">
-  <link rel="alternate" hreflang="x-default" href="https://growagarden.cv/guides.html">
-  <link rel="stylesheet" href="https://unpkg.com/simple.css@2.1.0/simple.min.css">
-  <link rel="stylesheet" href="../styles.css">
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anbau-Leitfäden - Grow a Garden</title>
+    <link rel="canonical" href="../de/guides.html">
+    <link rel="stylesheet" href="unpkg.com/simple.css@2.1.0/simple.min.css">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
+    <script src="../unified_i18n_system.js"></script>
 </head>
 <body>
     <header>
-    <nav>
-      <a href="/index.html" class="logo" data-i18n="nav.logo">🌱 Garten anbauen</a>
-      <a href="/index.html#stats" data-i18n="nav.live">Benutzer Statistiken</a>
-      <a href="/index.html#map" data-i18n="nav.map">Globale Heatmap</a>
-      <a href="/index.html#tips" data-i18n="nav.tips">Tipps</a>
-      <a href="/guides.html" data-i18n="nav.guides">📚 Anleitungen</a>
-      <a href="/index.html#community" class="discord-btn" data-i18n="nav.discord">💬 Discord</a>
-                  <select id="lang-switcher" aria-label="Language">
-                <option value="en" >English</option>
-                <option value="zh-cn" >简体中文</option>
-                <option value="es" >Español</option>
-                <option value="pt-br" >Português</option>
-                <option value="fr" >Français</option>
-                <option value="de" selected="">Deutsch</option>
-                <option value="ru" >Русский</option>
-                <option value="ar" >العربية</option>
-                <option value="hi" >हिन्दी</option>
-                <option value="id" >Bahasa Indonesia</option>
-                <option value="vi" >Tiếng Việt</option>
-                            <option value="ja" >日本語</option>
-            </select>
-    </nav>
-  </header>
-  <section class="guides-hero">
-    <h1 data-i18n="hero.guides.title">📚 Anleitungen für Garten anbauen</h1>
-    <p data-i18n="hero.guides.subtitle">Vollständige Sammlung von Strategien, Rezepten und Spieltipps</p>
-  </section>
-  <div class="guides-section">
-    <div class="guides-card">
-      <h2>🔍 Suche und Filter</h2>
-      <div class="search-filter-container">
-        <input type="text" id="guide-search" placeholder="Anleitungen suchen..." class="guide-search-input">
-        <div class="filter-buttons">
-          <button class="filter-btn active" data-filter="all">Alle</button>
-          <button class="filter-btn" data-filter="recipe">Rezepte</button>
-          <button class="filter-btn" data-filter="farming">Landwirtschaft</button>
-          <button class="filter-btn" data-filter="profit">Gewinn</button>
-          <button class="filter-btn" data-filter="advanced">Fortgeschritten</button>
-        </div>
-      </div>
+        <nav>
+            <a href="../index.html" class="logo" data-i18n="nav.logo">🌱 Grow a Garden</a>
+            <a href="../index.html#stats" data-i18n="nav.live">Live Stats</a>
+            <a href="../index.html#map" data-i18n="nav.map">Global Heatmap</a>
+            <a href="../index.html#tips" data-i18n="nav.tips">Tips</a>
+            <a href="guides.html" data-i18n="nav.guides">📚 Guides</a>
+            <a href="../online.html" data-i18n="nav.online">🎮 Online</a>
+            <a href="../index.html#community" class="discord-btn" data-i18n="nav.discord">💬 Discord</a>
+            <select id="lang-switcher" aria-label="Language">
+<option value="en" >🇺🇸 English</option>
+<option value="zh-cn" >🇨🇳 简体中文</option>
+<option value="es" >🇪🇸 Español</option>
+<option value="pt-br" >🇧🇷 Português</option>
+<option value="fr" >🇫🇷 Français</option>
+<option value="de" selected>🇩🇪 Deutsch</option>
+<option value="ru" >🇷🇺 Русский</option>
+<option value="ar" >🇸🇦 العربية</option>
+<option value="hi" >🇮🇳 हिन्दी</option>
+<option value="id" >🇮🇩 Bahasa Indonesia</option>
+<option value="vi" >🇻🇳 Tiếng Việt</option>
+<option value="ja" >🇯🇵 日本語</option>
+</select>
+        </nav>
+    </header>
+    <div class="bg-blur"></div>
+    <div class="content-wrapper">
+        <!-- 导航栏 -->
+        
+
+        <!-- 主要内容 -->
+        <main>
+            <div class="hero-section">
+                <h1>Anbau-Leitfäden</h1>
+                <p data-i18n="guides.hero.description">Master the art of farming and cooking in Grow a Garden</p>
+            </div>
+
+            <!-- 热门攻略 -->
+            <section class="guides-section">
+                <h2 data-i18n="guides.popular.title">🔥 Popular Guides</h2>
+                <div class="guides-grid">
+                    <a href="de/how-to-make-salad.html" class="guide-card">
+                        <div class="card-badge popular" data-i18n="guides.badges.popular">⭐ Most Popular</div>
+                        <h3 data-i18n="guides.salad.title">🥗 Salad Making Guide</h3>
+                        <p data-i18n="guides.salad.description">Master the art of salad making with our comprehensive guide.</p>
+                        <div class="card-meta">
+                            <span class="difficulty beginner" data-i18n="guides.difficulty.beginner">Beginner</span>
+                            <span class="read-time" data-i18n="guides.readTime" data-i18n-params=\'{"minutes": "15"}\'>15 min read</span>
+                            <span class="views" data-i18n="guides.views" data-i18n-params=\'{"count": "2.5k"}\'>🔥 2.5k views</span>
+                        </div>
+                    </a>
+                    
+                    <a href="de/how-to-make-pizza.html" class="guide-card">
+                        <div class="card-badge trending" data-i18n="guides.badges.trending">📈 Trending</div>
+                        <h3 data-i18n="guides.pizza.title">🍕 Pizza Making Guide</h3>
+                        <p data-i18n="guides.pizza.description">Learn how to make delicious pizza in Grow a Garden.</p>
+                        <div class="card-meta">
+                            <span class="difficulty intermediate" data-i18n="guides.difficulty.intermediate">Intermediate</span>
+                            <span class="read-time" data-i18n="guides.readTime" data-i18n-params=\'{"minutes": "25"}\'>25 min read</span>
+                            <span class="views" data-i18n="guides.views" data-i18n-params=\'{"count": "1.8k"}\'>🔥 1.8k views</span>
+                        </div>
+                    </a>
+                    
+                    <a href="de/how-to-make-bread.html" class="guide-card">
+                        <div class="card-badge new" data-i18n="guides.badges.new">🆕 New</div>
+                        <h3 data-i18n="guides.bread.title">🍞 Bread Making Guide</h3>
+                        <p data-i18n="guides.bread.description">Master bread making techniques in Grow a Garden.</p>
+                        <div class="card-meta">
+                            <span class="difficulty beginner" data-i18n="guides.difficulty.beginner">Beginner</span>
+                            <span class="read-time" data-i18n="guides.readTime" data-i18n-params=\'{"minutes": "20"}\'>20 min read</span>
+                            <span class="views" data-i18n="guides.views" data-i18n-params=\'{"count": "1.2k"}\'>🔥 1.2k views</span>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- 所有攻略 -->
+            <section class="guides-section">
+                <h2 data-i18n="guides.all.title">📚 All Guides</h2>
+                <div class="guides-grid">
+                    <a href="de/how-to-grow-apples.html" class="guide-card">
+                        <h3 data-i18n="guides.apple.title">🍎 Apple Growing Guide</h3>
+                        <p data-i18n="guides.apple.description">Learn how to grow delicious apples in your garden.</p>
+                        <div class="card-meta">
+                            <span class="difficulty beginner" data-i18n="guides.difficulty.beginner">Beginner</span>
+                            <span class="read-time" data-i18n="guides.readTime" data-i18n-params=\'{"minutes": "12"}\'>12 min read</span>
+                        </div>
+                    </a>
+                    
+                    <a href="de/how-to-grow-oranges.html" class="guide-card">
+                        <h3 data-i18n="guides.orange.title">🍊 Orange Growing Guide</h3>
+                        <p data-i18n="guides.orange.description">Master the art of growing sweet oranges.</p>
+                        <div class="card-meta">
+                            <span class="difficulty intermediate" data-i18n="guides.difficulty.intermediate">Intermediate</span>
+                            <span class="read-time" data-i18n="guides.readTime" data-i18n-params=\'{"minutes": "18"}\'>18 min read</span>
+                        </div>
+                    </a>
+                    
+                    <a href="de/how-to-make-cake.html" class="guide-card">
+                        <h3 data-i18n="guides.cake.title">🎂 Cake Making Guide</h3>
+                        <p data-i18n="guides.cake.description">Create delicious cakes with our expert tips.</p>
+                        <div class="card-meta">
+                            <span class="difficulty intermediate" data-i18n="guides.difficulty.intermediate">Intermediate</span>
+                            <span class="read-time" data-i18n="guides.readTime" data-i18n-params=\'{"minutes": "30"}\'>30 min read</span>
+                        </div>
+                    </a>
+                    
+                    <a href="de/how-to-make-cookies.html" class="guide-card">
+                        <h3 data-i18n="guides.cookie.title">🍪 Cookie Making Guide</h3>
+                        <p>Bake perfect cookies every time.</p>
+                        <div class="card-meta">
+                            <span class="difficulty beginner" data-i18n="guides.difficulty.beginner">Beginner</span>
+                            <span class="read-time" data-i18n="guides.readTime" data-i18n-params=\'{"minutes": "20"}\'>20 min read</span>
+                        </div>
+                    </a>
+                    
+                    <a href="de/how-to-make-smoothie.html" class="guide-card">
+                        <h3 data-i18n="guides.smoothie.title">🥤 Smoothie Making Guide</h3>
+                        <p>Create healthy and delicious smoothies.</p>
+                        <div class="card-meta">
+                            <span class="difficulty beginner" data-i18n="guides.difficulty.beginner">Beginner</span>
+                            <span class="read-time" data-i18n="guides.readTime" data-i18n-params=\'{"minutes": "18"}\'>18 min read</span>
+                        </div>
+                    </a>
+                    
+                    <a href="de/how-to-build-farm.html" class="guide-card">
+                        <h3 data-i18n="guides.farm.title">🏗️ Farm Building Guide</h3>
+                        <p>Design and build your perfect farm layout.</p>
+                        <div class="card-meta">
+                            <span class="difficulty advanced">Advanced</span>
+                            <span class="read-time" data-i18n="guides.readTime" data-i18n-params=\'{"minutes": "45"}\'>45 min read</span>
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </main>
+</div>
+</body>
+
+        <footer class="footer">
+            <p>&copy; 2025 Grow a Garden. All rights reserved.</p>
+        </footer>
     </div>
 
-    <!-- 热门攻略 -->
-    <div class="guides-card">
-      <h2>🔥 Beliebte Anleitungen</h2>
-      <div class="guides-grid">
-        <a href="/de/how-to-make-salad.html" class="guide-item featured-guide">
-          <div class="featured-badge">⭐ Am Beliebtesten</div>
-          <h3>Salat-Anleitung</h3>
-          <p>Lerne die Geheimnisse der Salatherstellung in Garten anbauen.</p>
-          <div class="guide-meta">
-            <span class="guide-difficulty">Anfänger</span>
-            <span class="guide-read-time">15 Minuten Lesezeit</span>
-            <span class="guide-views">🔥 2.5k Aufrufe</span>
-          </div>
-        </a>
-        
-        <a href="/de/how-to-make-pizza.html" class="guide-item">
-          <div class="trending-badge">📈 Trend</div>
-          <h3>Pizza-Anleitung</h3>
-          <p>Lerne die Geheimnisse der Pizzabereitung in Garten anbauen.</p>
-          <div class="guide-meta">
-            <span class="guide-difficulty">Fortgeschritten</span>
-            <span class="guide-read-time">25 Minuten Lesezeit</span>
-            <span class="guide-views">🔥 1.8k Aufrufe</span>
-          </div>
-        </a>
-        
-        <a href="/de/how-to-make-bread.html" class="guide-item">
-          <div class="new-badge">🆕 Neu</div>
-          <h3>Brot-Anleitung</h3>
-          <p>Lerne die Geheimnisse der Brotbackens in Garten anbauen.</p>
-          <div class="guide-meta">
-            <span class="guide-difficulty">Anfänger</span>
-            <span class="guide-read-time">20 Minuten Lesezeit</span>
-            <span class="guide-views">🔥 1.2k Aufrufe</span>
-          </div>
-        </a>
-      </div>
-    </div>
-    
-    <!-- 食谱攻略 -->
-    <div class="category-section" data-category="recipe">
-      <h2 class="category-title">🍽️ Rezept-Anleitungen</h2>
-      <div class="guides-grid">
-        <a href="/de/how-to-make-salad.html" class="guide-item">
-          <h3>🥗 Salat-Anleitung</h3>
-          <p>Vollständige Anleitung zur Herstellung perfekter Salate in Garten anbauen. Von der grundlegenden Zutatenbeschaffung bis zu fortgeschrittenen Rezepten.</p>
-          <div class="guide-meta">
-            <span class="guide-difficulty">Anfänger</span>
-            <span class="guide-read-time">15 Minuten Lesezeit</span>
-          </div>
-        </a>
-        
-        <a href="/de/how-to-make-pizza.html" class="guide-item">
-          <h3>🍕 Pizza-Anleitung</h3>
-          <p>Lerne, wie man leckere Pizza in Garten anbauen macht. Von der Teigzubereitung bis zu Topping-Kombinationen.</p>
-          <div class="guide-meta">
-            <span class="guide-difficulty">Fortgeschritten</span>
-            <span class="guide-read-time">25 Minuten Lesezeit</span>
-          </div>
-        </a>
-        
-        <a href="/de/how-to-make-bread.html" class="guide-item">
-          <h3>🍞 Brot-Anleitung</h3>
-          <p>Meistere die Techniken des Brotbackens. Lerne über Mehltypen, Hefemanagement und Backoptimierung.</p>
-          <div class="guide-meta">
-            <span class="guide-difficulty">Anfänger</span>
-            <span class="guide-read-time">20 Minuten Lesezeit</span>
-          </div>
-        </a>
-        
-        <a href="/de/how-to-make-cake.html" class="guide-item">
-          <h3>Kuchen-Anleitung</h3>
-          <p>Lerne die Geheimnisse der Kuchenherstellung in Garten anbauen.</p>
-          <div class="guide-meta">
-            <span class="guide-difficulty">Fortgeschritten</span>
-            <span class="guide-read-time">30 Minuten Lesezeit</span>
-          </div>
-        </a>
-      <a href="/de/ice-cream-recipe.html" class="guide-item">
-                    <h3>Eis-Rezept-Anleitung</h3>
-                    <p>Lerne Rezepte und Proportionen für leckeres Eis zur Optimierung von Gewinn und Geschmack.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Fortgeschritten</span>
-                        <span class="guide-read-time">18 Minuten Lesezeit</span>
-                    </div>
-                </a><a href="/de/how-to-make-donut.html" class="guide-item">
-                    <h3>Donut-Anleitung</h3>
-                    <p>Lerne die Geheimnisse der Donutherstellung in Garten anbauen.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Fortgeschritten</span>
-                        <span class="guide-read-time">20 Minuten Lesezeit</span>
-                    </div>
-                </a><a href="/de/how-to-make-pie.html" class="guide-item">
-                    <h3>Kuchen-Anleitung</h3>
-                    <p>Lerne die Geheimnisse der Kuchenherstellung in Garten anbauen.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Fortgeschritten</span>
-                        <span class="guide-read-time">25 Minuten Lesezeit</span>
-                    </div>
-                </a><a href="/de/how-to-make-cookies.html" class="guide-item">
-                    <h3>Keks-Anleitung</h3>
-                    <p>Lerne die Geheimnisse der Keksherstellung in Garten anbauen.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Anfänger</span>
-                        <span class="guide-read-time">20 Minuten Lesezeit</span>
-                    </div>
-                </a><a href="/de/how-to-make-smoothie.html" class="guide-item">
-                    <h3>Smoothie-Anleitung</h3>
-                    <p>Lerne die Geheimnisse der Smoothieherstellung in Garten anbauen.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Anfänger</span>
-                        <span class="guide-read-time">18 Minuten Lesezeit</span>
-                    </div>
-                </a><a href="/de/how-to-make-sandwich.html" class="guide-item">
-                    <h3>Sandwich-Anleitung</h3>
-                    <p>Lerne die Geheimnisse der Sandwichherstellung in Garten anbauen.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Anfänger</span>
-                        <span class="guide-read-time">22 Minuten Lesezeit</span>
-                    </div>
-                </a><a href="/de/how-to-make-salad.html" class="guide-item">
-                    <h3>Salat-Anleitung</h3>
-                    <p>Lerne die Geheimnisse der Salatherstellung in Garten anbauen.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Anfänger</span>
-                        <span class="guide-read-time">15 Minuten Lesezeit</span>
-                    </div>
-                </a><a href="/de/how-to-make-pizza.html" class="guide-item">
-                    <h3>Pizza-Anleitung</h3>
-                    <p>Lerne die Geheimnisse der Pizzabereitung in Garten anbauen.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Fortgeschritten</span>
-                        <span class="guide-read-time">25 Minuten Lesezeit</span>
-                    </div>
-                </a><a href="/de/how-to-make-bread.html" class="guide-item">
-                    <h3>Brot-Anleitung</h3>
-                    <p>Lerne die Geheimnisse der Brotbackens in Garten anbauen.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Anfänger</span>
-                        <span class="guide-read-time">20 Minuten Lesezeit</span>
-                    </div>
-                </a><a href="/de/ice-cream-recipe.html" class="guide-item">
-                    <h3>Eis-Rezept-Anleitung</h3>
-                    <p>Lerne Rezepte und Proportionen für leckeres Eis zur Optimierung von Gewinn und Geschmack.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Fortgeschritten</span>
-                        <span class="guide-read-time">18 Minuten Lesezeit</span>
-                    </div>
-                </a><a href="/de/how-to-make-donut.html" class="guide-item">
-                    <h3>Donut-Anleitung</h3>
-                    <p>Lerne die Geheimnisse der Donutherstellung in Garten anbauen.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Fortgeschritten</span>
-                        <span class="guide-read-time">20 Minuten Lesezeit</span>
-                    </div>
-                </a><a href="/de/how-to-make-cake.html" class="guide-item">
-                    <h3>Kuchen-Anleitung</h3>
-                    <p>Lerne die Geheimnisse der Kuchenherstellung in Garten anbauen.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Fortgeschritten</span>
-                        <span class="guide-read-time">30 Minuten Lesezeit</span>
-                    </div>
-                </a><a href="/de/how-to-make-pie.html" class="guide-item">
-                    <h3>Kuchen-Anleitung</h3>
-                    <p>Lerne die Geheimnisse der Kuchenherstellung in Garten anbauen.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Fortgeschritten</span>
-                        <span class="guide-read-time">25 Minuten Lesezeit</span>
-                    </div>
-                </a><a href="/de/how-to-make-cookies.html" class="guide-item">
-                    <h3>Keks-Anleitung</h3>
-                    <p>Lerne die Geheimnisse der Keksherstellung in Garten anbauen.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Anfänger</span>
-                        <span class="guide-read-time">20 Minuten Lesezeit</span>
-                    </div>
-                </a><a href="/de/how-to-make-smoothie.html" class="guide-item">
-                    <h3>Smoothie-Anleitung</h3>
-                    <p>Lerne die Geheimnisse der Smoothieherstellung in Garten anbauen.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Anfänger</span>
-                        <span class="guide-read-time">18 Minuten Lesezeit</span>
-                    </div>
-                </a><a href="/de/how-to-make-money-fast.html" class="guide-item">
-                    <h3>Anleitung zum schnellen Geldverdienen</h3>
-                    <p>Lerne die Geheimnisse, um schnell Geld in Garten anbauen zu verdienen.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Fortgeschritten</span>
-                        <span class="guide-read-time">25 Minuten Lesezeit</span>
-                    </div>
-                </a><a href="/de/how-to-make-sandwich.html" class="guide-item">
-                    <h3>Sandwich-Anleitung</h3>
-                    <p>Lerne die Geheimnisse der Sandwichherstellung in Garten anbauen.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Anfänger</span>
-                        <span class="guide-read-time">22 Minuten Lesezeit</span>
-                    </div>
-                </a></div>
-    </div>
-    
-    <!-- 种植攻略 -->
-    <div class="category-section" data-category="farming">
-      <h2 class="category-title">🌱 Landwirtschafts-Anleitungen</h2>
-      <div class="guides-grid">
-        <a href="/de/how-to-grow-corn.html" class="guide-item">
-          <h3>Mais-Anbau-Anleitung</h3>
-          <p>Effizienter Maisanbau: Aussaat, Bewässerung, Ernte.</p>
-          <div class="guide-meta">
-            <span class="guide-difficulty">Anfänger</span>
-            <span class="guide-read-time">18 Minuten Lesezeit</span>
-          </div>
-        </a>
-        
-        <a href="/de/how-to-grow-oranges.html" class="guide-item">
-          <h3>Orangen-Anbau-Anleitung</h3>
-          <p>Effizienter Orangenanbau: Aussaat, Bewässerung, Ernte.</p>
-          <div class="guide-meta">
-            <span class="guide-difficulty">Fortgeschritten</span>
-            <span class="guide-read-time">22 Minuten Lesezeit</span>
-          </div>
-        </a>
-      <a href="/de/how-to-grow-wheat.html" class="guide-item">
-                    <h3>Weizen-Anbau-Anleitung</h3>
-                    <p>Effizienter Weizenanbau: Aussaat, Bewässerung, Ernte.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Anfänger</span>
-                        <span class="guide-read-time">20 Minuten Lesezeit</span>
-                    </div>
-                </a><a href="farming-basics.html" class="guide-item">
-                    <h3>Grundlagen des Anbaus</h3>
-                    <p>Wichtige Punkte für grundlegende Anbautechniken, Bewässerung und Kulturmanagement.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Anfänger</span>
-                        <span class="guide-read-time">12 Minuten Lesezeit</span>
-                    </div>
-                </a><a href="watering-strategies.html" class="guide-item">
-                    <h3>Bewässerungsstrategien</h3>
-                    <p>Lerne den optimalen Zeitpunkt, die Häufigkeit und Effizienz der Bewässerung.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Anfänger</span>
-                        <span class="guide-read-time">10 Minuten Lesezeit</span>
-                    </div>
-                </a><a href="crop-rotation.html" class="guide-item">
-                    <h3>Fruchtfolge-Anleitung</h3>
-                    <p>Effektive Fruchtfolge-Strategien zur Aufrechterhaltung der Bodenfruchtbarkeit und Maximierung des Ertrags.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Fortgeschritten</span>
-                        <span class="guide-read-time">15 Minuten Lesezeit</span>
-                    </div>
-                </a><a href="seed-selection.html" class="guide-item">
-                    <h3>Saatgut-Auswahl-Anleitung</h3>
-                    <p>Wähle Samen, die zu deiner Strategie passen, und vergleiche Wachstum und Gewinn.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Fortgeschritten</span>
-                        <span class="guide-read-time">18 Minuten Lesezeit</span>
-                    </div>
-                </a><a href="/de/how-to-grow-carrots.html" class="guide-item">
-                    <h3>Karotten-Anbau-Anleitung</h3>
-                    <p>Effizienter Karottenanbau: Aussaat, Bewässerung, Ernte.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Anfänger</span>
-                        <span class="guide-read-time">18 Minuten Lesezeit</span>
-                    </div>
-                </a><a href="/de/how-to-grow-apples.html" class="guide-item">
-                    <h3>Äpfel-Anbau-Anleitung</h3>
-                    <p>Effizienter Apfelanbau: Aussaat, Bewässerung, Ernte.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Fortgeschritten</span>
-                        <span class="guide-read-time">22 Minuten Lesezeit</span>
-                    </div>
-                </a><a href="/de/how-to-grow-berries.html" class="guide-item">
-                    <h3>Beeren-Anbau-Anleitung</h3>
-                    <p>Effizienter Beerenanbau: Aussaat, Bewässerung, Ernte.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Fortgeschritten</span>
-                        <span class="guide-read-time">20 Minuten Lesezeit</span>
-                    </div>
-                </a><a href="/de/how-to-build-farm.html" class="guide-item">
-                    <h3>Bauernhof-Bau-Anleitung</h3>
-                    <p>Entwerfe ein effizientes Bauernhof-Layout: Optimiere Bewässerung, Lagerung, Verarbeitung und Routen.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Fortgeschritten</span>
-                        <span class="guide-read-time">24 Minuten Lesezeit</span>
-                    </div>
-                </a><a href="/de/how-to-grow-wheat.html" class="guide-item">
-                    <h3>Weizen-Anbau-Anleitung</h3>
-                    <p>Effizienter Weizenanbau: Aussaat, Bewässerung, Ernte.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Anfänger</span>
-                        <span class="guide-read-time">20 Minuten Lesezeit</span>
-                    </div>
-                </a><a href="/de/how-to-grow-carrots.html" class="guide-item">
-                    <h3>Karotten-Anbau-Anleitung</h3>
-                    <p>Effizienter Karottenanbau: Aussaat, Bewässerung, Ernte.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Anfänger</span>
-                        <span class="guide-read-time">18 Minuten Lesezeit</span>
-                    </div>
-                </a><a href="/de/how-to-grow-apples.html" class="guide-item">
-                    <h3>Äpfel-Anbau-Anleitung</h3>
-                    <p>Effizienter Apfelanbau: Aussaat, Bewässerung, Ernte.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Fortgeschritten</span>
-                        <span class="guide-read-time">22 Minuten Lesezeit</span>
-                    </div>
-                </a><a href="/de/how-to-grow-oranges.html" class="guide-item">
-                    <h3>Orangen-Anbau-Anleitung</h3>
-                    <p>Effizienter Orangenanbau: Aussaat, Bewässerung, Ernte.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Fortgeschritten</span>
-                        <span class="guide-read-time">21 Minuten Lesezeit</span>
-                    </div>
-                </a><a href="/de/how-to-grow-berries.html" class="guide-item">
-                    <h3>Beeren-Anbau-Anleitung</h3>
-                    <p>Effizienter Beerenanbau: Aussaat, Bewässerung, Ernte.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Fortgeschritten</span>
-                        <span class="guide-read-time">20 Minuten Lesezeit</span>
-                    </div>
-                </a><a href="/de/how-to-grow-corn.html" class="guide-item">
-                    <h3>Mais-Anbau-Anleitung</h3>
-                    <p>Effizienter Maisanbau: Aussaat, Bewässerung, Ernte.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Fortgeschritten</span>
-                        <span class="guide-read-time">21 Minuten Lesezeit</span>
-                    </div>
-                </a><a href="/de/how-to-build-farm.html" class="guide-item">
-                    <h3>Bauernhof-Bau-Anleitung</h3>
-                    <p>Entwerfe ein effizientes Bauernhof-Layout: Optimiere Bewässerung, Lagerung, Verarbeitung und Routen.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Fortgeschritten</span>
-                        <span class="guide-read-time">24 Minuten Lesezeit</span>
-                    </div>
-                </a></div>
-    </div>
-    
-    <!-- 收益攻略 -->
-    <div class="category-section" data-category="profit">
-      <h2 class="category-title">💰 Gewinn-Anleitungen</h2>
-      <div class="guides-grid">
-        <a href="/de/how-to-make-money-fast.html" class="guide-item">
-          <h3>Anleitung zum schnellen Geldverdienen</h3>
-          <p>Lerne die Geheimnisse, um schnell Geld in Garten anbauen zu verdienen.</p>
-          <div class="guide-meta">
-            <span class="guide-difficulty">Fortgeschritten</span>
-            <span class="guide-read-time">35 Minuten Lesezeit</span>
-          </div>
-        </a>
-        
-        <a href="/profit-strategies.html" class="guide-item">
-          <h3>Gewinn-Strategie-Anleitung</h3>
-          <p>Lerne langfristige Gewinnstrategien, Marktanalyse und Risikomanagement, Verkaufsoptimierung.</p>
-          <div class="guide-meta">
-            <span class="guide-difficulty">Fortgeschritten</span>
-            <span class="guide-read-time">45 Minuten Lesezeit</span>
-          </div>
-        </a>
-      <a href="market-analysis.html" class="guide-item">
-                    <h3>Marktanalyse</h3>
-                    <p>Analysiere Markttrends, identifiziere Gewinnchancen und optimiere deine Verkaufsstrategie.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Fortgeschritten</span>
-                        <span class="guide-read-time">20 Minuten Lesezeit</span>
-                    </div>
-                </a><a href="resource-management.html" class="guide-item">
-                    <h3>Ressourcen-Management</h3>
-                    <p>Meistere Ressourcenzuteilung, Bestandsverwaltung und Kostenoptimierung.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Fortgeschritten</span>
-                        <span class="guide-read-time">16 Minuten Lesezeit</span>
-                    </div>
-                </a><a href="investment-guide.html" class="guide-item">
-                    <h3>Investitions-Anleitung</h3>
-                    <p>Lerne, wie du Investitionsziele identifizierst und langfristige Renditen maximierst.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Experte</span>
-                        <span class="guide-read-time">25 Minuten Lesezeit</span>
-                    </div>
-                </a></div>
-    </div>
-  <div class="category-section" data-category="co-op">
-            <h2 class="category-title">👥 Zusammenarbeit und Betrieb</h2>
-            <div class="guides-grid">
-                <a href="/de/how-to-play-with-friends.html" class="guide-item">
-                    <h3>Mit Freunden spielen</h3>
-                    <p>Arbeite mit Freunden zusammen, weise Rollen zu und baue eine effiziente Farm durch Handel.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Fortgeschritten</span>
-                        <span class="guide-read-time">18 Minuten Lesezeit</span>
-                    </div>
-                </a>
+    <script>
+        function toggleLanguageMenu() {
+            const dropdown = document.getElementById('langDropdown');
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
 
-                <a href="storage-and-logistics.html" class="guide-item">
-                    <h3>Lagerung und Logistik</h3>
-                    <p>Verbessere die Logistikeffizienz durch Lagerung und Routenplanung.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Fortgeschritten</span>
-                        <span class="guide-read-time">20 Minuten Lesezeit</span>
-                    </div>
-                </a>
-            <a href="/de/how-to-play-with-friends.html" class="guide-item">
-                    <h3>Mit Freunden spielen</h3>
-                    <p>Arbeite mit Freunden zusammen, weise Rollen zu und baue eine effiziente Farm durch Handel.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Fortgeschritten</span>
-                        <span class="guide-read-time">18 Minuten Lesezeit</span>
-                    </div>
-                </a></div>
-        </div><div class="category-section" data-category="advanced">
-            <h2 class="category-title">🎮 Fortgeschrittenen-Anleitungen</h2>
-            <div class="guides-grid">
-                <a href="game-mechanics.html" class="guide-item">
-                    <h3>Spielmechaniken</h3>
-                    <p>Erforsche tiefgehend die Spielmechaniken, Mutationen, besondere Ereignisse und fortgeschrittene Elemente.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Experte</span>
-                        <span class="guide-read-time">35 Minuten Lesezeit</span>
-                    </div>
-                </a>
-                
-                <a href="mutation-guide.html" class="guide-item">
-                    <h3>Mutation-Anleitung</h3>
-                    <p>Verstehe das Mutationssystem und kombiniere sie für maximalen Gewinn.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Experte</span>
-                        <span class="guide-read-time">40 Minuten Lesezeit</span>
-                    </div>
-                </a>
-                
-                <a href="special-events.html" class="guide-item">
-                    <h3>Spezial-Events</h3>
-                    <p>Vollständige Anleitung zu zeitlich begrenzten Events, besonderen Chancen und exklusiven Belohnungen.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Fortgeschritten</span>
-                        <span class="guide-read-time">28 Minuten Lesezeit</span>
-                    </div>
-                </a>
-                
-                <a href="speed-running.html" class="guide-item">
-                    <h3>Speedrunning</h3>
-                    <p>Speedrunning-Techniken zur Effizienzmaximierung und Jagd nach Rekorden.</p>
-                    <div class="guide-meta">
-                        <span class="guide-difficulty">Experte</span>
-                        <span class="guide-read-time">30 Minuten Lesezeit</span>
-                    </div>
-                </a>
-            </div>
-        </div><div class="guides-card">
-            <h2>💡 Schnelle Tipps</h2>
-            <div class="tips-grid">
-                <div class="tip-item">
-                    <h4>⏰ Goldene Stunde</h4>
-                    <p>Gieße deine Pflanzen zwischen 7:00-9:00 im Spiel für doppelte Wachstumseffekte.</p>
-                </div>
-                <div class="tip-item">
-                    <h4>🎯 Qualität zählt</h4>
-                    <p>Hochwertige Materialien führen zu besseren Rezepten und höheren Gewinnen.</p>
-                </div>
-                <div class="tip-item">
-                    <h4>📈 Marktzeitpunkt</h4>
-                    <p>Verkaufe während der Zeiten hoher Nachfrage, um den Gewinn zu maximieren.</p>
-                </div>
-                <div class="tip-item">
-                    <h4>📚 Rezept-Meisterschaft</h4>
-                    <p>Meistere die Grundrezepte, bevor du fortgeschrittene versuchst, für bessere Effizienz.</p>
-                </div>
-                <div class="tip-item">
-                    <h4>🤝 Community-Lernen</h4>
-                    <p>Tritt unserem Discord-Server bei, um von erfahrenen Spielern zu lernen.</p>
-                </div>
-                <div class="tip-item">
-                    <h4>🔄 定期的な更新</h4>
-                    <p>Überprüfen Sie regelmäßig auf neue Anleitungen und aktualisierte Strategien.</p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="guides-card">
-            <h2>🏠 Navigation</h2>
-            <div class="back-link-container">
-                <a href="/de/index.html" class="back-btn" data-i18n="guides.back">← Zurück zum Hauptrechner</a>
-            </div>
-        </div>
-    </div>
-  <script src="../i18n/i18n.js"></script>
-  <script src="../script.js"></script>
-
- </body></html>
+        // 点击外部关闭语言菜单
+        document.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('langDropdown');
+            const langBtn = document.querySelector('.lang-btn');
+            if (!langBtn.contains(event.target) && !dropdown.contains(event.target)) {
+                dropdown.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
