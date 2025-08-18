@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flag Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f0f0f0;
+        }
+        .flag-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .flag-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .flag-svg {
+            width: 30px;
+            height: 20px;
+            border: 1px solid #ccc;
+        }
+        .flag-code {
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>国旗显示测试</h1>
+    
+    <div class="flag-container">
+        <div class="flag-item">
+            <svg class="flag-svg" viewBox="0 0 640 480">
+                <rect width="640" height="480" fill="#bd3d44"/>
+                <rect width="640" height="96" fill="#fff"/>
+                <rect width="640" height="96" y="96" fill="#fff"/>
+                <rect width="640" height="96" y="192" fill="#fff"/>
+                <rect width="640" height="96" y="288" fill="#fff"/>
+                <rect width="640" height="96" y="384" fill="#fff"/>
+                <path d="M0 0l256 240L0 480z" fill="#192f5d"/>
+            </svg>
+            <span class="flag-code">US</span>
+        </div>
+        
+        <div class="flag-item">
+            <svg class="flag-svg" viewBox="0 0 900 600">
+                <rect width="900" height="600" fill="#de2910"/>
+                <g fill="#ffde00">
+                    <path d="M450 120l-45.7 140.7-119.3 0h154l-119.3 0z"/>
+                    <path d="M450 300l-45.7 140.7-119.3 0h154l-119.3 0z"/>
+                    <path d="M450 480l-45.7 140.7-119.3 0h154l-119.3 0z"/>
+                </g>
+            </svg>
+            <span class="flag-code">CN</span>
+        </div>
+        
+        <div class="flag-item">
+            <svg class="flag-svg" viewBox="0 0 900 600">
+                <rect width="900" height="200" fill="#fff"/>
+                <rect width="900" height="200" y="200" fill="#0039a6"/>
+                <rect width="900" height="200" y="400" fill="#d52b1e"/>
+            </svg>
+            <span class="flag-code">RU</span>
+        </div>
+    </div>
+    
+    <h2>问题诊断</h2>
+    <p>如果上面的国旗显示正常，说明SVG渲染没问题。</p>
+    <p>如果显示为破损图片图标，说明浏览器不支持SVG或者有渲染问题。</p>
+    
+    <script>
+        console.log('页面加载完成');
+        console.log('SVG元素数量:', document.querySelectorAll('svg').length);
+        
+        // 检查SVG是否正常渲染
+        const svgs = document.querySelectorAll('svg');
+        svgs.forEach((svg, index) => {
+            console.log(`SVG ${index + 1}:`, svg.outerHTML);
+        });
+    </script>
+
+    <script src="flag-switcher.js"></script></body>
+</html> 

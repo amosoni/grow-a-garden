@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Analysis in Grow a Garden - Complete Guide | Grow a Garden Tips</title>
+    <meta name="description" content="Learn how to analyze market trends in Roblox Grow a Garden! Identify profitable opportunities, optimize your selling strategy, and maximize profits through market analysis.">
+    <meta name="keywords" content="market analysis grow a garden, roblox market guide, grow a garden market tips, roblox farming game, market trends, grow a garden tips">
+    <link rel="canonical" href="https://your-domain.com/market-analysis.html">
+    
+    <!-- Open Graph for social sharing -->
+    <meta property="og:title" content="Market Analysis in Grow a Garden - Complete Guide">
+    <meta property="og:description" content="Learn how to analyze market trends in Roblox Grow a Garden! Identify profitable opportunities, optimize your selling strategy, and maximize profits.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://your-domain.com/market-analysis.html">
+    <meta property="og:image" content="https://your-domain.com/market-analysis-og.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Market Analysis in Grow a Garden - Complete Guide">
+    <meta name="twitter:description" content="Learn how to analyze market trends in Roblox Grow a Garden! Identify profitable opportunities, optimize your selling strategy, and maximize profits.">
+    <meta name="twitter:image" content="https://your-domain.com/market-analysis-og.jpg">
+    
+    <!-- Structured Data JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "Market Analysis in Grow a Garden",
+      "description": "Learn how to analyze market trends in Roblox Grow a Garden, including trend identification, opportunity analysis, and selling strategy optimization.",
+      "image": "https://your-domain.com/market-analysis-og.jpg",
+      "url": "https://your-domain.com/market-analysis.html",
+      "inLanguage": "en",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Monitor Prices",
+          "text": "Track crop prices and market trends in Grow a Garden"
+        },
+        {
+          "@type": "HowToStep", 
+          "name": "Analyze Patterns",
+          "text": "Identify price patterns and demand cycles"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Optimize Strategy",
+          "text": "Adjust farming and selling strategy based on market analysis"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Roblox-like color scheme -->
+    <link rel="stylesheet" href="https://unpkg.com/simple.css@2.1.0/simple.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
+    
+    <style>
+        body {
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .bg-blur {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: 0;
+            background: url('grow-bg.jpg') center center/cover no-repeat;
+            opacity: 0.3;
+            filter: blur(2px);
+            pointer-events: none;
+        }
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+        .market-hero {
+            background: linear-gradient(135deg, #2196f3, #1976d2);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-top: 60px;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        .market-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        .market-hero h1,
+        .market-hero p {
+            position: relative;
+            z-index: 2;
+        }
+        .market-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: white !important;
+            text-shadow: 
+                0 2px 4px rgba(0,0,0,0.7),
+                0 1px 2px rgba(0,0,0,0.8);
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            -webkit-text-stroke: 0.5px rgba(0,0,0,0.2);
+        }
+        .market-hero p {
+            font-size: 1.2rem;
+            opacity: 1;
+            color: white !important;
+            text-shadow: 
+                0 1px 3px rgba(0,0,0,0.6),
+                0 1px 2px rgba(0,0,0,0.7);
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            -webkit-text-stroke: 0.3px rgba(0,0,0,0.15);
+        }
+        .guide-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .guide-card {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .guide-card h2 {
+            color: #23272a !important;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+        .guide-card h3 {
+            color: #2c3e50 !important;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .guide-card p, .guide-card li {
+            color: #34495e !important;
+            font-weight: 500;
+            line-height: 1.6;
+        }
+        .analysis-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .analysis-item {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 8px;
+            padding: 1rem;
+            border-left: 4px solid #2196f3;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .analysis-item h4 {
+            color: #23272a !important;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .analysis-item p {
+            color: #34495e !important;
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+        }
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+        }
+        .info-table th,
+        .info-table td {
+            border: 1px solid #ddd;
+            padding: 0.75rem;
+            text-align: left;
+            font-weight: 500;
+        }
+        .info-table th {
+            background: #2196f3;
+            color: white;
+            font-weight: 700;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+        .info-table td {
+            color: #2c3e50 !important;
+            background: rgba(255, 255, 255, 0.9);
+        }
+        .info-table tr:nth-child(even) td {
+            background: rgba(33, 150, 243, 0.08);
+        }
+        .tip-box {
+            background: linear-gradient(135deg, #f1c40f, #f39c12);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            box-shadow: 0 4px 15px rgba(241, 196, 15, 0.3);
+        }
+        .tip-box strong {
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+            font-weight: 700;
+        }
+        .warning-box {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+        }
+        .warning-box strong {
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+            font-weight: 700;
+        }
+        .back-btn {
+            display: inline-block;
+            background: #5865f2;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+        .back-btn:hover {
+            background: #4752c4;
+            transform: translateY(-2px);
+        }
+        .market-tips {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .tip-card {
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 6px 20px rgba(33, 150, 243, 0.2);
+            border: 2px solid #90caf9;
+        }
+        .tip-card h4 {
+            color: #1565c0 !important;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .tip-card ul {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+        .tip-card li {
+            color: #0d47a1 !important;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* 面包屑导航样式 */
+        .breadcrumb-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+        }
+        .breadcrumb {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .breadcrumb ol {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .breadcrumb li {
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            color: #34495e;
+        }
+        .breadcrumb li:not(:last-child)::after {
+            content: "›";
+            margin: 0 0.5rem;
+            color: #2196f3;
+            font-weight: bold;
+        }
+        .breadcrumb a {
+            color: #2196f3;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .breadcrumb a:hover {
+            color: #1976d2;
+            text-decoration: underline;
+        }
+        .breadcrumb li[aria-current="page"] {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+    </style>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HG12TJB5LZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HG12TJB5LZ');
+    </script>
+</head>
+<body>
+    <div class="bg-blur"></div>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">🌱 Grow a Garden</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('stats')">Live Stats</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('map')">Global Heatmap</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('tips')">Tips</a>
+            <a href="guides.html">📚 Guides</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('community')" class="discord-btn">💬 Discord</a>
+        </nav>
+    </header>
+    
+    <section class="market-hero">
+        <h1>📊 Market Analysis in Grow a Garden</h1>
+        <p>Complete Guide: From Trend Identification to Strategy Optimization</p>
+    </section>
+    
+    <!-- 面包屑导航 -->
+    <div class="breadcrumb-container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+                <li><a href="index.html">🏠 Home</a></li>
+                <li><a href="guides.html">📚 Guides</a></li>
+                <li aria-current="page">📊 Market Analysis</li>
+            </ol>
+        </nav>
+    </div>
+    
+    <div class="guide-section">
+        <div class="guide-card">
+            <h2>📋 Table of Contents</h2>
+            <ul>
+                <li><a href="#basics">Basic Market Concepts</a></li>
+                <li><a href="#monitoring">Price Monitoring</a></li>
+                <li><a href="#trends">Market Trends</a></li>
+                <li><a href="#patterns">Pattern Analysis</a></li>
+                <li><a href="#opportunities">Opportunity Identification</a></li>
+                <li><a href="#strategies">Selling Strategies</a></li>
+                <li><a href="#tools">Analysis Tools</a></li>
+                <li><a href="#tips">Analysis Tips & Tricks</a></li>
+                <li><a href="#efficiency">Efficiency Improvement Methods</a></li>
+                <li><a href="#faq">Frequently Asked Questions</a></li>
+            </ul>
+        </div>
+        
+        <div class="guide-card" id="basics">
+            <h2>📊 Basic Market Concepts</h2>
+            <p>Understanding market dynamics is crucial for maximizing profits in Grow a Garden. Market analysis helps you make informed decisions about what to grow and when to sell.</p>
+            
+            <h3>Core Market Principles:</h3>
+            <ol>
+                <li><strong>Supply and Demand:</strong> Prices fluctuate based on available supply and buyer demand</li>
+                <li><strong>Market Timing:</strong> Selling at the right time maximizes profits</li>
+                <li><strong>Trend Analysis:</strong> Identifying patterns helps predict future prices</li>
+                <li><strong>Competition Awareness:</strong> Understanding market competition affects strategy</li>
+                <li><strong>Risk Management:</strong> Diversifying crops reduces market risk</li>
+            </ol>
+            
+            <div class="tip-box">
+                <strong>💡 Pro Tip:</strong> Start by monitoring a few key crops daily to understand basic market patterns before expanding your analysis!
+            </div>
+        </div>
+        
+        <div class="guide-card" id="monitoring">
+            <h2>📈 Price Monitoring</h2>
+            <p>Regular price monitoring is the foundation of effective market analysis.</p>
+            
+            <h3>Monitoring Methods</h3>
+            <div class="analysis-grid">
+                <div class="analysis-item">
+                    <h4>📊 Daily Tracking</h4>
+                    <p>Check prices daily</p>
+                    <p>Record price changes</p>
+                    <p>Identify patterns</p>
+                </div>
+                <div class="analysis-item">
+                    <h4>⏰ Time-Based Analysis</h4>
+                    <p>Monitor peak hours</p>
+                    <p>Track weekly cycles</p>
+                    <p>Identify seasonal trends</p>
+                </div>
+                <div class="analysis-item">
+                    <h4>🎯 Crop-Specific Focus</h4>
+                    <p>Focus on key crops</p>
+                    <p>Track market leaders</p>
+                    <p>Monitor competition</p>
+                </div>
+                <div class="analysis-item">
+                    <h4>📱 Technology Tools</h4>
+                    <p>Use tracking apps</p>
+                    <p>Automate monitoring</p>
+                    <p>Set price alerts</p>
+                </div>
+            </div>
+            
+            <h3>Key Metrics to Track</h3>
+            <table class="info-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>How to Measure</th>
+                        <th>Frequency</th>
+                        <th>Importance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Price Changes</td>
+                        <td>Compare current vs. previous prices</td>
+                        <td>Daily</td>
+                        <td>High</td>
+                    </tr>
+                    <tr>
+                        <td>Volume Sold</td>
+                        <td>Track how much is being sold</td>
+                        <td>Daily</td>
+                        <td>Medium</td>
+                    </tr>
+                    <tr>
+                        <td>Market Supply</td>
+                        <td>Monitor available quantities</td>
+                        <td>Weekly</td>
+                        <td>High</td>
+                    </tr>
+                    <tr>
+                        <td>Competition</td>
+                        <td>Track other sellers' prices</td>
+                        <td>Daily</td>
+                        <td>Medium</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="guide-card" id="trends">
+            <h2>📈 Market Trends</h2>
+            <p>Identifying and understanding market trends is essential for profitable farming.</p>
+            
+            <h3>Common Market Trends</h3>
+            <div class="market-tips">
+                <div class="tip-card">
+                    <h4>📈 Upward Trends</h4>
+                    <ul>
+                        <li>Increasing prices over time</li>
+                        <li>High demand periods</li>
+                        <li>Supply shortages</li>
+                        <li>Good selling opportunities</li>
+                    </ul>
+                </div>
+                
+                <div class="tip-card">
+                    <h4>📉 Downward Trends</h4>
+                    <ul>
+                        <li>Decreasing prices over time</li>
+                        <li>Oversupply situations</li>
+                        <li>Low demand periods</li>
+                        <li>Hold or switch crops</li>
+                    </ul>
+                </div>
+                
+                <div class="tip-card">
+                    <h4>🔄 Cyclical Trends</h4>
+                    <ul>
+                        <li>Regular price patterns</li>
+                        <li>Seasonal fluctuations</li>
+                        <li>Weekly cycles</li>
+                        <li>Predictable opportunities</li>
+                    </ul>
+                </div>
+                
+                <div class="tip-card">
+                    <h4>📊 Volatile Trends</h4>
+                    <ul>
+                        <li>Unpredictable price changes</li>
+                        <li>High risk and reward</li>
+                        <li>Quick decision making</li>
+                        <li>Advanced strategies needed</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Trend Analysis Techniques</h3>
+            <ul>
+                <li><strong>Moving Averages:</strong> Calculate average prices over time periods</li>
+                <li><strong>Price Momentum:</strong> Track the speed of price changes</li>
+                <li><strong>Volume Analysis:</strong> Monitor trading volume with price changes</li>
+                <li><strong>Pattern Recognition:</strong> Identify recurring price patterns</li>
+            </ul>
+        </div>
+        
+        <div class="guide-card" id="patterns">
+            <h2>🔍 Pattern Analysis</h2>
+            <p>Recognizing market patterns helps predict future price movements and optimize selling strategies.</p>
+            
+            <h3>Common Market Patterns</h3>
+            <table class="info-table">
+                <thead>
+                    <tr>
+                        <th>Pattern Type</th>
+                        <th>Description</th>
+                        <th>Time Frame</th>
+                        <th>Trading Strategy</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Daily Cycles</td>
+                        <td>Prices peak during certain hours</td>
+                        <td>24 hours</td>
+                        <td>Sell during peak hours</td>
+                    </tr>
+                    <tr>
+                        <td>Weekly Cycles</td>
+                        <td>Prices vary by day of week</td>
+                        <td>7 days</td>
+                        <td>Plan weekly selling schedule</td>
+                    </tr>
+                    <tr>
+                        <td>Seasonal Patterns</td>
+                        <td>Prices change with seasons</td>
+                        <td>3-6 months</td>
+                        <td>Adjust crop selection</td>
+                    </tr>
+                    <tr>
+                        <td>Event-Driven</td>
+                        <td>Prices spike during special events</td>
+                        <td>Variable</td>
+                        <td>Prepare for events</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Pattern Recognition Tips</h3>
+            <ul>
+                <li><strong>Keep Records:</strong> Document price patterns and their triggers</li>
+                <li><strong>Look for Repeats:</strong> Identify recurring patterns over time</li>
+                <li><strong>Analyze Triggers:</strong> Understand what causes pattern changes</li>
+                <li><strong>Test Predictions:</strong> Verify pattern predictions with actual results</li>
+            </ul>
+        </div>
+        
+        <div class="guide-card" id="opportunities">
+            <h2>🎯 Opportunity Identification</h2>
+            <p>Identifying profitable market opportunities is key to maximizing your farming profits.</p>
+            
+            <h3>Opportunity Types</h3>
+            <div class="analysis-grid">
+                <div class="analysis-item">
+                    <h4>💰 Price Spikes</h4>
+                    <p>Sudden price increases</p>
+                    <p>Quick profit opportunities</p>
+                    <p>Require fast action</p>
+                </div>
+                <div class="analysis-item">
+                    <h4>📈 Trend Following</h4>
+                    <p>Riding upward trends</p>
+                    <p>Sustained profit periods</p>
+                    <p>Medium-term strategy</p>
+                </div>
+                <div class="analysis-item">
+                    <h4>🔄 Arbitrage</h4>
+                    <p>Price differences</p>
+                    <p>Buy low, sell high</p>
+                    <p>Advanced strategy</p>
+                </div>
+                <div class="analysis-item">
+                    <h4>🎉 Event Opportunities</h4>
+                    <p>Special event demand</p>
+                    <p>Limited-time profits</p>
+                    <p>Preparation required</p>
+                </div>
+            </div>
+            
+            <h3>Opportunity Analysis Framework</h3>
+            <ol>
+                <li><strong>Identify the Opportunity:</strong> Spot potential profitable situations</li>
+                <li><strong>Assess Risk:</strong> Evaluate potential losses vs. gains</li>
+                <li><strong>Calculate Profit Potential:</strong> Estimate potential returns</li>
+                <li><strong>Plan Execution:</strong> Develop strategy to capitalize</li>
+                <li><strong>Monitor Results:</strong> Track actual vs. expected outcomes</li>
+            </ol>
+        </div>
+        
+        <div class="guide-card" id="strategies">
+            <h2>💼 Selling Strategies</h2>
+            <p>Different market conditions require different selling strategies for maximum profit.</p>
+            
+            <h3>Strategy Types</h3>
+            <table class="info-table">
+                <thead>
+                    <tr>
+                        <th>Strategy</th>
+                        <th>Best For</th>
+                        <th>Risk Level</th>
+                        <th>Profit Potential</th>
+                        <th>Time Commitment</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Quick Sell</td>
+                        <td>Price spikes</td>
+                        <td>Low</td>
+                        <td>Medium</td>
+                        <td>Low</td>
+                    </tr>
+                    <tr>
+                        <td>Hold and Wait</td>
+                        <td>Upward trends</td>
+                        <td>Medium</td>
+                        <td>High</td>
+                        <td>Medium</td>
+                    </tr>
+                    <tr>
+                        <td>Diversified Selling</td>
+                        <td>Market uncertainty</td>
+                        <td>Low</td>
+                        <td>Medium</td>
+                        <td>High</td>
+                    </tr>
+                    <tr>
+                        <td>Event Preparation</td>
+                        <td>Special events</td>
+                        <td>Medium</td>
+                        <td>Very High</td>
+                        <td>High</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Strategy Implementation</h3>
+            <ul>
+                <li><strong>Market Timing:</strong> Sell when prices are highest</li>
+                <li><strong>Quantity Management:</strong> Don't flood the market</li>
+                <li><strong>Price Positioning:</strong> Set competitive but profitable prices</li>
+                <li><strong>Customer Relations:</strong> Build relationships with regular buyers</li>
+            </ul>
+        </div>
+        
+        <div class="guide-card" id="tools">
+            <h2>🛠️ Analysis Tools</h2>
+            <p>Use these tools and techniques to enhance your market analysis capabilities.</p>
+            
+            <h3>Essential Tools</h3>
+            <div class="market-tips">
+                <div class="tip-card">
+                    <h4>📊 Price Trackers</h4>
+                    <ul>
+                        <li>Daily price monitoring</li>
+                        <li>Historical data analysis</li>
+                        <li>Price alert systems</li>
+                        <li>Trend visualization</li>
+                    </ul>
+                </div>
+                
+                <div class="tip-card">
+                    <h4>📈 Chart Analysis</h4>
+                    <ul>
+                        <li>Price movement charts</li>
+                        <li>Volume analysis</li>
+                        <li>Pattern recognition</li>
+                        <li>Technical indicators</li>
+                    </ul>
+                </div>
+                
+                <div class="tip-card">
+                    <h4>📱 Mobile Apps</h4>
+                    <ul>
+                        <li>Real-time monitoring</li>
+                        <li>Push notifications</li>
+                        <li>Quick decision making</li>
+                        <li>Portable analysis</li>
+                    </ul>
+                </div>
+                
+                <div class="tip-card">
+                    <h4>💻 Spreadsheets</h4>
+                    <ul>
+                        <li>Data organization</li>
+                        <li>Custom calculations</li>
+                        <li>Historical tracking</li>
+                        <li>Strategy planning</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="guide-card" id="tips">
+            <h2>💡 Analysis Tips & Tricks</h2>
+            <p>Master these tips to become a market analysis expert in Grow a Garden:</p>
+            
+            <h3>📊 Basic Tips</h3>
+            <ul>
+                <li><strong>Start Simple:</strong> Focus on a few key crops initially</li>
+                <li><strong>Keep Records:</strong> Document all price observations</li>
+                <li><strong>Be Consistent:</strong> Monitor at the same times daily</li>
+                <li><strong>Stay Objective:</strong> Base decisions on data, not emotions</li>
+            </ul>
+            
+            <h3>⚡ Advanced Tips</h3>
+            <ul>
+                <li><strong>Multi-Timeframe Analysis:</strong> Look at daily, weekly, and monthly trends</li>
+                <li><strong>Correlation Analysis:</strong> Study relationships between different crops</li>
+                <li><strong>Predictive Modeling:</strong> Use historical data to predict future prices</li>
+                <li><strong>Risk Management:</strong> Always have backup strategies</li>
+            </ul>
+            
+            <h3>💰 Profit Tips</h3>
+            <ul>
+                <li><strong>Timing is Everything:</strong> Sell at peak demand times</li>
+                <li><strong>Diversify Risk:</strong> Don't rely on single crops</li>
+                <li><strong>Scale Gradually:</strong> Start small and increase as you learn</li>
+                <li><strong>Learn from Losses:</strong> Analyze failed predictions for improvement</li>
+            </ul>
+            
+            <div class="tip-box">
+                <strong>💡 Pro Tip:</strong> Combine technical analysis with fundamental understanding of crop demand for the most accurate market predictions!
+            </div>
+        </div>
+        
+        <div class="guide-card" id="efficiency">
+            <h2>⚡ Efficiency Improvement Methods</h2>
+            <p>Maximize your market analysis efficiency with these advanced strategies:</p>
+            
+            <h3>🏭 Analysis Optimization</h3>
+            <ul>
+                <li><strong>Automated Monitoring:</strong> Use tools to track prices automatically</li>
+                <li><strong>Data Management:</strong> Organize market data efficiently</li>
+                <li><strong>Quick Decision Making:</strong> Develop fast analysis frameworks</li>
+                <li><strong>Quality Control:</strong> Verify analysis accuracy regularly</li>
+            </ul>
+            
+            <h3>📊 Advanced Strategies</h3>
+            <ul>
+                <li><strong>Algorithmic Analysis:</strong> Use mathematical models for predictions</li>
+                <li><strong>Machine Learning:</strong> Train systems to recognize patterns</li>
+                <li><strong>Real-time Analysis:</strong> Monitor markets continuously</li>
+                <li><strong>Predictive Analytics:</strong> Forecast future market movements</li>
+            </ul>
+            
+            <div class="warning-box">
+                <strong>⚠️ Important:</strong> Don't rely solely on technical analysis. Always consider fundamental factors like crop demand and supply.
+            </div>
+        </div>
+        
+        <div class="guide-card" id="faq">
+            <h2>❓ Frequently Asked Questions</h2>
+            
+            <h3>Q: How often should I check market prices?</h3>
+            <p>A: Check prices at least daily, and more frequently during volatile periods or when you're ready to sell.</p>
+            
+            <h3>Q: What's the best time to sell crops?</h3>
+            <p>A: Sell during peak demand hours (usually morning and evening) and when prices are trending upward.</p>
+            
+            <h3>Q: How do I predict market trends?</h3>
+            <p>A: Study historical patterns, monitor current events, and analyze supply-demand relationships.</p>
+            
+            <h3>Q: Should I focus on one crop or diversify?</h3>
+            <p>A: Diversify your crops to reduce risk and take advantage of different market opportunities.</p>
+            
+            <h3>Q: How do I handle market crashes?</h3>
+            <p>A: Hold onto high-value crops, switch to stable crops, or wait for market recovery.</p>
+            
+            <h3>Q: What tools do I need for market analysis?</h3>
+            <p>A: Start with basic price tracking, then add charts, spreadsheets, and automated tools as you advance.</p>
+        </div>
+        
+        <div class="guide-card">
+            <h2>🎯 Next Steps</h2>
+            <p>Now that you've learned the basics of market analysis in Grow a Garden, here are your next steps:</p>
+            
+            <ol>
+                <li><strong>Start Monitoring:</strong> Begin tracking prices for your main crops</li>
+                <li><strong>Develop Systems:</strong> Create organized methods for data collection</li>
+                <li><strong>Practice Analysis:</strong> Apply analysis techniques to real market data</li>
+                <li><strong>Join the Community:</strong> Connect with other traders to share insights</li>
+                <li><strong>Stay Updated:</strong> Keep up with market changes and new analysis tools</li>
+            </ol>
+            
+            <div class="tip-box">
+                <strong>💡 Community Tip:</strong> Join our Discord server to connect with other market analysts, share insights, and get the latest market updates!
+            </div>
+        </div>
+        
+        <a href="guides.html" class="back-btn">← Back to Guides</a>
+    </div>
+    
+    <script src="script.js"></script>
+
+    <script src="flag-switcher.js"></script></body>
+</html> 

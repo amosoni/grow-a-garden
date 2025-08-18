@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Mechanics - Grow a Garden Guides</title>
+    <meta name="description" content="Deep dive into game mechanics, mutations, special events, and advanced gameplay features in Grow a Garden.">
+    <meta name="keywords" content="grow a garden, game mechanics, mutations, special events, advanced gameplay, roblox">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Game Mechanics - Grow a Garden Guides">
+    <meta property="og:description" content="Deep dive into game mechanics, mutations, special events, and advanced gameplay features.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://growagarden.cv/game-mechanics.html">
+    <meta property="og:image" content="https://growagarden.cv/game-mechanics-og.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Game Mechanics - Grow a Garden Guides">
+    <meta name="twitter:description" content="Deep dive into game mechanics, mutations, special events, and advanced gameplay features.">
+    <meta name="twitter:image" content="https://growagarden.cv/game-mechanics-og.jpg">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "Game Mechanics Guide",
+      "description": "Deep dive into game mechanics, mutations, special events, and advanced gameplay features in Grow a Garden",
+      "image": "https://growagarden.cv/game-mechanics-og.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "Grow a Garden Community"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Grow a Garden",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://growagarden.cv/logo.png"
+        }
+      },
+      "mainEntity": {
+        "@type": "HowTo",
+        "name": "Understanding Game Mechanics",
+        "description": "Complete guide to game mechanics, mutations, special events, and advanced gameplay features",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Basic Game Mechanics",
+            "text": "Learn the fundamental game mechanics including farming, crafting, and progression systems"
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Mutation System",
+            "text": "Master the mutation system for creating unique and valuable crops"
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Special Events",
+            "text": "Participate in special events for exclusive rewards and opportunities"
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Advanced Features",
+            "text": "Explore advanced gameplay features and optimization techniques"
+          }
+        ]
+      }
+    }
+    </script>
+    
+    <!-- Roblox-like color scheme -->
+    <link rel="stylesheet" href="https://unpkg.com/simple.css@2.1.0/simple.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
+    
+    <style>
+        body {
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .bg-blur {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: 0;
+            background: url('grow-bg.jpg') center center/cover no-repeat;
+            opacity: 0.3;
+            filter: blur(2px);
+        }
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+        .mechanics-hero {
+            background: linear-gradient(135deg, #9c27b0, #673ab7);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-top: 60px;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        .mechanics-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        .mechanics-hero h1,
+        .mechanics-hero p {
+            position: relative;
+            z-index: 2;
+        }
+        .mechanics-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: white !important;
+            text-shadow: 
+                0 2px 4px rgba(0,0,0,0.7),
+                0 1px 2px rgba(0,0,0,0.8);
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            -webkit-text-stroke: 0.5px rgba(0,0,0,0.2);
+        }
+        .mechanics-hero p {
+            font-size: 1.2rem;
+            opacity: 1;
+            color: white !important;
+            text-shadow: 
+                0 1px 3px rgba(0,0,0,0.6),
+                0 1px 2px rgba(0,0,0,0.7);
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            -webkit-text-stroke: 0.3px rgba(0,0,0,0.15);
+        }
+        .guide-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .guide-card {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .guide-card h2 {
+            color: #23272a !important;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+        .guide-card h3 {
+            color: #2c3e50 !important;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .guide-card p, .guide-card li {
+            color: #34495e !important;
+            line-height: 1.6;
+            margin-bottom: 0.8rem;
+        }
+        .guide-card ul, .guide-card ol {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+        .guide-card li {
+            margin-bottom: 0.5rem;
+        }
+        .ingredient-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .ingredient-item {
+            background: linear-gradient(135deg, #f3e5f5, #e1bee7);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 15px rgba(156, 39, 176, 0.2);
+            border: 2px solid #ce93d8;
+        }
+        .ingredient-item h4 {
+            color: #7b1fa2 !important;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+        .ingredient-item p {
+            color: #4a148c !important;
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+            text-align: center;
+        }
+        .recipe-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .recipe-table th {
+            background: linear-gradient(135deg, #9c27b0, #673ab7);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+        .recipe-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .recipe-table tr:nth-child(even) td {
+            background: rgba(156, 39, 176, 0.08);
+        }
+        .tip-box {
+            background: linear-gradient(135deg, #f1c40f, #f39c12);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            box-shadow: 0 4px 15px rgba(241, 196, 15, 0.3);
+        }
+        .tip-box strong {
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+            font-weight: 700;
+        }
+        .warning-box {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+        }
+        .warning-box strong {
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+            font-weight: 700;
+        }
+        .back-btn {
+            display: inline-block;
+            background: #5865f2;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+        .back-btn:hover {
+            background: #4752c4;
+            transform: translateY(-2px);
+        }
+        .mechanics-tips {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .tip-card {
+            background: linear-gradient(135deg, #f3e5f5, #e1bee7);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 6px 20px rgba(156, 39, 176, 0.2);
+            border: 2px solid #ce93d8;
+        }
+        .tip-card h4 {
+            color: #7b1fa2 !important;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .tip-card ul {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+        .tip-card li {
+            color: #4a148c !important;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* 面包屑导航样式 */
+        .breadcrumb-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+        }
+        .breadcrumb {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .breadcrumb ol {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .breadcrumb li {
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            color: #34495e;
+        }
+        .breadcrumb li:not(:last-child)::after {
+            content: "›";
+            margin: 0 0.5rem;
+            color: #9c27b0;
+            font-weight: bold;
+        }
+        .breadcrumb a {
+            color: #9c27b0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .breadcrumb a:hover {
+            color: #7b1fa2;
+            text-decoration: underline;
+        }
+        .breadcrumb li[aria-current="page"] {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+    </style>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HG12TJB5LZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HG12TJB5LZ');
+    </script>
+</head>
+<body>
+    <div class="bg-blur"></div>
+    <header>
+        <nav>
+            <a href="#" class="logo" data-i18n="nav.logo">🌱 Grow a Garden</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('stats')" data-i18n="nav.live">Live Stats</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('map')" data-i18n="nav.map">Global Heatmap</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('tips')" data-i18n="nav.tips">Tips</a>
+            <a href="guides.html" data-i18n="nav.guides">📚 Guides</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('online')" data-i18n="nav.online">🎮 Online</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('community')" class="discord-btn" data-i18n="nav.discord">💬 Discord</a>
+            <div class="flag-language-switcher">
+    <div class="current-flag" id="current-flag">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNDgwIj4KICAgICAgICAgICAgPGRlZnM+PGNsaXBQYXRoIGlkPSJhIj48cGF0aCBkPSJNLTg1LjMgMGg2ODIuNnY1MTJILTg1LjN6Ii8+PC9jbGlwUGF0aD48L2RlZnM+CiAgICAgICAgICAgIDxjbGlwUGF0aCBpZD0iYiI+PHVzZSBocmVmPSIjYSIvPjwvY2xpcFBhdGg+CiAgICAgICAgICAgIDxnIGNsaXAtcGF0aD0idXJsKCNiKSIgdHJhbnNmb3JtPSJzY2FsZSguOTM3NSkiPgogICAgICAgICAgICAgICAgPGcgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2Utd2lkdGg9IjFwdCI+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2NTEySC0yNTZ6IiBmaWxsPSIjYmQzZDQ0Ii8+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAxMDIuNEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAyMDQuOEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAzMDcuMkg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiA0MDkuNkg3NjhWNTEySC0yNTZ6IiBmaWxsPSIjZmZmIi8+CiAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICA8ZyBmaWxsPSIjMTkyZjVkIj4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAwdjUxMmwyNTYtMjU2eiIvPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9zdmc+" 
+         alt="en Flag">
+    </div>
+    <div class="flag-dropdown" id="flag-dropdown">
+        <div class="flag-option" data-lang="en" title="English">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNDgwIj4KICAgICAgICAgICAgPGRlZnM+PGNsaXBQYXRoIGlkPSJhIj48cGF0aCBkPSJNLTg1LjMgMGg2ODIuNnY1MTJILTg1LjN6Ii8+PC9jbGlwUGF0aD48L2RlZnM+CiAgICAgICAgICAgIDxjbGlwUGF0aCBpZD0iYiI+PHVzZSBocmVmPSIjYSIvPjwvY2xpcFBhdGg+CiAgICAgICAgICAgIDxnIGNsaXAtcGF0aD0idXJsKCNiKSIgdHJhbnNmb3JtPSJzY2FsZSguOTM3NSkiPgogICAgICAgICAgICAgICAgPGcgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2Utd2lkdGg9IjFwdCI+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2NTEySC0yNTZ6IiBmaWxsPSIjYmQzZDQ0Ii8+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAxMDIuNEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAyMDQuOEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAzMDcuMkg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiA0MDkuNkg3NjhWNTEySC0yNTZ6IiBmaWxsPSIjZmZmIi8+CiAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICA8ZyBmaWxsPSIjMTkyZjVkIj4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAwdjUxMmwyNTYtMjU2eiIvPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9zdmc+" 
+         alt="en Flag">
+            <span class="flag-name">English</span>
+        </div>
+        <div class="flag-option" data-lang="zh-cn" title="简体中文">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNkZTI5MTAiLz4KICAgICAgICAgICAgPGcgZmlsbD0iI2ZmZGUwMCI+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNNDUwIDEyMGwtNDUuNyAxNDAuNy0xMTkuMyAwaDE1NGwtMTE5LjMgMHoiLz4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik00NTAgMzAwbC00NS43IDE0MC43LTExOS4zIDBoMTU0bC0xMTkuMyAweiIvPgogICAgICAgICAgICAgICAgPHBhdGggZD0iTTQ1MCA0ODBsLTQ1LjcgMTQwLjctMTE5LjMgMGgxNTRsLTExOS4zIDB6Ii8+CiAgICAgICAgICAgIDwvZz4KICAgICAgICA8L3N2Zz4=" 
+         alt="zh-cn Flag">
+            <span class="flag-name">简体中文</span>
+        </div>
+        <div class="flag-option" data-lang="es" title="Español">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3NTAgNTAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9Ijc1MCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiNjNjBiMWUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9Ijc1MCIgaGVpZ2h0PSIyNTAiIHk9IjEyNSIgZmlsbD0iI2ZmYzQwMCIvPgogICAgICAgIDwvc3ZnPg==" 
+         alt="es Flag">
+            <span class="flag-name">Español</span>
+        </div>
+        <div class="flag-option" data-lang="pt-br" title="Português">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3MjAgNTA0Ij4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjcyMCIgaGVpZ2h0PSI1MDQiIGZpbGw9IiMwMDliM2EiLz4KICAgICAgICAgICAgPHBhdGggZD0iTTM2MCAyNTJsLTE4MC0xMjZ2MjUyeiIgZmlsbD0iI2ZlZGYwMCIvPgogICAgICAgICAgICA8Y2lyY2xlIGN4PSIzNjAiIGN5PSIyNTIiIHI9IjYwIiBmaWxsPSIjMDAyNzc2Ii8+CiAgICAgICAgPC9zdmc+" 
+         alt="pt-br Flag">
+            <span class="flag-name">Português</span>
+        </div>
+        <div class="flag-option" data-lang="fr" title="Français">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiMwMDIzOTUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSI2MDAiIHg9IjMwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjYwMCIgeD0iNjAwIiBmaWxsPSIjZWQyOTM5Ii8+CiAgICAgICAgPC9zdmc+" 
+         alt="fr Flag">
+            <span class="flag-name">Français</span>
+        </div>
+        <div class="flag-option" data-lang="de" title="Deutsch">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiMwMDAiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iI2RkMDAwMCIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjZmZjZTAwIi8+CiAgICAgICAgPC9zdmc+" 
+         alt="de Flag">
+            <span class="flag-name">Deutsch</span>
+        </div>
+        <div class="flag-option" data-lang="ru" title="Русский">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iIzAwMzlhNiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjZDUyYjFlIi8+CiAgICAgICAgPC9zdmc+" 
+         alt="ru Flag">
+            <span class="flag-name">Русский</span>
+        </div>
+        <div class="flag-option" data-lang="ar" title="العربية">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiMwMDZjMzUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI0MDAiIHk9IjEwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iMjAwIiBmaWxsPSIjY2UxMTI2Ii8+CiAgICAgICAgPC9zdmc+" 
+         alt="ar Flag">
+            <span class="flag-name">العربية</span>
+        </div>
+        <div class="flag-option" data-lang="hi" title="हिन्दी">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNmZjk5MzMiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjMTM4ODA4Ii8+CiAgICAgICAgICAgIDxjaXJjbGUgY3g9IjQ1MCIgY3k9IjMwMCIgcj0iNjAiIGZpbGw9IiMwMDAwODAiLz4KICAgICAgICA8L3N2Zz4=" 
+         alt="hi Flag">
+            <span class="flag-name">हिन्दी</span>
+        </div>
+        <div class="flag-option" data-lang="id" title="Bahasa Indonesia">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIzMDAiIHk9IjMwMCIgZmlsbD0iI2NlMTEyNiIvPgogICAgICAgIDwvc3ZnPg==" 
+         alt="id Flag">
+            <span class="flag-name">Bahasa Indonesia</span>
+        </div>
+        <div class="flag-option" data-lang="vi" title="Tiếng Việt">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNkYTI1MWQiLz4KICAgICAgICAgICAgPHBhdGggZD0iTTQ1MCAzMDBsLTE4MC0xMjZ2MjUyeiIgZmlsbD0iI2ZmZmYwMCIvPgogICAgICAgIDwvc3ZnPg==" 
+         alt="vi Flag">
+            <span class="flag-name">Tiếng Việt</span>
+        </div>
+        <div class="flag-option" data-lang="ja" title="日本語">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPGNpcmNsZSBjeD0iNDUwIiBjeT0iMzAwIiByPSIxODAiIGZpbGw9IiNiYzAwMmQiLz4KICAgICAgICA8L3N2Zz4=" 
+         alt="ja Flag">
+            <span class="flag-name">日本語</span>
+        </div>
+    </div>
+</div>
+        </nav>
+    </header>
+    
+    <section class="mechanics-hero">
+        <h1>🎮 Game Mechanics in Grow a Garden</h1>
+        <p>Complete Guide: Deep Dive into Advanced Gameplay Features</p>
+    </section>
+    
+    <!-- 面包屑导航 -->
+    <div class="breadcrumb-container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+                <li><a href="index.html">🏠 Home</a></li>
+                <li><a href="guides.html">📚 Guides</a></li>
+                <li aria-current="page">🎮 Game Mechanics</li>
+            </ol>
+        </nav>
+    </div>
+    
+    <div class="guide-section">
+        <div class="guide-card">
+            <h2>📋 Table of Contents</h2>
+            <ul>
+                <li><a href="#basics">Basic Game Mechanics</a></li>
+                <li><a href="#progression">Progression System</a></li>
+                <li><a href="#mutations">Mutation System</a></li>
+                <li><a href="#events">Special Events</a></li>
+                <li><a href="#advanced">Advanced Features</a></li>
+                <li><a href="#optimization">Optimization Techniques</a></li>
+                <li><a href="#tips">Advanced Tips & Tricks</a></li>
+                <li><a href="#faq">Frequently Asked Questions</a></li>
+            </ul>
+        </div>
+        
+        <div class="guide-card" id="basics">
+            <h2>🎮 Basic Game Mechanics</h2>
+            <p>Understanding the core game mechanics is essential for mastering Grow a Garden. This guide covers all fundamental systems and how they interact.</p>
+            
+            <h3>Core Game Systems:</h3>
+            <ol>
+                <li><strong>Farming System:</strong> Plant, water, and harvest crops for resources</li>
+                <li><strong>Crafting System:</strong> Combine ingredients to create valuable items</li>
+                <li><strong>Economy System:</strong> Buy, sell, and trade items for profit</li>
+                <li><strong>Progression System:</strong> Level up and unlock new features</li>
+                <li><strong>Social System:</strong> Interact with other players and join communities</li>
+            </ol>
+            
+            <div class="tip-box">
+                <strong>💡 Pro Tip:</strong> Focus on mastering one system at a time before combining them for maximum efficiency!
+            </div>
+        </div>
+        
+        <div class="guide-card" id="progression">
+            <h2>📈 Progression System</h2>
+            <p>The progression system in Grow a Garden is designed to provide long-term goals and continuous advancement opportunities.</p>
+            
+            <h3>Level Progression</h3>
+            <div class="mechanics-tips">
+                <div class="tip-card">
+                    <h4>🌱 Beginner Levels (1-10)</h4>
+                    <ul>
+                        <li>Unlock basic farming tools</li>
+                        <li>Learn fundamental mechanics</li>
+                        <li>Access starter seeds</li>
+                        <li>Join beginner communities</li>
+                    </ul>
+                </div>
+                <div class="tip-card">
+                    <h4>🌿 Intermediate Levels (11-25)</h4>
+                    <ul>
+                        <li>Advanced farming techniques</li>
+                        <li>Mutation system access</li>
+                        <li>Special event participation</li>
+                        <li>Community leadership roles</li>
+                    </ul>
+                </div>
+                <div class="tip-card">
+                    <h4>🌳 Expert Levels (26+)</h4>
+                    <ul>
+                        <li>Master-level strategies</li>
+                        <li>Rare mutation creation</li>
+                        <li>Event hosting capabilities</li>
+                        <li>Mentorship opportunities</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="guide-card" id="mutations">
+            <h2>🧬 Mutation System</h2>
+            <p>The mutation system is one of the most complex and rewarding mechanics in Grow a Garden. Understanding how mutations work is crucial for advanced gameplay.</p>
+            
+            <h3>Mutation Basics</h3>
+            <ul>
+                <li><strong>Natural Mutations:</strong> Random mutations that occur during growth</li>
+                <li><strong>Induced Mutations:</strong> Mutations created through specific combinations</li>
+                <li><strong>Mutation Rarity:</strong> Common, Uncommon, Rare, Epic, Legendary</li>
+                <li><strong>Mutation Effects:</strong> Growth speed, yield, value, and special properties</li>
+            </ul>
+            
+            <h3>Mutation Creation Process</h3>
+            <ol>
+                <li><strong>Select Parent Crops:</strong> Choose compatible crops for mutation</li>
+                <li><strong>Apply Mutation Items:</strong> Use special items to increase mutation chance</li>
+                <li><strong>Monitor Growth:</strong> Watch for mutation indicators during growth</li>
+                <li><strong>Harvest Results:</strong> Collect mutated crops and analyze results</li>
+                <li><strong>Document Patterns:</strong> Record successful mutation combinations</li>
+            </ol>
+            
+            <div class="warning-box">
+                <strong>⚠️ Important:</strong> Mutations are not guaranteed and may require multiple attempts. Patience and experimentation are key!
+            </div>
+        </div>
+        
+        <div class="guide-card" id="events">
+            <h2>🎉 Special Events</h2>
+            <p>Special events provide unique opportunities for rare rewards and exclusive content. Understanding event mechanics is essential for maximizing your gains.</p>
+            
+            <h3>Event Types</h3>
+            <div class="mechanics-tips">
+                <div class="tip-card">
+                    <h4>🌾 Farming Events</h4>
+                    <ul>
+                        <li>Increased crop yields</li>
+                        <li>Rare seed availability</li>
+                        <li>Special farming tools</li>
+                        <li>Community challenges</li>
+                    </ul>
+                </div>
+                <div class="tip-card">
+                    <h4>🎨 Crafting Events</h4>
+                    <ul>
+                        <li>Exclusive recipes</li>
+                        <li>Enhanced crafting efficiency</li>
+                        <li>Special ingredients</li>
+                        <li>Competition rewards</li>
+                    </ul>
+                </div>
+                <div class="tip-card">
+                    <h4>💰 Economic Events</h4>
+                    <ul>
+                        <li>Market fluctuations</li>
+                        <li>Investment opportunities</li>
+                        <li>Trading bonuses</li>
+                        <li>Profit multipliers</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="guide-card" id="advanced">
+            <h2>🚀 Advanced Features</h2>
+            <p>Advanced features unlock new gameplay possibilities and optimization opportunities for experienced players.</p>
+            
+            <h3>Advanced Mechanics</h3>
+            <ul>
+                <li><strong>Automation Systems:</strong> Set up automated farming and crafting processes</li>
+                <li><strong>Advanced Analytics:</strong> Detailed statistics and performance tracking</li>
+                <li><strong>Community Features:</strong> Guilds, trading networks, and collaborative projects</li>
+                <li><strong>Customization Options:</strong> Personalize your farming experience</li>
+                <li><strong>Competitive Features:</strong> Leaderboards, tournaments, and challenges</li>
+            </ul>
+            
+            <h3>Optimization Strategies</h3>
+            <ol>
+                <li><strong>Time Management:</strong> Optimize your daily routine for maximum efficiency</li>
+                <li><strong>Resource Allocation:</strong> Balance your resources across different activities</li>
+                <li><strong>Market Timing:</strong> Buy low and sell high for maximum profits</li>
+                <li><strong>Community Collaboration:</strong> Work with others for mutual benefits</li>
+                <li><strong>Continuous Learning:</strong> Stay updated with new features and strategies</li>
+            </ol>
+        </div>
+        
+        <div class="guide-card" id="optimization">
+            <h2>⚡ Optimization Techniques</h2>
+            <p>Mastering optimization techniques can dramatically improve your gameplay efficiency and success rate.</p>
+            
+            <h3>Efficiency Strategies</h3>
+            <div class="mechanics-tips">
+                <div class="tip-card">
+                    <h4>⏰ Time Optimization</h4>
+                    <ul>
+                        <li>Schedule farming activities</li>
+                        <li>Use golden hours effectively</li>
+                        <li>Plan event participation</li>
+                        <li>Optimize daily routines</li>
+                    </ul>
+                </div>
+                <div class="tip-card">
+                    <h4>💰 Resource Optimization</h4>
+                    <ul>
+                        <li>Balance investment vs. profit</li>
+                        <li>Diversify crop selection</li>
+                        <li>Optimize storage space</li>
+                        <li>Manage energy efficiently</li>
+                    </ul>
+                </div>
+                <div class="tip-card">
+                    <h4>🎯 Goal Optimization</h4>
+                    <ul>
+                        <li>Set clear objectives</li>
+                        <li>Track progress regularly</li>
+                        <li>Adjust strategies as needed</li>
+                        <li>Celebrate achievements</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="guide-card" id="tips">
+            <h2>💡 Advanced Tips & Tricks</h2>
+            <p>These advanced tips and tricks will help you master the game mechanics and achieve optimal results.</p>
+            
+            <h3>Pro Tips</h3>
+            <ul>
+                <li><strong>Experiment Constantly:</strong> Try new combinations and strategies regularly</li>
+                <li><strong>Document Everything:</strong> Keep records of successful strategies and mutations</li>
+                <li><strong>Network Actively:</strong> Connect with other experienced players</li>
+                <li><strong>Stay Updated:</strong> Follow game updates and community discussions</li>
+                <li><strong>Think Long-term:</strong> Plan for future updates and new features</li>
+            </ul>
+            
+            <h3>Common Mistakes to Avoid</h3>
+            <ol>
+                <li><strong>Over-investing:</strong> Don't put all your resources in one strategy</li>
+                <li><strong>Ignoring Community:</strong> The community is a valuable resource</li>
+                <li><strong>Rushing Progression:</strong> Take time to master each level</li>
+                <li><strong>Neglecting Events:</strong> Events provide unique opportunities</li>
+                <li><strong>Poor Documentation:</strong> Keep track of what works and what doesn't</li>
+            </ol>
+        </div>
+        
+        <div class="guide-card" id="faq">
+            <h2>❓ Frequently Asked Questions</h2>
+            
+            <h3>General Questions</h3>
+            <div class="mechanics-tips">
+                <div class="tip-card">
+                    <h4>Q: How do mutations work?</h4>
+                    <p>A: Mutations occur when specific crops are combined under certain conditions. The chance of mutation increases with special items and optimal growing conditions.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>Q: What's the best way to level up quickly?</h4>
+                    <p>A: Focus on completing daily tasks, participating in events, and mastering efficient farming techniques. Quality over quantity is key.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>Q: How often do special events occur?</h4>
+                    <p>A: Events typically occur weekly, with major events happening monthly. Follow the game's social media for announcements.</p>
+                </div>
+            </div>
+            
+            <h3>Advanced Questions</h3>
+            <div class="mechanics-tips">
+                <div class="tip-card">
+                    <h4>Q: Can I automate my farming?</h4>
+                    <p>A: Yes, advanced players can set up automation systems, but they require significant investment and understanding of game mechanics.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>Q: What's the most profitable strategy?</h4>
+                    <p>A: The most profitable strategy varies based on market conditions, your level, and available resources. Diversification is usually the safest approach.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>Q: How do I join a guild?</h4>
+                    <p>A: Guilds are available to intermediate players and above. Look for recruitment posts in the community or create your own guild.</p>
+                </div>
+            </div>
+        </div>
+        
+        <a href="guides.html" class="back-btn">← Back to Guides</a>
+    </div>
+
+    <script src="flag-switcher.js"></script></body>
+</html> 

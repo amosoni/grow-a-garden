@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seed Selection Guide in Grow a Garden - Complete Guide | Grow a Garden Tips</title>
+    <meta name="description" content="Choose the right seeds for your farming strategy in Roblox Grow a Garden! Compare growth times, yields, and profit potential for maximum success.">
+    <meta name="keywords" content="seed selection grow a garden, roblox farming guide, grow a garden seed tips, roblox farming game, crop selection, grow a garden tips">
+    <link rel="canonical" href="https://your-domain.com/seed-selection.html">
+    
+    <!-- Open Graph for social sharing -->
+    <meta property="og:title" content="Seed Selection Guide in Grow a Garden - Complete Guide">
+    <meta property="og:description" content="Choose the right seeds for your farming strategy in Roblox Grow a Garden! Compare growth times, yields, and profit potential.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://your-domain.com/seed-selection.html">
+    <meta property="og:image" content="https://your-domain.com/seed-selection-og.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Seed Selection Guide in Grow a Garden - Complete Guide">
+    <meta name="twitter:description" content="Choose the right seeds for your farming strategy in Roblox Grow a Garden! Compare growth times, yields, and profit potential.">
+    <meta name="twitter:image" content="https://your-domain.com/seed-selection-og.jpg">
+    
+    <!-- Structured Data JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "Seed Selection Guide in Grow a Garden",
+      "description": "Choose the right seeds for your farming strategy in Roblox Grow a Garden, including growth time comparison, yield analysis, and profit optimization.",
+      "image": "https://your-domain.com/seed-selection-og.jpg",
+      "url": "https://your-domain.com/seed-selection.html",
+      "inLanguage": "en",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Analyze Requirements",
+          "text": "Assess your farming goals, available space, and market demands"
+        },
+        {
+          "@type": "HowToStep", 
+          "name": "Compare Seeds",
+          "text": "Compare growth times, yields, and profit potential of different seeds"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Make Selection",
+          "text": "Choose seeds that best match your strategy and resources"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Roblox-like color scheme -->
+    <link rel="stylesheet" href="https://unpkg.com/simple.css@2.1.0/simple.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌾</text></svg>">
+    
+    <style>
+        body {
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .bg-blur {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: 0;
+            background: url('grow-bg.jpg') center center/cover no-repeat;
+            opacity: 0.3;
+            filter: blur(2px);
+            pointer-events: none;
+        }
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+        .seed-hero {
+            background: linear-gradient(135deg, #795548, #5d4037);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-top: 60px;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        .seed-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        .seed-hero h1,
+        .seed-hero p {
+            position: relative;
+            z-index: 2;
+        }
+        .seed-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: white !important;
+            text-shadow: 
+                0 2px 4px rgba(0,0,0,0.7),
+                0 1px 2px rgba(0,0,0,0.8);
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            -webkit-text-stroke: 0.5px rgba(0,0,0,0.2);
+        }
+        .seed-hero p {
+            font-size: 1.2rem;
+            opacity: 1;
+            color: white !important;
+            text-shadow: 
+                0 1px 3px rgba(0,0,0,0.6),
+                0 1px 2px rgba(0,0,0,0.7);
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            -webkit-text-stroke: 0.3px rgba(0,0,0,0.15);
+        }
+        .guide-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .guide-card {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .guide-card h2 {
+            color: #23272a !important;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+        .guide-card h3 {
+            color: #2c3e50 !important;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .guide-card p, .guide-card li {
+            color: #34495e !important;
+            font-weight: 500;
+            line-height: 1.6;
+        }
+        .seed-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .seed-item {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 8px;
+            padding: 1rem;
+            border-left: 4px solid #795548;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .seed-item h4 {
+            color: #23272a !important;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .seed-item p {
+            color: #34495e !important;
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+        }
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+        }
+        .info-table th,
+        .info-table td {
+            border: 1px solid #ddd;
+            padding: 0.75rem;
+            text-align: left;
+            font-weight: 500;
+        }
+        .info-table th {
+            background: #795548;
+            color: white;
+            font-weight: 700;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+        .info-table td {
+            color: #2c3e50 !important;
+            background: rgba(255, 255, 255, 0.9);
+        }
+        .info-table tr:nth-child(even) td {
+            background: rgba(121, 85, 72, 0.08);
+        }
+        .tip-box {
+            background: linear-gradient(135deg, #f1c40f, #f39c12);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            box-shadow: 0 4px 15px rgba(241, 196, 15, 0.3);
+        }
+        .tip-box strong {
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+            font-weight: 700;
+        }
+        .warning-box {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+        }
+        .warning-box strong {
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+            font-weight: 700;
+        }
+        .back-btn {
+            display: inline-block;
+            background: #5865f2;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+        .back-btn:hover {
+            background: #4752c4;
+            transform: translateY(-2px);
+        }
+        .selection-tips {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .tip-card {
+            background: linear-gradient(135deg, #efebe9, #d7ccc8);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 6px 20px rgba(121, 85, 72, 0.2);
+            border: 2px solid #a1887f;
+        }
+        .tip-card h4 {
+            color: #4e342e !important;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .tip-card ul {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+        .tip-card li {
+            color: #3e2723 !important;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* 面包屑导航样式 */
+        .breadcrumb-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+        }
+        .breadcrumb {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .breadcrumb ol {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .breadcrumb li {
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            color: #34495e;
+        }
+        .breadcrumb li:not(:last-child)::after {
+            content: "›";
+            margin: 0 0.5rem;
+            color: #8d6e63;
+            font-weight: bold;
+        }
+        .breadcrumb a {
+            color: #8d6e63;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .breadcrumb a:hover {
+            color: #6d4c41;
+            text-decoration: underline;
+        }
+        .breadcrumb li[aria-current="page"] {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+    </style>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HG12TJB5LZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HG12TJB5LZ');
+    </script>
+</head>
+<body>
+    <div class="bg-blur"></div>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">🌱 Grow a Garden</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('stats')">Live Stats</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('map')">Global Heatmap</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('tips')">Tips</a>
+            <a href="guides.html">📚 Guides</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('community')" class="discord-btn">💬 Discord</a>
+        </nav>
+    </header>
+    
+    <section class="seed-hero">
+        <h1>🌾 Seed Selection Guide in Grow a Garden</h1>
+        <p>Complete Guide: From Growth Times to Profit Potential</p>
+    </section>
+    
+    <!-- 面包屑导航 -->
+    <div class="breadcrumb-container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+                <li><a href="index.html">🏠 Home</a></li>
+                <li><a href="guides.html">📚 Guides</a></li>
+                <li aria-current="page">🌾 Seed Selection</li>
+            </ol>
+        </nav>
+    </div>
+    
+    <div class="guide-section">
+        <div class="guide-card">
+            <h2>📋 Table of Contents</h2>
+            <ul>
+                <li><a href="#basics">Basic Selection Concepts</a></li>
+                <li><a href="#factors">Selection Factors</a></li>
+                <li><a href="#categories">Seed Categories</a></li>
+                <li><a href="#comparison">Seed Comparison</a></li>
+                <li><a href="#strategies">Selection Strategies</a></li>
+                <li><a href="#optimization">Profit Optimization</a></li>
+                <li><a href="#tips">Selection Tips & Tricks</a></li>
+                <li><a href="#efficiency">Efficiency Improvement Methods</a></li>
+                <li><a href="#faq">Frequently Asked Questions</a></li>
+            </ul>
+        </div>
+        
+        <div class="guide-card" id="basics">
+            <h2>🌾 Basic Selection Concepts</h2>
+            <p>Choosing the right seeds is crucial for farming success in Grow a Garden. Understanding seed characteristics and your farming goals will help you make optimal selections.</p>
+            
+            <h3>Core Selection Principles:</h3>
+            <ol>
+                <li><strong>Goal Alignment:</strong> Choose seeds that match your farming objectives</li>
+                <li><strong>Resource Consideration:</strong> Select seeds based on available space and time</li>
+                <li><strong>Market Demand:</strong> Focus on seeds with high market value</li>
+                <li><strong>Growth Efficiency:</strong> Consider growth time vs. profit potential</li>
+                <li><strong>Risk Management:</strong> Diversify seed selection to reduce risk</li>
+            </ol>
+            
+            <div class="tip-box">
+                <strong>💡 Pro Tip:</strong> Start with fast-growing seeds to build your farming foundation, then gradually add high-value crops!
+            </div>
+        </div>
+        
+        <div class="guide-card" id="factors">
+            <h2>📊 Selection Factors</h2>
+            <p>Multiple factors influence seed selection. Understanding these will help you make informed decisions.</p>
+            
+            <h3>Key Selection Factors</h3>
+            <div class="seed-grid">
+                <div class="seed-item">
+                    <h4>⏰ Growth Time</h4>
+                    <p>How long until harvest</p>
+                    <p>Affects profit cycles</p>
+                    <p>Risk vs. reward balance</p>
+                </div>
+                <div class="seed-item">
+                    <h4>💰 Market Value</h4>
+                    <p>Profit per harvest</p>
+                    <p>Market demand level</p>
+                    <p>Price stability</p>
+                </div>
+                <div class="seed-item">
+                    <h4>🌱 Growth Requirements</h4>
+                    <p>Water needs</p>
+                    <p>Soil quality needs</p>
+                    <p>Space requirements</p>
+                </div>
+                <div class="seed-item">
+                    <h4>🎯 Difficulty Level</h4>
+                    <p>Skill requirements</p>
+                    <p>Success rate</p>
+                    <p>Learning curve</p>
+                </div>
+            </div>
+            
+            <h3>Additional Considerations</h3>
+            <ul>
+                <li><strong>Seasonal Factors:</strong> Some seeds perform better in certain seasons</li>
+                <li><strong>Space Efficiency:</strong> How much yield per plot area</li>
+                <li><strong>Water Efficiency:</strong> Water requirements vs. yield</li>
+                <li><strong>Disease Resistance:</strong> How well seeds resist common diseases</li>
+            </ul>
+        </div>
+        
+        <div class="guide-card" id="categories">
+            <h2>🌿 Seed Categories</h2>
+            <p>Understanding seed categories helps you make strategic selections based on your farming goals.</p>
+            
+            <h3>Seed Categories by Growth Time</h3>
+            <table class="info-table">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Growth Time</th>
+                        <th>Examples</th>
+                        <th>Best For</th>
+                        <th>Risk Level</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Quick Crops</td>
+                        <td>20-60 minutes</td>
+                        <td>Herbs, Lettuce, Radish</td>
+                        <td>Beginners, Quick profit</td>
+                        <td>Low</td>
+                    </tr>
+                    <tr>
+                        <td>Medium Crops</td>
+                        <td>60-120 minutes</td>
+                        <td>Tomatoes, Carrots, Wheat</td>
+                        <td>Balanced farming</td>
+                        <td>Medium</td>
+                    </tr>
+                    <tr>
+                        <td>Long Crops</td>
+                        <td>120-240 minutes</td>
+                        <td>Fruit Trees, Rare Crops</td>
+                        <td>High profit, Advanced</td>
+                        <td>High</td>
+                    </tr>
+                    <tr>
+                        <td>Premium Crops</td>
+                        <td>240+ minutes</td>
+                        <td>Exotic Fruits, Magic Crops</td>
+                        <td>Maximum profit, Expert</td>
+                        <td>Very High</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Seed Categories by Profit Potential</h3>
+            <div class="selection-tips">
+                <div class="tip-card">
+                    <h4>💰 High-Value Seeds</h4>
+                    <ul>
+                        <li>Rare and exotic crops</li>
+                        <li>High market demand</li>
+                        <li>Premium prices</li>
+                        <li>Longer growth times</li>
+                    </ul>
+                </div>
+                
+                <div class="tip-card">
+                    <h4>⚡ Fast-Profit Seeds</h4>
+                    <ul>
+                        <li>Quick growing crops</li>
+                        <li>Frequent harvests</li>
+                        <li>Steady income</li>
+                        <li>Lower risk</li>
+                    </ul>
+                </div>
+                
+                <div class="tip-card">
+                    <h4>🎯 Balanced Seeds</h4>
+                    <ul>
+                        <li>Medium growth time</li>
+                        <li>Good profit margins</li>
+                        <li>Moderate risk</li>
+                        <li>Versatile use</li>
+                    </ul>
+                </div>
+                
+                <div class="tip-card">
+                    <h4>🌱 Foundation Seeds</h4>
+                    <ul>
+                        <li>Basic crops</li>
+                        <li>Recipe ingredients</li>
+                        <li>Stable demand</li>
+                        <li>Learning crops</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="guide-card" id="comparison">
+            <h2>📈 Seed Comparison</h2>
+            <p>Compare different seeds to make informed selection decisions.</p>
+            
+            <h3>Popular Seed Comparison</h3>
+            <table class="info-table">
+                <thead>
+                    <tr>
+                        <th>Seed Name</th>
+                        <th>Growth Time</th>
+                        <th>Market Value</th>
+                        <th>Difficulty</th>
+                        <th>Profit/Hour</th>
+                        <th>Best Use</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>🌿 Basil</td>
+                        <td>30 min</td>
+                        <td>25 coins</td>
+                        <td>Easy</td>
+                        <td>50 coins/hr</td>
+                        <td>Quick profit</td>
+                    </tr>
+                    <tr>
+                        <td>🍅 Tomato</td>
+                        <td>90 min</td>
+                        <td>80 coins</td>
+                        <td>Easy</td>
+                        <td>53 coins/hr</td>
+                        <td>Balanced farming</td>
+                    </tr>
+                    <tr>
+                        <td>🍓 Strawberry</td>
+                        <td>75 min</td>
+                        <td>120 coins</td>
+                        <td>Medium</td>
+                        <td>96 coins/hr</td>
+                        <td>High profit</td>
+                    </tr>
+                    <tr>
+                        <td>🍄 Mushroom</td>
+                        <td>150 min</td>
+                        <td>200 coins</td>
+                        <td>Hard</td>
+                        <td>80 coins/hr</td>
+                        <td>Premium crop</td>
+                    </tr>
+                    <tr>
+                        <td>🌰 Vanilla Bean</td>
+                        <td>180 min</td>
+                        <td>300 coins</td>
+                        <td>Expert</td>
+                        <td>100 coins/hr</td>
+                        <td>Maximum profit</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Selection Matrix</h3>
+            <table class="info-table">
+                <thead>
+                    <tr>
+                        <th>Strategy</th>
+                        <th>Recommended Seeds</th>
+                        <th>Growth Time</th>
+                        <th>Risk Level</th>
+                        <th>Expected ROI</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Beginner</td>
+                        <td>Basil, Lettuce, Wheat</td>
+                        <td>20-60 min</td>
+                        <td>Low</td>
+                        <td>40-60 coins/hr</td>
+                    </tr>
+                    <tr>
+                        <td>Intermediate</td>
+                        <td>Tomato, Carrot, Strawberry</td>
+                        <td>60-120 min</td>
+                        <td>Medium</td>
+                        <td>60-100 coins/hr</td>
+                    </tr>
+                    <tr>
+                        <td>Advanced</td>
+                        <td>Mushroom, Orange, Rare Herbs</td>
+                        <td>120-180 min</td>
+                        <td>High</td>
+                        <td>80-120 coins/hr</td>
+                    </tr>
+                    <tr>
+                        <td>Expert</td>
+                        <td>Vanilla Bean, Exotic Fruits</td>
+                        <td>180+ min</td>
+                        <td>Very High</td>
+                        <td>100+ coins/hr</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="guide-card" id="strategies">
+            <h2>🎯 Selection Strategies</h2>
+            <p>Different selection strategies work for different farming goals and experience levels.</p>
+            
+            <h3>Strategy Types</h3>
+            <div class="seed-grid">
+                <div class="seed-item">
+                    <h4>🚀 Fast-Profit Strategy</h4>
+                    <p>Focus on quick-growing crops</p>
+                    <p>Frequent harvests</p>
+                    <p>Lower risk, steady income</p>
+                </div>
+                <div class="seed-item">
+                    <h4>💰 High-Value Strategy</h4>
+                    <p>Focus on premium crops</p>
+                    <p>Higher risk, higher reward</p>
+                    <p>Longer investment periods</p>
+                </div>
+                <div class="seed-item">
+                    <h4>⚖️ Balanced Strategy</h4>
+                    <p>Mix of different crop types</p>
+                    <p>Risk diversification</p>
+                    <p>Stable income stream</p>
+                </div>
+                <div class="seed-item">
+                    <h4>🎯 Specialized Strategy</h4>
+                    <p>Focus on specific crop types</p>
+                    <p>Master specific techniques</p>
+                    <p>Optimize for efficiency</p>
+                </div>
+            </div>
+            
+            <h3>Strategy Selection Guide</h3>
+            <ul>
+                <li><strong>Beginner Farmers:</strong> Start with fast-profit strategy to build experience</li>
+                <li><strong>Intermediate Farmers:</strong> Use balanced strategy for steady growth</li>
+                <li><strong>Advanced Farmers:</strong> Implement high-value strategy for maximum profit</li>
+                <li><strong>Expert Farmers:</strong> Develop specialized strategies for niche markets</li>
+            </ul>
+        </div>
+        
+        <div class="guide-card" id="optimization">
+            <h2>💰 Profit Optimization</h2>
+            <p>Optimize your seed selection for maximum profit potential.</p>
+            
+            <h3>Profit Optimization Factors</h3>
+            <ul>
+                <li><strong>Market Timing:</strong> Plant seeds that will be ready during peak demand</li>
+                <li><strong>Efficiency Ratio:</strong> Balance growth time with profit potential</li>
+                <li><strong>Resource Optimization:</strong> Maximize profit per unit of space and time</li>
+                <li><strong>Risk Management:</strong> Diversify to reduce overall risk</li>
+            </ul>
+            
+            <h3>Profit Calculation Methods</h3>
+            <table class="info-table">
+                <thead>
+                    <tr>
+                        <th>Calculation Method</th>
+                        <th>Formula</th>
+                        <th>Best For</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Profit per Hour</td>
+                        <td>Market Value ÷ Growth Time</td>
+                        <td>Efficiency comparison</td>
+                        <td>120 coins ÷ 2 hours = 60 coins/hr</td>
+                    </tr>
+                    <tr>
+                        <td>Profit per Plot</td>
+                        <td>Market Value × Yield per Plot</td>
+                        <td>Space optimization</td>
+                        <td>80 coins × 3 yield = 240 coins</td>
+                    </tr>
+                    <tr>
+                        <td>Risk-Adjusted Return</td>
+                        <td>Expected Profit × Success Rate</td>
+                        <td>Risk assessment</td>
+                        <td>200 coins × 0.8 = 160 coins</td>
+                    </tr>
+                    <tr>
+                        <td>Total ROI</td>
+                        <td>(Profit - Cost) ÷ Cost × 100</td>
+                        <td>Investment analysis</td>
+                        <td>(200-50) ÷ 50 × 100 = 300%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="guide-card" id="tips">
+            <h2>💡 Selection Tips & Tricks</h2>
+            <p>Master these tips to become a seed selection expert in Grow a Garden:</p>
+            
+            <h3>🌱 Basic Tips</h3>
+            <ul>
+                <li><strong>Start Simple:</strong> Begin with easy-to-grow seeds to build confidence</li>
+                <li><strong>Research Markets:</strong> Check market prices before selecting seeds</li>
+                <li><strong>Consider Timing:</strong> Plant seeds that match your available time</li>
+                <li><strong>Track Performance:</strong> Monitor which seeds perform best for you</li>
+            </ul>
+            
+            <h3>⚡ Advanced Tips</h3>
+            <ul>
+                <li><strong>Market Analysis:</strong> Study market trends to predict demand</li>
+                <li><strong>Efficiency Optimization:</strong> Focus on seeds with best profit/time ratios</li>
+                <li><strong>Risk Diversification:</strong> Plant a mix of different seed types</li>
+                <li><strong>Skill Development:</strong> Gradually work with more challenging seeds</li>
+            </ul>
+            
+            <h3>💰 Profit Tips</h3>
+            <ul>
+                <li><strong>High-Value Focus:</strong> Prioritize seeds with high market value</li>
+                <li><strong>Efficiency First:</strong> Choose seeds with good profit per hour</li>
+                <li><strong>Market Timing:</strong> Plant seeds for peak demand periods</li>
+                <li><strong>Quality Investment:</strong> Invest in premium seeds for better returns</li>
+            </ul>
+            
+            <div class="tip-box">
+                <strong>💡 Pro Tip:</strong> Combine fast-growing seeds with high-value crops for optimal profit efficiency!
+            </div>
+        </div>
+        
+        <div class="guide-card" id="efficiency">
+            <h2>⚡ Efficiency Improvement Methods</h2>
+            <p>Maximize your seed selection efficiency with these advanced strategies:</p>
+            
+            <h3>🏭 Production Optimization</h3>
+            <ul>
+                <li><strong>Batch Planting:</strong> Plant multiple seeds at optimal times</li>
+                <li><strong>Space Optimization:</strong> Maximize yield per plot area</li>
+                <li><strong>Time Management:</strong> Coordinate planting and harvesting schedules</li>
+                <li><strong>Quality Control:</strong> Monitor seed performance and adjust selection</li>
+            </ul>
+            
+            <h3>📊 Advanced Strategies</h3>
+            <ul>
+                <li><strong>Data Analysis:</strong> Track seed performance and market trends</li>
+                <li><strong>Predictive Planning:</strong> Plan seed selection based on forecasts</li>
+                <li><strong>Resource Management:</strong> Balance seed costs with expected returns</li>
+                <li><strong>Skill Development:</strong> Improve farming skills for better seed success</li>
+            </ul>
+            
+            <div class="warning-box">
+                <strong>⚠️ Important:</strong> Don't focus solely on high-value seeds. Balance risk and reward for sustainable farming success.
+            </div>
+        </div>
+        
+        <div class="guide-card" id="faq">
+            <h2>❓ Frequently Asked Questions</h2>
+            
+            <h3>Q: What's the best seed for beginners?</h3>
+            <p>A: Start with fast-growing seeds like Basil or Lettuce that have short growth times and low risk.</p>
+            
+            <h3>Q: How do I know which seeds are most profitable?</h3>
+            <p>A: Calculate profit per hour (market value ÷ growth time) and focus on seeds with the highest ratios.</p>
+            
+            <h3>Q: Should I focus on one type of seed or diversify?</h3>
+            <p>A: Diversify your seed selection to reduce risk and maintain steady income from different sources.</p>
+            
+            <h3>Q: How do I choose seeds for different seasons?</h3>
+            <p>A: Research which seeds perform best in different seasons and adjust your selection accordingly.</p>
+            
+            <h3>Q: What's the best strategy for maximizing profits?</h3>
+            <p>A: Combine fast-growing seeds for steady income with high-value seeds for premium profits.</p>
+            
+            <h3>Q: How can I improve my seed selection skills?</h3>
+            <p>A: Track your seed performance, study market trends, and gradually experiment with more challenging seeds.</p>
+        </div>
+        
+        <div class="guide-card">
+            <h2>🎯 Next Steps</h2>
+            <p>Now that you've learned the basics of seed selection in Grow a Garden, here are your next steps:</p>
+            
+            <ol>
+                <li><strong>Start Planning:</strong> Create a seed selection strategy for your farm</li>
+                <li><strong>Research Markets:</strong> Study current market prices and trends</li>
+                <li><strong>Experiment Gradually:</strong> Try new seeds while maintaining stable income</li>
+                <li><strong>Join the Community:</strong> Connect with other farmers to share experiences</li>
+                <li><strong>Stay Updated:</strong> Keep up with new seeds and market changes</li>
+            </ol>
+            
+            <div class="tip-box">
+                <strong>💡 Community Tip:</strong> Join our Discord server to connect with other farmers, share seed selection strategies, and get the latest market insights!
+            </div>
+        </div>
+        
+        <a href="guides.html" class="back-btn">← Back to Guides</a>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html> 

@@ -52,7 +52,7 @@
     <!-- Roblox-like color scheme -->
     <link rel="stylesheet" href="https://unpkg.com/simple.css@2.1.0/simple.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥪</text></svg>">
     
     <style>
@@ -327,29 +327,84 @@
     <div class="bg-blur"></div>
     
         <header>
-    <nav>
-      <a href="/index.html" class="logo" data-i18n="nav.logo">🌱 Grow a Garden</a>
-      <a href="/index.html#stats" data-i18n="nav.live">लाइव आंकड़े</a>
-      <a href="/index.html#map" data-i18n="nav.map">वैश्विक हीटमैप</a>
-      <a href="/index.html#tips" data-i18n="nav.tips">सुझाव</a>
-      <a href="/guides.html" data-i18n="nav.guides">📚 गाइड</a>
-      <a href="/index.html#community" class="discord-btn" data-i18n="nav.discord">💬 Discord</a>
-                  <select id="lang-switcher" aria-label="Language">
-                <option value="en" >English</option>
-                <option value="zh-cn" >简体中文</option>
-                <option value="es" >Español</option>
-                <option value="pt-br" >Português</option>
-                <option value="fr" >Français</option>
-                <option value="de" >Deutsch</option>
-                <option value="ru" >Русский</option>
-                <option value="ar" >العربية</option>
-                <option value="hi" selected="">हिन्दी</option>
-                <option value="id" >Bahasa Indonesia</option>
-                <option value="vi" >Tiếng Việt</option>
-                <option value="ja" >日本語</option>
-            </select>
-    </nav>
-  </header>
+        <nav>
+            <a href="index.html" class="logo" data-i18n="nav.logo">🌱 Grow a Garden</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('stats')" data-i18n="nav.live">Live Stats</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('map')" data-i18n="nav.map">Global Heatmap</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('tips')" data-i18n="nav.tips">Tips</a>
+            <a href="guides.html" data-i18n="nav.guides">📚 Guides</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('online')" data-i18n="nav.online">🎮 Online</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('community')" class="discord-btn" data-i18n="nav.discord">💬 Discord</a>
+            <div class="flag-language-switcher">
+    <div class="current-flag" id="current-flag">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNDgwIj4KICAgICAgICAgICAgPGRlZnM+PGNsaXBQYXRoIGlkPSJhIj48cGF0aCBkPSJNLTg1LjMgMGg2ODIuNnY1MTJILTg1LjN6Ii8+PC9jbGlwUGF0aD48L2RlZnM+CiAgICAgICAgICAgIDxjbGlwUGF0aCBpZD0iYiI+PHVzZSBocmVmPSIjYSIvPjwvY2xpcFBhdGg+CiAgICAgICAgICAgIDxnIGNsaXAtcGF0aD0idXJsKCNiKSIgdHJhbnNmb3JtPSJzY2FsZSguOTM3NSkiPgogICAgICAgICAgICAgICAgPGcgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2Utd2lkdGg9IjFwdCI+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2NTEySC0yNTZ6IiBmaWxsPSIjYmQzZDQ0Ii8+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAxMDIuNEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAyMDQuOEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAzMDcuMkg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiA0MDkuNkg3NjhWNTEySC0yNTZ6IiBmaWxsPSIjZmZmIi8+CiAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICA8ZyBmaWxsPSIjMTkyZjVkIj4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAwdjUxMmwyNTYtMjU2eiIvPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9zdmc+" 
+         alt="en Flag">
+    </div>
+    <div class="flag-dropdown" id="flag-dropdown">
+        <div class="flag-option" data-lang="en" title="English">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNDgwIj4KICAgICAgICAgICAgPGRlZnM+PGNsaXBQYXRoIGlkPSJhIj48cGF0aCBkPSJNLTg1LjMgMGg2ODIuNnY1MTJILTg1LjN6Ii8+PC9jbGlwUGF0aD48L2RlZnM+CiAgICAgICAgICAgIDxjbGlwUGF0aCBpZD0iYiI+PHVzZSBocmVmPSIjYSIvPjwvY2xpcFBhdGg+CiAgICAgICAgICAgIDxnIGNsaXAtcGF0aD0idXJsKCNiKSIgdHJhbnNmb3JtPSJzY2FsZSguOTM3NSkiPgogICAgICAgICAgICAgICAgPGcgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2Utd2lkdGg9IjFwdCI+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2NTEySC0yNTZ6IiBmaWxsPSIjYmQzZDQ0Ii8+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAxMDIuNEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAyMDQuOEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAzMDcuMkg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiA0MDkuNkg3NjhWNTEySC0yNTZ6IiBmaWxsPSIjZmZmIi8+CiAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICA8ZyBmaWxsPSIjMTkyZjVkIj4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAwdjUxMmwyNTYtMjU2eiIvPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9zdmc+" 
+         alt="en Flag">
+            <span class="flag-name">English</span>
+        </div>
+        <div class="flag-option" data-lang="zh-cn" title="简体中文">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNkZTI5MTAiLz4KICAgICAgICAgICAgPGcgZmlsbD0iI2ZmZGUwMCI+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNNDUwIDEyMGwtNDUuNyAxNDAuNy0xMTkuMyAwaDE1NGwtMTE5LjMgMHoiLz4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik00NTAgMzAwbC00NS43IDE0MC43LTExOS4zIDBoMTU0bC0xMTkuMyAweiIvPgogICAgICAgICAgICAgICAgPHBhdGggZD0iTTQ1MCA0ODBsLTQ1LjcgMTQwLjctMTE5LjMgMGgxNTRsLTExOS4zIDB6Ii8+CiAgICAgICAgICAgIDwvZz4KICAgICAgICA8L3N2Zz4=" 
+         alt="zh-cn Flag">
+            <span class="flag-name">简体中文</span>
+        </div>
+        <div class="flag-option" data-lang="es" title="Español">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3NTAgNTAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9Ijc1MCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiNjNjBiMWUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9Ijc1MCIgaGVpZ2h0PSIyNTAiIHk9IjEyNSIgZmlsbD0iI2ZmYzQwMCIvPgogICAgICAgIDwvc3ZnPg==" 
+         alt="es Flag">
+            <span class="flag-name">Español</span>
+        </div>
+        <div class="flag-option" data-lang="pt-br" title="Português">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3MjAgNTA0Ij4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjcyMCIgaGVpZ2h0PSI1MDQiIGZpbGw9IiMwMDliM2EiLz4KICAgICAgICAgICAgPHBhdGggZD0iTTM2MCAyNTJsLTE4MC0xMjZ2MjUyeiIgZmlsbD0iI2ZlZGYwMCIvPgogICAgICAgICAgICA8Y2lyY2xlIGN4PSIzNjAiIGN5PSIyNTIiIHI9IjYwIiBmaWxsPSIjMDAyNzc2Ii8+CiAgICAgICAgPC9zdmc+" 
+         alt="pt-br Flag">
+            <span class="flag-name">Português</span>
+        </div>
+        <div class="flag-option" data-lang="fr" title="Français">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiMwMDIzOTUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSI2MDAiIHg9IjMwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjYwMCIgeD0iNjAwIiBmaWxsPSIjZWQyOTM5Ii8+CiAgICAgICAgPC9zdmc+" 
+         alt="fr Flag">
+            <span class="flag-name">Français</span>
+        </div>
+        <div class="flag-option" data-lang="de" title="Deutsch">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiMwMDAiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iI2RkMDAwMCIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjZmZjZTAwIi8+CiAgICAgICAgPC9zdmc+" 
+         alt="de Flag">
+            <span class="flag-name">Deutsch</span>
+        </div>
+        <div class="flag-option" data-lang="ru" title="Русский">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iIzAwMzlhNiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjZDUyYjFlIi8+CiAgICAgICAgPC9zdmc+" 
+         alt="ru Flag">
+            <span class="flag-name">Русский</span>
+        </div>
+        <div class="flag-option" data-lang="ar" title="العربية">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiMwMDZjMzUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI0MDAiIHk9IjEwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iMjAwIiBmaWxsPSIjY2UxMTI2Ii8+CiAgICAgICAgPC9zdmc+" 
+         alt="ar Flag">
+            <span class="flag-name">العربية</span>
+        </div>
+        <div class="flag-option" data-lang="hi" title="हिन्दी">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNmZjk5MzMiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjMTM4ODA4Ii8+CiAgICAgICAgICAgIDxjaXJjbGUgY3g9IjQ1MCIgY3k9IjMwMCIgcj0iNjAiIGZpbGw9IiMwMDAwODAiLz4KICAgICAgICA8L3N2Zz4=" 
+         alt="hi Flag">
+            <span class="flag-name">हिन्दी</span>
+        </div>
+        <div class="flag-option" data-lang="id" title="Bahasa Indonesia">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIzMDAiIHk9IjMwMCIgZmlsbD0iI2NlMTEyNiIvPgogICAgICAgIDwvc3ZnPg==" 
+         alt="id Flag">
+            <span class="flag-name">Bahasa Indonesia</span>
+        </div>
+        <div class="flag-option" data-lang="vi" title="Tiếng Việt">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNkYTI1MWQiLz4KICAgICAgICAgICAgPHBhdGggZD0iTTQ1MCAzMDBsLTE4MC0xMjZ2MjUyeiIgZmlsbD0iI2ZmZmYwMCIvPgogICAgICAgIDwvc3ZnPg==" 
+         alt="vi Flag">
+            <span class="flag-name">Tiếng Việt</span>
+        </div>
+        <div class="flag-option" data-lang="ja" title="日本語">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPGNpcmNsZSBjeD0iNDUwIiBjeT0iMzAwIiByPSIxODAiIGZpbGw9IiNiYzAwMmQiLz4KICAgICAgICA8L3N2Zz4=" 
+         alt="ja Flag">
+            <span class="flag-name">日本語</span>
+        </div>
+    </div>
+</div>
+        </nav>
+    </header>
 
     <div class="content-wrapper">
         <!-- Hero Section -->
@@ -380,7 +435,7 @@
                     <li><strong>High Demand:</strong> Sandwiches are always popular with players</li>
                     <li><strong>Versatile:</strong> Can be made with many different ingredients</li>
                     <li><strong>Good Profit:</strong> Excellent profit margins for the effort required</li>
-                    <li><strong>Easy to Make:</strong> Simple recipe with basic ingredients</li>
+                    <li><strong>आसान to Make:</strong> Simple recipe with basic ingredients</li>
                 </ul>
             </div>
 
@@ -393,7 +448,7 @@
                     <div class="ingredient-item">
                         <h4>🍞 Bread</h4>
                         <p>Base ingredient for sandwiches</p>
-                        <small>Make bread from flour and yeast</small>
+                        <small>ब्रेड बनाना from flour and yeast</small>
                     </div>
                     <div class="ingredient-item">
                         <h4>🥬 Lettuce</h4>
@@ -427,7 +482,7 @@
             <div class="guide-card">
                 <h2>📝 Step-by-Step Sandwich Making Guide</h2>
                 
-                <h3>Step 1: Prepare Your Farm</h3>
+                <h3>चरण 1: Prepare Your Farm</h3>
                 <p>Set up dedicated farming areas for sandwich ingredients:</p>
                 <ul>
                     <li>Plant wheat fields for bread making</li>
@@ -436,7 +491,7 @@
                     <li>Raise animals for meat</li>
                 </ul>
 
-                <h3>Step 2: Gather Ingredients</h3>
+                <h3>चरण 2: Gather Ingredients</h3>
                 <p>Collect all necessary ingredients:</p>
                 <ul>
                     <li><strong>Bread:</strong> Make fresh bread from wheat flour</li>
@@ -446,7 +501,7 @@
                     <li><strong>Butter:</strong> Process milk into butter</li>
                 </ul>
 
-                <h3>Step 3: Prepare Bread</h3>
+                <h3>चरण 3: Prepare Bread</h3>
                 <p>Make or obtain fresh bread:</p>
                 <ul>
                     <li>Mix flour, yeast, and water</li>
@@ -456,7 +511,7 @@
                     <li>Let bread cool before slicing</li>
                 </ul>
 
-                <h3>Step 4: Prepare Fillings</h3>
+                <h3>चरण 4: Prepare Fillings</h3>
                 <p>Prepare your sandwich fillings:</p>
                 <ul>
                     <li>Wash and slice vegetables</li>
@@ -465,7 +520,7 @@
                     <li>Organize ingredients for assembly</li>
                 </ul>
 
-                <h3>Step 5: Assemble Sandwich</h3>
+                <h3>चरण 5: Assemble Sandwich</h3>
                 <p>Put everything together:</p>
                 <ul>
                     <li>Spread butter on bread slices</li>
@@ -475,7 +530,7 @@
                     <li>Top with second bread slice</li>
                 </ul>
 
-                <h3>Step 6: Package and Serve</h3>
+                <h3>चरण 6: Package and Serve</h3>
                 <p>Package and serve your sandwiches:</p>
                 <ul>
                     <li>Cut sandwich diagonally</li>
@@ -487,30 +542,30 @@
 
             <!-- Tips Card -->
             <div class="guide-card">
-                <h2>💡 Pro Tips for Perfect Sandwiches</h2>
+                <h2>💡 प्रो टिप्स for Perfect Sandwiches</h2>
                 
                 <div class="tip-box">
                     <strong>🎯 Ingredient Quality:</strong> Use the freshest ingredients for the best sandwich results. Fresh vegetables and quality bread make a significant difference.
                 </div>
                 
                 <div class="tip-box">
-                    <strong>⏰ Timing is Everything:</strong> Assemble sandwiches just before serving to prevent bread from getting soggy. Don't prepare too far in advance.
+                    <strong>⏰ समय ही सब कुछ है:</strong> Assemble sandwiches just before serving to prevent bread from getting soggy. Don't prepare too far in advance.
                 </div>
                 
                 <div class="tip-box">
-                    <strong>🌡️ Temperature Control:</strong> Keep ingredients at appropriate temperatures. Cold meats and cheese, room temperature bread for best results.
+                    <strong>🌡️ तापमान नियंत्रण:</strong> Keep ingredients at appropriate temperatures. Cold meats and cheese, room temperature bread for best results.
                 </div>
                 
                 <div class="tip-box">
-                    <strong>📊 Batch Production:</strong> Make multiple sandwiches at once to maximize efficiency and profits. Set up assembly line production.
+                    <strong>📊 बैच उत्पादन:</strong> Make multiple sandwiches at once to maximize efficiency and profits. Set up assembly line production.
                 </div>
                 
                 <div class="tip-box">
-                    <strong>🏪 Market Strategy:</strong> Time your sandwich production with meal times. Sell during lunch and dinner hours for maximum profit.
+                    <strong>🏪 बाज़ार रणनीति:</strong> Time your sandwich production with meal times. Sell during lunch and dinner hours for maximum profit.
                 </div>
                 
                 <div class="tip-box">
-                    <strong>🔄 Recipe Variations:</strong> Experiment with different fillings and combinations to create unique sandwiches that stand out in the market.
+                    <strong>🔄 विधि विविधताएं:</strong> Experiment with different fillings and combinations to create unique sandwiches that stand out in the market.
                 </div>
             </div>
 
@@ -534,7 +589,7 @@
                         <ul>
                             <li>Simple and delicious</li>
                             <li>Butter and cheese</li>
-                            <li>Easy to make</li>
+                            <li>आसान to make</li>
                             <li>Good for beginners</li>
                         </ul>
                     </div>
@@ -559,13 +614,13 @@
                 <p>A: Fresh, soft bread works best. Avoid bread that's too hard or stale. You can make your own bread or buy from the market.</p>
                 
                 <h3>Q: How long does it take to make a sandwich?</h3>
-                <p>A: From ingredient gathering to finished sandwich, expect 30-45 minutes. With practice and proper setup, you can reduce this time significantly.</p>
+                <p>A: From ingredient gathering to finished sandwich, expect 30-45 मिनट. With practice and proper setup, you can reduce this time significantly.</p>
                 
                 <h3>Q: Can I make sandwiches without bread?</h3>
                 <p>A: While bread is traditional, you can use lettuce wraps or other alternatives. However, bread is the most popular choice.</p>
                 
                 <h3>Q: How much profit can I make from sandwiches?</h3>
-                <p>A: Sandwiches typically sell for 2-3x the cost of ingredients. With efficient production, you can earn 300-600 coins per sandwich.</p>
+                <p>A: Sandwiches typically sell for 2-3x the cost of ingredients. With efficient production, you can earn 300-600 सिक्के per sandwich.</p>
                 
                 <h3>Q: What's the difference between regular and premium sandwiches?</h3>
                 <p>A: Premium sandwiches use higher quality ingredients and sell for significantly more. Focus on quality over quantity for maximum profit.</p>
@@ -583,4 +638,48 @@
 
     <script src="script.js"></script>
 
- </body></html>
+ 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const currentFlag = document.getElementById('current-flag');
+    const flagDropdown = document.getElementById('current-flag');
+    
+    if (currentFlag && flagDropdown) {
+        // 设置当前语言的国旗
+        const currentLang = document.documentElement.getAttribute('lang') || 'en';
+        updateCurrentFlag(currentLang);
+        
+        // 为每个国旗选项添加点击事件
+        document.querySelectorAll('.flag-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const lang = this.getAttribute('data-lang');
+                if (lang) {
+                    // 调用现有的语言切换函数
+                    if (typeof switchLang === 'function') {
+                        switchLang(lang);
+                    } else if (typeof window.__gagI18n !== 'undefined' && window.__gagI18n.switchLang) {
+                        window.__gagI18n.switchLang(lang);
+                    }
+                }
+            });
+        });
+    }
+});
+
+function updateCurrentFlag(lang) {
+    const currentFlag = document.getElementById('current-flag');
+    if (currentFlag) {
+        const flagOptions = document.querySelectorAll('.flag-option');
+        flagOptions.forEach(option => {
+            if (option.getAttribute('data-lang') === lang) {
+                const flagContent = option.innerHTML;
+                currentFlag.innerHTML = flagContent;
+                break;
+            }
+        });
+    }
+}
+</script>
+    <script src="../flag-switcher.js"></script>
+
+    <script src="../i18n/i18n.js"></script></body></html>

@@ -1,0 +1,734 @@
+<!DOCTYPE html><html lang="vi" dir="ltr"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cách Grow Wheat trong Trồng Vườn - Hướng Dẫn Hoàn Chỉnh | Mẹo Trồng Vườn</title>
+    <meta name="description" content="Học cách grow wheat! Học cách grow wheat trong Grow a Garden.">
+    <meta name="keywords" content="cách grow wheat trong grow a garden, roblox grow wheat guide, grow a garden guide, grow wheat making guide, roblox farming game, grow wheat ingredients collection, grow a garden tips">
+    <link rel="canonical" href="https://growagarden.cv/how-to-grow-wheat.html">
+    
+    <!-- Open Graph for social sharing -->
+    <meta property="og:title" content="Cách Grow Wheat trong Trồng Vườn - Hướng Dẫn Hoàn Chỉnh | Mẹo Trồng Vườn">
+    <meta property="og:description" content="Học cách grow wheat trong Grow a Garden! Học cách grow wheat.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://growagarden.cv/how-to-grow-wheat.html">
+    <meta property="og:image" content="https://growagarden.cv/wheat-guide-og.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cách Grow Wheat trong Trồng Vườn - Hướng Dẫn Hoàn Chỉnh | Mẹo Trồng Vườn">
+    <meta name="twitter:description" content="Học cách grow wheat trong Grow a Garden! Học cách grow wheat.">
+    <meta name="twitter:image" content="https://growagarden.cv/wheat-guide-og.jpg">
+    
+    <!-- Structured Data JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "Cách Grow Wheat",
+      "description": "Học cách grow wheat trong Grow a Garden, bao gồm các kỹ thuật và phương pháp cải thiện hiệu quả.",
+      "image": "https://growagarden.cv/wheat-guide-og.jpg",
+      "url": "https://growagarden.cv/how-to-grow-wheat.html",
+      "inLanguage": "vi",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Cách Grow Wheat",
+          "text": "Prepare the soil for wheat planting in Grow a Garden"
+        },
+        {
+          "@type": "HowToStep", 
+          "name": "Cách Grow Wheat",
+          "text": "Plant wheat seeds in prepared soil"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Cách Grow Wheat",
+          "text": "Water regularly and care for wheat until harvest"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Roblox-like color scheme -->
+    <link rel="stylesheet" href="https://unpkg.com/simple.css@2.1.0/simple.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌾</text></svg>">
+    
+    <style>
+        body {
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .bg-blur {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: 0;
+            background: url('grow-bg.jpg') center center/cover no-repeat;
+            opacity: 0.3;
+            filter: blur(2px);
+            pointer-events: none;
+        }
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+        .wheat-hero {
+            background: linear-gradient(135deg, #f4d03f, #f1c40f);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-top: 60px;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        .wheat-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        .wheat-hero h1,
+        .wheat-hero p {
+            position: relative;
+            z-index: 2;
+        }
+        .wheat-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: white !important;
+            text-shadow: 
+                0 2px 4px rgba(0,0,0,0.7),
+                0 1px 2px rgba(0,0,0,0.8);
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            -webkit-text-stroke: 0.5px rgba(0,0,0,0.2);
+        }
+        .wheat-hero p {
+            font-size: 1.2rem;
+            opacity: 1;
+            color: white !important;
+            text-shadow: 
+                0 1px 3px rgba(0,0,0,0.6),
+                0 1px 2px rgba(0,0,0,0.7);
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            -webkit-text-stroke: 0.3px rgba(0,0,0,0.15);
+        }
+        .guide-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .guide-card {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .guide-card h2 {
+            color: #23272a !important;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+        .guide-card h3 {
+            color: #2c3e50 !important;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .guide-card p, .guide-card li {
+            color: #34495e !important;
+            font-weight: 500;
+            line-height: 1.6;
+        }
+        .requirement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .requirement-item {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 8px;
+            padding: 1rem;
+            border-left: 4px solid #f4d03f;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .requirement-item h4 {
+            color: #23272a !important;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .requirement-item p {
+            color: #34495e !important;
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+        }
+        .growth-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+        }
+        .growth-table th,
+        .growth-table td {
+            border: 1px solid #ddd;
+            padding: 0.75rem;
+            text-align: left;
+            font-weight: 500;
+        }
+        .growth-table th {
+            background: #f4d03f;
+            color: white;
+            font-weight: 700;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+        .growth-table td {
+            color: #2c3e50 !important;
+            background: rgba(255, 255, 255, 0.9);
+        }
+        .growth-table tr:nth-child(even) td {
+            background: rgba(244, 208, 63, 0.08);
+        }
+        .tip-box {
+            background: linear-gradient(135deg, #f1c40f, #f39c12);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            box-shadow: 0 4px 15px rgba(241, 196, 15, 0.3);
+        }
+        .tip-box strong {
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+            font-weight: 700;
+        }
+        .warning-box {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+        }
+        .warning-box strong {
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+            font-weight: 700;
+        }
+        .back-btn {
+            display: inline-block;
+            background: #5865f2;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+        .back-btn:hover {
+            background: #4752c4;
+            transform: translateY(-2px);
+        }
+        .wheat-variety {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .wheat-card {
+            background: linear-gradient(135deg, #fef9e7, #fdeaa7);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 6px 20px rgba(244, 208, 63, 0.2);
+            border: 2px solid #f7dc6f;
+        }
+        .wheat-card h4 {
+            color: #d68910 !important;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .wheat-card ul {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+        .wheat-card li {
+            color: #5d4037 !important;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* 面包屑导航样式 */
+        .breadcrumb-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+        }
+        .breadcrumb {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .breadcrumb ol {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .breadcrumb li {
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            color: #34495e;
+        }
+        .breadcrumb li:not(:last-child)::after {
+            content: "›";
+            margin: 0 0.5rem;
+            color: #666;
+        }
+        .breadcrumb a {
+            color: #f4d03f;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .breadcrumb a:hover {
+            color: #f1c40f;
+        }
+        .breadcrumb li[aria-current="page"] {
+            color: #666;
+            font-weight: bold;
+        }
+        @media (max-width: 768px) {
+            .wheat-hero h1 {
+                font-size: 2rem;
+            }
+            .guide-section {
+                padding: 1rem;
+            }
+            .guide-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-blur"></div>
+    
+        <header>
+        <nav>
+            <a href="index.html" class="logo" data-i18n="nav.logo">🌱 Grow a Garden</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('stats')" data-i18n="nav.live">Live Stats</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('map')" data-i18n="nav.map">Global Heatmap</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('tips')" data-i18n="nav.tips">Tips</a>
+            <a href="guides.html" data-i18n="nav.guides">📚 Guides</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('online')" data-i18n="nav.online">🎮 Online</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('community')" class="discord-btn" data-i18n="nav.discord">💬 Discord</a>
+            <div class="flag-language-switcher">
+    <div class="current-flag" id="current-flag">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNDgwIj4KICAgICAgICAgICAgPGRlZnM+PGNsaXBQYXRoIGlkPSJhIj48cGF0aCBkPSJNLTg1LjMgMGg2ODIuNnY1MTJILTg1LjN6Ii8+PC9jbGlwUGF0aD48L2RlZnM+CiAgICAgICAgICAgIDxjbGlwUGF0aCBpZD0iYiI+PHVzZSBocmVmPSIjYSIvPjwvY2xpcFBhdGg+CiAgICAgICAgICAgIDxnIGNsaXAtcGF0aD0idXJsKCNiKSIgdHJhbnNmb3JtPSJzY2FsZSguOTM3NSkiPgogICAgICAgICAgICAgICAgPGcgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2Utd2lkdGg9IjFwdCI+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2NTEySC0yNTZ6IiBmaWxsPSIjYmQzZDQ0Ii8+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAxMDIuNEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAyMDQuOEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAzMDcuMkg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiA0MDkuNkg3NjhWNTEySC0yNTZ6IiBmaWxsPSIjZmZmIi8+CiAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICA8ZyBmaWxsPSIjMTkyZjVkIj4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAwdjUxMmwyNTYtMjU2eiIvPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9zdmc+" 
+         alt="en Flag">
+    </div>
+    <div class="flag-dropdown" id="flag-dropdown">
+        <div class="flag-option" data-lang="en" title="English">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNDgwIj4KICAgICAgICAgICAgPGRlZnM+PGNsaXBQYXRoIGlkPSJhIj48cGF0aCBkPSJNLTg1LjMgMGg2ODIuNnY1MTJILTg1LjN6Ii8+PC9jbGlwUGF0aD48L2RlZnM+CiAgICAgICAgICAgIDxjbGlwUGF0aCBpZD0iYiI+PHVzZSBocmVmPSIjYSIvPjwvY2xpcFBhdGg+CiAgICAgICAgICAgIDxnIGNsaXAtcGF0aD0idXJsKCNiKSIgdHJhbnNmb3JtPSJzY2FsZSguOTM3NSkiPgogICAgICAgICAgICAgICAgPGcgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2Utd2lkdGg9IjFwdCI+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2NTEySC0yNTZ6IiBmaWxsPSIjYmQzZDQ0Ii8+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAxMDIuNEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAyMDQuOEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAzMDcuMkg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiA0MDkuNkg3NjhWNTEySC0yNTZ6IiBmaWxsPSIjZmZmIi8+CiAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICA8ZyBmaWxsPSIjMTkyZjVkIj4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAwdjUxMmwyNTYtMjU2eiIvPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9zdmc+" 
+         alt="en Flag">
+            <span class="flag-name">English</span>
+        </div>
+        <div class="flag-option" data-lang="zh-cn" title="简体中文">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNkZTI5MTAiLz4KICAgICAgICAgICAgPGcgZmlsbD0iI2ZmZGUwMCI+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNNDUwIDEyMGwtNDUuNyAxNDAuNy0xMTkuMyAwaDE1NGwtMTE5LjMgMHoiLz4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik00NTAgMzAwbC00NS43IDE0MC43LTExOS4zIDBoMTU0bC0xMTkuMyAweiIvPgogICAgICAgICAgICAgICAgPHBhdGggZD0iTTQ1MCA0ODBsLTQ1LjcgMTQwLjctMTE5LjMgMGgxNTRsLTExOS4zIDB6Ii8+CiAgICAgICAgICAgIDwvZz4KICAgICAgICA8L3N2Zz4=" 
+         alt="zh-cn Flag">
+            <span class="flag-name">简体中文</span>
+        </div>
+        <div class="flag-option" data-lang="es" title="Español">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3NTAgNTAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9Ijc1MCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiNjNjBiMWUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9Ijc1MCIgaGVpZ2h0PSIyNTAiIHk9IjEyNSIgZmlsbD0iI2ZmYzQwMCIvPgogICAgICAgIDwvc3ZnPg==" 
+         alt="es Flag">
+            <span class="flag-name">Español</span>
+        </div>
+        <div class="flag-option" data-lang="pt-br" title="Português">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3MjAgNTA0Ij4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjcyMCIgaGVpZ2h0PSI1MDQiIGZpbGw9IiMwMDliM2EiLz4KICAgICAgICAgICAgPHBhdGggZD0iTTM2MCAyNTJsLTE4MC0xMjZ2MjUyeiIgZmlsbD0iI2ZlZGYwMCIvPgogICAgICAgICAgICA8Y2lyY2xlIGN4PSIzNjAiIGN5PSIyNTIiIHI9IjYwIiBmaWxsPSIjMDAyNzc2Ii8+CiAgICAgICAgPC9zdmc+" 
+         alt="pt-br Flag">
+            <span class="flag-name">Português</span>
+        </div>
+        <div class="flag-option" data-lang="fr" title="Français">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiMwMDIzOTUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSI2MDAiIHg9IjMwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjYwMCIgeD0iNjAwIiBmaWxsPSIjZWQyOTM5Ii8+CiAgICAgICAgPC9zdmc+" 
+         alt="fr Flag">
+            <span class="flag-name">Français</span>
+        </div>
+        <div class="flag-option" data-lang="de" title="Deutsch">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiMwMDAiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iI2RkMDAwMCIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjZmZjZTAwIi8+CiAgICAgICAgPC9zdmc+" 
+         alt="de Flag">
+            <span class="flag-name">Deutsch</span>
+        </div>
+        <div class="flag-option" data-lang="ru" title="Русский">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iIzAwMzlhNiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjZDUyYjFlIi8+CiAgICAgICAgPC9zdmc+" 
+         alt="ru Flag">
+            <span class="flag-name">Русский</span>
+        </div>
+        <div class="flag-option" data-lang="ar" title="العربية">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiMwMDZjMzUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI0MDAiIHk9IjEwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iMjAwIiBmaWxsPSIjY2UxMTI2Ii8+CiAgICAgICAgPC9zdmc+" 
+         alt="ar Flag">
+            <span class="flag-name">العربية</span>
+        </div>
+        <div class="flag-option" data-lang="hi" title="हिन्दी">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNmZjk5MzMiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjMTM4ODA4Ii8+CiAgICAgICAgICAgIDxjaXJjbGUgY3g9IjQ1MCIgY3k9IjMwMCIgcj0iNjAiIGZpbGw9IiMwMDAwODAiLz4KICAgICAgICA8L3N2Zz4=" 
+         alt="hi Flag">
+            <span class="flag-name">हिन्दी</span>
+        </div>
+        <div class="flag-option" data-lang="id" title="Bahasa Indonesia">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIzMDAiIHk9IjMwMCIgZmlsbD0iI2NlMTEyNiIvPgogICAgICAgIDwvc3ZnPg==" 
+         alt="id Flag">
+            <span class="flag-name">Bahasa Indonesia</span>
+        </div>
+        <div class="flag-option" data-lang="vi" title="Tiếng Việt">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNkYTI1MWQiLz4KICAgICAgICAgICAgPHBhdGggZD0iTTQ1MCAzMDBsLTE4MC0xMjZ2MjUyeiIgZmlsbD0iI2ZmZmYwMCIvPgogICAgICAgIDwvc3ZnPg==" 
+         alt="vi Flag">
+            <span class="flag-name">Tiếng Việt</span>
+        </div>
+        <div class="flag-option" data-lang="ja" title="日本語">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPGNpcmNsZSBjeD0iNDUwIiBjeT0iMzAwIiByPSIxODAiIGZpbGw9IiNiYzAwMmQiLz4KICAgICAgICA8L3N2Zz4=" 
+         alt="ja Flag">
+            <span class="flag-name">日本語</span>
+        </div>
+    </div>
+</div>
+        </nav>
+    </header>
+
+    <div class="content-wrapper">
+        <!-- Hero Section -->
+        <section class="wheat-hero">
+            <h1 data-i18n="Hướng dẫn trồng Lúa mì.hero.title">Hướng dẫn trồng Lúa mì</h1>
+            <p data-i18n="t.hero.subtitle">Trồng Lúa mì hiệu quả: gieo, tưới, thu hoạch.</p>
+        </section>
+
+        <!-- Breadcrumb Navigation -->
+        <div class="breadcrumb-container">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <ol>
+                    <li><a href="/vi/index.html">🏠 Trang chủ</a></li>
+                    <li><a href="/vi/guides.html">📚 Hướng dẫn</a></li>
+                    <li aria-current="page" data-i18n="🎯_grow_wheat.breadcrumb.current">🎯 Grow Wheat</li>
+                </ol>
+            </nav>
+        </div>
+
+        <div class="guide-section">
+            <!-- Overview Card -->
+            <div class="guide-card">
+                <h2>🎯 Wheat Growing Overview</h2>
+                <p data-i18n="growing_wheat_in_grow_a_garden_is_one_of_the_most_fundamental_and_profitable_farming_activities._wheat_is_the_base_ingredient_for_many_recipes_and_is_always_in_high_demand_for_bread_making_and_other_culinary_uses..hero.subtitle">Growing wheat in Grow a Garden is one of the most fundamental and profitable farming activities. Wheat is the base ingredient for many recipes and is always in high demand for bread making and other culinary uses.</p>
+                
+                <h3>Why Grow Wheat?</h3>
+                <ul>
+                    <li><strong>High Demand:</strong> Wheat is always needed for bread and other recipes</li>
+                    <li><strong>Fast Growing:</strong> Relatively quick growth cycle</li>
+                    <li><strong>Good Profit:</strong> Excellent profit margins for the effort required</li>
+                    <li><strong>Versatile:</strong> Can be used in many different recipes</li>
+                </ul>
+            </div>
+
+            <!-- Requirements Card -->
+            <div class="guide-card">
+                <h2>🥘 Growing Requirements</h2>
+                <p>To grow wheat successfully, you'll need to meet several key requirements:</p>
+                
+                <div class="requirement-grid">
+                    <div class="requirement-item">
+                        <h4>🌱 Wheat Seeds</h4>
+                        <p>Basic requirement for planting</p>
+                        <small>Purchase from seed shop</small>
+                    </div>
+                    <div class="requirement-item">
+                        <h4>💧 Water</h4>
+                        <p>Essential for growth</p>
+                        <small>Regular watering needed</small>
+                    </div>
+                    <div class="requirement-item">
+                        <h4>🌞 Sunlight</h4>
+                        <p>Natural growth requirement</p>
+                        <small>Plant in open areas</small>
+                    </div>
+                    <div class="requirement-item">
+                        <h4>🌍 Fertile Soil</h4>
+                        <p>Good soil quality</p>
+                        <small>Prepare soil properly</small>
+                    </div>
+                    <div class="requirement-item">
+                        <h4>⏰ Time</h4>
+                        <p>Growth cycle duration</p>
+                        <small>45 minutes to mature</small>
+                    </div>
+                    <div class="requirement-item">
+                        <h4>🛠️ Tools</h4>
+                        <p>Basic farming tools</p>
+                        <small>Watering can, shovel</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Steps Card -->
+            <div class="guide-card">
+                <h2>📝 Step-by-Step Wheat Growing Guide</h2>
+                
+                <h3>Step 1: Prepare Your Farm</h3>
+                <p>Set up your wheat farming area:</p>
+                <ul>
+                    <li>Clear the land of weeds and rocks</li>
+                    <li>Ensure good soil quality</li>
+                    <li>Create efficient watering system</li>
+                    <li>Plan for easy harvesting access</li>
+                </ul>
+
+                <h3>Step 2: Obtain Wheat Seeds</h3>
+                <p>Get your wheat seeds ready:</p>
+                <ul>
+                    <li><strong>Purchase Seeds:</strong> Buy from seed shop or market</li>
+                    <li><strong>Check Quality:</strong> Ensure seeds are fresh and viable</li>
+                    <li><strong>Plan Quantity:</strong> Calculate how many seeds you need</li>
+                    <li><strong>Store Properly:</strong> Keep seeds in dry, cool place</li>
+                </ul>
+
+                <h3>Step 3: Plant Wheat Seeds</h3>
+                <p>Plant your wheat seeds correctly:</p>
+                <ul>
+                    <li>Dig small holes in prepared soil</li>
+                    <li>Place seeds at proper depth (1-2 inches)</li>
+                    <li>Cover seeds with soil</li>
+                    <li>Space plants appropriately (6-8 inches apart)</li>
+                    <li>Water immediately after planting</li>
+                </ul>
+
+                <h3>Step 4: Water and Care</h3>
+                <p>Maintain your wheat crop:</p>
+                <ul>
+                    <li>Water regularly (every 15-20 minutes)</li>
+                    <li>Water during golden hours for bonus growth</li>
+                    <li>Remove any weeds that appear</li>
+                    <li>Monitor for pests or diseases</li>
+                    <li>Ensure adequate sunlight exposure</li>
+                </ul>
+
+                <h3>Step 5: Monitor Growth</h3>
+                <p>Track your wheat's development:</p>
+                <ul>
+                    <li>Watch for sprouting (first few minutes)</li>
+                    <li>Monitor stem growth (15-30 minutes)</li>
+                    <li>Check for grain formation (30-45 minutes)</li>
+                    <li>Look for golden color indicating maturity</li>
+                    <li>Time your harvest perfectly</li>
+                </ul>
+
+                <h3>Step 6: Harvest Wheat</h3>
+                <p>Harvest your wheat at the right time:</p>
+                <ul>
+                    <li>Wait for full maturity (45 minutes total)</li>
+                    <li>Look for golden-brown color</li>
+                    <li>Use appropriate harvesting tools</li>
+                    <li>Collect all wheat grains</li>
+                    <li>Store harvested wheat properly</li>
+                </ul>
+            </div>
+
+            <!-- Growth Stages Card -->
+            <div class="guide-card">
+                <h2>📊 Wheat Growth Stages</h2>
+                
+                <table class="growth-table">
+                    <thead>
+                        <tr>
+                            <th>Stage</th>
+                            <th data-i18n="time.table.time">Time</th>
+                            <th>Appearance</th>
+                            <th>Care Needed</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>🌱 Seedling</td>
+                            <td>0-5 min</td>
+                            <td>Small green sprouts</td>
+                            <td>Light watering</td>
+                        </tr>
+                        <tr>
+                            <td>🌿 Vegetative</td>
+                            <td>5-15 min</td>
+                            <td>Growing stems and leaves</td>
+                            <td>Regular watering</td>
+                        </tr>
+                        <tr>
+                            <td>🌾 Flowering</td>
+                            <td>15-30 min</td>
+                            <td>Flower heads forming</td>
+                            <td>Increased watering</td>
+                        </tr>
+                        <tr>
+                            <td>🌾 Grain Development</td>
+                            <td>30-40 min</td>
+                            <td>Grains filling out</td>
+                            <td>Moderate watering</td>
+                        </tr>
+                        <tr>
+                            <td>🌾 Maturity</td>
+                            <td>40-45 min</td>
+                            <td>Golden-brown color</td>
+                            <td>Ready for harvest</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Tips Card -->
+            <div class="guide-card">
+                <h2>💡 Pro Tips for Maximum Wheat Yield</h2>
+                
+                <div class="tip-box">
+                    <strong>🎯 Golden Hours:</strong> Water your wheat during golden hours (7:00-9:00 AM) for double growth speed and better yields.
+                </div>
+                
+                <div class="tip-box">
+                    <strong>⏰ Perfect Timing:</strong> Harvest wheat exactly when it turns golden-brown. Don't wait too long or it may spoil.
+                </div>
+                
+                <div class="tip-box">
+                    <strong>🌡️ Optimal Conditions:</strong> Plant wheat in open areas with full sunlight. Avoid planting in shaded areas.
+                </div>
+                
+                <div class="tip-box">
+                    <strong>📊 Batch Planting:</strong> Plant multiple wheat fields at staggered times for continuous harvests and steady income.
+                </div>
+                
+                <div class="tip-box">
+                    <strong>🏪 Market Strategy:</strong> Sell wheat during peak demand times when bread makers are most active.
+                </div>
+                
+                <div class="tip-box">
+                    <strong>🔄 Crop Rotation:</strong> Rotate wheat with other crops to maintain soil fertility and prevent disease.
+                </div>
+            </div>
+
+            <!-- Wheat Uses Card -->
+            <div class="guide-card">
+                <h2 data-i18n="_wheat_uses_and_applications._wheat_uses_and_applications.title">🌾 Wheat Uses and Applications</h2>
+                
+                <div class="wheat-variety">
+                    <div class="wheat-card">
+                        <h4>🍞 Bread Making</h4>
+                        <ul>
+                            <li>Primary use for wheat</li>
+                            <li>High demand item</li>
+                            <li>Good profit margins</li>
+                            <li>Easy to process</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="wheat-card">
+                        <h4>🍪 Cookie Making</h4>
+                        <ul>
+                            <li>Flour for cookies</li>
+                            <li>Popular recipe ingredient</li>
+                            <li>Steady market demand</li>
+                            <li>Versatile application</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="wheat-card">
+                        <h4>🥪 Sandwich Making</h4>
+                        <ul>
+                            <li>Bread for sandwiches</li>
+                            <li>Essential ingredient</li>
+                            <li>High-value product</li>
+                            <li>Growing market</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Card -->
+            <div class="guide-card">
+                <h2>❓ Câu hỏi thường gặp</h2>
+                
+                <h3>Q: How long does it take for wheat to grow?</h3>
+                <p>A: Wheat takes exactly 45 minutes to reach full maturity from planting to harvest.</p>
+                
+                <h3>Q: How much wheat can I harvest from one plant?</h3>
+                <p>A: Each wheat plant typically yields 1-2 wheat grains, depending on growing conditions and care.</p>
+                
+                <h3>Q: What's the best time to plant wheat?</h3>
+                <p>A: Plant wheat during golden hours (7:00-9:00 AM) for the fastest growth and best yields.</p>
+                
+                <h3>Q: How much profit can I make from wheat farming?</h3>
+                <p>A: Wheat typically sells for 50-100 coins per grain. With efficient farming, you can earn 500-1000 coins per harvest cycle.</p>
+                
+                <h3>Q: Should I sell wheat raw or process it into flour?</h3>
+                <p>A: Process wheat into flour for 3-4x the profit. Flour sells for much more than raw wheat.</p>
+                
+                <h3>Q: How do I prevent wheat from dying?</h3>
+                <p>A: Water regularly, avoid overwatering, plant in good soil, and harvest on time. Don't let wheat sit too long after maturity.</p>
+            </div>
+            
+            <!-- Back Button -->
+            <div class="guide-section" style="text-align: center;">
+                <a href="/vi/guides.html" class="back-btn">← Quay lại mục hướng dẫn</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+ 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const currentFlag = document.getElementById('current-flag');
+    const flagDropdown = document.getElementById('current-flag');
+    
+    if (currentFlag && flagDropdown) {
+        // 设置当前语言的国旗
+        const currentLang = document.documentElement.getAttribute('lang') || 'en';
+        updateCurrentFlag(currentLang);
+        
+        // 为每个国旗选项添加点击事件
+        document.querySelectorAll('.flag-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const lang = this.getAttribute('data-lang');
+                if (lang) {
+                    // 调用现有的语言切换函数
+                    if (typeof switchLang === 'function') {
+                        switchLang(lang);
+                    } else if (typeof window.__gagI18n !== 'undefined' && window.__gagI18n.switchLang) {
+                        window.__gagI18n.switchLang(lang);
+                    }
+                }
+            });
+        });
+    }
+});
+
+function updateCurrentFlag(lang) {
+    const currentFlag = document.getElementById('current-flag');
+    if (currentFlag) {
+        const flagOptions = document.querySelectorAll('.flag-option');
+        flagOptions.forEach(option => {
+            if (option.getAttribute('data-lang') === lang) {
+                const flagContent = option.innerHTML;
+                currentFlag.innerHTML = flagContent;
+                break;
+            }
+        });
+    }
+}
+</script>
+    <script src="../flag-switcher.js"></script>
+
+    <script src="../i18n/i18n.js"></script></body></html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Plants</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #f0f0f0;
+        }
+        .debug-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .debug-section {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: #f9f9f9;
+        }
+        .debug-section h3 {
+            margin-top: 0;
+            color: #333;
+        }
+        .log {
+            background: #f5f5f5;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            padding: 10px;
+            margin: 10px 0;
+            font-family: monospace;
+            white-space: pre-wrap;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        .log.success { border-color: green; background: #e8f5e8; }
+        .log.error { border-color: red; background: #ffe8e8; }
+        .log.warning { border-color: orange; background: #fff3e8; }
+        .plant-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .plant-item {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 8px;
+            text-align: center;
+            background: white;
+        }
+        .plant-icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f9f9f9;
+        }
+        .plant-icon img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        .plant-name {
+            font-size: 10px;
+            font-weight: bold;
+        }
+        .plant-value {
+            font-size: 9px;
+            color: #666;
+        }
+        .error { border-color: red; background: #ffe6e6; }
+        .success { border-color: green; background: #e6ffe6; }
+    </style>
+</head>
+<body>
+    <div class="debug-container">
+        <h1>🐛 植物数据调试页面</h1>
+        
+        <div class="debug-section">
+            <h3>1. 植物数据加载状态</h3>
+            <div id="plants-status" class="log">检查中...</div>
+        </div>
+        
+        <div class="debug-section">
+            <h3>2. 植物图片映射加载状态</h3>
+            <div id="img-map-status" class="log">检查中...</div>
+        </div>
+        
+        <div class="debug-section">
+            <h3>3. 植物列表渲染测试</h3>
+            <div id="render-status" class="log">等待数据加载...</div>
+            <div class="plant-grid" id="plant-grid">
+                <!-- 植物将在这里显示 -->
+            </div>
+        </div>
+        
+        <div class="debug-section">
+            <h3>4. 控制台日志</h3>
+            <div id="console-log" class="log">等待日志...</div>
+        </div>
+    </div>
+
+    <script>
+        // 重写console.log来捕获日志
+        const originalLog = console.log;
+        const originalError = console.error;
+        const originalWarn = console.warn;
+        
+        const consoleLogEl = document.getElementById('console-log');
+        
+        function addLog(message, type = 'info') {
+            const timestamp = new Date().toLocaleTimeString();
+            const logEntry = `[${timestamp}] ${message}\n`;
+            consoleLogEl.textContent += logEntry;
+            consoleLogEl.scrollTop = consoleLogEl.scrollHeight;
+        }
+        
+        console.log = function(...args) {
+            originalLog.apply(console, args);
+            addLog(args.join(' '), 'info');
+        };
+        
+        console.error = function(...args) {
+            originalError.apply(console, args);
+            addLog('ERROR: ' + args.join(' '), 'error');
+        };
+        
+        console.warn = function(...args) {
+            originalWarn.apply(console, args);
+            addLog('WARN: ' + args.join(' '), 'warning');
+        };
+
+        // 调试函数
+        function log(message, type = 'info') {
+            const timestamp = new Date().toLocaleTimeString();
+            const logEntry = `[${timestamp}] ${message}`;
+            addLog(logEntry, type);
+        }
+
+        async function debugPlants() {
+            log('🔍 开始调试植物数据...', 'info');
+            
+            // 1. 检查植物数据
+            const plantsStatusEl = document.getElementById('plants-status');
+            try {
+                if (typeof plants !== 'undefined' && plants && plants.length > 0) {
+                    plantsStatusEl.textContent = `✅ 植物数据加载成功！\n总数: ${plants.length}\n前5个植物: ${plants.slice(0, 5).map(p => p.name).join(', ')}`;
+                    plantsStatusEl.className = 'log success';
+                    log(`✅ 植物数据加载成功，共 ${plants.length} 个植物`, 'success');
+                } else {
+                    plantsStatusEl.textContent = '❌ 植物数据未加载或为空';
+                    plantsStatusEl.className = 'log error';
+                    log('❌ 植物数据未加载或为空', 'error');
+                }
+            } catch (error) {
+                plantsStatusEl.textContent = `❌ 检查植物数据时出错: ${error.message}`;
+                plantsStatusEl.className = 'log error';
+                log(`❌ 检查植物数据时出错: ${error.message}`, 'error');
+            }
+            
+            // 2. 检查植物图片映射
+            const imgMapStatusEl = document.getElementById('img-map-status');
+            try {
+                log('🔍 尝试加载植物图片映射...', 'info');
+                const response = await fetch('../plant_img_map_final.json');
+                if (response.ok) {
+                    const plantImgMap = await response.json();
+                    const imgCount = Object.keys(plantImgMap).length;
+                    imgMapStatusEl.textContent = `✅ 植物图片映射加载成功！\n总数: ${imgCount}\n前5个: ${Object.keys(plantImgMap).slice(0, 5).join(', ')}`;
+                    imgMapStatusEl.className = 'log success';
+                    log(`✅ 植物图片映射加载成功，共 ${imgCount} 个图片`, 'success');
+                    
+                    // 3. 渲染植物列表
+                    renderPlants(plantImgMap);
+                } else {
+                    imgMapStatusEl.textContent = `❌ 植物图片映射加载失败: HTTP ${response.status}`;
+                    imgMapStatusEl.className = 'log error';
+                    log(`❌ 植物图片映射加载失败: HTTP ${response.status}`, 'error');
+                }
+            } catch (error) {
+                imgMapStatusEl.textContent = `❌ 加载植物图片映射时出错: ${error.message}`;
+                imgMapStatusEl.className = 'log error';
+                log(`❌ 加载植物图片映射时出错: ${error.message}`, 'error');
+            }
+        }
+
+        function renderPlants(plantImgMap) {
+            const renderStatusEl = document.getElementById('render-status');
+            const gridEl = document.getElementById('plant-grid');
+            
+            try {
+                if (typeof plants === 'undefined' || !plants || plants.length === 0) {
+                    renderStatusEl.textContent = '❌ 无法渲染植物列表：植物数据未加载';
+                    renderStatusEl.className = 'log error';
+                    return;
+                }
+                
+                log(`🎨 开始渲染 ${plants.length} 个植物...`, 'info');
+                
+                // 渲染前10个植物
+                const plantsToRender = plants.slice(0, 10);
+                let successCount = 0;
+                let errorCount = 0;
+                
+                plantsToRender.forEach(plant => {
+                    const plantItem = document.createElement('div');
+                    plantItem.className = 'plant-item';
+                    
+                    const imgUrl = plantImgMap[plant.key];
+                    if (imgUrl) {
+                        plantItem.innerHTML = `
+                            <div class="plant-icon">
+                                <img src="${imgUrl}" alt="${plant.name}" 
+                                     onload="this.parentElement.classList.add('success')" 
+                                     onerror="this.parentElement.classList.add('error')">
+                            </div>
+                            <div class="plant-name">${plant.name}</div>
+                            <div class="plant-value">$${plant.value}</div>
+                        `;
+                        successCount++;
+                    } else {
+                        plantItem.innerHTML = `
+                            <div class="plant-icon error">❌</div>
+                            <div class="plant-name">${plant.name}</div>
+                            <div class="plant-value">$${plant.value}</div>
+                        `;
+                        errorCount++;
+                    }
+                    
+                    gridEl.appendChild(plantItem);
+                });
+                
+                renderStatusEl.textContent = `✅ 植物列表渲染完成！\n成功: ${successCount}, 失败: ${errorCount}`;
+                renderStatusEl.className = 'log success';
+                log(`✅ 植物列表渲染完成！成功: ${successCount}, 失败: ${errorCount}`, 'success');
+                
+            } catch (error) {
+                renderStatusEl.textContent = `❌ 渲染植物列表时出错: ${error.message}`;
+                renderStatusEl.className = 'log error';
+                log(`❌ 渲染植物列表时出错: ${error.message}`, 'error');
+            }
+        }
+
+        // 页面加载完成后开始调试
+        document.addEventListener('DOMContentLoaded', () => {
+            log('🚀 页面加载完成，开始调试...', 'info');
+            
+            // 等待一下让其他脚本加载
+            setTimeout(() => {
+                debugPlants();
+            }, 1000);
+        });
+    </script>
+    
+    <!-- 加载必要的脚本 -->
+    <script src="../plants_auto.js"></script>
+
+    <script src="flag-switcher.js"></script></body>
+</html> 

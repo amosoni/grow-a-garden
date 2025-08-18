@@ -1,0 +1,18 @@
+{
+  "nav": {
+    "logo": "🌱 Grow a Garden",
+    "live": "Live Stats",
+    "map": "Global Heatmap",
+    "tips": "Tips",
+    "guides": "📚 Guides",
+    "online": "🎮 Online",
+    "discord": "💬 Discord"
+  },
+  "common": {
+    "home": "🏠 Home",
+    "back": "← Back",
+    "loading": "Loading...",
+    "error": "Error occurred",
+    "success": "Success!"
+  }
+}

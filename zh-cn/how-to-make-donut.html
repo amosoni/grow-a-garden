@@ -1,22 +1,22 @@
 <!DOCTYPE html><html lang="zh-cn" dir="ltr"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>如何在种植花园中 make donut - 完整指南 | 种植花园技巧</title>
-    <meta name="description" content="学习如何在Roblox种植花园中 make donut! 学习如何在Roblox种植花园中 make donut 在 种植花园 中.">
-    <meta name="keywords" content="如何在种植花园中 make donut 在 种植花园 中, roblox make donut guide, grow a garden guide, make donut making guide, roblox farming game, make donut ingredients collection, grow a garden tips">
+    <title>如何在种植花园中 做甜甜圈- 完整指南 | 种植花园技巧</title>
+    <meta name="description" content="学习如何在Roblox种植花园中 做甜甜圈! 学习如何在Roblox种植花园中 做甜甜圈 在 种植花园 中.">
+    <meta name="keywords" content="如何在种植花园中 做甜甜圈 在 种植花园 中, roblox 做甜甜圈 guide, grow a garden guide, 做甜甜圈 making guide, roblox farming game, 做甜甜圈 ingredients collection, grow a garden tips">
     <link rel="canonical" href="https://your-domain.com/how-to-make-donut.html">
     
     <!-- Open Graph for social sharing -->
-    <meta property="og:title" content="如何在种植花园中 make donut - 完整指南 | 种植花园技巧">
-    <meta property="og:description" content="学习如何在Roblox种植花园中 make donut 在 种植花园 中! 学习如何在Roblox种植花园中 make donut.">
+    <meta property="og:title" content="如何在种植花园中 做甜甜圈- 完整指南 | 种植花园技巧">
+    <meta property="og:description" content="学习如何在Roblox种植花园中 做甜甜圈 在 种植花园 中! 学习如何在Roblox种植花园中 做甜甜圈.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://your-domain.com/how-to-make-donut.html">
     <meta property="og:image" content="https://your-domain.com/donut-guide-og.jpg">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="如何在种植花园中 make donut - 完整指南 | 种植花园技巧">
-    <meta name="twitter:description" content="学习如何在Roblox种植花园中 make donut 在 种植花园 中! 学习如何在Roblox种植花园中 make donut.">
+    <meta name="twitter:title" content="如何在种植花园中 做甜甜圈- 完整指南 | 种植花园技巧">
+    <meta name="twitter:description" content="学习如何在Roblox种植花园中 做甜甜圈 在 种植花园 中! 学习如何在Roblox种植花园中 做甜甜圈.">
     <meta name="twitter:image" content="https://your-domain.com/donut-guide-og.jpg">
     
     <!-- Structured Data JSON-LD -->
@@ -52,7 +52,7 @@
     <!-- Roblox-like color scheme -->
     <link rel="stylesheet" href="https://unpkg.com/simple.css@2.1.0/simple.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍩</text></svg>">
     
     <style>
@@ -324,29 +324,84 @@
 <body>
     <div class="bg-blur"></div>
         <header>
-    <nav>
-      <a href="/index.html" class="logo" data-i18n="nav.logo">🌱 Grow a Garden</a>
-      <a href="/index.html#stats" data-i18n="nav.live">实时统计</a>
-      <a href="/index.html#map" data-i18n="nav.map">全球热力图</a>
-      <a href="/index.html#tips" data-i18n="nav.tips">技巧</a>
-      <a href="/guides.html" data-i18n="nav.guides">📚 指南</a>
-      <a href="/index.html#community" class="discord-btn" data-i18n="nav.discord">💬 Discord</a>
-                  <select id="lang-switcher" aria-label="Language">
-                <option value="en" >English</option>
-                <option value="zh-cn" selected="">简体中文</option>
-                <option value="es" >Español</option>
-                <option value="pt-br" >Português</option>
-                <option value="fr" >Français</option>
-                <option value="de" >Deutsch</option>
-                <option value="ru" >Русский</option>
-                <option value="ar" >العربية</option>
-                <option value="hi" >हिन्दी</option>
-                <option value="id" >Bahasa Indonesia</option>
-                <option value="vi" >Tiếng Việt</option>
-                <option value="ja" >日本語</option>
-            </select>
-    </nav>
-  </header>
+        <nav>
+            <a href="index.html" class="logo" data-i18n="nav.logo">🌱 Grow a Garden</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('stats')" data-i18n="nav.live">Live Stats</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('map')" data-i18n="nav.map">Global Heatmap</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('tips')" data-i18n="nav.tips">Tips</a>
+            <a href="guides.html" data-i18n="nav.guides">📚 Guides</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('online')" data-i18n="nav.online">🎮 Online</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('community')" class="discord-btn" data-i18n="nav.discord">💬 Discord</a>
+            <div class="flag-language-switcher">
+    <div class="current-flag" id="current-flag">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNDgwIj4KICAgICAgICAgICAgPGRlZnM+PGNsaXBQYXRoIGlkPSJhIj48cGF0aCBkPSJNLTg1LjMgMGg2ODIuNnY1MTJILTg1LjN6Ii8+PC9jbGlwUGF0aD48L2RlZnM+CiAgICAgICAgICAgIDxjbGlwUGF0aCBpZD0iYiI+PHVzZSBocmVmPSIjYSIvPjwvY2xpcFBhdGg+CiAgICAgICAgICAgIDxnIGNsaXAtcGF0aD0idXJsKCNiKSIgdHJhbnNmb3JtPSJzY2FsZSguOTM3NSkiPgogICAgICAgICAgICAgICAgPGcgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2Utd2lkdGg9IjFwdCI+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2NTEySC0yNTZ6IiBmaWxsPSIjYmQzZDQ0Ii8+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAxMDIuNEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAyMDQuOEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAzMDcuMkg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiA0MDkuNkg3NjhWNTEySC0yNTZ6IiBmaWxsPSIjZmZmIi8+CiAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICA8ZyBmaWxsPSIjMTkyZjVkIj4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAwdjUxMmwyNTYtMjU2eiIvPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9zdmc+" 
+         alt="en Flag">
+    </div>
+    <div class="flag-dropdown" id="flag-dropdown">
+        <div class="flag-option" data-lang="en" title="English">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNDgwIj4KICAgICAgICAgICAgPGRlZnM+PGNsaXBQYXRoIGlkPSJhIj48cGF0aCBkPSJNLTg1LjMgMGg2ODIuNnY1MTJILTg1LjN6Ii8+PC9jbGlwUGF0aD48L2RlZnM+CiAgICAgICAgICAgIDxjbGlwUGF0aCBpZD0iYiI+PHVzZSBocmVmPSIjYSIvPjwvY2xpcFBhdGg+CiAgICAgICAgICAgIDxnIGNsaXAtcGF0aD0idXJsKCNiKSIgdHJhbnNmb3JtPSJzY2FsZSguOTM3NSkiPgogICAgICAgICAgICAgICAgPGcgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2Utd2lkdGg9IjFwdCI+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2NTEySC0yNTZ6IiBmaWxsPSIjYmQzZDQ0Ii8+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAxMDIuNEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAyMDQuOEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAzMDcuMkg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiA0MDkuNkg3NjhWNTEySC0yNTZ6IiBmaWxsPSIjZmZmIi8+CiAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICA8ZyBmaWxsPSIjMTkyZjVkIj4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAwdjUxMmwyNTYtMjU2eiIvPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9zdmc+" 
+         alt="en Flag">
+            <span class="flag-name">English</span>
+        </div>
+        <div class="flag-option" data-lang="zh-cn" title="简体中文">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNkZTI5MTAiLz4KICAgICAgICAgICAgPGcgZmlsbD0iI2ZmZGUwMCI+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNNDUwIDEyMGwtNDUuNyAxNDAuNy0xMTkuMyAwaDE1NGwtMTE5LjMgMHoiLz4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik00NTAgMzAwbC00NS43IDE0MC43LTExOS4zIDBoMTU0bC0xMTkuMyAweiIvPgogICAgICAgICAgICAgICAgPHBhdGggZD0iTTQ1MCA0ODBsLTQ1LjcgMTQwLjctMTE5LjMgMGgxNTRsLTExOS4zIDB6Ii8+CiAgICAgICAgICAgIDwvZz4KICAgICAgICA8L3N2Zz4=" 
+         alt="zh-cn Flag">
+            <span class="flag-name">简体中文</span>
+        </div>
+        <div class="flag-option" data-lang="es" title="Español">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3NTAgNTAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9Ijc1MCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiNjNjBiMWUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9Ijc1MCIgaGVpZ2h0PSIyNTAiIHk9IjEyNSIgZmlsbD0iI2ZmYzQwMCIvPgogICAgICAgIDwvc3ZnPg==" 
+         alt="es Flag">
+            <span class="flag-name">Español</span>
+        </div>
+        <div class="flag-option" data-lang="pt-br" title="Português">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3MjAgNTA0Ij4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjcyMCIgaGVpZ2h0PSI1MDQiIGZpbGw9IiMwMDliM2EiLz4KICAgICAgICAgICAgPHBhdGggZD0iTTM2MCAyNTJsLTE4MC0xMjZ2MjUyeiIgZmlsbD0iI2ZlZGYwMCIvPgogICAgICAgICAgICA8Y2lyY2xlIGN4PSIzNjAiIGN5PSIyNTIiIHI9IjYwIiBmaWxsPSIjMDAyNzc2Ii8+CiAgICAgICAgPC9zdmc+" 
+         alt="pt-br Flag">
+            <span class="flag-name">Português</span>
+        </div>
+        <div class="flag-option" data-lang="fr" title="Français">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiMwMDIzOTUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSI2MDAiIHg9IjMwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjYwMCIgeD0iNjAwIiBmaWxsPSIjZWQyOTM5Ii8+CiAgICAgICAgPC9zdmc+" 
+         alt="fr Flag">
+            <span class="flag-name">Français</span>
+        </div>
+        <div class="flag-option" data-lang="de" title="Deutsch">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiMwMDAiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iI2RkMDAwMCIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjZmZjZTAwIi8+CiAgICAgICAgPC9zdmc+" 
+         alt="de Flag">
+            <span class="flag-name">Deutsch</span>
+        </div>
+        <div class="flag-option" data-lang="ru" title="Русский">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iIzAwMzlhNiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjZDUyYjFlIi8+CiAgICAgICAgPC9zdmc+" 
+         alt="ru Flag">
+            <span class="flag-name">Русский</span>
+        </div>
+        <div class="flag-option" data-lang="ar" title="العربية">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiMwMDZjMzUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI0MDAiIHk9IjEwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iMjAwIiBmaWxsPSIjY2UxMTI2Ii8+CiAgICAgICAgPC9zdmc+" 
+         alt="ar Flag">
+            <span class="flag-name">العربية</span>
+        </div>
+        <div class="flag-option" data-lang="hi" title="हिन्दी">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNmZjk5MzMiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjMTM4ODA4Ii8+CiAgICAgICAgICAgIDxjaXJjbGUgY3g9IjQ1MCIgY3k9IjMwMCIgcj0iNjAiIGZpbGw9IiMwMDAwODAiLz4KICAgICAgICA8L3N2Zz4=" 
+         alt="hi Flag">
+            <span class="flag-name">हिन्दी</span>
+        </div>
+        <div class="flag-option" data-lang="id" title="Bahasa Indonesia">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIzMDAiIHk9IjMwMCIgZmlsbD0iI2NlMTEyNiIvPgogICAgICAgIDwvc3ZnPg==" 
+         alt="id Flag">
+            <span class="flag-name">Bahasa Indonesia</span>
+        </div>
+        <div class="flag-option" data-lang="vi" title="Tiếng Việt">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNkYTI1MWQiLz4KICAgICAgICAgICAgPHBhdGggZD0iTTQ1MCAzMDBsLTE4MC0xMjZ2MjUyeiIgZmlsbD0iI2ZmZmYwMCIvPgogICAgICAgIDwvc3ZnPg==" 
+         alt="vi Flag">
+            <span class="flag-name">Tiếng Việt</span>
+        </div>
+        <div class="flag-option" data-lang="ja" title="日本語">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPGNpcmNsZSBjeD0iNDUwIiBjeT0iMzAwIiByPSIxODAiIGZpbGw9IiNiYzAwMmQiLz4KICAgICAgICA8L3N2Zz4=" 
+         alt="ja Flag">
+            <span class="flag-name">日本語</span>
+        </div>
+    </div>
+</div>
+        </nav>
+    </header>
     
     <section class="donut-hero">
         <h1 data-i18n="甜甜圈制作指南.hero.title">甜甜圈制作指南</h1>
@@ -359,7 +414,7 @@
             <ol>
                 <li><a href="/zh-cn/index.html">🏠 首页</a></li>
                 <li><a href="/zh-cn/guides.html">📚 攻略</a></li>
-                <li aria-current="page" data-i18n="🎯_make_donut.breadcrumb.current">🎯 make donut</li>
+                <li aria-current="page" data-i18n="🎯_make_donut.breadcrumb.current">🎯 做甜甜圈</li>
             </ol>
         </nav>
     </div>
@@ -371,15 +426,15 @@
                 <li><a href="#basics" data-i18n="basics.toc.basics">基础甜甜圈制作</a></li>
                 <li><a href="#ingredients" data-i18n="ingredients.toc.ingredients">关键食材清单</a></li>
                 <li><a href="#recipes" data-i18n="recipes.toc.recipes">高级甜甜圈食谱</a></li>
-                <li><a href="#varieties">Donut Varieties &amp; Types</a></li>
-                <li><a href="#tips" data-i18n="tips.toc.tips">Making Tips &amp; Tricks</a></li>
+                <li><a href="#varieties">Donut Varieties &amp; 类型</a></li>
+                <li><a href="#tips" data-i18n="tips.toc.tips">制作要点 &amp; 技巧</a></li>
                 <li><a href="#efficiency" data-i18n="efficiency.toc.efficiency">效率提升方法</a></li>
                 <li><a href="#faq" data-i18n="faq.toc.faq">常见问题</a></li>
             </ul>
         </div>
         
         <div class="guide-card" id="basics">
-            <h2>🍩 基础甜甜圈制作</h2>
+            <h2 data-i18n="t.basics.title">🍩 基础甜甜圈制作</h2>
             <p data-i18n="在_grow_a_garden_中，甜甜圈制作是最受欢迎且极具收益的玩法之一。通过种植并收集各种食材，在加工台中组合即可制作出美味的甜甜圈并获得可观奖励。.hero.subtitle">在 Grow a Garden 中，甜甜圈制作是最受欢迎且极具收益的玩法之一。通过种植并收集各种食材，在加工台中组合即可制作出美味的甜甜圈并获得可观奖励。</p>
             
             <h3>制作步骤：</h3>
@@ -387,7 +442,7 @@
                 <li><strong>收集食材</strong>: Plant basic ingredients like flour, sugar, eggs, and milk in your garden</li>
                 <li><strong>浇水管理</strong>: Regularly water your plants to ensure healthy growth and maximum yield</li>
                 <li><strong>收获时机</strong>: Wait for plants to fully mature before harvesting for best quality</li>
-                <li><strong>Make Donut</strong>: Put collected ingredients into the donut maker machine</li>
+                <li><strong>做甜甜圈</strong>: Put collected ingredients into the donut maker machine</li>
                 <li><strong>获得奖励</strong>: Complete donut making to earn game currency and experience points</li>
             </ol>
             
@@ -397,8 +452,8 @@
         </div>
         
         <div class="guide-card" id="ingredients">
-            <h2>🥚 关键食材清单</h2>
-            <p>Making quality donuts requires various fresh ingredients. Here's the ingredient list categorized by importance:</p>
+            <h2 data-i18n="t.ingredients.title">🥚 关键食材清单</h2>
+            <p>Making quality donuts requires various fresh ingredients. 以下按重要程度列出所需食材：</p>
             
             <h3>基础食材（新手必备）</h3>
             <div class="ingredient-grid">
@@ -486,7 +541,7 @@
         </div>
         
         <div class="guide-card" id="recipes">
-            <h2>🍽️ 高级甜甜圈食谱</h2>
+            <h2 data-i18n="t.recipes.title">🍽️ 高级甜甜圈食谱</h2>
             <p>不同的食材组合可以制作出不同等级与效果的甜甜圈。下表给出了详细配方：</p>
             
             <h3 data-i18n="recipes.basic_donut.title">Basic Donut Recipes</h3>
@@ -505,29 +560,29 @@
                         <td>Plain Donut</td>
                         <td>Flour + Sugar + Eggs + Milk</td>
                         <td>2 分钟</td>
-                        <td>50 coins</td>
-                        <td>Easy</td>
+                        <td>50 金币</td>
+                        <td>简单</td>
                     </tr>
                     <tr>
                         <td>Chocolate Donut</td>
                         <td>Flour + Sugar + Eggs + Milk + Chocolate</td>
                         <td>3 分钟</td>
-                        <td>100 coins</td>
-                        <td>Easy</td>
+                        <td>100 金币</td>
+                        <td>简单</td>
                     </tr>
                     <tr>
                         <td>Strawberry Donut</td>
                         <td>Flour + Sugar + Eggs + Milk + Strawberry</td>
                         <td>3 分钟</td>
-                        <td>120 coins</td>
-                        <td>Medium</td>
+                        <td>120 金币</td>
+                        <td>中等</td>
                     </tr>
                     <tr>
                         <td>Honey Donut</td>
                         <td>Flour + Sugar + Eggs + Milk + Honey</td>
                         <td>4 分钟</td>
-                        <td>150 coins</td>
-                        <td>Medium</td>
+                        <td>150 金币</td>
+                        <td>中等</td>
                     </tr>
                 </tbody>
             </table>
@@ -548,29 +603,29 @@
                         <td>Peanut Butter Donut</td>
                         <td>Flour + Sugar + Eggs + Milk + Peanuts</td>
                         <td>5 分钟</td>
-                        <td>200 coins</td>
-                        <td>Hard</td>
+                        <td>200 金币</td>
+                        <td>困难</td>
                     </tr>
                     <tr>
                         <td>Vanilla Donut</td>
                         <td>Flour + Sugar + Eggs + Milk + Vanilla Bean</td>
                         <td>6 分钟</td>
-                        <td>250 coins</td>
-                        <td>Hard</td>
+                        <td>250 金币</td>
+                        <td>困难</td>
                     </tr>
                     <tr>
                         <td>Orange Donut</td>
                         <td>Flour + Sugar + Eggs + Milk + Orange</td>
                         <td>7 分钟</td>
-                        <td>300 coins</td>
-                        <td>Expert</td>
+                        <td>300 金币</td>
+                        <td>专家</td>
                     </tr>
                     <tr>
                         <td>Coconut Donut</td>
                         <td>Flour + Sugar + Eggs + Milk + Coconut</td>
                         <td>8 分钟</td>
-                        <td>350 coins</td>
-                        <td>Expert</td>
+                        <td>350 金币</td>
+                        <td>专家</td>
                     </tr>
                 </tbody>
             </table>
@@ -591,22 +646,22 @@
                         <td>Maple Donut</td>
                         <td>Flour + Sugar + Eggs + Milk + Maple Syrup</td>
                         <td>10 分钟</td>
-                        <td>500 coins</td>
-                        <td>Master</td>
+                        <td>500 金币</td>
+                        <td>大师</td>
                     </tr>
                     <tr>
                         <td>Rainbow Donut</td>
                         <td>All Basic + All Advanced + All Rare</td>
                         <td>15 分钟</td>
-                        <td>1000 coins</td>
-                        <td>Legendary</td>
+                        <td>1000 金币</td>
+                        <td>传说</td>
                     </tr>
                 </tbody>
             </table>
         </div>
         
         <div class="guide-card" id="varieties">
-            <h2>🎨 Donut Varieties &amp; Types</h2>
+            <h2 data-i18n="t.varieties.title">🎨 Donut Varieties &amp; 类型</h2>
             <p data-i18n="grow_a_garden_中包含多种甜甜圈类型，每种都有独特特性与奖励：.hero.subtitle">Grow a Garden 中包含多种甜甜圈类型，每种都有独特特性与奖励：</p>
             
             <div class="donut-variety">
@@ -653,31 +708,31 @@
         </div>
         
         <div class="guide-card" id="tips">
-            <h2>💡 Making Tips &amp; Tricks</h2>
+            <h2 data-i18n="t.tips.title">💡 制作要点 &amp; 技巧</h2>
             <p>掌握这些技巧，你将很快成为甜甜圈制作高手：</p>
             
-            <h3>🌱 Growing Tips</h3>
+            <h3>🌱 种植技巧</h3>
             <ul>
-                <li><strong>Optimal Watering:</strong> Water plants every 2-3 hours for maximum growth speed</li>
-                <li><strong>Golden Hours:</strong> Water during 7:00-9:00 in-game time for double effects</li>
-                <li><strong>Harvest Timing:</strong> Wait for plants to fully mature (100% growth) before harvesting</li>
-                <li><strong>Soil Quality:</strong> Use premium soil for rare ingredients to increase success rate</li>
+                <li><strong>最佳浇水:</strong> Water plants every 2-3 hours for maximum growth speed</li>
+                <li><strong>黄金时段:</strong> Water during 7:00-9:00 游戏内时间 for double effects</li>
+                <li><strong>收获时机:</strong> Wait for plants to fully mature (100% growth) before harvesting</li>
+                <li><strong>土壤质量:</strong> Use premium soil for rare ingredients to increase success rate</li>
             </ul>
             
-            <h3>🍩 Making Tips</h3>
+            <h3>🍩 制作要点</h3>
             <ul>
                 <li><strong>Ingredient Quality:</strong> Higher quality ingredients produce better donuts</li>
-                <li><strong>Recipe Efficiency:</strong> Master basic recipes before attempting advanced ones</li>
-                <li><strong>Batch Production:</strong> Make multiple donuts at once to maximize efficiency</li>
-                <li><strong>Storage Management:</strong> Keep ingredients organized for quick access</li>
+                <li><strong>配方效率:</strong> 大师 basic recipes before attempting advanced ones</li>
+                <li><strong>批量生产：</strong> Make multiple donuts at once to maximize efficiency</li>
+                <li><strong>库存管理:</strong> Keep ingredients organized for quick access</li>
             </ul>
             
-            <h3>💰 Profit Optimization</h3>
+            <h3>💰 收益优化</h3>
             <ul>
-                <li><strong>Market Timing:</strong> Sell donuts during peak demand hours</li>
-                <li><strong>Quality vs Quantity:</strong> Focus on high-quality donuts for better profit margins</li>
-                <li><strong>Recipe Mastery:</strong> Master rare recipes for exclusive market access</li>
-                <li><strong>Supply Chain:</strong> Maintain steady ingredient supply for continuous production</li>
+                <li><strong>市场时机:</strong> Sell donuts during peak demand hours</li>
+                <li><strong>质量 vs 数量:</strong> Focus on high-quality donuts for better profit margins</li>
+                <li><strong>配方熟练度:</strong> 大师 rare recipes for exclusive market access</li>
+                <li><strong>供应链:</strong> Maintain steady ingredient supply for continuous production</li>
             </ul>
             
             <div class="tip-box">
@@ -686,32 +741,32 @@
         </div>
         
         <div class="guide-card" id="efficiency">
-            <h2>⚡ 效率提升方法</h2>
+            <h2 data-i18n="t.efficiency.title">⚡ 效率提升方法</h2>
             <p>使用以下进阶策略，最大化甜甜圈制作的效率：</p>
             
-            <h3>🏭 Production Optimization</h3>
+            <h3>🏭 生产优化</h3>
             <ul>
-                <li><strong>Automated Systems:</strong> Set up automated watering systems for consistent growth</li>
-                <li><strong>Batch Processing:</strong> Process multiple donuts simultaneously</li>
-                <li><strong>Ingredient Rotation:</strong> Rotate crops to maintain soil fertility</li>
-                <li><strong>Quality Control:</strong> Monitor ingredient quality for consistent results</li>
+                <li><strong>自动化系统:</strong> Set up automated watering systems for consistent growth</li>
+                <li><strong>批量处理:</strong> Process multiple donuts simultaneously</li>
+                <li><strong>轮作:</strong> Rotate crops to maintain soil fertility</li>
+                <li><strong>质量控制:</strong> Monitor ingredient quality for consistent results</li>
             </ul>
             
-            <h3 data-i18n="📊_advanced_strategies.📊_advanced_strategies.title">📊 Advanced Strategies</h3>
+            <h3 data-i18n="📊_advanced_strategies.📊_advanced_strategies.title">📊 高级策略</h3>
             <ul>
-                <li><strong>Market Analysis:</strong> Track donut demand patterns for optimal production</li>
-                <li><strong>Recipe Optimization:</strong> Develop efficient ingredient combinations</li>
-                <li><strong>Resource Management:</strong> Balance ingredient costs with donut profits</li>
-                <li><strong>Skill Development:</strong> Improve donut-making skills for better results</li>
+                <li><strong>市场分析:</strong> Track donut demand patterns for optimal production</li>
+                <li><strong>配方优化:</strong> Develop efficient ingredient combinations</li>
+                <li><strong>资源管理:</strong> Balance ingredient costs with donut profits</li>
+                <li><strong>技能提升:</strong> Improve donut-making skills for better results</li>
             </ul>
             
             <div class="warning-box">
-                <strong>⚠️ 重要：</strong> Don't overproduce basic donuts when the market is saturated. Focus on quality and variety for better profits.
+                <strong>⚠️ 重要：</strong> Don't overproduce basic donuts when the market is saturated. 专注品质与多样性可获得更高利润.
             </div>
         </div>
         
         <div class="guide-card" id="faq">
-            <h2>❓ 常见问题</h2>
+            <h2 data-i18n="t.faq.title">❓ 常见问题</h2>
             
             <h3>问：制作基础甜甜圈需要多久？</h3>
             <p>A: Basic donuts take 2-3 分钟 to make, while advanced recipes can take 5-15 分钟 depending on complexity.</p>
@@ -726,7 +781,7 @@
             <p>A: Rare recipes are unlocked by reaching higher levels and completing special quests in the game.</p>
             
             <h3>Q: What's the best time to water my ingredient plants?</h3>
-            <p>A: Water during golden hours (7:00-9:00 in-game time) for double growth effects and better ingredient quality.</p>
+            <p>A: 在黄金时段浇水 (7:00-9:00 游戏内时间) 以获得双倍生长效果和更好的 ingredient quality.</p>
             
             <h3>Q: How can I increase my donut-making efficiency?</h3>
             <p>A: Focus on mastering basic recipes first, then gradually work on advanced recipes. Use batch production and maintain a steady supply of quality ingredients.</p>
@@ -739,7 +794,7 @@
             <ol>
                 <li><strong>Start Small:</strong> Begin with basic donut recipes to build your skills</li>
                 <li><strong>Expand Your Garden:</strong> Plant a variety of ingredients for different recipes</li>
-                <li><strong>Master Advanced Recipes:</strong> Work on complex donut varieties for higher profits</li>
+                <li><strong>大师 Advanced Recipes:</strong> Work on complex donut varieties for higher profits</li>
                 <li><strong>Join the Community:</strong> Connect with other players to share tips and strategies</li>
                 <li><strong>Stay Updated:</strong> Keep up with game updates for new recipes and features</li>
             </ol>
@@ -754,4 +809,48 @@
     
     <script src="script.js"></script>
 
- </body></html>
+ 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const currentFlag = document.getElementById('current-flag');
+    const flagDropdown = document.getElementById('current-flag');
+    
+    if (currentFlag && flagDropdown) {
+        // 设置当前语言的国旗
+        const currentLang = document.documentElement.getAttribute('lang') || 'en';
+        updateCurrentFlag(currentLang);
+        
+        // 为每个国旗选项添加点击事件
+        document.querySelectorAll('.flag-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const lang = this.getAttribute('data-lang');
+                if (lang) {
+                    // 调用现有的语言切换函数
+                    if (typeof switchLang === 'function') {
+                        switchLang(lang);
+                    } else if (typeof window.__gagI18n !== 'undefined' && window.__gagI18n.switchLang) {
+                        window.__gagI18n.switchLang(lang);
+                    }
+                }
+            });
+        });
+    }
+});
+
+function updateCurrentFlag(lang) {
+    const currentFlag = document.getElementById('current-flag');
+    if (currentFlag) {
+        const flagOptions = document.querySelectorAll('.flag-option');
+        flagOptions.forEach(option => {
+            if (option.getAttribute('data-lang') === lang) {
+                const flagContent = option.innerHTML;
+                currentFlag.innerHTML = flagContent;
+                break;
+            }
+        });
+    }
+}
+</script>
+    <script src="../flag-switcher.js"></script>
+
+    <script src="../i18n/i18n.js"></script></body></html>

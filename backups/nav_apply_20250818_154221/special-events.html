@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Events - Grow a Garden Guides</title>
+    <meta name="description" content="Complete guide to special events, limited-time opportunities, and exclusive rewards in Grow a Garden.">
+    <meta name="keywords" content="grow a garden, special events, limited time, exclusive rewards, event guide, roblox">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Special Events - Grow a Garden Guides">
+    <meta property="og:description" content="Complete guide to special events, limited-time opportunities, and exclusive rewards.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://growagarden.cv/special-events.html">
+    <meta property="og:image" content="https://growagarden.cv/special-events-og.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Special Events - Grow a Garden Guides">
+    <meta name="twitter:description" content="Complete guide to special events, limited-time opportunities, and exclusive rewards.">
+    <meta name="twitter:image" content="https://growagarden.cv/special-events-og.jpg">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "Special Events Guide",
+      "description": "Complete guide to special events, limited-time opportunities, and exclusive rewards in Grow a Garden",
+      "image": "https://growagarden.cv/special-events-og.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "Grow a Garden Community"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Grow a Garden",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://growagarden.cv/logo.png"
+        }
+      },
+      "mainEntity": {
+        "@type": "HowTo",
+        "name": "Participating in Special Events",
+        "description": "Complete guide to participating in special events and maximizing rewards",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Event Types",
+            "text": "Learn about different types of special events and their requirements"
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Event Preparation",
+            "text": "Prepare effectively for special events to maximize participation"
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Reward Optimization",
+            "text": "Strategies for maximizing rewards from special events"
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Event Strategy",
+            "text": "Develop effective strategies for different event types"
+          }
+        ]
+      }
+    }
+    </script>
+    
+    <!-- Roblox-like color scheme -->
+    <link rel="stylesheet" href="https://unpkg.com/simple.css@2.1.0/simple.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎉</text></svg>">
+    
+    <style>
+        body {
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .bg-blur {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: 0;
+            background: url('grow-bg.jpg') center center/cover no-repeat;
+            opacity: 0.3;
+            filter: blur(2px);
+        }
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+        .events-hero {
+            background: linear-gradient(135deg, #9c27b0, #673ab7);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-top: 60px;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        .events-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        .events-hero h1,
+        .events-hero p {
+            position: relative;
+            z-index: 2;
+        }
+        .events-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: white !important;
+            text-shadow: 
+                0 2px 4px rgba(0,0,0,0.7),
+                0 1px 2px rgba(0,0,0,0.8);
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            -webkit-text-stroke: 0.5px rgba(0,0,0,0.2);
+        }
+        .events-hero p {
+            font-size: 1.2rem;
+            opacity: 1;
+            color: white !important;
+            text-shadow: 
+                0 1px 3px rgba(0,0,0,0.6),
+                0 1px 2px rgba(0,0,0,0.7);
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            -webkit-text-stroke: 0.3px rgba(0,0,0,0.15);
+        }
+        .guide-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .guide-card {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .guide-card h2 {
+            color: #23272a !important;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+        .guide-card h3 {
+            color: #2c3e50 !important;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .guide-card p, .guide-card li {
+            color: #34495e !important;
+            line-height: 1.6;
+            margin-bottom: 0.8rem;
+        }
+        .guide-card ul, .guide-card ol {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+        .guide-card li {
+            margin-bottom: 0.5rem;
+        }
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .event-item {
+            background: linear-gradient(135deg, #f3e5f5, #e1bee7);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 15px rgba(156, 39, 176, 0.2);
+            border: 2px solid #ce93d8;
+        }
+        .event-item h4 {
+            color: #7b1fa2 !important;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+        .event-item p {
+            color: #4a148c !important;
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+            text-align: center;
+        }
+        .recipe-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .recipe-table th {
+            background: linear-gradient(135deg, #9c27b0, #673ab7);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+        .recipe-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .recipe-table tr:nth-child(even) td {
+            background: rgba(156, 39, 176, 0.08);
+        }
+        .tip-box {
+            background: linear-gradient(135deg, #f1c40f, #f39c12);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            box-shadow: 0 4px 15px rgba(241, 196, 15, 0.3);
+        }
+        .tip-box strong {
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+            font-weight: 700;
+        }
+        .warning-box {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+        }
+        .warning-box strong {
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+            font-weight: 700;
+        }
+        .back-btn {
+            display: inline-block;
+            background: #5865f2;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+        .back-btn:hover {
+            background: #4752c4;
+            transform: translateY(-2px);
+        }
+        .events-tips {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .tip-card {
+            background: linear-gradient(135deg, #f3e5f5, #e1bee7);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 6px 20px rgba(156, 39, 176, 0.2);
+            border: 2px solid #ce93d8;
+        }
+        .tip-card h4 {
+            color: #7b1fa2 !important;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .tip-card ul {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+        .tip-card li {
+            color: #4a148c !important;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* 面包屑导航样式 */
+        .breadcrumb-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+        }
+        .breadcrumb {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .breadcrumb ol {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .breadcrumb li {
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            color: #34495e;
+        }
+        .breadcrumb li:not(:last-child)::after {
+            content: "›";
+            margin: 0 0.5rem;
+            color: #9c27b0;
+            font-weight: bold;
+        }
+        .breadcrumb a {
+            color: #9c27b0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .breadcrumb a:hover {
+            color: #7b1fa2;
+            text-decoration: underline;
+        }
+        .breadcrumb li[aria-current="page"] {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+    </style>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HG12TJB5LZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HG12TJB5LZ');
+    </script>
+</head>
+<body>
+    <div class="bg-blur"></div>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">🌱 Grow a Garden</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('stats')">Live Stats</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('map')">Global Heatmap</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('tips')">Tips</a>
+            <a href="guides.html">📚 Guides</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('community')" class="discord-btn">💬 Discord</a>
+        </nav>
+    </header>
+    
+    <section class="events-hero">
+        <h1>🎉 Special Events in Grow a Garden</h1>
+        <p>Complete Guide: Limited-Time Opportunities and Exclusive Rewards</p>
+    </section>
+    
+    <!-- 面包屑导航 -->
+    <div class="breadcrumb-container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+                <li><a href="index.html">🏠 Home</a></li>
+                <li><a href="guides.html">📚 Guides</a></li>
+                <li aria-current="page">🎉 Special Events</li>
+            </ol>
+        </nav>
+    </div>
+    
+    <div class="guide-section">
+        <div class="guide-card">
+            <h2>📋 Table of Contents</h2>
+            <ul>
+                <li><a href="#basics">Event Basics</a></li>
+                <li><a href="#types">Event Types</a></li>
+                <li><a href="#preparation">Event Preparation</a></li>
+                <li><a href="#participation">Participation Strategies</a></li>
+                <li><a href="#rewards">Reward Optimization</a></li>
+                <li><a href="#scheduling">Event Scheduling</a></li>
+                <li><a href="#tips">Advanced Tips & Tricks</a></li>
+                <li><a href="#faq">Frequently Asked Questions</a></li>
+            </ul>
+        </div>
+        
+        <div class="guide-card" id="basics">
+            <h2>🎉 Event Basics</h2>
+            <p>Special events in Grow a Garden provide unique opportunities for exclusive rewards, limited-time content, and enhanced gameplay experiences. Understanding how events work is crucial for maximizing your benefits.</p>
+            
+            <h3>Core Event Principles:</h3>
+            <ol>
+                <li><strong>Limited Time:</strong> Events have specific start and end times</li>
+                <li><strong>Exclusive Rewards:</strong> Unique items and bonuses only available during events</li>
+                <li><strong>Enhanced Mechanics:</strong> Special gameplay features during events</li>
+                <li><strong>Community Participation:</strong> Events often involve group activities</li>
+                <li><strong>Progressive Rewards:</strong> Better rewards for higher participation levels</li>
+            </ol>
+            
+            <div class="tip-box">
+                <strong>💡 Pro Tip:</strong> Always check the event schedule and prepare in advance to maximize your participation and rewards!
+            </div>
+        </div>
+        
+        <div class="guide-card" id="types">
+            <h2>🎨 Event Types</h2>
+            <p>Different types of events offer various opportunities and rewards. Understanding event categories helps you choose the best participation strategies.</p>
+            
+            <h3>Event Categories</h3>
+            <div class="events-tips">
+                <div class="tip-card">
+                    <h4>🌾 Farming Events</h4>
+                    <ul>
+                        <li>Increased crop yields</li>
+                        <li>Rare seed availability</li>
+                        <li>Special farming tools</li>
+                        <li>Community challenges</li>
+                    </ul>
+                </div>
+                <div class="tip-card">
+                    <h4>🎨 Crafting Events</h4>
+                    <ul>
+                        <li>Exclusive recipes</li>
+                        <li>Enhanced crafting efficiency</li>
+                        <li>Special ingredients</li>
+                        <li>Competition rewards</li>
+                    </ul>
+                </div>
+                <div class="tip-card">
+                    <h4>💰 Economic Events</h4>
+                    <ul>
+                        <li>Market fluctuations</li>
+                        <li>Investment opportunities</li>
+                        <li>Trading bonuses</li>
+                        <li>Profit multipliers</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Seasonal Events</h3>
+            <div class="events-grid">
+                <div class="event-item">
+                    <h4>🌸 Spring Festival</h4>
+                    <p>Flower-themed events</p>
+                    <p>Duration: 2 weeks</p>
+                </div>
+                <div class="event-item">
+                    <h4>☀️ Summer Harvest</h4>
+                    <p>Bountiful crop events</p>
+                    <p>Duration: 3 weeks</p>
+                </div>
+                <div class="event-item">
+                    <h4>🍂 Autumn Market</h4>
+                    <p>Trading and profit events</p>
+                    <p>Duration: 2 weeks</p>
+                </div>
+                <div class="event-item">
+                    <h4>❄️ Winter Wonderland</h4>
+                    <p>Holiday-themed events</p>
+                    <p>Duration: 4 weeks</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="guide-card" id="preparation">
+            <h2>📋 Event Preparation</h2>
+            <p>Proper preparation is key to maximizing your event participation and rewards. Planning ahead can make the difference between success and missed opportunities.</p>
+            
+            <h3>Preparation Checklist</h3>
+            <ul>
+                <li><strong>Resource Stockpiling:</strong> Gather necessary resources before events</li>
+                <li><strong>Tool Upgrades:</strong> Ensure your tools are optimized for events</li>
+                <li><strong>Space Planning:</strong> Clear space for event-specific activities</li>
+                <li><strong>Community Coordination:</strong> Connect with other players for group events</li>
+                <li><strong>Schedule Management:</strong> Plan your time around event schedules</li>
+            </ul>
+            
+            <h3>Pre-Event Strategies</h3>
+            <div class="events-tips">
+                <div class="tip-card">
+                    <h4>📊 Resource Management</h4>
+                    <ul>
+                        <li>Stockpile essential items</li>
+                        <li>Save currency for event purchases</li>
+                        <li>Prepare crafting materials</li>
+                        <li>Optimize storage space</li>
+                    </ul>
+                </div>
+                <div class="tip-card">
+                    <h4>⏰ Time Planning</h4>
+                    <ul>
+                        <li>Check event schedules</li>
+                        <li>Plan participation times</li>
+                        <li>Coordinate with community</li>
+                        <li>Set event goals</li>
+                    </ul>
+                </div>
+                <div class="tip-card">
+                    <h4>🎯 Goal Setting</h4>
+                    <ul>
+                        <li>Define event objectives</li>
+                        <li>Set realistic targets</li>
+                        <li>Plan reward priorities</li>
+                        <li>Track progress metrics</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="guide-card" id="participation">
+            <h2>🎯 Participation Strategies</h2>
+            <p>Effective participation strategies can significantly increase your event rewards and overall success. Different events require different approaches.</p>
+            
+            <h3>Participation Approaches</h3>
+            <table class="recipe-table">
+                <thead>
+                    <tr>
+                        <th>Event Type</th>
+                        <th>Strategy</th>
+                        <th>Focus Area</th>
+                        <th>Expected Rewards</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Farming Events</td>
+                        <td>Mass Production</td>
+                        <td>Crop Yield</td>
+                        <td>Rare Seeds, Tools</td>
+                    </tr>
+                    <tr>
+                        <td>Crafting Events</td>
+                        <td>Quality Focus</td>
+                        <td>Recipe Mastery</td>
+                        <td>Exclusive Recipes</td>
+                    </tr>
+                    <tr>
+                        <td>Economic Events</td>
+                        <td>Market Timing</td>
+                        <td>Profit Maximization</td>
+                        <td>Currency Bonuses</td>
+                    </tr>
+                    <tr>
+                        <td>Community Events</td>
+                        <td>Collaboration</td>
+                        <td>Group Coordination</td>
+                        <td>Shared Rewards</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Event-Specific Strategies</h3>
+            <div class="events-tips">
+                <div class="tip-card">
+                    <h4>🌾 Farming Events</h4>
+                    <ul>
+                        <li>Plant high-yield crops</li>
+                        <li>Use golden hours effectively</li>
+                        <li>Coordinate with community</li>
+                        <li>Focus on event crops</li>
+                    </ul>
+                </div>
+                <div class="tip-card">
+                    <h4>🎨 Crafting Events</h4>
+                    <ul>
+                        <li>Master event recipes</li>
+                        <li>Gather special ingredients</li>
+                        <li>Optimize crafting efficiency</li>
+                        <li>Participate in competitions</li>
+                    </ul>
+                </div>
+                <div class="tip-card">
+                    <h4>💰 Economic Events</h4>
+                    <ul>
+                        <li>Monitor market trends</li>
+                        <li>Buy low, sell high</li>
+                        <li>Invest in event items</li>
+                        <li>Maximize profit windows</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="guide-card" id="rewards">
+            <h2>🏆 Reward Optimization</h2>
+            <p>Maximizing event rewards requires understanding reward systems and optimizing your participation accordingly.</p>
+            
+            <h3>Reward Types</h3>
+            <div class="events-tips">
+                <div class="tip-card">
+                    <h4>🎁 Exclusive Items</h4>
+                    <ul>
+                        <li>Limited-time cosmetics</li>
+                        <li>Special tools and equipment</li>
+                        <li>Unique crop varieties</li>
+                        <li>Rare crafting materials</li>
+                    </ul>
+                </div>
+                <div class="tip-card">
+                    <h4>💰 Currency Bonuses</h4>
+                    <ul>
+                        <li>Multiplied earnings</li>
+                        <li>Bonus coins</li>
+                        <li>Special currencies</li>
+                        <li>Investment returns</li>
+                    </ul>
+                </div>
+                <div class="tip-card">
+                    <h4>📈 Experience Gains</h4>
+                    <ul>
+                        <li>Accelerated leveling</li>
+                        <li>Skill point bonuses</li>
+                        <li>Unlock progression</li>
+                        <li>Prestige rewards</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Reward Optimization Strategies</h3>
+            <ol>
+                <li><strong>Early Participation:</strong> Start events early to maximize time</li>
+                <li><strong>Consistent Activity:</strong> Maintain regular participation throughout events</li>
+                <li><strong>Goal Focus:</strong> Target specific rewards based on your needs</li>
+                <li><strong>Community Collaboration:</strong> Work with others for shared rewards</li>
+                <li><strong>Resource Investment:</strong> Invest resources strategically for maximum returns</li>
+            </ol>
+        </div>
+        
+        <div class="guide-card" id="scheduling">
+            <h2>📅 Event Scheduling</h2>
+            <p>Understanding event schedules and timing is crucial for effective participation and preparation.</p>
+            
+            <h3>Event Timing Patterns</h3>
+            <div class="events-tips">
+                <div class="tip-card">
+                    <h4>📅 Weekly Events</h4>
+                    <ul>
+                        <li>Small farming challenges</li>
+                        <li>Quick crafting competitions</li>
+                        <li>Mini economic events</li>
+                        <li>Community challenges</li>
+                    </ul>
+                </div>
+                <div class="tip-card">
+                    <h4>📅 Monthly Events</h4>
+                    <ul>
+                        <li>Major seasonal events</li>
+                        <li>Extended challenges</li>
+                        <li>Community-wide activities</li>
+                        <li>Exclusive content releases</li>
+                    </ul>
+                </div>
+                <div class="tip-card">
+                    <h4>📅 Special Events</h4>
+                    <ul>
+                        <li>Holiday celebrations</li>
+                        <li>Game updates</li>
+                        <li>Community milestones</li>
+                        <li>Developer announcements</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Scheduling Tips</h3>
+            <ul>
+                <li><strong>Calendar Management:</strong> Keep track of upcoming events</li>
+                <li><strong>Preparation Windows:</strong> Use time between events for preparation</li>
+                <li><strong>Priority Planning:</strong> Focus on events that align with your goals</li>
+                <li><strong>Time Investment:</strong> Balance event participation with regular gameplay</li>
+                <li><strong>Community Coordination:</strong> Coordinate with community for group events</li>
+            </ul>
+        </div>
+        
+        <div class="guide-card" id="tips">
+            <h2>💡 Advanced Tips & Tricks</h2>
+            <p>These advanced techniques will help you master event participation and achieve exceptional results.</p>
+            
+            <h3>Pro Tips</h3>
+            <ul>
+                <li><strong>Event Research:</strong> Study previous events to understand patterns</li>
+                <li><strong>Community Networking:</strong> Connect with experienced event participants</li>
+                <li><strong>Resource Optimization:</strong> Use resources efficiently during events</li>
+                <li><strong>Timing Mastery:</strong> Perfect your timing for maximum efficiency</li>
+                <li><strong>Adaptation Skills:</strong> Adapt strategies based on event dynamics</li>
+            </ul>
+            
+            <h3>Common Mistakes to Avoid</h3>
+            <ol>
+                <li><strong>Poor Preparation:</strong> Don't start events without proper preparation</li>
+                <li><strong>Over-Investment:</strong> Balance event participation with regular gameplay</li>
+                <li><strong>Ignoring Community:</strong> Many events benefit from community collaboration</li>
+                <li><strong>Poor Timing:</strong> Don't miss event windows or deadlines</li>
+                <li><strong>Goal Confusion:</strong> Focus on specific rewards rather than trying to get everything</li>
+            </ol>
+        </div>
+        
+        <div class="guide-card" id="faq">
+            <h2>❓ Frequently Asked Questions</h2>
+            
+            <h3>General Questions</h3>
+            <div class="events-tips">
+                <div class="tip-card">
+                    <h4>Q: How often do events occur?</h4>
+                    <p>A: Events typically occur weekly, with major events happening monthly. Special events may be announced with varying frequency.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>Q: Do I need to participate in all events?</h4>
+                    <p>A: No, focus on events that align with your goals and interests. Quality participation is better than spreading yourself thin.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>Q: Can I get event rewards later?</h4>
+                    <p>A: Most event rewards are exclusive to the event period. Some may return in future events, but this is not guaranteed.</p>
+                </div>
+            </div>
+            
+            <h3>Advanced Questions</h3>
+            <div class="events-tips">
+                <div class="tip-card">
+                    <h4>Q: How do I maximize event rewards?</h4>
+                    <p>A: Prepare in advance, participate consistently, focus on specific goals, and collaborate with the community when beneficial.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>Q: Are events worth the time investment?</h4>
+                    <p>A: Events often provide unique rewards and accelerated progression that can significantly benefit your long-term gameplay.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>Q: How do I prepare for upcoming events?</h4>
+                    <p>A: Monitor event announcements, stockpile relevant resources, upgrade necessary tools, and coordinate with your community.</p>
+                </div>
+            </div>
+        </div>
+        
+        <a href="guides.html" class="back-btn">← Back to Guides</a>
+    </div>
+
+    <script src="flag-switcher.js"></script></body>
+</html> 

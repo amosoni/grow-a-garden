@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Make Spaghetti in Grow a Garden - Complete Guide | Grow a Garden Tips</title>
+    <meta name="description" content="Learn how to make delicious spaghetti in Roblox Grow a Garden! From pasta preparation to sauce making, including all spaghetti-making tips, best ingredient combinations, and efficiency improvement methods.">
+    <meta name="keywords" content="how to make spaghetti in grow a garden, roblox spaghetti recipe, grow a garden guide, spaghetti making guide, roblox farming game, spaghetti ingredients collection, grow a garden tips">
+    <link rel="canonical" href="https://your-domain.com/how-to-make-spaghetti.html">
+    
+    <!-- Open Graph for social sharing -->
+    <meta property="og:title" content="How to Make Spaghetti in Grow a Garden - Complete Guide">
+    <meta property="og:description" content="Learn how to make delicious spaghetti in Roblox Grow a Garden! From pasta preparation to sauce making, including all spaghetti-making tips.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://your-domain.com/how-to-make-spaghetti.html">
+    <meta property="og:image" content="https://your-domain.com/spaghetti-guide-og.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How to Make Spaghetti in Grow a Garden - Complete Guide">
+    <meta name="twitter:description" content="Learn how to make delicious spaghetti in Roblox Grow a Garden! From pasta preparation to sauce making.">
+    <meta name="twitter:image" content="https://your-domain.com/spaghetti-guide-og.jpg">
+    
+    <!-- Structured Data JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to Make Spaghetti in Grow a Garden",
+      "description": "Learn how to make delicious spaghetti in Roblox Grow a Garden, including pasta preparation, sauce making, and efficiency improvement tips.",
+      "image": "https://your-domain.com/spaghetti-guide-og.jpg",
+      "url": "https://your-domain.com/how-to-make-spaghetti.html",
+      "inLanguage": "en",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Prepare Pasta",
+          "text": "Mix flour, eggs and water to create pasta dough in Grow a Garden"
+        },
+        {
+          "@type": "HowToStep", 
+          "name": "Make Sauce",
+          "text": "Prepare tomato sauce with herbs and spices for authentic flavor"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Cook and Serve",
+          "text": "Boil pasta and combine with sauce for delicious spaghetti"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Roblox-like color scheme -->
+    <link rel="stylesheet" href="https://unpkg.com/simple.css@2.1.0/simple.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍝</text></svg>">
+    
+    <style>
+        body {
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .bg-blur {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: 0;
+            background: url('grow-bg.jpg') center center/cover no-repeat;
+            opacity: 0.3;
+            filter: blur(2px);
+            pointer-events: none;
+        }
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+        .spaghetti-hero {
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-top: 60px;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        .spaghetti-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        .spaghetti-hero h1,
+        .spaghetti-hero p {
+            position: relative;
+            z-index: 2;
+        }
+        .breadcrumb {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+        }
+        .breadcrumb a {
+            color: white;
+            text-decoration: none;
+            margin-right: 1rem;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        .guide-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        .section {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 15px;
+            border-left: 5px solid #ff6b35;
+        }
+        .section h2 {
+            color: #ff6b35;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        .section h3 {
+            color: #f7931e;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+        .step {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 10px;
+            border-left: 4px solid #f7931e;
+        }
+        .step h4 {
+            color: #ff6b35;
+            margin-bottom: 0.5rem;
+        }
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .tip-card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 2px solid #f7931e;
+        }
+        .tip-card h4 {
+            color: #ff6b35;
+            margin-bottom: 0.5rem;
+        }
+        .back-btn {
+            display: inline-block;
+            background: #ff6b35;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 10px;
+            margin-top: 2rem;
+            transition: background 0.3s;
+        }
+        .back-btn:hover {
+            background: #e55a2b;
+        }
+        .ingredients-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        .ingredient-item {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid #f7931e;
+        }
+        .ingredient-item .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-blur"></div>
+    <div class="content-wrapper">
+        <header>
+        <nav>
+            <a href="#" class="logo" data-i18n="nav.logo">🌱 Grow a Garden</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('stats')" data-i18n="nav.live">Live Stats</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('map')" data-i18n="nav.map">Global Heatmap</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('tips')" data-i18n="nav.tips">Tips</a>
+            <a href="guides.html" data-i18n="nav.guides">📚 Guides</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('online')" data-i18n="nav.online">🎮 Online</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('community')" class="discord-btn" data-i18n="nav.discord">💬 Discord</a>
+            <div class="flag-language-switcher">
+    <div class="current-flag" id="current-flag">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNDgwIj4KICAgICAgICAgICAgPGRlZnM+PGNsaXBQYXRoIGlkPSJhIj48cGF0aCBkPSJNLTg1LjMgMGg2ODIuNnY1MTJILTg1LjN6Ii8+PC9jbGlwUGF0aD48L2RlZnM+CiAgICAgICAgICAgIDxjbGlwUGF0aCBpZD0iYiI+PHVzZSBocmVmPSIjYSIvPjwvY2xpcFBhdGg+CiAgICAgICAgICAgIDxnIGNsaXAtcGF0aD0idXJsKCNiKSIgdHJhbnNmb3JtPSJzY2FsZSguOTM3NSkiPgogICAgICAgICAgICAgICAgPGcgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2Utd2lkdGg9IjFwdCI+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2NTEySC0yNTZ6IiBmaWxsPSIjYmQzZDQ0Ii8+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAxMDIuNEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAyMDQuOEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAzMDcuMkg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiA0MDkuNkg3NjhWNTEySC0yNTZ6IiBmaWxsPSIjZmZmIi8+CiAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICA8ZyBmaWxsPSIjMTkyZjVkIj4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAwdjUxMmwyNTYtMjU2eiIvPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9zdmc+" 
+         alt="en Flag">
+    </div>
+    <div class="flag-dropdown" id="flag-dropdown">
+        <div class="flag-option" data-lang="en" title="English">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNDgwIj4KICAgICAgICAgICAgPGRlZnM+PGNsaXBQYXRoIGlkPSJhIj48cGF0aCBkPSJNLTg1LjMgMGg2ODIuNnY1MTJILTg1LjN6Ii8+PC9jbGlwUGF0aD48L2RlZnM+CiAgICAgICAgICAgIDxjbGlwUGF0aCBpZD0iYiI+PHVzZSBocmVmPSIjYSIvPjwvY2xpcFBhdGg+CiAgICAgICAgICAgIDxnIGNsaXAtcGF0aD0idXJsKCNiKSIgdHJhbnNmb3JtPSJzY2FsZSguOTM3NSkiPgogICAgICAgICAgICAgICAgPGcgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2Utd2lkdGg9IjFwdCI+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2NTEySC0yNTZ6IiBmaWxsPSIjYmQzZDQ0Ii8+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAxMDIuNEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAyMDQuOEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAzMDcuMkg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiA0MDkuNkg3NjhWNTEySC0yNTZ6IiBmaWxsPSIjZmZmIi8+CiAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICA8ZyBmaWxsPSIjMTkyZjVkIj4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAwdjUxMmwyNTYtMjU2eiIvPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9zdmc+" 
+         alt="en Flag">
+            <span class="flag-name">English</span>
+        </div>
+        <div class="flag-option" data-lang="zh-cn" title="简体中文">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNkZTI5MTAiLz4KICAgICAgICAgICAgPGcgZmlsbD0iI2ZmZGUwMCI+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNNDUwIDEyMGwtNDUuNyAxNDAuNy0xMTkuMyAwaDE1NGwtMTE5LjMgMHoiLz4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik00NTAgMzAwbC00NS43IDE0MC43LTExOS4zIDBoMTU0bC0xMTkuMyAweiIvPgogICAgICAgICAgICAgICAgPHBhdGggZD0iTTQ1MCA0ODBsLTQ1LjcgMTQwLjctMTE5LjMgMGgxNTRsLTExOS4zIDB6Ii8+CiAgICAgICAgICAgIDwvZz4KICAgICAgICA8L3N2Zz4=" 
+         alt="zh-cn Flag">
+            <span class="flag-name">简体中文</span>
+        </div>
+        <div class="flag-option" data-lang="es" title="Español">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3NTAgNTAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9Ijc1MCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiNjNjBiMWUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9Ijc1MCIgaGVpZ2h0PSIyNTAiIHk9IjEyNSIgZmlsbD0iI2ZmYzQwMCIvPgogICAgICAgIDwvc3ZnPg==" 
+         alt="es Flag">
+            <span class="flag-name">Español</span>
+        </div>
+        <div class="flag-option" data-lang="pt-br" title="Português">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3MjAgNTA0Ij4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjcyMCIgaGVpZ2h0PSI1MDQiIGZpbGw9IiMwMDliM2EiLz4KICAgICAgICAgICAgPHBhdGggZD0iTTM2MCAyNTJsLTE4MC0xMjZ2MjUyeiIgZmlsbD0iI2ZlZGYwMCIvPgogICAgICAgICAgICA8Y2lyY2xlIGN4PSIzNjAiIGN5PSIyNTIiIHI9IjYwIiBmaWxsPSIjMDAyNzc2Ii8+CiAgICAgICAgPC9zdmc+" 
+         alt="pt-br Flag">
+            <span class="flag-name">Português</span>
+        </div>
+        <div class="flag-option" data-lang="fr" title="Français">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiMwMDIzOTUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSI2MDAiIHg9IjMwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjYwMCIgeD0iNjAwIiBmaWxsPSIjZWQyOTM5Ii8+CiAgICAgICAgPC9zdmc+" 
+         alt="fr Flag">
+            <span class="flag-name">Français</span>
+        </div>
+        <div class="flag-option" data-lang="de" title="Deutsch">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiMwMDAiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iI2RkMDAwMCIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjZmZjZTAwIi8+CiAgICAgICAgPC9zdmc+" 
+         alt="de Flag">
+            <span class="flag-name">Deutsch</span>
+        </div>
+        <div class="flag-option" data-lang="ru" title="Русский">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iIzAwMzlhNiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjZDUyYjFlIi8+CiAgICAgICAgPC9zdmc+" 
+         alt="ru Flag">
+            <span class="flag-name">Русский</span>
+        </div>
+        <div class="flag-option" data-lang="ar" title="العربية">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiMwMDZjMzUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI0MDAiIHk9IjEwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iMjAwIiBmaWxsPSIjY2UxMTI2Ii8+CiAgICAgICAgPC9zdmc+" 
+         alt="ar Flag">
+            <span class="flag-name">العربية</span>
+        </div>
+        <div class="flag-option" data-lang="hi" title="हिन्दी">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNmZjk5MzMiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjMTM4ODA4Ii8+CiAgICAgICAgICAgIDxjaXJjbGUgY3g9IjQ1MCIgY3k9IjMwMCIgcj0iNjAiIGZpbGw9IiMwMDAwODAiLz4KICAgICAgICA8L3N2Zz4=" 
+         alt="hi Flag">
+            <span class="flag-name">हिन्दी</span>
+        </div>
+        <div class="flag-option" data-lang="id" title="Bahasa Indonesia">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIzMDAiIHk9IjMwMCIgZmlsbD0iI2NlMTEyNiIvPgogICAgICAgIDwvc3ZnPg==" 
+         alt="id Flag">
+            <span class="flag-name">Bahasa Indonesia</span>
+        </div>
+        <div class="flag-option" data-lang="vi" title="Tiếng Việt">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNkYTI1MWQiLz4KICAgICAgICAgICAgPHBhdGggZD0iTTQ1MCAzMDBsLTE4MC0xMjZ2MjUyeiIgZmlsbD0iI2ZmZmYwMCIvPgogICAgICAgIDwvc3ZnPg==" 
+         alt="vi Flag">
+            <span class="flag-name">Tiếng Việt</span>
+        </div>
+        <div class="flag-option" data-lang="ja" title="日本語">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPGNpcmNsZSBjeD0iNDUwIiBjeT0iMzAwIiByPSIxODAiIGZpbGw9IiNiYzAwMmQiLz4KICAgICAgICA8L3N2Zz4=" 
+         alt="ja Flag">
+            <span class="flag-name">日本語</span>
+        </div>
+    </div>
+</div>
+        </nav>
+    </header>
+        
+        <section class="spaghetti-hero">
+            <div class="breadcrumb">
+                <a href="index.html" data-i18n="spaghettiMaking.breadcrumb.home">🏠 Home</a>
+                <a href="guides.html" data-i18n="spaghettiMaking.breadcrumb.guides">📚 Guides</a>
+                <span data-i18n="spaghettiMaking.breadcrumb.current">🍝 Spaghetti Making</span>
+            </div>
+            <h1 data-i18n="spaghettiMaking.hero.title">🍝 Spaghetti Making Guide in Grow a Garden</h1>
+            <p data-i18n="spaghettiMaking.hero.subtitle">Complete Guide: Creating Delicious Spaghetti</p>
+        </section>
+        
+        <div class="guide-content">
+            <section class="section">
+                <h2 data-i18n="spaghettiMaking.whyMake.title">🎯 Why Make Spaghetti?</h2>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <h4 data-i18n="spaghettiMaking.whyMake.profits">High Profits</h4>
+                        <p data-i18n="spaghettiMaking.whyMake.profitsDesc">Spaghetti is a popular dish with good profit margins</p>
+                    </div>
+                    <div class="tip-card">
+                        <h4 data-i18n="spaghettiMaking.whyMake.versatility">Versatility</h4>
+                        <p data-i18n="spaghettiMaking.whyMake.versatilityDesc">Many sauce variations and ingredient combinations</p>
+                    </div>
+                    <div class="tip-card">
+                        <h4 data-i18n="spaghettiMaking.whyMake.market">Market Demand</h4>
+                        <p data-i18n="spaghettiMaking.whyMake.marketDesc">Always popular for daily meals and events</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2 data-i18n="spaghettiMaking.requirements.title">🥘 Requirements</h2>
+                <div class="ingredients-list">
+                    <div class="ingredient-item">
+                        <div class="icon">🌾</div>
+                        <h4 data-i18n="spaghettiMaking.requirements.ingredients.title">🌾 Ingredients</h4>
+                        <p data-i18n="spaghettiMaking.requirements.ingredients.description">Flour, eggs, tomatoes, herbs</p>
+                    </div>
+                    <div class="ingredient-item">
+                        <div class="icon">🍳</div>
+                        <h4 data-i18n="spaghettiMaking.requirements.equipment.title">🍳 Equipment</h4>
+                        <p data-i18n="spaghettiMaking.requirements.equipment.description">Pasta maker, pots, and stove</p>
+                    </div>
+                    <div class="ingredient-item">
+                        <div class="icon">📖</div>
+                        <h4 data-i18n="spaghettiMaking.requirements.recipe.title">📖 Recipe</h4>
+                        <p data-i18n="spaghettiMaking.requirements.recipe.description">Spaghetti making knowledge</p>
+                    </div>
+                    <div class="ingredient-item">
+                        <div class="icon">⏰</div>
+                        <h4 data-i18n="spaghettiMaking.requirements.time.title">⏰ Time</h4>
+                        <p data-i18n="spaghettiMaking.requirements.time.description">Preparation and cooking time</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2 data-i18n="spaghettiMaking.stepByStep.title">📝 Step-by-Step Guide</h2>
+                
+                <div class="step">
+                    <h4 data-i18n="spaghettiMaking.stepByStep.step1.title">Step 1: Prepare Pasta Dough</h4>
+                    <p data-i18n="spaghettiMaking.stepByStep.step1.mix">Mix flour and eggs to create pasta dough</p>
+                    <p data-i18n="spaghettiMaking.stepByStep.step1.knead">Knead until smooth and elastic</p>
+                </div>
+                
+                <div class="step">
+                    <h4 data-i18n="spaghettiMaking.stepByStep.step2.title">Step 2: Make Pasta</h4>
+                    <p data-i18n="spaghettiMaking.stepByStep.step2.roll">Roll out dough and cut into spaghetti strands</p>
+                    <p data-i18n="spaghettiMaking.stepByStep.step2.dry">Allow pasta to dry slightly</p>
+                </div>
+                
+                <div class="step">
+                    <h4 data-i18n="spaghettiMaking.stepByStep.step3.title">Step 3: Prepare Sauce</h4>
+                    <p data-i18n="spaghettiMaking.stepByStep.step3.tomatoes">Cook tomatoes with herbs and spices</p>
+                    <p data-i18n="spaghettiMaking.stepByStep.step3.simmer">Simmer until thickened</p>
+                </div>
+                
+                <div class="step">
+                    <h4 data-i18n="spaghettiMaking.stepByStep.step4.title">Step 4: Cook and Serve</h4>
+                    <p data-i18n="spaghettiMaking.stepByStep.step4.boil">Boil pasta in salted water</p>
+                    <p data-i18n="spaghettiMaking.stepByStep.step4.combine">Combine with sauce and serve hot</p>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2 data-i18n="spaghettiMaking.proTips.title">💡 Pro Tips</h2>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <h4 data-i18n="spaghettiMaking.proTips.dough">Perfect Dough</h4>
+                        <p data-i18n="spaghettiMaking.proTips.doughDesc">Use fresh eggs and high-quality flour for best results.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h4 data-i18n="spaghettiMaking.proTips.cooking">Cooking Time</h4>
+                        <p data-i18n="spaghettiMaking.proTips.cookingDesc">Cook pasta al dente for perfect texture.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h4 data-i18n="spaghettiMaking.proTips.sauce">Sauce Consistency</h4>
+                        <p data-i18n="spaghettiMaking.proTips.sauceDesc">Let sauce simmer to develop rich flavors.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <a href="guides.html" class="back-btn" data-i18n="spaghettiMaking.backToGuides">← Back to Guides</a>
+        </div>
+    </div>
+    
+    <script src="/i18n/i18n.js"></script>
+    <script>
+        // Initialize internationalization
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof i18n !== 'undefined') {
+                i18n.init();
+            }
+        });
+    </script>
+
+    <script src="flag-switcher.js"></script></body>
+</html> 

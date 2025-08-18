@@ -52,7 +52,7 @@
     <!-- Roblox-like color scheme -->
     <link rel="stylesheet" href="https://unpkg.com/simple.css@2.1.0/simple.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍕</text></svg>">
     
     <style>
@@ -325,29 +325,84 @@
 <body>
     <div class="bg-blur"></div>
         <header>
-    <nav>
-      <a href="/index.html" class="logo" data-i18n="nav.logo">🌱 Grow a Garden</a>
-      <a href="/index.html#stats" data-i18n="nav.live">Estadísticas en Vivo</a>
-      <a href="/index.html#map" data-i18n="nav.map">Mapa de Calor Global</a>
-      <a href="/index.html#tips" data-i18n="nav.tips">Consejos</a>
-      <a href="/guides.html" data-i18n="nav.guides">📚 Guías</a>
-      <a href="/index.html#community" class="discord-btn" data-i18n="nav.discord">💬 Discord</a>
-                  <select id="lang-switcher" aria-label="Language">
-                <option value="en" >English</option>
-                <option value="zh-cn" >简体中文</option>
-                <option value="es" selected="">Español</option>
-                <option value="pt-br" >Português</option>
-                <option value="fr" >Français</option>
-                <option value="de" >Deutsch</option>
-                <option value="ru" >Русский</option>
-                <option value="ar" >العربية</option>
-                <option value="hi" >हिन्दी</option>
-                <option value="id" >Bahasa Indonesia</option>
-                <option value="vi" >Tiếng Việt</option>
-                <option value="ja" >日本語</option>
-            </select>
-    </nav>
-  </header>
+        <nav>
+            <a href="index.html" class="logo" data-i18n="nav.logo">🌱 Grow a Garden</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('stats')" data-i18n="nav.live">Live Stats</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('map')" data-i18n="nav.map">Global Heatmap</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('tips')" data-i18n="nav.tips">Tips</a>
+            <a href="guides.html" data-i18n="nav.guides">📚 Guides</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('online')" data-i18n="nav.online">🎮 Online</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('community')" class="discord-btn" data-i18n="nav.discord">💬 Discord</a>
+            <div class="flag-language-switcher">
+    <div class="current-flag" id="current-flag">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNDgwIj4KICAgICAgICAgICAgPGRlZnM+PGNsaXBQYXRoIGlkPSJhIj48cGF0aCBkPSJNLTg1LjMgMGg2ODIuNnY1MTJILTg1LjN6Ii8+PC9jbGlwUGF0aD48L2RlZnM+CiAgICAgICAgICAgIDxjbGlwUGF0aCBpZD0iYiI+PHVzZSBocmVmPSIjYSIvPjwvY2xpcFBhdGg+CiAgICAgICAgICAgIDxnIGNsaXAtcGF0aD0idXJsKCNiKSIgdHJhbnNmb3JtPSJzY2FsZSguOTM3NSkiPgogICAgICAgICAgICAgICAgPGcgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2Utd2lkdGg9IjFwdCI+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2NTEySC0yNTZ6IiBmaWxsPSIjYmQzZDQ0Ii8+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAxMDIuNEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAyMDQuOEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAzMDcuMkg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiA0MDkuNkg3NjhWNTEySC0yNTZ6IiBmaWxsPSIjZmZmIi8+CiAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICA8ZyBmaWxsPSIjMTkyZjVkIj4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAwdjUxMmwyNTYtMjU2eiIvPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9zdmc+" 
+         alt="en Flag">
+    </div>
+    <div class="flag-dropdown" id="flag-dropdown">
+        <div class="flag-option" data-lang="en" title="English">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNDgwIj4KICAgICAgICAgICAgPGRlZnM+PGNsaXBQYXRoIGlkPSJhIj48cGF0aCBkPSJNLTg1LjMgMGg2ODIuNnY1MTJILTg1LjN6Ii8+PC9jbGlwUGF0aD48L2RlZnM+CiAgICAgICAgICAgIDxjbGlwUGF0aCBpZD0iYiI+PHVzZSBocmVmPSIjYSIvPjwvY2xpcFBhdGg+CiAgICAgICAgICAgIDxnIGNsaXAtcGF0aD0idXJsKCNiKSIgdHJhbnNmb3JtPSJzY2FsZSguOTM3NSkiPgogICAgICAgICAgICAgICAgPGcgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2Utd2lkdGg9IjFwdCI+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2NTEySC0yNTZ6IiBmaWxsPSIjYmQzZDQ0Ii8+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAxMDIuNEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAyMDQuOEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAzMDcuMkg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiA0MDkuNkg3NjhWNTEySC0yNTZ6IiBmaWxsPSIjZmZmIi8+CiAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICA8ZyBmaWxsPSIjMTkyZjVkIj4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAwdjUxMmwyNTYtMjU2eiIvPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9zdmc+" 
+         alt="en Flag">
+            <span class="flag-name">English</span>
+        </div>
+        <div class="flag-option" data-lang="zh-cn" title="简体中文">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNkZTI5MTAiLz4KICAgICAgICAgICAgPGcgZmlsbD0iI2ZmZGUwMCI+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNNDUwIDEyMGwtNDUuNyAxNDAuNy0xMTkuMyAwaDE1NGwtMTE5LjMgMHoiLz4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik00NTAgMzAwbC00NS43IDE0MC43LTExOS4zIDBoMTU0bC0xMTkuMyAweiIvPgogICAgICAgICAgICAgICAgPHBhdGggZD0iTTQ1MCA0ODBsLTQ1LjcgMTQwLjctMTE5LjMgMGgxNTRsLTExOS4zIDB6Ii8+CiAgICAgICAgICAgIDwvZz4KICAgICAgICA8L3N2Zz4=" 
+         alt="zh-cn Flag">
+            <span class="flag-name">简体中文</span>
+        </div>
+        <div class="flag-option" data-lang="es" title="Español">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3NTAgNTAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9Ijc1MCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiNjNjBiMWUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9Ijc1MCIgaGVpZ2h0PSIyNTAiIHk9IjEyNSIgZmlsbD0iI2ZmYzQwMCIvPgogICAgICAgIDwvc3ZnPg==" 
+         alt="es Flag">
+            <span class="flag-name">Español</span>
+        </div>
+        <div class="flag-option" data-lang="pt-br" title="Português">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3MjAgNTA0Ij4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjcyMCIgaGVpZ2h0PSI1MDQiIGZpbGw9IiMwMDliM2EiLz4KICAgICAgICAgICAgPHBhdGggZD0iTTM2MCAyNTJsLTE4MC0xMjZ2MjUyeiIgZmlsbD0iI2ZlZGYwMCIvPgogICAgICAgICAgICA8Y2lyY2xlIGN4PSIzNjAiIGN5PSIyNTIiIHI9IjYwIiBmaWxsPSIjMDAyNzc2Ii8+CiAgICAgICAgPC9zdmc+" 
+         alt="pt-br Flag">
+            <span class="flag-name">Português</span>
+        </div>
+        <div class="flag-option" data-lang="fr" title="Français">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiMwMDIzOTUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSI2MDAiIHg9IjMwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjYwMCIgeD0iNjAwIiBmaWxsPSIjZWQyOTM5Ii8+CiAgICAgICAgPC9zdmc+" 
+         alt="fr Flag">
+            <span class="flag-name">Français</span>
+        </div>
+        <div class="flag-option" data-lang="de" title="Deutsch">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiMwMDAiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iI2RkMDAwMCIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjZmZjZTAwIi8+CiAgICAgICAgPC9zdmc+" 
+         alt="de Flag">
+            <span class="flag-name">Deutsch</span>
+        </div>
+        <div class="flag-option" data-lang="ru" title="Русский">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iIzAwMzlhNiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjZDUyYjFlIi8+CiAgICAgICAgPC9zdmc+" 
+         alt="ru Flag">
+            <span class="flag-name">Русский</span>
+        </div>
+        <div class="flag-option" data-lang="ar" title="العربية">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiMwMDZjMzUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI0MDAiIHk9IjEwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iMjAwIiBmaWxsPSIjY2UxMTI2Ii8+CiAgICAgICAgPC9zdmc+" 
+         alt="ar Flag">
+            <span class="flag-name">العربية</span>
+        </div>
+        <div class="flag-option" data-lang="hi" title="हिन्दी">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNmZjk5MzMiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjMTM4ODA4Ii8+CiAgICAgICAgICAgIDxjaXJjbGUgY3g9IjQ1MCIgY3k9IjMwMCIgcj0iNjAiIGZpbGw9IiMwMDAwODAiLz4KICAgICAgICA8L3N2Zz4=" 
+         alt="hi Flag">
+            <span class="flag-name">हिन्दी</span>
+        </div>
+        <div class="flag-option" data-lang="id" title="Bahasa Indonesia">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIzMDAiIHk9IjMwMCIgZmlsbD0iI2NlMTEyNiIvPgogICAgICAgIDwvc3ZnPg==" 
+         alt="id Flag">
+            <span class="flag-name">Bahasa Indonesia</span>
+        </div>
+        <div class="flag-option" data-lang="vi" title="Tiếng Việt">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNkYTI1MWQiLz4KICAgICAgICAgICAgPHBhdGggZD0iTTQ1MCAzMDBsLTE4MC0xMjZ2MjUyeiIgZmlsbD0iI2ZmZmYwMCIvPgogICAgICAgIDwvc3ZnPg==" 
+         alt="vi Flag">
+            <span class="flag-name">Tiếng Việt</span>
+        </div>
+        <div class="flag-option" data-lang="ja" title="日本語">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPGNpcmNsZSBjeD0iNDUwIiBjeT0iMzAwIiByPSIxODAiIGZpbGw9IiNiYzAwMmQiLz4KICAgICAgICA8L3N2Zz4=" 
+         alt="ja Flag">
+            <span class="flag-name">日本語</span>
+        </div>
+    </div>
+</div>
+        </nav>
+    </header>
     
     <section class="pizza-hero">
         <h1 data-i18n="Guía de Pizza.hero.title">Guía de Pizza</h1>
@@ -373,14 +428,14 @@
                 <li><a href="#ingredients" data-i18n="ingredients.toc.ingredients">Lista de ingredientes esenciales</a></li>
                 <li><a href="#recipes" data-i18n="recipes.toc.recipes">Recetas de pizza avanzadas</a></li>
                 <li><a href="#varieties">Pizza Varieties &amp; Types</a></li>
-                <li><a href="#tips" data-i18n="tips.toc.tips">Making Tips &amp; Tricks</a></li>
+                <li><a href="#tips" data-i18n="tips.toc.tips">Consejos de preparación &amp; Tricks</a></li>
                 <li><a href="#efficiency" data-i18n="efficiency.toc.efficiency">Métodos de mejora de eficiencia</a></li>
                 <li><a href="#faq" data-i18n="faq.toc.faq">Preguntas frecuentes</a></li>
             </ul>
         </div>
         
         <div class="guide-card" id="basics">
-            <h2>🍕 Elaboración básica de pizza</h2>
+            <h2 data-i18n="a.basics.title">🍕 Elaboración básica de pizza</h2>
             <p>En Cultivar un Jardín,  pizza making is one of the most popular and profitable crafting activities. By growing various ingredients and combining them in the pizza maker, you can create delicious pizzas to earn significant rewards.</p>
             
             <h3>Pasos de elaboración:</h3>
@@ -398,7 +453,7 @@
         </div>
         
         <div class="guide-card" id="ingredients">
-            <h2>🥖 Lista de ingredientes esenciales</h2>
+            <h2 data-i18n="a.ingredients.title">🥖 Lista de ingredientes esenciales</h2>
             <p>Making quality pizzas requires various fresh ingredients. Here's the ingredient list categorized by importance:</p>
             
             <h3 data-i18n="basic_ingredients_beginner_essential.basic_ingredients_beginner_essential.title">Basic Ingredients (Beginner Essential)</h3>
@@ -457,7 +512,7 @@
                 </div>
             </div>
             
-            <h3>Rare Ingredients (Expert Level)</h3>
+            <h3>Rare Ingredients (Experto Level)</h3>
             <div class="ingredient-grid">
                 <div class="ingredient-item">
                     <h4>🦐 Shrimp</h4>
@@ -487,10 +542,10 @@
         </div>
         
         <div class="guide-card" id="recipes">
-            <h2>🍽️ Recetas de pizza avanzadas</h2>
+            <h2 data-i18n="a.recipes.title">🍽️ Recetas de pizza avanzadas</h2>
             <p>Different ingredient combinations can create pizzas of varying levels and effects. Here's a detailed recipe table:</p>
             
-            <h3 data-i18n="recipes.basic_pizza.title">Basic Pizza Recipes</h3>
+            <h3 data-i18n="recipes.basic_pizza.title">Recetas básicas de pizza</h3>
             <table class="recipe-table">
                 <thead>
                     <tr>
@@ -506,29 +561,29 @@
                         <td>Margherita Pizza</td>
                         <td>Flour + Tomato + Cheese + Yeast</td>
                         <td>3 minutos</td>
-                        <td>80 coins</td>
-                        <td>Easy</td>
+                        <td>80 monedas</td>
+                        <td>Fácil</td>
                     </tr>
                     <tr>
                         <td>Pepperoni Pizza</td>
                         <td>Flour + Tomato + Cheese + Yeast + Bacon</td>
                         <td>4 minutos</td>
-                        <td>120 coins</td>
-                        <td>Easy</td>
+                        <td>120 monedas</td>
+                        <td>Fácil</td>
                     </tr>
                     <tr>
                         <td>Mushroom Pizza</td>
                         <td>Flour + Tomato + Cheese + Yeast + Mushroom</td>
                         <td>5 minutos</td>
-                        <td>150 coins</td>
-                        <td>Medium</td>
+                        <td>150 monedas</td>
+                        <td>Medio</td>
                     </tr>
                     <tr>
                         <td>Vegetarian Pizza</td>
                         <td>Flour + Tomato + Cheese + Yeast + Bell Pepper + Onion</td>
                         <td>6 minutos</td>
-                        <td>180 coins</td>
-                        <td>Medium</td>
+                        <td>180 monedas</td>
+                        <td>Medio</td>
                     </tr>
                 </tbody>
             </table>
@@ -549,29 +604,29 @@
                         <td>Seafood Pizza</td>
                         <td>Flour + Tomato + Cheese + Yeast + Shrimp</td>
                         <td>8 minutos</td>
-                        <td>250 coins</td>
-                        <td>Hard</td>
+                        <td>250 monedas</td>
+                        <td>Difícil</td>
                     </tr>
                     <tr>
                         <td>Hawaiian Pizza</td>
                         <td>Flour + Tomato + Cheese + Yeast + Pineapple + Bacon</td>
                         <td>9 minutos</td>
-                        <td>280 coins</td>
-                        <td>Hard</td>
+                        <td>280 monedas</td>
+                        <td>Difícil</td>
                     </tr>
                     <tr>
                         <td>Spicy Pizza</td>
                         <td>Flour + Tomato + Cheese + Yeast + Chili Pepper</td>
                         <td>10 minutos</td>
-                        <td>300 coins</td>
-                        <td>Expert</td>
+                        <td>300 monedas</td>
+                        <td>Experto</td>
                     </tr>
                     <tr>
                         <td>Premium Pizza</td>
                         <td>Flour + Tomato + Cheese + Yeast + Avocado + Mushroom</td>
                         <td>12 minutos</td>
-                        <td>350 coins</td>
-                        <td>Expert</td>
+                        <td>350 monedas</td>
+                        <td>Experto</td>
                     </tr>
                 </tbody>
             </table>
@@ -592,22 +647,22 @@
                         <td>Supreme Pizza</td>
                         <td>All Basic + All Advanced + All Rare</td>
                         <td>15 minutos</td>
-                        <td>500 coins</td>
-                        <td>Master</td>
+                        <td>500 monedas</td>
+                        <td>Maestro</td>
                     </tr>
                     <tr>
                         <td>Rainbow Pizza</td>
                         <td>All Ingredients + Special Dyes</td>
                         <td>20 minutos</td>
-                        <td>800 coins</td>
-                        <td>Legendary</td>
+                        <td>800 monedas</td>
+                        <td>Legendario</td>
                     </tr>
                 </tbody>
             </table>
         </div>
         
         <div class="guide-card" id="varieties">
-            <h2>🎨 Pizza Varieties &amp; Types</h2>
+            <h2 data-i18n="a.varieties.title">🎨 Pizza Varieties &amp; Types</h2>
             <p data-i18n="grow_a_garden_features_various_pizza_types,_each_with_unique_characteristics_and_rewards:.hero.subtitle">Grow a Garden features various pizza types, each with unique characteristics and rewards:</p>
             
             <div class="pizza-variety">
@@ -654,31 +709,31 @@
         </div>
         
         <div class="guide-card" id="tips">
-            <h2>💡 Making Tips &amp; Tricks</h2>
-            <p data-i18n="master_these_tips_to_become_a_pizza-making_expert_in_grow_a_garden:.hero.subtitle">Master these tips to become a pizza-making expert in Grow a Garden:</p>
+            <h2 data-i18n="a.tips.title">💡 Consejos de preparación &amp; Tricks</h2>
+            <p data-i18n="master_these_tips_to_become_a_pizza-making_expert_in_grow_a_garden:.hero.subtitle">Maestro these tips to become a pizza-making expert in Grow a Garden:</p>
             
-            <h3>🌱 Growing Tips</h3>
+            <h3>🌱 Consejos de cultivo</h3>
             <ul>
-                <li><strong>Optimal Watering:</strong> Water plants every 2-3 hours for maximum growth speed</li>
-                <li><strong>Golden Hours:</strong> Water during 7:00-9:00 in-game time for double effects</li>
-                <li><strong>Harvest Timing:</strong> Wait for plants to fully mature (100% growth) before harvesting</li>
-                <li><strong>Soil Quality:</strong> Use premium soil for rare ingredients to increase success rate</li>
+                <li><strong>Riego óptimo:</strong> Water plants every 2-3 hours for maximum growth speed</li>
+                <li><strong>Horas doradas:</strong> Water during 7:00-9:00 in-game time for double effects</li>
+                <li><strong>Momento de cosecha:</strong> Wait for plants to fully mature (100% growth) before harvesting</li>
+                <li><strong>Calidad del suelo:</strong> Use premium soil for rare ingredients to increase success rate</li>
             </ul>
             
-            <h3>🍕 Making Tips</h3>
+            <h3>🍕 Consejos de preparación</h3>
             <ul>
-                <li><strong>Dough Quality:</strong> Higher quality flour produces better pizza dough</li>
-                <li><strong>Topping Balance:</strong> Don't overload pizzas with too many toppings</li>
-                <li><strong>Recipe Efficiency:</strong> Master basic recipes before attempting advanced ones</li>
-                <li><strong>Storage Management:</strong> Keep ingredients organized for quick access</li>
+                <li><strong>Calidad de la masa:</strong> Higher quality flour produces better pizza dough</li>
+                <li><strong>Equilibrio de ingredientes:</strong> Don't overload pizzas with too many toppings</li>
+                <li><strong>Eficiencia de recetas:</strong> Maestro basic recipes before attempting advanced ones</li>
+                <li><strong>Gestión de inventario:</strong> Keep ingredients organized for quick access</li>
             </ul>
             
-            <h3>💰 Profit Optimization</h3>
+            <h3>💰 Optimización de ganancias</h3>
             <ul>
-                <li><strong>Market Timing:</strong> Sell pizzas during peak demand hours</li>
-                <li><strong>Quality vs Quantity:</strong> Focus on high-quality pizzas for better profit margins</li>
-                <li><strong>Recipe Mastery:</strong> Master rare recipes for exclusive market access</li>
-                <li><strong>Supply Chain:</strong> Maintain steady ingredient supply for continuous production</li>
+                <li><strong>Momento del mercado:</strong> Sell pizzas during peak demand hours</li>
+                <li><strong>Calidad vs Cantidad:</strong> Focus on high-quality pizzas for better profit margins</li>
+                <li><strong>Maestría de recetas:</strong> Maestro rare recipes for exclusive market access</li>
+                <li><strong>Cadena de suministro:</strong> Maintain steady ingredient supply for continuous production</li>
             </ul>
             
             <div class="tip-box">
@@ -687,23 +742,23 @@
         </div>
         
         <div class="guide-card" id="efficiency">
-            <h2>⚡ Métodos de mejora de eficiencia</h2>
+            <h2 data-i18n="a.efficiency.title">⚡ Métodos de mejora de eficiencia</h2>
             <p>Maximize your pizza-making efficiency with these advanced strategies:</p>
             
-            <h3>🏭 Production Optimization</h3>
+            <h3>🏭 Optimización de producción</h3>
             <ul>
-                <li><strong>Automated Systems:</strong> Set up automated watering systems for consistent growth</li>
-                <li><strong>Batch Processing:</strong> Process multiple pizzas simultaneously</li>
-                <li><strong>Ingredient Rotation:</strong> Rotate crops to maintain soil fertility</li>
-                <li><strong>Quality Control:</strong> Monitor ingredient quality for consistent results</li>
+                <li><strong>Sistemas automatizados:</strong> Set up automated watering systems for consistent growth</li>
+                <li><strong>Procesamiento por lotes:</strong> Process multiple pizzas simultaneously</li>
+                <li><strong>Rotación de cultivos:</strong> Rotate crops to maintain soil fertility</li>
+                <li><strong>Control de calidad:</strong> Monitor ingredient quality for consistent results</li>
             </ul>
             
-            <h3 data-i18n="📊_advanced_strategies.📊_advanced_strategies.title">📊 Advanced Strategies</h3>
+            <h3 data-i18n="📊_advanced_strategies.📊_advanced_strategies.title">📊 Estrategias avanzadas</h3>
             <ul>
-                <li><strong>Market Analysis:</strong> Track pizza demand patterns for optimal production</li>
-                <li><strong>Recipe Optimization:</strong> Develop efficient ingredient combinations</li>
-                <li><strong>Resource Management:</strong> Balance ingredient costs with pizza profits</li>
-                <li><strong>Skill Development:</strong> Improve pizza-making skills for better results</li>
+                <li><strong>Análisis de mercado:</strong> Track pizza demand patterns for optimal production</li>
+                <li><strong>Optimización de recetas:</strong> Develop efficient ingredient combinations</li>
+                <li><strong>Gestión de recursos:</strong> Balance ingredient costs with pizza profits</li>
+                <li><strong>Desarrollo de habilidades:</strong> Improve pizza-making skills for better results</li>
             </ul>
             
             <div class="warning-box">
@@ -712,7 +767,7 @@
         </div>
         
         <div class="guide-card" id="faq">
-            <h2>❓ Preguntas frecuentes</h2>
+            <h2 data-i18n="a.faq.title">❓ Preguntas frecuentes</h2>
             
             <h3>Q: How long does it take to make a basic pizza?</h3>
             <p>A: Basic pizzas take 3-5 minutos to make, while advanced recipes can take 8-20 minutos depending on complexity.</p>
@@ -740,7 +795,7 @@
             <ol>
                 <li><strong>Start Small:</strong> Begin with basic pizza recipes to build your skills</li>
                 <li><strong>Expand Your Garden:</strong> Plant a variety of ingredients for different recipes</li>
-                <li><strong>Master Advanced Recipes:</strong> Work on complex pizza varieties for higher profits</li>
+                <li><strong>Maestro Advanced Recipes:</strong> Work on complex pizza varieties for higher profits</li>
                 <li><strong>Join the Community:</strong> Connect with other players to share tips and strategies</li>
                 <li><strong>Stay Updated:</strong> Keep up with game updates for new recipes and features</li>
             </ol>
@@ -755,4 +810,48 @@
     
     <script src="script.js"></script>
 
- </body></html>
+ 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const currentFlag = document.getElementById('current-flag');
+    const flagDropdown = document.getElementById('current-flag');
+    
+    if (currentFlag && flagDropdown) {
+        // 设置当前语言的国旗
+        const currentLang = document.documentElement.getAttribute('lang') || 'en';
+        updateCurrentFlag(currentLang);
+        
+        // 为每个国旗选项添加点击事件
+        document.querySelectorAll('.flag-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const lang = this.getAttribute('data-lang');
+                if (lang) {
+                    // 调用现有的语言切换函数
+                    if (typeof switchLang === 'function') {
+                        switchLang(lang);
+                    } else if (typeof window.__gagI18n !== 'undefined' && window.__gagI18n.switchLang) {
+                        window.__gagI18n.switchLang(lang);
+                    }
+                }
+            });
+        });
+    }
+});
+
+function updateCurrentFlag(lang) {
+    const currentFlag = document.getElementById('current-flag');
+    if (currentFlag) {
+        const flagOptions = document.querySelectorAll('.flag-option');
+        flagOptions.forEach(option => {
+            if (option.getAttribute('data-lang') === lang) {
+                const flagContent = option.innerHTML;
+                currentFlag.innerHTML = flagContent;
+                break;
+            }
+        });
+    }
+}
+</script>
+    <script src="../flag-switcher.js"></script>
+
+    <script src="../i18n/i18n.js"></script></body></html>

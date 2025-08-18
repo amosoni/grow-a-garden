@@ -52,7 +52,7 @@
     <!-- Roblox-like color scheme -->
     <link rel="stylesheet" href="https://unpkg.com/simple.css@2.1.0/simple.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥗</text></svg>">
     
     <style>
@@ -296,29 +296,84 @@
 <body>
     <div class="bg-blur"></div>
         <header>
-    <nav>
-      <a href="/index.html" class="logo" data-i18n="nav.logo">🌱 Grow a Garden</a>
-      <a href="/index.html#stats" data-i18n="nav.live">实时统计</a>
-      <a href="/index.html#map" data-i18n="nav.map">全球热力图</a>
-      <a href="/index.html#tips" data-i18n="nav.tips">技巧</a>
-      <a href="/guides.html" data-i18n="nav.guides">📚 指南</a>
-      <a href="/index.html#community" class="discord-btn" data-i18n="nav.discord">💬 Discord</a>
-                  <select id="lang-switcher" aria-label="Language">
-                <option value="en" >English</option>
-                <option value="zh-cn" selected="">简体中文</option>
-                <option value="es" >Español</option>
-                <option value="pt-br" >Português</option>
-                <option value="fr" >Français</option>
-                <option value="de" >Deutsch</option>
-                <option value="ru" >Русский</option>
-                <option value="ar" >العربية</option>
-                <option value="hi" >हिन्दी</option>
-                <option value="id" >Bahasa Indonesia</option>
-                <option value="vi" >Tiếng Việt</option>
-                <option value="ja" >日本語</option>
-            </select>
-    </nav>
-  </header>
+        <nav>
+            <a href="index.html" class="logo" data-i18n="nav.logo">🌱 Grow a Garden</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('stats')" data-i18n="nav.live">Live Stats</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('map')" data-i18n="nav.map">Global Heatmap</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('tips')" data-i18n="nav.tips">Tips</a>
+            <a href="guides.html" data-i18n="nav.guides">📚 Guides</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('online')" data-i18n="nav.online">🎮 Online</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('community')" class="discord-btn" data-i18n="nav.discord">💬 Discord</a>
+            <div class="flag-language-switcher">
+    <div class="current-flag" id="current-flag">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNDgwIj4KICAgICAgICAgICAgPGRlZnM+PGNsaXBQYXRoIGlkPSJhIj48cGF0aCBkPSJNLTg1LjMgMGg2ODIuNnY1MTJILTg1LjN6Ii8+PC9jbGlwUGF0aD48L2RlZnM+CiAgICAgICAgICAgIDxjbGlwUGF0aCBpZD0iYiI+PHVzZSBocmVmPSIjYSIvPjwvY2xpcFBhdGg+CiAgICAgICAgICAgIDxnIGNsaXAtcGF0aD0idXJsKCNiKSIgdHJhbnNmb3JtPSJzY2FsZSguOTM3NSkiPgogICAgICAgICAgICAgICAgPGcgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2Utd2lkdGg9IjFwdCI+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2NTEySC0yNTZ6IiBmaWxsPSIjYmQzZDQ0Ii8+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAxMDIuNEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAyMDQuOEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAzMDcuMkg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiA0MDkuNkg3NjhWNTEySC0yNTZ6IiBmaWxsPSIjZmZmIi8+CiAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICA8ZyBmaWxsPSIjMTkyZjVkIj4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAwdjUxMmwyNTYtMjU2eiIvPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9zdmc+" 
+         alt="en Flag">
+    </div>
+    <div class="flag-dropdown" id="flag-dropdown">
+        <div class="flag-option" data-lang="en" title="English">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNDgwIj4KICAgICAgICAgICAgPGRlZnM+PGNsaXBQYXRoIGlkPSJhIj48cGF0aCBkPSJNLTg1LjMgMGg2ODIuNnY1MTJILTg1LjN6Ii8+PC9jbGlwUGF0aD48L2RlZnM+CiAgICAgICAgICAgIDxjbGlwUGF0aCBpZD0iYiI+PHVzZSBocmVmPSIjYSIvPjwvY2xpcFBhdGg+CiAgICAgICAgICAgIDxnIGNsaXAtcGF0aD0idXJsKCNiKSIgdHJhbnNmb3JtPSJzY2FsZSguOTM3NSkiPgogICAgICAgICAgICAgICAgPGcgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2Utd2lkdGg9IjFwdCI+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2NTEySC0yNTZ6IiBmaWxsPSIjYmQzZDQ0Ii8+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAxMDIuNEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAyMDQuOEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAzMDcuMkg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiA0MDkuNkg3NjhWNTEySC0yNTZ6IiBmaWxsPSIjZmZmIi8+CiAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICA8ZyBmaWxsPSIjMTkyZjVkIj4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAwdjUxMmwyNTYtMjU2eiIvPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9zdmc+" 
+         alt="en Flag">
+            <span class="flag-name">English</span>
+        </div>
+        <div class="flag-option" data-lang="zh-cn" title="简体中文">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNkZTI5MTAiLz4KICAgICAgICAgICAgPGcgZmlsbD0iI2ZmZGUwMCI+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNNDUwIDEyMGwtNDUuNyAxNDAuNy0xMTkuMyAwaDE1NGwtMTE5LjMgMHoiLz4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik00NTAgMzAwbC00NS43IDE0MC43LTExOS4zIDBoMTU0bC0xMTkuMyAweiIvPgogICAgICAgICAgICAgICAgPHBhdGggZD0iTTQ1MCA0ODBsLTQ1LjcgMTQwLjctMTE5LjMgMGgxNTRsLTExOS4zIDB6Ii8+CiAgICAgICAgICAgIDwvZz4KICAgICAgICA8L3N2Zz4=" 
+         alt="zh-cn Flag">
+            <span class="flag-name">简体中文</span>
+        </div>
+        <div class="flag-option" data-lang="es" title="Español">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3NTAgNTAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9Ijc1MCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiNjNjBiMWUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9Ijc1MCIgaGVpZ2h0PSIyNTAiIHk9IjEyNSIgZmlsbD0iI2ZmYzQwMCIvPgogICAgICAgIDwvc3ZnPg==" 
+         alt="es Flag">
+            <span class="flag-name">Español</span>
+        </div>
+        <div class="flag-option" data-lang="pt-br" title="Português">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3MjAgNTA0Ij4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjcyMCIgaGVpZ2h0PSI1MDQiIGZpbGw9IiMwMDliM2EiLz4KICAgICAgICAgICAgPHBhdGggZD0iTTM2MCAyNTJsLTE4MC0xMjZ2MjUyeiIgZmlsbD0iI2ZlZGYwMCIvPgogICAgICAgICAgICA8Y2lyY2xlIGN4PSIzNjAiIGN5PSIyNTIiIHI9IjYwIiBmaWxsPSIjMDAyNzc2Ii8+CiAgICAgICAgPC9zdmc+" 
+         alt="pt-br Flag">
+            <span class="flag-name">Português</span>
+        </div>
+        <div class="flag-option" data-lang="fr" title="Français">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiMwMDIzOTUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSI2MDAiIHg9IjMwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjYwMCIgeD0iNjAwIiBmaWxsPSIjZWQyOTM5Ii8+CiAgICAgICAgPC9zdmc+" 
+         alt="fr Flag">
+            <span class="flag-name">Français</span>
+        </div>
+        <div class="flag-option" data-lang="de" title="Deutsch">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiMwMDAiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iI2RkMDAwMCIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjZmZjZTAwIi8+CiAgICAgICAgPC9zdmc+" 
+         alt="de Flag">
+            <span class="flag-name">Deutsch</span>
+        </div>
+        <div class="flag-option" data-lang="ru" title="Русский">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iIzAwMzlhNiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjZDUyYjFlIi8+CiAgICAgICAgPC9zdmc+" 
+         alt="ru Flag">
+            <span class="flag-name">Русский</span>
+        </div>
+        <div class="flag-option" data-lang="ar" title="العربية">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiMwMDZjMzUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI0MDAiIHk9IjEwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iMjAwIiBmaWxsPSIjY2UxMTI2Ii8+CiAgICAgICAgPC9zdmc+" 
+         alt="ar Flag">
+            <span class="flag-name">العربية</span>
+        </div>
+        <div class="flag-option" data-lang="hi" title="हिन्दी">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNmZjk5MzMiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjMTM4ODA4Ii8+CiAgICAgICAgICAgIDxjaXJjbGUgY3g9IjQ1MCIgY3k9IjMwMCIgcj0iNjAiIGZpbGw9IiMwMDAwODAiLz4KICAgICAgICA8L3N2Zz4=" 
+         alt="hi Flag">
+            <span class="flag-name">हिन्दी</span>
+        </div>
+        <div class="flag-option" data-lang="id" title="Bahasa Indonesia">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIzMDAiIHk9IjMwMCIgZmlsbD0iI2NlMTEyNiIvPgogICAgICAgIDwvc3ZnPg==" 
+         alt="id Flag">
+            <span class="flag-name">Bahasa Indonesia</span>
+        </div>
+        <div class="flag-option" data-lang="vi" title="Tiếng Việt">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNkYTI1MWQiLz4KICAgICAgICAgICAgPHBhdGggZD0iTTQ1MCAzMDBsLTE4MC0xMjZ2MjUyeiIgZmlsbD0iI2ZmZmYwMCIvPgogICAgICAgIDwvc3ZnPg==" 
+         alt="vi Flag">
+            <span class="flag-name">Tiếng Việt</span>
+        </div>
+        <div class="flag-option" data-lang="ja" title="日本語">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPGNpcmNsZSBjeD0iNDUwIiBjeT0iMzAwIiByPSIxODAiIGZpbGw9IiNiYzAwMmQiLz4KICAgICAgICA8L3N2Zz4=" 
+         alt="ja Flag">
+            <span class="flag-name">日本語</span>
+        </div>
+    </div>
+</div>
+        </nav>
+    </header>
     
     <section class="salad-hero">
         <h1 data-i18n="沙拉制作指南.hero.title">沙拉制作指南</h1>
@@ -343,7 +398,7 @@
                 <li><a href="#basics" data-i18n="basics.toc.basics">基础沙拉制作</a></li>
                 <li><a href="#ingredients" data-i18n="ingredients.toc.ingredients">关键食材清单</a></li>
                 <li><a href="#recipes" data-i18n="recipes.toc.recipes">高级沙拉食谱</a></li>
-                <li><a href="#tips" data-i18n="tips.toc.tips">Making Tips &amp; Tricks</a></li>
+                <li><a href="#tips" data-i18n="tips.toc.tips">制作要点 &amp; 技巧</a></li>
                 <li><a href="#efficiency" data-i18n="efficiency.toc.efficiency">效率提升方法</a></li>
                 <li><a href="#faq" data-i18n="faq.toc.faq">常见问题</a></li>
             </ul>
@@ -369,7 +424,7 @@
         
         <div class="guide-card" id="ingredients">
             <h2 data-i18n="_关键食材清单._关键食材清单.title">🥬 关键食材清单</h2>
-            <p>Making quality salads requires various fresh ingredients. Here's the ingredient list categorized by importance:</p>
+            <p>Making quality salads requires various fresh ingredients. 以下按重要程度列出所需食材：</p>
             
             <h3>基础食材（新手必备）</h3>
             <div class="ingredient-grid">
@@ -457,10 +512,10 @@
         </div>
         
         <div class="guide-card" id="recipes">
-            <h2>🍽️ 高级沙拉食谱</h2>
+            <h2 data-i18n="salad.recipes.title">🍽️ 高级沙拉食谱</h2>
             <p>不同的食材组合可以制作出不同等级与效果的沙拉。下表给出了详细配方：</p>
             
-            <h3 data-i18n="recipes.basic_salad.title">Basic Salad Recipes</h3>
+            <h3 data-i18n="recipes.basic_salad.title">基础沙拉配方</h3>
             <table class="recipe-table">
                 <thead>
                     <tr>
@@ -476,21 +531,21 @@
                         <td>🥬 Basic Lettuce Salad</td>
                         <td data-i18n="ingredient.lettuce.quantity">Lettuce x2</td>
                         <td>5 分钟</td>
-                        <td data-i18n="currency.coins" data-amount="10">10 Coins</td>
+                        <td data-i18n="currency.coins" data-amount="10">10 金币</td>
                         <td data-i18n="effect.basic_nutrition">Basic Nutrition</td>
                     </tr>
                     <tr>
                         <td>🥗 Vegetable Salad</td>
                         <td>Lettuce x1 + Tomato x1 + Carrot x1</td>
                         <td>8 分钟</td>
-                        <td data-i18n="currency.coins" data-amount="25">25 Coins</td>
+                        <td data-i18n="currency.coins" data-amount="25">25 金币</td>
                         <td data-i18n="effect.vitamin_rich">Vitamin Rich</td>
                     </tr>
                     <tr>
                         <td>🥒 Fresh Salad</td>
                         <td>Lettuce x1 + Cucumber x2</td>
                         <td>6 分钟</td>
-                        <td data-i18n="currency.coins" data-amount="20">20 Coins</td>
+                        <td data-i18n="currency.coins" data-amount="20">20 金币</td>
                         <td data-i18n="effect.high_moisture">High Moisture</td>
                     </tr>
                 </tbody>
@@ -512,27 +567,27 @@
                         <td>🥑 Avocado Salad</td>
                         <td>Lettuce x1 + Avocado x1 + Tomato x1</td>
                         <td>12 分钟</td>
-                        <td data-i18n="currency.coins" data-amount="50">50 Coins</td>
+                        <td data-i18n="currency.coins" data-amount="50">50 金币</td>
                         <td>Healthy Fats</td>
                     </tr>
                     <tr>
                         <td>🍓 Fruit Salad</td>
                         <td>Lettuce x1 + Strawberry x2 + Grape x1</td>
                         <td>15 分钟</td>
-                        <td data-i18n="currency.coins" data-amount="60">60 Coins</td>
+                        <td data-i18n="currency.coins" data-amount="60">60 金币</td>
                         <td data-i18n="effect.antioxidant">Antioxidant</td>
                     </tr>
                     <tr>
                         <td>🌽 Corn Salad</td>
                         <td>Lettuce x1 + Corn x1 + Carrot x1</td>
                         <td>18 分钟</td>
-                        <td data-i18n="currency.coins" data-amount="55">55 Coins</td>
+                        <td data-i18n="currency.coins" data-amount="55">55 金币</td>
                         <td data-i18n="effect.fiber_rich">Fiber Rich</td>
                     </tr>
                 </tbody>
             </table>
             
-            <h3 data-i18n="recipes.luxury_salad.title">Luxury Salad Recipes</h3>
+            <h3 data-i18n="recipes.luxury_salad.title">高阶沙拉配方</h3>
             <table class="recipe-table">
                 <thead>
                     <tr>
@@ -548,21 +603,21 @@
                         <td>🍄 Mushroom Salad</td>
                         <td>Lettuce x1 + Mushroom x2 + Avocado x1</td>
                         <td>25 分钟</td>
-                        <td data-i18n="currency.coins" data-amount="100">100 Coins</td>
+                        <td data-i18n="currency.coins" data-amount="100">100 金币</td>
                         <td data-i18n="effect.immunity_boost">Immunity Boost</td>
                     </tr>
                     <tr>
                         <td>🌶️ Spicy Salad</td>
                         <td>Lettuce x1 + Chili Pepper x1 + Tomato x2</td>
                         <td>20 分钟</td>
-                        <td data-i18n="currency.coins" data-amount="80">80 Coins</td>
+                        <td data-i18n="currency.coins" data-amount="80">80 金币</td>
                         <td data-i18n="effect.metabolism_boost">Metabolism Boost</td>
                     </tr>
                     <tr>
                         <td>🥭 Tropical Salad</td>
                         <td>Lettuce x1 + Mango x1 + Strawberry x1 + Grape x1</td>
                         <td>30 分钟</td>
-                        <td data-i18n="currency.coins" data-amount="120">120 Coins</td>
+                        <td data-i18n="currency.coins" data-amount="120">120 金币</td>
                         <td data-i18n="effect.vitamin_c_rich">Vitamin C Rich</td>
                     </tr>
                 </tbody>
@@ -570,13 +625,13 @@
         </div>
         
         <div class="guide-card" id="tips">
-            <h2>💡 Making Tips &amp; Tricks</h2>
+            <h2 data-i18n="salad.tips.title">💡 制作要点 &amp; 技巧</h2>
             
             <h3>Time Management Tips</h3>
             <ul>
                 <li><strong>Staggered Planting</strong>: Different plants have different growth times, arrange planting order reasonably</li>
                 <li><strong>Batch Making</strong>: Collect enough ingredients then make multiple salads at once</li>
-                <li><strong>Golden Hours</strong>: Water during 7:00-9:00 in-game for double effects</li>
+                <li><strong>黄金时段</strong>: Water during 7:00-9:00 in-game for double effects</li>
                 <li><strong>Daily Login</strong>: Maintain daily login for extra rewards</li>
             </ul>
             
@@ -598,7 +653,7 @@
         </div>
         
         <div class="guide-card" id="efficiency">
-            <h2>⚡ 效率提升方法</h2>
+            <h2 data-i18n="salad.efficiency.title">⚡ 效率提升方法</h2>
             
             <h3>Planting Strategy</h3>
             <ol>
@@ -616,16 +671,16 @@
                         <li>Optimize planting time arrangement</li>
                     </ul>
                 </li>
-                <li><strong>Expert Stage</strong> (Advanced)
+                <li><strong>专家 Stage</strong> (Advanced)
                     <ul>
-                        <li>Master rare ingredient planting</li>
+                        <li>大师 rare ingredient planting</li>
                         <li>Make luxury salad recipes</li>
                         <li data-i18n="summary.bullet.participate_in_advanced_game_events">Participate in advanced game events</li>
                     </ul>
                 </li>
             </ol>
             
-            <h3>Resource Management</h3>
+            <h3>资源管理</h3>
             <ul>
                 <li><strong>Coin Usage</strong>: Prioritize buying advanced seeds and tools</li>
                 <li><strong>Space Planning</strong>: Reasonably allocate planting areas</li>
@@ -635,7 +690,7 @@
         </div>
         
         <div class="guide-card" id="faq">
-            <h2>❓ 常见问题</h2>
+            <h2 data-i18n="salad.faq.title">❓ 常见问题</h2>
             
             <h3>Q: How to quickly earn more coins?</h3>
             <p>A: Making advanced salads is the best way to earn coins. We recommend planting high-value ingredients like avocados and strawberries to make luxury salad recipes.</p>
@@ -706,4 +761,48 @@
         });
     </script>
 
- </body></html>
+ 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const currentFlag = document.getElementById('current-flag');
+    const flagDropdown = document.getElementById('current-flag');
+    
+    if (currentFlag && flagDropdown) {
+        // 设置当前语言的国旗
+        const currentLang = document.documentElement.getAttribute('lang') || 'en';
+        updateCurrentFlag(currentLang);
+        
+        // 为每个国旗选项添加点击事件
+        document.querySelectorAll('.flag-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const lang = this.getAttribute('data-lang');
+                if (lang) {
+                    // 调用现有的语言切换函数
+                    if (typeof switchLang === 'function') {
+                        switchLang(lang);
+                    } else if (typeof window.__gagI18n !== 'undefined' && window.__gagI18n.switchLang) {
+                        window.__gagI18n.switchLang(lang);
+                    }
+                }
+            });
+        });
+    }
+});
+
+function updateCurrentFlag(lang) {
+    const currentFlag = document.getElementById('current-flag');
+    if (currentFlag) {
+        const flagOptions = document.querySelectorAll('.flag-option');
+        flagOptions.forEach(option => {
+            if (option.getAttribute('data-lang') === lang) {
+                const flagContent = option.innerHTML;
+                currentFlag.innerHTML = flagContent;
+                break;
+            }
+        });
+    }
+}
+</script>
+    <script src="../flag-switcher.js"></script>
+
+    <script src="../i18n/i18n.js"></script></body></html>

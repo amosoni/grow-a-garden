@@ -1,22 +1,22 @@
 <!DOCTYPE html><html lang="hi" dir="ltr"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>कैसे grow carrots बगीचा उगाने में - पूर्ण गाइड | बगीचा उगाने के टिप्स</title>
-    <meta name="description" content="सीखें कैसे grow carrots! सीखें कैसे grow carrots trong Grow a Garden.">
-    <meta name="keywords" content="कैसे grow carrots trong grow a garden, roblox grow carrots guide, grow a garden guide, grow carrots making guide, roblox farming game, grow carrots ingredients collection, grow a garden tips">
+    <title>कैसे गाजर उगाना बगीचा उगाने में - पूर्ण गाइड | बगीचा उगाने के टिप्स</title>
+    <meta name="description" content="सीखें कैसे गाजर उगाना! सीखें कैसे गाजर उगाना trong Grow a Garden.">
+    <meta name="keywords" content="कैसे गाजर उगाना trong grow a garden, roblox गाजर उगाना guide, grow a garden guide, गाजर उगाना making guide, roblox farming game, गाजर उगाना ingredients collection, grow a garden tips">
     <link rel="canonical" href="https://growagarden.cv/how-to-grow-carrots.html">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="कैसे grow carrots बगीचा उगाने में - पूर्ण गाइड | बगीचा उगाने के टिप्स">
-    <meta property="og:description" content="सीखें कैसे grow carrots trong Grow a Garden! सीखें कैसे grow carrots.">
+    <meta property="og:title" content="कैसे गाजर उगाना बगीचा उगाने में - पूर्ण गाइड | बगीचा उगाने के टिप्स">
+    <meta property="og:description" content="सीखें कैसे गाजर उगाना trong Grow a Garden! सीखें कैसे गाजर उगाना.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://growagarden.cv/how-to-grow-carrots.html">
     <meta property="og:image" content="https://growagarden.cv/carrot-guide-og.jpg">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="कैसे grow carrots बगीचा उगाने में - पूर्ण गाइड | बगीचा उगाने के टिप्स">
-    <meta name="twitter:description" content="सीखें कैसे grow carrots trong Grow a Garden! सीखें कैसे grow carrots.">
+    <meta name="twitter:title" content="कैसे गाजर उगाना बगीचा उगाने में - पूर्ण गाइड | बगीचा उगाने के टिप्स">
+    <meta name="twitter:description" content="सीखें कैसे गाजर उगाना trong Grow a Garden! सीखें कैसे गाजर उगाना.">
     <meta name="twitter:image" content="https://growagarden.cv/carrot-guide-og.jpg">
 
     <!-- JSON-LD -->
@@ -40,7 +40,7 @@
 
     <link rel="stylesheet" href="https://unpkg.com/simple.css@2.1.0/simple.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥕</text></svg>">
 
     <style>
@@ -92,34 +92,89 @@
     <div class="bg-blur"></div>
 
         <header>
-    <nav>
-      <a href="/index.html" class="logo" data-i18n="nav.logo">🌱 Grow a Garden</a>
-      <a href="/index.html#stats" data-i18n="nav.live">लाइव आंकड़े</a>
-      <a href="/index.html#map" data-i18n="nav.map">वैश्विक हीटमैप</a>
-      <a href="/index.html#tips" data-i18n="nav.tips">सुझाव</a>
-      <a href="/guides.html" data-i18n="nav.guides">📚 गाइड</a>
-      <a href="/index.html#community" class="discord-btn" data-i18n="nav.discord">💬 Discord</a>
-                  <select id="lang-switcher" aria-label="Language">
-                <option value="en" >English</option>
-                <option value="zh-cn" >简体中文</option>
-                <option value="es" >Español</option>
-                <option value="pt-br" >Português</option>
-                <option value="fr" >Français</option>
-                <option value="de" >Deutsch</option>
-                <option value="ru" >Русский</option>
-                <option value="ar" >العربية</option>
-                <option value="hi" selected="">हिन्दी</option>
-                <option value="id" >Bahasa Indonesia</option>
-                <option value="vi" >Tiếng Việt</option>
-                <option value="ja" >日本語</option>
-            </select>
-    </nav>
-  </header>
+        <nav>
+            <a href="index.html" class="logo" data-i18n="nav.logo">🌱 Grow a Garden</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('stats')" data-i18n="nav.live">Live Stats</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('map')" data-i18n="nav.map">Global Heatmap</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('tips')" data-i18n="nav.tips">Tips</a>
+            <a href="guides.html" data-i18n="nav.guides">📚 Guides</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('online')" data-i18n="nav.online">🎮 Online</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('community')" class="discord-btn" data-i18n="nav.discord">💬 Discord</a>
+            <div class="flag-language-switcher">
+    <div class="current-flag" id="current-flag">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNDgwIj4KICAgICAgICAgICAgPGRlZnM+PGNsaXBQYXRoIGlkPSJhIj48cGF0aCBkPSJNLTg1LjMgMGg2ODIuNnY1MTJILTg1LjN6Ii8+PC9jbGlwUGF0aD48L2RlZnM+CiAgICAgICAgICAgIDxjbGlwUGF0aCBpZD0iYiI+PHVzZSBocmVmPSIjYSIvPjwvY2xpcFBhdGg+CiAgICAgICAgICAgIDxnIGNsaXAtcGF0aD0idXJsKCNiKSIgdHJhbnNmb3JtPSJzY2FsZSguOTM3NSkiPgogICAgICAgICAgICAgICAgPGcgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2Utd2lkdGg9IjFwdCI+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2NTEySC0yNTZ6IiBmaWxsPSIjYmQzZDQ0Ii8+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAxMDIuNEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAyMDQuOEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAzMDcuMkg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiA0MDkuNkg3NjhWNTEySC0yNTZ6IiBmaWxsPSIjZmZmIi8+CiAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICA8ZyBmaWxsPSIjMTkyZjVkIj4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAwdjUxMmwyNTYtMjU2eiIvPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9zdmc+" 
+         alt="en Flag">
+    </div>
+    <div class="flag-dropdown" id="flag-dropdown">
+        <div class="flag-option" data-lang="en" title="English">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNDgwIj4KICAgICAgICAgICAgPGRlZnM+PGNsaXBQYXRoIGlkPSJhIj48cGF0aCBkPSJNLTg1LjMgMGg2ODIuNnY1MTJILTg1LjN6Ii8+PC9jbGlwUGF0aD48L2RlZnM+CiAgICAgICAgICAgIDxjbGlwUGF0aCBpZD0iYiI+PHVzZSBocmVmPSIjYSIvPjwvY2xpcFBhdGg+CiAgICAgICAgICAgIDxnIGNsaXAtcGF0aD0idXJsKCNiKSIgdHJhbnNmb3JtPSJzY2FsZSguOTM3NSkiPgogICAgICAgICAgICAgICAgPGcgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2Utd2lkdGg9IjFwdCI+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2NTEySC0yNTZ6IiBmaWxsPSIjYmQzZDQ0Ii8+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAxMDIuNEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAyMDQuOEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAzMDcuMkg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiA0MDkuNkg3NjhWNTEySC0yNTZ6IiBmaWxsPSIjZmZmIi8+CiAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICA8ZyBmaWxsPSIjMTkyZjVkIj4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAwdjUxMmwyNTYtMjU2eiIvPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9zdmc+" 
+         alt="en Flag">
+            <span class="flag-name">English</span>
+        </div>
+        <div class="flag-option" data-lang="zh-cn" title="简体中文">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNkZTI5MTAiLz4KICAgICAgICAgICAgPGcgZmlsbD0iI2ZmZGUwMCI+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNNDUwIDEyMGwtNDUuNyAxNDAuNy0xMTkuMyAwaDE1NGwtMTE5LjMgMHoiLz4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik00NTAgMzAwbC00NS43IDE0MC43LTExOS4zIDBoMTU0bC0xMTkuMyAweiIvPgogICAgICAgICAgICAgICAgPHBhdGggZD0iTTQ1MCA0ODBsLTQ1LjcgMTQwLjctMTE5LjMgMGgxNTRsLTExOS4zIDB6Ii8+CiAgICAgICAgICAgIDwvZz4KICAgICAgICA8L3N2Zz4=" 
+         alt="zh-cn Flag">
+            <span class="flag-name">简体中文</span>
+        </div>
+        <div class="flag-option" data-lang="es" title="Español">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3NTAgNTAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9Ijc1MCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiNjNjBiMWUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9Ijc1MCIgaGVpZ2h0PSIyNTAiIHk9IjEyNSIgZmlsbD0iI2ZmYzQwMCIvPgogICAgICAgIDwvc3ZnPg==" 
+         alt="es Flag">
+            <span class="flag-name">Español</span>
+        </div>
+        <div class="flag-option" data-lang="pt-br" title="Português">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3MjAgNTA0Ij4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjcyMCIgaGVpZ2h0PSI1MDQiIGZpbGw9IiMwMDliM2EiLz4KICAgICAgICAgICAgPHBhdGggZD0iTTM2MCAyNTJsLTE4MC0xMjZ2MjUyeiIgZmlsbD0iI2ZlZGYwMCIvPgogICAgICAgICAgICA8Y2lyY2xlIGN4PSIzNjAiIGN5PSIyNTIiIHI9IjYwIiBmaWxsPSIjMDAyNzc2Ii8+CiAgICAgICAgPC9zdmc+" 
+         alt="pt-br Flag">
+            <span class="flag-name">Português</span>
+        </div>
+        <div class="flag-option" data-lang="fr" title="Français">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiMwMDIzOTUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSI2MDAiIHg9IjMwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjYwMCIgeD0iNjAwIiBmaWxsPSIjZWQyOTM5Ii8+CiAgICAgICAgPC9zdmc+" 
+         alt="fr Flag">
+            <span class="flag-name">Français</span>
+        </div>
+        <div class="flag-option" data-lang="de" title="Deutsch">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiMwMDAiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iI2RkMDAwMCIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjZmZjZTAwIi8+CiAgICAgICAgPC9zdmc+" 
+         alt="de Flag">
+            <span class="flag-name">Deutsch</span>
+        </div>
+        <div class="flag-option" data-lang="ru" title="Русский">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iIzAwMzlhNiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjZDUyYjFlIi8+CiAgICAgICAgPC9zdmc+" 
+         alt="ru Flag">
+            <span class="flag-name">Русский</span>
+        </div>
+        <div class="flag-option" data-lang="ar" title="العربية">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiMwMDZjMzUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI0MDAiIHk9IjEwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iMjAwIiBmaWxsPSIjY2UxMTI2Ii8+CiAgICAgICAgPC9zdmc+" 
+         alt="ar Flag">
+            <span class="flag-name">العربية</span>
+        </div>
+        <div class="flag-option" data-lang="hi" title="हिन्दी">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNmZjk5MzMiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjMTM4ODA4Ii8+CiAgICAgICAgICAgIDxjaXJjbGUgY3g9IjQ1MCIgY3k9IjMwMCIgcj0iNjAiIGZpbGw9IiMwMDAwODAiLz4KICAgICAgICA8L3N2Zz4=" 
+         alt="hi Flag">
+            <span class="flag-name">हिन्दी</span>
+        </div>
+        <div class="flag-option" data-lang="id" title="Bahasa Indonesia">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIzMDAiIHk9IjMwMCIgZmlsbD0iI2NlMTEyNiIvPgogICAgICAgIDwvc3ZnPg==" 
+         alt="id Flag">
+            <span class="flag-name">Bahasa Indonesia</span>
+        </div>
+        <div class="flag-option" data-lang="vi" title="Tiếng Việt">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNkYTI1MWQiLz4KICAgICAgICAgICAgPHBhdGggZD0iTTQ1MCAzMDBsLTE4MC0xMjZ2MjUyeiIgZmlsbD0iI2ZmZmYwMCIvPgogICAgICAgIDwvc3ZnPg==" 
+         alt="vi Flag">
+            <span class="flag-name">Tiếng Việt</span>
+        </div>
+        <div class="flag-option" data-lang="ja" title="日本語">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPGNpcmNsZSBjeD0iNDUwIiBjeT0iMzAwIiByPSIxODAiIGZpbGw9IiNiYzAwMmQiLz4KICAgICAgICA8L3N2Zz4=" 
+         alt="ja Flag">
+            <span class="flag-name">日本語</span>
+        </div>
+    </div>
+</div>
+        </nav>
+    </header>
 
     <div class="content-wrapper">
         <section class="carrot-hero">
             <h1 data-i18n="गाजर उगाने की गाइड.hero.title">गाजर उगाने की गाइड</h1>
-            <p>गाजर की कुशल खेती: बोना, सिंचाई, फसल।</p>
+            <p data-i18n="t.hero.subtitle">गाजर की कुशल खेती: बोना, सिंचाई, फसल।</p>
         </section>
 
         <div class="breadcrumb-container">
@@ -127,7 +182,7 @@
                 <ol>
                     <li><a href="/hi/index.html">🏠 होम</a></li>
                     <li><a href="/hi/guides.html">📚 गाइड्स</a></li>
-                    <li aria-current="page" data-i18n="🎯_grow_carrots.breadcrumb.current">🎯 grow carrots</li>
+                    <li aria-current="page" data-i18n="🎯_grow_carrots.breadcrumb.current">🎯 गाजर उगाना</li>
                 </ol>
             </nav>
         </div>
@@ -140,46 +195,46 @@
                     <li><strong>Steady Demand:</strong> Used in cooking and trade</li>
                     <li><strong>Quick Cycle:</strong> Short growth time with proper care</li>
                     <li><strong>Low Cost:</strong> Cheap seeds and simple care routine</li>
-                    <li><strong>Scalable:</strong> Works well for batch farming</li>
+                    <li><strong>स्केलेबल:</strong> Works well for batch farming</li>
                 </ul>
             </div>
 
             <div class="guide-card">
-                <h2>🥘 Growing Requirements</h2>
+                <h2>🥘 Growing आवश्यकताएँ</h2>
                 <div class="requirement-grid">
                     <div class="requirement-item"><h4>🥕 Carrot Seeds</h4><p>Buy from seed shop</p></div>
                     <div class="requirement-item"><h4>💧 Water</h4><p>Light, frequent watering</p></div>
                     <div class="requirement-item"><h4>🌞 Sunlight</h4><p>Plant in open, sunny areas</p></div>
                     <div class="requirement-item"><h4>🪵 Loose Soil</h4><p>Loose, stone-free soil for straight roots</p></div>
-                    <div class="requirement-item"><h4>⏰ Time</h4><p>~35 minutes to mature</p></div>
+                    <div class="requirement-item"><h4>⏰ Time</h4><p>~35 मिनट to mature</p></div>
                     <div class="requirement-item"><h4>🛠️ Tools</h4><p>Watering can, shovel</p></div>
                 </div>
             </div>
 
             <div class="guide-card">
                 <h2>📝 Step-by-Step Carrot Growing Guide</h2>
-                <h3>Step 1: Prepare Your Farm</h3>
+                <h3>चरण 1: Prepare Your Farm</h3>
                 <ul>
                     <li>Clear rocks and loosen soil to a fine texture</li>
                     <li>Plan rows for easy watering and harvesting</li>
                     <li>Ensure full-sun exposure</li>
                 </ul>
-                <h3>Step 2: Plant Seeds</h3>
+                <h3>चरण 2: Plant Seeds</h3>
                 <ul>
                     <li>Plant seeds 1 inch deep with 3-4 inches spacing</li>
                     <li>Cover lightly and water immediately</li>
                 </ul>
-                <h3>Step 3: Water &amp; Care</h3>
+                <h3>चरण 3: Water &amp; Care</h3>
                 <ul>
-                    <li>Water lightly every 10-15 minutes in-game</li>
+                    <li>Water lightly every 10-15 मिनट in-game</li>
                     <li>Use golden hours (7:00-9:00) for bonus growth</li>
                     <li>Keep soil moist; avoid waterlogging</li>
                 </ul>
-                <h3>Step 4: Thin Seedlings</h3>
+                <h3>चरण 4: Thin Seedlings</h3>
                 <ul>
                     <li>Thin crowded areas for thicker, straighter roots</li>
                 </ul>
-                <h3>Step 5: Harvest</h3>
+                <h3>चरण 5: Harvest</h3>
                 <ul>
                     <li>Harvest when tops are mature and roots are full-sized</li>
                     <li>Pull gently to avoid breakage</li>
@@ -203,11 +258,11 @@
             </div>
 
             <div class="guide-card">
-                <h2>💡 Pro Tips</h2>
-                <div class="tip-box"><strong>Golden Hours:</strong> Water during 7:00-9:00 for fastest growth.</div>
+                <h2>💡 प्रो टिप्स</h2>
+                <div class="tip-box"><strong>स्वर्णिम समय:</strong> Water during 7:00-9:00 for fastest growth.</div>
                 <div class="tip-box"><strong>Soil Matters:</strong> Loose, stone-free soil prevents forked roots.</div>
-                <div class="tip-box"><strong>Batch Farming:</strong> Plant in waves every 5 minutes for continuous harvests.</div>
-                <div class="tip-box"><strong>Market Timing:</strong> Sell right after harvest during peak hours.</div>
+                <div class="tip-box"><strong>Batch Farming:</strong> Plant in waves every 5 मिनट for continuous harvests.</div>
+                <div class="tip-box"><strong>बाज़ार समय:</strong> Sell right after harvest during peak hours.</div>
                 <div class="tip-box"><strong>Rotation:</strong> Rotate with leafy crops to keep soil healthy.</div>
             </div>
 
@@ -219,4 +274,48 @@
 
     <script src="script.js"></script>
 
- </body></html>
+ 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const currentFlag = document.getElementById('current-flag');
+    const flagDropdown = document.getElementById('current-flag');
+    
+    if (currentFlag && flagDropdown) {
+        // 设置当前语言的国旗
+        const currentLang = document.documentElement.getAttribute('lang') || 'en';
+        updateCurrentFlag(currentLang);
+        
+        // 为每个国旗选项添加点击事件
+        document.querySelectorAll('.flag-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const lang = this.getAttribute('data-lang');
+                if (lang) {
+                    // 调用现有的语言切换函数
+                    if (typeof switchLang === 'function') {
+                        switchLang(lang);
+                    } else if (typeof window.__gagI18n !== 'undefined' && window.__gagI18n.switchLang) {
+                        window.__gagI18n.switchLang(lang);
+                    }
+                }
+            });
+        });
+    }
+});
+
+function updateCurrentFlag(lang) {
+    const currentFlag = document.getElementById('current-flag');
+    if (currentFlag) {
+        const flagOptions = document.querySelectorAll('.flag-option');
+        flagOptions.forEach(option => {
+            if (option.getAttribute('data-lang') === lang) {
+                const flagContent = option.innerHTML;
+                currentFlag.innerHTML = flagContent;
+                break;
+            }
+        });
+    }
+}
+</script>
+    <script src="../flag-switcher.js"></script>
+
+    <script src="../i18n/i18n.js"></script></body></html>

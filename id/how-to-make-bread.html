@@ -52,7 +52,7 @@
     <!-- Roblox-like color scheme -->
     <link rel="stylesheet" href="https://unpkg.com/simple.css@2.1.0/simple.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍞</text></svg>">
     
     <style>
@@ -325,29 +325,84 @@
 <body>
     <div class="bg-blur"></div>
         <header>
-    <nav>
-      <a href="/index.html" class="logo" data-i18n="nav.logo">🌱 Grow a Garden</a>
-      <a href="/index.html#stats" data-i18n="nav.live">Statistik Langsung</a>
-      <a href="/index.html#map" data-i18n="nav.map">Peta Panas Global</a>
-      <a href="/index.html#tips" data-i18n="nav.tips">Tips</a>
-      <a href="/guides.html" data-i18n="nav.guides">📚 Panduan</a>
-      <a href="/index.html#community" class="discord-btn" data-i18n="nav.discord">💬 Discord</a>
-                  <select id="lang-switcher" aria-label="Language">
-                <option value="en" >English</option>
-                <option value="zh-cn" >简体中文</option>
-                <option value="es" >Español</option>
-                <option value="pt-br" >Português</option>
-                <option value="fr" >Français</option>
-                <option value="de" >Deutsch</option>
-                <option value="ru" >Русский</option>
-                <option value="ar" >العربية</option>
-                <option value="hi" >हिन्दी</option>
-                <option value="id" selected="">Bahasa Indonesia</option>
-                <option value="vi" >Tiếng Việt</option>
-                <option value="ja" >日本語</option>
-            </select>
-    </nav>
-  </header>
+        <nav>
+            <a href="index.html" class="logo" data-i18n="nav.logo">🌱 Grow a Garden</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('stats')" data-i18n="nav.live">Live Stats</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('map')" data-i18n="nav.map">Global Heatmap</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('tips')" data-i18n="nav.tips">Tips</a>
+            <a href="guides.html" data-i18n="nav.guides">📚 Guides</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('online')" data-i18n="nav.online">🎮 Online</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('community')" class="discord-btn" data-i18n="nav.discord">💬 Discord</a>
+            <div class="flag-language-switcher">
+    <div class="current-flag" id="current-flag">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNDgwIj4KICAgICAgICAgICAgPGRlZnM+PGNsaXBQYXRoIGlkPSJhIj48cGF0aCBkPSJNLTg1LjMgMGg2ODIuNnY1MTJILTg1LjN6Ii8+PC9jbGlwUGF0aD48L2RlZnM+CiAgICAgICAgICAgIDxjbGlwUGF0aCBpZD0iYiI+PHVzZSBocmVmPSIjYSIvPjwvY2xpcFBhdGg+CiAgICAgICAgICAgIDxnIGNsaXAtcGF0aD0idXJsKCNiKSIgdHJhbnNmb3JtPSJzY2FsZSguOTM3NSkiPgogICAgICAgICAgICAgICAgPGcgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2Utd2lkdGg9IjFwdCI+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2NTEySC0yNTZ6IiBmaWxsPSIjYmQzZDQ0Ii8+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAxMDIuNEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAyMDQuOEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAzMDcuMkg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiA0MDkuNkg3NjhWNTEySC0yNTZ6IiBmaWxsPSIjZmZmIi8+CiAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICA8ZyBmaWxsPSIjMTkyZjVkIj4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAwdjUxMmwyNTYtMjU2eiIvPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9zdmc+" 
+         alt="en Flag">
+    </div>
+    <div class="flag-dropdown" id="flag-dropdown">
+        <div class="flag-option" data-lang="en" title="English">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNDgwIj4KICAgICAgICAgICAgPGRlZnM+PGNsaXBQYXRoIGlkPSJhIj48cGF0aCBkPSJNLTg1LjMgMGg2ODIuNnY1MTJILTg1LjN6Ii8+PC9jbGlwUGF0aD48L2RlZnM+CiAgICAgICAgICAgIDxjbGlwUGF0aCBpZD0iYiI+PHVzZSBocmVmPSIjYSIvPjwvY2xpcFBhdGg+CiAgICAgICAgICAgIDxnIGNsaXAtcGF0aD0idXJsKCNiKSIgdHJhbnNmb3JtPSJzY2FsZSguOTM3NSkiPgogICAgICAgICAgICAgICAgPGcgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2Utd2lkdGg9IjFwdCI+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2NTEySC0yNTZ6IiBmaWxsPSIjYmQzZDQ0Ii8+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAxMDIuNEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAyMDQuOEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAzMDcuMkg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiA0MDkuNkg3NjhWNTEySC0yNTZ6IiBmaWxsPSIjZmZmIi8+CiAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICA8ZyBmaWxsPSIjMTkyZjVkIj4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAwdjUxMmwyNTYtMjU2eiIvPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9zdmc+" 
+         alt="en Flag">
+            <span class="flag-name">English</span>
+        </div>
+        <div class="flag-option" data-lang="zh-cn" title="简体中文">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNkZTI5MTAiLz4KICAgICAgICAgICAgPGcgZmlsbD0iI2ZmZGUwMCI+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNNDUwIDEyMGwtNDUuNyAxNDAuNy0xMTkuMyAwaDE1NGwtMTE5LjMgMHoiLz4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik00NTAgMzAwbC00NS43IDE0MC43LTExOS4zIDBoMTU0bC0xMTkuMyAweiIvPgogICAgICAgICAgICAgICAgPHBhdGggZD0iTTQ1MCA0ODBsLTQ1LjcgMTQwLjctMTE5LjMgMGgxNTRsLTExOS4zIDB6Ii8+CiAgICAgICAgICAgIDwvZz4KICAgICAgICA8L3N2Zz4=" 
+         alt="zh-cn Flag">
+            <span class="flag-name">简体中文</span>
+        </div>
+        <div class="flag-option" data-lang="es" title="Español">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3NTAgNTAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9Ijc1MCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiNjNjBiMWUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9Ijc1MCIgaGVpZ2h0PSIyNTAiIHk9IjEyNSIgZmlsbD0iI2ZmYzQwMCIvPgogICAgICAgIDwvc3ZnPg==" 
+         alt="es Flag">
+            <span class="flag-name">Español</span>
+        </div>
+        <div class="flag-option" data-lang="pt-br" title="Português">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3MjAgNTA0Ij4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjcyMCIgaGVpZ2h0PSI1MDQiIGZpbGw9IiMwMDliM2EiLz4KICAgICAgICAgICAgPHBhdGggZD0iTTM2MCAyNTJsLTE4MC0xMjZ2MjUyeiIgZmlsbD0iI2ZlZGYwMCIvPgogICAgICAgICAgICA8Y2lyY2xlIGN4PSIzNjAiIGN5PSIyNTIiIHI9IjYwIiBmaWxsPSIjMDAyNzc2Ii8+CiAgICAgICAgPC9zdmc+" 
+         alt="pt-br Flag">
+            <span class="flag-name">Português</span>
+        </div>
+        <div class="flag-option" data-lang="fr" title="Français">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiMwMDIzOTUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSI2MDAiIHg9IjMwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjYwMCIgeD0iNjAwIiBmaWxsPSIjZWQyOTM5Ii8+CiAgICAgICAgPC9zdmc+" 
+         alt="fr Flag">
+            <span class="flag-name">Français</span>
+        </div>
+        <div class="flag-option" data-lang="de" title="Deutsch">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiMwMDAiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iI2RkMDAwMCIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjZmZjZTAwIi8+CiAgICAgICAgPC9zdmc+" 
+         alt="de Flag">
+            <span class="flag-name">Deutsch</span>
+        </div>
+        <div class="flag-option" data-lang="ru" title="Русский">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iIzAwMzlhNiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjZDUyYjFlIi8+CiAgICAgICAgPC9zdmc+" 
+         alt="ru Flag">
+            <span class="flag-name">Русский</span>
+        </div>
+        <div class="flag-option" data-lang="ar" title="العربية">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiMwMDZjMzUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI0MDAiIHk9IjEwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iMjAwIiBmaWxsPSIjY2UxMTI2Ii8+CiAgICAgICAgPC9zdmc+" 
+         alt="ar Flag">
+            <span class="flag-name">العربية</span>
+        </div>
+        <div class="flag-option" data-lang="hi" title="हिन्दी">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNmZjk5MzMiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjMTM4ODA4Ii8+CiAgICAgICAgICAgIDxjaXJjbGUgY3g9IjQ1MCIgY3k9IjMwMCIgcj0iNjAiIGZpbGw9IiMwMDAwODAiLz4KICAgICAgICA8L3N2Zz4=" 
+         alt="hi Flag">
+            <span class="flag-name">हिन्दी</span>
+        </div>
+        <div class="flag-option" data-lang="id" title="Bahasa Indonesia">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIzMDAiIHk9IjMwMCIgZmlsbD0iI2NlMTEyNiIvPgogICAgICAgIDwvc3ZnPg==" 
+         alt="id Flag">
+            <span class="flag-name">Bahasa Indonesia</span>
+        </div>
+        <div class="flag-option" data-lang="vi" title="Tiếng Việt">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNkYTI1MWQiLz4KICAgICAgICAgICAgPHBhdGggZD0iTTQ1MCAzMDBsLTE4MC0xMjZ2MjUyeiIgZmlsbD0iI2ZmZmYwMCIvPgogICAgICAgIDwvc3ZnPg==" 
+         alt="vi Flag">
+            <span class="flag-name">Tiếng Việt</span>
+        </div>
+        <div class="flag-option" data-lang="ja" title="日本語">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPGNpcmNsZSBjeD0iNDUwIiBjeT0iMzAwIiByPSIxODAiIGZpbGw9IiNiYzAwMmQiLz4KICAgICAgICA8L3N2Zz4=" 
+         alt="ja Flag">
+            <span class="flag-name">日本語</span>
+        </div>
+    </div>
+</div>
+        </nav>
+    </header>
     
     <section class="bread-hero">
         <h1 data-i18n="Panduan Roti.hero.title">Panduan Roti</h1>
@@ -369,23 +424,23 @@
         <div class="guide-card">
             <h2 data-i18n="daftar_isi.toc.title">📋 Daftar isi</h2>
             <ul>
-                <li><a href="#basics" data-i18n="basics.toc.basics">Basic Bread Making</a></li>
+                <li><a href="#basics" data-i18n="basics.toc.basics">Pembuatan roti dasar</a></li>
                 <li><a href="#ingredients" data-i18n="ingredients.toc.ingredients">Daftar bahan penting</a></li>
-                <li><a href="#recipes" data-i18n="recipes.toc.recipes">Advanced Bread Recipes</a></li>
+                <li><a href="#recipes" data-i18n="recipes.toc.recipes">Resep roti lanjutan</a></li>
                 <li><a href="#varieties">Bread Varieties &amp; Types</a></li>
-                <li><a href="#tips" data-i18n="tips.toc.tips">Making Tips &amp; Tricks</a></li>
+                <li><a href="#tips" data-i18n="tips.toc.tips">Tips pembuatan &amp; Tricks</a></li>
                 <li><a href="#efficiency" data-i18n="efficiency.toc.efficiency">Metode peningkatan efisiensi</a></li>
                 <li><a href="#faq" data-i18n="faq.toc.faq">Pertanyaan yang sering diajukan</a></li>
             </ul>
         </div>
         
         <div class="guide-card" id="basics">
-            <h2>🍞 Basic Bread Making</h2>
+            <h2 data-i18n="d.basics.title">🍞 Pembuatan roti dasar</h2>
             <p data-i18n="in_grow_a_garden,_bread_making_is_one_of_the_fundamental_crafting_activities._by_growing_wheat_and_other_ingredients,_you_can_create_various_types_of_bread_to_earn_rewards_and_progress_in_the_game..hero.subtitle">In Grow a Garden, bread making is one of the fundamental crafting activities. By growing wheat and other ingredients, you can create various types of bread to earn rewards and progress in the game.</p>
             
             <h3>Langkah pembuatan:</h3>
             <ol>
-                <li><strong>Grow Wheat</strong>: Plant wheat seeds and water regularly for healthy growth</li>
+                <li><strong>menanam gandum</strong>: Plant wheat seeds and water regularly for healthy growth</li>
                 <li><strong>Harvest Wheat</strong>: Wait for wheat to fully mature before harvesting</li>
                 <li><strong>Grind Flour</strong>: Process harvested wheat into flour</li>
                 <li><strong>Mix Dough</strong>: Combine flour, water, yeast, and salt</li>
@@ -405,27 +460,27 @@
             <div class="ingredient-grid">
                 <div class="ingredient-item">
                     <h4>🌾 Wheat</h4>
-                    <p>Growth Time: 60 minutes</p>
+                    <p>Growth Time: 60 mnt</p>
                     <p>Value: Basic</p>
-                    <p>Use: Primary ingredient for flour</p>
+                    <p>Kegunaan: Primary ingredient for flour</p>
                 </div>
                 <div class="ingredient-item">
                     <h4>💧 Water</h4>
-                    <p>Collection Time: 30 minutes</p>
+                    <p>Collection Time: 30 mnt</p>
                     <p>Value: Basic</p>
-                    <p>Use: Essential for dough mixing</p>
+                    <p>Kegunaan: Essential for dough mixing</p>
                 </div>
                 <div class="ingredient-item">
                     <h4>🧂 Salt</h4>
-                    <p>Growth Time: 45 minutes</p>
+                    <p>Growth Time: 45 mnt</p>
                     <p>Value: Basic</p>
-                    <p>Use: Flavor enhancement</p>
+                    <p>Kegunaan: Flavor enhancement</p>
                 </div>
                 <div class="ingredient-item">
                     <h4>🥚 Yeast</h4>
-                    <p>Growth Time: 40 minutes</p>
-                    <p>Value: Medium</p>
-                    <p>Use: Dough rising agent</p>
+                    <p>Growth Time: 40 mnt</p>
+                    <p>Value: Sedang</p>
+                    <p>Kegunaan: Dough rising agent</p>
                 </div>
             </div>
             
@@ -433,64 +488,64 @@
             <div class="ingredient-grid">
                 <div class="ingredient-item">
                     <h4>🍯 Honey</h4>
-                    <p>Growth Time: 90 minutes</p>
+                    <p>Growth Time: 90 mnt</p>
                     <p>Value: High</p>
-                    <p>Use: Sweet bread varieties</p>
+                    <p>Kegunaan: Sweet bread varieties</p>
                 </div>
                 <div class="ingredient-item">
                     <h4>🥛 Milk</h4>
-                    <p>Growth Time: 75 minutes</p>
+                    <p>Growth Time: 75 mnt</p>
                     <p>Value: High</p>
-                    <p>Use: Rich bread varieties</p>
+                    <p>Kegunaan: Rich bread varieties</p>
                 </div>
                 <div class="ingredient-item">
                     <h4>🥚 Eggs</h4>
-                    <p>Growth Time: 120 minutes</p>
+                    <p>Growth Time: 120 mnt</p>
                     <p>Value: High</p>
-                    <p>Use: Enriched bread varieties</p>
+                    <p>Kegunaan: Enriched bread varieties</p>
                 </div>
                 <div class="ingredient-item">
                     <h4>🌾 Rye</h4>
-                    <p>Growth Time: 100 minutes</p>
+                    <p>Growth Time: 100 mnt</p>
                     <p>Value: High</p>
-                    <p>Use: Rye bread varieties</p>
+                    <p>Kegunaan: Rye bread varieties</p>
                 </div>
             </div>
             
-            <h3>Rare Ingredients (Expert Level)</h3>
+            <h3>Rare Ingredients (Ahli Level)</h3>
             <div class="ingredient-grid">
                 <div class="ingredient-item">
                     <h4>🌰 Nuts</h4>
-                    <p>Growth Time: 150 minutes</p>
+                    <p>Growth Time: 150 mnt</p>
                     <p>Value: Rare</p>
-                    <p>Use: Nut bread varieties</p>
+                    <p>Kegunaan: Nut bread varieties</p>
                 </div>
                 <div class="ingredient-item">
                     <h4>🍇 Raisins</h4>
-                    <p>Growth Time: 180 minutes</p>
+                    <p>Growth Time: 180 mnt</p>
                     <p>Value: Rare</p>
-                    <p>Use: Sweet bread varieties</p>
+                    <p>Kegunaan: Sweet bread varieties</p>
                 </div>
                 <div class="ingredient-item">
                     <h4>🌿 Herbs</h4>
-                    <p>Growth Time: 200 minutes</p>
+                    <p>Growth Time: 200 mnt</p>
                     <p>Value: Rare</p>
-                    <p>Use: Herb bread varieties</p>
+                    <p>Kegunaan: Herb bread varieties</p>
                 </div>
                 <div class="ingredient-item">
                     <h4>🍫 Chocolate</h4>
-                    <p>Growth Time: 240 minutes</p>
+                    <p>Growth Time: 240 mnt</p>
                     <p>Value: Rare</p>
-                    <p>Use: Chocolate bread varieties</p>
+                    <p>Kegunaan: Chocolate bread varieties</p>
                 </div>
             </div>
         </div>
         
         <div class="guide-card" id="recipes">
-            <h2>🍽️ Advanced Bread Recipes</h2>
+            <h2 data-i18n="d.recipes.title">🍽️ Resep roti lanjutan</h2>
             <p>Different ingredient combinations can create bread of varying levels and effects. Here's a detailed recipe table:</p>
             
-            <h3 data-i18n="recipes.basic_bread.title">Basic Bread Recipes</h3>
+            <h3 data-i18n="recipes.basic_bread.title">Resep roti dasar</h3>
             <table class="recipe-table">
                 <thead>
                     <tr>
@@ -505,35 +560,35 @@
                     <tr>
                         <td>White Bread</td>
                         <td>Wheat + Water + Yeast + Salt</td>
-                        <td data-i18n="time.minutes" data-time="4">4 minutes</td>
-                        <td>60 coins</td>
-                        <td>Easy</td>
+                        <td data-i18n="time.minutes" data-time="4">4 mnt</td>
+                        <td>60 koin</td>
+                        <td>Mudah</td>
                     </tr>
                     <tr>
                         <td>Whole Wheat Bread</td>
                         <td>Wheat + Water + Yeast + Salt + Rye</td>
-                        <td data-i18n="time.minutes" data-time="5">5 minutes</td>
-                        <td>80 coins</td>
-                        <td>Easy</td>
+                        <td data-i18n="time.minutes" data-time="5">5 mnt</td>
+                        <td>80 koin</td>
+                        <td>Mudah</td>
                     </tr>
                     <tr>
                         <td>Sweet Bread</td>
                         <td>Wheat + Water + Yeast + Salt + Honey</td>
-                        <td data-i18n="time.minutes" data-time="6">6 minutes</td>
-                        <td>100 coins</td>
-                        <td>Medium</td>
+                        <td data-i18n="time.minutes" data-time="6">6 mnt</td>
+                        <td>100 koin</td>
+                        <td>Sedang</td>
                     </tr>
                     <tr>
                         <td>Milk Bread</td>
                         <td>Wheat + Water + Yeast + Salt + Milk</td>
-                        <td data-i18n="time.minutes" data-time="7">7 minutes</td>
-                        <td>120 coins</td>
-                        <td>Medium</td>
+                        <td data-i18n="time.minutes" data-time="7">7 mnt</td>
+                        <td>120 koin</td>
+                        <td>Sedang</td>
                     </tr>
                 </tbody>
             </table>
             
-            <h3 data-i18n="recipes.advanced_bread.title">Advanced Bread Recipes</h3>
+            <h3 data-i18n="recipes.advanced_bread.title">Resep roti lanjutan</h3>
             <table class="recipe-table">
                 <thead>
                     <tr>
@@ -548,35 +603,35 @@
                     <tr>
                         <td>Nut Bread</td>
                         <td>Wheat + Water + Yeast + Salt + Nuts</td>
-                        <td data-i18n="time.minutes" data-time="8">8 minutes</td>
-                        <td>150 coins</td>
-                        <td>Hard</td>
+                        <td data-i18n="time.minutes" data-time="8">8 mnt</td>
+                        <td>150 koin</td>
+                        <td>Sulit</td>
                     </tr>
                     <tr>
                         <td>Raisin Bread</td>
                         <td>Wheat + Water + Yeast + Salt + Raisins</td>
-                        <td data-i18n="time.minutes" data-time="9">9 minutes</td>
-                        <td>180 coins</td>
-                        <td>Hard</td>
+                        <td data-i18n="time.minutes" data-time="9">9 mnt</td>
+                        <td>180 koin</td>
+                        <td>Sulit</td>
                     </tr>
                     <tr>
                         <td>Herb Bread</td>
                         <td>Wheat + Water + Yeast + Salt + Herbs</td>
-                        <td data-i18n="time.minutes" data-time="10">10 minutes</td>
-                        <td>200 coins</td>
-                        <td>Expert</td>
+                        <td data-i18n="time.minutes" data-time="10">10 mnt</td>
+                        <td>200 koin</td>
+                        <td>Ahli</td>
                     </tr>
                     <tr>
                         <td>Chocolate Bread</td>
                         <td>Wheat + Water + Yeast + Salt + Chocolate</td>
-                        <td data-i18n="time.minutes" data-time="12">12 minutes</td>
-                        <td>250 coins</td>
-                        <td>Expert</td>
+                        <td data-i18n="time.minutes" data-time="12">12 mnt</td>
+                        <td>250 koin</td>
+                        <td>Ahli</td>
                     </tr>
                 </tbody>
             </table>
             
-            <h3 data-i18n="recipes.premium_bread.title">Premium Bread Recipes</h3>
+            <h3 data-i18n="recipes.premium_bread.title">Resep roti premium</h3>
             <table class="recipe-table">
                 <thead>
                     <tr>
@@ -591,23 +646,23 @@
                     <tr>
                         <td>Artisan Bread</td>
                         <td>All Basic + All Advanced + All Rare</td>
-                        <td data-i18n="time.minutes" data-time="15">15 minutes</td>
-                        <td>400 coins</td>
+                        <td data-i18n="time.minutes" data-time="15">15 mnt</td>
+                        <td>400 koin</td>
                         <td>Master</td>
                     </tr>
                     <tr>
                         <td>Rainbow Bread</td>
                         <td>All Ingredients + Special Dyes</td>
-                        <td data-i18n="time.minutes" data-time="20">20 minutes</td>
-                        <td>600 coins</td>
-                        <td>Legendary</td>
+                        <td data-i18n="time.minutes" data-time="20">20 mnt</td>
+                        <td>600 koin</td>
+                        <td>Legendaris</td>
                     </tr>
                 </tbody>
             </table>
         </div>
         
         <div class="guide-card" id="varieties">
-            <h2>🎨 Bread Varieties &amp; Types</h2>
+            <h2 data-i18n="d.varieties.title">🎨 Bread Varieties &amp; Types</h2>
             <p data-i18n="grow_a_garden_features_various_bread_types,_each_with_unique_characteristics_and_rewards:.hero.subtitle">Grow a Garden features various bread types, each with unique characteristics and rewards:</p>
             
             <div class="bread-variety">
@@ -654,31 +709,31 @@
         </div>
         
         <div class="guide-card" id="tips">
-            <h2>💡 Making Tips &amp; Tricks</h2>
+            <h2 data-i18n="d.tips.title">💡 Tips pembuatan &amp; Tricks</h2>
             <p data-i18n="master_these_tips_to_become_a_bread-making_expert_in_grow_a_garden:.hero.subtitle">Master these tips to become a bread-making expert in Grow a Garden:</p>
             
-            <h3>🌱 Growing Tips</h3>
+            <h3>🌱 Tips budidaya</h3>
             <ul>
-                <li><strong>Optimal Watering:</strong> Water wheat every 2-3 hours for maximum growth speed</li>
-                <li><strong>Golden Hours:</strong> Water during 7:00-9:00 in-game time for double effects</li>
-                <li><strong>Harvest Timing:</strong> Wait for wheat to fully mature (100% growth) before harvesting</li>
-                <li><strong>Soil Quality:</strong> Use premium soil for rare ingredients to increase success rate</li>
+                <li><strong>Penyiraman optimal:</strong> Water wheat every 2-3 hours for maximum growth speed</li>
+                <li><strong>Jam emas:</strong> Water during 7:00-9:00 in-game time for double effects</li>
+                <li><strong>Waktu panen:</strong> Wait for wheat to fully mature (100% growth) before harvesting</li>
+                <li><strong>Kualitas tanah:</strong> Use premium soil for rare ingredients to increase success rate</li>
             </ul>
             
-            <h3>🍞 Making Tips</h3>
+            <h3>🍞 Tips pembuatan</h3>
             <ul>
                 <li><strong>Flour Quality:</strong> Higher quality wheat produces better flour</li>
                 <li><strong>Yeast Management:</strong> Proper yeast handling ensures good bread rise</li>
-                <li><strong>Recipe Efficiency:</strong> Master basic recipes before attempting advanced ones</li>
-                <li><strong>Storage Management:</strong> Keep ingredients organized for quick access</li>
+                <li><strong>Efisiensi resep:</strong> Master basic recipes before attempting advanced ones</li>
+                <li><strong>Manajemen persediaan:</strong> Keep ingredients organized for quick access</li>
             </ul>
             
-            <h3>💰 Profit Optimization</h3>
+            <h3>💰 Optimasi profit</h3>
             <ul>
-                <li><strong>Market Timing:</strong> Sell bread during peak demand hours</li>
-                <li><strong>Quality vs Quantity:</strong> Focus on high-quality bread for better profit margins</li>
-                <li><strong>Recipe Mastery:</strong> Master rare recipes for exclusive market access</li>
-                <li><strong>Supply Chain:</strong> Maintain steady ingredient supply for continuous production</li>
+                <li><strong>Timing pasar:</strong> Sell bread during peak demand hours</li>
+                <li><strong>Kualitas vs Kuantitas:</strong> Focus on high-quality bread for better profit margins</li>
+                <li><strong>Penguasaan resep:</strong> Master rare recipes for exclusive market access</li>
+                <li><strong>Rantai pasok:</strong> Maintain steady ingredient supply for continuous production</li>
             </ul>
             
             <div class="tip-box">
@@ -687,23 +742,23 @@
         </div>
         
         <div class="guide-card" id="efficiency">
-            <h2>⚡ Metode peningkatan efisiensi</h2>
+            <h2 data-i18n="d.efficiency.title">⚡ Metode peningkatan efisiensi</h2>
             <p>Maximize your bread-making efficiency with these advanced strategies:</p>
             
-            <h3>🏭 Production Optimization</h3>
+            <h3>🏭 Optimasi produksi</h3>
             <ul>
-                <li><strong>Automated Systems:</strong> Set up automated watering systems for consistent growth</li>
-                <li><strong>Batch Processing:</strong> Process multiple bread loaves simultaneously</li>
-                <li><strong>Ingredient Rotation:</strong> Rotate crops to maintain soil fertility</li>
-                <li><strong>Quality Control:</strong> Monitor ingredient quality for consistent results</li>
+                <li><strong>Sistem otomatis:</strong> Set up automated watering systems for consistent growth</li>
+                <li><strong>Pemrosesan batch:</strong> Process multiple bread loaves simultaneously</li>
+                <li><strong>Rotasi tanaman:</strong> Rotate crops to maintain soil fertility</li>
+                <li><strong>Kontrol kualitas:</strong> Monitor ingredient quality for consistent results</li>
             </ul>
             
-            <h3 data-i18n="📊_advanced_strategies.📊_advanced_strategies.title">📊 Advanced Strategies</h3>
+            <h3 data-i18n="📊_advanced_strategies.📊_advanced_strategies.title">📊 Strategi lanjutan</h3>
             <ul>
-                <li><strong>Market Analysis:</strong> Track bread demand patterns for optimal production</li>
-                <li><strong>Recipe Optimization:</strong> Develop efficient ingredient combinations</li>
-                <li><strong>Resource Management:</strong> Balance ingredient costs with bread profits</li>
-                <li><strong>Skill Development:</strong> Improve bread-making skills for better results</li>
+                <li><strong>Analisis pasar:</strong> Track bread demand patterns for optimal production</li>
+                <li><strong>Optimasi resep:</strong> Develop efficient ingredient combinations</li>
+                <li><strong>Manajemen sumber daya:</strong> Balance ingredient costs with bread profits</li>
+                <li><strong>Pengembangan keterampilan:</strong> Improve bread-making skills for better results</li>
             </ul>
             
             <div class="warning-box">
@@ -712,10 +767,10 @@
         </div>
         
         <div class="guide-card" id="faq">
-            <h2>❓ Pertanyaan yang sering diajukan</h2>
+            <h2 data-i18n="d.faq.title">❓ Pertanyaan yang sering diajukan</h2>
             
             <h3>Q: How long does it take to make a basic bread?</h3>
-            <p>A: Basic bread takes 4-7 minutes to make, while advanced recipes can take 8-20 minutes depending on complexity.</p>
+            <p>A: Basic bread takes 4-7 mnt to make, while advanced recipes can take 8-20 mnt depending on complexity.</p>
             
             <h3>Q: What's the most profitable bread recipe?</h3>
             <p>A: Premium breads like Artisan Bread and Rainbow Bread offer the highest profit margins, but require rare ingredients.</p>
@@ -746,7 +801,7 @@
             </ol>
             
             <div class="tip-box">
-                <strong>💡 Community Tip:</strong> Join our Discord server to connect with other bread makers, share recipes, and get the latest tips and tricks!
+                <strong>💡 Tips komunitas:</strong> Join our Discord server to connect with other bread makers, share recipes, and get the latest tips and tricks!
             </div>
         </div>
         
@@ -755,4 +810,48 @@
     
     <script src="script.js"></script>
 
- </body></html>
+ 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const currentFlag = document.getElementById('current-flag');
+    const flagDropdown = document.getElementById('current-flag');
+    
+    if (currentFlag && flagDropdown) {
+        // 设置当前语言的国旗
+        const currentLang = document.documentElement.getAttribute('lang') || 'en';
+        updateCurrentFlag(currentLang);
+        
+        // 为每个国旗选项添加点击事件
+        document.querySelectorAll('.flag-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const lang = this.getAttribute('data-lang');
+                if (lang) {
+                    // 调用现有的语言切换函数
+                    if (typeof switchLang === 'function') {
+                        switchLang(lang);
+                    } else if (typeof window.__gagI18n !== 'undefined' && window.__gagI18n.switchLang) {
+                        window.__gagI18n.switchLang(lang);
+                    }
+                }
+            });
+        });
+    }
+});
+
+function updateCurrentFlag(lang) {
+    const currentFlag = document.getElementById('current-flag');
+    if (currentFlag) {
+        const flagOptions = document.querySelectorAll('.flag-option');
+        flagOptions.forEach(option => {
+            if (option.getAttribute('data-lang') === lang) {
+                const flagContent = option.innerHTML;
+                currentFlag.innerHTML = flagContent;
+                break;
+            }
+        });
+    }
+}
+</script>
+    <script src="../flag-switcher.js"></script>
+
+    <script src="../i18n/i18n.js"></script></body></html>

@@ -1,22 +1,22 @@
 <!DOCTYPE html><html lang="hi" dir="ltr"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>कैसे make donut बगीचा उगाने में - पूर्ण गाइड | बगीचा उगाने के टिप्स</title>
-    <meta name="description" content="सीखें कैसे make donut! सीखें कैसे make donut trong Grow a Garden.">
-    <meta name="keywords" content="कैसे make donut trong grow a garden, roblox make donut guide, grow a garden guide, make donut making guide, roblox farming game, make donut ingredients collection, grow a garden tips">
+    <title>कैसे डोनट बनाना बगीचा उगाने में - पूर्ण गाइड | बगीचा उगाने के टिप्स</title>
+    <meta name="description" content="सीखें कैसे डोनट बनाना! सीखें कैसे डोनट बनाना trong Grow a Garden.">
+    <meta name="keywords" content="कैसे डोनट बनाना trong grow a garden, roblox डोनट बनाना guide, grow a garden guide, डोनट बनाना making guide, roblox farming game, डोनट बनाना ingredients collection, grow a garden tips">
     <link rel="canonical" href="https://your-domain.com/how-to-make-donut.html">
     
     <!-- Open Graph for social sharing -->
-    <meta property="og:title" content="कैसे make donut बगीचा उगाने में - पूर्ण गाइड | बगीचा उगाने के टिप्स">
-    <meta property="og:description" content="सीखें कैसे make donut trong Grow a Garden! सीखें कैसे make donut.">
+    <meta property="og:title" content="कैसे डोनट बनाना बगीचा उगाने में - पूर्ण गाइड | बगीचा उगाने के टिप्स">
+    <meta property="og:description" content="सीखें कैसे डोनट बनाना trong Grow a Garden! सीखें कैसे डोनट बनाना.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://your-domain.com/how-to-make-donut.html">
     <meta property="og:image" content="https://your-domain.com/donut-guide-og.jpg">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="कैसे make donut बगीचा उगाने में - पूर्ण गाइड | बगीचा उगाने के टिप्स">
-    <meta name="twitter:description" content="सीखें कैसे make donut trong Grow a Garden! सीखें कैसे make donut.">
+    <meta name="twitter:title" content="कैसे डोनट बनाना बगीचा उगाने में - पूर्ण गाइड | बगीचा उगाने के टिप्स">
+    <meta name="twitter:description" content="सीखें कैसे डोनट बनाना trong Grow a Garden! सीखें कैसे डोनट बनाना.">
     <meta name="twitter:image" content="https://your-domain.com/donut-guide-og.jpg">
     
     <!-- Structured Data JSON-LD -->
@@ -52,7 +52,7 @@
     <!-- Roblox-like color scheme -->
     <link rel="stylesheet" href="https://unpkg.com/simple.css@2.1.0/simple.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍩</text></svg>">
     
     <style>
@@ -324,29 +324,84 @@
 <body>
     <div class="bg-blur"></div>
         <header>
-    <nav>
-      <a href="/index.html" class="logo" data-i18n="nav.logo">🌱 Grow a Garden</a>
-      <a href="/index.html#stats" data-i18n="nav.live">लाइव आंकड़े</a>
-      <a href="/index.html#map" data-i18n="nav.map">वैश्विक हीटमैप</a>
-      <a href="/index.html#tips" data-i18n="nav.tips">सुझाव</a>
-      <a href="/guides.html" data-i18n="nav.guides">📚 गाइड</a>
-      <a href="/index.html#community" class="discord-btn" data-i18n="nav.discord">💬 Discord</a>
-                  <select id="lang-switcher" aria-label="Language">
-                <option value="en" >English</option>
-                <option value="zh-cn" >简体中文</option>
-                <option value="es" >Español</option>
-                <option value="pt-br" >Português</option>
-                <option value="fr" >Français</option>
-                <option value="de" >Deutsch</option>
-                <option value="ru" >Русский</option>
-                <option value="ar" >العربية</option>
-                <option value="hi" selected="">हिन्दी</option>
-                <option value="id" >Bahasa Indonesia</option>
-                <option value="vi" >Tiếng Việt</option>
-                <option value="ja" >日本語</option>
-            </select>
-    </nav>
-  </header>
+        <nav>
+            <a href="index.html" class="logo" data-i18n="nav.logo">🌱 Grow a Garden</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('stats')" data-i18n="nav.live">Live Stats</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('map')" data-i18n="nav.map">Global Heatmap</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('tips')" data-i18n="nav.tips">Tips</a>
+            <a href="guides.html" data-i18n="nav.guides">📚 Guides</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('online')" data-i18n="nav.online">🎮 Online</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('community')" class="discord-btn" data-i18n="nav.discord">💬 Discord</a>
+            <div class="flag-language-switcher">
+    <div class="current-flag" id="current-flag">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNDgwIj4KICAgICAgICAgICAgPGRlZnM+PGNsaXBQYXRoIGlkPSJhIj48cGF0aCBkPSJNLTg1LjMgMGg2ODIuNnY1MTJILTg1LjN6Ii8+PC9jbGlwUGF0aD48L2RlZnM+CiAgICAgICAgICAgIDxjbGlwUGF0aCBpZD0iYiI+PHVzZSBocmVmPSIjYSIvPjwvY2xpcFBhdGg+CiAgICAgICAgICAgIDxnIGNsaXAtcGF0aD0idXJsKCNiKSIgdHJhbnNmb3JtPSJzY2FsZSguOTM3NSkiPgogICAgICAgICAgICAgICAgPGcgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2Utd2lkdGg9IjFwdCI+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2NTEySC0yNTZ6IiBmaWxsPSIjYmQzZDQ0Ii8+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAxMDIuNEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAyMDQuOEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAzMDcuMkg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiA0MDkuNkg3NjhWNTEySC0yNTZ6IiBmaWxsPSIjZmZmIi8+CiAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICA8ZyBmaWxsPSIjMTkyZjVkIj4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAwdjUxMmwyNTYtMjU2eiIvPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9zdmc+" 
+         alt="en Flag">
+    </div>
+    <div class="flag-dropdown" id="flag-dropdown">
+        <div class="flag-option" data-lang="en" title="English">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNDgwIj4KICAgICAgICAgICAgPGRlZnM+PGNsaXBQYXRoIGlkPSJhIj48cGF0aCBkPSJNLTg1LjMgMGg2ODIuNnY1MTJILTg1LjN6Ii8+PC9jbGlwUGF0aD48L2RlZnM+CiAgICAgICAgICAgIDxjbGlwUGF0aCBpZD0iYiI+PHVzZSBocmVmPSIjYSIvPjwvY2xpcFBhdGg+CiAgICAgICAgICAgIDxnIGNsaXAtcGF0aD0idXJsKCNiKSIgdHJhbnNmb3JtPSJzY2FsZSguOTM3NSkiPgogICAgICAgICAgICAgICAgPGcgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2Utd2lkdGg9IjFwdCI+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2NTEySC0yNTZ6IiBmaWxsPSIjYmQzZDQ0Ii8+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAxMDIuNEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAyMDQuOEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAzMDcuMkg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiA0MDkuNkg3NjhWNTEySC0yNTZ6IiBmaWxsPSIjZmZmIi8+CiAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICA8ZyBmaWxsPSIjMTkyZjVkIj4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAwdjUxMmwyNTYtMjU2eiIvPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9zdmc+" 
+         alt="en Flag">
+            <span class="flag-name">English</span>
+        </div>
+        <div class="flag-option" data-lang="zh-cn" title="简体中文">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNkZTI5MTAiLz4KICAgICAgICAgICAgPGcgZmlsbD0iI2ZmZGUwMCI+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNNDUwIDEyMGwtNDUuNyAxNDAuNy0xMTkuMyAwaDE1NGwtMTE5LjMgMHoiLz4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik00NTAgMzAwbC00NS43IDE0MC43LTExOS4zIDBoMTU0bC0xMTkuMyAweiIvPgogICAgICAgICAgICAgICAgPHBhdGggZD0iTTQ1MCA0ODBsLTQ1LjcgMTQwLjctMTE5LjMgMGgxNTRsLTExOS4zIDB6Ii8+CiAgICAgICAgICAgIDwvZz4KICAgICAgICA8L3N2Zz4=" 
+         alt="zh-cn Flag">
+            <span class="flag-name">简体中文</span>
+        </div>
+        <div class="flag-option" data-lang="es" title="Español">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3NTAgNTAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9Ijc1MCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiNjNjBiMWUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9Ijc1MCIgaGVpZ2h0PSIyNTAiIHk9IjEyNSIgZmlsbD0iI2ZmYzQwMCIvPgogICAgICAgIDwvc3ZnPg==" 
+         alt="es Flag">
+            <span class="flag-name">Español</span>
+        </div>
+        <div class="flag-option" data-lang="pt-br" title="Português">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3MjAgNTA0Ij4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjcyMCIgaGVpZ2h0PSI1MDQiIGZpbGw9IiMwMDliM2EiLz4KICAgICAgICAgICAgPHBhdGggZD0iTTM2MCAyNTJsLTE4MC0xMjZ2MjUyeiIgZmlsbD0iI2ZlZGYwMCIvPgogICAgICAgICAgICA8Y2lyY2xlIGN4PSIzNjAiIGN5PSIyNTIiIHI9IjYwIiBmaWxsPSIjMDAyNzc2Ii8+CiAgICAgICAgPC9zdmc+" 
+         alt="pt-br Flag">
+            <span class="flag-name">Português</span>
+        </div>
+        <div class="flag-option" data-lang="fr" title="Français">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiMwMDIzOTUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSI2MDAiIHg9IjMwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjYwMCIgeD0iNjAwIiBmaWxsPSIjZWQyOTM5Ii8+CiAgICAgICAgPC9zdmc+" 
+         alt="fr Flag">
+            <span class="flag-name">Français</span>
+        </div>
+        <div class="flag-option" data-lang="de" title="Deutsch">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiMwMDAiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iI2RkMDAwMCIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjZmZjZTAwIi8+CiAgICAgICAgPC9zdmc+" 
+         alt="de Flag">
+            <span class="flag-name">Deutsch</span>
+        </div>
+        <div class="flag-option" data-lang="ru" title="Русский">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iIzAwMzlhNiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjZDUyYjFlIi8+CiAgICAgICAgPC9zdmc+" 
+         alt="ru Flag">
+            <span class="flag-name">Русский</span>
+        </div>
+        <div class="flag-option" data-lang="ar" title="العربية">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiMwMDZjMzUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI0MDAiIHk9IjEwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iMjAwIiBmaWxsPSIjY2UxMTI2Ii8+CiAgICAgICAgPC9zdmc+" 
+         alt="ar Flag">
+            <span class="flag-name">العربية</span>
+        </div>
+        <div class="flag-option" data-lang="hi" title="हिन्दी">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNmZjk5MzMiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjMTM4ODA4Ii8+CiAgICAgICAgICAgIDxjaXJjbGUgY3g9IjQ1MCIgY3k9IjMwMCIgcj0iNjAiIGZpbGw9IiMwMDAwODAiLz4KICAgICAgICA8L3N2Zz4=" 
+         alt="hi Flag">
+            <span class="flag-name">हिन्दी</span>
+        </div>
+        <div class="flag-option" data-lang="id" title="Bahasa Indonesia">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIzMDAiIHk9IjMwMCIgZmlsbD0iI2NlMTEyNiIvPgogICAgICAgIDwvc3ZnPg==" 
+         alt="id Flag">
+            <span class="flag-name">Bahasa Indonesia</span>
+        </div>
+        <div class="flag-option" data-lang="vi" title="Tiếng Việt">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNkYTI1MWQiLz4KICAgICAgICAgICAgPHBhdGggZD0iTTQ1MCAzMDBsLTE4MC0xMjZ2MjUyeiIgZmlsbD0iI2ZmZmYwMCIvPgogICAgICAgIDwvc3ZnPg==" 
+         alt="vi Flag">
+            <span class="flag-name">Tiếng Việt</span>
+        </div>
+        <div class="flag-option" data-lang="ja" title="日本語">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPGNpcmNsZSBjeD0iNDUwIiBjeT0iMzAwIiByPSIxODAiIGZpbGw9IiNiYzAwMmQiLz4KICAgICAgICA8L3N2Zz4=" 
+         alt="ja Flag">
+            <span class="flag-name">日本語</span>
+        </div>
+    </div>
+</div>
+        </nav>
+    </header>
     
     <section class="donut-hero">
         <h1 data-i18n="डोनट बनाने की गाइड.hero.title">डोनट बनाने की गाइड</h1>
@@ -359,7 +414,7 @@
             <ol>
                 <li><a href="/hi/index.html">🏠 होम</a></li>
                 <li><a href="/hi/guides.html">📚 गाइड्स</a></li>
-                <li aria-current="page" data-i18n="🎯_make_donut.breadcrumb.current">🎯 make donut</li>
+                <li aria-current="page" data-i18n="🎯_make_donut.breadcrumb.current">🎯 डोनट बनाना</li>
             </ol>
         </nav>
     </div>
@@ -372,22 +427,22 @@
                 <li><a href="#ingredients" data-i18n="ingredients.toc.ingredients">आवश्यक सामग्री सूची</a></li>
                 <li><a href="#recipes" data-i18n="recipes.toc.recipes">Advanced Donut Recipes</a></li>
                 <li><a href="#varieties">Donut Varieties &amp; Types</a></li>
-                <li><a href="#tips" data-i18n="tips.toc.tips">Making Tips &amp; Tricks</a></li>
+                <li><a href="#tips" data-i18n="tips.toc.tips">बनाने के सुझाव &amp; Tricks</a></li>
                 <li><a href="#efficiency" data-i18n="efficiency.toc.efficiency">दक्षता सुधार विधियाँ</a></li>
                 <li><a href="#faq" data-i18n="faq.toc.faq">अक्सर पूछे जाने वाले प्रश्न</a></li>
             </ul>
         </div>
         
         <div class="guide-card" id="basics">
-            <h2>🍩 Basic Donut Making</h2>
+            <h2 data-i18n="t.basics.title">🍩 Basic Donut Making</h2>
             <p data-i18n="in_grow_a_garden,_donut_making_is_one_of_the_most_popular_and_profitable_crafting_activities._by_growing_various_ingredients_and_combining_them_in_the_donut_maker,_you_can_create_delicious_donuts_to_earn_significant_rewards..hero.subtitle">In Grow a Garden, donut making is one of the most popular and profitable crafting activities. By growing various ingredients and combining them in the donut maker, you can create delicious donuts to earn significant rewards.</p>
             
             <h3>बनाने के चरण:</h3>
             <ol>
                 <li><strong>Collect Ingredients</strong>: Plant basic ingredients like flour, sugar, eggs, and milk in your garden</li>
                 <li><strong>Water Management</strong>: Regularly water your plants to ensure healthy growth and maximum yield</li>
-                <li><strong>Harvest Timing</strong>: Wait for plants to fully mature before harvesting for best quality</li>
-                <li><strong>Make Donut</strong>: Put collected ingredients into the donut maker machine</li>
+                <li><strong>कटाई समय</strong>: Wait for plants to fully mature before harvesting for best quality</li>
+                <li><strong>डोनट बनाना</strong>: Put collected ingredients into the donut maker machine</li>
                 <li><strong>Earn Rewards</strong>: Complete donut making to earn game currency and experience points</li>
             </ol>
             
@@ -397,34 +452,34 @@
         </div>
         
         <div class="guide-card" id="ingredients">
-            <h2>🥚 आवश्यक सामग्री सूची</h2>
+            <h2 data-i18n="t.ingredients.title">🥚 आवश्यक सामग्री सूची</h2>
             <p>Making quality donuts requires various fresh ingredients. Here's the ingredient list categorized by importance:</p>
             
             <h3 data-i18n="basic_ingredients_beginner_essential.basic_ingredients_beginner_essential.title">Basic Ingredients (Beginner Essential)</h3>
             <div class="ingredient-grid">
                 <div class="ingredient-item">
                     <h4>🌾 Flour</h4>
-                    <p>Growth Time: 45 minutes</p>
+                    <p>Growth Time: 45 मिनट</p>
                     <p>Value: Basic</p>
-                    <p>Use: Base ingredient for all donuts</p>
+                    <p>उपयोग: Base ingredient for all donuts</p>
                 </div>
                 <div class="ingredient-item">
                     <h4>🍯 Sugar</h4>
-                    <p>Growth Time: 30 minutes</p>
+                    <p>Growth Time: 30 मिनट</p>
                     <p>Value: Basic</p>
-                    <p>Use: Sweetening agent for donuts</p>
+                    <p>उपयोग: Sweetening agent for donuts</p>
                 </div>
                 <div class="ingredient-item">
                     <h4>🥚 Eggs</h4>
-                    <p>Growth Time: 60 minutes</p>
-                    <p>Value: Medium</p>
-                    <p>Use: Binding agent and texture</p>
+                    <p>Growth Time: 60 मिनट</p>
+                    <p>Value: मध्यम</p>
+                    <p>उपयोग: Binding agent and texture</p>
                 </div>
                 <div class="ingredient-item">
                     <h4>🥛 Milk</h4>
-                    <p>Growth Time: 40 minutes</p>
-                    <p>Value: Medium</p>
-                    <p>Use: Moisture and richness</p>
+                    <p>Growth Time: 40 मिनट</p>
+                    <p>Value: मध्यम</p>
+                    <p>उपयोग: Moisture and richness</p>
                 </div>
             </div>
             
@@ -432,61 +487,61 @@
             <div class="ingredient-grid">
                 <div class="ingredient-item">
                     <h4>🍫 Chocolate</h4>
-                    <p>Growth Time: 90 minutes</p>
+                    <p>Growth Time: 90 मिनट</p>
                     <p>Value: High</p>
-                    <p>Use: Making chocolate donuts</p>
+                    <p>उपयोग: Making chocolate donuts</p>
                 </div>
                 <div class="ingredient-item">
                     <h4>🍓 Strawberry</h4>
-                    <p>Growth Time: 75 minutes</p>
+                    <p>Growth Time: 75 मिनट</p>
                     <p>Value: High</p>
-                    <p>Use: Making strawberry donuts</p>
+                    <p>उपयोग: Making strawberry donuts</p>
                 </div>
                 <div class="ingredient-item">
                     <h4>🥜 Peanuts</h4>
-                    <p>Growth Time: 120 minutes</p>
+                    <p>Growth Time: 120 मिनट</p>
                     <p>Value: High</p>
-                    <p>Use: Making peanut butter donuts</p>
+                    <p>उपयोग: Making peanut butter donuts</p>
                 </div>
                 <div class="ingredient-item">
                     <h4>🍯 Honey</h4>
-                    <p>Growth Time: 100 minutes</p>
+                    <p>Growth Time: 100 मिनट</p>
                     <p>Value: High</p>
-                    <p>Use: Natural sweetener for premium donuts</p>
+                    <p>उपयोग: Natural sweetener for premium donuts</p>
                 </div>
             </div>
             
-            <h3>Rare Ingredients (Expert Level)</h3>
+            <h3>Rare Ingredients (विशेषज्ञ Level)</h3>
             <div class="ingredient-grid">
                 <div class="ingredient-item">
                     <h4>🌰 Vanilla Bean</h4>
-                    <p>Growth Time: 150 minutes</p>
+                    <p>Growth Time: 150 मिनट</p>
                     <p>Value: Rare</p>
-                    <p>Use: Making vanilla donuts</p>
+                    <p>उपयोग: Making vanilla donuts</p>
                 </div>
                 <div class="ingredient-item">
                     <h4>🍊 Orange</h4>
-                    <p>Growth Time: 180 minutes</p>
+                    <p>Growth Time: 180 मिनट</p>
                     <p>Value: Rare</p>
-                    <p>Use: Making citrus donuts</p>
+                    <p>उपयोग: Making citrus donuts</p>
                 </div>
                 <div class="ingredient-item">
                     <h4>🥥 Coconut</h4>
-                    <p>Growth Time: 200 minutes</p>
+                    <p>Growth Time: 200 मिनट</p>
                     <p>Value: Rare</p>
-                    <p>Use: Making tropical donuts</p>
+                    <p>उपयोग: Making tropical donuts</p>
                 </div>
                 <div class="ingredient-item">
                     <h4>🍁 Maple Syrup</h4>
-                    <p>Growth Time: 240 minutes</p>
+                    <p>Growth Time: 240 मिनट</p>
                     <p>Value: Rare</p>
-                    <p>Use: Making maple donuts</p>
+                    <p>उपयोग: Making maple donuts</p>
                 </div>
             </div>
         </div>
         
         <div class="guide-card" id="recipes">
-            <h2>🍽️ Advanced Donut Recipes</h2>
+            <h2 data-i18n="t.recipes.title">🍽️ Advanced Donut Recipes</h2>
             <p>Different ingredient combinations can create donuts of varying levels and effects. Here's a detailed recipe table:</p>
             
             <h3 data-i18n="recipes.basic_donut.title">Basic Donut Recipes</h3>
@@ -504,30 +559,30 @@
                     <tr>
                         <td>Plain Donut</td>
                         <td>Flour + Sugar + Eggs + Milk</td>
-                        <td data-i18n="time.minutes" data-time="2">2 minutes</td>
-                        <td>50 coins</td>
-                        <td>Easy</td>
+                        <td data-i18n="time.minutes" data-time="2">2 मिनट</td>
+                        <td>50 सिक्के</td>
+                        <td>आसान</td>
                     </tr>
                     <tr>
                         <td>Chocolate Donut</td>
                         <td>Flour + Sugar + Eggs + Milk + Chocolate</td>
-                        <td data-i18n="time.minutes" data-time="3">3 minutes</td>
-                        <td>100 coins</td>
-                        <td>Easy</td>
+                        <td data-i18n="time.minutes" data-time="3">3 मिनट</td>
+                        <td>100 सिक्के</td>
+                        <td>आसान</td>
                     </tr>
                     <tr>
                         <td>Strawberry Donut</td>
                         <td>Flour + Sugar + Eggs + Milk + Strawberry</td>
-                        <td data-i18n="time.minutes" data-time="3">3 minutes</td>
-                        <td>120 coins</td>
-                        <td>Medium</td>
+                        <td data-i18n="time.minutes" data-time="3">3 मिनट</td>
+                        <td>120 सिक्के</td>
+                        <td>मध्यम</td>
                     </tr>
                     <tr>
                         <td>Honey Donut</td>
                         <td>Flour + Sugar + Eggs + Milk + Honey</td>
-                        <td data-i18n="time.minutes" data-time="4">4 minutes</td>
-                        <td>150 coins</td>
-                        <td>Medium</td>
+                        <td data-i18n="time.minutes" data-time="4">4 मिनट</td>
+                        <td>150 सिक्के</td>
+                        <td>मध्यम</td>
                     </tr>
                 </tbody>
             </table>
@@ -547,30 +602,30 @@
                     <tr>
                         <td>Peanut Butter Donut</td>
                         <td>Flour + Sugar + Eggs + Milk + Peanuts</td>
-                        <td data-i18n="time.minutes" data-time="5">5 minutes</td>
-                        <td>200 coins</td>
-                        <td>Hard</td>
+                        <td data-i18n="time.minutes" data-time="5">5 मिनट</td>
+                        <td>200 सिक्के</td>
+                        <td>कठिन</td>
                     </tr>
                     <tr>
                         <td>Vanilla Donut</td>
                         <td>Flour + Sugar + Eggs + Milk + Vanilla Bean</td>
-                        <td data-i18n="time.minutes" data-time="6">6 minutes</td>
-                        <td>250 coins</td>
-                        <td>Hard</td>
+                        <td data-i18n="time.minutes" data-time="6">6 मिनट</td>
+                        <td>250 सिक्के</td>
+                        <td>कठिन</td>
                     </tr>
                     <tr>
                         <td>Orange Donut</td>
                         <td>Flour + Sugar + Eggs + Milk + Orange</td>
-                        <td data-i18n="time.minutes" data-time="7">7 minutes</td>
-                        <td>300 coins</td>
-                        <td>Expert</td>
+                        <td data-i18n="time.minutes" data-time="7">7 मिनट</td>
+                        <td>300 सिक्के</td>
+                        <td>विशेषज्ञ</td>
                     </tr>
                     <tr>
                         <td>Coconut Donut</td>
                         <td>Flour + Sugar + Eggs + Milk + Coconut</td>
-                        <td data-i18n="time.minutes" data-time="8">8 minutes</td>
-                        <td>350 coins</td>
-                        <td>Expert</td>
+                        <td data-i18n="time.minutes" data-time="8">8 मिनट</td>
+                        <td>350 सिक्के</td>
+                        <td>विशेषज्ञ</td>
                     </tr>
                 </tbody>
             </table>
@@ -590,23 +645,23 @@
                     <tr>
                         <td>Maple Donut</td>
                         <td>Flour + Sugar + Eggs + Milk + Maple Syrup</td>
-                        <td data-i18n="time.minutes" data-time="10">10 minutes</td>
-                        <td>500 coins</td>
-                        <td>Master</td>
+                        <td data-i18n="time.minutes" data-time="10">10 मिनट</td>
+                        <td>500 सिक्के</td>
+                        <td>मास्टर</td>
                     </tr>
                     <tr>
                         <td>Rainbow Donut</td>
                         <td>All Basic + All Advanced + All Rare</td>
-                        <td data-i18n="time.minutes" data-time="15">15 minutes</td>
-                        <td>1000 coins</td>
-                        <td>Legendary</td>
+                        <td data-i18n="time.minutes" data-time="15">15 मिनट</td>
+                        <td>1000 सिक्के</td>
+                        <td>लेजेंडरी</td>
                     </tr>
                 </tbody>
             </table>
         </div>
         
         <div class="guide-card" id="varieties">
-            <h2>🎨 Donut Varieties &amp; Types</h2>
+            <h2 data-i18n="t.varieties.title">🎨 Donut Varieties &amp; Types</h2>
             <p data-i18n="grow_a_garden_features_various_donut_types,_each_with_unique_characteristics_and_rewards:.hero.subtitle">Grow a Garden features various donut types, each with unique characteristics and rewards:</p>
             
             <div class="donut-variety">
@@ -653,31 +708,31 @@
         </div>
         
         <div class="guide-card" id="tips">
-            <h2>💡 Making Tips &amp; Tricks</h2>
-            <p data-i18n="master_these_tips_to_become_a_donut-making_expert_in_grow_a_garden:.hero.subtitle">Master these tips to become a donut-making expert in Grow a Garden:</p>
+            <h2 data-i18n="t.tips.title">💡 बनाने के सुझाव &amp; Tricks</h2>
+            <p data-i18n="master_these_tips_to_become_a_donut-making_expert_in_grow_a_garden:.hero.subtitle">मास्टर these tips to become a donut-making expert in Grow a Garden:</p>
             
-            <h3>🌱 Growing Tips</h3>
+            <h3>🌱 खेती के सुझाव</h3>
             <ul>
-                <li><strong>Optimal Watering:</strong> Water plants every 2-3 hours for maximum growth speed</li>
-                <li><strong>Golden Hours:</strong> Water during 7:00-9:00 in-game time for double effects</li>
-                <li><strong>Harvest Timing:</strong> Wait for plants to fully mature (100% growth) before harvesting</li>
-                <li><strong>Soil Quality:</strong> Use premium soil for rare ingredients to increase success rate</li>
+                <li><strong>सर्वोत्तम सिंचाई:</strong> Water plants every 2-3 hours for maximum growth speed</li>
+                <li><strong>स्वर्णिम समय:</strong> Water during 7:00-9:00 in-game time for double effects</li>
+                <li><strong>कटाई समय:</strong> Wait for plants to fully mature (100% growth) before harvesting</li>
+                <li><strong>मिट्टी की गुणवत्ता:</strong> Use premium soil for rare ingredients to increase success rate</li>
             </ul>
             
-            <h3>🍩 Making Tips</h3>
+            <h3>🍩 बनाने के सुझाव</h3>
             <ul>
                 <li><strong>Ingredient Quality:</strong> Higher quality ingredients produce better donuts</li>
-                <li><strong>Recipe Efficiency:</strong> Master basic recipes before attempting advanced ones</li>
-                <li><strong>Batch Production:</strong> Make multiple donuts at once to maximize efficiency</li>
-                <li><strong>Storage Management:</strong> Keep ingredients organized for quick access</li>
+                <li><strong>रेसिपी दक्षता:</strong> मास्टर basic recipes before attempting advanced ones</li>
+                <li><strong>बैच उत्पादन:</strong> Make multiple donuts at once to maximize efficiency</li>
+                <li><strong>भंडारण प्रबंधन:</strong> Keep ingredients organized for quick access</li>
             </ul>
             
-            <h3>💰 Profit Optimization</h3>
+            <h3>💰 लाभ अनुकूलन</h3>
             <ul>
-                <li><strong>Market Timing:</strong> Sell donuts during peak demand hours</li>
-                <li><strong>Quality vs Quantity:</strong> Focus on high-quality donuts for better profit margins</li>
-                <li><strong>Recipe Mastery:</strong> Master rare recipes for exclusive market access</li>
-                <li><strong>Supply Chain:</strong> Maintain steady ingredient supply for continuous production</li>
+                <li><strong>बाज़ार समय:</strong> Sell donuts during peak demand hours</li>
+                <li><strong>गुणवत्ता बनाम मात्रा:</strong> Focus on high-quality donuts for better profit margins</li>
+                <li><strong>रेसिपी महारत:</strong> मास्टर rare recipes for exclusive market access</li>
+                <li><strong>आपूर्ति श्रृंखला:</strong> Maintain steady ingredient supply for continuous production</li>
             </ul>
             
             <div class="tip-box">
@@ -686,23 +741,23 @@
         </div>
         
         <div class="guide-card" id="efficiency">
-            <h2>⚡ दक्षता सुधार विधियाँ</h2>
+            <h2 data-i18n="t.efficiency.title">⚡ दक्षता सुधार विधियाँ</h2>
             <p>Maximize your donut-making efficiency with these advanced strategies:</p>
             
-            <h3>🏭 Production Optimization</h3>
+            <h3>🏭 उत्पादन अनुकूलन</h3>
             <ul>
-                <li><strong>Automated Systems:</strong> Set up automated watering systems for consistent growth</li>
-                <li><strong>Batch Processing:</strong> Process multiple donuts simultaneously</li>
-                <li><strong>Ingredient Rotation:</strong> Rotate crops to maintain soil fertility</li>
-                <li><strong>Quality Control:</strong> Monitor ingredient quality for consistent results</li>
+                <li><strong>स्वचालित प्रणालियाँ:</strong> Set up automated watering systems for consistent growth</li>
+                <li><strong>बैच प्रसंस्करण:</strong> Process multiple donuts simultaneously</li>
+                <li><strong>फसल चक्र:</strong> Rotate crops to maintain soil fertility</li>
+                <li><strong>गुणवत्ता नियंत्रण:</strong> Monitor ingredient quality for consistent results</li>
             </ul>
             
-            <h3 data-i18n="📊_advanced_strategies.📊_advanced_strategies.title">📊 Advanced Strategies</h3>
+            <h3 data-i18n="📊_advanced_strategies.📊_advanced_strategies.title">📊 उन्नत रणनीतियाँ</h3>
             <ul>
-                <li><strong>Market Analysis:</strong> Track donut demand patterns for optimal production</li>
-                <li><strong>Recipe Optimization:</strong> Develop efficient ingredient combinations</li>
-                <li><strong>Resource Management:</strong> Balance ingredient costs with donut profits</li>
-                <li><strong>Skill Development:</strong> Improve donut-making skills for better results</li>
+                <li><strong>बाज़ार विश्लेषण:</strong> Track donut demand patterns for optimal production</li>
+                <li><strong>रेसिपी अनुकूलन:</strong> Develop efficient ingredient combinations</li>
+                <li><strong>संसाधन प्रबंधन:</strong> Balance ingredient costs with donut profits</li>
+                <li><strong>कौशल विकास:</strong> Improve donut-making skills for better results</li>
             </ul>
             
             <div class="warning-box">
@@ -711,10 +766,10 @@
         </div>
         
         <div class="guide-card" id="faq">
-            <h2>❓ अक्सर पूछे जाने वाले प्रश्न</h2>
+            <h2 data-i18n="t.faq.title">❓ अक्सर पूछे जाने वाले प्रश्न</h2>
             
             <h3>Q: How long does it take to make a basic donut?</h3>
-            <p>A: Basic donuts take 2-3 minutes to make, while advanced recipes can take 5-15 minutes depending on complexity.</p>
+            <p>A: Basic donuts take 2-3 मिनट to make, while advanced recipes can take 5-15 मिनट depending on complexity.</p>
             
             <h3>Q: What's the most profitable donut recipe?</h3>
             <p>A: Premium donuts like Maple Donut and Rainbow Donut offer the highest profit margins, but require rare ingredients.</p>
@@ -739,13 +794,13 @@
             <ol>
                 <li><strong>Start Small:</strong> Begin with basic donut recipes to build your skills</li>
                 <li><strong>Expand Your Garden:</strong> Plant a variety of ingredients for different recipes</li>
-                <li><strong>Master Advanced Recipes:</strong> Work on complex donut varieties for higher profits</li>
+                <li><strong>मास्टर Advanced Recipes:</strong> Work on complex donut varieties for higher profits</li>
                 <li><strong>Join the Community:</strong> Connect with other players to share tips and strategies</li>
                 <li><strong>Stay Updated:</strong> Keep up with game updates for new recipes and features</li>
             </ol>
             
             <div class="tip-box">
-                <strong>💡 Community Tip:</strong> Join our Discord server to connect with other donut makers, share recipes, and get the latest tips and tricks!
+                <strong>💡 समुदाय सुझाव:</strong> Join our Discord server to connect with other donut makers, share recipes, and get the latest tips and tricks!
             </div>
         </div>
         
@@ -754,4 +809,48 @@
     
     <script src="script.js"></script>
 
- </body></html>
+ 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const currentFlag = document.getElementById('current-flag');
+    const flagDropdown = document.getElementById('current-flag');
+    
+    if (currentFlag && flagDropdown) {
+        // 设置当前语言的国旗
+        const currentLang = document.documentElement.getAttribute('lang') || 'en';
+        updateCurrentFlag(currentLang);
+        
+        // 为每个国旗选项添加点击事件
+        document.querySelectorAll('.flag-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const lang = this.getAttribute('data-lang');
+                if (lang) {
+                    // 调用现有的语言切换函数
+                    if (typeof switchLang === 'function') {
+                        switchLang(lang);
+                    } else if (typeof window.__gagI18n !== 'undefined' && window.__gagI18n.switchLang) {
+                        window.__gagI18n.switchLang(lang);
+                    }
+                }
+            });
+        });
+    }
+});
+
+function updateCurrentFlag(lang) {
+    const currentFlag = document.getElementById('current-flag');
+    if (currentFlag) {
+        const flagOptions = document.querySelectorAll('.flag-option');
+        flagOptions.forEach(option => {
+            if (option.getAttribute('data-lang') === lang) {
+                const flagContent = option.innerHTML;
+                currentFlag.innerHTML = flagContent;
+                break;
+            }
+        });
+    }
+}
+</script>
+    <script src="../flag-switcher.js"></script>
+
+    <script src="../i18n/i18n.js"></script></body></html>

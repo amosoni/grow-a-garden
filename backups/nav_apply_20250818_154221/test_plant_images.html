@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测试植物图片映射</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .test-result {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .success { background-color: #d4edda; color: #155724; }
+        .error { background-color: #f8d7da; color: #721c24; }
+        .info { background-color: #d1ecf1; color: #0c5460; }
+        .plant-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .plant-item {
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .plant-image {
+            width: 64px;
+            height: 64px;
+            object-fit: contain;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+        .plant-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .plant-path {
+            font-size: 12px;
+            color: #666;
+            word-break: break-all;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .console-log {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 10px;
+            border-radius: 4px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌱 植物图片映射测试</h1>
+        
+        <div class="test-section">
+            <h3>🔧 测试控制</h3>
+            <button onclick="testImageMap()">测试图片映射加载</button>
+            <button onclick="testImagePaths()">测试图片路径</button>
+            <button onclick="clearConsole()">清空控制台</button>
+            <button onclick="location.reload()">刷新页面</button>
+        </div>
+
+        <div class="test-section">
+            <h3>📊 测试结果</h3>
+            <div id="test-results"></div>
+        </div>
+
+        <div class="test-section">
+            <h3>🖼️ 图片预览 (前10个)</h3>
+            <div id="image-preview"></div>
+        </div>
+
+        <div class="test-section">
+            <h3>📝 控制台日志</h3>
+            <div id="console-log" class="console-log"></div>
+        </div>
+    </div>
+
+    <script>
+        // 设置图片映射URL
+        window.PLANT_IMG_MAP_URL = '../plant_img_map_local.json';
+        
+        let plantImgMap = {};
+        let testResults = {
+            mapLoaded: false,
+            total: 0,
+            validPaths: 0,
+            invalidPaths: 0,
+            errors: []
+        };
+
+        function log(message) {
+            const consoleLog = document.getElementById('console-log');
+            const timestamp = new Date().toLocaleTimeString();
+            consoleLog.textContent += `[${timestamp}] ${message}\n`;
+            consoleLog.scrollTop = consoleLog.scrollHeight;
+            console.log(message);
+        }
+
+        function clearConsole() {
+            document.getElementById('console-log').textContent = '';
+        }
+
+        function addTestResult(type, title, message) {
+            const resultsDiv = document.getElementById('test-results');
+            const resultDiv = document.createElement('div');
+            resultDiv.className = `test-result ${type}`;
+            resultDiv.innerHTML = `<strong>${title}:</strong> ${message}`;
+            resultsDiv.appendChild(resultDiv);
+        }
+
+        async function testImageMap() {
+            log('开始测试图片映射加载...');
+            addTestResult('info', '测试开始', '正在加载图片映射...');
+            
+            try {
+                const response = await fetch(window.PLANT_IMG_MAP_URL);
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                
+                plantImgMap = await response.json();
+                testResults.mapLoaded = true;
+                testResults.total = Object.keys(plantImgMap).length;
+                
+                log(`✅ 图片映射加载成功！总数: ${testResults.total}`);
+                addTestResult('success', '图片映射加载', `成功加载 ${testResults.total} 个图片映射`);
+                
+                // 显示前10个图片
+                displayImagePreview();
+                
+            } catch (error) {
+                log(`❌ 图片映射加载失败: ${error.message}`);
+                addTestResult('error', '图片映射加载', `失败: ${error.message}`);
+                testResults.errors.push(error.message);
+            }
+        }
+
+        async function testImagePaths() {
+            if (!testResults.mapLoaded) {
+                addTestResult('error', '路径测试', '请先加载图片映射');
+                return;
+            }
+            
+            log('开始测试图片路径...');
+            addTestResult('info', '路径测试', '正在测试图片路径...');
+            
+            let validCount = 0;
+            let invalidCount = 0;
+            
+            // 测试前20个图片路径
+            const testPlants = Object.entries(plantImgMap).slice(0, 20);
+            
+            for (const [plantKey, imgPath] of testPlants) {
+                try {
+                    const response = await fetch(imgPath);
+                    if (response.ok) {
+                        validCount++;
+                        log(`✅ ${plantKey}: ${imgPath} - 可访问`);
+                    } else {
+                        invalidCount++;
+                        log(`❌ ${plantKey}: ${imgPath} - HTTP ${response.status}`);
+                    }
+                } catch (error) {
+                    invalidCount++;
+                    log(`❌ ${plantKey}: ${imgPath} - 错误: ${error.message}`);
+                }
+            }
+            
+            testResults.validPaths = validCount;
+            testResults.invalidPaths = invalidCount;
+            
+            log(`路径测试完成: ${validCount} 个有效, ${invalidCount} 个无效`);
+            addTestResult('info', '路径测试', `完成: ${validCount} 个有效, ${invalidCount} 个无效`);
+        }
+
+        function displayImagePreview() {
+            const previewDiv = document.getElementById('image-preview');
+            const testPlants = Object.entries(plantImgMap).slice(0, 10);
+            
+            previewDiv.innerHTML = '<div class="plant-grid">' + 
+                testPlants.map(([plantKey, imgPath]) => `
+                    <div class="plant-item">
+                        <img src="${imgPath}" alt="${plantKey}" class="plant-image" 
+                             onerror="this.style.border='2px solid red'; this.title='图片加载失败'"
+                             onload="this.style.border='2px solid green'; this.title='图片加载成功'">
+                        <div class="plant-name">${plantKey}</div>
+                        <div class="plant-path">${imgPath}</div>
+                    </div>
+                `).join('') + '</div>';
+        }
+
+        // 页面加载完成后自动测试
+        window.addEventListener('load', () => {
+            log('页面加载完成，开始自动测试...');
+            testImageMap();
+        });
+    </script>
+
+    <script src="flag-switcher.js"></script></body>
+</html> 

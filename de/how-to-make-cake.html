@@ -52,7 +52,7 @@
     <!-- Roblox-like color scheme -->
     <link rel="stylesheet" href="https://unpkg.com/simple.css@2.1.0/simple.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎂</text></svg>">
     
     <style>
@@ -325,29 +325,84 @@
 <body>
     <div class="bg-blur"></div>
         <header>
-    <nav>
-      <a href="/index.html" class="logo" data-i18n="nav.logo">🌱 Grow a Garden</a>
-      <a href="/index.html#stats" data-i18n="nav.live">Live-Statistiken</a>
-      <a href="/index.html#map" data-i18n="nav.map">Globale Wärmekarte</a>
-      <a href="/index.html#tips" data-i18n="nav.tips">Tipps</a>
-      <a href="/guides.html" data-i18n="nav.guides">📚 Anleitungen</a>
-      <a href="/index.html#community" class="discord-btn" data-i18n="nav.discord">💬 Discord</a>
-                  <select id="lang-switcher" aria-label="Language">
-                <option value="en" >English</option>
-                <option value="zh-cn" >简体中文</option>
-                <option value="es" >Español</option>
-                <option value="pt-br" >Português</option>
-                <option value="fr" >Français</option>
-                <option value="de" selected="">Deutsch</option>
-                <option value="ru" >Русский</option>
-                <option value="ar" >العربية</option>
-                <option value="hi" >हिन्दी</option>
-                <option value="id" >Bahasa Indonesia</option>
-                <option value="vi" >Tiếng Việt</option>
-                <option value="ja" >日本語</option>
-            </select>
-    </nav>
-  </header>
+        <nav>
+            <a href="index.html" class="logo" data-i18n="nav.logo">🌱 Grow a Garden</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('stats')" data-i18n="nav.live">Live Stats</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('map')" data-i18n="nav.map">Global Heatmap</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('tips')" data-i18n="nav.tips">Tips</a>
+            <a href="guides.html" data-i18n="nav.guides">📚 Guides</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('online')" data-i18n="nav.online">🎮 Online</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('community')" class="discord-btn" data-i18n="nav.discord">💬 Discord</a>
+            <div class="flag-language-switcher">
+    <div class="current-flag" id="current-flag">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNDgwIj4KICAgICAgICAgICAgPGRlZnM+PGNsaXBQYXRoIGlkPSJhIj48cGF0aCBkPSJNLTg1LjMgMGg2ODIuNnY1MTJILTg1LjN6Ii8+PC9jbGlwUGF0aD48L2RlZnM+CiAgICAgICAgICAgIDxjbGlwUGF0aCBpZD0iYiI+PHVzZSBocmVmPSIjYSIvPjwvY2xpcFBhdGg+CiAgICAgICAgICAgIDxnIGNsaXAtcGF0aD0idXJsKCNiKSIgdHJhbnNmb3JtPSJzY2FsZSguOTM3NSkiPgogICAgICAgICAgICAgICAgPGcgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2Utd2lkdGg9IjFwdCI+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2NTEySC0yNTZ6IiBmaWxsPSIjYmQzZDQ0Ii8+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAxMDIuNEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAyMDQuOEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAzMDcuMkg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiA0MDkuNkg3NjhWNTEySC0yNTZ6IiBmaWxsPSIjZmZmIi8+CiAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICA8ZyBmaWxsPSIjMTkyZjVkIj4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAwdjUxMmwyNTYtMjU2eiIvPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9zdmc+" 
+         alt="en Flag">
+    </div>
+    <div class="flag-dropdown" id="flag-dropdown">
+        <div class="flag-option" data-lang="en" title="English">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNDgwIj4KICAgICAgICAgICAgPGRlZnM+PGNsaXBQYXRoIGlkPSJhIj48cGF0aCBkPSJNLTg1LjMgMGg2ODIuNnY1MTJILTg1LjN6Ii8+PC9jbGlwUGF0aD48L2RlZnM+CiAgICAgICAgICAgIDxjbGlwUGF0aCBpZD0iYiI+PHVzZSBocmVmPSIjYSIvPjwvY2xpcFBhdGg+CiAgICAgICAgICAgIDxnIGNsaXAtcGF0aD0idXJsKCNiKSIgdHJhbnNmb3JtPSJzY2FsZSguOTM3NSkiPgogICAgICAgICAgICAgICAgPGcgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2Utd2lkdGg9IjFwdCI+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2NTEySC0yNTZ6IiBmaWxsPSIjYmQzZDQ0Ii8+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAxMDIuNEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAyMDQuOEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAzMDcuMkg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiA0MDkuNkg3NjhWNTEySC0yNTZ6IiBmaWxsPSIjZmZmIi8+CiAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICA8ZyBmaWxsPSIjMTkyZjVkIj4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAwdjUxMmwyNTYtMjU2eiIvPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9zdmc+" 
+         alt="en Flag">
+            <span class="flag-name">English</span>
+        </div>
+        <div class="flag-option" data-lang="zh-cn" title="简体中文">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNkZTI5MTAiLz4KICAgICAgICAgICAgPGcgZmlsbD0iI2ZmZGUwMCI+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNNDUwIDEyMGwtNDUuNyAxNDAuNy0xMTkuMyAwaDE1NGwtMTE5LjMgMHoiLz4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik00NTAgMzAwbC00NS43IDE0MC43LTExOS4zIDBoMTU0bC0xMTkuMyAweiIvPgogICAgICAgICAgICAgICAgPHBhdGggZD0iTTQ1MCA0ODBsLTQ1LjcgMTQwLjctMTE5LjMgMGgxNTRsLTExOS4zIDB6Ii8+CiAgICAgICAgICAgIDwvZz4KICAgICAgICA8L3N2Zz4=" 
+         alt="zh-cn Flag">
+            <span class="flag-name">简体中文</span>
+        </div>
+        <div class="flag-option" data-lang="es" title="Español">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3NTAgNTAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9Ijc1MCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiNjNjBiMWUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9Ijc1MCIgaGVpZ2h0PSIyNTAiIHk9IjEyNSIgZmlsbD0iI2ZmYzQwMCIvPgogICAgICAgIDwvc3ZnPg==" 
+         alt="es Flag">
+            <span class="flag-name">Español</span>
+        </div>
+        <div class="flag-option" data-lang="pt-br" title="Português">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3MjAgNTA0Ij4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjcyMCIgaGVpZ2h0PSI1MDQiIGZpbGw9IiMwMDliM2EiLz4KICAgICAgICAgICAgPHBhdGggZD0iTTM2MCAyNTJsLTE4MC0xMjZ2MjUyeiIgZmlsbD0iI2ZlZGYwMCIvPgogICAgICAgICAgICA8Y2lyY2xlIGN4PSIzNjAiIGN5PSIyNTIiIHI9IjYwIiBmaWxsPSIjMDAyNzc2Ii8+CiAgICAgICAgPC9zdmc+" 
+         alt="pt-br Flag">
+            <span class="flag-name">Português</span>
+        </div>
+        <div class="flag-option" data-lang="fr" title="Français">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiMwMDIzOTUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSI2MDAiIHg9IjMwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjYwMCIgeD0iNjAwIiBmaWxsPSIjZWQyOTM5Ii8+CiAgICAgICAgPC9zdmc+" 
+         alt="fr Flag">
+            <span class="flag-name">Français</span>
+        </div>
+        <div class="flag-option" data-lang="de" title="Deutsch">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiMwMDAiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iI2RkMDAwMCIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjZmZjZTAwIi8+CiAgICAgICAgPC9zdmc+" 
+         alt="de Flag">
+            <span class="flag-name">Deutsch</span>
+        </div>
+        <div class="flag-option" data-lang="ru" title="Русский">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iIzAwMzlhNiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjZDUyYjFlIi8+CiAgICAgICAgPC9zdmc+" 
+         alt="ru Flag">
+            <span class="flag-name">Русский</span>
+        </div>
+        <div class="flag-option" data-lang="ar" title="العربية">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiMwMDZjMzUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI0MDAiIHk9IjEwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iMjAwIiBmaWxsPSIjY2UxMTI2Ii8+CiAgICAgICAgPC9zdmc+" 
+         alt="ar Flag">
+            <span class="flag-name">العربية</span>
+        </div>
+        <div class="flag-option" data-lang="hi" title="हिन्दी">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNmZjk5MzMiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjMTM4ODA4Ii8+CiAgICAgICAgICAgIDxjaXJjbGUgY3g9IjQ1MCIgY3k9IjMwMCIgcj0iNjAiIGZpbGw9IiMwMDAwODAiLz4KICAgICAgICA8L3N2Zz4=" 
+         alt="hi Flag">
+            <span class="flag-name">हिन्दी</span>
+        </div>
+        <div class="flag-option" data-lang="id" title="Bahasa Indonesia">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIzMDAiIHk9IjMwMCIgZmlsbD0iI2NlMTEyNiIvPgogICAgICAgIDwvc3ZnPg==" 
+         alt="id Flag">
+            <span class="flag-name">Bahasa Indonesia</span>
+        </div>
+        <div class="flag-option" data-lang="vi" title="Tiếng Việt">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNkYTI1MWQiLz4KICAgICAgICAgICAgPHBhdGggZD0iTTQ1MCAzMDBsLTE4MC0xMjZ2MjUyeiIgZmlsbD0iI2ZmZmYwMCIvPgogICAgICAgIDwvc3ZnPg==" 
+         alt="vi Flag">
+            <span class="flag-name">Tiếng Việt</span>
+        </div>
+        <div class="flag-option" data-lang="ja" title="日本語">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPGNpcmNsZSBjeD0iNDUwIiBjeT0iMzAwIiByPSIxODAiIGZpbGw9IiNiYzAwMmQiLz4KICAgICAgICA8L3N2Zz4=" 
+         alt="ja Flag">
+            <span class="flag-name">日本語</span>
+        </div>
+    </div>
+</div>
+        </nav>
+    </header>
     
     <section class="cake-hero">
         <h1 data-i18n="Kuchen-Guide.hero.title">Kuchen-Guide</h1>
@@ -373,23 +428,23 @@
                 <li><a href="#ingredients" data-i18n="ingredients.toc.ingredients">Liste der wichtigsten Zutaten</a></li>
                 <li><a href="#recipes" data-i18n="recipes.toc.recipes">Advanced Cake Recipes</a></li>
                 <li><a href="#varieties">Cake Varieties &amp; Types</a></li>
-                <li><a href="#frosting">Frosting Techniques</a></li>
-                <li><a href="#decoration">Decoration Methods</a></li>
-                <li><a href="#tips" data-i18n="tips.toc.tips">Making Tips &amp; Tricks</a></li>
+                <li><a href="#frosting">Zuckerguss-Techniken</a></li>
+                <li><a href="#decoration">Dekorationsmethoden</a></li>
+                <li><a href="#tips" data-i18n="tips.toc.tips">Zubereitungstipps &amp; Tricks</a></li>
                 <li><a href="#efficiency" data-i18n="efficiency.toc.efficiency">Methoden zur Effizienzsteigerung</a></li>
                 <li><a href="#faq" data-i18n="faq.toc.faq">Häufig gestellte Fragen</a></li>
             </ul>
         </div>
         
         <div class="guide-card" id="basics">
-            <h2>🎂 Basic Cake Making</h2>
+            <h2 data-i18n="e.basics.title">🎂 Basic Cake Making</h2>
             <p data-i18n="in_grow_a_garden,_cake_making_is_one_of_the_most_rewarding_and_profitable_crafting_activities._by_growing_various_ingredients_and_mastering_baking_techniques,_you_can_create_beautiful_cakes_to_earn_significant_rewards..hero.subtitle">In Grow a Garden, cake making is one of the most rewarding and profitable crafting activities. By growing various ingredients and mastering baking techniques, you can create beautiful cakes to earn significant rewards.</p>
             
             <h3>Herstellungsschritte:</h3>
             <ol>
                 <li><strong>Prepare Batter</strong>: Mix flour, sugar, eggs, and other ingredients to create cake batter</li>
                 <li><strong>Water Management</strong>: Regularly water your plants to ensure healthy growth</li>
-                <li><strong>Harvest Timing</strong>: Wait for plants to fully mature before harvesting</li>
+                <li><strong>Erntezeitpunkt</strong>: Wait for plants to fully mature before harvesting</li>
                 <li><strong>Bake Cake</strong>: Put batter into the cake maker to create delicious cakes</li>
                 <li><strong>Add Frosting</strong>: Apply frosting and decorations for premium cakes</li>
             </ol>
@@ -400,34 +455,34 @@
         </div>
         
         <div class="guide-card" id="ingredients">
-            <h2>🥚 Liste der wichtigsten Zutaten</h2>
+            <h2 data-i18n="e.ingredients.title">🥚 Liste der wichtigsten Zutaten</h2>
             <p>Making quality cakes requires various fresh ingredients. Here's the ingredient list categorized by importance:</p>
             
             <h3 data-i18n="basic_ingredients_beginner_essential.basic_ingredients_beginner_essential.title">Basic Ingredients (Beginner Essential)</h3>
             <div class="ingredient-grid">
                 <div class="ingredient-item">
                     <h4>🌾 Flour</h4>
-                    <p>Growth Time: 45 minutes</p>
+                    <p>Growth Time: 45 Min</p>
                     <p>Value: Basic</p>
-                    <p>Use: Base ingredient for cake batter</p>
+                    <p>Verwendung: Base ingredient for cake batter</p>
                 </div>
                 <div class="ingredient-item">
                     <h4>🍯 Sugar</h4>
-                    <p>Growth Time: 30 minutes</p>
+                    <p>Growth Time: 30 Min</p>
                     <p>Value: Basic</p>
-                    <p>Use: Sweetening agent for cakes</p>
+                    <p>Verwendung: Sweetening agent for cakes</p>
                 </div>
                 <div class="ingredient-item">
                     <h4>🥚 Eggs</h4>
-                    <p>Growth Time: 60 minutes</p>
-                    <p>Value: Medium</p>
-                    <p>Use: Binding agent and texture</p>
+                    <p>Growth Time: 60 Min</p>
+                    <p>Value: Mittel</p>
+                    <p>Verwendung: Binding agent and texture</p>
                 </div>
                 <div class="ingredient-item">
                     <h4>🥛 Milk</h4>
-                    <p>Growth Time: 40 minutes</p>
-                    <p>Value: Medium</p>
-                    <p>Use: Moisture and richness</p>
+                    <p>Growth Time: 40 Min</p>
+                    <p>Value: Mittel</p>
+                    <p>Verwendung: Moisture and richness</p>
                 </div>
             </div>
             
@@ -435,61 +490,61 @@
             <div class="ingredient-grid">
                 <div class="ingredient-item">
                     <h4>🍫 Chocolate</h4>
-                    <p>Growth Time: 90 minutes</p>
+                    <p>Growth Time: 90 Min</p>
                     <p>Value: High</p>
-                    <p>Use: Chocolate cake varieties</p>
+                    <p>Verwendung: Chocolate cake varieties</p>
                 </div>
                 <div class="ingredient-item">
                     <h4>🍓 Strawberry</h4>
-                    <p>Growth Time: 75 minutes</p>
+                    <p>Growth Time: 75 Min</p>
                     <p>Value: High</p>
-                    <p>Use: Strawberry cake varieties</p>
+                    <p>Verwendung: Strawberry cake varieties</p>
                 </div>
                 <div class="ingredient-item">
                     <h4>🥜 Vanilla Bean</h4>
-                    <p>Growth Time: 120 minutes</p>
+                    <p>Growth Time: 120 Min</p>
                     <p>Value: High</p>
-                    <p>Use: Vanilla cake varieties</p>
+                    <p>Verwendung: Vanilla cake varieties</p>
                 </div>
                 <div class="ingredient-item">
                     <h4>🍯 Honey</h4>
-                    <p>Growth Time: 100 minutes</p>
+                    <p>Growth Time: 100 Min</p>
                     <p>Value: High</p>
-                    <p>Use: Natural sweetener for cakes</p>
+                    <p>Verwendung: Natural sweetener for cakes</p>
                 </div>
             </div>
             
-            <h3>Rare Ingredients (Expert Level)</h3>
+            <h3>Rare Ingredients (Experte Level)</h3>
             <div class="ingredient-grid">
                 <div class="ingredient-item">
                     <h4>🌰 Nuts</h4>
-                    <p>Growth Time: 150 minutes</p>
+                    <p>Growth Time: 150 Min</p>
                     <p>Value: Rare</p>
-                    <p>Use: Nut cake varieties</p>
+                    <p>Verwendung: Nut cake varieties</p>
                 </div>
                 <div class="ingredient-item">
                     <h4>🍇 Raisins</h4>
-                    <p>Growth Time: 180 minutes</p>
+                    <p>Growth Time: 180 Min</p>
                     <p>Value: Rare</p>
-                    <p>Use: Fruit cake varieties</p>
+                    <p>Verwendung: Fruit cake varieties</p>
                 </div>
                 <div class="ingredient-item">
                     <h4>🍊 Orange</h4>
-                    <p>Growth Time: 200 minutes</p>
+                    <p>Growth Time: 200 Min</p>
                     <p>Value: Rare</p>
-                    <p>Use: Citrus cake varieties</p>
+                    <p>Verwendung: Citrus cake varieties</p>
                 </div>
                 <div class="ingredient-item">
                     <h4>🥥 Coconut</h4>
-                    <p>Growth Time: 240 minutes</p>
+                    <p>Growth Time: 240 Min</p>
                     <p>Value: Rare</p>
-                    <p>Use: Tropical cake varieties</p>
+                    <p>Verwendung: Tropical cake varieties</p>
                 </div>
             </div>
         </div>
         
         <div class="guide-card" id="recipes">
-            <h2>🍽️ Advanced Cake Recipes</h2>
+            <h2 data-i18n="e.recipes.title">🍽️ Advanced Cake Recipes</h2>
             <p>Different ingredient combinations can create cakes of varying levels and effects. Here's a detailed recipe table:</p>
             
             <h3 data-i18n="recipes.basic_cake.title">Basic Cake Recipes</h3>
@@ -507,30 +562,30 @@
                     <tr>
                         <td>Vanilla Cake</td>
                         <td>Flour + Sugar + Eggs + Milk + Vanilla</td>
-                        <td data-i18n="time.minutes" data-time="5">5 minutes</td>
-                        <td>100 coins</td>
-                        <td>Easy</td>
+                        <td data-i18n="time.minutes" data-time="5">5 Min</td>
+                        <td>100 Münzen</td>
+                        <td>Leicht</td>
                     </tr>
                     <tr>
                         <td>Chocolate Cake</td>
                         <td>Flour + Sugar + Eggs + Milk + Chocolate</td>
-                        <td data-i18n="time.minutes" data-time="6">6 minutes</td>
-                        <td>150 coins</td>
-                        <td>Easy</td>
+                        <td data-i18n="time.minutes" data-time="6">6 Min</td>
+                        <td>150 Münzen</td>
+                        <td>Leicht</td>
                     </tr>
                     <tr>
                         <td>Strawberry Cake</td>
                         <td>Flour + Sugar + Eggs + Milk + Strawberry</td>
-                        <td data-i18n="time.minutes" data-time="7">7 minutes</td>
-                        <td>180 coins</td>
-                        <td>Medium</td>
+                        <td data-i18n="time.minutes" data-time="7">7 Min</td>
+                        <td>180 Münzen</td>
+                        <td>Mittel</td>
                     </tr>
                     <tr>
                         <td>Honey Cake</td>
                         <td>Flour + Sugar + Eggs + Milk + Honey</td>
-                        <td data-i18n="time.minutes" data-time="8">8 minutes</td>
-                        <td>200 coins</td>
-                        <td>Medium</td>
+                        <td data-i18n="time.minutes" data-time="8">8 Min</td>
+                        <td>200 Münzen</td>
+                        <td>Mittel</td>
                     </tr>
                 </tbody>
             </table>
@@ -550,30 +605,30 @@
                     <tr>
                         <td>Nut Cake</td>
                         <td>Flour + Sugar + Eggs + Milk + Nuts</td>
-                        <td data-i18n="time.minutes" data-time="10">10 minutes</td>
-                        <td>250 coins</td>
-                        <td>Hard</td>
+                        <td data-i18n="time.minutes" data-time="10">10 Min</td>
+                        <td>250 Münzen</td>
+                        <td>Schwer</td>
                     </tr>
                     <tr>
                         <td>Fruit Cake</td>
                         <td>Flour + Sugar + Eggs + Milk + Raisins</td>
-                        <td data-i18n="time.minutes" data-time="12">12 minutes</td>
-                        <td>300 coins</td>
-                        <td>Hard</td>
+                        <td data-i18n="time.minutes" data-time="12">12 Min</td>
+                        <td>300 Münzen</td>
+                        <td>Schwer</td>
                     </tr>
                     <tr>
                         <td>Citrus Cake</td>
                         <td>Flour + Sugar + Eggs + Milk + Orange</td>
-                        <td data-i18n="time.minutes" data-time="15">15 minutes</td>
-                        <td>350 coins</td>
-                        <td>Expert</td>
+                        <td data-i18n="time.minutes" data-time="15">15 Min</td>
+                        <td>350 Münzen</td>
+                        <td>Experte</td>
                     </tr>
                     <tr>
                         <td>Tropical Cake</td>
                         <td>Flour + Sugar + Eggs + Milk + Coconut</td>
-                        <td data-i18n="time.minutes" data-time="18">18 minutes</td>
-                        <td>400 coins</td>
-                        <td>Expert</td>
+                        <td data-i18n="time.minutes" data-time="18">18 Min</td>
+                        <td>400 Münzen</td>
+                        <td>Experte</td>
                     </tr>
                 </tbody>
             </table>
@@ -593,23 +648,23 @@
                     <tr>
                         <td>Rainbow Cake</td>
                         <td>All Basic + All Advanced + All Rare</td>
-                        <td data-i18n="time.minutes" data-time="25">25 minutes</td>
-                        <td>800 coins</td>
-                        <td>Master</td>
+                        <td data-i18n="time.minutes" data-time="25">25 Min</td>
+                        <td>800 Münzen</td>
+                        <td>Meister</td>
                     </tr>
                     <tr>
                         <td>Wedding Cake</td>
                         <td>All Ingredients + Special Decorations</td>
-                        <td data-i18n="time.minutes" data-time="30">30 minutes</td>
-                        <td>1200 coins</td>
-                        <td>Legendary</td>
+                        <td data-i18n="time.minutes" data-time="30">30 Min</td>
+                        <td>1200 Münzen</td>
+                        <td>Legendär</td>
                     </tr>
                 </tbody>
             </table>
         </div>
         
         <div class="guide-card" id="varieties">
-            <h2>🎨 Cake Varieties &amp; Types</h2>
+            <h2 data-i18n="e.varieties.title">🎨 Cake Varieties &amp; Types</h2>
             <p data-i18n="grow_a_garden_features_various_cake_types,_each_with_unique_characteristics_and_rewards:.hero.subtitle">Grow a Garden features various cake types, each with unique characteristics and rewards:</p>
             
             <div class="cake-variety">
@@ -656,8 +711,8 @@
         </div>
         
         <div class="guide-card" id="frosting">
-            <h2>🎨 Frosting Techniques</h2>
-            <p>Master these frosting techniques to create beautiful and delicious cakes:</p>
+            <h2 data-i18n="e.frosting.title">🎨 Zuckerguss-Techniken</h2>
+            <p>Meister these frosting techniques to create beautiful and delicious cakes:</p>
             
             <h3 data-i18n="basic_frosting_types.basic_frosting_types.title">Basic Frosting Types</h3>
             <ul>
@@ -681,7 +736,7 @@
         </div>
         
         <div class="guide-card" id="decoration">
-            <h2>✨ Decoration Methods</h2>
+            <h2 data-i18n="e.decoration.title">✨ Dekorationsmethoden</h2>
             <p>Learn advanced decoration techniques to make your cakes stand out:</p>
             
             <h3 data-i18n="basic_decorations.basic_decorations.title">Basic Decorations</h3>
@@ -710,31 +765,31 @@
         </div>
         
         <div class="guide-card" id="tips">
-            <h2>💡 Making Tips &amp; Tricks</h2>
-            <p data-i18n="master_these_tips_to_become_a_cake-making_expert_in_grow_a_garden:.hero.subtitle">Master these tips to become a cake-making expert in Grow a Garden:</p>
+            <h2 data-i18n="e.tips.title">💡 Zubereitungstipps &amp; Tricks</h2>
+            <p data-i18n="master_these_tips_to_become_a_cake-making_expert_in_grow_a_garden:.hero.subtitle">Meister these tips to become a cake-making expert in Grow a Garden:</p>
             
-            <h3>🌱 Growing Tips</h3>
+            <h3>🌱 Anbautipps</h3>
             <ul>
-                <li><strong>Optimal Watering:</strong> Water plants every 2-3 hours for maximum growth speed</li>
-                <li><strong>Golden Hours:</strong> Water during 7:00-9:00 in-game time for double effects</li>
-                <li><strong>Harvest Timing:</strong> Wait for plants to fully mature (100% growth) before harvesting</li>
-                <li><strong>Soil Quality:</strong> Use premium soil for rare ingredients to increase success rate</li>
+                <li><strong>Optimale Bewässerung:</strong> Water plants every 2-3 hours for maximum growth speed</li>
+                <li><strong>Goldene Stunden:</strong> Water during 7:00-9:00 in-game time for double effects</li>
+                <li><strong>Erntezeitpunkt:</strong> Wait for plants to fully mature (100% growth) before harvesting</li>
+                <li><strong>Bodenqualität:</strong> Use premium soil for rare ingredients to increase success rate</li>
             </ul>
             
-            <h3>🎂 Making Tips</h3>
+            <h3>🎂 Zubereitungstipps</h3>
             <ul>
                 <li><strong>Batter Quality:</strong> Higher quality ingredients produce better cake batter</li>
                 <li><strong>Baking Time:</strong> Don't overbake cakes to maintain moisture</li>
-                <li><strong>Recipe Efficiency:</strong> Master basic recipes before attempting advanced ones</li>
-                <li><strong>Storage Management:</strong> Keep ingredients organized for quick access</li>
+                <li><strong>Rezept-Effizienz:</strong> Meister basic recipes before attempting advanced ones</li>
+                <li><strong>Lagerverwaltung:</strong> Keep ingredients organized for quick access</li>
             </ul>
             
-            <h3>💰 Profit Optimization</h3>
+            <h3>💰 Gewinnoptimierung</h3>
             <ul>
-                <li><strong>Market Timing:</strong> Sell cakes during peak demand hours</li>
-                <li><strong>Quality vs Quantity:</strong> Focus on high-quality cakes for better profit margins</li>
-                <li><strong>Recipe Mastery:</strong> Master rare recipes for exclusive market access</li>
-                <li><strong>Supply Chain:</strong> Maintain steady ingredient supply for continuous production</li>
+                <li><strong>Markt-Timing:</strong> Sell cakes during peak demand hours</li>
+                <li><strong>Qualität vs Quantität:</strong> Focus on high-quality cakes for better profit margins</li>
+                <li><strong>Rezeptbeherrschung:</strong> Meister rare recipes for exclusive market access</li>
+                <li><strong>Lieferkette:</strong> Maintain steady ingredient supply for continuous production</li>
             </ul>
             
             <div class="tip-box">
@@ -743,23 +798,23 @@
         </div>
         
         <div class="guide-card" id="efficiency">
-            <h2>⚡ Methoden zur Effizienzsteigerung</h2>
+            <h2 data-i18n="e.efficiency.title">⚡ Methoden zur Effizienzsteigerung</h2>
             <p>Maximize your cake-making efficiency with these advanced strategies:</p>
             
-            <h3>🏭 Production Optimization</h3>
+            <h3>🏭 Produktionsoptimierung</h3>
             <ul>
-                <li><strong>Automated Systems:</strong> Set up automated watering systems for consistent growth</li>
-                <li><strong>Batch Processing:</strong> Process multiple cakes simultaneously</li>
-                <li><strong>Ingredient Rotation:</strong> Rotate crops to maintain soil fertility</li>
-                <li><strong>Quality Control:</strong> Monitor ingredient quality for consistent results</li>
+                <li><strong>Automatisierte Systeme:</strong> Set up automated watering systems for consistent growth</li>
+                <li><strong>Batch-Verarbeitung:</strong> Process multiple cakes simultaneously</li>
+                <li><strong>Fruchtfolge:</strong> Rotate crops to maintain soil fertility</li>
+                <li><strong>Qualitätskontrolle:</strong> Monitor ingredient quality for consistent results</li>
             </ul>
             
-            <h3 data-i18n="📊_advanced_strategies.📊_advanced_strategies.title">📊 Advanced Strategies</h3>
+            <h3 data-i18n="📊_advanced_strategies.📊_advanced_strategies.title">📊 Fortgeschrittene Strategien</h3>
             <ul>
-                <li><strong>Market Analysis:</strong> Track cake demand patterns for optimal production</li>
-                <li><strong>Recipe Optimization:</strong> Develop efficient ingredient combinations</li>
-                <li><strong>Resource Management:</strong> Balance ingredient costs with cake profits</li>
-                <li><strong>Skill Development:</strong> Improve cake-making skills for better results</li>
+                <li><strong>Marktanalyse:</strong> Track cake demand patterns for optimal production</li>
+                <li><strong>Rezeptoptimierung:</strong> Develop efficient ingredient combinations</li>
+                <li><strong>Ressourcenmanagement:</strong> Balance ingredient costs with cake profits</li>
+                <li><strong>Fähigkeitenentwicklung:</strong> Improve cake-making skills for better results</li>
             </ul>
             
             <div class="warning-box">
@@ -768,10 +823,10 @@
         </div>
         
         <div class="guide-card" id="faq">
-            <h2>❓ Häufig gestellte Fragen</h2>
+            <h2 data-i18n="e.faq.title">❓ Häufig gestellte Fragen</h2>
             
             <h3>Q: How long does it take to make a basic cake?</h3>
-            <p>A: Basic cakes take 5-8 minutes to make, while advanced recipes can take 10-30 minutes depending on complexity.</p>
+            <p>A: Basic cakes take 5-8 Min to make, while advanced recipes can take 10-30 Min depending on complexity.</p>
             
             <h3>Q: What's the most profitable cake recipe?</h3>
             <p>A: Premium cakes like Rainbow Cake and Wedding Cake offer the highest profit margins, but require rare ingredients.</p>
@@ -796,13 +851,13 @@
             <ol>
                 <li><strong>Start Small:</strong> Begin with basic cake recipes to build your skills</li>
                 <li><strong>Expand Your Garden:</strong> Plant a variety of ingredients for different recipes</li>
-                <li><strong>Master Advanced Recipes:</strong> Work on complex cake varieties for higher profits</li>
+                <li><strong>Meister Advanced Recipes:</strong> Work on complex cake varieties for higher profits</li>
                 <li><strong>Join the Community:</strong> Connect with other players to share tips and strategies</li>
                 <li><strong>Stay Updated:</strong> Keep up with game updates for new recipes and features</li>
             </ol>
             
             <div class="tip-box">
-                <strong>💡 Community Tip:</strong> Join our Discord server to connect with other cake makers, share recipes, and get the latest tips and tricks!
+                <strong>💡 Community-Tipp:</strong> Join our Discord server to connect with other cake makers, share recipes, and get the latest tips and tricks!
             </div>
         </div>
         
@@ -811,4 +866,48 @@
     
     <script src="script.js"></script>
 
- </body></html>
+ 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const currentFlag = document.getElementById('current-flag');
+    const flagDropdown = document.getElementById('current-flag');
+    
+    if (currentFlag && flagDropdown) {
+        // 设置当前语言的国旗
+        const currentLang = document.documentElement.getAttribute('lang') || 'en';
+        updateCurrentFlag(currentLang);
+        
+        // 为每个国旗选项添加点击事件
+        document.querySelectorAll('.flag-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const lang = this.getAttribute('data-lang');
+                if (lang) {
+                    // 调用现有的语言切换函数
+                    if (typeof switchLang === 'function') {
+                        switchLang(lang);
+                    } else if (typeof window.__gagI18n !== 'undefined' && window.__gagI18n.switchLang) {
+                        window.__gagI18n.switchLang(lang);
+                    }
+                }
+            });
+        });
+    }
+});
+
+function updateCurrentFlag(lang) {
+    const currentFlag = document.getElementById('current-flag');
+    if (currentFlag) {
+        const flagOptions = document.querySelectorAll('.flag-option');
+        flagOptions.forEach(option => {
+            if (option.getAttribute('data-lang') === lang) {
+                const flagContent = option.innerHTML;
+                currentFlag.innerHTML = flagContent;
+                break;
+            }
+        });
+    }
+}
+</script>
+    <script src="../flag-switcher.js"></script>
+
+    <script src="../i18n/i18n.js"></script></body></html>

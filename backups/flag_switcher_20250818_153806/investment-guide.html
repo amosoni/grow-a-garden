@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Guide - Grow a Garden Guides</title>
+    <meta name="description" content="Learn where to invest your earnings for maximum returns and long-term growth in Grow a Garden.">
+    <meta name="keywords" content="grow a garden, investment guide, profit maximization, long-term growth, roblox">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Investment Guide - Grow a Garden Guides">
+    <meta property="og:description" content="Learn where to invest your earnings for maximum returns and long-term growth.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://growagarden.cv/investment-guide.html">
+    <meta property="og:image" content="https://growagarden.cv/investment-guide-og.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Investment Guide - Grow a Garden Guides">
+    <meta name="twitter:description" content="Learn where to invest your earnings for maximum returns and long-term growth.">
+    <meta name="twitter:image" content="https://growagarden.cv/investment-guide-og.jpg">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "Investment Guide",
+      "description": "Learn where to invest your earnings for maximum returns and long-term growth in Grow a Garden",
+      "image": "https://growagarden.cv/investment-guide-og.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "Grow a Garden Community"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Grow a Garden",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://growagarden.cv/logo.png"
+        }
+      },
+      "mainEntity": {
+        "@type": "HowTo",
+        "name": "Investment Strategies",
+        "description": "Complete guide to investing earnings for maximum returns and long-term growth",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Investment Basics",
+            "text": "Learn fundamental investment principles and strategies"
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Investment Options",
+            "text": "Explore different investment opportunities and their returns"
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Risk Management",
+            "text": "Understand risk management and portfolio diversification"
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Long-term Growth",
+            "text": "Develop strategies for sustainable long-term growth"
+          }
+        ]
+      }
+    }
+    </script>
+    
+    <!-- Roblox-like color scheme -->
+    <link rel="stylesheet" href="https://unpkg.com/simple.css@2.1.0/simple.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💎</text></svg>">
+    
+    <style>
+        body {
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .bg-blur {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: 0;
+            background: url('grow-bg.jpg') center center/cover no-repeat;
+            opacity: 0.3;
+            filter: blur(2px);
+        }
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+        .investment-hero {
+            background: linear-gradient(135deg, #2196f3, #1976d2);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-top: 60px;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        .investment-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        .investment-hero h1,
+        .investment-hero p {
+            position: relative;
+            z-index: 2;
+        }
+        .investment-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: white !important;
+            text-shadow: 
+                0 2px 4px rgba(0,0,0,0.7),
+                0 1px 2px rgba(0,0,0,0.8);
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            -webkit-text-stroke: 0.5px rgba(0,0,0,0.2);
+        }
+        .investment-hero p {
+            font-size: 1.2rem;
+            opacity: 1;
+            color: white !important;
+            text-shadow: 
+                0 1px 3px rgba(0,0,0,0.6),
+                0 1px 2px rgba(0,0,0,0.7);
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            -webkit-text-stroke: 0.3px rgba(0,0,0,0.15);
+        }
+        .guide-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .guide-card {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .guide-card h2 {
+            color: #23272a !important;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+        .guide-card h3 {
+            color: #2c3e50 !important;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .guide-card p, .guide-card li {
+            color: #34495e !important;
+            line-height: 1.6;
+            margin-bottom: 0.8rem;
+        }
+        .guide-card ul, .guide-card ol {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+        .guide-card li {
+            margin-bottom: 0.5rem;
+        }
+        .investment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .investment-item {
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 15px rgba(33, 150, 243, 0.2);
+            border: 2px solid #90caf9;
+        }
+        .investment-item h4 {
+            color: #1565c0 !important;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+        .investment-item p {
+            color: #0d47a1 !important;
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+            text-align: center;
+        }
+        .recipe-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .recipe-table th {
+            background: linear-gradient(135deg, #2196f3, #1976d2);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+        .recipe-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .recipe-table tr:nth-child(even) td {
+            background: rgba(33, 150, 243, 0.08);
+        }
+        .tip-box {
+            background: linear-gradient(135deg, #f1c40f, #f39c12);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            box-shadow: 0 4px 15px rgba(241, 196, 15, 0.3);
+        }
+        .tip-box strong {
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+            font-weight: 700;
+        }
+        .warning-box {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+        }
+        .warning-box strong {
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+            font-weight: 700;
+        }
+        .back-btn {
+            display: inline-block;
+            background: #5865f2;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+        .back-btn:hover {
+            background: #4752c4;
+            transform: translateY(-2px);
+        }
+        .investment-tips {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .tip-card {
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 6px 20px rgba(33, 150, 243, 0.2);
+            border: 2px solid #90caf9;
+        }
+        .tip-card h4 {
+            color: #1565c0 !important;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .tip-card ul {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+        .tip-card li {
+            color: #0d47a1 !important;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* 面包屑导航样式 */
+        .breadcrumb-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+        }
+        .breadcrumb {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .breadcrumb ol {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .breadcrumb li {
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            color: #34495e;
+        }
+        .breadcrumb li:not(:last-child)::after {
+            content: "›";
+            margin: 0 0.5rem;
+            color: #2196f3;
+            font-weight: bold;
+        }
+        .breadcrumb a {
+            color: #2196f3;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .breadcrumb a:hover {
+            color: #1976d2;
+            text-decoration: underline;
+        }
+        .breadcrumb li[aria-current="page"] {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+    </style>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HG12TJB5LZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HG12TJB5LZ');
+    </script>
+</head>
+<body>
+    <div class="bg-blur"></div>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">🌱 Grow a Garden</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('stats')">Live Stats</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('map')">Global Heatmap</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('tips')">Tips</a>
+            <a href="guides.html">📚 Guides</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('community')" class="discord-btn">💬 Discord</a>
+        </nav>
+    </header>
+    
+    <section class="investment-hero">
+        <h1>💎 Investment Guide in Grow a Garden</h1>
+        <p>Complete Guide: Maximize Returns and Long-term Growth</p>
+    </section>
+    
+    <!-- 面包屑导航 -->
+    <div class="breadcrumb-container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+                <li><a href="index.html">🏠 Home</a></li>
+                <li><a href="guides.html">📚 Guides</a></li>
+                <li aria-current="page">💎 Investment Guide</li>
+            </ol>
+        </nav>
+    </div>
+    
+    <div class="guide-section">
+        <div class="guide-card">
+            <h2>📋 Table of Contents</h2>
+            <ul>
+                <li><a href="#basics">Investment Basics</a></li>
+                <li><a href="#options">Investment Options</a></li>
+                <li><a href="#strategies">Investment Strategies</a></li>
+                <li><a href="#risk">Risk Management</a></li>
+                <li><a href="#growth">Long-term Growth</a></li>
+                <li><a href="#optimization">Return Optimization</a></li>
+                <li><a href="#tips">Advanced Tips & Tricks</a></li>
+                <li><a href="#faq">Frequently Asked Questions</a></li>
+            </ul>
+        </div>
+        
+        <div class="guide-card" id="basics">
+            <h2>💎 Investment Basics</h2>
+            <p>Understanding investment principles in Grow a Garden is crucial for maximizing your earnings and achieving long-term financial success. This guide covers all aspects of smart investing.</p>
+            
+            <h3>Core Investment Principles:</h3>
+            <ol>
+                <li><strong>Diversification:</strong> Spread investments across different opportunities</li>
+                <li><strong>Risk Management:</strong> Balance risk and reward appropriately</li>
+                <li><strong>Long-term Thinking:</strong> Focus on sustainable growth over quick profits</li>
+                <li><strong>Market Analysis:</strong> Understand market trends and timing</li>
+                <li><strong>Compound Growth:</strong> Reinvest earnings for exponential growth</li>
+            </ol>
+            
+            <div class="tip-box">
+                <strong>💡 Pro Tip:</strong> Start with small investments to learn the system, then gradually increase as you gain experience and confidence!
+            </div>
+        </div>
+        
+        <div class="guide-card" id="options">
+            <h2>📊 Investment Options</h2>
+            <p>Grow a Garden offers various investment opportunities, each with different risk levels and potential returns. Understanding these options helps you make informed decisions.</p>
+            
+            <h3>Investment Categories</h3>
+            <div class="investment-tips">
+                <div class="tip-card">
+                    <h4>🌱 Farming Investments</h4>
+                    <ul>
+                        <li>High-yield crop seeds</li>
+                        <li>Advanced farming tools</li>
+                        <li>Land expansion</li>
+                        <li>Automation systems</li>
+                    </ul>
+                </div>
+                <div class="tip-card">
+                    <h4>🏭 Production Investments</h4>
+                    <ul>
+                        <li>Crafting equipment</li>
+                        <li>Processing facilities</li>
+                        <li>Storage systems</li>
+                        <li>Quality upgrades</li>
+                    </ul>
+                </div>
+                <div class="tip-card">
+                    <h4>💰 Market Investments</h4>
+                    <ul>
+                        <li>Rare items</li>
+                        <li>Market speculation</li>
+                        <li>Event participation</li>
+                        <li>Community projects</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Investment Comparison</h3>
+            <table class="recipe-table">
+                <thead>
+                    <tr>
+                        <th>Investment Type</th>
+                        <th>Risk Level</th>
+                        <th>Expected Return</th>
+                        <th>Time Horizon</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Basic Farming</td>
+                        <td>Low</td>
+                        <td>10-20%</td>
+                        <td>Short-term</td>
+                    </tr>
+                    <tr>
+                        <td>Advanced Tools</td>
+                        <td>Medium</td>
+                        <td>25-40%</td>
+                        <td>Medium-term</td>
+                    </tr>
+                    <tr>
+                        <td>Rare Items</td>
+                        <td>High</td>
+                        <td>50-100%</td>
+                        <td>Long-term</td>
+                    </tr>
+                    <tr>
+                        <td>Event Participation</td>
+                        <td>Variable</td>
+                        <td>30-200%</td>
+                        <td>Event-based</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="guide-card" id="strategies">
+            <h2>🎯 Investment Strategies</h2>
+            <p>Developing effective investment strategies is key to maximizing returns while managing risk. Different strategies suit different goals and risk tolerances.</p>
+            
+            <h3>Strategy Approaches</h3>
+            <div class="investment-tips">
+                <div class="tip-card">
+                    <h4>📈 Conservative Strategy</h4>
+                    <ul>
+                        <li>Focus on stable returns</li>
+                        <li>Low-risk investments</li>
+                        <li>Steady growth approach</li>
+                        <li>Capital preservation</li>
+                    </ul>
+                </div>
+                <div class="tip-card">
+                    <h4>⚡ Aggressive Strategy</h4>
+                    <ul>
+                        <li>High-risk, high-reward</li>
+                        <li>Market timing focus</li>
+                        <li>Event-driven investments</li>
+                        <li>Maximum growth potential</li>
+                    </ul>
+                </div>
+                <div class="tip-card">
+                    <h4>⚖️ Balanced Strategy</h4>
+                    <ul>
+                        <li>Mix of risk levels</li>
+                        <li>Diversified portfolio</li>
+                        <li>Moderate growth focus</li>
+                        <li>Risk management</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Investment Timing</h3>
+            <ul>
+                <li><strong>Market Cycles:</strong> Invest during market lows, sell during highs</li>
+                <li><strong>Event Timing:</strong> Invest before major events for maximum returns</li>
+                <li><strong>Seasonal Patterns:</strong> Consider seasonal market fluctuations</li>
+                <li><strong>Update Timing:</strong> Invest before game updates that may affect markets</li>
+                <li><strong>Community Trends:</strong> Follow community investment patterns</li>
+            </ul>
+        </div>
+        
+        <div class="guide-card" id="risk">
+            <h2>⚠️ Risk Management</h2>
+            <p>Effective risk management is essential for long-term investment success. Understanding and managing risk helps protect your capital while pursuing growth opportunities.</p>
+            
+            <h3>Risk Management Principles</h3>
+            <ol>
+                <li><strong>Diversification:</strong> Spread investments across different categories</li>
+                <li><strong>Position Sizing:</strong> Never invest more than you can afford to lose</li>
+                <li><strong>Stop Losses:</strong> Set limits on potential losses</li>
+                <li><strong>Regular Review:</strong> Monitor and adjust investments regularly</li>
+                <li><strong>Emergency Fund:</strong> Maintain reserves for opportunities</li>
+            </ol>
+            
+            <h3>Risk Assessment</h3>
+            <div class="investment-grid">
+                <div class="investment-item">
+                    <h4>Low Risk</h4>
+                    <p>Basic farming tools</p>
+                    <p>Stable returns</p>
+                </div>
+                <div class="investment-item">
+                    <h4>Medium Risk</h4>
+                    <p>Advanced equipment</p>
+                    <p>Moderate returns</p>
+                </div>
+                <div class="investment-item">
+                    <h4>High Risk</h4>
+                    <p>Rare items</p>
+                    <p>High potential returns</p>
+                </div>
+                <div class="investment-item">
+                    <h4>Very High Risk</h4>
+                    <p>Market speculation</p>
+                    <p>Maximum potential</p>
+                </div>
+            </div>
+            
+            <div class="warning-box">
+                <strong>⚠️ Important:</strong> Always invest within your means and never risk more than you can afford to lose. Start small and learn from experience!
+            </div>
+        </div>
+        
+        <div class="guide-card" id="growth">
+            <h2>📈 Long-term Growth</h2>
+            <p>Building sustainable long-term growth requires patience, discipline, and strategic planning. Focus on compound growth and reinvestment strategies.</p>
+            
+            <h3>Growth Strategies</h3>
+            <div class="investment-tips">
+                <div class="tip-card">
+                    <h4>🔄 Reinvestment Strategy</h4>
+                    <ul>
+                        <li>Reinvest profits regularly</li>
+                        <li>Compound growth focus</li>
+                        <li>Gradual scaling up</li>
+                        <li>Patience for results</li>
+                    </ul>
+                </div>
+                <div class="tip-card">
+                    <h4>📊 Portfolio Building</h4>
+                    <ul>
+                        <li>Diversify investments</li>
+                        <li>Balance risk levels</li>
+                        <li>Regular rebalancing</li>
+                        <li>Adapt to changes</li>
+                    </ul>
+                </div>
+                <div class="tip-card">
+                    <h4>🎯 Goal Setting</h4>
+                    <ul>
+                        <li>Set clear objectives</li>
+                        <li>Track progress</li>
+                        <li>Adjust strategies</li>
+                        <li>Celebrate milestones</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Compound Growth Benefits</h3>
+            <ul>
+                <li><strong>Exponential Growth:</strong> Small consistent returns compound over time</li>
+                <li><strong>Reduced Risk:</strong> Diversified portfolio reduces overall risk</li>
+                <li><strong>Passive Income:</strong> Investments can generate ongoing returns</li>
+                <li><strong>Financial Freedom:</strong> Long-term growth provides financial security</li>
+                <li><strong>Community Impact:</strong> Successful investments benefit the community</li>
+            </ul>
+        </div>
+        
+        <div class="guide-card" id="optimization">
+            <h2>⚡ Return Optimization</h2>
+            <p>Optimizing your investment returns requires continuous learning, market analysis, and strategic adjustments based on changing conditions.</p>
+            
+            <h3>Optimization Techniques</h3>
+            <div class="investment-tips">
+                <div class="tip-card">
+                    <h4>📊 Market Analysis</h4>
+                    <ul>
+                        <li>Monitor price trends</li>
+                        <li>Track supply and demand</li>
+                        <li>Analyze market cycles</li>
+                        <li>Identify opportunities</li>
+                    </ul>
+                </div>
+                <div class="tip-card">
+                    <h4>⏰ Timing Optimization</h4>
+                    <ul>
+                        <li>Buy during market lows</li>
+                        <li>Sell during market highs</li>
+                        <li>Time event participation</li>
+                        <li>Optimize entry/exit points</li>
+                    </ul>
+                </div>
+                <div class="tip-card">
+                    <h4>🎯 Strategy Refinement</h4>
+                    <ul>
+                        <li>Learn from successes</li>
+                        <li>Analyze failures</li>
+                        <li>Adapt to changes</li>
+                        <li>Continuous improvement</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="guide-card" id="tips">
+            <h2>💡 Advanced Tips & Tricks</h2>
+            <p>These advanced techniques will help you master investment strategies and achieve exceptional returns.</p>
+            
+            <h3>Pro Tips</h3>
+            <ul>
+                <li><strong>Market Research:</strong> Always research before investing</li>
+                <li><strong>Community Learning:</strong> Learn from experienced investors</li>
+                <li><strong>Patience:</strong> Don't expect immediate returns</li>
+                <li><strong>Documentation:</strong> Keep detailed investment records</li>
+                <li><strong>Adaptation:</strong> Be flexible and adapt to changes</li>
+            </ul>
+            
+            <h3>Common Mistakes to Avoid</h3>
+            <ol>
+                <li><strong>Over-investing:</strong> Don't invest more than you can afford</li>
+                <li><strong>Emotional Decisions:</strong> Base decisions on analysis, not emotions</li>
+                <li><strong>Lack of Diversification:</strong> Don't put all eggs in one basket</li>
+                <li><strong>Ignoring Risk:</strong> Always consider potential losses</li>
+                <li><strong>Impatience:</strong> Give investments time to grow</li>
+            </ol>
+        </div>
+        
+        <div class="guide-card" id="faq">
+            <h2>❓ Frequently Asked Questions</h2>
+            
+            <h3>General Questions</h3>
+            <div class="investment-tips">
+                <div class="tip-card">
+                    <h4>Q: How much should I invest?</h4>
+                    <p>A: Start with small amounts (10-20% of your earnings) and gradually increase as you gain experience and confidence.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>Q: What's the best investment strategy?</h4>
+                    <p>A: The best strategy depends on your goals and risk tolerance. Start with a balanced approach and adjust based on results.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>Q: How long should I hold investments?</h4>
+                    <p>A: Hold investments until they reach your target returns or market conditions change significantly.</p>
+                </div>
+            </div>
+            
+            <h3>Advanced Questions</h3>
+            <div class="investment-tips">
+                <div class="tip-card">
+                    <h4>Q: How do I maximize returns?</h4>
+                    <p>A: Diversify your portfolio, research thoroughly, time your investments well, and reinvest profits for compound growth.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>Q: What's the risk of losing money?</h4>
+                    <p>A: All investments carry some risk. Manage risk through diversification, proper research, and never investing more than you can afford to lose.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>Q: How do I track my investments?</h4>
+                    <p>A: Keep detailed records of all investments, including purchase price, sale price, timing, and reasons for decisions.</p>
+                </div>
+            </div>
+        </div>
+        
+        <a href="guides.html" class="back-btn">← Back to Guides</a>
+    </div>
+</body>
+</html> 

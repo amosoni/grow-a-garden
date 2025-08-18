@@ -1,0 +1,643 @@
+<!DOCTYPE html><html lang="zh-CN" dir="ltr"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="/">
+  <title>种植花园指南 - 完整合集</title>
+  <link rel="canonical" href="https://growagarden.cv/zh-cn/guides.html">
+  <link rel="alternate" hreflang="en" href="https://growagarden.cv/en/guides.html">
+  <link rel="alternate" hreflang="zh-CN" href="https://growagarden.cv/zh-cn/guides.html">
+  <link rel="alternate" hreflang="ja" href="https://growagarden.cv/ja/guides.html">
+  <link rel="alternate" hreflang="x-default" href="https://growagarden.cv/guides.html">
+  <link rel="stylesheet" href="https://unpkg.com/simple.css@2.1.0/simple.min.css">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" class="logo" data-i18n="nav.logo">🌱 Grow a Garden</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('stats')" data-i18n="nav.live">Live Stats</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('map')" data-i18n="nav.map">Global Heatmap</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('tips')" data-i18n="nav.tips">Tips</a>
+            <a href="guides.html" data-i18n="nav.guides">📚 Guides</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('online')" data-i18n="nav.online">🎮 Online</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('community')" class="discord-btn" data-i18n="nav.discord">💬 Discord</a>
+            <div class="flag-language-switcher">
+    <div class="current-flag" id="current-flag">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNDgwIj4KICAgICAgICAgICAgPGRlZnM+PGNsaXBQYXRoIGlkPSJhIj48cGF0aCBkPSJNLTg1LjMgMGg2ODIuNnY1MTJILTg1LjN6Ii8+PC9jbGlwUGF0aD48L2RlZnM+CiAgICAgICAgICAgIDxjbGlwUGF0aCBpZD0iYiI+PHVzZSBocmVmPSIjYSIvPjwvY2xpcFBhdGg+CiAgICAgICAgICAgIDxnIGNsaXAtcGF0aD0idXJsKCNiKSIgdHJhbnNmb3JtPSJzY2FsZSguOTM3NSkiPgogICAgICAgICAgICAgICAgPGcgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2Utd2lkdGg9IjFwdCI+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2NTEySC0yNTZ6IiBmaWxsPSIjYmQzZDQ0Ii8+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAxMDIuNEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAyMDQuOEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAzMDcuMkg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiA0MDkuNkg3NjhWNTEySC0yNTZ6IiBmaWxsPSIjZmZmIi8+CiAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICA8ZyBmaWxsPSIjMTkyZjVkIj4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAwdjUxMmwyNTYtMjU2eiIvPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9zdmc+" 
+         alt="en Flag">
+    </div>
+    <div class="flag-dropdown" id="flag-dropdown">
+        <div class="flag-option" data-lang="en" title="English">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNDgwIj4KICAgICAgICAgICAgPGRlZnM+PGNsaXBQYXRoIGlkPSJhIj48cGF0aCBkPSJNLTg1LjMgMGg2ODIuNnY1MTJILTg1LjN6Ii8+PC9jbGlwUGF0aD48L2RlZnM+CiAgICAgICAgICAgIDxjbGlwUGF0aCBpZD0iYiI+PHVzZSBocmVmPSIjYSIvPjwvY2xpcFBhdGg+CiAgICAgICAgICAgIDxnIGNsaXAtcGF0aD0idXJsKCNiKSIgdHJhbnNmb3JtPSJzY2FsZSguOTM3NSkiPgogICAgICAgICAgICAgICAgPGcgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2Utd2lkdGg9IjFwdCI+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2NTEySC0yNTZ6IiBmaWxsPSIjYmQzZDQ0Ii8+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAxMDIuNEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAyMDQuOEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAzMDcuMkg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiA0MDkuNkg3NjhWNTEySC0yNTZ6IiBmaWxsPSIjZmZmIi8+CiAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICA8ZyBmaWxsPSIjMTkyZjVkIj4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAwdjUxMmwyNTYtMjU2eiIvPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9zdmc+" 
+         alt="en Flag">
+            <span class="flag-name">English</span>
+        </div>
+        <div class="flag-option" data-lang="zh-cn" title="简体中文">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNkZTI5MTAiLz4KICAgICAgICAgICAgPGcgZmlsbD0iI2ZmZGUwMCI+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNNDUwIDEyMGwtNDUuNyAxNDAuNy0xMTkuMyAwaDE1NGwtMTE5LjMgMHoiLz4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik00NTAgMzAwbC00NS43IDE0MC43LTExOS4zIDBoMTU0bC0xMTkuMyAweiIvPgogICAgICAgICAgICAgICAgPHBhdGggZD0iTTQ1MCA0ODBsLTQ1LjcgMTQwLjctMTE5LjMgMGgxNTRsLTExOS4zIDB6Ii8+CiAgICAgICAgICAgIDwvZz4KICAgICAgICA8L3N2Zz4=" 
+         alt="zh-cn Flag">
+            <span class="flag-name">简体中文</span>
+        </div>
+        <div class="flag-option" data-lang="es" title="Español">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3NTAgNTAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9Ijc1MCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiNjNjBiMWUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9Ijc1MCIgaGVpZ2h0PSIyNTAiIHk9IjEyNSIgZmlsbD0iI2ZmYzQwMCIvPgogICAgICAgIDwvc3ZnPg==" 
+         alt="es Flag">
+            <span class="flag-name">Español</span>
+        </div>
+        <div class="flag-option" data-lang="pt-br" title="Português">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3MjAgNTA0Ij4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjcyMCIgaGVpZ2h0PSI1MDQiIGZpbGw9IiMwMDliM2EiLz4KICAgICAgICAgICAgPHBhdGggZD0iTTM2MCAyNTJsLTE4MC0xMjZ2MjUyeiIgZmlsbD0iI2ZlZGYwMCIvPgogICAgICAgICAgICA8Y2lyY2xlIGN4PSIzNjAiIGN5PSIyNTIiIHI9IjYwIiBmaWxsPSIjMDAyNzc2Ii8+CiAgICAgICAgPC9zdmc+" 
+         alt="pt-br Flag">
+            <span class="flag-name">Português</span>
+        </div>
+        <div class="flag-option" data-lang="fr" title="Français">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiMwMDIzOTUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSI2MDAiIHg9IjMwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjYwMCIgeD0iNjAwIiBmaWxsPSIjZWQyOTM5Ii8+CiAgICAgICAgPC9zdmc+" 
+         alt="fr Flag">
+            <span class="flag-name">Français</span>
+        </div>
+        <div class="flag-option" data-lang="de" title="Deutsch">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiMwMDAiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iI2RkMDAwMCIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjZmZjZTAwIi8+CiAgICAgICAgPC9zdmc+" 
+         alt="de Flag">
+            <span class="flag-name">Deutsch</span>
+        </div>
+        <div class="flag-option" data-lang="ru" title="Русский">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iIzAwMzlhNiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjZDUyYjFlIi8+CiAgICAgICAgPC9zdmc+" 
+         alt="ru Flag">
+            <span class="flag-name">Русский</span>
+        </div>
+        <div class="flag-option" data-lang="ar" title="العربية">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiMwMDZjMzUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI0MDAiIHk9IjEwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iMjAwIiBmaWxsPSIjY2UxMTI2Ii8+CiAgICAgICAgPC9zdmc+" 
+         alt="ar Flag">
+            <span class="flag-name">العربية</span>
+        </div>
+        <div class="flag-option" data-lang="hi" title="हिन्दी">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNmZjk5MzMiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjMTM4ODA4Ii8+CiAgICAgICAgICAgIDxjaXJjbGUgY3g9IjQ1MCIgY3k9IjMwMCIgcj0iNjAiIGZpbGw9IiMwMDAwODAiLz4KICAgICAgICA8L3N2Zz4=" 
+         alt="hi Flag">
+            <span class="flag-name">हिन्दी</span>
+        </div>
+        <div class="flag-option" data-lang="id" title="Bahasa Indonesia">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIzMDAiIHk9IjMwMCIgZmlsbD0iI2NlMTEyNiIvPgogICAgICAgIDwvc3ZnPg==" 
+         alt="id Flag">
+            <span class="flag-name">Bahasa Indonesia</span>
+        </div>
+        <div class="flag-option" data-lang="vi" title="Tiếng Việt">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNkYTI1MWQiLz4KICAgICAgICAgICAgPHBhdGggZD0iTTQ1MCAzMDBsLTE4MC0xMjZ2MjUyeiIgZmlsbD0iI2ZmZmYwMCIvPgogICAgICAgIDwvc3ZnPg==" 
+         alt="vi Flag">
+            <span class="flag-name">Tiếng Việt</span>
+        </div>
+        <div class="flag-option" data-lang="ja" title="日本語">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPGNpcmNsZSBjeD0iNDUwIiBjeT0iMzAwIiByPSIxODAiIGZpbGw9IiNiYzAwMmQiLz4KICAgICAgICA8L3N2Zz4=" 
+         alt="ja Flag">
+            <span class="flag-name">日本語</span>
+        </div>
+    </div>
+</div>
+        </nav>
+    </header>
+  <section class="guides-hero">
+    <h1 data-i18n="hero.guides.title">📚 种植花园指南</h1>
+    <p data-i18n="hero.guides.subtitle">策略、食谱和游戏技巧的完整合集</p>
+  </section>
+  <div class="guides-section">
+    <div class="guides-card">
+      <h2>🔍 搜索和筛选</h2>
+      <div class="search-filter-container">
+        <input type="text" id="guide-search" placeholder="搜索指南..." class="guide-search-input">
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">全部</button>
+          <button class="filter-btn" data-filter="recipe">食谱</button>
+          <button class="filter-btn" data-filter="farming">农业</button>
+          <button class="filter-btn" data-filter="profit">利润</button>
+          <button class="filter-btn" data-filter="advanced">高级</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 热门攻略 -->
+    <div class="guides-card">
+      <h2>🔥 热门指南</h2>
+      <div class="guides-grid">
+        <a href="/zh-cn/how-to-make-salad.html" class="guide-item featured-guide">
+          <div class="featured-badge">⭐ 最受欢迎</div>
+          <h3>沙拉制作指南</h3>
+          <p>学习在种植花园中制作沙拉的技巧。</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">初学者</span>
+            <span class="guide-read-time">15 分钟阅读</span>
+            <span class="guide-views">🔥 2.5k 查看</span>
+          </div>
+        </a>
+        
+        <a href="/zh-cn/how-to-make-pizza.html" class="guide-item">
+          <div class="trending-badge">📈 趋势</div>
+          <h3>披萨制作指南</h3>
+          <p>学习在种植花园中制作披萨的技巧。</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">中级</span>
+            <span class="guide-read-time">25 分钟阅读</span>
+            <span class="guide-views">🔥 1.8k 查看</span>
+          </div>
+        </a>
+        
+        <a href="/zh-cn/how-to-make-bread.html" class="guide-item">
+          <div class="new-badge">🆕 新内容</div>
+          <h3>面包制作指南</h3>
+          <p>学习在种植花园中制作面包的技巧。</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">初学者</span>
+            <span class="guide-read-time">20 分钟阅读</span>
+            <span class="guide-views">🔥 1.2k 查看</span>
+          </div>
+        </a>
+      </div>
+    </div>
+    
+    <!-- 食谱攻略 -->
+    <div class="category-section" data-category="recipe">
+      <h2 class="category-title">🍽️ 食谱指南</h2>
+      <div class="guides-grid">
+        <a href="/zh-cn/how-to-make-salad.html" class="guide-item">
+          <h3>🥗 沙拉制作指南</h3>
+          <p>在种植花园中制作完美沙拉的完整指南。从基本材料收集到高级配方。</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">初学者</span>
+            <span class="guide-read-time">15 分钟阅读</span>
+          </div>
+        </a>
+        
+        <a href="/zh-cn/how-to-make-pizza.html" class="guide-item">
+          <h3>🍕 披萨制作指南</h3>
+          <p>学习在种植花园中制作美味披萨的方法。从面团准备到配料搭配。</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">中级</span>
+            <span class="guide-read-time">25 分钟阅读</span>
+          </div>
+        </a>
+        
+        <a href="/zh-cn/how-to-make-bread.html" class="guide-item">
+          <h3>🍞 面包制作指南</h3>
+          <p>掌握面包制作技术。学习面粉类型、酵母管理和烘烤优化。</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">初学者</span>
+            <span class="guide-read-time">20 分钟阅读</span>
+          </div>
+        </a>
+        
+        <a href="/zh-cn/how-to-make-cake.html" class="guide-item">
+          <h3>蛋糕制作指南</h3>
+          <p>学习在种植花园中制作蛋糕的技巧。</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">中级</span>
+            <span class="guide-read-time">30 分钟阅读</span>
+          </div>
+        </a>
+      <a href="/zh-cn/ice-cream-recipe.html" class="guide-item">
+                    <h3>冰淇淋配方指南</h3>
+                    <p>学习美味冰淇淋的配方和比例，优化利润和味道。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">中级</span>
+                        <span class="guide-read-time">18 分钟阅读</span>
+                    </div>
+                </a><a href="/zh-cn/how-to-make-donut.html" class="guide-item">
+                    <h3>甜甜圈制作指南</h3>
+                    <p>学习在种植花园中制作甜甜圈的技巧。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">中级</span>
+                        <span class="guide-read-time">20 分钟阅读</span>
+                    </div>
+                </a><a href="/zh-cn/how-to-make-pie.html" class="guide-item">
+                    <h3>派制作指南</h3>
+                    <p>学习在种植花园中制作派的技巧。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">中级</span>
+                        <span class="guide-read-time">25 分钟阅读</span>
+                    </div>
+                </a><a href="/zh-cn/how-to-make-cookies.html" class="guide-item">
+                    <h3>饼干制作指南</h3>
+                    <p>学习在种植花园中制作饼干的技巧。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">初学者</span>
+                        <span class="guide-read-time">20 分钟阅读</span>
+                    </div>
+                </a><a href="/zh-cn/how-to-make-smoothie.html" class="guide-item">
+                    <h3>冰沙制作指南</h3>
+                    <p>学习在种植花园中制作冰沙的技巧。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">初学者</span>
+                        <span class="guide-read-time">18 分钟阅读</span>
+                    </div>
+                </a><a href="/zh-cn/how-to-make-sandwich.html" class="guide-item">
+                    <h3>三明治制作指南</h3>
+                    <p>学习在种植花园中制作三明治的技巧。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">初学者</span>
+                        <span class="guide-read-time">22 分钟阅读</span>
+                    </div>
+                </a><a href="/zh-cn/how-to-make-salad.html" class="guide-item">
+                    <h3>沙拉制作指南</h3>
+                    <p>掌握沙拉制作的艺术，我们的综合指南。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">初学者</span>
+                        <span class="guide-read-time">15 分钟阅读</span>
+                    </div>
+                </a><a href="/zh-cn/how-to-make-pizza.html" class="guide-item">
+                    <h3>披萨制作指南</h3>
+                    <p>学习在种植花园中制作美味披萨。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">中级</span>
+                        <span class="guide-read-time">25 分钟阅读</span>
+                    </div>
+                </a><a href="/zh-cn/how-to-make-bread.html" class="guide-item">
+                    <h3>面包制作指南</h3>
+                    <p>在种植花园中掌握面包制作技术。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">初学者</span>
+                        <span class="guide-read-time">20 分钟阅读</span>
+                    </div>
+                </a><a href="/zh-cn/ice-cream-recipe.html" class="guide-item">
+                    <h3>冰淇淋配方指南</h3>
+                    <p>学习美味冰淇淋的配方和比例，优化利润和味道。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">中级</span>
+                        <span class="guide-read-time">18 分钟阅读</span>
+                    </div>
+                </a><a href="/zh-cn/how-to-make-donut.html" class="guide-item">
+                    <h3>甜甜圈制作指南</h3>
+                    <p>学习在种植花园中制作甜甜圈的技巧。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">中级</span>
+                        <span class="guide-read-time">20 分钟阅读</span>
+                    </div>
+                </a><a href="/zh-cn/how-to-make-cake.html" class="guide-item">
+                    <h3>蛋糕制作指南</h3>
+                    <p>学习在种植花园中制作蛋糕的技巧。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">高级</span>
+                        <span class="guide-read-time">30 分钟阅读</span>
+                    </div>
+                </a><a href="/zh-cn/how-to-make-pie.html" class="guide-item">
+                    <h3>派制作指南</h3>
+                    <p>学习在种植花园中制作派的技巧。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">中级</span>
+                        <span class="guide-read-time">25 分钟阅读</span>
+                    </div>
+                </a><a href="/zh-cn/how-to-make-cookies.html" class="guide-item">
+                    <h3>饼干制作指南</h3>
+                    <p>学习在种植花园中制作饼干的技巧。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">初学者</span>
+                        <span class="guide-read-time">20 分钟阅读</span>
+                    </div>
+                </a><a href="/zh-cn/how-to-make-smoothie.html" class="guide-item">
+                    <h3>冰沙制作指南</h3>
+                    <p>学习在种植花园中制作冰沙的技巧。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">初学者</span>
+                        <span class="guide-read-time">18 分钟阅读</span>
+                    </div>
+                </a><a href="/zh-cn/how-to-make-money-fast.html" class="guide-item">
+                    <h3>快速赚钱指南</h3>
+                    <p>学习在种植花园中制作甜甜圈的技巧。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">高级</span>
+                        <span class="guide-read-time">25 分钟阅读</span>
+                    </div>
+                </a><a href="/zh-cn/how-to-make-sandwich.html" class="guide-item">
+                    <h3>三明治制作指南</h3>
+                    <p>学习在种植花园中制作三明治的技巧。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">初学者</span>
+                        <span class="guide-read-time">22 分钟阅读</span>
+                    </div>
+                </a></div>
+    </div>
+    
+    <!-- 种植攻略 -->
+    <div class="category-section" data-category="farming">
+      <h2 class="category-title">🌱 农业指南</h2>
+      <div class="guides-grid">
+        <a href="/zh-cn/how-to-grow-corn.html" class="guide-item">
+          <h3>玉米种植指南</h3>
+          <p>高效玉米种植：播种、浇水、收获。</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">初学者</span>
+            <span class="guide-read-time">18 分钟阅读</span>
+          </div>
+        </a>
+        
+        <a href="/zh-cn/how-to-grow-oranges.html" class="guide-item">
+          <h3>橙子种植指南</h3>
+          <p>高效橙子种植：播种、浇水、收获。</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">中级</span>
+            <span class="guide-read-time">22 分钟阅读</span>
+          </div>
+        </a>
+      <a href="/zh-cn/how-to-grow-wheat.html" class="guide-item">
+                    <h3>小麦种植指南</h3>
+                    <p>高效小麦种植：播种、浇水、收获。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">初学者</span>
+                        <span class="guide-read-time">20 分钟阅读</span>
+                    </div>
+                </a><a href="farming-basics.html" class="guide-item">
+                    <h3>种植基础</h3>
+                    <p>基本种植技术、浇水、作物管理要点。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">初学者</span>
+                        <span class="guide-read-time">12 分钟阅读</span>
+                    </div>
+                </a><a href="watering-strategies.html" class="guide-item">
+                    <h3>浇水策略</h3>
+                    <p>学习最佳浇水时机、频率和效率。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">初学者</span>
+                        <span class="guide-read-time">10 分钟阅读</span>
+                    </div>
+                </a><a href="crop-rotation.html" class="guide-item">
+                    <h3>轮作指南</h3>
+                    <p>通过有效的轮作策略保持土壤肥力并最大化产量。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">中级</span>
+                        <span class="guide-read-time">15 分钟阅读</span>
+                    </div>
+                </a><a href="seed-selection.html" class="guide-item">
+                    <h3>种子选择指南</h3>
+                    <p>选择适合策略的种子，比较成长时间和利润。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">中级</span>
+                        <span class="guide-read-time">18 分钟阅读</span>
+                    </div>
+                </a><a href="/zh-cn/how-to-grow-carrots.html" class="guide-item">
+                    <h3>胡萝卜种植指南</h3>
+                    <p>高效的胡萝卜种植：播种、浇水、收获。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">初学者</span>
+                        <span class="guide-read-time">18 分钟阅读</span>
+                    </div>
+                </a><a href="/zh-cn/how-to-grow-apples.html" class="guide-item">
+                    <h3>苹果种植指南</h3>
+                    <p>高效的苹果种植：播种、浇水、收获。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">中级</span>
+                        <span class="guide-read-time">22 分钟阅读</span>
+                    </div>
+                </a><a href="/zh-cn/how-to-grow-berries.html" class="guide-item">
+                    <h3>浆果种植指南</h3>
+                    <p>高效的浆果种植：播种、浇水、收获。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">中级</span>
+                        <span class="guide-read-time">20 分钟阅读</span>
+                    </div>
+                </a><a href="/zh-cn/how-to-build-farm.html" class="guide-item">
+                    <h3>农场建设指南</h3>
+                    <p>设计高效农场布局：优化灌溉、存储、加工和路径。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">中级</span>
+                        <span class="guide-read-time">24 分钟阅读</span>
+                    </div>
+                </a><a href="/zh-cn/how-to-grow-wheat.html" class="guide-item">
+                    <h3>小麦种植指南</h3>
+                    <p>高效小麦种植：播种、浇水、收获。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">初学者</span>
+                        <span class="guide-read-time">20 分钟阅读</span>
+                    </div>
+                </a><a href="/zh-cn/how-to-grow-carrots.html" class="guide-item">
+                    <h3>胡萝卜种植指南</h3>
+                    <p>高效的胡萝卜种植：播种、浇水、收获。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">初学者</span>
+                        <span class="guide-read-time">18 分钟阅读</span>
+                    </div>
+                </a><a href="/zh-cn/how-to-grow-apples.html" class="guide-item">
+                    <h3>苹果种植指南</h3>
+                    <p>高效的苹果种植：播种、浇水、收获。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">中级</span>
+                        <span class="guide-read-time">22 分钟阅读</span>
+                    </div>
+                </a><a href="/zh-cn/how-to-grow-oranges.html" class="guide-item">
+                    <h3>橙子种植指南</h3>
+                    <p>高效橙子种植：播种、浇水、收获。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">中级</span>
+                        <span class="guide-read-time">21 分钟阅读</span>
+                    </div>
+                </a><a href="/zh-cn/how-to-grow-berries.html" class="guide-item">
+                    <h3>浆果种植指南</h3>
+                    <p>高效的浆果种植：播种、浇水、收获。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">中级</span>
+                        <span class="guide-read-time">20 分钟阅读</span>
+                    </div>
+                </a><a href="/zh-cn/how-to-grow-corn.html" class="guide-item">
+                    <h3>玉米种植指南</h3>
+                    <p>高效玉米种植：播种、浇水、收获。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">中级</span>
+                        <span class="guide-read-time">21 分钟阅读</span>
+                    </div>
+                </a><a href="/zh-cn/how-to-build-farm.html" class="guide-item">
+                    <h3>农场建设指南</h3>
+                    <p>设计高效农场布局：优化灌溉、存储、加工和路径。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">中级</span>
+                        <span class="guide-read-time">24 分钟阅读</span>
+                    </div>
+                </a></div>
+    </div>
+    
+    <!-- 收益攻略 -->
+    <div class="category-section" data-category="profit">
+      <h2 class="category-title">💰 利润指南</h2>
+      <div class="guides-grid">
+        <a href="/zh-cn/how-to-make-money-fast.html" class="guide-item">
+          <h3>快速赚钱指南</h3>
+                              <p>学习在种植花园中制作三明治的技巧。</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">中级</span>
+            <span class="guide-read-time">35 分钟阅读</span>
+          </div>
+        </a>
+        
+        <a href="/profit-strategies.html" class="guide-item">
+          <h3>利润策略指南</h3>
+          <p>学习长期利润策略、市场分析和风险管理、销售优化。</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">高级</span>
+            <span class="guide-read-time">45 分钟阅读</span>
+          </div>
+        </a>
+      <a href="market-analysis.html" class="guide-item">
+                    <h3>市场分析</h3>
+                    <p>分析市场趋势，识别利润机会，优化销售策略。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">高级</span>
+                        <span class="guide-read-time">20 分钟阅读</span>
+                    </div>
+                </a><a href="resource-management.html" class="guide-item">
+                    <h3>资源管理</h3>
+                    <p>掌握资源分配、库存管理、成本优化。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">中级</span>
+                        <span class="guide-read-time">16 分钟阅读</span>
+                    </div>
+                </a><a href="investment-guide.html" class="guide-item">
+                    <h3>投资指南</h3>
+                    <p>学习如何识别投资目标并最大化长期回报。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">专家</span>
+                        <span class="guide-read-time">25 分钟阅读</span>
+                    </div>
+                </a></div>
+    </div>
+  <div class="category-section" data-category="co-op">
+            <h2 class="category-title">👥 合作与运营</h2>
+            <div class="guides-grid">
+                <a href="/zh-cn/how-to-play-with-friends.html" class="guide-item">
+                    <h3>与朋友一起玩</h3>
+                    <p>与朋友合作，通过角色分工和交易建立高效农场。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">中级</span>
+                        <span class="guide-read-time">18 分钟阅读</span>
+                    </div>
+                </a>
+
+                <a href="storage-and-logistics.html" class="guide-item">
+                    <h3>存储和物流</h3>
+                    <p>通过存储和路线设计提高物流效率。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">中级</span>
+                        <span class="guide-read-time">20 分钟阅读</span>
+                    </div>
+                </a>
+            <a href="/zh-cn/how-to-play-with-friends.html" class="guide-item">
+                    <h3>与朋友一起玩</h3>
+                    <p>与朋友合作，通过角色分工和交易建立高效农场。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">中级</span>
+                        <span class="guide-read-time">18 分钟阅读</span>
+                    </div>
+                </a></div>
+        </div><div class="category-section" data-category="advanced">
+            <h2 class="category-title">🎮 高级指南</h2>
+            <div class="guides-grid">
+                                  <a href="game-mechanics.html" class="guide-item">
+                      <h3>游戏机制</h3>
+                      <p>深入探讨游戏机制、变异、特殊事件和高级元素。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">专家</span>
+                        <span class="guide-read-time">35 分钟阅读</span>
+                    </div>
+                </a>
+                
+                                  <a href="mutation-guide.html" class="guide-item">
+                      <h3>变异指南</h3>
+                      <p>理解变异系统，为最大利润进行组合。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">专家</span>
+                        <span class="guide-read-time">40 分钟阅读</span>
+                    </div>
+                </a>
+                
+                                  <a href="special-events.html" class="guide-item">
+                      <h3>特殊事件</h3>
+                      <p>限时事件、特殊机会和限定奖励的完整指南。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">高级</span>
+                        <span class="guide-read-time">28 分钟阅读</span>
+                    </div>
+                </a>
+                
+                                  <a href="speed-running.html" class="guide-item">
+                      <h3>速通技术</h3>
+                      <p>最大化效率并追求记录更新的速通技术。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">专家</span>
+                        <span class="guide-read-time">30 分钟阅读</span>
+                    </div>
+                </a>
+            </div>
+        </div><div class="guides-card">
+            <h2>💡 快速提示</h2>
+            <div class="tips-grid">
+                <div class="tip-item">
+                    <h4>⏰ 黄金时间</h4>
+                    <p>游戏内7:00-9:00浇水时成长效果翻倍。</p>
+                </div>
+                <div class="tip-item">
+                    <h4>🎯 质量重要</h4>
+                    <p>高质量材料带来更好的配方和更高利润。</p>
+                </div>
+                <div class="tip-item">
+                    <h4>📈 市场时机</h4>
+                    <p>在需求高峰时销售以最大化利润。</p>
+                </div>
+                <div class="tip-item">
+                    <h4>📚 配方熟练</h4>
+                    <p>在尝试高级食谱之前先掌握基础，提高效率。</p>
+                </div>
+                <div class="tip-item">
+                    <h4>🤝 社区学习</h4>
+                    <p>在Discord中向其他玩家学习。</p>
+                </div>
+                <div class="tip-item">
+                    <h4>🔄 定期更新</h4>
+                    <p>定期查看新指南和最新策略。</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="guides-card">
+            <h2>🏠 导航</h2>
+            <div class="back-link-container">
+                <a href="/zh-cn/index.html" class="back-btn" data-i18n="guides.back">← 返回主计算器</a>
+            </div>
+        </div>
+    </div>
+  <script src="../i18n/i18n.js"></script>
+  <script src="../script.js"></script>
+
+ 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const currentFlag = document.getElementById('current-flag');
+    const flagDropdown = document.getElementById('current-flag');
+    
+    if (currentFlag && flagDropdown) {
+        // 设置当前语言的国旗
+        const currentLang = document.documentElement.getAttribute('lang') || 'en';
+        updateCurrentFlag(currentLang);
+        
+        // 为每个国旗选项添加点击事件
+        document.querySelectorAll('.flag-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const lang = this.getAttribute('data-lang');
+                if (lang) {
+                    // 调用现有的语言切换函数
+                    if (typeof switchLang === 'function') {
+                        switchLang(lang);
+                    } else if (typeof window.__gagI18n !== 'undefined' && window.__gagI18n.switchLang) {
+                        window.__gagI18n.switchLang(lang);
+                    }
+                }
+            });
+        });
+    }
+});
+
+function updateCurrentFlag(lang) {
+    const currentFlag = document.getElementById('current-flag');
+    if (currentFlag) {
+        const flagOptions = document.querySelectorAll('.flag-option');
+        flagOptions.forEach(option => {
+            if (option.getAttribute('data-lang') === lang) {
+                const flagContent = option.innerHTML;
+                currentFlag.innerHTML = flagContent;
+                break;
+            }
+        });
+    }
+}
+</script>
+    <script src="../flag-switcher.js"></script>
+</body></html>

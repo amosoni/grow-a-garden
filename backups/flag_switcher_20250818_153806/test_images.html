@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Plant Images</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .plant-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; }
+        .plant-item { border: 1px solid #ccc; padding: 10px; text-align: center; }
+        .plant-item img { width: 64px; height: 64px; object-fit: contain; border: 1px solid #ddd; }
+        .error { color: red; }
+        .success { color: green; }
+    </style>
+</head>
+<body>
+    <h1>🌱 Plant Images Test</h1>
+    
+    <div id="status"></div>
+    
+    <div class="plant-grid" id="plantGrid"></div>
+    
+    <script>
+        const statusDiv = document.getElementById('status');
+        const plantGrid = document.getElementById('plantGrid');
+        
+        // 测试植物列表
+        const testPlants = [
+            'amberspine', 'pineapple', 'guanabana', 'kiwi', 'carrot', 'watermelon'
+        ];
+        
+        async function testPlantImages() {
+            try {
+                statusDiv.innerHTML = '<p>🔄 Loading plant image map...</p>';
+                
+                // 加载图片映射
+                const response = await fetch('plant_img_map_final.json');
+                if (!response.ok) {
+                    throw new Error(`Failed to load plant_img_map_final.json: ${response.status}`);
+                }
+                
+                const plantImgMap = await response.json();
+                statusDiv.innerHTML = '<p class="success">✅ Plant image map loaded successfully!</p>';
+                
+                // 显示测试植物
+                testPlants.forEach(plantKey => {
+                    const plantItem = document.createElement('div');
+                    plantItem.className = 'plant-item';
+                    
+                    const imgUrl = plantImgMap[plantKey];
+                    if (imgUrl) {
+                        plantItem.innerHTML = `
+                            <h3>${plantKey}</h3>
+                            <img src="${imgUrl}" alt="${plantKey}" onerror="this.style.border='2px solid red'; this.alt='Failed to load'">
+                            <p><small>${imgUrl}</small></p>
+                        `;
+                    } else {
+                        plantItem.innerHTML = `
+                            <h3>${plantKey}</h3>
+                            <p class="error">No image URL found</p>
+                        `;
+                    }
+                    
+                    plantGrid.appendChild(plantItem);
+                });
+                
+            } catch (error) {
+                statusDiv.innerHTML = `<p class="error">❌ Error: ${error.message}</p>`;
+                console.error('Error:', error);
+            }
+        }
+        
+        // 页面加载完成后测试
+        window.addEventListener('load', testPlantImages);
+    </script>
+</body>
+</html> 

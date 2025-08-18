@@ -1,0 +1,643 @@
+<!DOCTYPE html><html lang="ja" dir="ltr"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="/">
+  <title>Grow a Garden ガイド - 総合コレクション</title>
+  <link rel="canonical" href="https://growagarden.cv/ja/guides.html">
+  <link rel="alternate" hreflang="en" href="https://growagarden.cv/en/guides.html">
+  <link rel="alternate" hreflang="zh-CN" href="https://growagarden.cv/zh-cn/guides.html">
+  <link rel="alternate" hreflang="ja" href="https://growagarden.cv/ja/guides.html">
+  <link rel="alternate" hreflang="x-default" href="https://growagarden.cv/guides.html">
+  <link rel="stylesheet" href="https://unpkg.com/simple.css@2.1.0/simple.min.css">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" class="logo" data-i18n="nav.logo">🌱 Grow a Garden</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('stats')" data-i18n="nav.live">Live Stats</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('map')" data-i18n="nav.map">Global Heatmap</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('tips')" data-i18n="nav.tips">Tips</a>
+            <a href="guides.html" data-i18n="nav.guides">📚 Guides</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('online')" data-i18n="nav.online">🎮 Online</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('community')" class="discord-btn" data-i18n="nav.discord">💬 Discord</a>
+            <div class="flag-language-switcher">
+    <div class="current-flag" id="current-flag">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNDgwIj4KICAgICAgICAgICAgPGRlZnM+PGNsaXBQYXRoIGlkPSJhIj48cGF0aCBkPSJNLTg1LjMgMGg2ODIuNnY1MTJILTg1LjN6Ii8+PC9jbGlwUGF0aD48L2RlZnM+CiAgICAgICAgICAgIDxjbGlwUGF0aCBpZD0iYiI+PHVzZSBocmVmPSIjYSIvPjwvY2xpcFBhdGg+CiAgICAgICAgICAgIDxnIGNsaXAtcGF0aD0idXJsKCNiKSIgdHJhbnNmb3JtPSJzY2FsZSguOTM3NSkiPgogICAgICAgICAgICAgICAgPGcgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2Utd2lkdGg9IjFwdCI+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2NTEySC0yNTZ6IiBmaWxsPSIjYmQzZDQ0Ii8+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAxMDIuNEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAyMDQuOEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAzMDcuMkg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiA0MDkuNkg3NjhWNTEySC0yNTZ6IiBmaWxsPSIjZmZmIi8+CiAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICA8ZyBmaWxsPSIjMTkyZjVkIj4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAwdjUxMmwyNTYtMjU2eiIvPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9zdmc+" 
+         alt="en Flag">
+    </div>
+    <div class="flag-dropdown" id="flag-dropdown">
+        <div class="flag-option" data-lang="en" title="English">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNDgwIj4KICAgICAgICAgICAgPGRlZnM+PGNsaXBQYXRoIGlkPSJhIj48cGF0aCBkPSJNLTg1LjMgMGg2ODIuNnY1MTJILTg1LjN6Ii8+PC9jbGlwUGF0aD48L2RlZnM+CiAgICAgICAgICAgIDxjbGlwUGF0aCBpZD0iYiI+PHVzZSBocmVmPSIjYSIvPjwvY2xpcFBhdGg+CiAgICAgICAgICAgIDxnIGNsaXAtcGF0aD0idXJsKCNiKSIgdHJhbnNmb3JtPSJzY2FsZSguOTM3NSkiPgogICAgICAgICAgICAgICAgPGcgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2Utd2lkdGg9IjFwdCI+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2NTEySC0yNTZ6IiBmaWxsPSIjYmQzZDQ0Ii8+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAxMDIuNEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAyMDQuOEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAzMDcuMkg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiA0MDkuNkg3NjhWNTEySC0yNTZ6IiBmaWxsPSIjZmZmIi8+CiAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICA8ZyBmaWxsPSIjMTkyZjVkIj4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAwdjUxMmwyNTYtMjU2eiIvPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9zdmc+" 
+         alt="en Flag">
+            <span class="flag-name">English</span>
+        </div>
+        <div class="flag-option" data-lang="zh-cn" title="简体中文">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNkZTI5MTAiLz4KICAgICAgICAgICAgPGcgZmlsbD0iI2ZmZGUwMCI+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNNDUwIDEyMGwtNDUuNyAxNDAuNy0xMTkuMyAwaDE1NGwtMTE5LjMgMHoiLz4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik00NTAgMzAwbC00NS43IDE0MC43LTExOS4zIDBoMTU0bC0xMTkuMyAweiIvPgogICAgICAgICAgICAgICAgPHBhdGggZD0iTTQ1MCA0ODBsLTQ1LjcgMTQwLjctMTE5LjMgMGgxNTRsLTExOS4zIDB6Ii8+CiAgICAgICAgICAgIDwvZz4KICAgICAgICA8L3N2Zz4=" 
+         alt="zh-cn Flag">
+            <span class="flag-name">简体中文</span>
+        </div>
+        <div class="flag-option" data-lang="es" title="Español">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3NTAgNTAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9Ijc1MCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiNjNjBiMWUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9Ijc1MCIgaGVpZ2h0PSIyNTAiIHk9IjEyNSIgZmlsbD0iI2ZmYzQwMCIvPgogICAgICAgIDwvc3ZnPg==" 
+         alt="es Flag">
+            <span class="flag-name">Español</span>
+        </div>
+        <div class="flag-option" data-lang="pt-br" title="Português">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3MjAgNTA0Ij4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjcyMCIgaGVpZ2h0PSI1MDQiIGZpbGw9IiMwMDliM2EiLz4KICAgICAgICAgICAgPHBhdGggZD0iTTM2MCAyNTJsLTE4MC0xMjZ2MjUyeiIgZmlsbD0iI2ZlZGYwMCIvPgogICAgICAgICAgICA8Y2lyY2xlIGN4PSIzNjAiIGN5PSIyNTIiIHI9IjYwIiBmaWxsPSIjMDAyNzc2Ii8+CiAgICAgICAgPC9zdmc+" 
+         alt="pt-br Flag">
+            <span class="flag-name">Português</span>
+        </div>
+        <div class="flag-option" data-lang="fr" title="Français">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiMwMDIzOTUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSI2MDAiIHg9IjMwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjYwMCIgeD0iNjAwIiBmaWxsPSIjZWQyOTM5Ii8+CiAgICAgICAgPC9zdmc+" 
+         alt="fr Flag">
+            <span class="flag-name">Français</span>
+        </div>
+        <div class="flag-option" data-lang="de" title="Deutsch">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiMwMDAiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iI2RkMDAwMCIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjZmZjZTAwIi8+CiAgICAgICAgPC9zdmc+" 
+         alt="de Flag">
+            <span class="flag-name">Deutsch</span>
+        </div>
+        <div class="flag-option" data-lang="ru" title="Русский">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iIzAwMzlhNiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjZDUyYjFlIi8+CiAgICAgICAgPC9zdmc+" 
+         alt="ru Flag">
+            <span class="flag-name">Русский</span>
+        </div>
+        <div class="flag-option" data-lang="ar" title="العربية">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiMwMDZjMzUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI0MDAiIHk9IjEwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iMjAwIiBmaWxsPSIjY2UxMTI2Ii8+CiAgICAgICAgPC9zdmc+" 
+         alt="ar Flag">
+            <span class="flag-name">العربية</span>
+        </div>
+        <div class="flag-option" data-lang="hi" title="हिन्दी">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNmZjk5MzMiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjMTM4ODA4Ii8+CiAgICAgICAgICAgIDxjaXJjbGUgY3g9IjQ1MCIgY3k9IjMwMCIgcj0iNjAiIGZpbGw9IiMwMDAwODAiLz4KICAgICAgICA8L3N2Zz4=" 
+         alt="hi Flag">
+            <span class="flag-name">हिन्दी</span>
+        </div>
+        <div class="flag-option" data-lang="id" title="Bahasa Indonesia">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIzMDAiIHk9IjMwMCIgZmlsbD0iI2NlMTEyNiIvPgogICAgICAgIDwvc3ZnPg==" 
+         alt="id Flag">
+            <span class="flag-name">Bahasa Indonesia</span>
+        </div>
+        <div class="flag-option" data-lang="vi" title="Tiếng Việt">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNkYTI1MWQiLz4KICAgICAgICAgICAgPHBhdGggZD0iTTQ1MCAzMDBsLTE4MC0xMjZ2MjUyeiIgZmlsbD0iI2ZmZmYwMCIvPgogICAgICAgIDwvc3ZnPg==" 
+         alt="vi Flag">
+            <span class="flag-name">Tiếng Việt</span>
+        </div>
+        <div class="flag-option" data-lang="ja" title="日本語">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPGNpcmNsZSBjeD0iNDUwIiBjeT0iMzAwIiByPSIxODAiIGZpbGw9IiNiYzAwMmQiLz4KICAgICAgICA8L3N2Zz4=" 
+         alt="ja Flag">
+            <span class="flag-name">日本語</span>
+        </div>
+    </div>
+</div>
+        </nav>
+    </header>
+  <section class="guides-hero">
+    <h1 data-i18n="hero.guides.title">📚 Grow a Garden ガイド</h1>
+    <p data-i18n="hero.guides.subtitle">戦略、レシピ、ゲームプレイのヒントの完全コレクション</p>
+  </section>
+  <div class="guides-section">
+    <div class="guides-card">
+      <h2>🔍 検索とフィルター</h2>
+      <div class="search-filter-container">
+        <input type="text" id="guide-search" placeholder="ガイドを検索..." class="guide-search-input">
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">すべて</button>
+          <button class="filter-btn" data-filter="recipe">レシピ</button>
+          <button class="filter-btn" data-filter="farming">農業</button>
+          <button class="filter-btn" data-filter="profit">利益</button>
+          <button class="filter-btn" data-filter="advanced">上級</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 热门攻略 -->
+    <div class="guides-card">
+      <h2>🔥 人気のガイド</h2>
+      <div class="guides-grid">
+        <a href="/ja/how-to-make-salad.html" class="guide-item featured-guide">
+          <div class="featured-badge">⭐ 最も人気</div>
+          <h3>サラダ作りのガイド</h3>
+          <p>Grow a Gardenでサラダを作るコツを学びましょう。</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">初心者</span>
+            <span class="guide-read-time">15分読了</span>
+            <span class="guide-views">🔥 2.5k 閲覧</span>
+          </div>
+        </a>
+        
+        <a href="/ja/how-to-make-pizza.html" class="guide-item">
+          <div class="trending-badge">📈 トレンド</div>
+          <h3>ピザ作りのガイド</h3>
+          <p>Grow a Gardenでピザを作るコツを学びましょう。</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">中級</span>
+            <span class="guide-read-time">25分読了</span>
+            <span class="guide-views">🔥 1.8k 閲覧</span>
+          </div>
+        </a>
+        
+        <a href="/ja/how-to-make-bread.html" class="guide-item">
+          <div class="new-badge">🆕 新着</div>
+          <h3>パン作りのガイド</h3>
+          <p>Grow a Gardenでパンを作るコツを学びましょう。</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">初心者</span>
+            <span class="guide-read-time">20分読了</span>
+            <span class="guide-views">🔥 1.2k 閲覧</span>
+          </div>
+        </a>
+      </div>
+    </div>
+    
+    <!-- 食谱攻略 -->
+    <div class="category-section" data-category="recipe">
+      <h2 class="category-title">🍽️ レシピガイド</h2>
+      <div class="guides-grid">
+        <a href="/ja/how-to-make-salad.html" class="guide-item">
+          <h3>🥗 サラダ作りのガイド</h3>
+          <p>Grow a Gardenで完璧なサラダを作るための完全ガイド。基本的な材料収集から高度なレシピまで。</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">初心者</span>
+            <span class="guide-read-time">15分読了</span>
+          </div>
+        </a>
+        
+        <a href="/ja/how-to-make-pizza.html" class="guide-item">
+          <h3>🍕 ピザ作りのガイド</h3>
+          <p>Grow a Gardenで美味しいピザの作り方を学びます。生地の準備からトッピングの組み合わせまで。</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">中級</span>
+            <span class="guide-read-time">25分読了</span>
+          </div>
+        </a>
+        
+        <a href="/ja/how-to-make-bread.html" class="guide-item">
+          <h3>🍞 パン作りのガイド</h3>
+          <p>パン作りの技術を習得。小麦粉の種類、酵母管理、焼成の最適化を学びます。</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">初心者</span>
+            <span class="guide-read-time">20分読了</span>
+          </div>
+        </a>
+        
+        <a href="/ja/how-to-make-cake.html" class="guide-item">
+          <h3>ケーキ作りのガイド</h3>
+          <p>Grow a Gardenでケーキを作るコツを学びましょう。</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">中級</span>
+            <span class="guide-read-time">30分読了</span>
+          </div>
+        </a>
+      <a href="/ja/ice-cream-recipe.html" class="guide-item">
+                    <h3>アイスクリームレシピガイド</h3>
+                    <p>美味しいアイスクリームの配合と比率を学び、利益と味を最適化。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">中級</span>
+                        <span class="guide-read-time">18分読了</span>
+                    </div>
+                </a><a href="/ja/how-to-make-donut.html" class="guide-item">
+                    <h3>ドーナツ作りのガイド</h3>
+                    <p>Grow a Gardenでドーナツを作るコツを学びましょう。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">中級</span>
+                        <span class="guide-read-time">20分読了</span>
+                    </div>
+                </a><a href="/ja/how-to-make-pie.html" class="guide-item">
+                    <h3>パイ作りのガイド</h3>
+                    <p>Grow a Gardenでパイを作るコツを学びましょう。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">中級</span>
+                        <span class="guide-read-time">25分読了</span>
+                    </div>
+                </a><a href="/ja/how-to-make-cookies.html" class="guide-item">
+                    <h3>クッキー作りのガイド</h3>
+                    <p>Grow a Gardenでクッキーを作るコツを学びましょう。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">初心者</span>
+                        <span class="guide-read-time">20分読了</span>
+                    </div>
+                </a><a href="/ja/how-to-make-smoothie.html" class="guide-item">
+                    <h3>スムージー作りのガイド</h3>
+                    <p>Grow a Gardenでスムージーを作るコツを学びましょう。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">初心者</span>
+                        <span class="guide-read-time">18分読了</span>
+                    </div>
+                </a><a href="/ja/how-to-make-sandwich.html" class="guide-item">
+                    <h3>サンドイッチ作りのガイド</h3>
+                    <p>Grow a Gardenでサンドイッチを作るコツを学びましょう。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">初心者</span>
+                        <span class="guide-read-time">22分読了</span>
+                    </div>
+                </a><a href="/ja/how-to-make-salad.html" class="guide-item">
+                    <h3>サラダ作りのガイド</h3>
+                    <p>Grow a Gardenでサラダを作るコツを学びましょう。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">初心者</span>
+                        <span class="guide-read-time">15分読了</span>
+                    </div>
+                </a><a href="/ja/how-to-make-pizza.html" class="guide-item">
+                    <h3>ピザ作りのガイド</h3>
+                    <p>Grow a Gardenでピザを作るコツを学びましょう。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">中級</span>
+                        <span class="guide-read-time">25分読了</span>
+                    </div>
+                </a><a href="/ja/how-to-make-bread.html" class="guide-item">
+                    <h3>パン作りのガイド</h3>
+                    <p>Grow a Gardenでパンを作るコツを学びましょう。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">初心者</span>
+                        <span class="guide-read-time">20分読了</span>
+                    </div>
+                </a><a href="/ja/ice-cream-recipe.html" class="guide-item">
+                    <h3>アイスクリームレシピガイド</h3>
+                    <p>美味しいアイスクリームの配合と比率を学び、利益と味を最適化。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">中級</span>
+                        <span class="guide-read-time">18分読了</span>
+                    </div>
+                </a><a href="/ja/how-to-make-donut.html" class="guide-item">
+                    <h3>ドーナツ作りのガイド</h3>
+                    <p>Grow a Gardenでドーナツを作るコツを学びましょう。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">中級</span>
+                        <span class="guide-read-time">20分読了</span>
+                    </div>
+                </a><a href="/ja/how-to-make-cake.html" class="guide-item">
+                    <h3>ケーキ作りのガイド</h3>
+                    <p>Grow a Gardenでケーキを作るコツを学びましょう。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">上級</span>
+                        <span class="guide-read-time">30分読了</span>
+                    </div>
+                </a><a href="/ja/how-to-make-pie.html" class="guide-item">
+                    <h3>パイ作りのガイド</h3>
+                    <p>Grow a Gardenでパイを作るコツを学びましょう。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">中級</span>
+                        <span class="guide-read-time">25分読了</span>
+                    </div>
+                </a><a href="/ja/how-to-make-cookies.html" class="guide-item">
+                    <h3>クッキー作りのガイド</h3>
+                    <p>Grow a Gardenでクッキーを作るコツを学びましょう。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">初心者</span>
+                        <span class="guide-read-time">20分読了</span>
+                    </div>
+                </a><a href="/ja/how-to-make-smoothie.html" class="guide-item">
+                    <h3>スムージー作りのガイド</h3>
+                    <p>Grow a Gardenでスムージーを作るコツを学びましょう。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">初心者</span>
+                        <span class="guide-read-time">18分読了</span>
+                    </div>
+                </a><a href="/ja/how-to-make-money-fast.html" class="guide-item">
+                    <h3>早くお金を稼ぐガイド</h3>
+                    <p>Grow a Gardenで{noun}を作るコツを学びましょう。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">上級</span>
+                        <span class="guide-read-time">25分読了</span>
+                    </div>
+                </a><a href="/ja/how-to-make-sandwich.html" class="guide-item">
+                    <h3>サンドイッチ作りのガイド</h3>
+                    <p>Grow a Gardenでサンドイッチを作るコツを学びましょう。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">初心者</span>
+                        <span class="guide-read-time">22分読了</span>
+                    </div>
+                </a></div>
+    </div>
+    
+    <!-- 种植攻略 -->
+    <div class="category-section" data-category="farming">
+      <h2 class="category-title">🌱 農業ガイド</h2>
+      <div class="guides-grid">
+        <a href="/ja/how-to-grow-corn.html" class="guide-item">
+          <h3>トウモロコシ栽培ガイド</h3>
+          <p>効率的なトウモロコシの栽培：播種・水やり・収穫。</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">初心者</span>
+            <span class="guide-read-time">18分読了</span>
+          </div>
+        </a>
+        
+        <a href="/ja/how-to-grow-oranges.html" class="guide-item">
+          <h3>オレンジ栽培ガイド</h3>
+          <p>効率的なオレンジの栽培：播種・水やり・収穫。</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">中級</span>
+            <span class="guide-read-time">22分読了</span>
+          </div>
+        </a>
+      <a href="/ja/how-to-grow-wheat.html" class="guide-item">
+                    <h3>小麦栽培ガイド</h3>
+                    <p>効率的な小麦の栽培：播種・水やり・収穫。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">初心者</span>
+                        <span class="guide-read-time">20分読了</span>
+                    </div>
+                </a><a href="farming-basics.html" class="guide-item">
+                    <h3>栽培の基礎</h3>
+                    <p>基本的な栽培技術・水やり・作物管理のポイント。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">初心者</span>
+                        <span class="guide-read-time">12分読了</span>
+                    </div>
+                </a><a href="watering-strategies.html" class="guide-item">
+                    <h3>水やり戦略</h3>
+                    <p>最適な水やりのタイミング・頻度・効率を学ぶ。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">初心者</span>
+                        <span class="guide-read-time">10分読了</span>
+                    </div>
+                </a><a href="crop-rotation.html" class="guide-item">
+                    <h3>輪作ガイド</h3>
+                    <p>効果的な輪作戦略で土壌肥沃度を維持し収量を最大化。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">中級</span>
+                        <span class="guide-read-time">15分読了</span>
+                    </div>
+                </a><a href="seed-selection.html" class="guide-item">
+                    <h3>種子選びガイド</h3>
+                    <p>戦略に合う種を選び、成長と利益を比較。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">中級</span>
+                        <span class="guide-read-time">18分読了</span>
+                    </div>
+                </a><a href="/ja/how-to-grow-carrots.html" class="guide-item">
+                    <h3>ニンジン栽培ガイド</h3>
+                    <p>効率的なニンジンの栽培：播種・水やり・収穫。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">初心者</span>
+                        <span class="guide-read-time">18分読了</span>
+                    </div>
+                </a><a href="/ja/how-to-grow-apples.html" class="guide-item">
+                    <h3>リンゴ栽培ガイド</h3>
+                    <p>効率的なリンゴの栽培：播種・水やり・収穫。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">中級</span>
+                        <span class="guide-read-time">22分読了</span>
+                    </div>
+                </a><a href="/ja/how-to-grow-berries.html" class="guide-item">
+                    <h3>ベリー栽培ガイド</h3>
+                    <p>効率的なベリーの栽培：播種・水やり・収穫。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">中級</span>
+                        <span class="guide-read-time">20分読了</span>
+                    </div>
+                </a><a href="/ja/how-to-build-farm.html" class="guide-item">
+                    <h3>農場づくりのガイド</h3>
+                    <p>効率的な農場レイアウトの設計：灌漑、保管、加工、導線を最適化。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">中級</span>
+                        <span class="guide-read-time">24分読了</span>
+                    </div>
+                </a><a href="/ja/how-to-grow-wheat.html" class="guide-item">
+                    <h3>小麦栽培ガイド</h3>
+                    <p>効率的な小麦の栽培：播種・水やり・収穫。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">初心者</span>
+                        <span class="guide-read-time">20分読了</span>
+                    </div>
+                </a><a href="/ja/how-to-grow-carrots.html" class="guide-item">
+                    <h3>ニンジン栽培ガイド</h3>
+                    <p>効率的なニンジンの栽培：播種・水やり・収穫。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">初心者</span>
+                        <span class="guide-read-time">18分読了</span>
+                    </div>
+                </a><a href="/ja/how-to-grow-apples.html" class="guide-item">
+                    <h3>リンゴ栽培ガイド</h3>
+                    <p>効率的なリンゴの栽培：播種・水やり・収穫。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">中級</span>
+                        <span class="guide-read-time">22分読了</span>
+                    </div>
+                </a><a href="/ja/how-to-grow-oranges.html" class="guide-item">
+                    <h3>オレンジ栽培ガイド</h3>
+                    <p>効率的なオレンジの栽培：播種・水やり・収穫。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">中級</span>
+                        <span class="guide-read-time">21分読了</span>
+                    </div>
+                </a><a href="/ja/how-to-grow-berries.html" class="guide-item">
+                    <h3>ベリー栽培ガイド</h3>
+                    <p>効率的なベリーの栽培：播種・水やり・収穫。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">中級</span>
+                        <span class="guide-read-time">20分読了</span>
+                    </div>
+                </a><a href="/ja/how-to-grow-corn.html" class="guide-item">
+                    <h3>トウモロコシ栽培ガイド</h3>
+                    <p>効率的なトウモロコシの栽培：播種・水やり・収穫。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">中級</span>
+                        <span class="guide-read-time">21分読了</span>
+                    </div>
+                </a><a href="/ja/how-to-build-farm.html" class="guide-item">
+                    <h3>農場づくりのガイド</h3>
+                    <p>効率的な農場レイアウトの設計：灌漑、保管、加工、導線を最適化。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">中級</span>
+                        <span class="guide-read-time">24分読了</span>
+                    </div>
+                </a></div>
+    </div>
+    
+    <!-- 收益攻略 -->
+    <div class="category-section" data-category="profit">
+      <h2 class="category-title">💰 利益ガイド</h2>
+      <div class="guides-grid">
+        <a href="/ja/how-to-make-money-fast.html" class="guide-item">
+          <h3>早くお金を稼ぐガイド</h3>
+          <p>Grow a Gardenで{noun}を作るコツを学びましょう。</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">中級</span>
+            <span class="guide-read-time">35分読了</span>
+          </div>
+        </a>
+        
+        <a href="/profit-strategies.html" class="guide-item">
+          <h3>利益戦略ガイド</h3>
+          <p>長期的な利益戦略、市場分析とリスク管理、販売の最適化を学ぶ。</p>
+          <div class="guide-meta">
+            <span class="guide-difficulty">上級</span>
+            <span class="guide-read-time">45分読了</span>
+          </div>
+        </a>
+      <a href="market-analysis.html" class="guide-item">
+                    <h3>マーケット分析</h3>
+                    <p>市場動向を分析し、利益機会を見極め、販売戦略を最適化。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">上級</span>
+                        <span class="guide-read-time">20分読了</span>
+                    </div>
+                </a><a href="resource-management.html" class="guide-item">
+                    <h3>リソース管理</h3>
+                    <p>資源配分、在庫管理、コスト最適化などを習得。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">中級</span>
+                        <span class="guide-read-time">16分読了</span>
+                    </div>
+                </a><a href="investment-guide.html" class="guide-item">
+                    <h3>投資ガイド</h3>
+                    <p>投資先の見極めと長期リターン最大化の方法を学ぶ。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">エキスパート</span>
+                        <span class="guide-read-time">25分読了</span>
+                    </div>
+                </a></div>
+    </div>
+  <div class="category-section" data-category="co-op">
+            <h2 class="category-title">👥 協力と運用</h2>
+            <div class="guides-grid">
+                <a href="/ja/how-to-play-with-friends.html" class="guide-item">
+                    <h3>友達と遊ぶ</h3>
+                    <p>友達と協力し、役割分担と取引で効率的な農場を。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">中級</span>
+                        <span class="guide-read-time">18分読了</span>
+                    </div>
+                </a>
+
+                <a href="storage-and-logistics.html" class="guide-item">
+                    <h3>保管と物流</h3>
+                    <p>保管とルート設計で物流効率を上げる。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">中級</span>
+                        <span class="guide-read-time">20分読了</span>
+                    </div>
+                </a>
+            <a href="/ja/how-to-play-with-friends.html" class="guide-item">
+                    <h3>友達と遊ぶ</h3>
+                    <p>友達と協力し、役割分担と取引で効率的な農場を。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">中級</span>
+                        <span class="guide-read-time">18分読了</span>
+                    </div>
+                </a></div>
+        </div><div class="category-section" data-category="advanced">
+            <h2 class="category-title">🎮 上級ガイド</h2>
+            <div class="guides-grid">
+                <a href="game-mechanics.html" class="guide-item">
+                    <h3>ゲームメカニクス</h3>
+                    <p>ゲームメカニクス、変異、特別イベント、上級要素を深掘り。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">エキスパート</span>
+                        <span class="guide-read-time">35分読了</span>
+                    </div>
+                </a>
+                
+                <a href="mutation-guide.html" class="guide-item">
+                    <h3>ミューテーションガイド</h3>
+                    <p>ミューテーションシステムを理解し、最大利益のために組み合わせる。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">エキスパート</span>
+                        <span class="guide-read-time">40分読了</span>
+                    </div>
+                </a>
+                
+                <a href="special-events.html" class="guide-item">
+                    <h3>スペシャルイベント</h3>
+                    <p>期間限定イベント、特別なチャンス、限定報酬の完全ガイド。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">上級</span>
+                        <span class="guide-read-time">28分読了</span>
+                    </div>
+                </a>
+                
+                <a href="speed-running.html" class="guide-item">
+                    <h3>スピードランニング</h3>
+                    <p>効率を最大化し記録更新を目指すスピードラン技術。</p>
+                    <div class="guide-meta">
+                        <span class="guide-difficulty">エキスパート</span>
+                        <span class="guide-read-time">30分読了</span>
+                    </div>
+                </a>
+            </div>
+        </div><div class="guides-card">
+            <h2>💡 クイックヒント</h2>
+            <div class="tips-grid">
+                <div class="tip-item">
+                    <h4>⏰ ゴールデンアワー</h4>
+                    <p>ゲーム内 7:00〜9:00 に水やりすると成長効果が2倍。</p>
+                </div>
+                <div class="tip-item">
+                    <h4>🎯 品質が重要</h4>
+                    <p>高品質の材料はより良いレシピと高い利益につながります。</p>
+                </div>
+                <div class="tip-item">
+                    <h4>📈 マーケットタイミング</h4>
+                    <p>需要が高い時間に販売して利益を最大化。</p>
+                </div>
+                <div class="tip-item">
+                    <h4>📚 レシピ習熟</h4>
+                    <p>上級レシピの前に基本を習得して効率アップ。</p>
+                </div>
+                <div class="tip-item">
+                    <h4>🤝 コミュニティ学習</h4>
+                    <p>Discordで他のプレイヤーから学びましょう。</p>
+                </div>
+                <div class="tip-item">
+                    <h4>🔄 定期的な更新</h4>
+                    <p>新しいガイドと最新戦略のために定期的に確認。</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="guides-card">
+            <h2>🏠 ナビゲーション</h2>
+            <div class="back-link-container">
+                <a href="/ja/index.html" class="back-btn" data-i18n="guides.back">← メイン計算機に戻る</a>
+            </div>
+        </div>
+    </div>
+  <script src="../i18n/i18n.js"></script>
+  <script src="../script.js"></script>
+
+ 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const currentFlag = document.getElementById('current-flag');
+    const flagDropdown = document.getElementById('current-flag');
+    
+    if (currentFlag && flagDropdown) {
+        // 设置当前语言的国旗
+        const currentLang = document.documentElement.getAttribute('lang') || 'en';
+        updateCurrentFlag(currentLang);
+        
+        // 为每个国旗选项添加点击事件
+        document.querySelectorAll('.flag-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const lang = this.getAttribute('data-lang');
+                if (lang) {
+                    // 调用现有的语言切换函数
+                    if (typeof switchLang === 'function') {
+                        switchLang(lang);
+                    } else if (typeof window.__gagI18n !== 'undefined' && window.__gagI18n.switchLang) {
+                        window.__gagI18n.switchLang(lang);
+                    }
+                }
+            });
+        });
+    }
+});
+
+function updateCurrentFlag(lang) {
+    const currentFlag = document.getElementById('current-flag');
+    if (currentFlag) {
+        const flagOptions = document.querySelectorAll('.flag-option');
+        flagOptions.forEach(option => {
+            if (option.getAttribute('data-lang') === lang) {
+                const flagContent = option.innerHTML;
+                currentFlag.innerHTML = flagContent;
+                break;
+            }
+        });
+    }
+}
+</script>
+    <script src="../flag-switcher.js"></script>
+</body></html>

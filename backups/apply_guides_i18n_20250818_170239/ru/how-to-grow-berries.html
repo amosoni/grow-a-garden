@@ -1,0 +1,262 @@
+<!DOCTYPE html><html lang="ru" dir="ltr"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Как Grow Berries в Выращивании сада - Полное руководство | Советы по Выращиванию сада</title>
+  <meta name="description" content="Узнайте, как grow berries! Узнайте, как grow berries trong Grow a Garden.">
+  <meta name="keywords" content="как grow berries trong grow a garden, roblox grow berries guide, grow a garden guide, grow berries making guide, roblox farming game, grow berries ingredients collection, grow a garden tips">
+  <link rel="canonical" href="https://growagarden.cv/how-to-grow-berries.html">
+
+  <meta property="og:title" content="Как Grow Berries в Выращивании сада - Полное руководство | Советы по Выращиванию сада">
+  <meta property="og:description" content="Узнайте, как grow berries trong Grow a Garden! Узнайте, как grow berries.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://growagarden.cv/how-to-grow-berries.html">
+  <meta property="og:image" content="https://growagarden.cv/berries-guide-og.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Как Grow Berries в Выращивании сада - Полное руководство | Советы по Выращиванию сада">
+  <meta name="twitter:description" content="Узнайте, как grow berries trong Grow a Garden! Узнайте, как grow berries.">
+  <meta name="twitter:image" content="https://growagarden.cv/berries-guide-og.jpg">
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"HowTo",
+    "name":"How to Grow Berries in Grow a Garden",
+    "description":"Efficient berry farming guide covering planting, watering, pruning, and harvest timing for best profits.",
+    "image":"https://growagarden.cv/berries-guide-og.jpg",
+    "url":"https://growagarden.cv/how-to-grow-berries.html",
+    "inLanguage":"en",
+    "step":[
+      {"@type":"HowToStep","name":"Prepare Beds","text":"Create raised beds with rich soil and good drainage."},
+      {"@type":"HowToStep","name":"Plant Seedlings","text":"Space seedlings properly and water after planting."},
+      {"@type":"HowToStep","name":"Prune & Harvest","text":"Prune old canes and harvest when berries are fully colored."}
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="https://unpkg.com/simple.css@2.1.0/simple.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🫐</text></svg>">
+
+  <style>
+    body{position:relative;min-height:100vh;overflow-x:hidden}
+    .bg-blur{position:fixed;inset:0;width:100vw;height:100vh;z-index:0;background: url('grow-bg.jpg') center/cover no-repeat;opacity:.3;filter:blur(2px);pointer-events:none}
+    .content-wrapper{position:relative;z-index:1}
+    .berries-hero{background:linear-gradient(135deg,#9333ea,#22c55e);color:#fff;padding:4rem 2rem;text-align:center;margin-top:60px;margin-bottom:2rem;position:relative}
+    .berries-hero::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.2);z-index:1}
+    .berries-hero h1,.berries-hero p{position:relative;z-index:2}
+    .berries-hero h1{font-size:3rem;margin-bottom:1rem;color:#fff!important;text-shadow:0 2px 4px rgba(0,0,0,.7),0 1px 2px rgba(0,0,0,.8);font-weight:800;letter-spacing:.5px;-webkit-text-stroke:.5px rgba(0,0,0,.2)}
+    .berries-hero p{font-size:1.2rem;color:#fff!important;text-shadow:0 1px 3px rgba(0,0,0,.6),0 1px 2px rgba(0,0,0,.7);font-weight:600;letter-spacing:.3px;-webkit-text-stroke:.3px rgba(0,0,0,.15)}
+    .guide-section{max-width:1200px;margin:0 auto;padding:2rem}
+    .guide-card{background:rgba(255,255,255,.98);backdrop-filter:blur(10px);border-radius:12px;padding:2rem;margin-bottom:2rem;box-shadow:0 8px 25px rgba(0,0,0,.15);border:1px solid rgba(255,255,255,.3)}
+    .guide-card h2{color:#23272a!important;font-weight:700;margin-bottom:1.5rem;text-shadow:0 1px 2px rgba(0,0,0,.1)}
+    .guide-card h3{color:#2c3e50!important;font-weight:600;margin-bottom:1rem}
+    .guide-card p,.guide-card li{color:#34495e!important;font-weight:500;line-height:1.6}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem;margin:2rem 0}
+    .grid-item{background:rgba(255,255,255,.95);border-radius:8px;padding:1rem;border-left:4px solid #9333ea;box-shadow:0 4px 12px rgba(0,0,0,.1)}
+    .tip-box{background:linear-gradient(135deg,#f1c40f,#f39c12);color:#fff;padding:1rem;border-radius:8px;margin:1rem 0;box-shadow:0 4px 15px rgba(241,196,15,.3)}
+    .back-btn{display:inline-block;background:#5865f2;color:#fff;padding:.75rem 1.5rem;text-decoration:none;border-radius:8px;margin-bottom:2rem;transition:all .3s ease}
+    .back-btn:hover{background:#4752c4;transform:translateY(-2px)}
+    .breadcrumb-container{max-width:1200px;margin:0 auto;padding:1rem 2rem}
+    .breadcrumb{background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-radius:8px;padding:.75rem 1rem;box-shadow:0 2px 8px rgba(0,0,0,.1);border:1px solid rgba(255,255,255,.3)}
+    .breadcrumb ol{list-style:none;margin:0;padding:0;display:flex;align-items:center;flex-wrap:wrap}
+    .breadcrumb li{display:flex;align-items:center;font-weight:500;color:#34495e}
+    .breadcrumb li:not(:last-child)::after{content:"›";margin:0 .5rem;color:#666}
+    .breadcrumb a{color:#9333ea;text-decoration:none;transition:color .3s}
+    .breadcrumb a:hover{color:#7e22ce}
+    .breadcrumb li[aria-current="page"]{color:#666;font-weight:bold}
+    @media (max-width:768px){.berries-hero h1{font-size:2rem}.guide-section{padding:1rem}.guide-card{padding:1.5rem}}
+  </style>
+</head>
+<body>
+  <div class="bg-blur"></div>
+      <header>
+        <nav>
+            <a href="index.html" class="logo" data-i18n="nav.logo">🌱 Grow a Garden</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('stats')" data-i18n="nav.live">Live Stats</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('map')" data-i18n="nav.map">Global Heatmap</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('tips')" data-i18n="nav.tips">Tips</a>
+            <a href="guides.html" data-i18n="nav.guides">📚 Guides</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('online')" data-i18n="nav.online">🎮 Online</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('community')" class="discord-btn" data-i18n="nav.discord">💬 Discord</a>
+            <div class="flag-language-switcher">
+    <div class="current-flag" id="current-flag">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNDgwIj4KICAgICAgICAgICAgPGRlZnM+PGNsaXBQYXRoIGlkPSJhIj48cGF0aCBkPSJNLTg1LjMgMGg2ODIuNnY1MTJILTg1LjN6Ii8+PC9jbGlwUGF0aD48L2RlZnM+CiAgICAgICAgICAgIDxjbGlwUGF0aCBpZD0iYiI+PHVzZSBocmVmPSIjYSIvPjwvY2xpcFBhdGg+CiAgICAgICAgICAgIDxnIGNsaXAtcGF0aD0idXJsKCNiKSIgdHJhbnNmb3JtPSJzY2FsZSguOTM3NSkiPgogICAgICAgICAgICAgICAgPGcgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2Utd2lkdGg9IjFwdCI+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2NTEySC0yNTZ6IiBmaWxsPSIjYmQzZDQ0Ii8+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAxMDIuNEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAyMDQuOEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAzMDcuMkg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiA0MDkuNkg3NjhWNTEySC0yNTZ6IiBmaWxsPSIjZmZmIi8+CiAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICA8ZyBmaWxsPSIjMTkyZjVkIj4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAwdjUxMmwyNTYtMjU2eiIvPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9zdmc+" 
+         alt="en Flag">
+    </div>
+    <div class="flag-dropdown" id="flag-dropdown">
+        <div class="flag-option" data-lang="en" title="English">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNDgwIj4KICAgICAgICAgICAgPGRlZnM+PGNsaXBQYXRoIGlkPSJhIj48cGF0aCBkPSJNLTg1LjMgMGg2ODIuNnY1MTJILTg1LjN6Ii8+PC9jbGlwUGF0aD48L2RlZnM+CiAgICAgICAgICAgIDxjbGlwUGF0aCBpZD0iYiI+PHVzZSBocmVmPSIjYSIvPjwvY2xpcFBhdGg+CiAgICAgICAgICAgIDxnIGNsaXAtcGF0aD0idXJsKCNiKSIgdHJhbnNmb3JtPSJzY2FsZSguOTM3NSkiPgogICAgICAgICAgICAgICAgPGcgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2Utd2lkdGg9IjFwdCI+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2NTEySC0yNTZ6IiBmaWxsPSIjYmQzZDQ0Ii8+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAxMDIuNEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAyMDQuOEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAzMDcuMkg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiA0MDkuNkg3NjhWNTEySC0yNTZ6IiBmaWxsPSIjZmZmIi8+CiAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICA8ZyBmaWxsPSIjMTkyZjVkIj4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAwdjUxMmwyNTYtMjU2eiIvPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9zdmc+" 
+         alt="en Flag">
+            <span class="flag-name">English</span>
+        </div>
+        <div class="flag-option" data-lang="zh-cn" title="简体中文">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNkZTI5MTAiLz4KICAgICAgICAgICAgPGcgZmlsbD0iI2ZmZGUwMCI+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNNDUwIDEyMGwtNDUuNyAxNDAuNy0xMTkuMyAwaDE1NGwtMTE5LjMgMHoiLz4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik00NTAgMzAwbC00NS43IDE0MC43LTExOS4zIDBoMTU0bC0xMTkuMyAweiIvPgogICAgICAgICAgICAgICAgPHBhdGggZD0iTTQ1MCA0ODBsLTQ1LjcgMTQwLjctMTE5LjMgMGgxNTRsLTExOS4zIDB6Ii8+CiAgICAgICAgICAgIDwvZz4KICAgICAgICA8L3N2Zz4=" 
+         alt="zh-cn Flag">
+            <span class="flag-name">简体中文</span>
+        </div>
+        <div class="flag-option" data-lang="es" title="Español">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3NTAgNTAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9Ijc1MCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiNjNjBiMWUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9Ijc1MCIgaGVpZ2h0PSIyNTAiIHk9IjEyNSIgZmlsbD0iI2ZmYzQwMCIvPgogICAgICAgIDwvc3ZnPg==" 
+         alt="es Flag">
+            <span class="flag-name">Español</span>
+        </div>
+        <div class="flag-option" data-lang="pt-br" title="Português">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3MjAgNTA0Ij4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjcyMCIgaGVpZ2h0PSI1MDQiIGZpbGw9IiMwMDliM2EiLz4KICAgICAgICAgICAgPHBhdGggZD0iTTM2MCAyNTJsLTE4MC0xMjZ2MjUyeiIgZmlsbD0iI2ZlZGYwMCIvPgogICAgICAgICAgICA8Y2lyY2xlIGN4PSIzNjAiIGN5PSIyNTIiIHI9IjYwIiBmaWxsPSIjMDAyNzc2Ii8+CiAgICAgICAgPC9zdmc+" 
+         alt="pt-br Flag">
+            <span class="flag-name">Português</span>
+        </div>
+        <div class="flag-option" data-lang="fr" title="Français">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiMwMDIzOTUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSI2MDAiIHg9IjMwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjYwMCIgeD0iNjAwIiBmaWxsPSIjZWQyOTM5Ii8+CiAgICAgICAgPC9zdmc+" 
+         alt="fr Flag">
+            <span class="flag-name">Français</span>
+        </div>
+        <div class="flag-option" data-lang="de" title="Deutsch">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiMwMDAiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iI2RkMDAwMCIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjZmZjZTAwIi8+CiAgICAgICAgPC9zdmc+" 
+         alt="de Flag">
+            <span class="flag-name">Deutsch</span>
+        </div>
+        <div class="flag-option" data-lang="ru" title="Русский">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iIzAwMzlhNiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjZDUyYjFlIi8+CiAgICAgICAgPC9zdmc+" 
+         alt="ru Flag">
+            <span class="flag-name">Русский</span>
+        </div>
+        <div class="flag-option" data-lang="ar" title="العربية">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiMwMDZjMzUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI0MDAiIHk9IjEwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iMjAwIiBmaWxsPSIjY2UxMTI2Ii8+CiAgICAgICAgPC9zdmc+" 
+         alt="ar Flag">
+            <span class="flag-name">العربية</span>
+        </div>
+        <div class="flag-option" data-lang="hi" title="हिन्दी">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNmZjk5MzMiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjMTM4ODA4Ii8+CiAgICAgICAgICAgIDxjaXJjbGUgY3g9IjQ1MCIgY3k9IjMwMCIgcj0iNjAiIGZpbGw9IiMwMDAwODAiLz4KICAgICAgICA8L3N2Zz4=" 
+         alt="hi Flag">
+            <span class="flag-name">हिन्दी</span>
+        </div>
+        <div class="flag-option" data-lang="id" title="Bahasa Indonesia">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIzMDAiIHk9IjMwMCIgZmlsbD0iI2NlMTEyNiIvPgogICAgICAgIDwvc3ZnPg==" 
+         alt="id Flag">
+            <span class="flag-name">Bahasa Indonesia</span>
+        </div>
+        <div class="flag-option" data-lang="vi" title="Tiếng Việt">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNkYTI1MWQiLz4KICAgICAgICAgICAgPHBhdGggZD0iTTQ1MCAzMDBsLTE4MC0xMjZ2MjUyeiIgZmlsbD0iI2ZmZmYwMCIvPgogICAgICAgIDwvc3ZnPg==" 
+         alt="vi Flag">
+            <span class="flag-name">Tiếng Việt</span>
+        </div>
+        <div class="flag-option" data-lang="ja" title="日本語">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPGNpcmNsZSBjeD0iNDUwIiBjeT0iMzAwIiByPSIxODAiIGZpbGw9IiNiYzAwMmQiLz4KICAgICAgICA8L3N2Zz4=" 
+         alt="ja Flag">
+            <span class="flag-name">日本語</span>
+        </div>
+    </div>
+</div>
+        </nav>
+    </header>
+
+  <div class="content-wrapper">
+    <section class="berries-hero">
+      <h1 data-i18n="Гайд по выращиванию Ягоды.hero.title">Гайд по выращиванию Ягоды</h1>
+      <p>Эффективное выращивание Ягоды: посадка, полив, сбор.</p>
+    </section>
+
+    <div class="breadcrumb-container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/ru/index.html">🏠 Главная</a></li>
+          <li><a href="/ru/guides.html">📚 Гайды</a></li>
+          <li aria-current="page" data-i18n="🎯_grow_berries.breadcrumb.current">🎯 Grow Berries</li>
+        </ol>
+      </nav>
+    </div>
+
+    <div class="guide-section">
+      <div class="guide-card">
+        <h2>🎯 Why Grow Berries?</h2>
+        <ul>
+          <li><strong>High Profit:</strong> Used in smoothies, pies, and premium recipes</li>
+          <li><strong>Fast Cycle:</strong> Shorter time to first harvest</li>
+          <li><strong>Scalable:</strong> Great for modular farms</li>
+        </ul>
+      </div>
+
+      <div class="guide-card">
+        <h2>🥘 Requirements</h2>
+        <div class="grid">
+          <div class="grid-item"><h4>🪴 Seedlings</h4><p>Strawberry, Blueberry, Raspberry</p></div>
+          <div class="grid-item"><h4>💧 Water</h4><p>Frequent light watering</p></div>
+          <div class="grid-item"><h4>🌞 Sun</h4><p>Full sun for best sweetness</p></div>
+          <div class="grid-item"><h4>✂️ Pruning</h4><p>Remove old canes after harvest</p></div>
+          <div class="grid-item"><h4>🛠️ Tools</h4><p>Shears, watering can</p></div>
+        </div>
+      </div>
+
+      <div class="guide-card">
+        <h2>📝 Step-by-Step Guide</h2>
+        <h3>Step 1: Prepare Beds</h3>
+        <ul><li>Raised beds with rich compost</li><li>Mulch to retain moisture</li></ul>
+        <h3>Step 2: Plant &amp; Space</h3>
+        <ul><li>12–16 inch spacing</li><li>Water immediately</li></ul>
+        <h3>Step 3: Water &amp; Prune</h3>
+        <ul><li>Light daily watering</li><li>Remove old flowering canes</li></ul>
+        <h3>Step 4: Harvest &amp; Sell</h3>
+        <ul><li>Pick fully colored berries</li><li>Sell in bundles for premium price</li></ul>
+      </div>
+
+      <div class="guide-card">
+        <h2>💡 Pro Tips</h2>
+        <div class="tip-box"><strong>Golden Hours:</strong> Morning watering increases sweetness and yield.</div>
+        <div class="tip-box"><strong>Crop Rotation:</strong> Rotate beds yearly to avoid diseases.</div>
+        <div class="tip-box"><strong>Recipe Synergy:</strong> Reserve best berries for smoothies and pies.</div>
+      </div>
+
+      <div class="guide-card" style="text-align:center;">
+        <a href="/ru/guides.html" class="back-btn">← Назад к гайдам</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+ 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const currentFlag = document.getElementById('current-flag');
+    const flagDropdown = document.getElementById('current-flag');
+    
+    if (currentFlag && flagDropdown) {
+        // 设置当前语言的国旗
+        const currentLang = document.documentElement.getAttribute('lang') || 'en';
+        updateCurrentFlag(currentLang);
+        
+        // 为每个国旗选项添加点击事件
+        document.querySelectorAll('.flag-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const lang = this.getAttribute('data-lang');
+                if (lang) {
+                    // 调用现有的语言切换函数
+                    if (typeof switchLang === 'function') {
+                        switchLang(lang);
+                    } else if (typeof window.__gagI18n !== 'undefined' && window.__gagI18n.switchLang) {
+                        window.__gagI18n.switchLang(lang);
+                    }
+                }
+            });
+        });
+    }
+});
+
+function updateCurrentFlag(lang) {
+    const currentFlag = document.getElementById('current-flag');
+    if (currentFlag) {
+        const flagOptions = document.querySelectorAll('.flag-option');
+        flagOptions.forEach(option => {
+            if (option.getAttribute('data-lang') === lang) {
+                const flagContent = option.innerHTML;
+                currentFlag.innerHTML = flagContent;
+                break;
+            }
+        });
+    }
+}
+</script>
+    <script src="../flag-switcher.js"></script>
+
+    <script src="../i18n/i18n.js"></script></body></html>

@@ -52,7 +52,7 @@
     <!-- Roblox-like color scheme -->
     <link rel="stylesheet" href="https://unpkg.com/simple.css@2.1.0/simple.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍞</text></svg>">
     
     <style>
@@ -325,29 +325,84 @@
 <body>
     <div class="bg-blur"></div>
         <header>
-    <nav>
-      <a href="/index.html" class="logo" data-i18n="nav.logo">🌱 Grow a Garden</a>
-      <a href="/index.html#stats" data-i18n="nav.live">Thống Kê Trực Tiếp</a>
-      <a href="/index.html#map" data-i18n="nav.map">Bản Đồ Nhiệt Toàn Cầu</a>
-      <a href="/index.html#tips" data-i18n="nav.tips">Mẹo</a>
-      <a href="/guides.html" data-i18n="nav.guides">📚 Hướng Dẫn</a>
-      <a href="/index.html#community" class="discord-btn" data-i18n="nav.discord">💬 Discord</a>
-                  <select id="lang-switcher" aria-label="Language">
-                <option value="en" >English</option>
-                <option value="zh-cn" >简体中文</option>
-                <option value="es" >Español</option>
-                <option value="pt-br" >Português</option>
-                <option value="fr" >Français</option>
-                <option value="de" >Deutsch</option>
-                <option value="ru" >Русский</option>
-                <option value="ar" >العربية</option>
-                <option value="hi" >हिन्दी</option>
-                <option value="id" >Bahasa Indonesia</option>
-                <option value="vi" selected="">Tiếng Việt</option>
-                <option value="ja" >日本語</option>
-            </select>
-    </nav>
-  </header>
+        <nav>
+            <a href="index.html" class="logo" data-i18n="nav.logo">🌱 Grow a Garden</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('stats')" data-i18n="nav.live">Live Stats</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('map')" data-i18n="nav.map">Global Heatmap</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('tips')" data-i18n="nav.tips">Tips</a>
+            <a href="guides.html" data-i18n="nav.guides">📚 Guides</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('online')" data-i18n="nav.online">🎮 Online</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('community')" class="discord-btn" data-i18n="nav.discord">💬 Discord</a>
+            <div class="flag-language-switcher">
+    <div class="current-flag" id="current-flag">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNDgwIj4KICAgICAgICAgICAgPGRlZnM+PGNsaXBQYXRoIGlkPSJhIj48cGF0aCBkPSJNLTg1LjMgMGg2ODIuNnY1MTJILTg1LjN6Ii8+PC9jbGlwUGF0aD48L2RlZnM+CiAgICAgICAgICAgIDxjbGlwUGF0aCBpZD0iYiI+PHVzZSBocmVmPSIjYSIvPjwvY2xpcFBhdGg+CiAgICAgICAgICAgIDxnIGNsaXAtcGF0aD0idXJsKCNiKSIgdHJhbnNmb3JtPSJzY2FsZSguOTM3NSkiPgogICAgICAgICAgICAgICAgPGcgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2Utd2lkdGg9IjFwdCI+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2NTEySC0yNTZ6IiBmaWxsPSIjYmQzZDQ0Ii8+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAxMDIuNEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAyMDQuOEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAzMDcuMkg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiA0MDkuNkg3NjhWNTEySC0yNTZ6IiBmaWxsPSIjZmZmIi8+CiAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICA8ZyBmaWxsPSIjMTkyZjVkIj4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAwdjUxMmwyNTYtMjU2eiIvPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9zdmc+" 
+         alt="en Flag">
+    </div>
+    <div class="flag-dropdown" id="flag-dropdown">
+        <div class="flag-option" data-lang="en" title="English">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNDgwIj4KICAgICAgICAgICAgPGRlZnM+PGNsaXBQYXRoIGlkPSJhIj48cGF0aCBkPSJNLTg1LjMgMGg2ODIuNnY1MTJILTg1LjN6Ii8+PC9jbGlwUGF0aD48L2RlZnM+CiAgICAgICAgICAgIDxjbGlwUGF0aCBpZD0iYiI+PHVzZSBocmVmPSIjYSIvPjwvY2xpcFBhdGg+CiAgICAgICAgICAgIDxnIGNsaXAtcGF0aD0idXJsKCNiKSIgdHJhbnNmb3JtPSJzY2FsZSguOTM3NSkiPgogICAgICAgICAgICAgICAgPGcgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2Utd2lkdGg9IjFwdCI+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2NTEySC0yNTZ6IiBmaWxsPSIjYmQzZDQ0Ii8+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAxMDIuNEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAyMDQuOEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAzMDcuMkg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiA0MDkuNkg3NjhWNTEySC0yNTZ6IiBmaWxsPSIjZmZmIi8+CiAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICA8ZyBmaWxsPSIjMTkyZjVkIj4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAwdjUxMmwyNTYtMjU2eiIvPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9zdmc+" 
+         alt="en Flag">
+            <span class="flag-name">English</span>
+        </div>
+        <div class="flag-option" data-lang="zh-cn" title="简体中文">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNkZTI5MTAiLz4KICAgICAgICAgICAgPGcgZmlsbD0iI2ZmZGUwMCI+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNNDUwIDEyMGwtNDUuNyAxNDAuNy0xMTkuMyAwaDE1NGwtMTE5LjMgMHoiLz4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik00NTAgMzAwbC00NS43IDE0MC43LTExOS4zIDBoMTU0bC0xMTkuMyAweiIvPgogICAgICAgICAgICAgICAgPHBhdGggZD0iTTQ1MCA0ODBsLTQ1LjcgMTQwLjctMTE5LjMgMGgxNTRsLTExOS4zIDB6Ii8+CiAgICAgICAgICAgIDwvZz4KICAgICAgICA8L3N2Zz4=" 
+         alt="zh-cn Flag">
+            <span class="flag-name">简体中文</span>
+        </div>
+        <div class="flag-option" data-lang="es" title="Español">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3NTAgNTAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9Ijc1MCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiNjNjBiMWUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9Ijc1MCIgaGVpZ2h0PSIyNTAiIHk9IjEyNSIgZmlsbD0iI2ZmYzQwMCIvPgogICAgICAgIDwvc3ZnPg==" 
+         alt="es Flag">
+            <span class="flag-name">Español</span>
+        </div>
+        <div class="flag-option" data-lang="pt-br" title="Português">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3MjAgNTA0Ij4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjcyMCIgaGVpZ2h0PSI1MDQiIGZpbGw9IiMwMDliM2EiLz4KICAgICAgICAgICAgPHBhdGggZD0iTTM2MCAyNTJsLTE4MC0xMjZ2MjUyeiIgZmlsbD0iI2ZlZGYwMCIvPgogICAgICAgICAgICA8Y2lyY2xlIGN4PSIzNjAiIGN5PSIyNTIiIHI9IjYwIiBmaWxsPSIjMDAyNzc2Ii8+CiAgICAgICAgPC9zdmc+" 
+         alt="pt-br Flag">
+            <span class="flag-name">Português</span>
+        </div>
+        <div class="flag-option" data-lang="fr" title="Français">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiMwMDIzOTUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSI2MDAiIHg9IjMwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjYwMCIgeD0iNjAwIiBmaWxsPSIjZWQyOTM5Ii8+CiAgICAgICAgPC9zdmc+" 
+         alt="fr Flag">
+            <span class="flag-name">Français</span>
+        </div>
+        <div class="flag-option" data-lang="de" title="Deutsch">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiMwMDAiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iI2RkMDAwMCIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjZmZjZTAwIi8+CiAgICAgICAgPC9zdmc+" 
+         alt="de Flag">
+            <span class="flag-name">Deutsch</span>
+        </div>
+        <div class="flag-option" data-lang="ru" title="Русский">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iIzAwMzlhNiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjZDUyYjFlIi8+CiAgICAgICAgPC9zdmc+" 
+         alt="ru Flag">
+            <span class="flag-name">Русский</span>
+        </div>
+        <div class="flag-option" data-lang="ar" title="العربية">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiMwMDZjMzUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI0MDAiIHk9IjEwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iMjAwIiBmaWxsPSIjY2UxMTI2Ii8+CiAgICAgICAgPC9zdmc+" 
+         alt="ar Flag">
+            <span class="flag-name">العربية</span>
+        </div>
+        <div class="flag-option" data-lang="hi" title="हिन्दी">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNmZjk5MzMiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjMTM4ODA4Ii8+CiAgICAgICAgICAgIDxjaXJjbGUgY3g9IjQ1MCIgY3k9IjMwMCIgcj0iNjAiIGZpbGw9IiMwMDAwODAiLz4KICAgICAgICA8L3N2Zz4=" 
+         alt="hi Flag">
+            <span class="flag-name">हिन्दी</span>
+        </div>
+        <div class="flag-option" data-lang="id" title="Bahasa Indonesia">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIzMDAiIHk9IjMwMCIgZmlsbD0iI2NlMTEyNiIvPgogICAgICAgIDwvc3ZnPg==" 
+         alt="id Flag">
+            <span class="flag-name">Bahasa Indonesia</span>
+        </div>
+        <div class="flag-option" data-lang="vi" title="Tiếng Việt">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNkYTI1MWQiLz4KICAgICAgICAgICAgPHBhdGggZD0iTTQ1MCAzMDBsLTE4MC0xMjZ2MjUyeiIgZmlsbD0iI2ZmZmYwMCIvPgogICAgICAgIDwvc3ZnPg==" 
+         alt="vi Flag">
+            <span class="flag-name">Tiếng Việt</span>
+        </div>
+        <div class="flag-option" data-lang="ja" title="日本語">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPGNpcmNsZSBjeD0iNDUwIiBjeT0iMzAwIiByPSIxODAiIGZpbGw9IiNiYzAwMmQiLz4KICAgICAgICA8L3N2Zz4=" 
+         alt="ja Flag">
+            <span class="flag-name">日本語</span>
+        </div>
+    </div>
+</div>
+        </nav>
+    </header>
     
     <section class="bread-hero">
         <h1 data-i18n="Hướng dẫn làm Bánh mì.hero.title">Hướng dẫn làm Bánh mì</h1>
@@ -369,23 +424,23 @@
         <div class="guide-card">
             <h2 data-i18n="mục_lục.toc.title">📋 Mục lục</h2>
             <ul>
-                <li><a href="#basics" data-i18n="basics.toc.basics">Basic Bread Making</a></li>
+                <li><a href="#basics" data-i18n="basics.toc.basics">Làm bánh mì cơ bản</a></li>
                 <li><a href="#ingredients" data-i18n="ingredients.toc.ingredients">Danh sách nguyên liệu thiết yếu</a></li>
-                <li><a href="#recipes" data-i18n="recipes.toc.recipes">Advanced Bread Recipes</a></li>
+                <li><a href="#recipes" data-i18n="recipes.toc.recipes">Công thức bánh mì nâng cao</a></li>
                 <li><a href="#varieties">Bread Varieties &amp; Types</a></li>
-                <li><a href="#tips" data-i18n="tips.toc.tips">Making Tips &amp; Tricks</a></li>
+                <li><a href="#tips" data-i18n="tips.toc.tips">Mẹo chế biến &amp; Tricks</a></li>
                 <li><a href="#efficiency" data-i18n="efficiency.toc.efficiency">Phương pháp cải thiện hiệu suất</a></li>
                 <li><a href="#faq" data-i18n="faq.toc.faq">Câu hỏi thường gặp</a></li>
             </ul>
         </div>
         
         <div class="guide-card" id="basics">
-            <h2>🍞 Basic Bread Making</h2>
+            <h2 data-i18n="d.basics.title">🍞 Làm bánh mì cơ bản</h2>
             <p data-i18n="in_grow_a_garden,_bread_making_is_one_of_the_fundamental_crafting_activities._by_growing_wheat_and_other_ingredients,_you_can_create_various_types_of_bread_to_earn_rewards_and_progress_in_the_game..hero.subtitle">In Grow a Garden, bread making is one of the fundamental crafting activities. By growing wheat and other ingredients, you can create various types of bread to earn rewards and progress in the game.</p>
             
             <h3>Các bước thực hiện:</h3>
             <ol>
-                <li><strong>Grow Wheat</strong>: Plant wheat seeds and water regularly for healthy growth</li>
+                <li><strong>trồng lúa mì</strong>: Plant wheat seeds and water regularly for healthy growth</li>
                 <li><strong>Harvest Wheat</strong>: Wait for wheat to fully mature before harvesting</li>
                 <li><strong>Grind Flour</strong>: Process harvested wheat into flour</li>
                 <li><strong>Mix Dough</strong>: Combine flour, water, yeast, and salt</li>
@@ -405,27 +460,27 @@
             <div class="ingredient-grid">
                 <div class="ingredient-item">
                     <h4>🌾 Wheat</h4>
-                    <p>Growth Time: 60 minutes</p>
+                    <p>Growth Time: 60 phút</p>
                     <p>Value: Basic</p>
-                    <p>Use: Primary ingredient for flour</p>
+                    <p>Cách dùng: Primary ingredient for flour</p>
                 </div>
                 <div class="ingredient-item">
                     <h4>💧 Water</h4>
-                    <p>Collection Time: 30 minutes</p>
+                    <p>Collection Time: 30 phút</p>
                     <p>Value: Basic</p>
-                    <p>Use: Essential for dough mixing</p>
+                    <p>Cách dùng: Essential for dough mixing</p>
                 </div>
                 <div class="ingredient-item">
                     <h4>🧂 Salt</h4>
-                    <p>Growth Time: 45 minutes</p>
+                    <p>Growth Time: 45 phút</p>
                     <p>Value: Basic</p>
-                    <p>Use: Flavor enhancement</p>
+                    <p>Cách dùng: Flavor enhancement</p>
                 </div>
                 <div class="ingredient-item">
                     <h4>🥚 Yeast</h4>
-                    <p>Growth Time: 40 minutes</p>
-                    <p>Value: Medium</p>
-                    <p>Use: Dough rising agent</p>
+                    <p>Growth Time: 40 phút</p>
+                    <p>Value: Trung bình</p>
+                    <p>Cách dùng: Dough rising agent</p>
                 </div>
             </div>
             
@@ -433,64 +488,64 @@
             <div class="ingredient-grid">
                 <div class="ingredient-item">
                     <h4>🍯 Honey</h4>
-                    <p>Growth Time: 90 minutes</p>
+                    <p>Growth Time: 90 phút</p>
                     <p>Value: High</p>
-                    <p>Use: Sweet bread varieties</p>
+                    <p>Cách dùng: Sweet bread varieties</p>
                 </div>
                 <div class="ingredient-item">
                     <h4>🥛 Milk</h4>
-                    <p>Growth Time: 75 minutes</p>
+                    <p>Growth Time: 75 phút</p>
                     <p>Value: High</p>
-                    <p>Use: Rich bread varieties</p>
+                    <p>Cách dùng: Rich bread varieties</p>
                 </div>
                 <div class="ingredient-item">
                     <h4>🥚 Eggs</h4>
-                    <p>Growth Time: 120 minutes</p>
+                    <p>Growth Time: 120 phút</p>
                     <p>Value: High</p>
-                    <p>Use: Enriched bread varieties</p>
+                    <p>Cách dùng: Enriched bread varieties</p>
                 </div>
                 <div class="ingredient-item">
                     <h4>🌾 Rye</h4>
-                    <p>Growth Time: 100 minutes</p>
+                    <p>Growth Time: 100 phút</p>
                     <p>Value: High</p>
-                    <p>Use: Rye bread varieties</p>
+                    <p>Cách dùng: Rye bread varieties</p>
                 </div>
             </div>
             
-            <h3>Rare Ingredients (Expert Level)</h3>
+            <h3>Rare Ingredients (Chuyên gia Level)</h3>
             <div class="ingredient-grid">
                 <div class="ingredient-item">
                     <h4>🌰 Nuts</h4>
-                    <p>Growth Time: 150 minutes</p>
+                    <p>Growth Time: 150 phút</p>
                     <p>Value: Rare</p>
-                    <p>Use: Nut bread varieties</p>
+                    <p>Cách dùng: Nut bread varieties</p>
                 </div>
                 <div class="ingredient-item">
                     <h4>🍇 Raisins</h4>
-                    <p>Growth Time: 180 minutes</p>
+                    <p>Growth Time: 180 phút</p>
                     <p>Value: Rare</p>
-                    <p>Use: Sweet bread varieties</p>
+                    <p>Cách dùng: Sweet bread varieties</p>
                 </div>
                 <div class="ingredient-item">
                     <h4>🌿 Herbs</h4>
-                    <p>Growth Time: 200 minutes</p>
+                    <p>Growth Time: 200 phút</p>
                     <p>Value: Rare</p>
-                    <p>Use: Herb bread varieties</p>
+                    <p>Cách dùng: Herb bread varieties</p>
                 </div>
                 <div class="ingredient-item">
                     <h4>🍫 Chocolate</h4>
-                    <p>Growth Time: 240 minutes</p>
+                    <p>Growth Time: 240 phút</p>
                     <p>Value: Rare</p>
-                    <p>Use: Chocolate bread varieties</p>
+                    <p>Cách dùng: Chocolate bread varieties</p>
                 </div>
             </div>
         </div>
         
         <div class="guide-card" id="recipes">
-            <h2>🍽️ Advanced Bread Recipes</h2>
+            <h2 data-i18n="d.recipes.title">🍽️ Công thức bánh mì nâng cao</h2>
             <p>Different ingredient combinations can create bread of varying levels and effects. Here's a detailed recipe table:</p>
             
-            <h3 data-i18n="recipes.basic_bread.title">Basic Bread Recipes</h3>
+            <h3 data-i18n="recipes.basic_bread.title">Công thức bánh mì cơ bản</h3>
             <table class="recipe-table">
                 <thead>
                     <tr>
@@ -505,35 +560,35 @@
                     <tr>
                         <td>White Bread</td>
                         <td>Wheat + Water + Yeast + Salt</td>
-                        <td data-i18n="time.minutes" data-time="4">4 minutes</td>
-                        <td>60 coins</td>
-                        <td>Easy</td>
+                        <td data-i18n="time.minutes" data-time="4">4 phút</td>
+                        <td>60 xu</td>
+                        <td>Dễ</td>
                     </tr>
                     <tr>
                         <td>Whole Wheat Bread</td>
                         <td>Wheat + Water + Yeast + Salt + Rye</td>
-                        <td data-i18n="time.minutes" data-time="5">5 minutes</td>
-                        <td>80 coins</td>
-                        <td>Easy</td>
+                        <td data-i18n="time.minutes" data-time="5">5 phút</td>
+                        <td>80 xu</td>
+                        <td>Dễ</td>
                     </tr>
                     <tr>
                         <td>Sweet Bread</td>
                         <td>Wheat + Water + Yeast + Salt + Honey</td>
-                        <td data-i18n="time.minutes" data-time="6">6 minutes</td>
-                        <td>100 coins</td>
-                        <td>Medium</td>
+                        <td data-i18n="time.minutes" data-time="6">6 phút</td>
+                        <td>100 xu</td>
+                        <td>Trung bình</td>
                     </tr>
                     <tr>
                         <td>Milk Bread</td>
                         <td>Wheat + Water + Yeast + Salt + Milk</td>
-                        <td data-i18n="time.minutes" data-time="7">7 minutes</td>
-                        <td>120 coins</td>
-                        <td>Medium</td>
+                        <td data-i18n="time.minutes" data-time="7">7 phút</td>
+                        <td>120 xu</td>
+                        <td>Trung bình</td>
                     </tr>
                 </tbody>
             </table>
             
-            <h3 data-i18n="recipes.advanced_bread.title">Advanced Bread Recipes</h3>
+            <h3 data-i18n="recipes.advanced_bread.title">Công thức bánh mì nâng cao</h3>
             <table class="recipe-table">
                 <thead>
                     <tr>
@@ -548,35 +603,35 @@
                     <tr>
                         <td>Nut Bread</td>
                         <td>Wheat + Water + Yeast + Salt + Nuts</td>
-                        <td data-i18n="time.minutes" data-time="8">8 minutes</td>
-                        <td>150 coins</td>
-                        <td>Hard</td>
+                        <td data-i18n="time.minutes" data-time="8">8 phút</td>
+                        <td>150 xu</td>
+                        <td>Khó</td>
                     </tr>
                     <tr>
                         <td>Raisin Bread</td>
                         <td>Wheat + Water + Yeast + Salt + Raisins</td>
-                        <td data-i18n="time.minutes" data-time="9">9 minutes</td>
-                        <td>180 coins</td>
-                        <td>Hard</td>
+                        <td data-i18n="time.minutes" data-time="9">9 phút</td>
+                        <td>180 xu</td>
+                        <td>Khó</td>
                     </tr>
                     <tr>
                         <td>Herb Bread</td>
                         <td>Wheat + Water + Yeast + Salt + Herbs</td>
-                        <td data-i18n="time.minutes" data-time="10">10 minutes</td>
-                        <td>200 coins</td>
-                        <td>Expert</td>
+                        <td data-i18n="time.minutes" data-time="10">10 phút</td>
+                        <td>200 xu</td>
+                        <td>Chuyên gia</td>
                     </tr>
                     <tr>
                         <td>Chocolate Bread</td>
                         <td>Wheat + Water + Yeast + Salt + Chocolate</td>
-                        <td data-i18n="time.minutes" data-time="12">12 minutes</td>
-                        <td>250 coins</td>
-                        <td>Expert</td>
+                        <td data-i18n="time.minutes" data-time="12">12 phút</td>
+                        <td>250 xu</td>
+                        <td>Chuyên gia</td>
                     </tr>
                 </tbody>
             </table>
             
-            <h3 data-i18n="recipes.premium_bread.title">Premium Bread Recipes</h3>
+            <h3 data-i18n="recipes.premium_bread.title">Công thức bánh mì cao cấp</h3>
             <table class="recipe-table">
                 <thead>
                     <tr>
@@ -591,23 +646,23 @@
                     <tr>
                         <td>Artisan Bread</td>
                         <td>All Basic + All Advanced + All Rare</td>
-                        <td data-i18n="time.minutes" data-time="15">15 minutes</td>
-                        <td>400 coins</td>
-                        <td>Master</td>
+                        <td data-i18n="time.minutes" data-time="15">15 phút</td>
+                        <td>400 xu</td>
+                        <td>Bậc thầy</td>
                     </tr>
                     <tr>
                         <td>Rainbow Bread</td>
                         <td>All Ingredients + Special Dyes</td>
-                        <td data-i18n="time.minutes" data-time="20">20 minutes</td>
-                        <td>600 coins</td>
-                        <td>Legendary</td>
+                        <td data-i18n="time.minutes" data-time="20">20 phút</td>
+                        <td>600 xu</td>
+                        <td>Huyền thoại</td>
                     </tr>
                 </tbody>
             </table>
         </div>
         
         <div class="guide-card" id="varieties">
-            <h2>🎨 Bread Varieties &amp; Types</h2>
+            <h2 data-i18n="d.varieties.title">🎨 Bread Varieties &amp; Types</h2>
             <p data-i18n="grow_a_garden_features_various_bread_types,_each_with_unique_characteristics_and_rewards:.hero.subtitle">Grow a Garden features various bread types, each with unique characteristics and rewards:</p>
             
             <div class="bread-variety">
@@ -654,31 +709,31 @@
         </div>
         
         <div class="guide-card" id="tips">
-            <h2>💡 Making Tips &amp; Tricks</h2>
-            <p data-i18n="master_these_tips_to_become_a_bread-making_expert_in_grow_a_garden:.hero.subtitle">Master these tips to become a bread-making expert in Grow a Garden:</p>
+            <h2 data-i18n="d.tips.title">💡 Mẹo chế biến &amp; Tricks</h2>
+            <p data-i18n="master_these_tips_to_become_a_bread-making_expert_in_grow_a_garden:.hero.subtitle">Bậc thầy these tips to become a bread-making expert in Grow a Garden:</p>
             
-            <h3>🌱 Growing Tips</h3>
+            <h3>🌱 Mẹo trồng trọt</h3>
             <ul>
-                <li><strong>Optimal Watering:</strong> Water wheat every 2-3 hours for maximum growth speed</li>
-                <li><strong>Golden Hours:</strong> Water during 7:00-9:00 in-game time for double effects</li>
-                <li><strong>Harvest Timing:</strong> Wait for wheat to fully mature (100% growth) before harvesting</li>
-                <li><strong>Soil Quality:</strong> Use premium soil for rare ingredients to increase success rate</li>
+                <li><strong>Tưới nước tối ưu:</strong> Water wheat every 2-3 hours for maximum growth speed</li>
+                <li><strong>Giờ vàng:</strong> Water during 7:00-9:00 in-game time for double effects</li>
+                <li><strong>Thời điểm thu hoạch:</strong> Wait for wheat to fully mature (100% growth) before harvesting</li>
+                <li><strong>Chất lượng đất:</strong> Use premium soil for rare ingredients to increase success rate</li>
             </ul>
             
-            <h3>🍞 Making Tips</h3>
+            <h3>🍞 Mẹo chế biến</h3>
             <ul>
                 <li><strong>Flour Quality:</strong> Higher quality wheat produces better flour</li>
                 <li><strong>Yeast Management:</strong> Proper yeast handling ensures good bread rise</li>
-                <li><strong>Recipe Efficiency:</strong> Master basic recipes before attempting advanced ones</li>
-                <li><strong>Storage Management:</strong> Keep ingredients organized for quick access</li>
+                <li><strong>Hiệu quả công thức:</strong> Bậc thầy basic recipes before attempting advanced ones</li>
+                <li><strong>Quản lý kho:</strong> Keep ingredients organized for quick access</li>
             </ul>
             
-            <h3>💰 Profit Optimization</h3>
+            <h3>💰 Tối ưu lợi nhuận</h3>
             <ul>
-                <li><strong>Market Timing:</strong> Sell bread during peak demand hours</li>
-                <li><strong>Quality vs Quantity:</strong> Focus on high-quality bread for better profit margins</li>
-                <li><strong>Recipe Mastery:</strong> Master rare recipes for exclusive market access</li>
-                <li><strong>Supply Chain:</strong> Maintain steady ingredient supply for continuous production</li>
+                <li><strong>Thời điểm thị trường:</strong> Sell bread during peak demand hours</li>
+                <li><strong>Chất lượng vs Số lượng:</strong> Focus on high-quality bread for better profit margins</li>
+                <li><strong>Thành thạo công thức:</strong> Bậc thầy rare recipes for exclusive market access</li>
+                <li><strong>Chuỗi cung ứng:</strong> Maintain steady ingredient supply for continuous production</li>
             </ul>
             
             <div class="tip-box">
@@ -687,23 +742,23 @@
         </div>
         
         <div class="guide-card" id="efficiency">
-            <h2>⚡ Phương pháp cải thiện hiệu suất</h2>
+            <h2 data-i18n="d.efficiency.title">⚡ Phương pháp cải thiện hiệu suất</h2>
             <p>Maximize your bread-making efficiency with these advanced strategies:</p>
             
-            <h3>🏭 Production Optimization</h3>
+            <h3>🏭 Tối ưu sản xuất</h3>
             <ul>
-                <li><strong>Automated Systems:</strong> Set up automated watering systems for consistent growth</li>
-                <li><strong>Batch Processing:</strong> Process multiple bread loaves simultaneously</li>
-                <li><strong>Ingredient Rotation:</strong> Rotate crops to maintain soil fertility</li>
-                <li><strong>Quality Control:</strong> Monitor ingredient quality for consistent results</li>
+                <li><strong>Hệ thống tự động:</strong> Set up automated watering systems for consistent growth</li>
+                <li><strong>Xử lý theo lô:</strong> Process multiple bread loaves simultaneously</li>
+                <li><strong>Luân canh:</strong> Rotate crops to maintain soil fertility</li>
+                <li><strong>Kiểm soát chất lượng:</strong> Monitor ingredient quality for consistent results</li>
             </ul>
             
-            <h3 data-i18n="📊_advanced_strategies.📊_advanced_strategies.title">📊 Advanced Strategies</h3>
+            <h3 data-i18n="📊_advanced_strategies.📊_advanced_strategies.title">📊 Chiến lược nâng cao</h3>
             <ul>
-                <li><strong>Market Analysis:</strong> Track bread demand patterns for optimal production</li>
-                <li><strong>Recipe Optimization:</strong> Develop efficient ingredient combinations</li>
-                <li><strong>Resource Management:</strong> Balance ingredient costs with bread profits</li>
-                <li><strong>Skill Development:</strong> Improve bread-making skills for better results</li>
+                <li><strong>Phân tích thị trường:</strong> Track bread demand patterns for optimal production</li>
+                <li><strong>Tối ưu công thức:</strong> Develop efficient ingredient combinations</li>
+                <li><strong>Quản lý tài nguyên:</strong> Balance ingredient costs with bread profits</li>
+                <li><strong>Phát triển kỹ năng:</strong> Improve bread-making skills for better results</li>
             </ul>
             
             <div class="warning-box">
@@ -712,10 +767,10 @@
         </div>
         
         <div class="guide-card" id="faq">
-            <h2>❓ Câu hỏi thường gặp</h2>
+            <h2 data-i18n="d.faq.title">❓ Câu hỏi thường gặp</h2>
             
             <h3>Q: How long does it take to make a basic bread?</h3>
-            <p>A: Basic bread takes 4-7 minutes to make, while advanced recipes can take 8-20 minutes depending on complexity.</p>
+            <p>A: Basic bread takes 4-7 phút to make, while advanced recipes can take 8-20 phút depending on complexity.</p>
             
             <h3>Q: What's the most profitable bread recipe?</h3>
             <p>A: Premium breads like Artisan Bread and Rainbow Bread offer the highest profit margins, but require rare ingredients.</p>
@@ -740,13 +795,13 @@
             <ol>
                 <li><strong>Start Small:</strong> Begin with basic bread recipes to build your skills</li>
                 <li><strong>Expand Your Garden:</strong> Plant a variety of ingredients for different recipes</li>
-                <li><strong>Master Advanced Recipes:</strong> Work on complex bread varieties for higher profits</li>
+                <li><strong>Bậc thầy Advanced Recipes:</strong> Work on complex bread varieties for higher profits</li>
                 <li><strong>Join the Community:</strong> Connect with other players to share tips and strategies</li>
                 <li><strong>Stay Updated:</strong> Keep up with game updates for new recipes and features</li>
             </ol>
             
             <div class="tip-box">
-                <strong>💡 Community Tip:</strong> Join our Discord server to connect with other bread makers, share recipes, and get the latest tips and tricks!
+                <strong>💡 Mẹo cộng đồng:</strong> Join our Discord server to connect with other bread makers, share recipes, and get the latest tips and tricks!
             </div>
         </div>
         
@@ -755,4 +810,48 @@
     
     <script src="script.js"></script>
 
- </body></html>
+ 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const currentFlag = document.getElementById('current-flag');
+    const flagDropdown = document.getElementById('current-flag');
+    
+    if (currentFlag && flagDropdown) {
+        // 设置当前语言的国旗
+        const currentLang = document.documentElement.getAttribute('lang') || 'en';
+        updateCurrentFlag(currentLang);
+        
+        // 为每个国旗选项添加点击事件
+        document.querySelectorAll('.flag-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const lang = this.getAttribute('data-lang');
+                if (lang) {
+                    // 调用现有的语言切换函数
+                    if (typeof switchLang === 'function') {
+                        switchLang(lang);
+                    } else if (typeof window.__gagI18n !== 'undefined' && window.__gagI18n.switchLang) {
+                        window.__gagI18n.switchLang(lang);
+                    }
+                }
+            });
+        });
+    }
+});
+
+function updateCurrentFlag(lang) {
+    const currentFlag = document.getElementById('current-flag');
+    if (currentFlag) {
+        const flagOptions = document.querySelectorAll('.flag-option');
+        flagOptions.forEach(option => {
+            if (option.getAttribute('data-lang') === lang) {
+                const flagContent = option.innerHTML;
+                currentFlag.innerHTML = flagContent;
+                break;
+            }
+        });
+    }
+}
+</script>
+    <script src="../flag-switcher.js"></script>
+
+    <script src="../i18n/i18n.js"></script></body></html>

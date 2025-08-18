@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Storage and Logistics in Grow a Garden - Optimization Guide</title>
+  <meta name="description" content="Optimize storage and logistics in Grow a Garden: hub design, labeling, batching, routing, and market delivery strategies to reduce walking and increase profit." />
+  <meta name="keywords" content="grow a garden storage, logistics, routing, chest labeling, batching, delivery, optimization" />
+  <link rel="canonical" href="https://growagarden.cv/storage-and-logistics.html" />
+
+  <meta property="og:title" content="Storage and Logistics in Grow a Garden - Optimization Guide" />
+  <meta property="og:description" content="Design storage hubs, label chests, plan routes, and batch deliveries for maximum efficiency." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://growagarden.cv/storage-and-logistics.html" />
+  <meta property="og:image" content="https://growagarden.cv/logistics-guide-og.jpg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Storage and Logistics in Grow a Garden - Optimization Guide" />
+  <meta name="twitter:description" content="Routing, batching, storage layout, and delivery tips for faster operations." />
+  <meta name="twitter:image" content="https://growagarden.cv/logistics-guide-og.jpg" />
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"HowTo",
+    "name":"Storage and Logistics in Grow a Garden",
+    "description":"Set up storage hubs, label inventory, plan routes, and batch deliveries to reduce walking and increase profit.",
+    "image":"https://growagarden.cv/logistics-guide-og.jpg",
+    "url":"https://growagarden.cv/storage-and-logistics.html",
+    "inLanguage":"en",
+    "step":[
+      {"@type":"HowToStep","name":"Build Storage Hub","text":"Place central storage between fields and processing."},
+      {"@type":"HowToStep","name":"Label & Sort","text":"Label per ingredient; keep finished goods separate."},
+      {"@type":"HowToStep","name":"Plan Routes","text":"Create clockwise loops for pickup and delivery."}
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="https://unpkg.com/simple.css@2.1.0/simple.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📦</text></svg>" />
+
+  <style>
+    body{position:relative;min-height:100vh;overflow-x:hidden}
+    .bg-blur{position:fixed;inset:0;width:100vw;height:100vh;z-index:0;background: url('grow-bg.jpg') center/cover no-repeat;opacity:.3;filter:blur(2px);pointer-events:none}
+    .content-wrapper{position:relative;z-index:1}
+    .log-hero{background:linear-gradient(135deg,#0f766e,#10b981);color:#fff;padding:4rem 2rem;text-align:center;margin-top:60px;margin-bottom:2rem;position:relative}
+    .log-hero::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.2);z-index:1}
+    .log-hero h1,.log-hero p{position:relative;z-index:2}
+    .log-hero h1{font-size:3rem;margin-bottom:1rem;color:#fff!important;text-shadow:0 2px 4px rgba(0,0,0,.7),0 1px 2px rgba(0,0,0,.8);font-weight:800;letter-spacing:.5px;-webkit-text-stroke:.5px rgba(0,0,0,.2)}
+    .log-hero p{font-size:1.2rem;color:#fff!important;text-shadow:0 1px 3px rgba(0,0,0,.6),0 1px 2px rgba(0,0,0,.7);font-weight:600;letter-spacing:.3px;-webkit-text-stroke:.3px rgba(0,0,0,.15)}
+    .guide-section{max-width:1200px;margin:0 auto;padding:2rem}
+    .guide-card{background:rgba(255,255,255,.98);backdrop-filter:blur(10px);border-radius:12px;padding:2rem;margin-bottom:2rem;box-shadow:0 8px 25px rgba(0,0,0,.15);border:1px solid rgba(255,255,255,.3)}
+    .guide-card h2{color:#23272a!important;font-weight:700;margin-bottom:1.5rem;text-shadow:0 1px 2px rgba(0,0,0,.1)}
+    .guide-card h3{color:#2c3e50!important;font-weight:600;margin-bottom:1rem}
+    .guide-card p,.guide-card li{color:#34495e!important;font-weight:500;line-height:1.6}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem;margin:2rem 0}
+    .grid-item{background:rgba(255,255,255,.95);border-radius:8px;padding:1rem;border-left:4px solid #10b981;box-shadow:0 4px 12px rgba(0,0,0,.1)}
+    .tip-box{background:linear-gradient(135deg,#f1c40f,#f39c12);color:#fff;padding:1rem;border-radius:8px;margin:1rem 0;box-shadow:0 4px 15px rgba(241,196,15,.3)}
+    .tip-box strong{font-weight:700}
+    .back-btn{display:inline-block;background:#5865f2;color:#fff;padding:.75rem 1.5rem;text-decoration:none;border-radius:8px;margin-bottom:2rem;transition:all .3s ease}
+    .back-btn:hover{background:#4752c4;transform:translateY(-2px)}
+    .breadcrumb-container{max-width:1200px;margin:0 auto;padding:1rem 2rem}
+    .breadcrumb{background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-radius:8px;padding:.75rem 1rem;box-shadow:0 2px 8px rgba(0,0,0,.1);border:1px solid rgba(255,255,255,.3)}
+    .breadcrumb ol{list-style:none;margin:0;padding:0;display:flex;align-items:center;flex-wrap:wrap}
+    .breadcrumb li{display:flex;align-items:center;font-weight:500;color:#34495e}
+    .breadcrumb li:not(:last-child)::after{content:"›";margin:0 .5rem;color:#666}
+    .breadcrumb a{color:#10b981;text-decoration:none;transition:color .3s}
+    .breadcrumb a:hover{color:#0d9488}
+    .breadcrumb li[aria-current="page"]{color:#666;font-weight:bold}
+    @media (max-width:768px){.log-hero h1{font-size:2rem}.guide-section{padding:1rem}.guide-card{padding:1.5rem}}
+  </style>
+</head>
+<body>
+  <div class="bg-blur"></div>
+  <header>
+    <nav>
+      <a href="index.html" class="logo">🌱 Grow a Garden</a>
+      <a href="javascript:void(0)" onclick="scrollToSection('stats')">Live Stats</a>
+      <a href="javascript:void(0)" onclick="scrollToSection('map')">Global Heatmap</a>
+      <a href="javascript:void(0)" onclick="scrollToSection('tips')">Tips</a>
+      <a href="guides.html">📚 Guides</a>
+      <a href="javascript:void(0)" onclick="scrollToSection('community')" class="discord-btn">💬 Discord</a>
+    </nav>
+  </header>
+
+  <div class="content-wrapper">
+    <section class="log-hero">
+      <h1>📦 Storage and Logistics in Grow a Garden</h1>
+      <p>Optimization Guide: Storage Hubs, Labeling, Routing, and Delivery</p>
+    </section>
+
+    <div class="breadcrumb-container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="index.html">🏠 Home</a></li>
+          <li><a href="guides.html">📚 Guides</a></li>
+          <li aria-current="page">📦 Storage & Logistics</li>
+        </ol>
+      </nav>
+    </div>
+
+    <div class="guide-section">
+      <div class="guide-card">
+        <h2>🎯 Goals</h2>
+        <ul>
+          <li>Reduce walking distance and idle time</li>
+          <li>Keep inventory clear and easy to find</li>
+          <li>Deliver goods in efficient batches</li>
+        </ul>
+      </div>
+
+      <div class="guide-card">
+        <h2>🏗️ Storage Hub Design</h2>
+        <div class="grid">
+          <div class="grid-item"><h4>📍 Central Placement</h4><p>Between fields and processing line.</p></div>
+          <div class="grid-item"><h4>🏷️ Labeling</h4><p>One chest per ingredient; distinct icons/colors.</p></div>
+          <div class="grid-item"><h4>🧭 Routing</h4><p>Clockwise pickup and delivery loops.</p></div>
+          <div class="grid-item"><h4>🚪 Access</h4><p>2-tile paths; avoid choke points.</p></div>
+          <div class="grid-item"><h4>🧊 Cold Storage</h4><p>Separate finished goods to avoid mixing.</p></div>
+          <div class="grid-item"><h4>🧮 Buffer Stock</h4><p>Keep small buffer to prevent line stops.</p></div>
+        </div>
+      </div>
+
+      <div class="guide-card">
+        <h2>🚚 Delivery & Market Strategy</h2>
+        <h3>Batching</h3>
+        <ul><li>Deliver full stacks to reduce trips</li><li>Bundle related goods (e.g., pies + smoothies)</li></ul>
+        <h3>Timing</h3>
+        <ul><li>Sell during peak hours</li><li>Align with co-op selling windows</li></ul>
+        <h3>Routing</h3>
+        <ul><li>Plan loop: storage → market → storage</li><li>Drop-off near entrance for quick turnarounds</li></ul>
+      </div>
+
+      <div class="guide-card" style="text-align:center;">
+        <a href="guides.html" class="back-btn">← Back to Guides</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html> 

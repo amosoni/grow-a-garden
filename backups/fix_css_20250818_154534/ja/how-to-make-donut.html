@@ -1,0 +1,855 @@
+<!DOCTYPE html><html lang="ja" dir="ltr"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donutの作り方 - 完全ガイド | ガーデン栽培のコツ</title>
+    <meta name="description" content="Learn how to make delicious donuts in Roblox Grow a Garden! From basic ingredient collection to advanced recipes, including all donut-making tips, best ingredient combinations, and efficiency improvement methods.">
+    <meta name="keywords" content="grow a gardenでdonutの作り方, roblox donutレシピ, grow a gardenガイド, donut作りガイド, roblox農場ゲーム, donut材料収集, grow a gardenコツ">
+    <link rel="canonical" href="https://your-domain.com/how-to-make-donut.html">
+    
+    <!-- Open Graph for social sharing -->
+    <meta property="og:title" content="Donutの作り方 - 完全ガイド">
+    <meta property="og:description" content="Learn how to make delicious donuts in Roblox Grow a Garden! From basic ingredient collection to advanced recipes, including all donut-making tips.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://your-domain.com/how-to-make-donut.html">
+    <meta property="og:image" content="https://your-domain.com/donut-guide-og.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Donutの作り方 - 完全ガイド">
+    <meta name="twitter:description" content="Learn how to make delicious donuts in Roblox Grow a Garden! From basic ingredient collection to advanced recipes.">
+    <meta name="twitter:image" content="https://your-domain.com/donut-guide-og.jpg">
+    
+    <!-- Structured Data JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "Donutの作り方",
+      "description": "Learn how to make delicious donuts in Roblox Grow a Garden, including ingredient collection, recipe making, and efficiency improvement tips.",
+      "image": "https://your-domain.com/donut-guide-og.jpg",
+      "url": "https://your-domain.com/how-to-make-donut.html",
+      "inLanguage": "ja",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Collect Basic Ingredients",
+          "text": "Plant flour, sugar, eggs and other basic ingredients in Grow a Garden"
+        },
+        {
+          "@type": "HowToStep", 
+          "name": "Make Donut",
+          "text": "Put collected ingredients into the donut maker to create donuts"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Improve Efficiency",
+          "text": "Use advanced recipes and special ingredients to make higher quality donuts"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Roblox-like color scheme -->
+    <link rel="stylesheet" href="https://unpkg.com/simple.css@2.1.0/simple.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍩</text></svg>">
+    
+    <style>
+        body {
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .bg-blur {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: 0;
+            background: url('grow-bg.jpg') center center/cover no-repeat;
+            opacity: 0.3;
+            filter: blur(2px);
+        }
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+        .donut-hero {
+            background: linear-gradient(135deg, #e67e22, #d35400);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-top: 60px; /* 为固定导航栏留出空间 */
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        .donut-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        .donut-hero h1,
+        .donut-hero p {
+            position: relative;
+            z-index: 2;
+        }
+        .donut-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: white !important;
+            text-shadow: 
+                0 2px 4px rgba(0,0,0,0.7),
+                0 1px 2px rgba(0,0,0,0.8);
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            -webkit-text-stroke: 0.5px rgba(0,0,0,0.2);
+        }
+        .donut-hero p {
+            font-size: 1.2rem;
+            opacity: 1;
+            color: white !important;
+            text-shadow: 
+                0 1px 3px rgba(0,0,0,0.6),
+                0 1px 2px rgba(0,0,0,0.7);
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            -webkit-text-stroke: 0.3px rgba(0,0,0,0.15);
+        }
+        .guide-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .guide-card {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .guide-card h2 {
+            color: #23272a !important;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+        .guide-card h3 {
+            color: #2c3e50 !important;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .guide-card p, .guide-card li {
+            color: #34495e !important;
+            font-weight: 500;
+            line-height: 1.6;
+        }
+        .ingredient-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .ingredient-item {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 8px;
+            padding: 1rem;
+            border-left: 4px solid #e67e22;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .ingredient-item h4 {
+            color: #23272a !important;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .ingredient-item p {
+            color: #34495e !important;
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+        }
+        .recipe-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+        }
+        .recipe-table th,
+        .recipe-table td {
+            border: 1px solid #ddd;
+            padding: 0.75rem;
+            text-align: left;
+            font-weight: 500;
+        }
+        .recipe-table th {
+            background: #e67e22;
+            color: white;
+            font-weight: 700;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+        .recipe-table td {
+            color: #2c3e50 !important;
+            background: rgba(255, 255, 255, 0.9);
+        }
+        .recipe-table tr:nth-child(even) td {
+            background: rgba(230, 126, 34, 0.08);
+        }
+        .tip-box {
+            background: linear-gradient(135deg, #f1c40f, #f39c12);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            box-shadow: 0 4px 15px rgba(241, 196, 15, 0.3);
+        }
+        .tip-box strong {
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+            font-weight: 700;
+        }
+        .warning-box {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+        }
+        .warning-box strong {
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+            font-weight: 700;
+        }
+        .back-btn {
+            display: inline-block;
+            background: #5865f2;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+        .back-btn:hover {
+            background: #4752c4;
+            transform: translateY(-2px);
+        }
+        .donut-variety {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .donut-card {
+            background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 6px 20px rgba(230, 126, 34, 0.2);
+            border: 2px solid #ffb74d;
+        }
+        .donut-card h4 {
+            color: #d84315 !important;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .donut-card ul {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+        .donut-card li {
+            color: #5d4037 !important;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* 面包屑导航样式 */
+        .breadcrumb-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+        }
+        .breadcrumb {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .breadcrumb ol {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .breadcrumb li {
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            color: #34495e;
+        }
+        .breadcrumb li:not(:last-child)::after {
+            content: "›";
+            margin: 0 0.5rem;
+            color: #e67e22;
+            font-weight: bold;
+        }
+        .breadcrumb a {
+            color: #e67e22;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .breadcrumb a:hover {
+            color: #d35400;
+            text-decoration: underline;
+        }
+        .breadcrumb li[aria-current="page"] {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+    </style>
+    
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-HG12TJB5LZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HG12TJB5LZ');
+    </script>
+</head>
+<body>
+    <div class="bg-blur"></div>
+        <header>
+        <nav>
+            <a href="#" class="logo" data-i18n="nav.logo">🌱 Grow a Garden</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('stats')" data-i18n="nav.live">Live Stats</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('map')" data-i18n="nav.map">Global Heatmap</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('tips')" data-i18n="nav.tips">Tips</a>
+            <a href="guides.html" data-i18n="nav.guides">📚 Guides</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('online')" data-i18n="nav.online">🎮 Online</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('community')" class="discord-btn" data-i18n="nav.discord">💬 Discord</a>
+            <div class="flag-language-switcher">
+    <div class="current-flag" id="current-flag">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNDgwIj4KICAgICAgICAgICAgPGRlZnM+PGNsaXBQYXRoIGlkPSJhIj48cGF0aCBkPSJNLTg1LjMgMGg2ODIuNnY1MTJILTg1LjN6Ii8+PC9jbGlwUGF0aD48L2RlZnM+CiAgICAgICAgICAgIDxjbGlwUGF0aCBpZD0iYiI+PHVzZSBocmVmPSIjYSIvPjwvY2xpcFBhdGg+CiAgICAgICAgICAgIDxnIGNsaXAtcGF0aD0idXJsKCNiKSIgdHJhbnNmb3JtPSJzY2FsZSguOTM3NSkiPgogICAgICAgICAgICAgICAgPGcgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2Utd2lkdGg9IjFwdCI+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2NTEySC0yNTZ6IiBmaWxsPSIjYmQzZDQ0Ii8+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAxMDIuNEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAyMDQuOEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAzMDcuMkg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiA0MDkuNkg3NjhWNTEySC0yNTZ6IiBmaWxsPSIjZmZmIi8+CiAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICA8ZyBmaWxsPSIjMTkyZjVkIj4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAwdjUxMmwyNTYtMjU2eiIvPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9zdmc+" 
+         alt="en Flag">
+    </div>
+    <div class="flag-dropdown" id="flag-dropdown">
+        <div class="flag-option" data-lang="en" title="English">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNDgwIj4KICAgICAgICAgICAgPGRlZnM+PGNsaXBQYXRoIGlkPSJhIj48cGF0aCBkPSJNLTg1LjMgMGg2ODIuNnY1MTJILTg1LjN6Ii8+PC9jbGlwUGF0aD48L2RlZnM+CiAgICAgICAgICAgIDxjbGlwUGF0aCBpZD0iYiI+PHVzZSBocmVmPSIjYSIvPjwvY2xpcFBhdGg+CiAgICAgICAgICAgIDxnIGNsaXAtcGF0aD0idXJsKCNiKSIgdHJhbnNmb3JtPSJzY2FsZSguOTM3NSkiPgogICAgICAgICAgICAgICAgPGcgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2Utd2lkdGg9IjFwdCI+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2NTEySC0yNTZ6IiBmaWxsPSIjYmQzZDQ0Ii8+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAxMDIuNEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAyMDQuOEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAzMDcuMkg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiA0MDkuNkg3NjhWNTEySC0yNTZ6IiBmaWxsPSIjZmZmIi8+CiAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICA8ZyBmaWxsPSIjMTkyZjVkIj4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAwdjUxMmwyNTYtMjU2eiIvPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9zdmc+" 
+         alt="en Flag">
+            <span class="flag-name">English</span>
+        </div>
+        <div class="flag-option" data-lang="zh-cn" title="简体中文">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNkZTI5MTAiLz4KICAgICAgICAgICAgPGcgZmlsbD0iI2ZmZGUwMCI+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNNDUwIDEyMGwtNDUuNyAxNDAuNy0xMTkuMyAwaDE1NGwtMTE5LjMgMHoiLz4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik00NTAgMzAwbC00NS43IDE0MC43LTExOS4zIDBoMTU0bC0xMTkuMyAweiIvPgogICAgICAgICAgICAgICAgPHBhdGggZD0iTTQ1MCA0ODBsLTQ1LjcgMTQwLjctMTE5LjMgMGgxNTRsLTExOS4zIDB6Ii8+CiAgICAgICAgICAgIDwvZz4KICAgICAgICA8L3N2Zz4=" 
+         alt="zh-cn Flag">
+            <span class="flag-name">简体中文</span>
+        </div>
+        <div class="flag-option" data-lang="es" title="Español">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3NTAgNTAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9Ijc1MCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiNjNjBiMWUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9Ijc1MCIgaGVpZ2h0PSIyNTAiIHk9IjEyNSIgZmlsbD0iI2ZmYzQwMCIvPgogICAgICAgIDwvc3ZnPg==" 
+         alt="es Flag">
+            <span class="flag-name">Español</span>
+        </div>
+        <div class="flag-option" data-lang="pt-br" title="Português">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3MjAgNTA0Ij4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjcyMCIgaGVpZ2h0PSI1MDQiIGZpbGw9IiMwMDliM2EiLz4KICAgICAgICAgICAgPHBhdGggZD0iTTM2MCAyNTJsLTE4MC0xMjZ2MjUyeiIgZmlsbD0iI2ZlZGYwMCIvPgogICAgICAgICAgICA8Y2lyY2xlIGN4PSIzNjAiIGN5PSIyNTIiIHI9IjYwIiBmaWxsPSIjMDAyNzc2Ii8+CiAgICAgICAgPC9zdmc+" 
+         alt="pt-br Flag">
+            <span class="flag-name">Português</span>
+        </div>
+        <div class="flag-option" data-lang="fr" title="Français">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiMwMDIzOTUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSI2MDAiIHg9IjMwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjYwMCIgeD0iNjAwIiBmaWxsPSIjZWQyOTM5Ii8+CiAgICAgICAgPC9zdmc+" 
+         alt="fr Flag">
+            <span class="flag-name">Français</span>
+        </div>
+        <div class="flag-option" data-lang="de" title="Deutsch">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiMwMDAiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iI2RkMDAwMCIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjZmZjZTAwIi8+CiAgICAgICAgPC9zdmc+" 
+         alt="de Flag">
+            <span class="flag-name">Deutsch</span>
+        </div>
+        <div class="flag-option" data-lang="ru" title="Русский">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iIzAwMzlhNiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjZDUyYjFlIi8+CiAgICAgICAgPC9zdmc+" 
+         alt="ru Flag">
+            <span class="flag-name">Русский</span>
+        </div>
+        <div class="flag-option" data-lang="ar" title="العربية">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiMwMDZjMzUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI0MDAiIHk9IjEwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iMjAwIiBmaWxsPSIjY2UxMTI2Ii8+CiAgICAgICAgPC9zdmc+" 
+         alt="ar Flag">
+            <span class="flag-name">العربية</span>
+        </div>
+        <div class="flag-option" data-lang="hi" title="हिन्दी">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNmZjk5MzMiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjMTM4ODA4Ii8+CiAgICAgICAgICAgIDxjaXJjbGUgY3g9IjQ1MCIgY3k9IjMwMCIgcj0iNjAiIGZpbGw9IiMwMDAwODAiLz4KICAgICAgICA8L3N2Zz4=" 
+         alt="hi Flag">
+            <span class="flag-name">हिन्दी</span>
+        </div>
+        <div class="flag-option" data-lang="id" title="Bahasa Indonesia">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIzMDAiIHk9IjMwMCIgZmlsbD0iI2NlMTEyNiIvPgogICAgICAgIDwvc3ZnPg==" 
+         alt="id Flag">
+            <span class="flag-name">Bahasa Indonesia</span>
+        </div>
+        <div class="flag-option" data-lang="vi" title="Tiếng Việt">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNkYTI1MWQiLz4KICAgICAgICAgICAgPHBhdGggZD0iTTQ1MCAzMDBsLTE4MC0xMjZ2MjUyeiIgZmlsbD0iI2ZmZmYwMCIvPgogICAgICAgIDwvc3ZnPg==" 
+         alt="vi Flag">
+            <span class="flag-name">Tiếng Việt</span>
+        </div>
+        <div class="flag-option" data-lang="ja" title="日本語">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPGNpcmNsZSBjeD0iNDUwIiBjeT0iMzAwIiByPSIxODAiIGZpbGw9IiNiYzAwMmQiLz4KICAgICAgICA8L3N2Zz4=" 
+         alt="ja Flag">
+            <span class="flag-name">日本語</span>
+        </div>
+    </div>
+</div>
+        </nav>
+    </header>
+    
+    <section class="donut-hero">
+        <h1 data-i18n="ドーナツ作りのガイド.hero.title">ドーナツ作りのガイド</h1>
+        <p data-i18n="grow_a_gardenでドーナツを作るコツを学びましょう。.hero.subtitle">Grow a Gardenでドーナツを作るコツを学びましょう。</p>
+    </section>
+    
+    <!-- 面包屑导航 -->
+    <div class="breadcrumb-container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+                <li><a href="/ja/index.html">🏠 ホーム</a></li>
+                <li><a href="/ja/guides.html">📚 ガイド</a></li>
+                <li aria-current="page" data-i18n="_ドーナツ作り.breadcrumb.current">🍩 ドーナツ作り</li>
+            </ol>
+        </nav>
+    </div>
+    
+    <div class="guide-section">
+        <div class="guide-card">
+            <h2 data-i18n="目次.toc.title">📋 目次</h2>
+            <ul>
+                <li><a href="#basics" data-i18n="basics.toc.basics">基本的なドーナツ作り</a></li>
+                <li><a href="#ingredients" data-i18n="ingredients.toc.ingredients">必須食材リスト</a></li>
+                <li><a href="#recipes" data-i18n="recipes.toc.recipes">上級ドーナツレシピ</a></li>
+                <li><a href="#varieties">Donut Varieties &amp; Types</a></li>
+                <li><a href="#tips" data-i18n="tips.toc.tips">作りのコツとテクニック</a></li>
+                <li><a href="#efficiency" data-i18n="efficiency.toc.efficiency">効率改善の方法</a></li>
+                <li><a href="#faq" data-i18n="faq.toc.faq">よくある質問</a></li>
+            </ul>
+        </div>
+        
+        <div class="guide-card" id="basics">
+            <h2>🍩 基本的なドーナツ作り</h2>
+            <p data-i18n="grow_a_garden_では、ドーナツ作りは最も人気があり収益性の高いクラフト要素のひとつです。さまざまな食材を育てて集め、メーカーで組み合わせることでおいしいドーナツを作り、たくさんの報酬を得られます。.hero.subtitle">Grow a Garden では、ドーナツ作りは最も人気があり収益性の高いクラフト要素のひとつです。さまざまな食材を育てて集め、メーカーで組み合わせることでおいしいドーナツを作り、たくさんの報酬を得られます。</p>
+            
+            <h3>作り方：</h3>
+            <ol>
+                <li><strong>Collect Ingredients</strong>: Plant basic ingredients like flour, sugar, eggs, and milk in your garden</li>
+                <li><strong>Water Management</strong>: Regularly water your plants to ensure healthy growth and maximum yield</li>
+                <li><strong>Harvest Timing</strong>: Wait for plants to fully mature before harvesting for best quality</li>
+                <li><strong>Make Donut</strong>: Put collected ingredients into the donut maker machine</li>
+                <li><strong>Earn Rewards</strong>: Complete donut making to earn game currency and experience points</li>
+            </ol>
+            
+            <div class="tip-box">
+                <strong>💡 プロのコツ：</strong> Watering during golden hours (7:00-9:00 in-game) provides double effects, greatly increasing plant growth speed and ingredient quality!
+            </div>
+        </div>
+        
+        <div class="guide-card" id="ingredients">
+            <h2>🥚 必須食材リスト</h2>
+            <p>質の高いdonutを作るには、様々な新鮮な材料が必要です。重要度別に分類された材料リストは以下の通りです：</p>
+            
+            <h3 data-i18n="基本食材初心者向け.基本食材初心者向け.title">基本食材（初心者向け）</h3>
+            <div class="ingredient-grid">
+                <div class="ingredient-item">
+                    <h4>🌾 小麦粉</h4>
+                    <p data-i18n="ingredient.growth_time">45分</p>
+                    <p data-i18n="ingredient.value">基本</p>
+                    <p data-i18n="ingredient.use">すべてのdonutの基本材料</p>
+                </div>
+                <div class="ingredient-item">
+                    <h4>🍯 砂糖</h4>
+                    <p data-i18n="ingredient.growth_time">30分</p>
+                    <p data-i18n="ingredient.value">基本</p>
+                    <p data-i18n="ingredient.use">donutの甘味料</p>
+                </div>
+                <div class="ingredient-item">
+                    <h4>🥚 卵</h4>
+                    <p data-i18n="ingredient.growth_time">60分</p>
+                    <p data-i18n="ingredient.value">中級</p>
+                    <p>Use: Binding agent and texture</p>
+                </div>
+                <div class="ingredient-item">
+                    <h4>🥛 牛乳</h4>
+                    <p data-i18n="ingredient.growth_time">40分</p>
+                    <p data-i18n="ingredient.value">中級</p>
+                    <p>Use: Moisture and richness</p>
+                </div>
+            </div>
+            
+            <h3 data-i18n="上級食材中級者.上級食材中級者.title">上級食材（中級者）</h3>
+            <div class="ingredient-grid">
+                <div class="ingredient-item">
+                    <h4>🍫 チョコレート</h4>
+                    <p data-i18n="ingredient.growth_time">90分</p>
+                    <p data-i18n="ingredient.value">高級</p>
+                    <p>Use: Making chocolate donuts</p>
+                </div>
+                <div class="ingredient-item">
+                    <h4>🍓 イチゴ</h4>
+                    <p data-i18n="ingredient.growth_time">75分</p>
+                    <p data-i18n="ingredient.value">高級</p>
+                    <p>Use: Making strawberry donuts</p>
+                </div>
+                <div class="ingredient-item">
+                    <h4>🥜 Peanuts</h4>
+                    <p data-i18n="ingredient.growth_time">120分</p>
+                    <p data-i18n="ingredient.value">高級</p>
+                    <p>Use: Making peanut butter donuts</p>
+                </div>
+                <div class="ingredient-item">
+                    <h4>🍯 Honey</h4>
+                    <p data-i18n="ingredient.growth_time">100分</p>
+                    <p data-i18n="ingredient.value">高級</p>
+                    <p>Use: Natural sweetener for premium donuts</p>
+                </div>
+            </div>
+            
+            <h3 data-i18n="希少食材上級者.希少食材上級者.title">希少食材（上級者）</h3>
+            <div class="ingredient-grid">
+                <div class="ingredient-item">
+                    <h4>🌰 Vanilla Bean</h4>
+                    <p data-i18n="ingredient.growth_time">150分</p>
+                    <p data-i18n="ingredient.value">レア</p>
+                    <p>Use: Making vanilla donuts</p>
+                </div>
+                <div class="ingredient-item">
+                    <h4>🍊 Orange</h4>
+                    <p data-i18n="ingredient.growth_time">180分</p>
+                    <p data-i18n="ingredient.value">レア</p>
+                    <p>Use: Making citrus donuts</p>
+                </div>
+                <div class="ingredient-item">
+                    <h4>🥥 Coconut</h4>
+                    <p data-i18n="ingredient.growth_time">200分</p>
+                    <p data-i18n="ingredient.value">レア</p>
+                    <p>Use: Making tropical donuts</p>
+                </div>
+                <div class="ingredient-item">
+                    <h4>🍁 Maple Syrup</h4>
+                    <p data-i18n="ingredient.growth_time">240分</p>
+                    <p data-i18n="ingredient.value">レア</p>
+                    <p>Use: Making maple donuts</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="guide-card" id="recipes">
+            <h2>🍽️ 上級ドーナツレシピ</h2>
+            <p>食材の組み合わせによって、さまざまなレベルや効果のドーナツを作れます。以下の表で詳しいレシピを確認してください：</p>
+            
+            <h3 data-i18n="recipes.basic_donut.title">Basic Donut Recipes</h3>
+            <table class="recipe-table">
+                <thead>
+                    <tr>
+                        <th data-i18n="donut_name.table.donut_name">Donut Name</th>
+                        <th data-i18n="ingredients.table.ingredients">必要な材料</th>
+                        <th data-i18n="time.table.time">調理時間</th>
+                        <th data-i18n="rewards.table.rewards">報酬価値</th>
+                        <th>難易度</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Plain Donut</td>
+                        <td>Flour + Sugar + Eggs + Milk</td>
+                        <td data-i18n="time.minutes" data-time="2">2 minutes</td>
+                        <td>50 coins</td>
+                        <td>Easy</td>
+                    </tr>
+                    <tr>
+                        <td>Chocolate Donut</td>
+                        <td>Flour + Sugar + Eggs + Milk + Chocolate</td>
+                        <td data-i18n="time.minutes" data-time="3">3 minutes</td>
+                        <td>100 coins</td>
+                        <td>Easy</td>
+                    </tr>
+                    <tr>
+                        <td>Strawberry Donut</td>
+                        <td>Flour + Sugar + Eggs + Milk + Strawberry</td>
+                        <td data-i18n="time.minutes" data-time="3">3 minutes</td>
+                        <td>120 coins</td>
+                        <td>Medium</td>
+                    </tr>
+                    <tr>
+                        <td>Honey Donut</td>
+                        <td>Flour + Sugar + Eggs + Milk + Honey</td>
+                        <td data-i18n="time.minutes" data-time="4">4 minutes</td>
+                        <td>150 coins</td>
+                        <td>Medium</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3 data-i18n="上級ドーナツレシピ.上級ドーナツレシピ.title">上級ドーナツレシピ</h3>
+            <table class="recipe-table">
+                <thead>
+                    <tr>
+                        <th data-i18n="donut_name.table.donut_name">Donut Name</th>
+                        <th data-i18n="ingredients.table.ingredients">必要な材料</th>
+                        <th data-i18n="time.table.time">調理時間</th>
+                        <th data-i18n="rewards.table.rewards">報酬価値</th>
+                        <th>難易度</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Peanut Butter Donut</td>
+                        <td>Flour + Sugar + Eggs + Milk + Peanuts</td>
+                        <td data-i18n="time.minutes" data-time="5">5 minutes</td>
+                        <td>200 coins</td>
+                        <td>Hard</td>
+                    </tr>
+                    <tr>
+                        <td>Vanilla Donut</td>
+                        <td>Flour + Sugar + Eggs + Milk + Vanilla Bean</td>
+                        <td data-i18n="time.minutes" data-time="6">6 minutes</td>
+                        <td>250 coins</td>
+                        <td>Hard</td>
+                    </tr>
+                    <tr>
+                        <td>Orange Donut</td>
+                        <td>Flour + Sugar + Eggs + Milk + Orange</td>
+                        <td data-i18n="time.minutes" data-time="7">7 minutes</td>
+                        <td>300 coins</td>
+                        <td>Expert</td>
+                    </tr>
+                    <tr>
+                        <td>Coconut Donut</td>
+                        <td>Flour + Sugar + Eggs + Milk + Coconut</td>
+                        <td data-i18n="time.minutes" data-time="8">8 minutes</td>
+                        <td>350 coins</td>
+                        <td>Expert</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>プレミアムドーナツレシピ</h3>
+            <table class="recipe-table">
+                <thead>
+                    <tr>
+                        <th data-i18n="donut_name.table.donut_name">Donut Name</th>
+                        <th data-i18n="ingredients.table.ingredients">必要な材料</th>
+                        <th data-i18n="time.table.time">調理時間</th>
+                        <th data-i18n="rewards.table.rewards">報酬価値</th>
+                        <th>難易度</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Maple Donut</td>
+                        <td>Flour + Sugar + Eggs + Milk + Maple Syrup</td>
+                        <td data-i18n="time.minutes" data-time="10">10 minutes</td>
+                        <td>500 coins</td>
+                        <td>Master</td>
+                    </tr>
+                    <tr>
+                        <td>Rainbow Donut</td>
+                        <td>All Basic + All Advanced + All Rare</td>
+                        <td data-i18n="time.minutes" data-time="15">15 minutes</td>
+                        <td>1000 coins</td>
+                        <td>Legendary</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="guide-card" id="varieties">
+            <h2>🎨 Donut Varieties &amp; Types</h2>
+            <p>ドーナツには多くの種類があり、それぞれ特徴や報酬が異なります：</p>
+            
+            <div class="donut-variety">
+                <div class="donut-card">
+                    <h4>🍩 Classic Donuts</h4>
+                    <ul>
+                        <li>Plain Donut - Basic starter recipe</li>
+                        <li>Chocolate Donut - Popular choice</li>
+                        <li>Vanilla Donut - Smooth and sweet</li>
+                        <li>Honey Donut - Natural sweetness</li>
+                    </ul>
+                </div>
+                
+                <div class="donut-card">
+                    <h4>🍓 Fruit Donuts</h4>
+                    <ul>
+                        <li>Strawberry Donut - Berry delight</li>
+                        <li>Orange Donut - Citrus burst</li>
+                        <li>Blueberry Donut - Antioxidant rich</li>
+                        <li>Apple Donut - Fall favorite</li>
+                    </ul>
+                </div>
+                
+                <div class="donut-card">
+                    <h4>🥜 Nutty Donuts</h4>
+                    <ul>
+                        <li>Peanut Butter Donut - Protein packed</li>
+                        <li>Almond Donut - Nutty crunch</li>
+                        <li>Hazelnut Donut - Rich flavor</li>
+                        <li>Walnut Donut - Brain food</li>
+                    </ul>
+                </div>
+                
+                <div class="donut-card">
+                    <h4>🌴 Tropical Donuts</h4>
+                    <ul>
+                        <li>Coconut Donut - Island vibes</li>
+                        <li>Pineapple Donut - Tropical twist</li>
+                        <li>Mango Donut - Sweet and juicy</li>
+                        <li>Banana Donut - Potassium rich</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="guide-card" id="tips">
+            <h2>💡 Making Tips &amp; Tricks</h2>
+            <p>これらのコツを身につければ、ドーナツ作りの達人になれます：</p>
+            
+            <h3>🌱 Growing Tips</h3>
+            <ul>
+                <li><strong>Optimal Watering:</strong> Water plants every 2-3 hours for maximum growth speed</li>
+                <li><strong>Golden Hours:</strong> Water during 7:00-9:00 in-game time for double effects</li>
+                <li><strong>Harvest Timing:</strong> Wait for plants to fully mature (100% growth) before harvesting</li>
+                <li><strong>Soil Quality:</strong> Use premium soil for rare ingredients to increase success rate</li>
+            </ul>
+            
+            <h3>🍩 Making Tips</h3>
+            <ul>
+                <li><strong>Ingredient Quality:</strong> Higher quality ingredients produce better donuts</li>
+                <li><strong>Recipe Efficiency:</strong> Master basic recipes before attempting advanced ones</li>
+                <li><strong>Batch Production:</strong> Make multiple donuts at once to maximize efficiency</li>
+                <li><strong>Storage Management:</strong> Keep ingredients organized for quick access</li>
+            </ul>
+            
+            <h3>💰 Profit Optimization</h3>
+            <ul>
+                <li><strong>Market Timing:</strong> Sell donuts during peak demand hours</li>
+                <li><strong>Quality vs Quantity:</strong> Focus on high-quality donuts for better profit margins</li>
+                <li><strong>Recipe Mastery:</strong> Master rare recipes for exclusive market access</li>
+                <li><strong>Supply Chain:</strong> Maintain steady ingredient supply for continuous production</li>
+            </ul>
+            
+            <div class="tip-box">
+                <strong>💡 プロのコツ：</strong> Combine rare ingredients with basic ones to create unique donut varieties that can sell for premium prices!
+            </div>
+        </div>
+        
+        <div class="guide-card" id="efficiency">
+            <h2>⚡ 効率改善の方法</h2>
+            <p>以下の上級戦略で、ドーナツ作りの効率を最大化しましょう：</p>
+            
+            <h3>🏭 Production Optimization</h3>
+            <ul>
+                <li><strong>Automated Systems:</strong> Set up automated watering systems for consistent growth</li>
+                <li><strong>Batch Processing:</strong> Process multiple donuts simultaneously</li>
+                <li><strong>Ingredient Rotation:</strong> Rotate crops to maintain soil fertility</li>
+                <li><strong>Quality Control:</strong> Monitor ingredient quality for consistent results</li>
+            </ul>
+            
+            <h3 data-i18n="📊_advanced_strategies.📊_advanced_strategies.title">📊 Advanced Strategies</h3>
+            <ul>
+                <li><strong>Market Analysis:</strong> Track donut demand patterns for optimal production</li>
+                <li><strong>Recipe Optimization:</strong> Develop efficient ingredient combinations</li>
+                <li><strong>Resource Management:</strong> Balance ingredient costs with donut profits</li>
+                <li><strong>Skill Development:</strong> Improve donut-making skills for better results</li>
+            </ul>
+            
+            <div class="warning-box">
+                <strong>⚠️ 重要：</strong> Don't overproduce basic donuts when the market is saturated. Focus on quality and variety for better profits.
+            </div>
+        </div>
+        
+        <div class="guide-card" id="faq">
+            <h2>❓ よくある質問</h2>
+            
+            <h3 data-i18n="q:_基本的なドーナツはどのくらいで作れますか？.q:_基本的なドーナツはどのくらいで作れますか？.title">Q: 基本的なドーナツはどのくらいで作れますか？</h3>
+            <p>A: Basic donuts take 2-3 minutes to make, while advanced recipes can take 5-15 minutes depending on complexity.</p>
+            
+            <h3>Q: What's the most profitable donut recipe?</h3>
+            <p>A: Premium donuts like Maple Donut and Rainbow Donut offer the highest profit margins, but require rare ingredients.</p>
+            
+            <h3>Q: ドーナツを他のプレイヤーに販売できますか？</h3>
+            <p>A: Yes, you can sell donuts in the marketplace or trade them with other players for other items.</p>
+            
+            <h3>Q: レア食材のレシピはどうやって解放しますか？</h3>
+            <p>A: Rare recipes are unlocked by reaching higher levels and completing special quests in the game.</p>
+            
+            <h3>Q: What's the best time to water my ingredient plants?</h3>
+            <p>A: Water during golden hours (7:00-9:00 in-game time) for double growth effects and better ingredient quality.</p>
+            
+            <h3>Q: How can I increase my donut-making efficiency?</h3>
+            <p>A: Focus on mastering basic recipes first, then gradually work on advanced recipes. Use batch production and maintain a steady supply of quality ingredients.</p>
+        </div>
+        
+        <div class="guide-card">
+            <h2>🎯 次のステップ</h2>
+            <p data-i18n="now_that_you've_learned_the_basics_of_donut_making_in_grow_a_garden,_here_are_your_next_steps:.hero.subtitle">Now that you've learned the basics of donut making in Grow a Garden, here are your next steps:</p>
+            
+            <ol>
+                <li><strong>Start Small:</strong> Begin with basic donut recipes to build your skills</li>
+                <li><strong>Expand Your Garden:</strong> Plant a variety of ingredients for different recipes</li>
+                <li><strong>Master Advanced Recipes:</strong> Work on complex donut varieties for higher profits</li>
+                <li><strong>Join the Community:</strong> Connect with other players to share tips and strategies</li>
+                <li><strong>Stay Updated:</strong> Keep up with game updates for new recipes and features</li>
+            </ol>
+            
+            <div class="tip-box">
+                <strong>💡 Community Tip:</strong> Join our Discord server to connect with other donut makers, share recipes, and get the latest tips and tricks!
+            </div>
+        </div>
+        
+        <a href="/ja/guides.html" class="back-btn">← ガイドに戻る</a>
+    </div>
+    
+    <script src="script.js"></script>
+
+ 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const currentFlag = document.getElementById('current-flag');
+    const flagDropdown = document.getElementById('current-flag');
+    
+    if (currentFlag && flagDropdown) {
+        // 设置当前语言的国旗
+        const currentLang = document.documentElement.getAttribute('lang') || 'en';
+        updateCurrentFlag(currentLang);
+        
+        // 为每个国旗选项添加点击事件
+        document.querySelectorAll('.flag-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const lang = this.getAttribute('data-lang');
+                if (lang) {
+                    // 调用现有的语言切换函数
+                    if (typeof switchLang === 'function') {
+                        switchLang(lang);
+                    } else if (typeof window.__gagI18n !== 'undefined' && window.__gagI18n.switchLang) {
+                        window.__gagI18n.switchLang(lang);
+                    }
+                }
+            });
+        });
+    }
+});
+
+function updateCurrentFlag(lang) {
+    const currentFlag = document.getElementById('current-flag');
+    if (currentFlag) {
+        const flagOptions = document.querySelectorAll('.flag-option');
+        flagOptions.forEach(option => {
+            if (option.getAttribute('data-lang') === lang) {
+                const flagContent = option.innerHTML;
+                currentFlag.innerHTML = flagContent;
+                break;
+            }
+        });
+    }
+}
+</script>
+    <script src="../flag-switcher.js"></script>
+</body></html>

@@ -1,0 +1,856 @@
+<!DOCTYPE html><html lang="zh-cn" dir="ltr"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>如何在种植花园中 制作面包 - 完整指南 | 种植花园技巧</title>
+    <meta name="description" content="学习如何在Roblox种植花园中 制作面包! 学习如何在Roblox种植花园中 制作面包 在 种植花园 中.">
+    <meta name="keywords" content="如何在种植花园中 制作面包 在 种植花园 中, roblox 制作面包 guide, grow a garden guide, 制作面包 making guide, roblox farming game, 制作面包 ingredients collection, grow a garden tips">
+    <link rel="canonical" href="https://your-domain.com/how-to-make-bread.html">
+    
+    <!-- Open Graph for social sharing -->
+    <meta property="og:title" content="如何在种植花园中 制作面包 - 完整指南 | 种植花园技巧">
+    <meta property="og:description" content="学习如何在Roblox种植花园中 制作面包 在 种植花园 中! 学习如何在Roblox种植花园中 制作面包.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://your-domain.com/how-to-make-bread.html">
+    <meta property="og:image" content="https://your-domain.com/bread-guide-og.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="如何在种植花园中 制作面包 - 完整指南 | 种植花园技巧">
+    <meta name="twitter:description" content="学习如何在Roblox种植花园中 制作面包 在 种植花园 中! 学习如何在Roblox种植花园中 制作面包.">
+    <meta name="twitter:image" content="https://your-domain.com/bread-guide-og.jpg">
+    
+    <!-- Structured Data JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "如何在种植花园中 制作面包",
+      "description": "学习如何在Roblox种植花园中 制作面包 在 种植花园 中, bao gồm các kỹ thuật và phương pháp cải thiện hiệu quả.",
+      "image": "https://your-domain.com/bread-guide-og.jpg",
+      "url": "https://your-domain.com/how-to-make-bread.html",
+      "inLanguage": "zh-CN",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "如何在种植花园中 制作面包",
+          "text": "Grow wheat and grind it into flour in Grow a Garden"
+        },
+        {
+          "@type": "HowToStep", 
+          "name": "如何在种植花园中 制作面包",
+          "text": "Combine flour, water, yeast and salt to create bread dough"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "如何在种植花园中 制作面包",
+          "text": "Use advanced recipes and special ingredients to make higher quality bread"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Roblox-like color scheme -->
+    <link rel="stylesheet" href="https://unpkg.com/simple.css@2.1.0/simple.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍞</text></svg>">
+    
+    <style>
+        body {
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .bg-blur {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: 0;
+            background: url('grow-bg.jpg') center center/cover no-repeat;
+            opacity: 0.3;
+            filter: blur(2px);
+            pointer-events: none;
+        }
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+        .bread-hero {
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-top: 60px;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        .bread-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        .bread-hero h1,
+        .bread-hero p {
+            position: relative;
+            z-index: 2;
+        }
+        .bread-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: white !important;
+            text-shadow: 
+                0 2px 4px rgba(0,0,0,0.7),
+                0 1px 2px rgba(0,0,0,0.8);
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            -webkit-text-stroke: 0.5px rgba(0,0,0,0.2);
+        }
+        .bread-hero p {
+            font-size: 1.2rem;
+            opacity: 1;
+            color: white !important;
+            text-shadow: 
+                0 1px 3px rgba(0,0,0,0.6),
+                0 1px 2px rgba(0,0,0,0.7);
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            -webkit-text-stroke: 0.3px rgba(0,0,0,0.15);
+        }
+        .guide-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .guide-card {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .guide-card h2 {
+            color: #23272a !important;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+        .guide-card h3 {
+            color: #2c3e50 !important;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .guide-card p, .guide-card li {
+            color: #34495e !important;
+            font-weight: 500;
+            line-height: 1.6;
+        }
+        .ingredient-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .ingredient-item {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 8px;
+            padding: 1rem;
+            border-left: 4px solid #f39c12;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .ingredient-item h4 {
+            color: #23272a !important;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .ingredient-item p {
+            color: #34495e !important;
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+        }
+        .recipe-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+        }
+        .recipe-table th,
+        .recipe-table td {
+            border: 1px solid #ddd;
+            padding: 0.75rem;
+            text-align: left;
+            font-weight: 500;
+        }
+        .recipe-table th {
+            background: #f39c12;
+            color: white;
+            font-weight: 700;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+        .recipe-table td {
+            color: #2c3e50 !important;
+            background: rgba(255, 255, 255, 0.9);
+        }
+        .recipe-table tr:nth-child(even) td {
+            background: rgba(243, 156, 18, 0.08);
+        }
+        .tip-box {
+            background: linear-gradient(135deg, #f1c40f, #f39c12);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            box-shadow: 0 4px 15px rgba(241, 196, 15, 0.3);
+        }
+        .tip-box strong {
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+            font-weight: 700;
+        }
+        .warning-box {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+        }
+        .warning-box strong {
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+            font-weight: 700;
+        }
+        .back-btn {
+            display: inline-block;
+            background: #5865f2;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+        .back-btn:hover {
+            background: #4752c4;
+            transform: translateY(-2px);
+        }
+        .bread-variety {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .bread-card {
+            background: linear-gradient(135deg, #fff8e1, #ffecb3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 6px 20px rgba(243, 156, 18, 0.2);
+            border: 2px solid #ffc107;
+        }
+        .bread-card h4 {
+            color: #e65100 !important;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .bread-card ul {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+        .bread-card li {
+            color: #5d4037 !important;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* 面包屑导航样式 */
+        .breadcrumb-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+        }
+        .breadcrumb {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .breadcrumb ol {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .breadcrumb li {
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            color: #34495e;
+        }
+        .breadcrumb li:not(:last-child)::after {
+            content: "›";
+            margin: 0 0.5rem;
+            color: #f39c12;
+            font-weight: bold;
+        }
+        .breadcrumb a {
+            color: #f39c12;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .breadcrumb a:hover {
+            color: #e67e22;
+            text-decoration: underline;
+        }
+        .breadcrumb li[aria-current="page"] {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+    </style>
+    
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-HG12TJB5LZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HG12TJB5LZ');
+    </script>
+</head>
+<body>
+    <div class="bg-blur"></div>
+        <header>
+        <nav>
+            <a href="index.html" class="logo" data-i18n="nav.logo">🌱 Grow a Garden</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('stats')" data-i18n="nav.live">Live Stats</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('map')" data-i18n="nav.map">Global Heatmap</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('tips')" data-i18n="nav.tips">Tips</a>
+            <a href="guides.html" data-i18n="nav.guides">📚 Guides</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('online')" data-i18n="nav.online">🎮 Online</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('community')" class="discord-btn" data-i18n="nav.discord">💬 Discord</a>
+            <div class="flag-language-switcher">
+    <div class="current-flag" id="current-flag">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNDgwIj4KICAgICAgICAgICAgPGRlZnM+PGNsaXBQYXRoIGlkPSJhIj48cGF0aCBkPSJNLTg1LjMgMGg2ODIuNnY1MTJILTg1LjN6Ii8+PC9jbGlwUGF0aD48L2RlZnM+CiAgICAgICAgICAgIDxjbGlwUGF0aCBpZD0iYiI+PHVzZSBocmVmPSIjYSIvPjwvY2xpcFBhdGg+CiAgICAgICAgICAgIDxnIGNsaXAtcGF0aD0idXJsKCNiKSIgdHJhbnNmb3JtPSJzY2FsZSguOTM3NSkiPgogICAgICAgICAgICAgICAgPGcgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2Utd2lkdGg9IjFwdCI+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2NTEySC0yNTZ6IiBmaWxsPSIjYmQzZDQ0Ii8+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAxMDIuNEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAyMDQuOEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAzMDcuMkg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiA0MDkuNkg3NjhWNTEySC0yNTZ6IiBmaWxsPSIjZmZmIi8+CiAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICA8ZyBmaWxsPSIjMTkyZjVkIj4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAwdjUxMmwyNTYtMjU2eiIvPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9zdmc+" 
+         alt="en Flag">
+    </div>
+    <div class="flag-dropdown" id="flag-dropdown">
+        <div class="flag-option" data-lang="en" title="English">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNDgwIj4KICAgICAgICAgICAgPGRlZnM+PGNsaXBQYXRoIGlkPSJhIj48cGF0aCBkPSJNLTg1LjMgMGg2ODIuNnY1MTJILTg1LjN6Ii8+PC9jbGlwUGF0aD48L2RlZnM+CiAgICAgICAgICAgIDxjbGlwUGF0aCBpZD0iYiI+PHVzZSBocmVmPSIjYSIvPjwvY2xpcFBhdGg+CiAgICAgICAgICAgIDxnIGNsaXAtcGF0aD0idXJsKCNiKSIgdHJhbnNmb3JtPSJzY2FsZSguOTM3NSkiPgogICAgICAgICAgICAgICAgPGcgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2Utd2lkdGg9IjFwdCI+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2NTEySC0yNTZ6IiBmaWxsPSIjYmQzZDQ0Ii8+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAxMDIuNEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAyMDQuOEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAzMDcuMkg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiA0MDkuNkg3NjhWNTEySC0yNTZ6IiBmaWxsPSIjZmZmIi8+CiAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICA8ZyBmaWxsPSIjMTkyZjVkIj4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAwdjUxMmwyNTYtMjU2eiIvPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9zdmc+" 
+         alt="en Flag">
+            <span class="flag-name">English</span>
+        </div>
+        <div class="flag-option" data-lang="zh-cn" title="简体中文">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNkZTI5MTAiLz4KICAgICAgICAgICAgPGcgZmlsbD0iI2ZmZGUwMCI+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNNDUwIDEyMGwtNDUuNyAxNDAuNy0xMTkuMyAwaDE1NGwtMTE5LjMgMHoiLz4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik00NTAgMzAwbC00NS43IDE0MC43LTExOS4zIDBoMTU0bC0xMTkuMyAweiIvPgogICAgICAgICAgICAgICAgPHBhdGggZD0iTTQ1MCA0ODBsLTQ1LjcgMTQwLjctMTE5LjMgMGgxNTRsLTExOS4zIDB6Ii8+CiAgICAgICAgICAgIDwvZz4KICAgICAgICA8L3N2Zz4=" 
+         alt="zh-cn Flag">
+            <span class="flag-name">简体中文</span>
+        </div>
+        <div class="flag-option" data-lang="es" title="Español">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3NTAgNTAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9Ijc1MCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiNjNjBiMWUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9Ijc1MCIgaGVpZ2h0PSIyNTAiIHk9IjEyNSIgZmlsbD0iI2ZmYzQwMCIvPgogICAgICAgIDwvc3ZnPg==" 
+         alt="es Flag">
+            <span class="flag-name">Español</span>
+        </div>
+        <div class="flag-option" data-lang="pt-br" title="Português">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3MjAgNTA0Ij4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjcyMCIgaGVpZ2h0PSI1MDQiIGZpbGw9IiMwMDliM2EiLz4KICAgICAgICAgICAgPHBhdGggZD0iTTM2MCAyNTJsLTE4MC0xMjZ2MjUyeiIgZmlsbD0iI2ZlZGYwMCIvPgogICAgICAgICAgICA8Y2lyY2xlIGN4PSIzNjAiIGN5PSIyNTIiIHI9IjYwIiBmaWxsPSIjMDAyNzc2Ii8+CiAgICAgICAgPC9zdmc+" 
+         alt="pt-br Flag">
+            <span class="flag-name">Português</span>
+        </div>
+        <div class="flag-option" data-lang="fr" title="Français">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiMwMDIzOTUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSI2MDAiIHg9IjMwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjYwMCIgeD0iNjAwIiBmaWxsPSIjZWQyOTM5Ii8+CiAgICAgICAgPC9zdmc+" 
+         alt="fr Flag">
+            <span class="flag-name">Français</span>
+        </div>
+        <div class="flag-option" data-lang="de" title="Deutsch">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiMwMDAiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iI2RkMDAwMCIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjZmZjZTAwIi8+CiAgICAgICAgPC9zdmc+" 
+         alt="de Flag">
+            <span class="flag-name">Deutsch</span>
+        </div>
+        <div class="flag-option" data-lang="ru" title="Русский">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iIzAwMzlhNiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjZDUyYjFlIi8+CiAgICAgICAgPC9zdmc+" 
+         alt="ru Flag">
+            <span class="flag-name">Русский</span>
+        </div>
+        <div class="flag-option" data-lang="ar" title="العربية">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiMwMDZjMzUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI0MDAiIHk9IjEwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iMjAwIiBmaWxsPSIjY2UxMTI2Ii8+CiAgICAgICAgPC9zdmc+" 
+         alt="ar Flag">
+            <span class="flag-name">العربية</span>
+        </div>
+        <div class="flag-option" data-lang="hi" title="हिन्दी">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNmZjk5MzMiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjMTM4ODA4Ii8+CiAgICAgICAgICAgIDxjaXJjbGUgY3g9IjQ1MCIgY3k9IjMwMCIgcj0iNjAiIGZpbGw9IiMwMDAwODAiLz4KICAgICAgICA8L3N2Zz4=" 
+         alt="hi Flag">
+            <span class="flag-name">हिन्दी</span>
+        </div>
+        <div class="flag-option" data-lang="id" title="Bahasa Indonesia">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIzMDAiIHk9IjMwMCIgZmlsbD0iI2NlMTEyNiIvPgogICAgICAgIDwvc3ZnPg==" 
+         alt="id Flag">
+            <span class="flag-name">Bahasa Indonesia</span>
+        </div>
+        <div class="flag-option" data-lang="vi" title="Tiếng Việt">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNkYTI1MWQiLz4KICAgICAgICAgICAgPHBhdGggZD0iTTQ1MCAzMDBsLTE4MC0xMjZ2MjUyeiIgZmlsbD0iI2ZmZmYwMCIvPgogICAgICAgIDwvc3ZnPg==" 
+         alt="vi Flag">
+            <span class="flag-name">Tiếng Việt</span>
+        </div>
+        <div class="flag-option" data-lang="ja" title="日本語">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPGNpcmNsZSBjeD0iNDUwIiBjeT0iMzAwIiByPSIxODAiIGZpbGw9IiNiYzAwMmQiLz4KICAgICAgICA8L3N2Zz4=" 
+         alt="ja Flag">
+            <span class="flag-name">日本語</span>
+        </div>
+    </div>
+</div>
+        </nav>
+    </header>
+    
+    <section class="bread-hero">
+        <h1 data-i18n="面包制作指南.hero.title">面包制作指南</h1>
+        <p data-i18n="学习在_grow_a_garden_中制作面包的技巧。.hero.subtitle">学习在 Grow a Garden 中制作面包的技巧。</p>
+    </section>
+    
+    <!-- 面包屑导航 -->
+    <div class="breadcrumb-container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+                <li><a href="/zh-cn/index.html">🏠 首页</a></li>
+                <li><a href="/zh-cn/guides.html">📚 攻略</a></li>
+                <li aria-current="page" data-i18n="🎯_制作面包.breadcrumb.current">🎯 制作面包</li>
+            </ol>
+        </nav>
+    </div>
+    
+    <div class="guide-section">
+        <div class="guide-card">
+            <h2 data-i18n="目录.toc.title">📋 目录</h2>
+            <ul>
+                <li><a href="#basics" data-i18n="basics.toc.basics">基础面包制作</a></li>
+                <li><a href="#ingredients" data-i18n="ingredients.toc.ingredients">关键食材清单</a></li>
+                <li><a href="#recipes" data-i18n="recipes.toc.recipes">高级面包食谱</a></li>
+                <li><a href="#varieties">Bread Varieties &amp; Types</a></li>
+                <li><a href="#tips" data-i18n="tips.toc.tips">Making Tips &amp; Tricks</a></li>
+                <li><a href="#efficiency" data-i18n="efficiency.toc.efficiency">效率提升方法</a></li>
+                <li><a href="#faq" data-i18n="faq.toc.faq">常见问题</a></li>
+            </ul>
+        </div>
+        
+        <div class="guide-card" id="basics">
+            <h2>🍞 基础面包制作</h2>
+            <p>在种植花园中， bread making is one of the fundamental crafting activities. By growing wheat and other ingredients, you can create various types of bread to earn rewards and progress in the game.</p>
+            
+            <h3>制作步骤：</h3>
+            <ol>
+                <li><strong>Grow Wheat</strong>: Plant wheat seeds and water regularly for healthy growth</li>
+                <li><strong>Harvest Wheat</strong>: Wait for wheat to fully mature before harvesting</li>
+                <li><strong>Grind Flour</strong>: Process harvested wheat into flour</li>
+                <li><strong>Mix Dough</strong>: Combine flour, water, yeast, and salt</li>
+                <li><strong>Bake Bread</strong>: Put dough into the bread maker to create bread</li>
+            </ol>
+            
+            <div class="tip-box">
+                <strong>💡 贴士：</strong> Watering during golden hours (7:00-9:00 in-game) provides double effects, greatly increasing wheat growth speed and flour quality!
+            </div>
+        </div>
+        
+        <div class="guide-card" id="ingredients">
+            <h2 data-i18n="_关键食材清单._关键食材清单.title">🌾 关键食材清单</h2>
+            <p>Making quality bread requires various ingredients. Here's the ingredient list categorized by importance:</p>
+            
+            <h3>基础食材（新手必备）</h3>
+            <div class="ingredient-grid">
+                <div class="ingredient-item">
+                    <h4>🌾 Wheat</h4>
+                    <p>生长时间： 60 分钟</p>
+                    <p>价值：基础</p>
+                    <p data-i18n="ingredient.use"> Primary ingredient for flour</p>
+                </div>
+                <div class="ingredient-item">
+                    <h4>💧 Water</h4>
+                    <p>Collection Time: 30 分钟</p>
+                    <p>价值：基础</p>
+                    <p data-i18n="ingredient.use"> Essential for dough mixing</p>
+                </div>
+                <div class="ingredient-item">
+                    <h4>🧂 Salt</h4>
+                    <p>生长时间： 45 分钟</p>
+                    <p>价值：基础</p>
+                    <p data-i18n="ingredient.use"> Flavor enhancement</p>
+                </div>
+                <div class="ingredient-item">
+                    <h4>🥚 Yeast</h4>
+                    <p>生长时间： 40 分钟</p>
+                    <p>价值：中等</p>
+                    <p data-i18n="ingredient.use">面团发酵剂</p>
+                </div>
+            </div>
+            
+            <h3>进阶食材（中级玩家）</h3>
+            <div class="ingredient-grid">
+                <div class="ingredient-item">
+                    <h4>🍯 Honey</h4>
+                    <p>生长时间： 90 分钟</p>
+                    <p>价值：较高</p>
+                    <p data-i18n="ingredient.use"> Sweet bread varieties</p>
+                </div>
+                <div class="ingredient-item">
+                    <h4>🥛 Milk</h4>
+                    <p>生长时间： 75 分钟</p>
+                    <p>价值：较高</p>
+                    <p data-i18n="ingredient.use"> Rich bread varieties</p>
+                </div>
+                <div class="ingredient-item">
+                    <h4>🥚 Eggs</h4>
+                    <p>生长时间： 120 分钟</p>
+                    <p>价值：较高</p>
+                    <p data-i18n="ingredient.use"> Enriched bread varieties</p>
+                </div>
+                <div class="ingredient-item">
+                    <h4>🌾 Rye</h4>
+                    <p>生长时间： 100 分钟</p>
+                    <p>价值：较高</p>
+                    <p data-i18n="ingredient.use"> Rye bread varieties</p>
+                </div>
+            </div>
+            
+            <h3>稀有食材（专家级）</h3>
+            <div class="ingredient-grid">
+                <div class="ingredient-item">
+                    <h4>🌰 Nuts</h4>
+                    <p>生长时间： 150 分钟</p>
+                    <p>价值：稀有</p>
+                    <p data-i18n="ingredient.use"> Nut bread varieties</p>
+                </div>
+                <div class="ingredient-item">
+                    <h4>🍇 Raisins</h4>
+                    <p>生长时间： 180 分钟</p>
+                    <p>价值：稀有</p>
+                    <p data-i18n="ingredient.use"> Sweet bread varieties</p>
+                </div>
+                <div class="ingredient-item">
+                    <h4>🌿 Herbs</h4>
+                    <p>生长时间： 200 分钟</p>
+                    <p>价值：稀有</p>
+                    <p data-i18n="ingredient.use"> Herb bread varieties</p>
+                </div>
+                <div class="ingredient-item">
+                    <h4>🍫 Chocolate</h4>
+                    <p>生长时间： 240 分钟</p>
+                    <p>价值：稀有</p>
+                    <p data-i18n="ingredient.use"> Chocolate bread varieties</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="guide-card" id="recipes">
+            <h2>🍽️ 高级面包食谱</h2>
+            <p>Different ingredient combinations can create bread of varying levels and effects. Here's a detailed recipe table:</p>
+            
+            <h3 data-i18n="recipes.basic_bread.title">Basic Bread Recipes</h3>
+            <table class="recipe-table">
+                <thead>
+                    <tr>
+                        <th data-i18n="bread_name.table.bread_name">Bread Name</th>
+                        <th>所需食材</th>
+                        <th>制作时间</th>
+                        <th>奖励价值</th>
+                        <th>难度</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>White Bread</td>
+                        <td>Wheat + Water + Yeast + Salt</td>
+                        <td>4 分钟</td>
+                        <td>60 coins</td>
+                        <td>Easy</td>
+                    </tr>
+                    <tr>
+                        <td>Whole Wheat Bread</td>
+                        <td>Wheat + Water + Yeast + Salt + Rye</td>
+                        <td>5 分钟</td>
+                        <td>80 coins</td>
+                        <td>Easy</td>
+                    </tr>
+                    <tr>
+                        <td>Sweet Bread</td>
+                        <td>Wheat + Water + Yeast + Salt + Honey</td>
+                        <td>6 分钟</td>
+                        <td>100 coins</td>
+                        <td>Medium</td>
+                    </tr>
+                    <tr>
+                        <td>Milk Bread</td>
+                        <td>Wheat + Water + Yeast + Salt + Milk</td>
+                        <td>7 分钟</td>
+                        <td>120 coins</td>
+                        <td>Medium</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>高级面包食谱</h3>
+            <table class="recipe-table">
+                <thead>
+                    <tr>
+                        <th data-i18n="bread_name.table.bread_name">Bread Name</th>
+                        <th>所需食材</th>
+                        <th>制作时间</th>
+                        <th>奖励价值</th>
+                        <th>难度</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Nut Bread</td>
+                        <td>Wheat + Water + Yeast + Salt + Nuts</td>
+                        <td>8 分钟</td>
+                        <td>150 coins</td>
+                        <td>Hard</td>
+                    </tr>
+                    <tr>
+                        <td>Raisin Bread</td>
+                        <td>Wheat + Water + Yeast + Salt + Raisins</td>
+                        <td>9 分钟</td>
+                        <td>180 coins</td>
+                        <td>Hard</td>
+                    </tr>
+                    <tr>
+                        <td>Herb Bread</td>
+                        <td>Wheat + Water + Yeast + Salt + Herbs</td>
+                        <td>10 分钟</td>
+                        <td>200 coins</td>
+                        <td>Expert</td>
+                    </tr>
+                    <tr>
+                        <td>Chocolate Bread</td>
+                        <td>Wheat + Water + Yeast + Salt + Chocolate</td>
+                        <td>12 分钟</td>
+                        <td>250 coins</td>
+                        <td>Expert</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>豪华面包食谱</h3>
+            <table class="recipe-table">
+                <thead>
+                    <tr>
+                        <th data-i18n="bread_name.table.bread_name">Bread Name</th>
+                        <th>所需食材</th>
+                        <th>制作时间</th>
+                        <th>奖励价值</th>
+                        <th>难度</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Artisan Bread</td>
+                        <td>All Basic + All Advanced + All Rare</td>
+                        <td>15 分钟</td>
+                        <td>400 coins</td>
+                        <td>Master</td>
+                    </tr>
+                    <tr>
+                        <td>Rainbow Bread</td>
+                        <td>All Ingredients + Special Dyes</td>
+                        <td>20 分钟</td>
+                        <td>600 coins</td>
+                        <td>Legendary</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="guide-card" id="varieties">
+            <h2>🎨 Bread Varieties &amp; Types</h2>
+            <p data-i18n="grow_a_garden_中包含多种面包类型，每种都有独特特性与奖励：.hero.subtitle">Grow a Garden 中包含多种面包类型，每种都有独特特性与奖励：</p>
+            
+            <div class="bread-variety">
+                <div class="bread-card">
+                    <h4>🍞 Classic Breads</h4>
+                    <ul>
+                        <li>White Bread - Basic wheat bread</li>
+                        <li>Whole Wheat - Nutritious whole grain</li>
+                        <li>Rye Bread - Traditional rye flour</li>
+                        <li>Sourdough - Fermented bread</li>
+                    </ul>
+                </div>
+                
+                <div class="bread-card">
+                    <h4>🍯 Sweet Breads</h4>
+                    <ul>
+                        <li>Honey Bread - Sweetened with honey</li>
+                        <li>Raisin Bread - Dried fruit bread</li>
+                        <li>Chocolate Bread - Chocolate chip bread</li>
+                        <li>Banana Bread - Fruit bread variety</li>
+                    </ul>
+                </div>
+                
+                <div class="bread-card">
+                    <h4>🥛 Rich Breads</h4>
+                    <ul>
+                        <li>Milk Bread - Enriched with milk</li>
+                        <li>Egg Bread - Rich with eggs</li>
+                        <li>Butter Bread - Buttery texture</li>
+                        <li>Cream Bread - Creamy consistency</li>
+                    </ul>
+                </div>
+                
+                <div class="bread-card">
+                    <h4>🌰 Specialty Breads</h4>
+                    <ul>
+                        <li>Nut Bread - Mixed nuts variety</li>
+                        <li>Herb Bread - Fresh herbs</li>
+                        <li>Spice Bread - Spiced variety</li>
+                        <li>Artisan Bread - Premium quality</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="guide-card" id="tips">
+            <h2>💡 Making Tips &amp; Tricks</h2>
+            <p>掌握这些技巧，你将很快成为面包制作高手：</p>
+            
+            <h3>🌱 Growing Tips</h3>
+            <ul>
+                <li><strong>Optimal Watering:</strong> Water wheat every 2-3 hours for maximum growth speed</li>
+                <li><strong>Golden Hours:</strong> Water during 7:00-9:00 in-game time for double effects</li>
+                <li><strong>Harvest Timing:</strong> Wait for wheat to fully mature (100% growth) before harvesting</li>
+                <li><strong>Soil Quality:</strong> Use premium soil for rare ingredients to increase success rate</li>
+            </ul>
+            
+            <h3>🍞 Making Tips</h3>
+            <ul>
+                <li><strong>Flour Quality:</strong> Higher quality wheat produces better flour</li>
+                <li><strong>Yeast Management:</strong> Proper yeast handling ensures good bread rise</li>
+                <li><strong>Recipe Efficiency:</strong> Master basic recipes before attempting advanced ones</li>
+                <li><strong>Storage Management:</strong> Keep ingredients organized for quick access</li>
+            </ul>
+            
+            <h3>💰 利润 Optimization</h3>
+            <ul>
+                <li><strong>Market Timing:</strong> Sell bread during peak demand hours</li>
+                <li><strong>Quality vs Quantity:</strong> Focus on high-quality bread for better profit margins</li>
+                <li><strong>Recipe Mastery:</strong> Master rare recipes for exclusive market access</li>
+                <li><strong>Supply Chain:</strong> Maintain steady ingredient supply for continuous production</li>
+            </ul>
+            
+            <div class="tip-box">
+                <strong>💡 贴士：</strong> Combine rare ingredients with basic ones to create unique bread varieties that can sell for premium prices!
+            </div>
+        </div>
+        
+        <div class="guide-card" id="efficiency">
+            <h2>⚡ 效率提升方法</h2>
+            <p>使用以下进阶策略，最大化面包制作的效率：</p>
+            
+            <h3>🏭 Production Optimization</h3>
+            <ul>
+                <li><strong>Automated Systems:</strong> Set up automated watering systems for consistent growth</li>
+                <li><strong>Batch Processing:</strong> Process multiple bread loaves simultaneously</li>
+                <li><strong>Ingredient Rotation:</strong> Rotate crops to maintain soil fertility</li>
+                <li><strong>Quality Control:</strong> Monitor ingredient quality for consistent results</li>
+            </ul>
+            
+            <h3 data-i18n="📊_advanced_strategies.📊_advanced_strategies.title">📊 Advanced Strategies</h3>
+            <ul>
+                <li><strong>Market Analysis:</strong> Track bread demand patterns for optimal production</li>
+                <li><strong>Recipe Optimization:</strong> Develop efficient ingredient combinations</li>
+                <li><strong>Resource Management:</strong> Balance ingredient costs with bread profits</li>
+                <li><strong>Skill Development:</strong> Improve bread-making skills for better results</li>
+            </ul>
+            
+            <div class="warning-box">
+                <strong>⚠️ 重要：</strong> Don't overproduce basic bread when the market is saturated. Focus on quality and variety for better profits.
+            </div>
+        </div>
+        
+        <div class="guide-card" id="faq">
+            <h2>❓ 常见问题</h2>
+            
+            <h3>问：制作基础面包需要多久？</h3>
+            <p>A: Basic bread takes 4-7 分钟 to make, while advanced recipes can take 8-20 分钟 depending on complexity.</p>
+            
+            <h3>Q: What's the most profitable bread recipe?</h3>
+            <p>A: Premium breads like Artisan Bread and Rainbow Bread offer the highest profit margins, but require rare ingredients.</p>
+            
+            <h3>Q: Can I sell bread to other players?</h3>
+            <p>A: Yes, you can sell bread in the marketplace or trade them with other players for other items.</p>
+            
+            <h3>问：如何解锁稀有食材配方？</h3>
+            <p>A: Rare recipes are unlocked by reaching higher levels and completing special quests in the game.</p>
+            
+            <h3>Q: What's the best time to water my wheat plants?</h3>
+            <p>A: Water during golden hours (7:00-9:00 in-game time) for double growth effects and better flour quality.</p>
+            
+            <h3>Q: How can I increase my bread-making efficiency?</h3>
+            <p>A: Focus on mastering basic recipes first, then gradually work on advanced recipes. Use batch production and maintain a steady supply of quality ingredients.</p>
+        </div>
+        
+        <div class="guide-card">
+            <h2>🎯 下一步</h2>
+            <p>现在你已经掌握了基础，接下来可以：</p>
+            
+            <ol>
+                <li><strong>Start Small:</strong> Begin with basic bread recipes to build your skills</li>
+                <li><strong>Expand Your Garden:</strong> Plant a variety of ingredients for different recipes</li>
+                <li><strong>Master Advanced Recipes:</strong> Work on complex bread varieties for higher profits</li>
+                <li><strong>Join the Community:</strong> Connect with other players to share tips and strategies</li>
+                <li><strong>Stay Updated:</strong> Keep up with game updates for new recipes and features</li>
+            </ol>
+            
+            <div class="tip-box">
+                <strong>💡 Community 贴士：</strong> Join our Discord server to connect with other bread makers, share recipes, and get the latest tips and tricks!
+            </div>
+        </div>
+        
+        <a href="/zh-cn/guides.html" class="back-btn">← 返回攻略</a>
+    </div>
+    
+    <script src="script.js"></script>
+
+ 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const currentFlag = document.getElementById('current-flag');
+    const flagDropdown = document.getElementById('current-flag');
+    
+    if (currentFlag && flagDropdown) {
+        // 设置当前语言的国旗
+        const currentLang = document.documentElement.getAttribute('lang') || 'en';
+        updateCurrentFlag(currentLang);
+        
+        // 为每个国旗选项添加点击事件
+        document.querySelectorAll('.flag-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const lang = this.getAttribute('data-lang');
+                if (lang) {
+                    // 调用现有的语言切换函数
+                    if (typeof switchLang === 'function') {
+                        switchLang(lang);
+                    } else if (typeof window.__gagI18n !== 'undefined' && window.__gagI18n.switchLang) {
+                        window.__gagI18n.switchLang(lang);
+                    }
+                }
+            });
+        });
+    }
+});
+
+function updateCurrentFlag(lang) {
+    const currentFlag = document.getElementById('current-flag');
+    if (currentFlag) {
+        const flagOptions = document.querySelectorAll('.flag-option');
+        flagOptions.forEach(option => {
+            if (option.getAttribute('data-lang') === lang) {
+                const flagContent = option.innerHTML;
+                currentFlag.innerHTML = flagContent;
+                break;
+            }
+        });
+    }
+}
+</script>
+    <script src="../flag-switcher.js"></script>
+</body></html>

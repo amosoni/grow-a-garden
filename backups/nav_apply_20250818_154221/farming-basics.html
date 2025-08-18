@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farming Basics in Grow a Garden - Complete Guide | Grow a Garden Tips</title>
+    <meta name="description" content="Learn essential farming techniques in Roblox Grow a Garden! From soil preparation to crop management, including all farming tips, watering strategies, and efficiency improvement methods.">
+    <meta name="keywords" content="farming basics grow a garden, roblox farming guide, grow a garden farming tips, roblox farming game, crop management, grow a garden tips">
+    <link rel="canonical" href="https://your-domain.com/farming-basics.html">
+    
+    <!-- Open Graph for social sharing -->
+    <meta property="og:title" content="Farming Basics in Grow a Garden - Complete Guide">
+    <meta property="og:description" content="Learn essential farming techniques in Roblox Grow a Garden! From soil preparation to crop management, including all farming tips.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://your-domain.com/farming-basics.html">
+    <meta property="og:image" content="https://your-domain.com/farming-basics-og.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Farming Basics in Grow a Garden - Complete Guide">
+    <meta name="twitter:description" content="Learn essential farming techniques in Roblox Grow a Garden! From soil preparation to crop management.">
+    <meta name="twitter:image" content="https://your-domain.com/farming-basics-og.jpg">
+    
+    <!-- Structured Data JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "Farming Basics in Grow a Garden",
+      "description": "Learn essential farming techniques in Roblox Grow a Garden, including soil preparation, crop management, and efficiency improvement tips.",
+      "image": "https://your-domain.com/farming-basics-og.jpg",
+      "url": "https://your-domain.com/farming-basics.html",
+      "inLanguage": "en",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Prepare Soil",
+          "text": "Choose the right soil type and prepare your farming plots in Grow a Garden"
+        },
+        {
+          "@type": "HowToStep", 
+          "name": "Plant Seeds",
+          "text": "Select appropriate seeds and plant them in prepared soil"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Water and Maintain",
+          "text": "Use proper watering techniques and maintenance strategies for optimal growth"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Roblox-like color scheme -->
+    <link rel="stylesheet" href="https://unpkg.com/simple.css@2.1.0/simple.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
+    
+    <style>
+        body {
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .bg-blur {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: 0;
+            background: url('grow-bg.jpg') center center/cover no-repeat;
+            opacity: 0.3;
+            filter: blur(2px);
+            pointer-events: none;
+        }
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+        .farming-hero {
+            background: linear-gradient(135deg, #4caf50, #388e3c);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-top: 60px;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        .farming-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        .farming-hero h1,
+        .farming-hero p {
+            position: relative;
+            z-index: 2;
+        }
+        .farming-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: white !important;
+            text-shadow: 
+                0 2px 4px rgba(0,0,0,0.7),
+                0 1px 2px rgba(0,0,0,0.8);
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            -webkit-text-stroke: 0.5px rgba(0,0,0,0.2);
+        }
+        .farming-hero p {
+            font-size: 1.2rem;
+            opacity: 1;
+            color: white !important;
+            text-shadow: 
+                0 1px 3px rgba(0,0,0,0.6),
+                0 1px 2px rgba(0,0,0,0.7);
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            -webkit-text-stroke: 0.3px rgba(0,0,0,0.15);
+        }
+        .guide-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .guide-card {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .guide-card h2 {
+            color: #23272a !important;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+        .guide-card h3 {
+            color: #2c3e50 !important;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .guide-card p, .guide-card li {
+            color: #34495e !important;
+            font-weight: 500;
+            line-height: 1.6;
+        }
+        .technique-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .technique-item {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 8px;
+            padding: 1rem;
+            border-left: 4px solid #4caf50;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .technique-item h4 {
+            color: #23272a !important;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .technique-item p {
+            color: #34495e !important;
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+        }
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+        }
+        .info-table th,
+        .info-table td {
+            border: 1px solid #ddd;
+            padding: 0.75rem;
+            text-align: left;
+            font-weight: 500;
+        }
+        .info-table th {
+            background: #4caf50;
+            color: white;
+            font-weight: 700;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+        .info-table td {
+            color: #2c3e50 !important;
+            background: rgba(255, 255, 255, 0.9);
+        }
+        .info-table tr:nth-child(even) td {
+            background: rgba(76, 175, 80, 0.08);
+        }
+        .tip-box {
+            background: linear-gradient(135deg, #f1c40f, #f39c12);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            box-shadow: 0 4px 15px rgba(241, 196, 15, 0.3);
+        }
+        .tip-box strong {
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+            font-weight: 700;
+        }
+        .warning-box {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+        }
+        .warning-box strong {
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+            font-weight: 700;
+        }
+        .back-btn {
+            display: inline-block;
+            background: #5865f2;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+        .back-btn:hover {
+            background: #4752c4;
+            transform: translateY(-2px);
+        }
+        .farming-tips {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .tip-card {
+            background: linear-gradient(135deg, #e8f5e8, #c8e6c9);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.2);
+            border: 2px solid #81c784;
+        }
+        .tip-card h4 {
+            color: #2e7d32 !important;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .tip-card ul {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+        .tip-card li {
+            color: #33691e !important;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* 面包屑导航样式 */
+        .breadcrumb-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+        }
+        .breadcrumb {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .breadcrumb ol {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .breadcrumb li {
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            color: #34495e;
+        }
+        .breadcrumb li:not(:last-child)::after {
+            content: "›";
+            margin: 0 0.5rem;
+            color: #4caf50;
+            font-weight: bold;
+        }
+        .breadcrumb a {
+            color: #4caf50;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .breadcrumb a:hover {
+            color: #388e3c;
+            text-decoration: underline;
+        }
+        .breadcrumb li[aria-current="page"] {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+    </style>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HG12TJB5LZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HG12TJB5LZ');
+    </script>
+</head>
+<body>
+    <div class="bg-blur"></div>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">🌱 Grow a Garden</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('stats')">Live Stats</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('map')">Global Heatmap</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('tips')">Tips</a>
+            <a href="guides.html">📚 Guides</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('community')" class="discord-btn">💬 Discord</a>
+        </nav>
+    </header>
+    
+    <section class="farming-hero">
+        <h1>🌱 Farming Basics in Grow a Garden</h1>
+        <p>Complete Guide: From Soil Preparation to Crop Management</p>
+    </section>
+    
+    <!-- 面包屑导航 -->
+    <div class="breadcrumb-container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+                <li><a href="index.html">🏠 Home</a></li>
+                <li><a href="guides.html">📚 Guides</a></li>
+                <li aria-current="page">🌱 Farming Basics</li>
+            </ol>
+        </nav>
+    </div>
+    
+    <div class="guide-section">
+        <div class="guide-card">
+            <h2>📋 Table of Contents</h2>
+            <ul>
+                <li><a href="#basics">Basic Farming Concepts</a></li>
+                <li><a href="#soil">Soil Preparation</a></li>
+                <li><a href="#seeds">Seed Selection</a></li>
+                <li><a href="#planting">Planting Techniques</a></li>
+                <li><a href="#watering">Watering Strategies</a></li>
+                <li><a href="#harvesting">Harvesting Methods</a></li>
+                <li><a href="#tips">Farming Tips & Tricks</a></li>
+                <li><a href="#efficiency">Efficiency Improvement Methods</a></li>
+                <li><a href="#faq">Frequently Asked Questions</a></li>
+            </ul>
+        </div>
+        
+        <div class="guide-card" id="basics">
+            <h2>🌱 Basic Farming Concepts</h2>
+            <p>Farming is the foundation of Grow a Garden gameplay. Understanding the basics will help you become a successful farmer and maximize your profits.</p>
+            
+            <h3>Core Farming Principles:</h3>
+            <ol>
+                <li><strong>Soil Quality:</strong> Choose the right soil type for your crops</li>
+                <li><strong>Seed Selection:</strong> Pick seeds that match your farming goals</li>
+                <li><strong>Planting Timing:</strong> Plant at optimal times for best results</li>
+                <li><strong>Watering Schedule:</strong> Maintain consistent watering patterns</li>
+                <li><strong>Harvest Timing:</strong> Harvest at peak ripeness for maximum value</li>
+            </ol>
+            
+            <div class="tip-box">
+                <strong>💡 Pro Tip:</strong> Start with basic crops to learn the fundamentals before moving to advanced farming techniques!
+            </div>
+        </div>
+        
+        <div class="guide-card" id="soil">
+            <h2>🌍 Soil Preparation</h2>
+            <p>Proper soil preparation is crucial for successful farming. Different soil types affect crop growth and yield.</p>
+            
+            <h3>Soil Types and Their Effects</h3>
+            <table class="info-table">
+                <thead>
+                    <tr>
+                        <th>Soil Type</th>
+                        <th>Growth Bonus</th>
+                        <th>Water Retention</th>
+                        <th>Best For</th>
+                        <th>Cost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Basic Soil</td>
+                        <td>0%</td>
+                        <td>Normal</td>
+                        <td>All crops</td>
+                        <td>Free</td>
+                    </tr>
+                    <tr>
+                        <td>Rich Soil</td>
+                        <td>+25%</td>
+                        <td>High</td>
+                        <td>Vegetables</td>
+                        <td>50 coins</td>
+                    </tr>
+                    <tr>
+                        <td>Premium Soil</td>
+                        <td>+50%</td>
+                        <td>Very High</td>
+                        <td>Fruits</td>
+                        <td>100 coins</td>
+                    </tr>
+                    <tr>
+                        <td>Magic Soil</td>
+                        <td>+100%</td>
+                        <td>Excellent</td>
+                        <td>Rare crops</td>
+                        <td>200 coins</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Soil Preparation Steps</h3>
+            <ol>
+                <li><strong>Clear the Area:</strong> Remove any existing crops or debris</li>
+                <li><strong>Choose Soil Type:</strong> Select appropriate soil for your crops</li>
+                <li><strong>Apply Soil:</strong> Spread the soil evenly across your plot</li>
+                <li><strong>Level the Surface:</strong> Ensure even distribution for optimal planting</li>
+                <li><strong>Test Moisture:</strong> Check soil moisture before planting</li>
+            </ol>
+        </div>
+        
+        <div class="guide-card" id="seeds">
+            <h2>🌾 Seed Selection</h2>
+            <p>Choosing the right seeds is essential for successful farming. Consider growth time, value, and market demand.</p>
+            
+            <h3>Seed Categories</h3>
+            <div class="technique-grid">
+                <div class="technique-item">
+                    <h4>🥬 Vegetables</h4>
+                    <p>Growth Time: 30-60 minutes</p>
+                    <p>Value: Low to Medium</p>
+                    <p>Use: Basic recipes and salads</p>
+                </div>
+                <div class="technique-item">
+                    <h4>🍎 Fruits</h4>
+                    <p>Growth Time: 60-120 minutes</p>
+                    <p>Value: Medium to High</p>
+                    <p>Use: Advanced recipes and desserts</p>
+                </div>
+                <div class="technique-item">
+                    <h4>🌾 Grains</h4>
+                    <p>Growth Time: 45-90 minutes</p>
+                    <p>Value: Medium</p>
+                    <p>Use: Bread and pasta recipes</p>
+                </div>
+                <div class="technique-item">
+                    <h4>🌿 Herbs</h4>
+                    <p>Growth Time: 20-40 minutes</p>
+                    <p>Value: High</p>
+                    <p>Use: Flavor enhancement</p>
+                </div>
+            </div>
+            
+            <h3>Seed Selection Strategy</h3>
+            <ul>
+                <li><strong>Market Demand:</strong> Plant crops that are currently in high demand</li>
+                <li><strong>Growth Time:</strong> Balance quick crops with high-value long-term crops</li>
+                <li><strong>Space Efficiency:</strong> Choose crops that maximize your plot space</li>
+                <li><strong>Profit Margin:</strong> Focus on crops with the best profit potential</li>
+            </ul>
+        </div>
+        
+        <div class="guide-card" id="planting">
+            <h2>🌱 Planting Techniques</h2>
+            <p>Proper planting techniques ensure optimal crop growth and maximum yields.</p>
+            
+            <h3>Planting Steps</h3>
+            <ol>
+                <li><strong>Prepare Soil:</strong> Ensure soil is properly prepared and moist</li>
+                <li><strong>Select Seeds:</strong> Choose appropriate seeds for your goals</li>
+                <li><strong>Plant Seeds:</strong> Place seeds at recommended depth and spacing</li>
+                <li><strong>Water Immediately:</strong> Give initial watering to start growth</li>
+                <li><strong>Monitor Growth:</strong> Check progress regularly</li>
+            </ol>
+            
+            <h3>Optimal Planting Patterns</h3>
+            <table class="info-table">
+                <thead>
+                    <tr>
+                        <th>Crop Type</th>
+                        <th>Spacing</th>
+                        <th>Depth</th>
+                        <th>Watering Frequency</th>
+                        <th>Growth Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Leafy Greens</td>
+                        <td>Close</td>
+                        <td>Shallow</td>
+                        <td>Frequent</td>
+                        <td>30-45 min</td>
+                    </tr>
+                    <tr>
+                        <td>Root Vegetables</td>
+                        <td>Medium</td>
+                        <td>Deep</td>
+                        <td>Moderate</td>
+                        <td>60-90 min</td>
+                    </tr>
+                    <tr>
+                        <td>Fruit Trees</td>
+                        <td>Wide</td>
+                        <td>Medium</td>
+                        <td>Regular</td>
+                        <td>120-180 min</td>
+                    </tr>
+                    <tr>
+                        <td>Herbs</td>
+                        <td>Close</td>
+                        <td>Shallow</td>
+                        <td>Light</td>
+                        <td>20-30 min</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="guide-card" id="watering">
+            <h2>💧 Watering Strategies</h2>
+            <p>Proper watering is crucial for crop health and optimal growth. Learn the best watering techniques.</p>
+            
+            <div class="farming-tips">
+                <div class="tip-card">
+                    <h4>⏰ Golden Hours</h4>
+                    <ul>
+                        <li>Water during 7:00-9:00 in-game time</li>
+                        <li>Provides double growth effects</li>
+                        <li>Increases crop quality</li>
+                        <li>Reduces water consumption</li>
+                    </ul>
+                </div>
+                
+                <div class="tip-card">
+                    <h4>🌧️ Watering Frequency</h4>
+                    <ul>
+                        <li>Check soil moisture regularly</li>
+                        <li>Water when soil is dry</li>
+                        <li>Don't overwater crops</li>
+                        <li>Adjust for weather conditions</li>
+                    </ul>
+                </div>
+                
+                <div class="tip-card">
+                    <h4>💧 Watering Techniques</h4>
+                    <ul>
+                        <li>Use gentle watering for seedlings</li>
+                        <li>Deep watering for established plants</li>
+                        <li>Morning watering is best</li>
+                        <li>Avoid watering in direct sunlight</li>
+                    </ul>
+                </div>
+                
+                <div class="tip-card">
+                    <h4>📊 Watering Schedule</h4>
+                    <ul>
+                        <li>Create consistent watering schedule</li>
+                        <li>Monitor crop response</li>
+                        <li>Adjust based on growth stage</li>
+                        <li>Use automated systems when possible</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="guide-card" id="harvesting">
+            <h2>🌾 Harvesting Methods</h2>
+            <p>Proper harvesting techniques ensure maximum crop value and quality.</p>
+            
+            <h3>Harvesting Best Practices</h3>
+            <ul>
+                <li><strong>Timing:</strong> Harvest at peak ripeness for maximum value</li>
+                <li><strong>Method:</strong> Use appropriate tools for each crop type</li>
+                <li><strong>Storage:</strong> Store harvested crops properly to maintain quality</li>
+                <li><strong>Processing:</strong> Process crops quickly to prevent spoilage</li>
+            </ul>
+            
+            <h3>Harvesting Tools and Techniques</h3>
+            <table class="info-table">
+                <thead>
+                    <tr>
+                        <th>Tool Type</th>
+                        <th>Best For</th>
+                        <th>Efficiency</th>
+                        <th>Cost</th>
+                        <th>Durability</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Basic Sickle</td>
+                        <td>Grains</td>
+                        <td>Low</td>
+                        <td>Free</td>
+                        <td>Low</td>
+                    </tr>
+                    <tr>
+                        <td>Garden Shears</td>
+                        <td>Herbs</td>
+                        <td>Medium</td>
+                        <td>25 coins</td>
+                        <td>Medium</td>
+                    </tr>
+                    <tr>
+                        <td>Harvest Knife</td>
+                        <td>Vegetables</td>
+                        <td>High</td>
+                        <td>50 coins</td>
+                        <td>High</td>
+                    </tr>
+                    <tr>
+                        <td>Magic Harvester</td>
+                        <td>All crops</td>
+                        <td>Very High</td>
+                        <td>200 coins</td>
+                        <td>Very High</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="guide-card" id="tips">
+            <h2>💡 Farming Tips & Tricks</h2>
+            <p>Master these tips to become a farming expert in Grow a Garden:</p>
+            
+            <h3>🌱 Growing Tips</h3>
+            <ul>
+                <li><strong>Start Small:</strong> Begin with basic crops to master the fundamentals</li>
+                <li><strong>Plan Ahead:</strong> Create a farming schedule for optimal efficiency</li>
+                <li><strong>Diversify:</strong> Plant a variety of crops to reduce risk</li>
+                <li><strong>Monitor Growth:</strong> Check your crops regularly for issues</li>
+            </ul>
+            
+            <h3>💰 Profit Optimization</h3>
+            <ul>
+                <li><strong>Market Research:</strong> Study market trends for crop values</li>
+                <li><strong>Timing:</strong> Plant crops that will be ready during peak demand</li>
+                <li><strong>Quality Focus:</strong> Use premium soil for high-value crops</li>
+                <li><strong>Efficiency:</strong> Optimize your farming layout for maximum yield</li>
+            </ul>
+            
+            <h3>🔧 Advanced Techniques</h3>
+            <ul>
+                <li><strong>Crop Rotation:</strong> Rotate crops to maintain soil fertility</li>
+                <li><strong>Companion Planting:</strong> Plant compatible crops together</li>
+                <li><strong>Automation:</strong> Use automated systems for consistent care</li>
+                <li><strong>Specialization:</strong> Focus on crops you excel at growing</li>
+            </ul>
+            
+            <div class="tip-box">
+                <strong>💡 Pro Tip:</strong> Use the golden hours (7:00-9:00 in-game time) for all your farming activities to maximize efficiency and crop quality!
+            </div>
+        </div>
+        
+        <div class="guide-card" id="efficiency">
+            <h2>⚡ Efficiency Improvement Methods</h2>
+            <p>Maximize your farming efficiency with these advanced strategies:</p>
+            
+            <h3>🏭 Production Optimization</h3>
+            <ul>
+                <li><strong>Automated Systems:</strong> Set up automated watering and harvesting systems</li>
+                <li><strong>Batch Processing:</strong> Plant and harvest crops in batches</li>
+                <li><strong>Space Optimization:</strong> Maximize your plot usage with efficient layouts</li>
+                <li><strong>Quality Control:</strong> Monitor crop health and soil conditions</li>
+            </ul>
+            
+            <h3>📊 Advanced Strategies</h3>
+            <ul>
+                <li><strong>Market Analysis:</strong> Track crop demand patterns for optimal planting</li>
+                <li><strong>Resource Management:</strong> Balance water, soil, and seed costs</li>
+                <li><strong>Skill Development:</strong> Improve farming skills for better results</li>
+                <li><strong>Technology Investment:</strong> Invest in better tools and equipment</li>
+            </ul>
+            
+            <div class="warning-box">
+                <strong>⚠️ Important:</strong> Don't overplant when the market is saturated. Focus on quality and timing for better profits.
+            </div>
+        </div>
+        
+        <div class="guide-card" id="faq">
+            <h2>❓ Frequently Asked Questions</h2>
+            
+            <h3>Q: What's the best time to plant crops?</h3>
+            <p>A: Plant during the morning hours (7:00-9:00 in-game time) for optimal growth and use golden hours for watering.</p>
+            
+            <h3>Q: How do I choose the right soil type?</h3>
+            <p>A: Match soil type to your crop needs - basic soil for beginners, premium soil for high-value crops, and magic soil for rare crops.</p>
+            
+            <h3>Q: What's the most profitable farming strategy?</h3>
+            <p>A: Focus on high-value crops during peak demand times, use premium soil, and maintain consistent watering schedules.</p>
+            
+            <h3>Q: How often should I water my crops?</h3>
+            <p>A: Water when soil is dry, typically every 2-3 hours, and always during golden hours for double effects.</p>
+            
+            <h3>Q: When is the best time to harvest?</h3>
+            <p>A: Harvest at peak ripeness (100% growth) for maximum value and quality.</p>
+            
+            <h3>Q: How can I increase my farming efficiency?</h3>
+            <p>A: Use automated systems, plan your crop rotation, invest in better tools, and focus on crops you excel at growing.</p>
+        </div>
+        
+        <div class="guide-card">
+            <h2>🎯 Next Steps</h2>
+            <p>Now that you've learned the basics of farming in Grow a Garden, here are your next steps:</p>
+            
+            <ol>
+                <li><strong>Practice Basics:</strong> Start with simple crops to master the fundamentals</li>
+                <li><strong>Expand Knowledge:</strong> Learn about advanced farming techniques</li>
+                <li><strong>Invest in Tools:</strong> Upgrade your farming equipment</li>
+                <li><strong>Join the Community:</strong> Connect with other farmers to share tips</li>
+                <li><strong>Stay Updated:</strong> Keep up with game updates for new farming features</li>
+            </ol>
+            
+            <div class="tip-box">
+                <strong>💡 Community Tip:</strong> Join our Discord server to connect with other farmers, share techniques, and get the latest farming tips and tricks!
+            </div>
+        </div>
+        
+        <a href="guides.html" class="back-btn">← Back to Guides</a>
+    </div>
+    
+    <script src="script.js"></script>
+
+    <script src="flag-switcher.js"></script></body>
+</html> 

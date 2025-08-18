@@ -59,9 +59,19 @@
 
   function rewriteLocalLinks(lang){
     try{
-      const anchors = Array.from(document.querySelectorAll('a[href]'));
+      const anchors = Array.from(document.querySelectorAll('a[href], a[onclick]'));
+      const isHomeNow = /(^|\/)index\.html$/i.test(location.pathname) || location.pathname === '/';
       anchors.forEach(a => {
         const href = a.getAttribute('href');
+        const onClick = (a.getAttribute('onclick') || '');
+        // 将带有 scrollToSection 的导航，在非首页时改为去首页对应锚点；在首页使用本页锚点
+        const m = onClick.match(/scrollToSection\('([a-z0-9-]+)'\)/i);
+        if (m) {
+          const sec = (m[1] || '').toLowerCase();
+          a.setAttribute('href', isHomeNow ? `#${sec}` : `/${lang}/index.html#${sec}`);
+          a.removeAttribute('onclick');
+          return;
+        }
         if (!href) return;
         if (/^(https?:)?\/\//i.test(href) || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:') || href.startsWith('#')) return;
 
@@ -96,15 +106,67 @@
     }catch(_e){}
   }
   
+  // Helper: only use a translation value if it looks valid (non-empty, not an echo of the key or [key])
+  function isUsableTranslation(val, key){
+    if (val == null) return false;
+    const t = String(val).trim();
+    if (!t) return false;
+    if (t === key) return false;
+    if (t === `[${key}]`) return false;
+    if (/^\[[^\]]+\]$/.test(t)) return false;
+    return true;
+  }
+
+  // Heuristic: remove/disable any floating right-side flags bar overlaying clicks
+  function disableFloatingFlagSidebar(){
+    try{
+      const scan = ()=>{
+        const nodes = Array.from(document.querySelectorAll('body *'));
+        const toHide = [];
+        nodes.forEach(el=>{
+          const cs = getComputedStyle(el);
+          if (cs.position !== 'fixed') return;
+          const rect = el.getBoundingClientRect();
+          if (rect.width > 180) return; // narrow column
+          if (rect.right < window.innerWidth - 20) return; // must be near right edge
+          // many small images stacked vertically
+          const imgs = el.querySelectorAll('img');
+          if (imgs.length >= 6) {
+            let stacked = 0;
+            imgs.forEach(img=>{ const r = img.getBoundingClientRect(); if (r.width <= 40 && r.height <= 30) stacked++; });
+            if (stacked >= 5) toHide.push(el);
+          }
+        });
+        toHide.forEach(el=>{ el.style.pointerEvents = 'none'; el.style.opacity = '0'; el.style.display = 'none'; el.setAttribute('data-gag-hidden', 'true'); });
+      };
+      scan();
+      // Keep it suppressed if some script re-inserts it later
+      if (!window.__gagFlagSidebarObserver){
+        const obs = new MutationObserver(()=> scan());
+        obs.observe(document.body, { childList: true, subtree: true });
+        window.__gagFlagSidebarObserver = obs;
+      }
+    }catch(_e){}
+  }
+
   async function applyI18n(lang){
     try{
       const dict = await fetch(`/i18n/${lang}.json`, {cache: "no-cache"}).then(r=>r.json());
       try { localStorage.setItem(storageKey, lang); } catch(_e) {}
       try { window.__gagI18n = { lang, dict }; window.__gagTranslate = function(key){ return (window.__gagI18n && window.__gagI18n.dict && window.__gagI18n.dict[key]) || null; }; } catch(_e) {}
       setDocumentLang(lang);
-      document.querySelectorAll("[data-i18n]").forEach(el=>{ const key = el.getAttribute("data-i18n"); if (dict[key]) el.textContent = dict[key]; });
-      document.querySelectorAll("[data-i18n-placeholder]").forEach(el=>{ const key = el.getAttribute("data-i18n-placeholder"); if (dict[key]) el.placeholder = dict[key]; });
-      try { const nav = document.querySelector('header nav'); if (nav) { const links = nav.querySelectorAll('a'); links.forEach(a => { const text = (s)=>{ if (s) a.textContent = s; }; if (a.classList.contains('logo')) { text(dict['nav.logo']); return; } const href = a.getAttribute('href') || ''; const onClick = a.getAttribute('onclick') || ''; if (href.includes('guides.html')) { text(dict['nav.guides']); return; } if (onClick.includes("scrollToSection('stats')")) { text(dict['nav.live']); return; } if (onClick.includes("scrollToSection('map')")) { text(dict['nav.map']); return; } if (onClick.includes("scrollToSection('tips')")) { text(dict['nav.tips']); return; } if (onClick.includes("scrollToSection('community')") || a.classList.contains('discord-btn')) { text(dict['nav.discord']); return; } }); } } catch(_e) {}
+      document.querySelectorAll("[data-i18n]").forEach(el=>{ const key = el.getAttribute("data-i18n"); const v = dict[key]; if (isUsableTranslation(v, key)) el.textContent = v; });
+      document.querySelectorAll("[data-i18n-placeholder]").forEach(el=>{ const key = el.getAttribute("data-i18n-placeholder"); const v = dict[key]; if (isUsableTranslation(v, key)) el.placeholder = v; });
+      try { const nav = document.querySelector('header nav'); if (nav) { const links = nav.querySelectorAll('a'); links.forEach(a => {
+        const text = (s)=>{ if (s) a.textContent = s; };
+        if (a.classList.contains('logo')) { text(dict['nav.logo']); return; }
+        const href = (a.getAttribute('href') || '').toLowerCase();
+        if (href.includes('guides.html')) { text(dict['nav.guides']); return; }
+        if (href.includes('#stats') || /scrolltosection\('stats'\)/i.test(a.getAttribute('onclick')||'')) { text(dict['nav.live']); return; }
+        if (href.includes('#map') || /scrolltosection\('map'\)/i.test(a.getAttribute('onclick')||'')) { text(dict['nav.map']); return; }
+        if (href.includes('#tips') || /scrolltosection\('tips'\)/i.test(a.getAttribute('onclick')||'')) { text(dict['nav.tips']); return; }
+        if (a.classList.contains('discord-btn')) { text(dict['nav.discord']); return; }
+      }); } } catch(_e) {}
       try { const footer = document.querySelector('footer .footer-content'); if (footer) { const ps = footer.querySelectorAll('p'); if (ps[0] && dict['footer.copyright']) ps[0].textContent = dict['footer.copyright']; if (ps[1] && dict['footer.disclaimer']) ps[1].textContent = dict['footer.disclaimer']; } } catch(_e) {}
       const sel = document.getElementById("lang-switcher"); if (sel) sel.value = lang;
       rewriteLocalLinks(lang);
@@ -123,6 +185,9 @@
 
       // Re-run link rewriting to ensure injected links also carry ?lang
       rewriteLocalLinks(lang);
+
+      // Disable any floating flag sidebar that could block clicks
+      disableFloatingFlagSidebar();
     }catch(e){ console.warn("i18n load failed", e); }
   }
 
@@ -245,7 +310,7 @@
           },
           'storage-and-logistics.html': {
             title:{'zh-cn':'📦 存储与物流','ja':'📦 ストレージと物流','es':'📦 Almacenamiento y logística','pt-br':'📦 Armazenamento e logística','fr':'📦 Stockage et logistique','de':'📦 Lagerung & Logistik','ru':'📦 Хранение и логистика','ar':'📦 التخزين واللوجستيات','hi':'📦 भंडारण और लॉजिस्टिक्स','id':'📦 Penyimpanan & Logistik','vi':'📦 Lưu trữ & hậu cần'},
-            desc:{'zh-cn':'设计仓储枢纽、标记库存、规划路线与批量配送，提升效率。','ja':'倉庫拠点の設計、在庫ラベル付け、ルート計画、バッチ配送で効率化。','es':'Diseña centros de almacenamiento, etiqueta inventario y planifica rutas para máxima eficiencia.','pt-br':'Projete hubs de armazenamento, rotule estoque, planeje rotas e entregas em lote.','fr':'Concevez des hubs de stockage, étiquetez l’inventaire et planifiez les routes.','de':'Plane Lager-Hubs, bestandslabels, Routen und Bündel-Lieferungen.','ru':'Проектируйте склады, маркируйте запасы и планируйте маршруты.','ar':'صمّم مراكز التخزين، ضع بطاقات على المخزون وخطط المسارات والتسليمات.','hi':'स्टोरेज हब, इन्वेंट्री लेबलिंग, रूट व बैच डिलीवरी से दक्षता बढ़ाएँ।','id':'Rancang hub penyimpanan, label inventori, rencanakan rute & pengiriman.','vi':'Thiết kế kho, gắn nhãn tồn, lên tuyến & giao theo lô.'}
+            desc:{'zh-cn':'设计仓储枢纽、标记库存、规划路线与批量配送，提升效率。','ja':'倉庫拠点の設計、在庫ラベル付け、ルート計画、バッチ配送で効率化。','es':'Diseña centros de almacenamiento, etiqueta inventario y planifica rutas para máxima eficiencia.','pt-br':'Projete hubs de armazenamento, rotule estoque, planeje rotas e entregas em lote.','fr':'Concevez des hubs de stockage, étiquetez l\'inventaire et planifiez les routes.','de':'Plane Lager-Hubs, bestandslabels, Routen und Bündel-Lieferungen.','ru':'Проектируйте склады, маркируйте запасы и планируйте маршруты.','ar':'صمّم مراكز التخزين، ضع بطاقات على المخزون وخطط المسارات والتسليمات.','hi':'स्टोरेज हब, इन्वेंट्री लेबलिंग, रूट व बैच डिलीवरी से दक्षता बढ़ाएँ।','id':'Rancang hub penyimpanan, label inventori, rencanakan rute & pengiriman.','vi':'Thiết kế kho, gắn nhãn tồn, lên tuyến & giao theo lô.'}
           },
           'profit-strategies.html': { title:{'ja':'✅ 利益戦略ガイド','zh-cn':'✅ 利润策略指南'}, desc:{'ja':'長期的な利益戦略、市場分析とリスク管理、販売の最適化を学ぶ。','zh-cn':'掌握长期盈利策略，市场分析与风险控制，优化销售节奏。'} },
           'market-analysis.html': { title:{'ja':'📊 マーケット分析','zh-cn':'📊 市场分析'}, desc:{'ja':'市場動向を分析し、利益機会を見極め、販売戦略を最適化。','zh-cn':'学习分析市场趋势、识别高利润机会并优化售卖策略。'} },
@@ -555,69 +620,465 @@
     try{
       const base = (location.pathname.split('/').pop() || '').toLowerCase();
       if (!/^[a-z0-9-]+\.html$/.test(base)) return;
-      // Only target salad for now
-      if (base !== 'how-to-make-salad.html') return;
+      if (!/^how-to-[a-z0-9-]+\.html$/.test(base)) return; // only how-to pages
       const t = (k)=> (dict && dict[k]) || null;
-      // Section titles
-      const h3List = Array.from(document.querySelectorAll('h3'));
-      h3List.forEach(h3=>{
-        const tx = (h3.textContent||'').trim();
-        if (/^basic salad recipes$/i.test(tx) && t('salad.recipes.basicTitle')) h3.textContent = t('salad.recipes.basicTitle');
-        if (/^luxury salad recipes$/i.test(tx) && t('salad.recipes.luxuryTitle')) h3.textContent = t('salad.recipes.luxuryTitle');
+
+      // Generic table headers mapping (by language)
+      const TABLE_MAP = {
+        'en':   { name:'Name', ingredients:'Ingredients', time:'Time', rewards:'Rewards', difficulty:'Difficulty' },
+        'zh-cn':{ name:'名称', ingredients:'所需材料', time:'时间', rewards:'奖励', difficulty:'难度' },
+        'ja':   { name:'名前', ingredients:'必要な材料', time:'調理時間', rewards:'報酬価値', difficulty:'難易度' },
+        'es':   { name:'Nombre', ingredients:'Ingredientes', time:'Tiempo', rewards:'Recompensas', difficulty:'Dificultad' },
+        'pt-br':{ name:'Nome', ingredients:'Ingredientes', time:'Tempo', rewards:'Recompensas', difficulty:'Dificuldade' },
+        'fr':   { name:'Nom', ingredients:'Ingrédients', time:'Temps', rewards:'Récompenses', difficulty:'Difficulté' },
+        'de':   { name:'Name', ingredients:'Zutaten', time:'Zeit', rewards:'Belohnungen', difficulty:'Schwierigkeit' },
+        'ru':   { name:'Название', ingredients:'Ингредиенты', time:'Время', rewards:'Награды', difficulty:'Сложность' },
+        'ar':   { name:'الاسم', ingredients:'المكونات', time:'الوقت', rewards:'المكافآت', difficulty:'الصعوبة' },
+        'hi':   { name:'नाम', ingredients:'आवश्यक सामग्री', time:'समय', rewards:'इनाम', difficulty:'कठिनाई' },
+        'id':   { name:'Nama', ingredients:'Bahan', time:'Waktu', rewards:'Hadiah', difficulty:'Kesulitan' },
+        'vi':   { name:'Tên', ingredients:'Nguyên liệu', time:'Thời gian', rewards:'Phần thưởng', difficulty:'Độ khó' }
+      };
+      const TABLE = TABLE_MAP[lang] || TABLE_MAP['en'];
+
+      // Headings common terms per language
+      const HEADINGS_MAP = {
+        'ja': {
+          'Basic Salad Recipes':'基本サラダレシピ',
+          'Luxury Salad Recipes':'高級サラダレシピ',
+          'Basic Pizza Recipes':'基本ピザレシピ',
+          'Advanced Pizza Recipes':'上級ピザレシピ',
+          'Premium Recipes':'プレミアムレシピ',
+          'Pizza Varieties & Types':'ピザの種類',
+          'Making Tips & Tricks':'作りのコツとテクニック',
+          'Growing Tips':'栽培のコツ',
+          'Making Tips':'作り方のコツ',
+          'Profit Optimization':'利益最適化',
+          'Production Optimization':'生産最適化',
+          'Advanced Strategies':'高度な戦略',
+          'Next Steps':'次のステップ',
+          'Basic Bread Making':'基本的なパン作り',
+          'Basic Bread Recipes':'基本パンレシピ',
+          'Advanced Bread Recipes':'上級パンレシピ',
+          'Premium Bread Recipes':'プレミアムパンレシピ',
+          'Bread Varieties & Types':'パンの種類'
+        },
+        'zh-cn': {
+          'Basic Salad Recipes':'基础沙拉配方',
+          'Luxury Salad Recipes':'高阶沙拉配方',
+          'Basic Pizza Recipes':'基础披萨配方',
+          'Advanced Pizza Recipes':'进阶披萨配方',
+          'Premium Recipes':'高级配方',
+          'Pizza Varieties & Types':'披萨种类',
+          'Making Tips & Tricks':'制作技巧',
+          'Growing Tips':'种植技巧',
+          'Making Tips':'制作要点',
+          'Profit Optimization':'收益优化',
+          'Production Optimization':'生产优化',
+          'Advanced Strategies':'高级策略',
+          'Next Steps':'下一步',
+          'Basic Bread Making':'基础面包制作',
+          'Basic Bread Recipes':'基础面包配方',
+          'Advanced Bread Recipes':'进阶面包配方',
+          'Premium Bread Recipes':'高级面包配方',
+          'Bread Varieties & Types':'面包种类'
+        },
+        'es': {
+          'Basic Salad Recipes':'Recetas básicas de ensalada',
+          'Luxury Salad Recipes':'Recetas de ensalada premium',
+          'Basic Pizza Recipes':'Recetas básicas de pizza',
+          'Advanced Pizza Recipes':'Recetas avanzadas de pizza',
+          'Premium Recipes':'Recetas premium',
+          'Pizza Varieties & Types':'Variedades de pizza',
+          'Making Tips & Tricks':'Consejos y trucos',
+          'Growing Tips':'Consejos de cultivo',
+          'Making Tips':'Consejos de preparación',
+          'Profit Optimization':'Optimización de ganancias',
+          'Production Optimization':'Optimización de producción',
+          'Advanced Strategies':'Estrategias avanzadas',
+          'Next Steps':'Siguientes pasos',
+          'Basic Bread Making':'Elaboración básica de pan',
+          'Basic Bread Recipes':'Recetas básicas de pan',
+          'Advanced Bread Recipes':'Recetas avanzadas de pan',
+          'Premium Bread Recipes':'Recetas de pan premium',
+          'Bread Varieties & Types':'Tipos de pan'
+        },
+        'pt-br': {
+          'Basic Salad Recipes':'Receitas básicas de salada',
+          'Luxury Salad Recipes':'Receitas de salada premium',
+          'Basic Pizza Recipes':'Receitas básicas de pizza',
+          'Advanced Pizza Recipes':'Receitas avançadas de pizza',
+          'Premium Recipes':'Receitas premium',
+          'Pizza Varieties & Types':'Tipos de pizza',
+          'Making Tips & Tricks':'Dicas e truques',
+          'Growing Tips':'Dicas de cultivo',
+          'Making Tips':'Dicas de preparo',
+          'Profit Optimization':'Otimização de lucro',
+          'Production Optimization':'Otimização de produção',
+          'Advanced Strategies':'Estratégias avançadas',
+          'Next Steps':'Próximos passos',
+          'Basic Bread Making':'Preparo básico de pão',
+          'Basic Bread Recipes':'Receitas básicas de pão',
+          'Advanced Bread Recipes':'Receitas avançadas de pão',
+          'Premium Bread Recipes':'Receitas de pão premium',
+          'Bread Varieties & Types':'Tipos de pão'
+        },
+        'fr': {
+          'Basic Salad Recipes':'Recettes de salade de base',
+          'Luxury Salad Recipes':'Recettes de salade haut de gamme',
+          'Basic Pizza Recipes':'Recettes de pizza de base',
+          'Advanced Pizza Recipes':'Recettes de pizza avancées',
+          'Premium Recipes':'Recettes premium',
+          'Pizza Varieties & Types':'Variétés de pizza',
+          'Making Tips & Tricks':'Astuces et conseils',
+          'Growing Tips':'Conseils de culture',
+          'Making Tips':'Conseils de préparation',
+          'Profit Optimization':'Optimisation du profit',
+          'Production Optimization':'Optimisation de la production',
+          'Advanced Strategies':'Stratégies avancées',
+          'Next Steps':'Étapes suivantes',
+          'Basic Bread Making':'Fabrication de pain de base',
+          'Basic Bread Recipes':'Recettes de pain de base',
+          'Advanced Bread Recipes':'Recettes de pain avancées',
+          'Premium Bread Recipes':'Recettes de pain premium',
+          'Bread Varieties & Types':'Variétés de pain'
+        },
+        'de': {
+          'Basic Salad Recipes':'Grundlegende Salatrezepte',
+          'Luxury Salad Recipes':'Luxus-Salatrezepte',
+          'Basic Pizza Recipes':'Einfache Pizzarezepte',
+          'Advanced Pizza Recipes':'Fortgeschrittene Pizzarezepte',
+          'Premium Recipes':'Premium-Rezepte',
+          'Pizza Varieties & Types':'Pizza-Varianten',
+          'Making Tips & Tricks':'Tipps und Tricks',
+          'Growing Tips':'Anbautipps',
+          'Making Tips':'Zubereitungstipps',
+          'Profit Optimization':'Gewinnoptimierung',
+          'Production Optimization':'Produktionsoptimierung',
+          'Advanced Strategies':'Fortgeschrittene Strategien',
+          'Next Steps':'Nächste Schritte',
+          'Basic Bread Making':'Grundlegendes Brotbacken',
+          'Basic Bread Recipes':'Grundrezepte für Brot',
+          'Advanced Bread Recipes':'Fortgeschrittene Brotrezepte',
+          'Premium Bread Recipes':'Premium-Brotrezepte',
+          'Bread Varieties & Types':'Brotarten'
+        },
+        'ru': {
+          'Basic Salad Recipes':'Базовые рецепты салатов',
+          'Luxury Salad Recipes':'Премиальные рецепты салатов',
+          'Basic Pizza Recipes':'Базовые рецепты пиццы',
+          'Advanced Pizza Recipes':'Продвинутые рецепты пиццы',
+          'Premium Recipes':'Премиальные рецепты',
+          'Pizza Varieties & Types':'Виды пиццы',
+          'Making Tips & Tricks':'Советы и хитрости',
+          'Growing Tips':'Советы по выращиванию',
+          'Making Tips':'Советы по приготовлению',
+          'Profit Optimization':'Оптимизация прибыли',
+          'Production Optimization':'Оптимизация производства',
+          'Advanced Strategies':'Продвинутые стратегии',
+          'Next Steps':'Следующие шаги',
+          'Basic Bread Making':'Основы выпечки хлеба',
+          'Basic Bread Recipes':'Базовые рецепты хлеба',
+          'Advanced Bread Recipes':'Продвинутые рецепты хлеба',
+          'Premium Bread Recipes':'Премиальные рецепты хлеба',
+          'Bread Varieties & Types':'Виды хлеба'
+        },
+        'ar': {
+          'Basic Salad Recipes':'وصفات سلطة أساسية',
+          'Luxury Salad Recipes':'وصفات سلطة فاخرة',
+          'Basic Pizza Recipes':'وصفات بيتزا أساسية',
+          'Advanced Pizza Recipes':'وصفات بيتزا متقدمة',
+          'Premium Recipes':'وصفات مميزة',
+          'Pizza Varieties & Types':'أنواع البيتزا',
+          'Making Tips & Tricks':'نصائح وحيل',
+          'Growing Tips':'نصائح الزراعة',
+          'Making Tips':'نصائح التحضير',
+          'Profit Optimization':'تحسين الأرباح',
+          'Production Optimization':'تحسين الإنتاج',
+          'Advanced Strategies':'استراتيجيات متقدمة',
+          'Next Steps':'الخطوات التالية',
+          'Basic Bread Making':'خبز أساسي',
+          'Basic Bread Recipes':'وصفات خبز أساسية',
+          'Advanced Bread Recipes':'وصفات خبز متقدمة',
+          'Premium Bread Recipes':'وصفات خبز مميزة',
+          'Bread Varieties & Types':'أنواع الخبز'
+        },
+        'hi': {
+          'Basic Salad Recipes':'बेसिक सलाद रेसिपी',
+          'Luxury Salad Recipes':'लक्ज़री सलाद रेसिपी',
+          'Basic Pizza Recipes':'बेसिक पिज़्ज़ा रेसिपी',
+          'Advanced Pizza Recipes':'एडवांस्ड पिज़्ज़ा रेसिपी',
+          'Premium Recipes':'प्रीमियम रेसिपी',
+          'Pizza Varieties & Types':'पिज़्ज़ा के प्रकार',
+          'Making Tips & Tricks':'टिप्स और ट्रिक्स',
+          'Growing Tips':'खेती के सुझाव',
+          'Making Tips':'बनाने के सुझाव',
+          'Profit Optimization':'लाभ अनुकूलन',
+          'Production Optimization':'उत्पादन अनुकूलन',
+          'Advanced Strategies':'उन्नत रणनीतियाँ',
+          'Next Steps':'अगले कदम',
+          'Basic Bread Making':'बेसिक ब्रेड बनाना',
+          'Basic Bread Recipes':'बेसिक ब्रेड रेसिपी',
+          'Advanced Bread Recipes':'एडवांस्ड ब्रेड रेसिपी',
+          'Premium Bread Recipes':'प्रीमियम ब्रेड रेसिपी',
+          'Bread Varieties & Types':'ब्रेड के प्रकार'
+        },
+        'id': {
+          'Basic Salad Recipes':'Resep salad dasar',
+          'Luxury Salad Recipes':'Resep salad premium',
+          'Basic Pizza Recipes':'Resep pizza dasar',
+          'Advanced Pizza Recipes':'Resep pizza lanjutan',
+          'Premium Recipes':'Resep premium',
+          'Pizza Varieties & Types':'Jenis pizza',
+          'Making Tips & Tricks':'Tips & trik',
+          'Growing Tips':'Tips budidaya',
+          'Making Tips':'Tips pembuatan',
+          'Profit Optimization':'Optimasi profit',
+          'Production Optimization':'Optimasi produksi',
+          'Advanced Strategies':'Strategi lanjutan',
+          'Next Steps':'Langkah berikutnya',
+          'Basic Bread Making':'Pembuatan roti dasar',
+          'Basic Bread Recipes':'Resep roti dasar',
+          'Advanced Bread Recipes':'Resep roti lanjutan',
+          'Premium Bread Recipes':'Resep roti premium',
+          'Bread Varieties & Types':'Jenis roti'
+        },
+        'vi': {
+          'Basic Salad Recipes':'Công thức salad cơ bản',
+          'Luxury Salad Recipes':'Công thức salad cao cấp',
+          'Basic Pizza Recipes':'Công thức pizza cơ bản',
+          'Advanced Pizza Recipes':'Công thức pizza nâng cao',
+          'Premium Recipes':'Công thức cao cấp',
+          'Pizza Varieties & Types':'Các loại pizza',
+          'Making Tips & Tricks':'Mẹo và thủ thuật',
+          'Growing Tips':'Mẹo trồng trọt',
+          'Making Tips':'Mẹo chế biến',
+          'Profit Optimization':'Tối ưu lợi nhuận',
+          'Production Optimization':'Tối ưu sản xuất',
+          'Advanced Strategies':'Chiến lược nâng cao',
+          'Next Steps':'Bước tiếp theo',
+          'Basic Bread Making':'Làm bánh mì cơ bản',
+          'Basic Bread Recipes':'Công thức bánh mì cơ bản',
+          'Advanced Bread Recipes':'Công thức bánh mì nâng cao',
+          'Premium Bread Recipes':'Công thức bánh mì cao cấp',
+          'Bread Varieties & Types':'Các loại bánh mì'
+        }
+      };
+      const HEADINGS = HEADINGS_MAP[lang] || {};
+
+      // Strong label mapping
+      const STRONG_MAP = {
+        'ja': {
+          'Optimal Watering':'最適な水やり', 'Golden Hours':'ゴールデンアワー', 'Harvest Timing':'収穫タイミング', 'Soil Quality':'土壌品質',
+          'Dough Quality':'生地の品質', 'Topping Balance':'トッピングのバランス', 'Recipe Efficiency':'レシピ効率', 'Storage Management':'在庫管理',
+          'Market Timing':'市場のタイミング', 'Quality vs Quantity':'品質と量のバランス', 'Recipe Mastery':'レシピの習熟', 'Supply Chain':'サプライチェーン',
+          'Automated Systems':'自動化システム', 'Batch Processing':'バッチ処理', 'Ingredient Rotation':'作物ローテーション', 'Quality Control':'品質管理',
+          'Market Analysis':'市場分析', 'Recipe Optimization':'レシピ最適化', 'Resource Management':'リソース管理', 'Skill Development':'スキル向上',
+          'Community Tip:':'コミュニティのヒント:'
+        },
+        'zh-cn': {
+          'Optimal Watering':'最佳浇水', 'Golden Hours':'黄金时段', 'Harvest Timing':'收获时机', 'Soil Quality':'土壤质量',
+          'Dough Quality':'面团质量', 'Topping Balance':'配料平衡', 'Recipe Efficiency':'配方效率', 'Storage Management':'库存管理',
+          'Market Timing':'市场时机', 'Quality vs Quantity':'质量 vs 数量', 'Recipe Mastery':'配方熟练度', 'Supply Chain':'供应链',
+          'Automated Systems':'自动化系统', 'Batch Processing':'批量处理', 'Ingredient Rotation':'轮作', 'Quality Control':'质量控制',
+          'Market Analysis':'市场分析', 'Recipe Optimization':'配方优化', 'Resource Management':'资源管理', 'Skill Development':'技能提升',
+          'Community Tip:':'社区提示：'
+        },
+        'es': {
+          'Optimal Watering':'Riego óptimo', 'Golden Hours':'Horas doradas', 'Harvest Timing':'Momento de cosecha', 'Soil Quality':'Calidad del suelo',
+          'Dough Quality':'Calidad de la masa', 'Topping Balance':'Equilibrio de ingredientes', 'Recipe Efficiency':'Eficiencia de recetas', 'Storage Management':'Gestión de inventario',
+          'Market Timing':'Momento del mercado', 'Quality vs Quantity':'Calidad vs Cantidad', 'Recipe Mastery':'Maestría de recetas', 'Supply Chain':'Cadena de suministro',
+          'Automated Systems':'Sistemas automatizados', 'Batch Processing':'Procesamiento por lotes', 'Ingredient Rotation':'Rotación de cultivos', 'Quality Control':'Control de calidad',
+          'Market Analysis':'Análisis de mercado', 'Recipe Optimization':'Optimización de recetas', 'Resource Management':'Gestión de recursos', 'Skill Development':'Desarrollo de habilidades',
+          'Community Tip:':'Consejo de la comunidad:'
+        },
+        'pt-br': {
+          'Optimal Watering':'Rega ideal', 'Golden Hours':'Horas de ouro', 'Harvest Timing':'Momento da colheita', 'Soil Quality':'Qualidade do solo',
+          'Dough Quality':'Qualidade da massa', 'Topping Balance':'Equilíbrio de coberturas', 'Recipe Efficiency':'Eficiência da receita', 'Storage Management':'Gestão de estoque',
+          'Market Timing':'Momento de mercado', 'Quality vs Quantity':'Qualidade vs Quantidade', 'Recipe Mastery':'Domínio da receita', 'Supply Chain':'Cadeia de suprimentos',
+          'Automated Systems':'Sistemas automatizados', 'Batch Processing':'Processamento em lote', 'Ingredient Rotation':'Rotação de culturas', 'Quality Control':'Controle de qualidade',
+          'Market Analysis':'Análise de mercado', 'Recipe Optimization':'Otimização de receita', 'Resource Management':'Gestão de recursos', 'Skill Development':'Desenvolvimento de habilidades',
+          'Community Tip:':'Dica da comunidade:'
+        },
+        'fr': {
+          'Optimal Watering':'Arrosage optimal', 'Golden Hours':'Heures dorées', 'Harvest Timing':'Moment de récolte', 'Soil Quality':'Qualité du sol',
+          'Dough Quality':'Qualité de la pâte', 'Topping Balance':'Équilibre des garnitures', 'Recipe Efficiency':'Efficacité des recettes', 'Storage Management':'Gestion du stock',
+          'Market Timing':'Timing du marché', 'Quality vs Quantity':'Qualité vs Quantité', 'Recipe Mastery':'Maîtrise des recettes', 'Supply Chain':'Chaîne d\'approvisionnement',
+          'Automated Systems':'Systèmes automatisés', 'Batch Processing':'Traitement par lot', 'Ingredient Rotation':'Rotation des cultures', 'Quality Control':'Contrôle qualité',
+          'Market Analysis':'Analyse du marché', 'Recipe Optimization':'Optimisation des recettes', 'Resource Management':'Gestion des ressources', 'Skill Development':'Développement des compétences',
+          'Community Tip:':'Astuce de la communauté :'
+        },
+        'de': {
+          'Optimal Watering':'Optimale Bewässerung', 'Golden Hours':'Goldene Stunden', 'Harvest Timing':'Erntezeitpunkt', 'Soil Quality':'Bodenqualität',
+          'Dough Quality':'Teigqualität', 'Topping Balance':'Belag-Balance', 'Recipe Efficiency':'Rezept-Effizienz', 'Storage Management':'Lagerverwaltung',
+          'Market Timing':'Markt-Timing', 'Quality vs Quantity':'Qualität vs Quantität', 'Recipe Mastery':'Rezeptbeherrschung', 'Supply Chain':'Lieferkette',
+          'Automated Systems':'Automatisierte Systeme', 'Batch Processing':'Batch-Verarbeitung', 'Ingredient Rotation':'Fruchtfolge', 'Quality Control':'Qualitätskontrolle',
+          'Market Analysis':'Marktanalyse', 'Recipe Optimization':'Rezeptoptimierung', 'Resource Management':'Ressourcenmanagement', 'Skill Development':'Fähigkeitenentwicklung',
+          'Community Tip:':'Community-Tipp:'
+        },
+        'ru': {
+          'Optimal Watering':'Оптимальный полив', 'Golden Hours':'Золотые часы', 'Harvest Timing':'Время сбора', 'Soil Quality':'Качество почвы',
+          'Dough Quality':'Качество теста', 'Topping Balance':'Баланс начинок', 'Recipe Efficiency':'Эффективность рецептов', 'Storage Management':'Управление запасами',
+          'Market Timing':'Тайминг рынка', 'Quality vs Quantity':'Качество vs Количество', 'Recipe Mastery':'Мастерство рецептов', 'Supply Chain':'Цепочка поставок',
+          'Automated Systems':'Автоматизированные системы', 'Batch Processing':'Пакетная обработка', 'Ingredient Rotation':'Севооборот', 'Quality Control':'Контроль качества',
+          'Market Analysis':'Анализ рынка', 'Recipe Optimization':'Оптимизация рецептов', 'Resource Management':'Управление ресурсами', 'Skill Development':'Развитие навыков',
+          'Community Tip:':'Совет сообщества:'
+        },
+        'ar': {
+          'Optimal Watering':'الري الأمثل', 'Golden Hours':'الساعات الذهبية', 'Harvest Timing':'توقيت الحصاد', 'Soil Quality':'جودة التربة',
+          'Dough Quality':'جودة العجين', 'Topping Balance':'توازن الإضافات', 'Recipe Efficiency':'كفاءة الوصفة', 'Storage Management':'إدارة المخزون',
+          'Market Timing':'توقيت السوق', 'Quality vs Quantity':'الجودة مقابل الكمية', 'Recipe Mastery':'إتقان الوصفات', 'Supply Chain':'سلسلة الإمداد',
+          'Automated Systems':'أنظمة مؤتمتة', 'Batch Processing':'المعالجة الدفعية', 'Ingredient Rotation':'دورة المحاصيل', 'Quality Control':'مراقبة الجودة',
+          'Market Analysis':'تحليل السوق', 'Recipe Optimization':'تحسين الوصفات', 'Resource Management':'إدارة الموارد', 'Skill Development':'تطوير المهارات',
+          'Community Tip:':'نصيحة المجتمع:'
+        },
+        'hi': {
+          'Optimal Watering':'सर्वोत्तम सिंचाई', 'Golden Hours':'स्वर्णिम समय', 'Harvest Timing':'कटाई समय', 'Soil Quality':'मिट्टी की गुणवत्ता',
+          'Dough Quality':'आटे की गुणवत्ता', 'Topping Balance':'टॉपिंग संतुलन', 'Recipe Efficiency':'रेसिपी दक्षता', 'Storage Management':'भंडारण प्रबंधन',
+          'Market Timing':'बाज़ार समय', 'Quality vs Quantity':'गुणवत्ता बनाम मात्रा', 'Recipe Mastery':'रेसिपी महारत', 'Supply Chain':'आपूर्ति श्रृंखला',
+          'Automated Systems':'स्वचालित प्रणालियाँ', 'Batch Processing':'बैच प्रसंस्करण', 'Ingredient Rotation':'फसल चक्र', 'Quality Control':'गुणवत्ता नियंत्रण',
+          'Market Analysis':'बाज़ार विश्लेषण', 'Recipe Optimization':'रेसिपी अनुकूलन', 'Resource Management':'संसाधन प्रबंधन', 'Skill Development':'कौशल विकास',
+          'Community Tip:':'समुदाय सुझाव:'
+        },
+        'id': {
+          'Optimal Watering':'Penyiraman optimal', 'Golden Hours':'Jam emas', 'Harvest Timing':'Waktu panen', 'Soil Quality':'Kualitas tanah',
+          'Dough Quality':'Kualitas adonan', 'Topping Balance':'Keseimbangan topping', 'Recipe Efficiency':'Efisiensi resep', 'Storage Management':'Manajemen persediaan',
+          'Market Timing':'Timing pasar', 'Quality vs Quantity':'Kualitas vs Kuantitas', 'Recipe Mastery':'Penguasaan resep', 'Supply Chain':'Rantai pasok',
+          'Automated Systems':'Sistem otomatis', 'Batch Processing':'Pemrosesan batch', 'Ingredient Rotation':'Rotasi tanaman', 'Quality Control':'Kontrol kualitas',
+          'Market Analysis':'Analisis pasar', 'Recipe Optimization':'Optimasi resep', 'Resource Management':'Manajemen sumber daya', 'Skill Development':'Pengembangan keterampilan',
+          'Community Tip:':'Tips komunitas:'
+        },
+        'vi': {
+          'Optimal Watering':'Tưới nước tối ưu', 'Golden Hours':'Giờ vàng', 'Harvest Timing':'Thời điểm thu hoạch', 'Soil Quality':'Chất lượng đất',
+          'Dough Quality':'Chất lượng bột', 'Topping Balance':'Cân bằng topping', 'Recipe Efficiency':'Hiệu quả công thức', 'Storage Management':'Quản lý kho',
+          'Market Timing':'Thời điểm thị trường', 'Quality vs Quantity':'Chất lượng vs Số lượng', 'Recipe Mastery':'Thành thạo công thức', 'Supply Chain':'Chuỗi cung ứng',
+          'Automated Systems':'Hệ thống tự động', 'Batch Processing':'Xử lý theo lô', 'Ingredient Rotation':'Luân canh', 'Quality Control':'Kiểm soát chất lượng',
+          'Market Analysis':'Phân tích thị trường', 'Recipe Optimization':'Tối ưu công thức', 'Resource Management':'Quản lý tài nguyên', 'Skill Development':'Phát triển kỹ năng',
+          'Community Tip:':'Mẹo cộng đồng:'
+        }
+      };
+      const STRONG = STRONG_MAP[lang] || {};
+
+      // Difficulty labels mapping
+      const DIFF = ({
+        'ja':    {Easy:'初級', Medium:'中級', Hard:'上級', Expert:'エキスパート', Master:'マスター', Legendary:'レジェンダリー'},
+        'zh-cn': {Easy:'简单', Medium:'中等', Hard:'困难', Expert:'专家', Master:'大师', Legendary:'传说'},
+        'es':    {Easy:'Fácil', Medium:'Medio', Hard:'Difícil', Expert:'Experto', Master:'Maestro', Legendary:'Legendario'},
+        'pt-br': {Easy:'Fácil', Medium:'Médio', Hard:'Difícil', Expert:'Especialista', Master:'Mestre', Legendary:'Lendário'},
+        'fr':    {Easy:'Facile', Medium:'Moyen', Hard:'Difficile', Expert:'Expert', Master:'Maître', Legendary:'Légendaire'},
+        'de':    {Easy:'Leicht', Medium:'Mittel', Hard:'Schwer', Expert:'Experte', Master:'Meister', Legendary:'Legendär'},
+        'ru':    {Easy:'Легко', Medium:'Средне', Hard:'Сложно', Expert:'Эксперт', Master:'Мастер', Legendary:'Легендарно'},
+        'ar':    {Easy:'سهل', Medium:'متوسط', Hard:'صعب', Expert:'خبير', Master:'ماستر', Legendary:'أسطوري'},
+        'hi':    {Easy:'आसान', Medium:'मध्यम', Hard:'कठिन', Expert:'विशेषज्ञ', Master:'मास्टर', Legendary:'लेजेंडरी'},
+        'id':    {Easy:'Mudah', Medium:'Sedang', Hard:'Sulit', Expert:'Ahli', Master:'Master', Legendary:'Legendaris'},
+        'vi':    {Easy:'Dễ', Medium:'Trung bình', Hard:'Khó', Expert:'Chuyên gia', Master:'Bậc thầy', Legendary:'Huyền thoại'}
+      })[lang] || {};
+
+      // Apply headings replacements
+      document.querySelectorAll('h2, h3').forEach(h=>{
+        const s = (h.textContent||'').trim();
+        if (HEADINGS[s]) h.textContent = HEADINGS[s];
       });
-      // Table headers
+
+      // Apply table headers
       document.querySelectorAll('table thead th').forEach(th=>{
         const s = (th.textContent||'').trim().toLowerCase();
-        if (/^name|salad name$/i.test(s) && t('salad.recipes.headers.name')) th.textContent = t('salad.recipes.headers.name');
-        if (/^ingredients|needed ingredients$/i.test(s) && t('salad.recipes.headers.ingredients')) th.textContent = t('salad.recipes.headers.ingredients');
-        if (/^time|cook time|prep time|調理時間$/i.test(s) && t('salad.recipes.headers.time')) th.textContent = t('salad.recipes.headers.time');
-        if (/^rewards|reward value$/i.test(s) && t('salad.recipes.headers.rewards')) th.textContent = t('salad.recipes.headers.rewards');
-        if (/^effects|special effect|特別効果$/i.test(s) && t('salad.recipes.headers.effect')) th.textContent = t('salad.recipes.headers.effect');
+        if ((/^name$|^.*name$/i.test(s)) && TABLE.name) th.textContent = TABLE.name;
+        if ((/^ingredients$|^needed ingredients$/i.test(s)) && TABLE.ingredients) th.textContent = TABLE.ingredients;
+        if ((/^time$|^cook time$|^prep time$|^調理時間$/i.test(s)) && TABLE.time) th.textContent = TABLE.time;
+        if ((/^rewards$|^reward value$/i.test(s)) && TABLE.rewards) th.textContent = TABLE.rewards;
+        if ((/^difficulty$/i.test(s)) && TABLE.difficulty) th.textContent = TABLE.difficulty;
       });
-      // Effects common phrases
-      const FX = {
-        'basic nutrition': 'salad.effects.basicNutrition',
-        'vitamin rich': 'salad.effects.vitaminRich',
-        'high moisture': 'salad.effects.highMoisture'
-      };
+
+      // Apply difficulty labels
+      document.querySelectorAll('.recipe-table td, .guide-difficulty, td, span').forEach(el=>{
+        const v = (el.textContent||'').trim();
+        if (DIFF[v]) el.textContent = DIFF[v];
+      });
+
+      // Units & simple replacements
       document.querySelectorAll('td, p, li, span').forEach(el=>{
-        const raw = (el.textContent||'').trim();
-        const lower = raw.toLowerCase();
-        Object.keys(FX).forEach(k=>{ if (lower === k && t(FX[k])) el.textContent = t(FX[k]); });
-        // time like "5 minutes"
-        el.textContent = el.textContent.replace(/(\d+)\s*minutes/gi, (m, g1)=>{
-          if (lang === 'ja') return `${g1}分`;
-          if (lang === 'zh-cn') return `${g1} 分钟`;
-          if (lang === 'es') return `${g1} minutos`;
-          return m;
-        });
+        let txt = el.textContent;
+        if (lang === 'ja')      txt = txt.replace(/(\d+)\s*minutes/gi, (m,g1)=> `${g1}分`).replace(/(\d+)\s*coins/gi, (m,g1)=> `${g1} コイン`);
+        else if (lang === 'zh-cn') txt = txt.replace(/(\d+)\s*minutes/gi, (m,g1)=> `${g1} 分钟`).replace(/(\d+)\s*coins/gi, (m,g1)=> `${g1} 金币`);
+        else if (lang === 'es')   txt = txt.replace(/(\d+)\s*minutes/gi, (m,g1)=> `${g1} minutos`).replace(/(\d+)\s*coins/gi, (m,g1)=> `${g1} monedas`);
+        else if (lang === 'pt-br')txt = txt.replace(/(\d+)\s*minutes/gi, (m,g1)=> `${g1} min`).replace(/(\d+)\s*coins/gi, (m,g1)=> `${g1} moedas`);
+        else if (lang === 'fr')   txt = txt.replace(/(\d+)\s*minutes/gi, (m,g1)=> `${g1} min`).replace(/(\d+)\s*coins/gi, (m,g1)=> `${g1} pièces`);
+        else if (lang === 'de')   txt = txt.replace(/(\d+)\s*minutes/gi, (m,g1)=> `${g1} Min`).replace(/(\d+)\s*coins/gi, (m,g1)=> `${g1} Münzen`);
+        else if (lang === 'ru')   txt = txt.replace(/(\d+)\s*minutes/gi, (m,g1)=> `${g1} мин`).replace(/(\d+)\s*coins/gi, (m,g1)=> `${g1} монет`);
+        else if (lang === 'ar')   txt = txt.replace(/(\d+)\s*minutes/gi, (m,g1)=> `${g1} دقيقة`).replace(/(\d+)\s*coins/gi, (m,g1)=> `${g1} عملات`);
+        else if (lang === 'hi')   txt = txt.replace(/(\d+)\s*minutes/gi, (m,g1)=> `${g1} मिनट`).replace(/(\d+)\s*coins/gi, (m,g1)=> `${g1} सिक्के`);
+        else if (lang === 'id')   txt = txt.replace(/(\d+)\s*minutes/gi, (m,g1)=> `${g1} mnt`).replace(/(\d+)\s*coins/gi, (m,g1)=> `${g1} koin`);
+        else if (lang === 'vi')   txt = txt.replace(/(\d+)\s*minutes/gi, (m,g1)=> `${g1} phút`).replace(/(\d+)\s*coins/gi, (m,g1)=> `${g1} xu`);
+        el.textContent = txt;
       });
+
+      // Strong labels
+      document.querySelectorAll('strong').forEach(el=>{
+        const s = (el.textContent||'').trim();
+        if (STRONG[s]) el.textContent = STRONG[s];
+      });
+
+      // Ingredient cards: "Use:" label
+      document.querySelectorAll('.ingredient-item p').forEach(p=>{
+        const USE = {
+          'en':'Use:', 'zh-cn':'用途：', 'ja':'用途：', 'es':'Uso:', 'pt-br':'Uso:', 'fr':'Utilisation :', 'de':'Verwendung:', 'ru':'Использование:', 'ar':'الاستخدام:', 'hi':'उपयोग:', 'id':'Kegunaan:', 'vi':'Cách dùng:'
+        }[lang] || 'Use:';
+        p.textContent = p.textContent.replace(/^\s*Use:\s*/i, USE);
+      });
+
+      // Q/A labels in FAQ blocks
+      (function(){
+        const QA = {
+          'en': {Q:'Q:', A:'A:'},
+          'zh-cn': {Q:'问：', A:'答：'},
+          'ja': {Q:'Q：', A:'A：'},
+          'es': {Q:'P:', A:'R:'},
+          'pt-br': {Q:'P:', A:'R:'},
+          'fr': {Q:'Q :', A:'R :'},
+          'de': {Q:'F:', A:'A:'},
+          'ru': {Q:'В:', A:'О:'},
+          'ar': {Q:'س:', A:'ج:'},
+          'hi': {Q:'प्र:', A:'उ:'},
+          'id': {Q:'T:', A:'J:'},
+          'vi': {Q:'H:', A:'Đ:'}
+        }[lang] || {Q:'Q:', A:'A:'};
+        document.querySelectorAll('#faq h3, #faq p').forEach(el=>{
+          el.textContent = el.textContent.replace(/^\s*Q:\s*/i, QA.Q).replace(/^\s*A:\s*/i, QA.A);
+        });
+      })();
+
     }catch(_e){}
   }
 
   function switchLang(lang){
     if (!supported.includes(lang)) return;
-    localStorage.setItem(storageKey, lang);
-    const isHome = /(^|\/)index\.html$/i.test(location.pathname) || location.pathname === '/';
-    if (isHome) { location.assign(`/${lang}/index.html` + location.hash); return; }
-    const base = (location.pathname.split('/').pop() || '').toLowerCase();
-    const isSingleFile = /^[a-z0-9-]+\.html$/i.test(base);
-    if (isSingleFile) {
-      if (base === 'index.html') { location.assign(`/${lang}/index.html` + location.hash); return; }
-      if (base === 'guides.html') { location.assign(`/${lang}/guides.html` + location.hash); return; }
-      // For articles and other single pages, go to localized path
-      location.assign(`/${lang}/` + base + location.hash); return;
-    }
-    const parts = location.pathname.split("/");
-    if (supported.includes(parts[1])) { parts[1] = lang; } else { parts.splice(1, 0, lang); }
-    const newPath = parts.join("/");
-    location.assign(newPath + location.search + location.hash);
+    try { localStorage.setItem(storageKey, lang); } catch(_e){}
+
+    const path = location.pathname || '/';
+    const hash = location.hash || '';
+    const search = location.search || '';
+
+    const segments = path.split('/');
+    const last = segments[segments.length - 1];
+    let filename = (last && /.html$/i.test(last)) ? last.toLowerCase() : 'index.html';
+    if (last === '' || last === null) filename = 'index.html';
+
+    const target = `/${lang}/${filename}`;
+    location.assign(target + (search || '') + hash);
   }
+
+  // 暴露到全局，供其它组件调用
+  try {
+    window.__gagI18n = window.__gagI18n || {};
+    window.__gagI18n.switchLang = switchLang;
+    window.switchLang = switchLang;
+  } catch(_e){}
   
   document.addEventListener("DOMContentLoaded",()=>{
     const lang = detectLang();
     applyI18n(lang);
     const sel = document.getElementById("lang-switcher"); if (sel) { sel.addEventListener("change", e=> switchLang(e.target.value)); }
     document.addEventListener('gag:i18n-refresh', ()=>{ const current = (window.__gagI18n && window.__gagI18n.lang) || lang; applyI18n(current); });
+    disableFloatingFlagSidebar();
   });
 })(); 

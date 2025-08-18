@@ -1,0 +1,685 @@
+<!DOCTYPE html><html lang="ru" dir="ltr"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Как Make Pie в Выращивании сада - Полное руководство | Советы по Выращиванию сада</title>
+    <meta name="description" content="Узнайте, как make pie! Узнайте, как make pie trong Grow a Garden.">
+    <meta name="keywords" content="как make pie trong grow a garden, roblox make pie guide, grow a garden guide, make pie making guide, roblox farming game, make pie ingredients collection, grow a garden tips">
+    <link rel="canonical" href="https://growagarden.cv/how-to-make-pie.html">
+    
+    <!-- Open Graph for social sharing -->
+    <meta property="og:title" content="Как Make Pie в Выращивании сада - Полное руководство | Советы по Выращиванию сада">
+    <meta property="og:description" content="Узнайте, как make pie trong Grow a Garden! Узнайте, как make pie.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://growagarden.cv/how-to-make-pie.html">
+    <meta property="og:image" content="https://growagarden.cv/pie-guide-og.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Как Make Pie в Выращивании сада - Полное руководство | Советы по Выращиванию сада">
+    <meta name="twitter:description" content="Узнайте, как make pie trong Grow a Garden! Узнайте, как make pie.">
+    <meta name="twitter:image" content="https://growagarden.cv/pie-guide-og.jpg">
+    
+    <!-- Structured Data JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "Как Make Pie",
+      "description": "Узнайте, как make pie trong Grow a Garden, bao gồm các kỹ thuật và phương pháp cải thiện hiệu quả.",
+      "image": "https://growagarden.cv/pie-guide-og.jpg",
+      "url": "https://growagarden.cv/how-to-make-pie.html",
+      "inLanguage": "ru",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Как Make Pie",
+          "text": "Mix flour, butter and other ingredients to create pie crust in Grow a Garden"
+        },
+        {
+          "@type": "HowToStep", 
+          "name": "Как Make Pie",
+          "text": "Prepare fruit or other fillings for the pie"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Как Make Pie",
+          "text": "Bake the pie in the oven to create delicious pies"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Roblox-like color scheme -->
+    <link rel="stylesheet" href="https://unpkg.com/simple.css@2.1.0/simple.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥧</text></svg>">
+    
+    <style>
+        body {
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .bg-blur {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: 0;
+            background: url('grow-bg.jpg') center center/cover no-repeat;
+            opacity: 0.3;
+            filter: blur(2px);
+            pointer-events: none;
+        }
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+        .pie-hero {
+            background: linear-gradient(135deg, #ff9800, #f57c00);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-top: 60px;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        .pie-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        .pie-hero h1,
+        .pie-hero p {
+            position: relative;
+            z-index: 2;
+        }
+        .pie-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: white !important;
+            text-shadow: 
+                0 2px 4px rgba(0,0,0,0.7),
+                0 1px 2px rgba(0,0,0,0.8);
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            -webkit-text-stroke: 0.5px rgba(0,0,0,0.2);
+        }
+        .pie-hero p {
+            font-size: 1.2rem;
+            opacity: 1;
+            color: white !important;
+            text-shadow: 
+                0 1px 3px rgba(0,0,0,0.6),
+                0 1px 2px rgba(0,0,0,0.7);
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            -webkit-text-stroke: 0.3px rgba(0,0,0,0.15);
+        }
+        .guide-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .guide-card {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .guide-card h2 {
+            color: #23272a !important;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+        .guide-card h3 {
+            color: #2c3e50 !important;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .guide-card p, .guide-card li {
+            color: #34495e !important;
+            font-weight: 500;
+            line-height: 1.6;
+        }
+        .ingredient-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .ingredient-item {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 8px;
+            padding: 1rem;
+            border-left: 4px solid #ff9800;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .ingredient-item h4 {
+            color: #23272a !important;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .ingredient-item p {
+            color: #34495e !important;
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+        }
+        .recipe-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+        }
+        .recipe-table th,
+        .recipe-table td {
+            border: 1px solid #ddd;
+            padding: 0.75rem;
+            text-align: left;
+            font-weight: 500;
+        }
+        .recipe-table th {
+            background: #ff9800;
+            color: white;
+            font-weight: 700;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+        .recipe-table td {
+            color: #2c3e50 !important;
+            background: rgba(255, 255, 255, 0.9);
+        }
+        .recipe-table tr:nth-child(even) td {
+            background: rgba(255, 152, 0, 0.08);
+        }
+        .tip-box {
+            background: linear-gradient(135deg, #f1c40f, #f39c12);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            box-shadow: 0 4px 15px rgba(241, 196, 15, 0.3);
+        }
+        .tip-box strong {
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+            font-weight: 700;
+        }
+        .warning-box {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+        }
+        .warning-box strong {
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+            font-weight: 700;
+        }
+        .back-btn {
+            display: inline-block;
+            background: #5865f2;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+        .back-btn:hover {
+            background: #4752c4;
+            transform: translateY(-2px);
+        }
+        .pie-variety {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .pie-card {
+            background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 6px 20px rgba(255, 152, 0, 0.2);
+            border: 2px solid #ffcc02;
+        }
+        .pie-card h4 {
+            color: #e65100 !important;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .pie-card ul {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+        .pie-card li {
+            color: #5d4037 !important;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* 面包屑导航样式 */
+        .breadcrumb-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+        }
+        .breadcrumb {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .breadcrumb ol {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .breadcrumb li {
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            color: #34495e;
+        }
+        .breadcrumb li:not(:last-child)::after {
+            content: "›";
+            margin: 0 0.5rem;
+            color: #666;
+        }
+        .breadcrumb a {
+            color: #ff9800;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .breadcrumb a:hover {
+            color: #e65100;
+        }
+        .breadcrumb li[aria-current="page"] {
+            color: #666;
+            font-weight: bold;
+        }
+        @media (max-width: 768px) {
+            .pie-hero h1 {
+                font-size: 2rem;
+            }
+            .guide-section {
+                padding: 1rem;
+            }
+            .guide-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-blur"></div>
+    
+        <header>
+        <nav>
+            <a href="index.html" class="logo" data-i18n="nav.logo">🌱 Grow a Garden</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('stats')" data-i18n="nav.live">Live Stats</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('map')" data-i18n="nav.map">Global Heatmap</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('tips')" data-i18n="nav.tips">Tips</a>
+            <a href="guides.html" data-i18n="nav.guides">📚 Guides</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('online')" data-i18n="nav.online">🎮 Online</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('community')" class="discord-btn" data-i18n="nav.discord">💬 Discord</a>
+            <div class="flag-language-switcher">
+    <div class="current-flag" id="current-flag">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNDgwIj4KICAgICAgICAgICAgPGRlZnM+PGNsaXBQYXRoIGlkPSJhIj48cGF0aCBkPSJNLTg1LjMgMGg2ODIuNnY1MTJILTg1LjN6Ii8+PC9jbGlwUGF0aD48L2RlZnM+CiAgICAgICAgICAgIDxjbGlwUGF0aCBpZD0iYiI+PHVzZSBocmVmPSIjYSIvPjwvY2xpcFBhdGg+CiAgICAgICAgICAgIDxnIGNsaXAtcGF0aD0idXJsKCNiKSIgdHJhbnNmb3JtPSJzY2FsZSguOTM3NSkiPgogICAgICAgICAgICAgICAgPGcgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2Utd2lkdGg9IjFwdCI+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2NTEySC0yNTZ6IiBmaWxsPSIjYmQzZDQ0Ii8+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAxMDIuNEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAyMDQuOEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAzMDcuMkg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiA0MDkuNkg3NjhWNTEySC0yNTZ6IiBmaWxsPSIjZmZmIi8+CiAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICA8ZyBmaWxsPSIjMTkyZjVkIj4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAwdjUxMmwyNTYtMjU2eiIvPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9zdmc+" 
+         alt="en Flag">
+    </div>
+    <div class="flag-dropdown" id="flag-dropdown">
+        <div class="flag-option" data-lang="en" title="English">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNDgwIj4KICAgICAgICAgICAgPGRlZnM+PGNsaXBQYXRoIGlkPSJhIj48cGF0aCBkPSJNLTg1LjMgMGg2ODIuNnY1MTJILTg1LjN6Ii8+PC9jbGlwUGF0aD48L2RlZnM+CiAgICAgICAgICAgIDxjbGlwUGF0aCBpZD0iYiI+PHVzZSBocmVmPSIjYSIvPjwvY2xpcFBhdGg+CiAgICAgICAgICAgIDxnIGNsaXAtcGF0aD0idXJsKCNiKSIgdHJhbnNmb3JtPSJzY2FsZSguOTM3NSkiPgogICAgICAgICAgICAgICAgPGcgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2Utd2lkdGg9IjFwdCI+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2NTEySC0yNTZ6IiBmaWxsPSIjYmQzZDQ0Ii8+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAxMDIuNEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAyMDQuOEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAzMDcuMkg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiA0MDkuNkg3NjhWNTEySC0yNTZ6IiBmaWxsPSIjZmZmIi8+CiAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICA8ZyBmaWxsPSIjMTkyZjVkIj4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAwdjUxMmwyNTYtMjU2eiIvPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9zdmc+" 
+         alt="en Flag">
+            <span class="flag-name">English</span>
+        </div>
+        <div class="flag-option" data-lang="zh-cn" title="简体中文">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNkZTI5MTAiLz4KICAgICAgICAgICAgPGcgZmlsbD0iI2ZmZGUwMCI+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNNDUwIDEyMGwtNDUuNyAxNDAuNy0xMTkuMyAwaDE1NGwtMTE5LjMgMHoiLz4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik00NTAgMzAwbC00NS43IDE0MC43LTExOS4zIDBoMTU0bC0xMTkuMyAweiIvPgogICAgICAgICAgICAgICAgPHBhdGggZD0iTTQ1MCA0ODBsLTQ1LjcgMTQwLjctMTE5LjMgMGgxNTRsLTExOS4zIDB6Ii8+CiAgICAgICAgICAgIDwvZz4KICAgICAgICA8L3N2Zz4=" 
+         alt="zh-cn Flag">
+            <span class="flag-name">简体中文</span>
+        </div>
+        <div class="flag-option" data-lang="es" title="Español">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3NTAgNTAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9Ijc1MCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiNjNjBiMWUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9Ijc1MCIgaGVpZ2h0PSIyNTAiIHk9IjEyNSIgZmlsbD0iI2ZmYzQwMCIvPgogICAgICAgIDwvc3ZnPg==" 
+         alt="es Flag">
+            <span class="flag-name">Español</span>
+        </div>
+        <div class="flag-option" data-lang="pt-br" title="Português">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3MjAgNTA0Ij4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjcyMCIgaGVpZ2h0PSI1MDQiIGZpbGw9IiMwMDliM2EiLz4KICAgICAgICAgICAgPHBhdGggZD0iTTM2MCAyNTJsLTE4MC0xMjZ2MjUyeiIgZmlsbD0iI2ZlZGYwMCIvPgogICAgICAgICAgICA8Y2lyY2xlIGN4PSIzNjAiIGN5PSIyNTIiIHI9IjYwIiBmaWxsPSIjMDAyNzc2Ii8+CiAgICAgICAgPC9zdmc+" 
+         alt="pt-br Flag">
+            <span class="flag-name">Português</span>
+        </div>
+        <div class="flag-option" data-lang="fr" title="Français">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiMwMDIzOTUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSI2MDAiIHg9IjMwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjYwMCIgeD0iNjAwIiBmaWxsPSIjZWQyOTM5Ii8+CiAgICAgICAgPC9zdmc+" 
+         alt="fr Flag">
+            <span class="flag-name">Français</span>
+        </div>
+        <div class="flag-option" data-lang="de" title="Deutsch">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiMwMDAiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iI2RkMDAwMCIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjZmZjZTAwIi8+CiAgICAgICAgPC9zdmc+" 
+         alt="de Flag">
+            <span class="flag-name">Deutsch</span>
+        </div>
+        <div class="flag-option" data-lang="ru" title="Русский">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iIzAwMzlhNiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjZDUyYjFlIi8+CiAgICAgICAgPC9zdmc+" 
+         alt="ru Flag">
+            <span class="flag-name">Русский</span>
+        </div>
+        <div class="flag-option" data-lang="ar" title="العربية">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiMwMDZjMzUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI0MDAiIHk9IjEwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iMjAwIiBmaWxsPSIjY2UxMTI2Ii8+CiAgICAgICAgPC9zdmc+" 
+         alt="ar Flag">
+            <span class="flag-name">العربية</span>
+        </div>
+        <div class="flag-option" data-lang="hi" title="हिन्दी">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNmZjk5MzMiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjMTM4ODA4Ii8+CiAgICAgICAgICAgIDxjaXJjbGUgY3g9IjQ1MCIgY3k9IjMwMCIgcj0iNjAiIGZpbGw9IiMwMDAwODAiLz4KICAgICAgICA8L3N2Zz4=" 
+         alt="hi Flag">
+            <span class="flag-name">हिन्दी</span>
+        </div>
+        <div class="flag-option" data-lang="id" title="Bahasa Indonesia">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIzMDAiIHk9IjMwMCIgZmlsbD0iI2NlMTEyNiIvPgogICAgICAgIDwvc3ZnPg==" 
+         alt="id Flag">
+            <span class="flag-name">Bahasa Indonesia</span>
+        </div>
+        <div class="flag-option" data-lang="vi" title="Tiếng Việt">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNkYTI1MWQiLz4KICAgICAgICAgICAgPHBhdGggZD0iTTQ1MCAzMDBsLTE4MC0xMjZ2MjUyeiIgZmlsbD0iI2ZmZmYwMCIvPgogICAgICAgIDwvc3ZnPg==" 
+         alt="vi Flag">
+            <span class="flag-name">Tiếng Việt</span>
+        </div>
+        <div class="flag-option" data-lang="ja" title="日本語">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPGNpcmNsZSBjeD0iNDUwIiBjeT0iMzAwIiByPSIxODAiIGZpbGw9IiNiYzAwMmQiLz4KICAgICAgICA8L3N2Zz4=" 
+         alt="ja Flag">
+            <span class="flag-name">日本語</span>
+        </div>
+    </div>
+</div>
+        </nav>
+    </header>
+
+    <div class="content-wrapper">
+        <!-- Hero Section -->
+        <section class="pie-hero">
+            <h1 data-i18n="Гайд по Пирог.hero.title">Гайд по Пирог</h1>
+            <p data-i18n="научитесь_готовить_пирог_в_grow_a_garden..hero.subtitle">Научитесь готовить Пирог в Grow a Garden.</p>
+        </section>
+
+        <!-- Breadcrumb Navigation -->
+        <div class="breadcrumb-container">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <ol>
+                    <li><a href="/ru/index.html">🏠 Главная</a></li>
+                    <li><a href="/ru/guides.html">📚 Гайды</a></li>
+                    <li aria-current="page" data-i18n="🎯_make_pie.breadcrumb.current">🎯 Make Pie</li>
+                </ol>
+            </nav>
+        </div>
+
+        <div class="guide-section">
+            <!-- Overview Card -->
+            <div class="guide-card">
+                <h2>🎯 Pie Making Overview</h2>
+                <p data-i18n="making_pies_in_grow_a_garden_is_a_rewarding_culinary_adventure_that_combines_farming_skills_with_cooking_expertise._pies_are_one_of_the_most_profitable_items_in_the_game,_offering_excellent_returns_on_investment_when_made_correctly..hero.subtitle">Making pies in Grow a Garden is a rewarding culinary adventure that combines farming skills with cooking expertise. Pies are one of the most profitable items in the game, offering excellent returns on investment when made correctly.</p>
+                
+                <h3>Why Make Pies?</h3>
+                <ul>
+                    <li><strong>High Profit Margins:</strong> Pies sell for premium prices in the market</li>
+                    <li><strong>Versatile Ingredients:</strong> Can be made with various fruits and fillings</li>
+                    <li><strong>Skill Development:</strong> Improves your cooking and farming abilities</li>
+                    <li><strong>Market Demand:</strong> Always in high demand from other players</li>
+                </ul>
+            </div>
+
+            <!-- Ingredients Card -->
+            <div class="guide-card">
+                <h2>🥘 Необходимые ингредиенты</h2>
+                <p>To make a delicious pie, you'll need to gather and prepare several key ingredients:</p>
+                
+                <div class="ingredient-grid">
+                    <div class="ingredient-item">
+                        <h4>🌾 Flour</h4>
+                        <p>Base ingredient for pie crust</p>
+                        <small>Grow wheat and process into flour</small>
+                    </div>
+                    <div class="ingredient-item">
+                        <h4>🧈 Butter</h4>
+                        <p>Essential for flaky crust</p>
+                        <small>Process milk from cows</small>
+                    </div>
+                    <div class="ingredient-item">
+                        <h4>🍎 Fruits</h4>
+                        <p>Main filling ingredient</p>
+                        <small>Apples, berries, or other fruits</small>
+                    </div>
+                    <div class="ingredient-item">
+                        <h4>🍯 Sugar</h4>
+                        <p>Sweetens the filling</p>
+                        <small>Process sugar cane</small>
+                    </div>
+                    <div class="ingredient-item">
+                        <h4>🥚 Eggs</h4>
+                        <p>Binds the crust together</p>
+                        <small>Collect from chickens</small>
+                    </div>
+                    <div class="ingredient-item">
+                        <h4>🧂 Salt</h4>
+                        <p>Enhances flavor</p>
+                        <small>Mine from salt deposits</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Steps Card -->
+            <div class="guide-card">
+                <h2>📝 Step-by-Step Pie Making Guide</h2>
+                
+                <h3>Step 1: Prepare Your Farm</h3>
+                <p>Set up dedicated farming areas for pie ingredients:</p>
+                <ul>
+                    <li>Plant wheat fields for flour production</li>
+                    <li>Establish fruit orchards (apples, berries)</li>
+                    <li>Set up dairy farms for butter</li>
+                    <li>Create sugar cane plantations</li>
+                </ul>
+
+                <h3>Step 2: Gather Ingredients</h3>
+                <p>Collect all necessary ingredients:</p>
+                <ul>
+                    <li><strong>Flour:</strong> Harvest wheat and process in mill</li>
+                    <li><strong>Butter:</strong> Milk cows and churn butter</li>
+                    <li><strong>Fruits:</strong> Pick fresh fruits from trees</li>
+                    <li><strong>Sugar:</strong> Process sugar cane</li>
+                    <li><strong>Eggs:</strong> Collect from chicken coops</li>
+                </ul>
+
+                <h3>Step 3: Make Pie Crust</h3>
+                <p>Create the perfect pie crust:</p>
+                <ul>
+                    <li>Mix flour, butter, and salt in mixing bowl</li>
+                    <li>Add cold water gradually while mixing</li>
+                    <li>Knead dough until smooth and elastic</li>
+                    <li>Chill dough for 30 minutes before rolling</li>
+                    <li>Roll out dough to fit pie pan</li>
+                </ul>
+
+                <h3>Step 4: Prepare Filling</h3>
+                <p>Create delicious pie filling:</p>
+                <ul>
+                    <li>Wash and slice fruits</li>
+                    <li>Mix fruits with sugar and spices</li>
+                    <li>Add thickening agent if needed</li>
+                    <li>Let filling rest for 15 minutes</li>
+                </ul>
+
+                <h3>Step 5: Assemble Pie</h3>
+                <p>Put everything together:</p>
+                <ul>
+                    <li>Line pie pan with bottom crust</li>
+                    <li>Fill with prepared fruit mixture</li>
+                    <li>Add top crust or lattice design</li>
+                    <li>Brush with egg wash for golden color</li>
+                    <li>Cut steam vents in top crust</li>
+                </ul>
+
+                <h3>Step 6: Bake Pie</h3>
+                <p>Bake to perfection:</p>
+                <ul>
+                    <li>Preheat oven to correct temperature</li>
+                    <li>Place pie in center of oven</li>
+                    <li>Bake for 45-60 minutes</li>
+                    <li>Check for golden brown crust</li>
+                    <li>Let cool before serving</li>
+                </ul>
+            </div>
+
+            <!-- Tips Card -->
+            <div class="guide-card">
+                <h2>💡 Pro Tips for Perfect Pies</h2>
+                
+                <div class="tip-box">
+                    <strong>🎯 Ingredient Quality:</strong> Use the highest quality ingredients for better pie results. Fresh fruits and premium flour make a significant difference.
+                </div>
+                
+                <div class="tip-box">
+                    <strong>⏰ Timing is Everything:</strong> Don't rush the process. Let dough chill properly and allow pies to cool completely before cutting.
+                </div>
+                
+                <div class="tip-box">
+                    <strong>🌡️ Temperature Control:</strong> Keep ingredients cold when making crust. Warm butter can make the crust tough instead of flaky.
+                </div>
+                
+                <div class="tip-box">
+                    <strong>📊 Batch Production:</strong> Make multiple pies at once to maximize efficiency and profits. Set up assembly line production.
+                </div>
+                
+                <div class="tip-box">
+                    <strong>🏪 Market Strategy:</strong> Time your pie production with market demand. Sell during peak hours for maximum profit.
+                </div>
+                
+                <div class="tip-box">
+                    <strong>🔄 Recipe Variations:</strong> Experiment with different fruit combinations and spices to create unique pie flavors that stand out in the market.
+                </div>
+            </div>
+
+            <!-- Pie Varieties Card -->
+            <div class="guide-card">
+                <h2>🥧 Popular Pie Varieties</h2>
+                
+                <div class="pie-variety">
+                    <div class="pie-card">
+                        <h4>🍎 Apple Pie</h4>
+                        <ul>
+                            <li>Classic American favorite</li>
+                            <li>High market demand</li>
+                            <li>Good profit margins</li>
+                            <li>Easy to make</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pie-card">
+                        <h4>🫐 Berry Pie</h4>
+                        <ul>
+                            <li>Premium pricing</li>
+                            <li>Seasonal availability</li>
+                            <li>Unique flavor profiles</li>
+                            <li>High-end market</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pie-card">
+                        <h4>🍑 Peach Pie</h4>
+                        <ul>
+                            <li>Summer specialty</li>
+                            <li>Sweet and juicy</li>
+                            <li>Moderate difficulty</li>
+                            <li>Good for beginners</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Card -->
+            <div class="guide-card">
+                <h2>❓ Часто задаваемые вопросы</h2>
+                
+                <h3>Q: What's the best fruit for making pies?</h3>
+                <p>A: Apples are the most popular choice due to their availability and flavor. Berries also work well and can command higher prices.</p>
+                
+                <h3>Q: How long does it take to make a pie?</h3>
+                <p>A: From ingredient gathering to finished pie, expect 2-3 hours. With practice and proper setup, you can reduce this time significantly.</p>
+                
+                <h3>Q: Can I make pies without an oven?</h3>
+                <p>A: No, you need an oven to bake pies. Make sure to build or purchase an oven before attempting pie making.</p>
+                
+                <h3>Q: How much profit can I make from pies?</h3>
+                <p>A: Pies typically sell for 2-3x the cost of ingredients. With efficient production, you can earn 500-1000 coins per pie.</p>
+                
+                <h3>Q: What's the difference between regular and premium pies?</h3>
+                <p>A: Premium pies use higher quality ingredients and sell for significantly more. Focus on quality over quantity for maximum profit.</p>
+                
+                <h3>Q: How do I prevent my pie crust from being soggy?</h3>
+                <p>A: Pre-bake the bottom crust for 10 minutes before adding filling, and ensure your filling isn't too wet before baking.</p>
+            </div>
+        </div>
+        
+        <!-- Back Button -->
+        <div class="guide-section" style="text-align: center;">
+            <a href="/ru/guides.html" class="back-btn">← Назад к гайдам</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+ 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const currentFlag = document.getElementById('current-flag');
+    const flagDropdown = document.getElementById('current-flag');
+    
+    if (currentFlag && flagDropdown) {
+        // 设置当前语言的国旗
+        const currentLang = document.documentElement.getAttribute('lang') || 'en';
+        updateCurrentFlag(currentLang);
+        
+        // 为每个国旗选项添加点击事件
+        document.querySelectorAll('.flag-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const lang = this.getAttribute('data-lang');
+                if (lang) {
+                    // 调用现有的语言切换函数
+                    if (typeof switchLang === 'function') {
+                        switchLang(lang);
+                    } else if (typeof window.__gagI18n !== 'undefined' && window.__gagI18n.switchLang) {
+                        window.__gagI18n.switchLang(lang);
+                    }
+                }
+            });
+        });
+    }
+});
+
+function updateCurrentFlag(lang) {
+    const currentFlag = document.getElementById('current-flag');
+    if (currentFlag) {
+        const flagOptions = document.querySelectorAll('.flag-option');
+        flagOptions.forEach(option => {
+            if (option.getAttribute('data-lang') === lang) {
+                const flagContent = option.innerHTML;
+                currentFlag.innerHTML = flagContent;
+                break;
+            }
+        });
+    }
+}
+</script>
+    <script src="../flag-switcher.js"></script>
+</body></html>
