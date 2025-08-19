@@ -1,0 +1,110 @@
+/* ========================================
+   GROW A GARDEN - 基础样式
+   ======================================== */
+
+/* 基础重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: #ffffff;
+    background: var(--bg-dark);
+    overflow-x: hidden;
+    width: 100%;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+}
+
+/* CSS变量定义 */
+:root {
+    --bg-dark: #0a0a0a;
+    --primary-green: #4CAF50;
+    --primary-green-hover: #45a049;
+    --text-white: #ffffff;
+    --text-muted: rgba(255, 255, 255, 0.7);
+    --border-light: rgba(255, 255, 255, 0.1);
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+/* 基础布局结构 */
+.hero, .live-stats-section, .stats-section, .map-section, .tips-section, .online-section, .community-section {
+    flex: 1 0 auto;
+    margin: 0 auto;
+    max-width: 1200px;
+    position: relative;
+    z-index: 1;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.online-section {
+    border-bottom: none;
+}
+
+.hero + .live-stats-section,
+.live-stats-section + .stats-section,
+.stats-section + .map-section,
+.map-section + .tips-section,
+.tips-section + .online-section,
+.online-section + .community-section {
+    margin-top: 1rem;
+}
+
+.hero {
+    padding: 3rem 2rem 2rem 2rem;
+}
+
+.live-stats-section {
+    padding: 2.5rem 2rem 2.5rem 2rem;
+}
+
+.stats-section {
+    padding: 2.5rem 2rem;
+}
+
+.map-section {
+    padding: 2.5rem 2rem;
+}
+
+.tips-section {
+    padding: 2.5rem 2rem;
+}
+
+.online-section {
+    padding: 2.5rem 2rem;
+}
+
+.community-section {
+    padding: 2.5rem 2rem;
+}
+
+/* 背景样式 */
+.bg-blur {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    z-index: 0;
+    background: url('../grow-bg.jpg') center center/cover no-repeat;
+    opacity: 0.5;
+}
+
+.hero-blur-bg {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.1), rgba(76, 175, 80, 0.05));
+    border-radius: 1rem;
+    z-index: -1;
+} 

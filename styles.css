@@ -3194,16 +3194,7 @@ nav a,
 	height: 0;
 }
 
-.current-flag {
-	cursor: pointer;
-	padding: 0.35rem 0.6rem !important;
-	border-radius: 999px !important;
-	background: rgba(255, 255, 255, 0.08) !important;
-	border: 1px solid rgba(255, 255, 255, 0.15) !important;
-	display: inline-flex !important;
-	align-items: center !important;
-	gap: 0.4rem !important;
-}
+
 
 .flag-option {
 	display: flex !important;
@@ -3230,25 +3221,7 @@ nav a,
     pointer-events: auto;
 }
 
-.flag-option:hover {
-    background: rgba(0, 0, 0, 0.05);
-}
 
-.flag-option img {
-	width: 24px !important;
-	height: 18px !important;
-	border-radius: 4px !important;
-	object-fit: cover !important;
-	border: 1px solid rgba(0, 0, 0, 0.1) !important;
-	flex-shrink: 0 !important;
-}
-
-.flag-name {
-    font-size: 0.95rem;
-    color: #333;
-    white-space: nowrap;
-    font-weight: 500;
-}
 
 /* 响应式设计 */
 @media (max-width: 768px) {
@@ -3276,4 +3249,207 @@ nav a,
 	visibility: visible !important;
 	transform: translateY(0) !important;
 	pointer-events: auto !important;
+}
+
+/* 404错误页面样式 */
+.error-page {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.error-page .hero-glass {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.error-page h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #ff6b6b;
+}
+
+.error-page p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #ffffff;
+}
+
+.error-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #4CAF50, #45a049);
+    color: white;
+    border: none;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.error-help {
+    text-align: left;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.error-help h3 {
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+.error-help ul {
+    list-style: none;
+    padding: 0;
+}
+
+.error-help li {
+    margin-bottom: 0.5rem;
+}
+
+.error-help a {
+    color: #4CAF50;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.error-help a:hover {
+    color: #45a049;
+    text-decoration: underline;
+}
+
+/* 网站地图页面样式 */
+.sitemap-page {
+    padding: 2rem;
+}
+
+.sitemap-page .hero-glass {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.sitemap-page h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #4CAF50;
+}
+
+.sitemap-page p {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #ffffff;
+}
+
+.sitemap-section {
+    margin-bottom: 3rem;
+}
+
+.sitemap-section h2 {
+    color: #4CAF50;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid rgba(76, 175, 80, 0.3);
+    padding-bottom: 0.5rem;
+}
+
+.language-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.language-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.language-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.language-card h3 {
+    color: #4CAF50;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.language-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.language-card li {
+    margin-bottom: 0.5rem;
+}
+
+.language-card a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: block;
+    padding: 0.25rem 0;
+}
+
+.language-card a:hover {
+    color: #4CAF50;
+    text-decoration: underline;
+}
+
+.sitemap-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sitemap-section li {
+    margin-bottom: 0.75rem;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 0.25rem;
+}
+
+.sitemap-section a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.sitemap-section a:hover {
+    color: #45a049;
+    text-decoration: underline;
 }

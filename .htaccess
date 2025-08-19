@@ -1,0 +1,104 @@
+# 启用重写引擎
+RewriteEngine On
+
+# 强制HTTPS（如果可用）
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# 移除www前缀（可选）
+# RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+# RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+# 语言重定向规则
+RewriteCond %{REQUEST_URI} ^/$
+RewriteRule ^$ /en/index.html [R=301,L]
+
+# 处理语言参数重定向
+RewriteCond %{QUERY_STRING} ^lang=([a-z-]+)$
+RewriteRule ^index\.html$ /%1/index.html? [R=301,L]
+
+# 移除尾部斜杠
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} (.+)/$
+RewriteRule ^ %1 [R=301,L]
+
+# 移除.html扩展名（可选）
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} ^(.+)\.html$
+RewriteRule ^(.+)\.html$ $1 [R=301,L]
+
+# 缓存控制
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/jpg "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/svg+xml "access plus 1 month"
+    ExpiresByType text/html "access plus 1 hour"
+</IfModule>
+
+# 压缩
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+</IfModule>
+
+# 安全头
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options nosniff
+    Header always set X-Frame-Options DENY
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# 错误页面
+ErrorDocument 404 /en/404.html
+ErrorDocument 500 /en/500.html
+
+# 语言检测和重定向
+RewriteCond %{HTTP:Accept-Language} ^zh [NC]
+RewriteRule ^$ /zh-cn/index.html [R=302,L]
+
+RewriteCond %{HTTP:Accept-Language} ^es [NC]
+RewriteRule ^$ /es/index.html [R=302,L]
+
+RewriteCond %{HTTP:Accept-Language} ^pt [NC]
+RewriteRule ^$ /pt-br/index.html [R=302,L]
+
+RewriteCond %{HTTP:Accept-Language} ^fr [NC]
+RewriteRule ^$ /fr/index.html [R=302,L]
+
+RewriteCond %{HTTP:Accept-Language} ^de [NC]
+RewriteRule ^$ /de/index.html [R=302,L]
+
+RewriteCond %{HTTP:Accept-Language} ^ru [NC]
+RewriteRule ^$ /ru/index.html [R=302,L]
+
+RewriteCond %{HTTP:Accept-Language} ^ar [NC]
+RewriteRule ^$ /ar/index.html [R=302,L]
+
+RewriteCond %{HTTP:Accept-Language} ^hi [NC]
+RewriteRule ^$ /hi/index.html [R=302,L]
+
+RewriteCond %{HTTP:Accept-Language} ^id [NC]
+RewriteRule ^$ /id/index.html [R=302,L]
+
+RewriteCond %{HTTP:Accept-Language} ^vi [NC]
+RewriteRule ^$ /vi/index.html [R=302,L]
+
+RewriteCond %{HTTP:Accept-Language} ^ja [NC]
+RewriteRule ^$ /ja/index.html [R=302,L]
+
+# 默认重定向到英文
+RewriteRule ^$ /en/index.html [R=301,L] 

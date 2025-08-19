@@ -71,12 +71,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 const lang = this.getAttribute('data-lang');
                 flagDropdown.classList.remove('open');
                 if (lang) {
-                    // 调用现有的语言切换函数
-                    if (typeof switchLang === 'function') {
-                        switchLang(lang);
-                    } else if (typeof window.__gagI18n !== 'undefined' && window.__gagI18n.switchLang) {
-                        window.__gagI18n.switchLang(lang);
+                    // 直接重定向到对应语言目录
+                    const currentPath = window.location.pathname;
+                    const segments = currentPath.split('/');
+                    const last = segments[segments.length - 1];
+                    let filename = (last && /.html$/i.test(last)) ? last : 'index.html';
+                    
+                    // 构建目标URL
+                    let targetUrl;
+                    if (lang === 'en') {
+                        targetUrl = `/${filename}`;
+                    } else {
+                        targetUrl = `/${lang}/${filename}`;
                     }
+                    
+                    // 重定向到目标语言页面
+                    window.location.href = targetUrl;
                 }
             });
         });

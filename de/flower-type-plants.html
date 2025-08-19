@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower Type Plants in Grow a Garden - Complete Growing Guide | Grow a Garden Tips</title>
+    <meta name="description" content="Master flower type plants in Roblox Grow a Garden! Learn about rose cultivation, sunflower farming, tulip growing, and all flower plant strategies for maximum profit and beauty.">
+    <meta name="keywords" content="flower type plants grow a garden, roblox flower farming, grow a garden flower guide, rose cultivation, sunflower farming, tulip growing, flower plant strategies, roblox gardening tips">
+    <link rel="canonical" href="https://growagarden.cv/de/flower-type-plants.html">
+    
+    <!-- Open Graph for social sharing -->
+    <meta property="og:title" content="Flower Type Plants in Grow a Garden - Complete Growing Guide">
+    <meta property="og:description" content="Master flower type plants in Roblox Grow a Garden! Learn about rose cultivation, sunflower farming, tulip growing, and all flower plant strategies.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://growagarden.cv/de/flower-type-plants.html">
+    <meta property="og:image" content="https://growagarden.cv/flower-guide-og.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Flower Type Plants in Grow a Garden - Complete Growing Guide">
+    <meta name="twitter:description" content="Master flower type plants in Roblox Grow a Garden! Learn about rose cultivation, sunflower farming, tulip growing.">
+    <meta name="twitter:image" content="https://growagarden.cv/flower-guide-og.jpg">
+    
+    <!-- Structured Data JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "Flower Type Plants in Grow a Garden",
+      "description": "Master flower type plants in Roblox Grow a Garden, including rose cultivation, sunflower farming, tulip growing, and all flower plant strategies for maximum profit.",
+      "image": "https://growagarden.cv/flower-guide-og.jpg",
+      "url": "https://growagarden.cv/de/flower-type-plants.html",
+      "inLanguage": "de",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Choose Flower Types",
+          "text": "Select the best flower types for your garden based on climate and profit potential"
+        },
+        {
+          "@type": "HowToStep", 
+          "name": "Prepare Soil",
+          "text": "Ensure proper soil conditions and fertilization for optimal flower growth"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Plant and Care",
+          "text": "Plant flowers with proper spacing and maintain regular watering and care"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Roblox-like color scheme -->
+    <link rel="stylesheet" href="https://unpkg.com/simple.css@2.1.0/simple.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
+    
+    <style>
+        body {
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .bg-blur {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: 0;
+            background: url('../grow-bg.jpg') center center/cover no-repeat;
+            opacity: 0.3;
+            filter: blur(2px);
+            pointer-events: none;
+        }
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+        .flower-hero {
+            background: linear-gradient(135deg, #ff69b4, #da70d6);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-top: 60px;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        .flower-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        .flower-hero h1,
+        .flower-hero p {
+            position: relative;
+            z-index: 2;
+        }
+        .flower-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .flower-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        .guide-section {
+            background: rgba(255, 255, 255, 0.95);
+            margin: 2rem;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+        .flower-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .flower-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .flower-card:hover {
+            transform: translateY(-5px);
+        }
+        .flower-card h3 {
+            color: #ff69b4;
+            margin-bottom: 1rem;
+        }
+        .profit-info {
+            background: linear-gradient(135deg, #32cd32, #228b22);
+            color: white;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin: 1rem 0;
+        }
+        .tips-section {
+            background: linear-gradient(135deg, #ffd700, #ffa500);
+            color: #333;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            margin: 2rem 0;
+        }
+        .tips-section h3 {
+            color: #8b4513;
+            margin-bottom: 1rem;
+        }
+        .tips-list {
+            list-style: none;
+            padding: 0;
+        }
+        .tips-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(139, 69, 19, 0.2);
+        }
+        .tips-list li:last-child {
+            border-bottom: none;
+        }
+        .tips-list li::before {
+            content: "🌸 ";
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-blur"></div>
+    <div class="content-wrapper">
+        <header>
+            <nav>
+                <a href="#" class="logo" data-i18n="nav.logo">🌱 Grow a Garden</a>
+                <a href="javascript:void(0)" onclick="scrollToSection('stats')" data-i18n="nav.live">Live Stats</a>
+                <a href="javascript:void(0)" onclick="scrollToSection('map')" data-i18n="nav.map">Global Heatmap</a>
+                <a href="javascript:void(0)" onclick="scrollToSection('tips')" data-i18n="nav.tips">Tips</a>
+                <a href="guides.html" data-i18n="nav.guides">📚 Guides</a>
+                <a href="javascript:void(0)" onclick="scrollToSection('online')" data-i18n="nav.online">🎮 Online</a>
+                <a href="javascript:void(0)" onclick="scrollToSection('community')" class="discord-btn" data-i18n="nav.discord">💬 Discord</a>
+                <div class="flag-language-switcher">
+                    <div class="current-flag" id="current-flag">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNDgwIj4KICAgICAgICAgICAgPGRlZnM+PGNsaXBQYXRoIGlkPSJhIj48cGF0aCBkPSJNLTg1LjMgMGg2ODIuNnY1MTJILTg1LjN6Ii8+PC9jbGlwUGF0aD48L2RlZnM+CiAgICAgICAgICAgIDxjbGlwUGF0aCBpZD0iYiI+PHVzZSBocmVmPSIjYSIvPjwvY2xpcFBhdGg+CiAgICAgICAgICAgIDxnIGNsaXAtcGF0aD0idXJsKCNiKSIgdHJhbnNmb3JtPSJzY2FsZSguOTM3NSkiPgogICAgICAgICAgICAgICAgPGcgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2Utd2lkdGg9IjFwdCI+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2NTEySC0yNTZ6IiBmaWxsPSIjYmQzZDQ0Ii8+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAxMDIuNEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAyMDQuOEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAzMDcuMkg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiA0MDkuNkg3NjhWNTEySC0yNTZ6IiBmaWxsPSIjZmZmIi8+CiAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICA8ZyBmaWxsPSIjMTkyZjVkIj4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAwdjUxMmwyNTYtMjU2eiIvPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9zdmc+" alt="en Flag">
+                    </div>
+                    <div class="flag-dropdown" id="flag-dropdown">
+                        <div class="flag-option" data-lang="en" title="English">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICA8L3N2Zz4=" alt="en Flag">
+            <span class="flag-name">English</span>
+        </div>
+                        <div class="flag-option" data-lang="zh-cn" title="简体中文">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICA8L3N2Zz4=" alt="zh-cn Flag">
+            <span class="flag-name">简体中文</span>
+        </div>
+                        <div class="flag-option" data-lang="es" title="Español">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICA8L3N2Zz4=" alt="es Flag">
+            <span class="flag-name">Español</span>
+        </div>
+                        <div class="flag-option" data-lang="pt-br" title="Português">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICA8L3N2Zz4=" alt="pt-br Flag">
+            <span class="flag-name">Português</span>
+        </div>
+                        <div class="flag-option" data-lang="fr" title="Français">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICA8L3N2Zz4=" alt="fr Flag">
+            <span class="flag-name">Français</span>
+        </div>
+                        <div class="flag-option" data-lang="de" title="Deutsch">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICA8L3N2Zz4=" alt="de Flag">
+            <span class="flag-name">Deutsch</span>
+        </div>
+                        <div class="flag-option" data-lang="ru" title="Русский">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICA8L3N2Zz4=" alt="ru Flag">
+            <span class="flag-name">Русский</span>
+        </div>
+                        <div class="flag-option" data-lang="ar" title="العربية">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICA8L3N2Zz4=" alt="ar Flag">
+            <span class="flag-name">العربية</span>
+        </div>
+                        <div class="flag-option" data-lang="hi" title="हिन्दी">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICA8L3N2Zz4=" alt="hi Flag">
+            <span class="flag-name">हिन्दी</span>
+        </div>
+                        <div class="flag-option" data-lang="id" title="Bahasa Indonesia">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICA8L3N2Zz4=" alt="id Flag">
+            <span class="flag-name">Bahasa Indonesia</span>
+        </div>
+                        <div class="flag-option" data-lang="vi" title="Tiếng Việt">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICA8L3N2Zz4=" alt="vi Flag">
+            <span class="flag-name">Tiếng Việt</span>
+        </div>
+                        <div class="flag-option" data-lang="ja" title="日本語">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICA8L3N2Zz4=" alt="ja Flag">
+            <span class="flag-name">日本語</span>
+        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <section class="flower-hero">
+            <h1>🌸 Flower Type Plants in Grow a Garden</h1>
+            <p>Master the art of growing beautiful and profitable flowers in Roblox's most popular farming game!</p>
+        </section>
+
+        <div class="guide-section">
+            <h2>🌺 Why Grow Flower Type Plants?</h2>
+            <p>Flower type plants in Grow a Garden offer unique advantages that make them essential for any serious farmer:</p>
+            
+            <div class="profit-info">
+                <h3>💰 High Profit Potential</h3>
+                <p>Flowers often have higher base values and can fetch premium prices in the market, especially during special events and seasonal demand.</p>
+            </div>
+
+            <div class="flower-grid">
+                <div class="flower-card">
+                    <h3>🌹 Roses</h3>
+                    <p><strong>Growth Time:</strong> 2-3 hours</p>
+                    <p><strong>Base Value:</strong> $150-300</p>
+                    <p><strong>Best Season:</strong> Spring/Summer</p>
+                    <p><strong>Special Features:</strong> High demand for romantic events, can be used in bouquets</p>
+                </div>
+
+                <div class="flower-card">
+                    <h3>🌻 Sunflowers</h3>
+                    <p><strong>Growth Time:</strong> 1-2 hours</p>
+                    <p><strong>Base Value:</strong> $100-200</p>
+                    <p><strong>Best Season:</strong> Summer</p>
+                    <p><strong>Special Features:</strong> Fast growth, high yield, attracts bees</p>
+                </div>
+
+                <div class="flower-card">
+                    <h3>🌷 Tulips</h3>
+                    <p><strong>Growth Time:</strong> 2-4 hours</p>
+                    <p><strong>Base Value:</strong> $120-250</p>
+                    <p><strong>Best Season:</strong> Spring</p>
+                    <p><strong>Special Features:</strong> Multiple color variants, seasonal bonus</p>
+                </div>
+
+                <div class="flower-card">
+                    <h3>🌼 Daisies</h3>
+                    <p><strong>Growth Time:</strong> 1-1.5 hours</p>
+                    <p><strong>Base Value:</strong> $80-150</p>
+                    <p><strong>Best Season:</strong> Spring/Summer</p>
+                    <p><strong>Special Features:</strong> Very fast growth, beginner-friendly</p>
+                </div>
+
+                <div class="flower-card">
+                    <h3>🌺 Lilies</h3>
+                    <p><strong>Growth Time:</strong> 3-4 hours</p>
+                    <p><strong>Base Value:</strong> $200-400</p>
+                    <p><strong>Best Season:</strong> Summer</p>
+                    <p><strong>Special Features:</strong> High-end market, luxury item</p>
+                </div>
+
+                <div class="flower-card">
+                    <h3>🌸 Cherry Blossoms</h3>
+                    <p><strong>Growth Time:</strong> 4-6 hours</p>
+                    <p><strong>Base Value:</strong> $300-600</p>
+                    <p><strong>Best Season:</strong> Spring</p>
+                    <p><strong>Special Features:</strong> Rare, extremely high value, event-exclusive</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="guide-section">
+            <h2>🌱 Growing Strategies for Flower Type Plants</h2>
+            
+            <h3>1. Soil Preparation</h3>
+            <p>Flowers require well-draining, nutrient-rich soil. Use premium fertilizer and ensure proper pH levels for optimal growth.</p>
+            
+            <h3>2. Watering Schedule</h3>
+            <p>Flowers need consistent moisture but avoid overwatering. Implement a drip irrigation system for best results.</p>
+            
+            <h3>3. Spacing and Layout</h3>
+            <p>Proper spacing prevents disease and ensures adequate sunlight. Use grid patterns for efficient harvesting.</p>
+            
+            <h3>4. Pest Management</h3>
+            <p>Flowers attract beneficial insects but can also attract pests. Use natural pest control methods when possible.</p>
+        </div>
+
+        <div class="tips-section">
+            <h3>💡 Pro Tips for Flower Farming</h3>
+            <ul class="tips-list">
+                <li>Plant flowers in batches to ensure continuous harvest throughout the season</li>
+                <li>Use companion planting with herbs to naturally repel pests</li>
+                <li>Save your highest-quality flowers for special events and premium markets</li>
+                <li>Experiment with different flower combinations for unique bouquets</li>
+                <li>Monitor market trends to plant the most profitable flowers</li>
+                <li>Use greenhouses to extend the growing season for high-value flowers</li>
+                <li>Network with other players to learn about rare flower varieties</li>
+                <li>Keep detailed records of growth times and yields for optimization</li>
+            </ul>
+        </div>
+
+        <div class="guide-section">
+            <h2>🎯 Advanced Flower Farming Techniques</h2>
+            
+            <h3>Mutation Breeding</h3>
+            <p>Cross-pollinate different flower varieties to create rare mutations with unique colors and higher values.</p>
+            
+            <h3>Seasonal Optimization</h3>
+            <p>Plan your flower planting calendar to maximize profits during peak demand periods.</p>
+            
+            <h3>Market Timing</h3>
+            <p>Study market patterns to sell flowers when demand is highest and prices are at their peak.</p>
+        </div>
+
+        <div class="guide-section">
+            <h2>🚀 Getting Started with Flower Farming</h2>
+            <ol>
+                <li><strong>Choose Your Flowers:</strong> Start with fast-growing, high-demand flowers like daisies and sunflowers</li>
+                <li><strong>Prepare Your Garden:</strong> Set up proper soil, irrigation, and pest control systems</li>
+                <li><strong>Plant in Stages:</strong> Stagger your planting to ensure continuous harvest</li>
+                <li><strong>Monitor Growth:</strong> Keep track of growth times and adjust your schedule accordingly</li>
+                <li><strong>Harvest and Sell:</strong> Time your harvests for maximum profit and market demand</li>
+                <li><strong>Expand Gradually:</strong> As you gain experience, add more complex and valuable flower varieties</li>
+            </ol>
+        </div>
+    </div>
+
+    <script src="../script.js"></script>
+    <script src="../i18n/i18n.js"></script>
+    <script>
+        // 国旗语言切换器功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentFlag = document.getElementById('current-flag');
+            const flagDropdown = document.getElementById('flag-dropdown');
+            const flagOptions = document.querySelectorAll('.flag-option');
+            
+            // 点击当前国旗显示/隐藏下拉菜单
+            if (currentFlag) {
+                currentFlag.addEventListener('click', function() {
+                    flagDropdown.classList.toggle('open');
+                });
+            }
+            
+            // 点击国旗选项切换语言
+            flagOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    const lang = this.getAttribute('data-lang');
+                    const flagImg = this.querySelector('img').src;
+                    const flagName = this.querySelector('.flag-name').textContent;
+                    
+                    // 更新当前显示的国旗
+                    const currentFlagImg = currentFlag.querySelector('img');
+                    currentFlagImg.src = flagImg;
+                    
+                    // 关闭下拉菜单
+                    flagDropdown.classList.remove('open');
+                    
+                    // 重定向到对应语言页面
+                    if (lang === 'en') {
+                        window.location.href = '/en/flower-type-plants.html';
+                    } else {
+                        window.location.href = '/' + lang + '/flower-type-plants.html';
+                    }
+                });
+            }
+            
+            // 点击外部关闭下拉菜单
+            document.addEventListener('click', function(event) {
+                if (!event.target.closest('.flag-language-switcher')) {
+                    flagDropdown.classList.remove('open');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

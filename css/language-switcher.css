@@ -1,0 +1,129 @@
+/* ========================================
+   GROW A GARDEN - 语言切换器样式
+   ======================================== */
+
+/* 国旗语言切换器样式 */
+.flag-language-switcher {
+    position: relative;
+    display: inline-block;
+    margin-left: 1rem;
+}
+
+.current-flag {
+    cursor: pointer;
+    padding: 0.35rem 0.6rem !important;
+    border-radius: 999px !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.4rem !important;
+    transition: all 0.3s ease;
+}
+
+.current-flag:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+    transform: translateY(-2px);
+}
+
+.current-flag img {
+    width: 28px !important;
+    height: 21px !important;
+    border-radius: 4px !important;
+    object-fit: cover !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+.flag-dropdown {
+    position: absolute;
+    top: calc(100% + 16px) !important;
+    right: 0;
+    background: rgba(20, 20, 20, 0.98) !important;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 10px !important;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35) !important;
+    min-width: 40px !important;
+    width: auto !important;
+    padding: 6px 6px !important;
+    max-height: 420px !important;
+    overflow-y: auto;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.2s ease;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    padding-top: 6px !important;
+    pointer-events: none;
+}
+
+.flag-dropdown::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+.flag-option {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0 !important;
+    padding: 8px !important;
+    width: auto !important;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+.flag-option:last-child {
+    border-bottom: none !important;
+}
+
+.flag-option:hover {
+    background: rgba(255, 255, 255, 0.06) !important;
+}
+
+.flag-option img {
+    width: 24px !important;
+    height: 18px !important;
+    border-radius: 4px !important;
+    object-fit: cover !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    flex-shrink: 0 !important;
+}
+
+.flag-name {
+    display: none !important;
+}
+
+.flag-language-switcher:hover .flag-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.flag-option:first-child {
+    margin-top: 0 !important;
+}
+
+/* 保持国旗下拉在点击展开时可见 */
+.flag-dropdown.open {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+    pointer-events: auto !important;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .flag-dropdown {
+        right: -50px;
+        min-width: 200px;
+    }
+    
+    .flag-name {
+        font-size: 0.85rem;
+    }
+} 
