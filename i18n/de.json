@@ -424,6 +424,7 @@
   "nama_pizza.table.nama_pizza": "[nama_pizza.table.nama_pizza]",
   "nav.discord": "💬 Discord",
   "nav.guides": "📚 Anleitungen",
+  "nav.online": "🎮 Online",
   "nav.live": "Live-Statistiken",
   "nav.logo": "🌱 Grow a Garden",
   "nav.map": "Globale Wärmekarte",
@@ -931,4 +932,36 @@
   "🥕 如何在Grow a Garden中种植胡萝卜.hero.title": "Anleitung",
   "🥧_パイ作り.breadcrumb.current": "Aktuelle Seite",
   "🥪 如何在种植花园中制作三明治.hero.title": "Anleitung"
+,
+  "game.playMiniPlay": "Auf MiniPlay spielen"
+,
+  "game.playPlayHop": "Auf PlayHop spielen"
+,
+  "features.title": "🎯 Spielmerkmale"
+,
+  "features.plant.title": "Pflanzen & Wachsen"
+,
+  "features.plant.desc": "Pflanze verschiedene Samen und beobachte, wie sie zu schönen Ernten mit realistischen Wachstumszyklen heranwachsen"
+,
+  "features.mutations.title": "Mutationen"
+,
+  "features.mutations.desc": "Entdecke seltene Mutationen für höheren Wert und einzigartige Pflanzen mit besonderen Fähigkeiten"
+,
+  "features.profit.title": "Gewinnsystem"
+,
+  "features.profit.desc": "Lerne fortgeschrittene Strategien, um die Rentabilität deines Gartens und den Marktzeitpunkt zu maximieren"
+,
+  "features.multiplayer.title": "Mehrspieler"
+,
+  "features.multiplayer.desc": "Spiele mit Freunden, tritt Gilden bei und nimm an saisonalen Events und Turnieren teil"
+,
+  "features.world.title": "Offene Welt"
+,
+  "features.world.desc": "Erkunde riesige Anbaugebiete, entdecke neue Orte und schalte geheime Bereiche frei"
+,
+  "features.achievements.title": "Erfolge"
+,
+  "features.achievements.desc": "Schalte Erfolge frei, steige in den Ranglisten auf und verdiene exklusive Belohnungen"
+,
+  "nav.back": "← Zurück"
 }

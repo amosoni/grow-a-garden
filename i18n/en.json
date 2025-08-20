@@ -4,6 +4,7 @@
   "nav.map": "Global Heatmap",
   "nav.tips": "Tips",
   "nav.guides": "📚 Guides",
+  "nav.online": "🎮 Online",
   "nav.discord": "💬 Discord",
   "hero.title": "🌱 Grow a Garden Calculator",
   "hero.subtitle": "Roblox Fruit & Mutation Value Tool",
@@ -589,9 +590,6 @@
   "orangeGrowing.requirements.time.title": "⏰ Time",
   "orangeGrowing.requirements.time.description": "Patience for growth cycle",
   
-  "orangeGrowing.stepByStep.title": "📝 Step-by-Step Guide",
-  "orangeGrowing.stepByStep.step1.title": "Step 1: Prepare Soil",
-  "orangeGrowing.stepByStep.step1.choose": "Choose fertile soil location",
   "orangeGrowing.stepByStep.step1.prepare": "Prepare soil for planting",
   "orangeGrowing.stepByStep.step2.title": "Step 2: Plant Seeds",
   "orangeGrowing.stepByStep.step2.plant": "Plant orange seeds properly",

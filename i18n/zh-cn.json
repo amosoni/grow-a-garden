@@ -494,6 +494,7 @@
   "nama_pizza.table.nama_pizza": "[nama_pizza.table.nama_pizza]",
   "nav.discord": "💬 交流",
   "nav.guides": "📚 攻略",
+  "nav.online": "🎮 在线游戏",
   "nav.live": "实时数据",
   "nav.logo": "🌱 种植花园",
   "nav.map": "全球热力图",
@@ -1223,4 +1224,36 @@
   "🥕 如何在Grow a Garden中种植胡萝卜.hero.title": "指南",
   "🥧_パイ作り.breadcrumb.current": "当前页面",
   "🥪 如何在种植花园中制作三明治.hero.title": "指南"
+,
+  "game.playMiniPlay": "在MiniPlay上游玩"
+,
+  "game.playPlayHop": "在PlayHop上游玩"
+,
+  "features.title": "🎯 游戏特色"
+,
+  "features.plant.title": "种植与成长"
+,
+  "features.plant.desc": "种植各种种子，观看它们成长为美丽的作物，具有逼真的生长周期"
+,
+  "features.mutations.title": "突变"
+,
+  "features.mutations.desc": "发现稀有突变以获得更高价值和具有特殊能力的独特植物"
+,
+  "features.profit.title": "盈利系统"
+,
+  "features.profit.desc": "学习高级策略，最大化你的花园盈利能力和市场时机"
+,
+  "features.multiplayer.title": "多人游戏"
+,
+  "features.multiplayer.desc": "与朋友一起游戏，加入公会，在季节性活动和锦标赛中竞争"
+,
+  "features.world.title": "开放世界"
+,
+  "features.world.desc": "探索广阔的农场区域，发现新地点，解锁秘密区域"
+,
+  "features.achievements.title": "成就"
+,
+  "features.achievements.desc": "解锁成就，攀登排行榜，获得专属奖励"
+,
+  "nav.back": "← 返回"
 }

@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="vegetablePlants.hero.title">Vegetable Plants in Grow a Garden - Complete Growing Guide & Tips</title>
+    <meta name="description" content="Master vegetable plants in Roblox Grow a Garden! Learn how to grow tomatoes, carrots, potatoes, and more. Complete growing guide with watering tips, mutation strategies, and profit optimization.">
+    <meta name="keywords" content="vegetable plants grow a garden, Roblox vegetables, tomato growing, carrot farming, potato cultivation, vegetable mutations, garden tips, Roblox farming guide">
+    <link rel="canonical" href="https://growagarden.cv/vegetable-plants-grow-a-garden.html">
+    
+    <!-- Open Graph for social sharing -->
+    <meta property="og:title" content="Vegetable Plants in Grow a Garden - Complete Growing Guide & Tips">
+    <meta property="og:description" content="Master vegetable plants in Roblox Grow a Garden! Learn how to grow tomatoes, carrots, potatoes, and more. Complete growing guide with watering tips, mutation strategies, and profit optimization.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://growagarden.cv/vegetable-plants-grow-a-garden.html">
+    <meta property="og:image" content="https://growagarden.cv/vegetable-plants-og.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Vegetable Plants in Grow a Garden - Complete Growing Guide">
+    <meta name="twitter:description" content="Master vegetable plants in Roblox Grow a Garden! Learn how to grow tomatoes, carrots, potatoes, and more.">
+    <meta name="twitter:image" content="https://growagarden.cv/vegetable-plants-og.jpg">
+    
+    <!-- Structured Data JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Vegetable Plants in Grow a Garden - Complete Growing Guide & Tips",
+      "description": "Master vegetable plants in Roblox Grow a Garden! Learn how to grow tomatoes, carrots, potatoes, and more. Complete growing guide with watering tips, mutation strategies, and profit optimization.",
+      "image": "https://growagarden.cv/vegetable-plants-og.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "Grow a Garden Calculator"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Grow a Garden Calculator",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://growagarden.cv/logo.png"
+        }
+      },
+      "datePublished": "2025-01-15",
+      "dateModified": "2025-01-15",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://growagarden.cv/vegetable-plants-grow-a-garden.html"
+      },
+      "articleSection": "Guides",
+      "keywords": "vegetable plants grow a garden, Roblox vegetables, tomato growing, carrot farming, potato cultivation, vegetable mutations, garden tips, Roblox farming guide"
+    }
+    </script>
+    
+    <!-- Roblox-like color scheme -->
+    <link rel="stylesheet" href="https://unpkg.com/simple.css@2.1.0/simple.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥕</text></svg>">
+    
+    <style>
+        body {
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .bg-blur {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: 0;
+            background: linear-gradient(135deg, #2d5a27 0%, #4a7c59 50%, #6b8e76 100%);
+            opacity: 0.3;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, rgba(45, 90, 39, 0.9), rgba(74, 124, 89, 0.9));
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+        
+        .content-section {
+            background: rgba(255, 255, 255, 0.95);
+            margin: 2rem;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .vegetable-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .vegetable-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            border: 2px solid #e8f5e8;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .vegetable-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .vegetable-icon {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        
+        .vegetable-card h3 {
+            color: #2d5a27;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .stat-item {
+            background: #f8f9fa;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            border-left: 4px solid #28a745;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: #6c757d;
+            display: block;
+        }
+        
+        .stat-value {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2d5a27;
+        }
+        
+        .tips-section {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .tip-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin: 1rem 0;
+            border-left: 4px solid #ffc107;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .tip-item h4 {
+            color: #856404;
+            margin-bottom: 0.5rem;
+        }
+        
+        .mutation-guide {
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .mutation-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            background: white;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .mutation-table th,
+        .mutation-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        .mutation-table th {
+            background: #2196f3;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .mutation-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+            border-radius: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            background: white;
+            color: #28a745;
+            padding: 1rem 2rem;
+            border-radius: 2rem;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 1rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+        }
+        
+        .breadcrumb {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 1rem 2rem;
+            margin: 1rem 2rem;
+            border-radius: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .breadcrumb a {
+            color: #28a745;
+            text-decoration: none;
+        }
+        
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .content-section {
+                margin: 1rem;
+                padding: 1rem;
+            }
+            
+            .vegetable-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-blur"></div>
+    
+    <!-- Language Switcher -->
+    <div class="flag-language-switcher" style="position: fixed; top: 20px; right: 20px; z-index: 1000;">
+        <div class="current-flag" id="current-flag">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNDgwIj4KICAgICAgICAgICAgPGRlZnM+PGNsaXBQYXRoIGlkPSJhIj48cGF0aCBkPSJNLTg1LjMgMGg2ODIuNnY1MTJILTg1LjN6Ii8+PC9jbGlwUGF0aD48L2RlZnM+CiAgICAgICAgICAgIDxjbGlwUGF0aCBpZD0iYiI+PHVzZSBocmVmPSIjYSIvPjwvY2xpcFBhdGg+CiAgICAgICAgICAgIDxnIGNsaXAtcGF0aD0idXJsKCNiKSIgdHJhbnNmb3JtPSJzY2FsZSguOTM3NSkiPgogICAgICAgICAgICAgICAgPGcgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2Utd2lkdGg9IjFwdCI+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2NTEySC0yNTZ6IiBmaWxsPSIjYmQzZDQ0Ii8+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAxMDIuNEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAyMDQuOEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAzMDcuMkg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiA0MDkuNkg3NjhWNTEySC0yNTZ6IiBmaWxsPSIjZmZmIi8+CiAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICA8ZyBmaWxsPSIjMTkyZjVkIj4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAwdjUxMmwyNTYtMjU2eiIvPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9zdmc+" 
+                         alt="en Flag">
+        </div>
+        <div class="flag-dropdown" id="flag-dropdown">
+            <div class="flag-option" data-lang="en" title="English">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNDgwIj4KICAgICAgICAgICAgPGRlZnM+PGNsaXBQYXRoIGlkPSJhIj48cGF0aCBkPSJNLTg1LjMgMGg2ODIuNnY1MTJILTg1LjN6Ii8+PC9jbGlwUGF0aD48L2RlZnM+CiAgICAgICAgICAgIDxjbGlwUGF0aCBpZD0iYiI+PHVzZSBocmVmPSIjYSIvPjwvY2xpcFBhdGg+CiAgICAgICAgICAgIDxnIGNsaXAtcGF0aD0idXJsKCNiKSIgdHJhbnNmb3JtPSJzY2FsZSguOTM3NSkiPgogICAgICAgICAgICAgICAgPGcgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2Utd2lkdGg9IjFwdCI+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2NTEySC0yNTZ6IiBmaWxsPSIjYmQzZDQ0Ii8+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTS0yNTYgMEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAxMDIuNEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAyMDQuOEg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAzMDcuMkg3Njh2MTAyLjRILTI1NnoiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiA0MDkuNkg3NjhWNTEySC0yNTZ6IiBmaWxsPSIjZmZmIi8+CiAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICA8ZyBmaWxsPSIjMTkyZjVkIj4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNLTI1NiAwdjUxMmwyNTYtMjU2eiIvPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9zdmc+" 
+                         alt="en Flag">
+                <span class="flag-name">English</span>
+            </div>
+            <div class="flag-option" data-lang="zh-cn" title="简体中文">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNkZTI5MTAiLz4KICAgICAgICAgICAgPGcgZmlsbD0iI2ZmZGUwMCI+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNNDUwIDEyMGwtNDUuNyAxNDAuNy0xMTkuMyAwaDE1NGwtMTE5LjMgMHoiLz4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik00NTAgMzAwbC00NS43IDE0MC43LTExOS4zIDBoMTU0bC0xMTkuMyAweiIvPgogICAgICAgICAgICAgICAgPHBhdGggZD0iTTQ1MCA0ODBsLTQ1LjcgMTQwLjctMTE5LjMgMGgxNTRsLTExOS4zIDB6Ii8+CiAgICAgICAgICAgIDwvZz4KICAgICAgICA8L3N2Zz4=" 
+                         alt="zh-cn Flag">
+                <span class="flag-name">简体中文</span>
+            </div>
+            <div class="flag-option" data-lang="es" title="Español">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3NTAgNTAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9Ijc1MCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiNjNjBiMWUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9Ijc1MCIgaGVpZ2h0PSIyNTAiIHk9IjEyNSIgZmlsbD0iI2ZmYzQwMCIvPgogICAgICAgIDwvc3ZnPg==" 
+                         alt="es Flag">
+                <span class="flag-name">Español</span>
+            </div>
+            <div class="flag-option" data-lang="pt-br" title="Português">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3MjAgNTA0Ij4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjcyMCIgaGVpZ2h0PSI1MDQiIGZpbGw9IiMwMDliM2EiLz4KICAgICAgICAgICAgPHBhdGggZD0iTTM2MCAyNTJsLTE4MC0xMjZ2MjUyeiIgZmlsbD0iI2ZlZGYwMCIvPgogICAgICAgICAgICA8Y2lyY2xlIGN4PSIzNjAiIGN5PSIyNTIiIHI9IjYwIiBmaWxsPSIjMDAyNzc2Ii8+CiAgICAgICAgPC9zdmc+" 
+                         alt="pt-br Flag">
+                <span class="flag-name">Português</span>
+            </div>
+            <div class="flag-option" data-lang="fr" title="Français">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiMwMDIzOTUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSI2MDAiIHg9IjMwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjYwMCIgeD0iNjAwIiBmaWxsPSIjZWQyOTM5Ii8+CiAgICAgICAgPC9zdmc+" 
+                         alt="fr Flag">
+                <span class="flag-name">Français</span>
+            </div>
+            <div class="flag-option" data-lang="de" title="Deutsch">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiMwMDAiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iI2RkMDAwMCIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjZmZjZTAwIi8+CiAgICAgICAgPC9zdmc+" 
+                         alt="de Flag">
+                <span class="flag-name">Deutsch</span>
+            </div>
+            <div class="flag-option" data-lang="ru" title="Русский">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iIzAwMzlhNiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjZDUyYjFlIi8+CiAgICAgICAgPC9zdmc+" 
+                         alt="ru Flag">
+                <span class="flag-name">Русский</span>
+            </div>
+            <div class="flag-option" data-lang="ar" title="العربية">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiMwMDZjMzUiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI0MDAiIHk9IjEwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iMjAwIiBmaWxsPSIjY2UxMTI2Ii8+CiAgICAgICAgPC9zdmc+" 
+                         alt="ar Flag">
+                <span class="flag-name">العربية</span>
+            </div>
+            <div class="flag-option" data-lang="hi" title="हिन्दी">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNmZjk5MzMiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIyMDAiIHk9IjIwMCIgZmlsbD0iI2ZmZiIvPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjIwMCIgeT0iNDAwIiBmaWxsPSIjMTM4ODA4Ii8+CiAgICAgICAgICAgIDxjaXJjbGUgY3g9IjQ1MCIgY3k9IjMwMCIgcj0iNjAiIGZpbGw9IiMwMDAwODAiLz4KICAgICAgICA8L3N2Zz4=" 
+                         alt="hi Flag">
+                <span class="flag-name">हिन्दी</span>
+            </div>
+            <div class="flag-option" data-lang="id" title="Bahasa Indonesia">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSIzMDAiIHk9IjMwMCIgZmlsbD0iI2NlMTEyNiIvPgogICAgICAgIDwvc3ZnPg==" 
+                         alt="id Flag">
+                <span class="flag-name">Bahasa Indonesia</span>
+            </div>
+            <div class="flag-option" data-lang="vi" title="Tiếng Việt">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNkYTI1MWQiLz4KICAgICAgICAgICAgPHBhdGggZD0iTTQ1MCAzMDBsLTE4MC0xMjZ2MjUyeiIgZmlsbD0iI2ZmZmYwMCIvPgogICAgICAgIDwvc3ZnPg==" 
+                         alt="id Flag">
+                <span class="flag-name">Tiếng Việt</span>
+            </div>
+            <div class="flag-option" data-lang="ja" title="日本語">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNmZmYiLz4KICAgICAgICAgICAgPGNpcmNsZSBjeD0iNDUwIiBjeT0iMzAwIiByPSIxODAiIGZpbGw9IiNiYzAwMmQiLz4KICAgICAgICA8L3N2Zz4=" 
+                         alt="ja Flag">
+                <span class="flag-name">日本語</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Breadcrumb Navigation -->
+    <div class="breadcrumb">
+        <a href="index.html" data-i18n="vegetablePlants.breadcrumb.home">Home</a> > 
+        <a href="guides.html" data-i18n="vegetablePlants.breadcrumb.guides">Guides</a> > 
+        <span data-i18n="vegetablePlants.breadcrumb.current">Vegetable Plants Guide</span>
+    </div>
+    
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 data-i18n="vegetablePlants.hero.title">🥕 Vegetable Plants in Grow a Garden</h1>
+            <p data-i18n="vegetablePlants.hero.subtitle">Master the art of growing vegetables in Roblox's most popular farming game. Learn everything about tomatoes, carrots, potatoes, and more!</p>
+            <p data-i18n="vegetablePlants.hero.description">Discover optimal growing strategies, mutation combinations, and profit maximization techniques.</p>
+        </div>
+    </section>
+    
+    <!-- Main Content -->
+    <div class="content-section">
+        <h2 data-i18n="vegetablePlants.complete.title">🌱 Complete Vegetable Growing Guide</h2>
+        <p data-i18n="vegetablePlants.complete.description">Vegetables are the backbone of any successful garden in Grow a Garden. They provide consistent income, are easier to manage than exotic plants, and offer excellent opportunities for mutations that can significantly increase their value.</p>
+        
+        <h3 data-i18n="vegetablePlants.whyFocus.title">Why Focus on Vegetables?</h3>
+        <ul>
+            <li><strong data-i18n="vegetablePlants.whyFocus.reliableIncome">Reliable Income:</strong> <span data-i18n="vegetablePlants.whyFocus.reliableIncomeDesc">Vegetables grow consistently and provide steady cash flow</span></li>
+            <li><strong data-i18n="vegetablePlants.whyFocus.mutationPotential">Mutation Potential:</strong> <span data-i18n="vegetablePlants.whyFocus.mutationPotentialDesc">Many vegetables have excellent mutation combinations</span></li>
+            <li><strong data-i18n="vegetablePlants.whyFocus.beginnerFriendly">Beginner Friendly:</strong> <span data-i18n="vegetablePlants.whyFocus.beginnerFriendlyDesc">Easier to manage than rare or exotic plants</span></li>
+            <li><strong data-i18n="vegetablePlants.whyFocus.marketStability">Market Stability:</strong> <span data-i18n="vegetablePlants.whyFocus.marketStabilityDesc">Vegetable prices are more predictable than rare plants</span></li>
+        </ul>
+    </div>
+    
+    <!-- Vegetable Cards Section -->
+    <div class="content-section">
+        <h2>🥬 Popular Vegetables & Growing Strategies</h2>
+        
+        <div class="vegetable-grid">
+            <!-- Tomato Card -->
+            <div class="vegetable-card">
+                <div class="vegetable-icon">🍅</div>
+                <h3>Tomatoes</h3>
+                <p>One of the most profitable vegetables with excellent mutation potential.</p>
+                
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-label">Base Value</span>
+                        <span class="stat-value">$15-25</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Growth Time</span>
+                        <span class="stat-value">2-3 hours</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Water Needs</span>
+                        <span class="stat-value">Medium</span>
+                    </div>
+                </div>
+                
+                <h4>Best Mutations:</h4>
+                <ul>
+                    <li>Rainbow + Gold (2x base value)</li>
+                    <li>Giant + Rainbow (size + value boost)</li>
+                    <li>Golden + Shiny (premium combination)</li>
+                </ul>
+                
+                <h4>Growing Tips:</h4>
+                <ul>
+                    <li>Plant in morning for optimal growth</li>
+                    <li>Water every 30 minutes for best results</li>
+                    <li>Use fertilizer during golden hours</li>
+                </ul>
+            </div>
+            
+            <!-- Carrot Card -->
+            <div class="vegetable-card">
+                <div class="vegetable-icon">🥕</div>
+                <h3>Carrots</h3>
+                <p>Fast-growing vegetables perfect for beginners and daily farming.</p>
+                
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-label">Base Value</span>
+                        <span class="stat-value">$8-15</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Growth Time</span>
+                        <span class="stat-value">1-2 hours</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Water Needs</span>
+                        <span class="stat-value">Low</span>
+                    </div>
+                </div>
+                
+                <h4>Best Mutations:</h4>
+                <ul>
+                    <li>Rainbow + Giant (value + size)</li>
+                    <li>Golden + Shiny (premium look)</li>
+                    <li>Rainbow + Shiny (color + value)</li>
+                </ul>
+                
+                <h4>Growing Tips:</h4>
+                <ul>
+                    <li>Perfect for new players</li>
+                    <li>Can be harvested multiple times per day</li>
+                    <li>Great for learning mutation mechanics</li>
+                </ul>
+            </div>
+            
+            <!-- Potato Card -->
+            <div class="vegetable-card">
+                <div class="vegetable-icon">🥔</div>
+                <h3>Potatoes</h3>
+                <p>High-value root vegetables with excellent bulk farming potential.</p>
+                
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-label">Base Value</span>
+                        <span class="stat-value">$20-35</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Growth Time</span>
+                        <span class="stat-value">3-4 hours</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Water Needs</span>
+                        <span class="stat-value">High</span>
+                    </div>
+                </div>
+                
+                <h4>Best Mutations:</h4>
+                <ul>
+                    <li>Rainbow + Giant + Golden (triple boost)</li>
+                    <li>Shiny + Rainbow (premium value)</li>
+                    <li>Giant + Golden (size + value)</li>
+                </ul>
+                
+                <h4>Growing Tips:</h4>
+                <ul>
+                    <li>Requires consistent watering</li>
+                    <li>Best grown in batches</li>
+                    <li>Excellent for overnight farming</li>
+                </ul>
+            </div>
+            
+            <!-- Corn Card -->
+            <div class="vegetable-card">
+                <div class="vegetable-icon">🌽</div>
+                <h3>Corn</h3>
+                <p>Tall-growing vegetables with unique harvesting mechanics.</p>
+                
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-label">Base Value</span>
+                        <span class="stat-value">$25-40</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Growth Time</span>
+                        <span class="stat-value">4-5 hours</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Water Needs</span>
+                        <span class="stat-value">Medium</span>
+                    </div>
+                </div>
+                
+                <h4>Best Mutations:</h4>
+                <ul>
+                    <li>Rainbow + Giant (tall + valuable)</li>
+                    <li>Golden + Shiny (premium corn)</li>
+                    <li>Giant + Rainbow (size + value)</li>
+                </ul>
+                
+                <h4>Growing Tips:</h4>
+                <ul>
+                    <li>Plant in rows for efficiency</li>
+                    <li>Harvest when fully grown</li>
+                    <li>Great for large garden layouts</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Advanced Tips Section -->
+    <div class="tips-section">
+        <h2>💡 Advanced Vegetable Growing Tips</h2>
+        
+        <div class="tip-item">
+            <h4>🌅 Golden Hour Strategy</h4>
+            <p>Plant and water your vegetables during the game's golden hours (7:00-9:00 AM in-game time) for a 2x growth boost. This is especially effective for longer-growing vegetables like potatoes and corn.</p>
+        </div>
+        
+        <div class="tip-item">
+            <h4>💧 Watering Optimization</h4>
+            <p>Create a watering schedule: water every 30 minutes for fast-growing vegetables and every hour for slower ones. Use the watering can combo (5 rapid clicks) for hidden bonuses.</p>
+        </div>
+        
+        <div class="tip-item">
+            <h4>🌱 Crop Rotation</h4>
+            <p>Rotate your vegetable plots to prevent soil depletion. After harvesting, plant a different vegetable type in the same location for optimal growth rates.</p>
+        </div>
+        
+        <div class="tip-item">
+            <h4>🔬 Mutation Experimentation</h4>
+            <p>Don't be afraid to experiment with different mutation combinations. Some unexpected combinations can yield higher profits than the standard "best" mutations.</p>
+        </div>
+        
+        <div class="tip-item">
+            <h4>📊 Market Timing</h4>
+            <p>Monitor the in-game market for vegetable price fluctuations. Sell during peak demand periods and buy seeds during sales for maximum profit margins.</p>
+        </div>
+    </div>
+    
+    <!-- Mutation Guide Section -->
+    <div class="mutation-guide">
+        <h2>🧬 Vegetable Mutation Mastery</h2>
+        <p>Understanding mutations is crucial for maximizing vegetable profits. Here's a comprehensive guide to the most valuable mutation combinations:</p>
+        
+        <table class="mutation-table">
+            <thead>
+                <tr>
+                    <th>Mutation Type</th>
+                    <th>Effect</th>
+                    <th>Best Vegetables</th>
+                    <th>Value Multiplier</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Rainbow</strong></td>
+                    <td>Colorful appearance, value boost</td>
+                    <td>Tomatoes, Carrots</td>
+                    <td>1.5x - 2x</td>
+                </tr>
+                <tr>
+                    <td><strong>Golden</strong></td>
+                    <td>Golden color, premium value</td>
+                    <td>Potatoes, Corn</td>
+                    <td>2x - 3x</td>
+                </tr>
+                <tr>
+                    <td><strong>Giant</strong></td>
+                    <td>Increased size, higher value</td>
+                    <td>All Vegetables</td>
+                    <td>1.3x - 1.8x</td>
+                </tr>
+                <tr>
+                    <td><strong>Shiny</strong></td>
+                    <td>Sparkling effect, value boost</td>
+                    <td>Tomatoes, Carrots</td>
+                    <td>1.2x - 1.5x</td>
+                </tr>
+                <tr>
+                    <td><strong>Rainbow + Golden</strong></td>
+                    <td>Ultimate combination</td>
+                    <td>All Vegetables</td>
+                    <td>3x - 5x</td>
+                </tr>
+                <tr>
+                    <td><strong>Giant + Rainbow</strong></td>
+                    <td>Size + value boost</td>
+                    <td>Potatoes, Corn</td>
+                    <td>2.5x - 4x</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3>Mutation Strategy Tips:</h3>
+        <ul>
+            <li><strong>Start Simple:</strong> Begin with single mutations to understand their effects</li>
+            <li><strong>Combine Wisely:</strong> Not all mutations stack effectively - test combinations</li>
+            <li><strong>Save Rare Mutations:</strong> Use your best mutations on high-value vegetables</li>
+            <li><strong>Breed for Consistency:</strong> Once you find a good combination, try to replicate it</li>
+        </ul>
+    </div>
+    
+    <!-- Profit Optimization Section -->
+    <div class="content-section">
+        <h2>💰 Profit Optimization Strategies</h2>
+        
+        <h3>Daily Farming Routine</h3>
+        <ol>
+            <li><strong>Morning (7:00-9:00 AM):</strong> Plant new vegetables and water existing ones</li>
+            <li><strong>Midday (12:00-2:00 PM):</strong> Water and check for mutations</li>
+            <li><strong>Afternoon (4:00-6:00 PM):</strong> Harvest mature vegetables and replant</li>
+            <li><strong>Evening (8:00-10:00 PM):</strong> Final watering and mutation checks</li>
+        </ol>
+        
+        <h3>Bulk Farming Techniques</h3>
+        <ul>
+            <li><strong>Grid Layout:</strong> Plant vegetables in organized grids for efficient watering</li>
+            <li><strong>Batch Planting:</strong> Plant multiple vegetables at once for synchronized growth</li>
+            <li><strong>Mutation Zones:</strong> Dedicate specific areas to mutation experimentation</li>
+            <li><strong>Harvest Rotation:</strong> Stagger planting times for continuous income</li>
+        </ul>
+        
+        <h3>Investment vs. Return Analysis</h3>
+        <p>Calculate your vegetable farming ROI:</p>
+        <ul>
+            <li><strong>Seed Cost:</strong> Track how much you spend on seeds</li>
+            <li><strong>Water Costs:</strong> Factor in watering can expenses</li>
+            <li><strong>Time Investment:</strong> Consider the time spent managing your garden</li>
+            <li><strong>Profit Margin:</strong> Aim for at least 200% return on investment</li>
+        </ul>
+    </div>
+    
+    <!-- Common Mistakes Section -->
+    <div class="content-section">
+        <h2>❌ Common Vegetable Growing Mistakes</h2>
+        
+        <div class="tip-item">
+            <h4>🚫 Overwatering</h4>
+            <p>Too much water can stunt growth and reduce mutation chances. Stick to the recommended watering schedule.</p>
+        </div>
+        
+        <div class="tip-item">
+            <h4>🚫 Ignoring Mutations</h4>
+            <p>Don't harvest vegetables immediately when they're ready. Wait for potential mutations to develop.</p>
+        </div>
+        
+        <div class="tip-item">
+            <h4>🚫 Poor Spacing</h4>
+            <p>Crowded vegetables compete for resources. Give each plant enough space for optimal growth.</p>
+        </div>
+        
+        <div class="tip-item">
+            <h4>🚫 Inconsistent Care</h4>
+            <p>Irregular watering and care schedules reduce growth rates and mutation chances.</p>
+        </div>
+        
+        <div class="tip-item">
+            <h4>🚫 Selling Too Early</strong></h4>
+            <p>Wait for vegetables to reach full maturity before selling for maximum value.</p>
+        </div>
+    </div>
+    
+    <!-- Call to Action Section -->
+    <div class="cta-section">
+        <h2>🚀 Ready to Master Vegetable Growing?</h2>
+        <p>Start implementing these strategies today and watch your vegetable profits soar!</p>
+        <a href="index.html" class="cta-btn">Try Our Calculator</a>
+        <a href="guides.html" class="cta-btn">More Growing Guides</a>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Grow a Garden - Vegetable Growing Guide</p>
+            <p>Master the art of vegetable farming in Roblox's most popular gardening game!</p>
+        </div>
+    </footer>
+    
+    <script src="/i18n/i18n.js"></script>
+    <script>
+        // Add smooth scrolling for better UX
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Add animation on scroll for vegetable cards
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.vegetable-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+        
+        // Language switcher functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentFlag = document.getElementById('current-flag');
+            const flagDropdown = document.getElementById('flag-dropdown');
+            const flagOptions = document.querySelectorAll('.flag-option');
+            
+            // Click current flag to show/hide dropdown
+            if (currentFlag) {
+                currentFlag.addEventListener('click', function() {
+                    flagDropdown.classList.toggle('open');
+                });
+            }
+            
+            // Click flag option to switch language
+            flagOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    const lang = this.getAttribute('data-lang');
+                    const flagImg = this.querySelector('img').src;
+                    const flagName = this.querySelector('.flag-name').textContent;
+                    
+                    // Update current flag display
+                    const currentFlagImg = currentFlag.querySelector('img');
+                    currentFlagImg.src = flagImg;
+                    
+                    // Close dropdown
+                    flagDropdown.classList.remove('open');
+                    
+                    // Redirect to corresponding language page
+                    if (lang === 'en') {
+                        window.location.href = '/vegetable-plants-grow-a-garden.html';
+                    } else {
+                        window.location.href = '/' + lang + '/vegetable-plants-grow-a-garden.html';
+                    }
+                });
+            });
+            
+            // Click outside to close dropdown
+            document.addEventListener('click', function(event) {
+                if (!event.target.closest('.flag-language-switcher')) {
+                    flagDropdown.classList.remove('open');
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

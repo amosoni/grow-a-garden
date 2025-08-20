@@ -336,6 +336,7 @@
   "nama_pizza.table.nama_pizza": "[nama_pizza.table.nama_pizza]",
   "nav.discord": "💬 Discord",
   "nav.guides": "📚 Panduan",
+  "nav.online": "🎮 Online",
   "nav.live": "Statistik Langsung",
   "nav.logo": "🌱 Grow a Garden",
   "nav.map": "Peta Panas Global",
@@ -660,4 +661,36 @@
   "🥕 如何在Grow a Garden中种植胡萝卜.hero.title": "Panduan",
   "🥧_パイ作り.breadcrumb.current": "Halaman saat ini",
   "🥪 如何在种植花园中制作三明治.hero.title": "Panduan"
+,
+  "game.playMiniPlay": "Main di MiniPlay"
+,
+  "game.playPlayHop": "Main di PlayHop"
+,
+  "features.title": "🎯 Fitur Permainan"
+,
+  "features.plant.title": "Menanam & Tumbuh"
+,
+  "features.plant.desc": "Tanam berbagai benih dan lihat mereka tumbuh menjadi tanaman indah dengan siklus pertumbuhan yang realistis"
+,
+  "features.mutations.title": "Mutasi"
+,
+  "features.mutations.desc": "Temukan mutasi langka untuk nilai lebih tinggi dan tanaman unik dengan kemampuan khusus"
+,
+  "features.profit.title": "Sistem Keuntungan"
+,
+  "features.profit.desc": "Pelajari strategi lanjutan untuk memaksimalkan profitabilitas tamanmu dan timing pasar"
+,
+  "features.multiplayer.title": "Multiplayer"
+,
+  "features.multiplayer.desc": "Main dengan teman, bergabung dengan guild dan bersaing dalam acara musiman dan turnamen"
+,
+  "features.world.title": "Dunia Terbuka"
+,
+  "features.world.desc": "Jelajahi area bertani yang luas, temukan lokasi baru dan buka area rahasia"
+,
+  "features.achievements.title": "Pencapaian"
+,
+  "features.achievements.desc": "Buka pencapaian, naik di papan peringkat dan dapatkan hadiah eksklusif"
+,
+  "nav.back": "← Kembali"
 }

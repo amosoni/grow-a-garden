@@ -294,6 +294,7 @@
   "nama_pizza.table.nama_pizza": "[nama_pizza.table.nama_pizza]",
   "nav.discord": "💬 Discord",
   "nav.guides": "📚 Guides",
+  "nav.online": "🎮 En Ligne",
   "nav.live": "Statistiques en Direct",
   "nav.logo": "🌱 Grow a Garden",
   "nav.map": "Carte de Chaleur Globale",
@@ -757,4 +758,40 @@
   "🥕 如何在Grow a Garden中种植胡萝卜.hero.title": "Guide",
   "🥧_パイ作り.breadcrumb.current": "Page actuelle",
   "🥪 如何在种植花园中制作三明治.hero.title": "Guide"
+,
+  "hero.title": "🎮 Jouez à Grow a Garden En Ligne"
+,
+  "hero.subtitle": "Vivez l'aventure de culture ultime sur Roblox ! Plantez des graines, cultivez des récoltes, découvrez des mutations et construisez votre jardin de rêve avec des millions de joueurs dans le monde entier."
+,
+  "game.playMiniPlay": "Jouer sur MiniPlay"
+,
+  "game.playPlayHop": "Jouer sur PlayHop"
+,
+  "features.title": "🎯 Fonctionnalités du Jeu"
+,
+  "features.plant.title": "Planter et Grandir"
+,
+  "features.plant.desc": "Plantez diverses graines et regardez-les grandir en belles récoltes avec des cycles de croissance réalistes"
+,
+  "features.mutations.title": "Mutations"
+,
+  "features.mutations.desc": "Découvrez des mutations rares pour une valeur plus élevée et des plantes uniques avec des capacités spéciales"
+,
+  "features.profit.title": "Système de Profit"
+,
+  "features.profit.desc": "Apprenez des stratégies avancées pour maximiser la rentabilité de votre jardin et le timing du marché"
+,
+  "features.multiplayer.title": "Multijoueur"
+,
+  "features.multiplayer.desc": "Jouez avec des amis, rejoignez des guildes et participez à des événements saisonniers et des tournois"
+,
+  "features.world.title": "Monde Ouvert"
+,
+  "features.world.desc": "Explorez de vastes zones de culture, découvrez de nouveaux endroits et débloquez des zones secrètes"
+,
+  "features.achievements.title": "Succès"
+,
+  "features.achievements.desc": "Débloquez des succès, grimpez dans les classements et gagnez des récompenses exclusives"
+,
+  "nav.back": "← Retour"
 }

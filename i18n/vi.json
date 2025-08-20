@@ -336,6 +336,7 @@
   "nama_pizza.table.nama_pizza": "[nama_pizza.table.nama_pizza]",
   "nav.discord": "💬 Discord",
   "nav.guides": "📚 Hướng Dẫn",
+  "nav.online": "🎮 Trực Tuyến",
   "nav.live": "Thống Kê Trực Tiếp",
   "nav.logo": "🌱 Grow a Garden",
   "nav.map": "Bản Đồ Nhiệt Toàn Cầu",
@@ -660,4 +661,36 @@
   "🥕 如何在Grow a Garden中种植胡萝卜.hero.title": "Hướng dẫn",
   "🥧_パイ作り.breadcrumb.current": "Trang hiện tại",
   "🥪 如何在种植花园中制作三明治.hero.title": "Hướng dẫn"
+,
+  "game.playMiniPlay": "Chơi trên MiniPlay"
+,
+  "game.playPlayHop": "Chơi trên PlayHop"
+,
+  "features.title": "🎯 Tính Năng Trò Chơi"
+,
+  "features.plant.title": "Trồng & Phát Triển"
+,
+  "features.plant.desc": "Gieo các loại hạt khác nhau và xem chúng phát triển thành cây trồng đẹp với chu kỳ sinh trưởng thực tế"
+,
+  "features.mutations.title": "Đột Biến"
+,
+  "features.mutations.desc": "Khám phá đột biến hiếm để có giá trị cao hơn và cây trồng độc đáo với khả năng đặc biệt"
+,
+  "features.profit.title": "Hệ Thống Lợi Nhuận"
+,
+  "features.profit.desc": "Học các chiến lược nâng cao để tối đa hóa lợi nhuận của khu vườn và thời điểm thị trường"
+,
+  "features.multiplayer.title": "Chơi Nhiều Người"
+,
+  "features.multiplayer.desc": "Chơi với bạn bè, tham gia guild và thi đấu trong các sự kiện theo mùa và giải đấu"
+,
+  "features.world.title": "Thế Giới Mở"
+,
+  "features.world.desc": "Khám phá các khu vực nông trại rộng lớn, khám phá địa điểm mới và mở khóa các khu vực bí mật"
+,
+  "features.achievements.title": "Thành Tựu"
+,
+  "features.achievements.desc": "Mở khóa thành tựu, leo bảng xếp hạng và kiếm phần thưởng độc quyền"
+,
+  "nav.back": "← Quay Lại"
 }

@@ -338,6 +338,7 @@
   "nama_pizza.table.nama_pizza": "[nama_pizza.table.nama_pizza]",
   "nav.discord": "💬 Discord",
   "nav.guides": "📚 Guias",
+  "nav.online": "🎮 Online",
   "nav.live": "Estatísticas ao Vivo",
   "nav.logo": "🌱 Grow a Garden",
   "nav.map": "Mapa de Calor Global",
@@ -664,4 +665,36 @@
   "🥕 如何在Grow a Garden中种植胡萝卜.hero.title": "Guia",
   "🥧_パイ作り.breadcrumb.current": "Página atual",
   "🥪 如何在种植花园中制作三明治.hero.title": "Guia"
+,
+  "game.playMiniPlay": "Jogar no MiniPlay"
+,
+  "game.playPlayHop": "Jogar no PlayHop"
+,
+  "features.title": "🎯 Recursos do Jogo"
+,
+  "features.plant.title": "Plantar e Crescer"
+,
+  "features.plant.desc": "Plante várias sementes e veja-as crescerem em colheitas bonitas com ciclos de crescimento realistas"
+,
+  "features.mutations.title": "Mutações"
+,
+  "features.mutations.desc": "Descubra mutações raras para maior valor e plantas únicas com habilidades especiais"
+,
+  "features.profit.title": "Sistema de Lucro"
+,
+  "features.profit.desc": "Aprenda estratégias avançadas para maximizar a lucratividade do seu jardim e o momento do mercado"
+,
+  "features.multiplayer.title": "Multijogador"
+,
+  "features.multiplayer.desc": "Jogue com amigos, entre em guildas e compita em eventos sazonais e torneios"
+,
+  "features.world.title": "Mundo Aberto"
+,
+  "features.world.desc": "Explore vastas áreas de cultivo, descubra novos locais e desbloqueie áreas secretas"
+,
+  "features.achievements.title": "Conquistas"
+,
+  "features.achievements.desc": "Desbloqueie conquistas, suba nas tabelas de classificação e ganhe recompensas exclusivas"
+,
+  "nav.back": "← Voltar"
 }
