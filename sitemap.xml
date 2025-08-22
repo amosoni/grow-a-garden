@@ -2,31 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
+  <!-- 主页 -->
+  <url>
+    <loc>https://growagarden.cv/</loc>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
   <!-- 英文版本 -->
   <url>
     <loc>https://growagarden.cv/en/index.html</loc>
-    <lastmod>2024-12-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://growagarden.cv/en/index.html"/>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://growagarden.cv/zh-cn/index.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://growagarden.cv/es/index.html"/>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://growagarden.cv/pt-br/index.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://growagarden.cv/fr/index.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://growagarden.cv/de/index.html"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://growagarden.cv/ru/index.html"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://growagarden.cv/ar/index.html"/>
-    <xhtml:link rel="alternate" hreflang="hi" href="https://growagarden.cv/hi/index.html"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://growagarden.cv/id/index.html"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://growagarden.cv/vi/index.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://growagarden.cv/ja/index.html"/>
-  </url>
-  
-  <!-- 中文版本 -->
-  <url>
-    <loc>https://growagarden.cv/zh-cn/index.html</loc>
-    <lastmod>2024-12-19</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>daily</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://growagarden.cv/en/index.html"/>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://growagarden.cv/zh-cn/index.html"/>
@@ -40,13 +28,35 @@
     <xhtml:link rel="alternate" hreflang="id" href="https://growagarden.cv/id/index.html"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://growagarden.cv/vi/index.html"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://growagarden.cv/ja/index.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://growagarden.cv/"/>
+  </url>
+  
+  <!-- 中文版本 -->
+  <url>
+    <loc>https://growagarden.cv/zh-cn/index.html</loc>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://growagarden.cv/en/index.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://growagarden.cv/zh-cn/index.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://growagarden.cv/es/index.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://growagarden.cv/pt-br/index.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://growagarden.cv/fr/index.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://growagarden.cv/de/index.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://growagarden.cv/ru/index.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://growagarden.cv/ar/index.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://growagarden.cv/hi/index.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://growagarden.cv/id/index.html"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://growagarden.cv/vi/index.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://growagarden.cv/ja/index.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://growagarden.cv/"/>
   </url>
   
   <!-- 西班牙语版本 -->
   <url>
     <loc>https://growagarden.cv/es/index.html</loc>
-    <lastmod>2024-12-19</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>daily</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://growagarden.cv/en/index.html"/>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://growagarden.cv/zh-cn/index.html"/>
@@ -60,13 +70,14 @@
     <xhtml:link rel="alternate" hreflang="id" href="https://growagarden.cv/id/index.html"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://growagarden.cv/vi/index.html"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://growagarden.cv/ja/index.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://growagarden.cv/"/>
   </url>
   
   <!-- 葡萄牙语版本 -->
   <url>
     <loc>https://growagarden.cv/pt-br/index.html</loc>
-    <lastmod>2024-12-19</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>daily</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://growagarden.cv/en/index.html"/>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://growagarden.cv/zh-cn/index.html"/>
@@ -80,13 +91,14 @@
     <xhtml:link rel="alternate" hreflang="id" href="https://growagarden.cv/id/index.html"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://growagarden.cv/vi/index.html"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://growagarden.cv/ja/index.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://growagarden.cv/"/>
   </url>
   
   <!-- 法语版本 -->
   <url>
     <loc>https://growagarden.cv/fr/index.html</loc>
-    <lastmod>2024-12-19</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>daily</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://growagarden.cv/en/index.html"/>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://growagarden.cv/zh-cn/index.html"/>
@@ -100,13 +112,14 @@
     <xhtml:link rel="alternate" hreflang="id" href="https://growagarden.cv/id/index.html"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://growagarden.cv/vi/index.html"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://growagarden.cv/ja/index.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://growagarden.cv/"/>
   </url>
   
   <!-- 德语版本 -->
   <url>
     <loc>https://growagarden.cv/de/index.html</loc>
-    <lastmod>2024-12-19</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>daily</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://growagarden.cv/en/index.html"/>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://growagarden.cv/zh-cn/index.html"/>
@@ -120,13 +133,14 @@
     <xhtml:link rel="alternate" hreflang="id" href="https://growagarden.cv/id/index.html"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://growagarden.cv/vi/index.html"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://growagarden.cv/ja/index.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://growagarden.cv/"/>
   </url>
   
   <!-- 俄语版本 -->
   <url>
     <loc>https://growagarden.cv/ru/index.html</loc>
-    <lastmod>2024-12-19</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>daily</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://growagarden.cv/en/index.html"/>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://growagarden.cv/zh-cn/index.html"/>
@@ -140,13 +154,14 @@
     <xhtml:link rel="alternate" hreflang="id" href="https://growagarden.cv/id/index.html"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://growagarden.cv/vi/index.html"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://growagarden.cv/ja/index.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://growagarden.cv/"/>
   </url>
   
   <!-- 阿拉伯语版本 -->
   <url>
     <loc>https://growagarden.cv/ar/index.html</loc>
-    <lastmod>2024-12-19</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>daily</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://growagarden.cv/en/index.html"/>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://growagarden.cv/zh-cn/index.html"/>
@@ -160,13 +175,14 @@
     <xhtml:link rel="alternate" hreflang="id" href="https://growagarden.cv/id/index.html"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://growagarden.cv/vi/index.html"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://growagarden.cv/ja/index.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://growagarden.cv/"/>
   </url>
   
   <!-- 印地语版本 -->
   <url>
     <loc>https://growagarden.cv/hi/index.html</loc>
-    <lastmod>2024-12-19</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>daily</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://growagarden.cv/en/index.html"/>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://growagarden.cv/zh-cn/index.html"/>
@@ -180,13 +196,14 @@
     <xhtml:link rel="alternate" hreflang="id" href="https://growagarden.cv/id/index.html"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://growagarden.cv/vi/index.html"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://growagarden.cv/ja/index.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://growagarden.cv/"/>
   </url>
   
   <!-- 印尼语版本 -->
   <url>
     <loc>https://growagarden.cv/id/index.html</loc>
-    <lastmod>2024-12-19</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>daily</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://growagarden.cv/en/index.html"/>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://growagarden.cv/zh-cn/index.html"/>
@@ -200,13 +217,14 @@
     <xhtml:link rel="alternate" hreflang="id" href="https://growagarden.cv/id/index.html"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://growagarden.cv/vi/index.html"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://growagarden.cv/ja/index.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://growagarden.cv/"/>
   </url>
   
   <!-- 越南语版本 -->
   <url>
     <loc>https://growagarden.cv/vi/index.html</loc>
-    <lastmod>2024-12-19</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>daily</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://growagarden.cv/en/index.html"/>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://growagarden.cv/zh-cn/index.html"/>
@@ -220,13 +238,14 @@
     <xhtml:link rel="alternate" hreflang="id" href="https://growagarden.cv/id/index.html"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://growagarden.cv/vi/index.html"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://growagarden.cv/ja/index.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://growagarden.cv/"/>
   </url>
   
   <!-- 日语版本 -->
   <url>
     <loc>https://growagarden.cv/ja/index.html</loc>
-    <lastmod>2024-12-19</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>daily</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://growagarden.cv/en/index.html"/>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://growagarden.cv/zh-cn/index.html"/>
@@ -240,74 +259,29 @@
     <xhtml:link rel="alternate" hreflang="id" href="https://growagarden.cv/id/index.html"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://growagarden.cv/vi/index.html"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://growagarden.cv/ja/index.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://growagarden.cv/"/>
   </url>
   
-  <!-- 指南页面 -->
+  <!-- 重要页面 -->
   <url>
-    <loc>https://growagarden.cv/en/guides.html</loc>
-    <lastmod>2024-12-19</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://growagarden.cv/guides.html</loc>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://growagarden.cv/zh-cn/guides.html</loc>
-    <lastmod>2024-12-19</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://growagarden.cv/online.html</loc>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
-  <!-- 游戏页面 -->
   <url>
-    <loc>https://growagarden.cv/en/game.html</loc>
-    <lastmod>2024-12-19</lastmod>
+    <loc>https://growagarden.cv/sitemap.html</loc>
+    <lastmod>2025-01-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://growagarden.cv/zh-cn/game.html</loc>
-    <lastmod>2024-12-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <!-- 花卉类植物种植指南 -->
-  <url>
-    <loc>https://growagarden.cv/en/flower-type-plants.html</loc>
-    <lastmod>2024-12-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://growagarden.cv/en/flower-type-plants.html"/>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://growagarden.cv/zh-cn/flower-type-plants.html"/>
-  </url>
-  
-  <url>
-    <loc>https://growagarden.cv/zh-cn/flower-type-plants.html</loc>
-    <lastmod>2024-12-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://growagarden.cv/en/flower-type-plants.html"/>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://growagarden.cv/zh-cn/flower-type-plants.html"/>
-  </url>
-  
-  <!-- 意大利面制作指南 -->
-  <url>
-    <loc>https://growagarden.cv/en/how-to-make-spaghetti.html</loc>
-    <lastmod>2024-12-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://growagarden.cv/en/how-to-make-spaghetti.html"/>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://growagarden.cv/zh-cn/how-to-make-spaghetti.html"/>
-  </url>
-  
-  <url>
-    <loc>https://growagarden.cv/zh-cn/how-to-make-spaghetti.html</loc>
-    <lastmod>2024-12-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://growagarden.cv/en/how-to-make-spaghetti.html"/>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://growagarden.cv/zh-cn/how-to-make-spaghetti.html"/>
+    <priority>0.5</priority>
   </url>
   
 </urlset> 

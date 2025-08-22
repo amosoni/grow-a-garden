@@ -1,7 +1,17 @@
 User-agent: *
 Allow: /
 
-# AI-friendly robots.txt
+# 允许所有搜索引擎抓取
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# AI友好的robots.txt
 User-agent: ChatGPT-User
 Allow: /
 
@@ -20,5 +30,15 @@ Allow: /
 User-agent: Amazonbot
 Allow: /
 
-# Sitemap
-Sitemap: https://growagarden.cv/sitemap.xml 
+# 禁止抓取临时文件和工具
+Disallow: /backups/
+Disallow: /tools/
+Disallow: /*.py
+Disallow: /*.json
+Disallow: /*.report
+
+# 站点地图
+Sitemap: https://growagarden.cv/sitemap.xml
+
+# 爬取延迟（可选）
+Crawl-delay: 1 

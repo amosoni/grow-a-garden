@@ -9,7 +9,7 @@ RewriteEngine On
 # RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
 # RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 
-# 语言重定向规则
+# 主页重定向到英文版本
 RewriteCond %{REQUEST_URI} ^/$
 RewriteRule ^$ /en/index.html [R=301,L]
 
@@ -60,13 +60,16 @@ RewriteRule ^(.+)\.html$ $1 [R=301,L]
     Header always set X-Frame-Options DENY
     Header always set X-XSS-Protection "1; mode=block"
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    
+    # SEO友好的头部
+    Header always set X-Robots-Tag "index, follow"
 </IfModule>
 
 # 错误页面
 ErrorDocument 404 /en/404.html
 ErrorDocument 500 /en/500.html
 
-# 语言检测和重定向
+# 语言检测和重定向（基于Accept-Language头）
 RewriteCond %{HTTP:Accept-Language} ^zh [NC]
 RewriteRule ^$ /zh-cn/index.html [R=302,L]
 
